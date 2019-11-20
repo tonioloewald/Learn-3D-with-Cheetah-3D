@@ -1,0 +1,605 @@
+[
+  {
+    "title": "Front Matter",
+    "parts": [
+      {
+        "name": "Front Matter",
+        "path": "0_Front_Matter.md"
+      }
+    ]
+  },
+  {
+    "title": "Credits",
+    "parts": [
+      {
+        "name": "Credits",
+        "path": "1_Credits.md"
+      }
+    ]
+  },
+  {
+    "title": "Introduction",
+    "parts": [
+      {
+        "name": "Introduction",
+        "path": "2_Introduction.md"
+      },
+      {
+        "name": "Why Learn 3D Graphics?",
+        "path": "2.1_Why_Learn_3D_Graphics.md"
+      },
+      {
+        "name": "Why Cheetah 3D?",
+        "path": "2.2_Why_Cheetah_3D.md"
+      },
+      {
+        "name": "3D in a nutshell",
+        "path": "2.3_3D_in_a_nutshell.md"
+      }
+    ]
+  },
+  {
+    "title": "What’s new in Cheetah 3D 7?",
+    "parts": [
+      {
+        "name": "What’s new in Cheetah 3D 7?",
+        "path": "3_What_s_new_in_Cheetah_3D_7.md"
+      },
+      {
+        "name": "The Falcon Renderer",
+        "path": "3.1_The_Falcon_Renderer.md"
+      }
+    ]
+  },
+  {
+    "title": "Falcon",
+    "parts": [
+      {
+        "name": "Falcon",
+        "path": "4_Falcon.md"
+      },
+      {
+        "name": "Key Points",
+        "path": "4.1_Key_Points.md"
+      },
+      {
+        "name": "Primitives: Basic 3D Objects",
+        "path": "4.2_Primitives_Basic_3D_Objects.md"
+      },
+      {
+        "name": "The Properties Panel",
+        "path": "4.3_The_Properties_Panel.md"
+      },
+      {
+        "name": "Selecting and Moving Objects",
+        "path": "4.4_Selecting_and_Moving_Objects.md"
+      },
+      {
+        "name": "Meshes",
+        "path": "4.5_Meshes.md"
+      },
+      {
+        "name": "Editing Meshes: Core Polygon Tools",
+        "path": "4.6_Editing_Meshes_Core_Polygon_Tools.md"
+      },
+      {
+        "name": "Selecting Parts of Meshes",
+        "path": "4.7_Selecting_Parts_of_Meshes.md"
+      },
+      {
+        "name": "Fine-Tuning Meshes",
+        "path": "4.8_Fine_Tuning_Meshes.md"
+      },
+      {
+        "name": "Mesh Smoothing",
+        "path": "4.9_Mesh_Smoothing.md"
+      },
+      {
+        "name": "Creators",
+        "path": "4.10_Creators.md"
+      },
+      {
+        "name": "Materials Overview",
+        "path": "4.11_Materials_Overview.md"
+      },
+      {
+        "name": "Lights and Lighting",
+        "path": "4.12_Lights_and_Lighting.md"
+      },
+      {
+        "name": "Image-Based Lighting",
+        "path": "4.13_Image_Based_Lighting.md"
+      },
+      {
+        "name": "The Sky Light Object",
+        "path": "4.14_The_Sky_Light_Object.md"
+      },
+      {
+        "name": "Rendering",
+        "path": "4.15_Rendering.md"
+      },
+      {
+        "name": "Camera Objects",
+        "path": "4.16_Camera_Objects.md"
+      }
+    ]
+  },
+  {
+    "title": "Just Enough to be Dangerous",
+    "parts": [
+      {
+        "name": "Just Enough to be Dangerous",
+        "path": "5_Just_Enough_to_be_Dangerous.md"
+      },
+      {
+        "name": "A Quick Tour of Cheetah 3D",
+        "path": "5.1_A_Quick_Tour_of_Cheetah_3D.md"
+      },
+      {
+        "name": "User Interface Overview",
+        "path": "5.2_User_Interface_Overview.md"
+      }
+    ]
+  },
+  {
+    "title": "Tutorials",
+    "parts": [
+      {
+        "name": "Tutorials",
+        "path": "6_Tutorials.md"
+      },
+      {
+        "name": "Making a Mug",
+        "path": "6.1_Making_a_Mug.md"
+      },
+      {
+        "name": "Modeling a Biplane",
+        "path": "6.2_Modeling_a_Biplane.md"
+      }
+    ]
+  },
+  {
+    "title": "Mini-Tutorials",
+    "parts": [
+      {
+        "name": "Mini-Tutorials",
+        "path": "7_Mini_Tutorials.md"
+      },
+      {
+        "name": "Mini-Tutorial: 3D Text",
+        "path": "7.1_Mini_Tutorial_3D_Text.md"
+      },
+      {
+        "name": "Package Mockup",
+        "path": "7.2_Package_Mockup.md"
+      }
+    ]
+  },
+  {
+    "title": "Modeling",
+    "parts": [
+      {
+        "name": "Modeling",
+        "path": "8_Modeling.md"
+      },
+      {
+        "name": "Model Sheets & Blueprints",
+        "path": "8.1_Model_Sheets_Blueprints.md"
+      },
+      {
+        "name": "Symmetry",
+        "path": "8.2_Symmetry.md"
+      },
+      {
+        "name": "Selection: You can’t always get what you want…",
+        "path": "8.3_Selection_You_can_t_always_get_what_you_want.md"
+      },
+      {
+        "name": "Modeling Tricks & Techniques",
+        "path": "8.4_Modeling_Tricks_Techniques.md"
+      },
+      {
+        "name": "Subdivision Surfaces",
+        "path": "8.5_Subdivision_Surfaces.md"
+      },
+      {
+        "name": "What is a mesh?",
+        "path": "8.6_What_is_a_mesh.md"
+      },
+      {
+        "name": "Splines",
+        "path": "8.7_Splines.md"
+      },
+      {
+        "name": "Polygon/Box Modeling",
+        "path": "8.8_Polygon_Box_Modeling.md"
+      },
+      {
+        "name": "Approaches to Modeling",
+        "path": "8.9_Approaches_to_Modeling.md"
+      },
+      {
+        "name": "Understanding How Creators, Tags, and Modifiers Interact",
+        "path": "8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact.md"
+      },
+      {
+        "name": "Creators",
+        "path": "8.11_Creators.md"
+      }
+    ]
+  },
+  {
+    "title": "Creators, Modifiers, & Tags",
+    "parts": [
+      {
+        "name": "Creators, Modifiers, & Tags",
+        "path": "9_Creators_Modifiers_Tags.md"
+      },
+      {
+        "name": "Modifiers",
+        "path": "9.1_Modifiers.md"
+      },
+      {
+        "name": "Collapsing Creators & Modifiers",
+        "path": "9.2_Collapsing_Creators_Modifiers.md"
+      },
+      {
+        "name": "Tags",
+        "path": "9.3_Tags.md"
+      }
+    ]
+  },
+  {
+    "title": "Materials",
+    "parts": [
+      {
+        "name": "Materials",
+        "path": "10_Materials.md"
+      },
+      {
+        "name": "Simple Materials Without Nodes",
+        "path": "10.1_Simple_Materials_Without_Nodes.md"
+      },
+      {
+        "name": "Image-based Materials",
+        "path": "10.2_Image_based_Materials.md"
+      },
+      {
+        "name": "Transparent Materials",
+        "path": "10.3_Transparent_Materials.md"
+      },
+      {
+        "name": "Understanding Nodes",
+        "path": "10.4_Understanding_Nodes.md"
+      },
+      {
+        "name": "Building Procedural Materials",
+        "path": "10.5_Building_Procedural_Materials.md"
+      },
+      {
+        "name": "Reflective Materials",
+        "path": "10.6_Reflective_Materials.md"
+      },
+      {
+        "name": "UV Mapping",
+        "path": "10.7_UV_Mapping.md"
+      },
+      {
+        "name": "How Materials Work",
+        "path": "10.8_How_Materials_Work.md"
+      },
+      {
+        "name": "Node Descriptions",
+        "path": "10.9_Node_Descriptions.md"
+      },
+      {
+        "name": "Faking It",
+        "path": "10.10_Faking_It.md"
+      },
+      {
+        "name": "The Math of Material Nodes",
+        "path": "10.11_The_Math_of_Material_Nodes.md"
+      },
+      {
+        "name": "How Lights Work",
+        "path": "10.12_How_Lights_Work.md"
+      },
+      {
+        "name": "Other Lighting Options",
+        "path": "10.13_Other_Lighting_Options.md"
+      },
+      {
+        "name": "Shadows",
+        "path": "10.14_Shadows.md"
+      },
+      {
+        "name": "Advanced Lighting",
+        "path": "10.15_Advanced_Lighting.md"
+      },
+      {
+        "name": "Caustics",
+        "path": "10.16_Caustics.md"
+      },
+      {
+        "name": "Foolproof Shadow Catchers",
+        "path": "10.17_Foolproof_Shadow_Catchers.md"
+      },
+      {
+        "name": "Reflected Lights",
+        "path": "10.18_Reflected_Lights.md"
+      }
+    ]
+  },
+  {
+    "title": "Lighting",
+    "parts": [
+      {
+        "name": "Lighting",
+        "path": "11_Lighting.md"
+      }
+    ]
+  },
+  {
+    "title": "Rendering",
+    "parts": [
+      {
+        "name": "Rendering",
+        "path": "12_Rendering.md"
+      },
+      {
+        "name": "The Camera Object",
+        "path": "12.1_The_Camera_Object.md"
+      },
+      {
+        "name": "Projection Settings",
+        "path": "12.2_Projection_Settings.md"
+      },
+      {
+        "name": "The Render Tag",
+        "path": "12.3_The_Render_Tag.md"
+      },
+      {
+        "name": "Dealing with Reality",
+        "path": "12.4_Dealing_with_Reality.md"
+      },
+      {
+        "name": "Simple Render Setups",
+        "path": "12.5_Simple_Render_Setups.md"
+      },
+      {
+        "name": "Rendering Panoramas",
+        "path": "12.6_Rendering_Panoramas.md"
+      },
+      {
+        "name": "Rendering a Sky Box",
+        "path": "12.7_Rendering_a_Sky_Box.md"
+      },
+      {
+        "name": "How Raytracing Works",
+        "path": "12.8_How_Raytracing_Works.md"
+      },
+      {
+        "name": "Environments",
+        "path": "12.9_Environments.md"
+      },
+      {
+        "name": "Rendering Reflected Lights",
+        "path": "12.10_Rendering_Reflected_Lights.md"
+      },
+      {
+        "name": "Cartoon Looks",
+        "path": "12.11_Cartoon_Looks.md"
+      },
+      {
+        "name": "Render Manager",
+        "path": "12.12_Render_Manager.md"
+      },
+      {
+        "name": "Creating your own HDRIs for Image-Based Lighting",
+        "path": "12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting.md"
+      },
+      {
+        "name": "Rendering Tricks",
+        "path": "12.14_Rendering_Tricks.md"
+      },
+      {
+        "name": "Baking Materials",
+        "path": "12.15_Baking_Materials.md"
+      },
+      {
+        "name": "Path Animation",
+        "path": "12.16_Path_Animation.md"
+      },
+      {
+        "name": "Tutorial: Animation Basics",
+        "path": "12.17_Tutorial_Animation_Basics.md"
+      },
+      {
+        "name": "Forward Kinematics: Robot Arm I",
+        "path": "12.18_Forward_Kinematics_Robot_Arm_I.md"
+      },
+      {
+        "name": "Animation Concepts",
+        "path": "12.19_Animation_Concepts.md"
+      },
+      {
+        "name": "Inverse Kinematics: Robot Arm II",
+        "path": "12.20_Inverse_Kinematics_Robot_Arm_II.md"
+      }
+    ]
+  },
+  {
+    "title": "Animation",
+    "parts": [
+      {
+        "name": "Animation",
+        "path": "13_Animation.md"
+      },
+      {
+        "name": "Animation Overview",
+        "path": "13.1_Animation_Overview.md"
+      }
+    ]
+  },
+  {
+    "title": "Character Animation",
+    "parts": [
+      {
+        "name": "Character Animation",
+        "path": "14_Character_Animation.md"
+      },
+      {
+        "name": "Mini-Tutorial: Run Cycle",
+        "path": "14.1_Mini_Tutorial_Run_Cycle.md"
+      },
+      {
+        "name": "Character Animation Tutorials",
+        "path": "14.2_Character_Animation_Tutorials.md"
+      },
+      {
+        "name": "Mini-Tutorial: Idle",
+        "path": "14.3_Mini_Tutorial_Idle.md"
+      },
+      {
+        "name": "Tutorial: Simple Character Rig",
+        "path": "14.4_Tutorial_Simple_Character_Rig.md"
+      },
+      {
+        "name": "Tutorial: Walk Cycle",
+        "path": "14.5_Tutorial_Walk_Cycle.md"
+      },
+      {
+        "name": "Tutorial: Walk Cycle",
+        "path": "14.6_Tutorial_Walk_Cycle.md"
+      },
+      {
+        "name": "Mini-Tutorial: Jumping",
+        "path": "14.7_Mini_Tutorial_Jumping.md"
+      }
+    ]
+  },
+  {
+    "title": "Particles",
+    "parts": [
+      {
+        "name": "Particles",
+        "path": "15_Particles.md"
+      },
+      {
+        "name": "Getting the most out of Cheetah 3D’s Particle System",
+        "path": "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System.md"
+      },
+      {
+        "name": "Instances",
+        "path": "15.2_Instances.md"
+      },
+      {
+        "name": "Using a Particle System as a Source of Objects",
+        "path": "15.3_Using_a_Particle_System_as_a_Source_of_Objects.md"
+      },
+      {
+        "name": "Building Blocks",
+        "path": "15.4_Building_Blocks.md"
+      }
+    ]
+  },
+  {
+    "title": "Dynamics",
+    "parts": [
+      {
+        "name": "Dynamics",
+        "path": "16_Dynamics.md"
+      },
+      {
+        "name": "Introduction to Dynamics",
+        "path": "16.1_Introduction_to_Dynamics.md"
+      },
+      {
+        "name": "Using Dynamics to Model",
+        "path": "16.2_Using_Dynamics_to_Model.md"
+      }
+    ]
+  },
+  {
+    "title": "Mastering Cheetah 3D’s Interface",
+    "parts": [
+      {
+        "name": "Mastering Cheetah 3D’s Interface",
+        "path": "17_Mastering_Cheetah_3D_s_Interface.md"
+      },
+      {
+        "name": "The Object Browser",
+        "path": "17.1_The_Object_Browser.md"
+      },
+      {
+        "name": "Scene Graph Shortcuts",
+        "path": "17.2_Scene_Graph_Shortcuts.md"
+      },
+      {
+        "name": "Parents",
+        "path": "17.3_Parents.md"
+      },
+      {
+        "name": "Children",
+        "path": "17.4_Children.md"
+      },
+      {
+        "name": "Managing Complexity",
+        "path": "17.5_Managing_Complexity.md"
+      },
+      {
+        "name": "Cheetah 3D Under the Hood",
+        "path": "17.6_Cheetah_3D_Under_the_Hood.md"
+      },
+      {
+        "name": "Workflow",
+        "path": "17.7_Workflow.md"
+      },
+      {
+        "name": "Scripts",
+        "path": "17.8_Scripts.md"
+      }
+    ]
+  },
+  {
+    "title": "Appendices",
+    "parts": [
+      {
+        "name": "Appendices",
+        "path": "18_Appendices.md"
+      },
+      {
+        "name": "Glossary",
+        "path": "18.1_Glossary.md"
+      },
+      {
+        "name": "3D File Formats",
+        "path": "18.2_3D_File_Formats.md"
+      },
+      {
+        "name": "Image Formats",
+        "path": "18.3_Image_Formats.md"
+      },
+      {
+        "name": "Video Compression",
+        "path": "18.4_Video_Compression.md"
+      },
+      {
+        "name": "Alpha Channels in Depth",
+        "path": "18.5_Alpha_Channels_in_Depth.md"
+      },
+      {
+        "name": "Faking Motion Blur",
+        "path": "18.6_Faking_Motion_Blur.md"
+      },
+      {
+        "name": "3D Math",
+        "path": "18.7_3D_Math.md"
+      },
+      {
+        "name": "Rendering",
+        "path": "18.8_Rendering.md"
+      }
+    ]
+  }
+]

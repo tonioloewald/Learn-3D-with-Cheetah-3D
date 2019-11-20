@@ -1,0 +1,270 @@
+<!--
+# Fiddle
+Copyright ©2016-2017 Tonio Loewald
+
+Provides an interactive demo for data.source.
+
+If the source includes an HTML close tag `</....>` then it will be treated as a b8r component,
+otherwise it will be treated as pure javascript, which will be passed a reference to bindinator
+as  `b8r` and the output element as `example`.
+
+This is a simple fiddle-like component editor. It would probably be better (and *easier*) to load the
+component into an iframe (which would isolate it from the documentation app) - it's actually kind
+of awesome that this works at all.
+-->
+<style>
+  .fiddle-component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+  }
+
+  .fiddle-component:not(.minimized) {
+    min-height: 228px;
+  }
+
+  .fiddle-component .resizer-component {
+    z-index: 9;
+  }
+
+  .fiddle-header {
+    display: flex;
+    padding: 4px 8px;
+    flex-shrink: 0;
+    background: var(--bright-accent-color);
+    color: var(--text-color);
+    align-items: center;
+  }
+
+  .fiddle-component .refresh {
+    background: none;
+    border: none;
+    opacity: 0.5;
+    color: var(--text-color);
+  }
+
+  .fiddle-component .refresh:hover {
+    opacity: 0.75;
+  }
+
+  .fiddle-component .refresh:active {
+    opacity: 1;
+  }
+
+  .fiddle-component .sizer-component {
+    background: var(--light-accent-color);
+  }
+
+  .fiddle-bodies {
+    min-height: 200px;
+    overflow: hidden;
+    display: flex;
+    background-color: var(--example-bg-color);
+    border: 1px solid var(--bright-accent-color);
+    flex-grow: 1;
+  }
+
+  .fiddle-bodies > * {
+    position: relative;
+    overflow-y: overlay;
+    min-width: 20%;
+    flex: 1 1 auto;
+  }
+
+  .code {
+    font-size: 13px;
+    font-family: Menlo, Monaco, monospace;
+    background-color: #272822;
+    color: #ddd;
+    padding: 4px 8px;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+  }
+
+  .fullscreen .fullscreen-target .b8r-fiddle {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fiddle-component .fiddle-bodies > .resizer-component {
+    background: var(--pullquote-bg-color);
+    margin: 1px;
+  }
+
+  .fiddle-component.minimized .fiddle-bodies,
+  .fiddle-component.minimized .resizer-component {
+    display: none;
+  }
+
+  .fiddle-header [data-selected] {
+    position: relative;
+  }
+
+  .fiddle-component:not(.minimized) .fiddle-header [data-selected]:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -9px;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom: 8px solid var(--example-bg-color);
+    animation: fade-in 0.25s ease-out;
+  }
+</style>
+<div class="fiddle-header">
+  <label title="toggle visibility">
+    <input
+      type="checkbox"
+      class="hidden-checkbox"
+      data-bind="checked=_component_.minimized"
+      tabindex=-1
+    >
+    <span class="show-after-checked icon-eye-blocked2"></span>
+    <span class="show-after-unchecked icon-eye2"></span>
+    &nbsp;
+  </label>
+  <div
+    data-component="selector"
+    data-bind="value=_component_.mode"
+    data-event="change:_component_.reveal"
+  >
+    <span data-value="all">Show All</span>
+    <span data-value="example">Example</span>
+    <span data-value="source">Source</span>
+  </div>
+  <span style="flex-grow: 1"></span>
+  &nbsp;
+  <button
+    data-event="click:_component_.run"
+    class="refresh"
+    title="refresh"
+  >
+    <span class="icon-wrench"></span>
+    Refresh
+  </button>
+  <span data-bind="text=_component_.title"></span>
+</div>
+<div class="fiddle-bodies">
+  <div
+    name="Example"
+    data-bind="hide_if(source)=_component_.mode"
+    data-event="show:_component_.run"
+    style="width: 50%; margin: 10px"
+  ></div>
+  <div
+    data-bind="show_if(all)=_component_.mode"
+    data-component="sizer"
+  ></div>
+  <div
+    name="Source"
+    data-bind="hide_if(example)=_component_.mode"
+    class="code"
+    style="width: 50%"
+    data-event="keydown(Tab):_component_.indent"
+  ></div>
+</div>
+<span data-component="resizer"></span>
+<script>
+/* global findOne, set, b8r, on, data, component, register, ace */
+/* jshint latedef:false */
+
+  const {uuid} = await import('../source/uuid.js');
+  const {viaTag} = await import('../lib/scripts.js');
+  const {ace} = await viaTag('./third-party/ace-src-min-noconflict/ace.js');
+
+  const code_elt = findOne('.code');
+  const container = findOne('[name="Example"]');
+  let editor;
+
+  b8r.component('sizer');
+  b8r.component('resizer');
+  b8r.component('selector');
+  component.classList.add('resizer-target');
+
+  b8r.addDataBinding(component, 'class(minimized)', '_component_.minimized');
+  on('resize', '_component_.resize');
+
+  const init_editor = () => {
+    editor = ace.edit(code_elt);
+    ace.config.set('basePath', '../third-party/ace-src-min-noconflict/');
+    editor.setTheme('ace/theme/monokai');
+    editor.session.setOptions({
+      mode: 'ace/mode/html',
+      tabSize: 2,
+      useSoftTabs: true
+    });
+    editor.resize(true);
+  };
+
+  if(data.source) {
+    code_elt.textContent = data.source;
+    init_editor();
+    setTimeout(run);
+  } else {
+    const path = component.dataset.path || 'hello';
+    b8r.component('fiddle-' + uuid(), path, true).then(c => {
+      set('title', path);
+      code_elt.textContent = c._source.replace(/\t/g, '  ');
+      init_editor();
+      run();
+    });
+  }
+
+  function indent () {
+    if (editor) {
+      return true;
+    }
+    document.execCommand('insertText', false, '  ');
+  }
+
+  let last_code = '';
+  function run() {
+    const source = (editor ? editor.getValue() : code_elt.textContent).trim();
+    if (last_code === source) {
+      return;
+    }
+    b8r.empty(container);
+    last_code = source;
+    if (source.match(/<\w+[^<>]*>/)) {
+      b8r.insertComponent(
+        b8r.makeComponent('fiddle-' + uuid(), source, b8r._path ? `${b8r._path}/` : ''),
+        container
+      );
+      setTimeout(() => editor && editor.resize(true), 1000);
+    } else {
+      const msg = b8r.create('div');
+      try {
+        const f = new Function('b8r', 'example', source); // jshint ignore:line
+        msg.textContent = f(b8r, container) || 'no error';
+      } catch(e) {
+        msg.textContent = '(exception) ' + e;
+      }
+      container.appendChild(msg);
+    }
+  }
+
+  function fullscreen() {
+    if(component.classList.contains('fullscreen')) {
+      component.classList.remove('fullscreen');
+    } else {
+      component.classList.add('fullscreen');
+    }
+  }
+
+  register ({
+    run,
+    fullscreen,
+    indent,
+    reveal: () => {
+      set('minimized', false);
+      run();
+    },
+    resize: () => editor && editor.resize(true),
+    mode: component.dataset.mode || data.mode || 'all',
+    title: 'inline',
+  });
+</script>

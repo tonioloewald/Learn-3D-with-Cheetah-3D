@@ -1,0 +1,46 @@
+<div class="info"></div>
+<div class="example"></div>
+<details style="margin-top: 10px">
+  <summary>Component Data</summary>
+  <pre></pre>
+</details>
+<div class="hidden">
+  <pre>
+    <code style="font-size: 12px; white-space: pre-wrap;" class="language-markup"></code>
+  </pre>
+</div>
+<script>
+/* global b8r, data, findOne */
+  const {md} = await import('../lib/text-render.js');
+  const {domInterval} = await import('../lib/dom-timers.js');
+  const {viaTag} = await import('../lib/scripts.js');
+  const {Prism} = await viaTag('third-party/prism.min.js');
+
+  const code = findOne('code');
+  const info = findOne('.info');
+  const example = findOne('.example');
+  const pre = findOne('pre');
+
+  b8r.component('./path-browser');
+  b8r.component(data.url, undefined, true).
+  then(c => {
+    b8r.insertComponent(c, example).then(() => {
+      b8r.addDataBinding(pre, 'json', example.dataset.componentId);
+      domInterval(pre, () => b8r.bindAll(pre), 1000);
+    });
+    var docs_md, source;
+    if (c._source.indexOf('<!--') === 0) {
+      [docs_md, source] = c._source.substr(4).split('-->');
+    } else {
+      docs_md = `# ${data.url}`;
+      source = c._source;
+    }
+    if(docs_md) {
+      md(info, docs_md);
+    }
+    code.textContent = source.replace(/\t/g, '  ');
+    code.closest('.hidden').classList.remove('hidden');
+    Prism.highlightElement(code);
+    b8r.show(code.closest('div'));
+  });
+</script>

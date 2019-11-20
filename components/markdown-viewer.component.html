@@ -1,0 +1,26 @@
+<!-- Copyright ©2016-2017 Tonio Loewald -->
+<div data-component="loading"></div>
+<script>
+/*global component, data, b8r */
+
+  const {md} = await import('../lib/text-render.js');
+  const {basepath, url} = data;
+
+  const loading = await b8r.component('loading');
+  await b8r.component('fiddle');
+
+  if (data.content) {
+    md(component, data.content);
+  } else if (data.url) {
+    let content = await b8r.ajax(basepath ? basepath + url : url);
+    if (basepath) {
+      content = content.replace(
+        /(\[.*?\]\()(.*?\))/g, 
+        (_, caption, link, ...args) => {
+          return link.match(/^\w+:|^\//) ? caption + link : caption + basepath + link
+        }
+      )
+    }
+    md(component, content);
+  }
+</script>

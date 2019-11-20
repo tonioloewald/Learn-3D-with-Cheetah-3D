@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="./favicon.png">
+  <link rel="apple-touch-icon" href="./favicon.png">
+  <title>Learn 3D with Cheetah 3D v7</title>
+  <link rel="stylesheet" type="text/css" href="style/c3dbook.css">
+  <link rel="stylesheet" type="text/css" href="icomoon/style.css">
+</head>
+<body>
+  <h1 data-bind="text=app.message"></h1>
+  <input data-bind="value=app.message">
+  <button data-event="click:app.speak">Speak</button>
+  <b8r-component 
+    path="components/documentation"
+    data-logo-path="logo.png"
+    data-default-path="2_Introduction.md"
+    data-basepath="./docs/"
+    data-source-files='./docs/documentation.json'
+  ></b8r-component>
+  <script type="module">
+    import b8r from './node_modules/@tonioloewald/b8r/source/b8r.js'
+  </script>
+</body>
+</html>

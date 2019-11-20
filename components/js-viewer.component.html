@@ -1,0 +1,24 @@
+<!-- Copyright ©2016-2017 Tonio Loewald -->
+<details>
+  <summary>
+    Source Code
+  </summary>
+  <pre>
+    <code
+      style="font-size: 12px; white-space: pre-wrap;"
+    ></code>
+  </pre>
+</details>
+<script>
+/* global findOne, b8r, data */
+  const codeElt = findOne('code');
+  const {code} = await import('../lib/text-render.js');
+
+  if(data.source) {
+    code(codeElt, data.source.split('\n').filter(s => s.trim()).join('\n'), 'js');
+  } else if (data.url) {
+    b8r.component('loading').
+    then(() => b8r.ajax(data.url)).
+    then(source => code(codeElt, source, 'js'));
+  }
+</script>

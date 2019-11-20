@@ -1,0 +1,364 @@
+<!--
+# Documentation
+
+b8r's self-hosted documentation used to be a bespoke page. Now it's a component.
+-->
+<style>
+  .documentation-component {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /*
+    display: grid;
+    grid-template-columns: 10px 180px auto auto 180px 0;
+    grid-template-rows: 64px auto 32px;
+    */
+    background-color: var(--bg-color);
+  }
+
+  .documentation-component > * {
+    position: absolute;
+    transition: 0.25s ease-out;
+  }
+
+  .documentation-component > .nav {
+    top: 0;
+    left: 10px;
+    bottom: 0;
+    width: 180px;
+    padding: 10px 0;
+    background-color: var(--bright-accent-color);
+    box-shadow: -10px 0 0 0 var(--bright-accent-color);
+    overflow-y: scroll;
+    overflow-y: overlay;
+    text-align: right;
+  }
+
+  .documentation-component > .content {
+    top: 0;
+    left: 190px;
+    right: 0;
+    bottom: 0;
+    background: white;
+    min-height: 100vh;
+  }
+
+  .documentation-component > .content {
+    padding: 0;
+    background: var(--content-bg-color);
+    overflow-y: scroll;
+    overflow-y: overlay;
+  }
+
+  .documentation-component > .content > *,
+  .documentation-component > .nav > * {
+    max-width: 100%;
+    margin: 6px 12px;
+  }
+
+  .documentation-component > .nav > * {
+    margin-left: auto;
+    width: 160px;
+    text-align: left;
+  }
+
+  .documentation-component > .nav ::-webkit-details-marker {
+    color: var(--accent-color);
+  }
+
+  .documentation-component > .content details {
+    border: 1px solid var(--bright-accent-color);
+    padding: 0 5px;
+  }
+
+  .documentation-component > .content details > pre {
+    margin: 0 -5px;
+    border-radius: 0;
+  }
+
+  .documentation-component > .content summary {
+    margin: 0 -5px;
+    padding: 6px 12px;
+    color: var(--text-color);
+    background: var(--bright-accent-color);
+    cursor: pointer;
+  }
+
+  .documentation-component > .nav summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--faded-text-color);
+    font-size: 12px;
+  }
+
+  .documentation-component > .nav details[open] summary ~ * {
+    animation: fade-in 0.25s ease-out;
+  }
+
+  .content h1,
+  .content h2,
+  .content h3,
+  .content h4,
+  .content h5,
+  .content h6,
+  .content p,
+  .content blockquote,
+  .content ul,
+  .content ol {
+    max-width: 600px;
+  }
+
+  .content pre,
+  .content pre code {
+    background: #272822;
+    color: #eee;
+  }
+
+  .content h1,
+  .content h2,
+  .content h3 {
+    margin-top: 16px;
+  }
+
+  .content h4,
+  .content h5,
+  .content h6 {
+    margin-top: 8px;
+  }
+
+  .content blockquote {
+    margin: 8px 0;
+    padding: 5px 10px 10px 10px;
+    border-radius: 2px;
+    background: var(--pullquote-bg-color);
+    border-radius: 6px;
+  }
+
+  .content blockquote h2,
+  .content blockquote h3,
+  .content blockquote p {
+    margin-left: 10px;
+    padding: 0;
+  }
+
+  .loadable {
+    padding: 2px 8px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    margin: 0 -12px;
+    transition: background-color ease-out 0.1s;
+  }
+
+  .loadable:hover {
+    background-color: var(--white-50);
+  }
+
+  .loadable.current {
+    padding: 3px 8px 3px 4px;
+    margin: -1px -12px -1px -8px;
+    background-color: var(--content-bg-color);
+  }
+
+  ._component_ :not([open]) > summary.hasErrors:after,
+  ._component_ .loadable.hasErrors:after {
+    content: " ";
+    display: inline-block;
+    border-radius: 99px;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    vertical-align: baseline;
+    animation: error-blink 2s infinite ease-in-out;
+  }
+  
+  .content img {
+    max-width: 100%;
+  }
+
+  @keyframes error-blink {
+    0% {
+      background-color: rgba(255,0,0,0);
+    }
+
+    50% {
+      background-color: rgba(255,0,0,1);
+    }
+
+    100% {
+      background-color: rgba(255,0,0,0);
+    }
+  }
+</style>
+<div class="content"></div>
+<div class="nav">
+  <div style="text-align: center;">
+    <img
+      alt="bindinator logo"
+      style="max-width: 60%"
+      data-bind="img=_component_.logoPath"
+    >
+  </div>
+  <b8r-component 
+    data-placeholder="search docs"
+    path="./components/search-field"
+    data-bind="value=_component_.searchFilter"
+    data-event="input,change:_component_.filterDocs"
+  ></b8r-component>
+  <details
+    data-list="_component_.docs:title"
+    data-bind="hide_if=._hide;prop(open)=._open"
+    data-event="click:_component_.toggle"
+  >
+    <summary data-bind="text=.title;class(hasErrors)=.hasErrors">Title</summary>
+    <div
+      class="loadable"
+      data-list=".parts"
+      data-bind="text=.name;data(ref)=.path;hide_if=._hide;class(current)=._current;class(hasErrors)=.hasErrors"
+      data-event="click,keydown(Space):documentation-controller.showDocs"
+      tabindex="0"
+    >
+      File Name
+    </div>
+  </details>
+</div>
+<script>
+/* jshint latedef:false */
+/* global b8r, alert, component, set, findOne */
+
+  const windows = await import('../lib/windows.js');
+  const {configuredTest} = await import('../lib/test.js');
+  set('logoPath', component.dataset.logoPath || 'images/bindinator-logo-notext-mono.svg')
+  const defaultPath = component.dataset.defaultPath || 'README.md'
+
+  var content = findOne('.content');
+  const nav = findOne('.nav');
+  set({
+    year: new Date().getFullYear(),
+    searchFilter: '',
+    filterDocs: b8r.debounce(() => {
+      const docs = get('docs')
+      const searchField = get('searchFilter').toLocaleLowerCase()
+      const isFiltered = !!searchField
+      docs.forEach(section => {
+        section._hide = isFiltered
+        section.parts.forEach(part => {
+          part._hide = isFiltered && !part.name.toLocaleLowerCase().includes(searchField)
+          if (!part._hide) section._hide = false
+        })
+        section._open = isFiltered ? !section._hide : section.parts.find(part => part._current)
+      })
+      set({docs})
+    }),
+    toggle (evt, details) {
+      const {title} = b8r.getListInstance(details);
+      get('docs').forEach(doc => doc._open = doc.title === title ? !doc._open : false)
+      touch('docs')
+    }
+  });
+
+  function markCurrent() {
+    b8r.afterUpdate(() => {
+      const path = window.location.hash.split('=').pop();
+      get('docs').forEach(section => {
+        section.parts.forEach(part => {
+          part._current = part.path === path
+          if (part._current) section._open = true
+        })
+      })
+      touch('docs')
+    });
+  }
+
+  b8r.register('documentation-controller', {
+    showDocs: function(evt) {
+      if (evt.target.matches('.current')) {
+        return;
+      }
+      const part = b8r.getListInstance(evt.target) || {path: defaultPath};
+      if (evt.metaKey && part.path.endsWith('.component.html')) {
+        const component_name = part.path.split('.').shift();
+        const {origin, pathname} = window.location;
+        const url = `${origin}${pathname}#body=components/${component_name}`;
+        windows.open(url, {width: 800, height: 450});
+      } else {
+        window.location.hash = 'source=' + part.path;
+      }
+    },
+    alertKeystroke: evt => alert(b8r.keystroke(evt)),
+  });
+
+  // in the background, we're going to run every test block in every library
+  const AsyncFunction = (async () => {}).constructor
+  const runTests = async (sectionTitle, partIdx) => {
+    const path = get(`docs[title=${sectionTitle}].parts[${partIdx}].path`)
+    if (path.endsWith('.js')) {
+      const source = await b8r.ajax(path)
+      const tests = source.split('~~~~').filter((_, idx) => idx % 2)
+      tests.forEach(testSource => {
+        const t = new AsyncFunction('Test', 'b8r', testSource + `////# sourceURL=${path}`)
+        try {
+          t.call(null, configuredTest({
+            onError: () => {
+              set(`docs[title=${sectionTitle}].hasErrors`, true);
+              set(`docs[title=${sectionTitle}].parts[${partIdx}].hasErrors`, true);
+            },
+            reportContainer: document.createElement('div'),
+          }), b8r);
+        } catch (_) {
+          set(`docs[title=${sectionTitle}].hasErrors`, true);
+          set(`docs[title=${sectionTitle}].parts[${partIdx}].hasErrors`, true);
+        }
+      });
+    }     
+  }
+
+  const {basepath} = component.dataset;
+  
+  b8r.json(component.dataset.sourceFiles || 'documentation.json')
+     .then(data => {
+        const docs = data.version ? docs.contents : data;
+        docs.forEach(section => {
+          if (section.sort) {
+            section.parts.sort((a, b) => a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase() ? 1 : -1)
+          }
+        });
+        set({docs});
+        update();
+
+        docs.forEach(section => section.parts.forEach((part, idx) => runTests(section.title, idx)))
+      });
+
+  var last_component_path;
+  function update() {
+    var component_path = window.location.hash.substr(1).split('?')[0];
+    if(component_path === last_component_path) {
+      // ignoring hash change within component
+      return;
+    }
+    last_component_path = component_path;
+    var pairs = component_path.split('&').map(pair => {
+      var [key, value] = pair.split('=');
+      return {key, value};
+    });
+    var {key, value} = pairs[0];
+    if (key && value) {
+      b8r.component('file-viewer').then(viewer => {
+        b8r.removeComponent(content);
+        b8r.insertComponent(viewer, content, {
+          basepath,
+          url: value
+        });
+        findOne('.content').scrollTop = 0;
+      });
+    } else {
+      // FIXME don't do this, behave as though there's a default hash so history behaves nicely
+      b8r.trigger('click', b8r.findOne('.loadable'));
+    }
+
+    markCurrent();
+  }
+
+  window.addEventListener('hashchange', update);
+</script>

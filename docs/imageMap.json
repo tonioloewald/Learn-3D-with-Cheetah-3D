@@ -1,0 +1,2198 @@
+{
+  "cover%20design%203rd%20edition.jpg": [
+    "0_Front_Matter"
+  ],
+  "pastedGraphic-4.jpg": [
+    "2_Introduction"
+  ],
+  "DraggedImage.jpg": [
+    "2.1_Why_Learn_3D_Graphics"
+  ],
+  "pastedGraphic-3.jpg": [
+    "2.2_Why_Cheetah_3D"
+  ],
+  "page10image8064.jpg": [
+    "2.3_3D_in_a_nutshell"
+  ],
+  "DraggedImage-1.jpg": [
+    "2.3_3D_in_a_nutshell"
+  ],
+  "Screen%20Shot%202016-07-09%20at%204.38.51%20PM.jpg": [
+    "3_What_s_new_in_Cheetah_3D_7"
+  ],
+  "Screen%20Shot%202016-07-09%20at%204.40.45%20PM.jpg": [
+    "3_What_s_new_in_Cheetah_3D_7"
+  ],
+  "Screen%20Shot%202016-06-04%20at%208.31.44%20PM.jpg": [
+    "3_What_s_new_in_Cheetah_3D_7"
+  ],
+  "Screen%20Shot%202016-06-04%20at%208.31.48%20PM.jpg": [
+    "3_What_s_new_in_Cheetah_3D_7"
+  ],
+  "Screen%20Shot%202014-07-01%20at%209.32.53%20AM.jpg": [
+    "4.2_Primitives_Basic_3D_Objects"
+  ],
+  "Screen%20Shot%202014-07-01%20at%209.32.40%20AM.jpg": [
+    "4.2_Primitives_Basic_3D_Objects"
+  ],
+  "Screen%20Shot%202014-07-01%20at%209.32.30%20AM.jpg": [
+    "4.2_Primitives_Basic_3D_Objects"
+  ],
+  "DraggedImage-2.jpg": [
+    "4.3_The_Properties_Panel"
+  ],
+  "DraggedImage-3.jpg": [
+    "4.3_The_Properties_Panel"
+  ],
+  "DraggedImage-4.jpg": [
+    "4.3_The_Properties_Panel"
+  ],
+  "DraggedImage-5.jpg": [
+    "4.3_The_Properties_Panel"
+  ],
+  "Screen%20Shot%202014-07-06%20at%206.05.24%20PM.jpg": [
+    "4.4_Selecting_and_Moving_Objects"
+  ],
+  "DraggedImage-6.jpg": [
+    "4.4_Selecting_and_Moving_Objects"
+  ],
+  "Screen%20Shot%202014-07-06%20at%206.16.20%20PM.jpg": [
+    "4.4_Selecting_and_Moving_Objects"
+  ],
+  "DraggedImage-7.jpg": [
+    "4.4_Selecting_and_Moving_Objects"
+  ],
+  "DraggedImage-8.jpg": [
+    "4.4_Selecting_and_Moving_Objects"
+  ],
+  "DraggedImage-9.jpg": [
+    "4.5_Meshes"
+  ],
+  "DraggedImage-10.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-11.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-12.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-13.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "Screen%20Shot%202014-07-06%20at%204.32.01%20PM.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "Screen%20Shot%202014-07-06%20at%204.32.12%20PM.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "Screen%20Shot%202014-07-06%20at%204.34.29%20PM.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "Screen%20Shot%202014-07-06%20at%204.34.38%20PM.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "Screen%20Shot%202014-07-06%20at%204.43.44%20PM.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-14.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-15.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-16.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-17.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-18.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-19.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-20.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-21.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-22.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-23.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-24.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-25.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-26.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-27.jpg": [
+    "4.6_Editing_Meshes_Core_Polygon_Tools"
+  ],
+  "DraggedImage-28.jpg": [
+    "4.9_Mesh_Smoothing"
+  ],
+  "DraggedImage-29.jpg": [
+    "4.9_Mesh_Smoothing"
+  ],
+  "DraggedImage-30.jpg": [
+    "4.10_Creators"
+  ],
+  "DraggedImage-31.jpg": [
+    "4.10_Creators"
+  ],
+  "DraggedImage-32.jpg": [
+    "4.10_Creators"
+  ],
+  "DraggedImage-33.jpg": [
+    "4.10_Creators"
+  ],
+  "DraggedImage-34.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-35.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-36.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-37.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-38.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-39.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-40.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-41.jpg": [
+    "4.11_Materials_Overview"
+  ],
+  "DraggedImage-42.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-43.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-44.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-45.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-46.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-47.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-48.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-49.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "DraggedImage-50.jpg": [
+    "4.12_Lights_and_Lighting"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2010.30.54%20AM.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2010.35.49%20AM.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2010.32.16%20AM.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-51.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-52.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-53.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-54.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-55.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-56.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-57.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-58.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-59.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-60.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-61.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-62.jpg": [
+    "4.13_Image_Based_Lighting"
+  ],
+  "DraggedImage-63.jpg": [
+    "4.14_The_Sky_Light_Object"
+  ],
+  "DraggedImage-64.jpg": [
+    "4.14_The_Sky_Light_Object"
+  ],
+  "DraggedImage-65.jpg": [
+    "4.14_The_Sky_Light_Object"
+  ],
+  "DraggedImage-66.jpg": [
+    "4.15_Rendering"
+  ],
+  "DraggedImage-67.jpg": [
+    "4.15_Rendering"
+  ],
+  "DraggedImage-68.jpg": [
+    "4.15_Rendering"
+  ],
+  "DraggedImage-69.jpg": [
+    "4.16_Camera_Objects"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2011.14.03%20AM.jpg": [
+    "4.16_Camera_Objects"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2011.14.12%20AM.jpg": [
+    "4.16_Camera_Objects"
+  ],
+  "DraggedImage-70.jpg": [
+    "4.16_Camera_Objects"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2011.12.20%20AM.jpg": [
+    "4.16_Camera_Objects"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2011.12.31%20AM.jpg": [
+    "4.16_Camera_Objects"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2011.13.00%20AM.jpg": [
+    "4.16_Camera_Objects"
+  ],
+  "DraggedImage-71.jpg": [
+    "5_Just_Enough_to_be_Dangerous"
+  ],
+  "DraggedImage-72.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.11.20%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.10.28%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.18.29%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.01.27%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-12-01%20at%2010.22.26%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.24.28%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.19.52%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.28.35%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.53.06%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.47.29%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.46.51%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.53.06%20AM-1.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.48.44%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.48.36%20AM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-73.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%209.50.21%20PM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "e51b8d01-6288-4706-95b5-320042bb9685-page11image400.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%2010.00.24%20PM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-74.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-75.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-76.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-77.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-78.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-79.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-80.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "Screen%20Shot%202016-11-28%20at%2010.03.38%20PM.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-81.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-82.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "DraggedImage-83.jpg": [
+    "5.2_User_Interface_Overview"
+  ],
+  "pastedGraphic-13.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-14.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-15.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-16.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-17.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-18.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-19.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-20.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-21.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-22.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-23.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-24.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-25.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-26.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-27.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-28.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-29.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-30.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-31.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-32.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-33.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-34.jpg": [
+    "6.1_Making_a_Mug"
+  ],
+  "pastedGraphic-35.jpg": [
+    "6.2_Modeling_a_Biplane"
+  ],
+  "pastedGraphic-36.jpg": [
+    "6.2_Modeling_a_Biplane"
+  ],
+  "pastedGraphic-37.jpg": [
+    "6.2_Modeling_a_Biplane"
+  ],
+  "pastedGraphic-38.jpg": [
+    "6.2_Modeling_a_Biplane"
+  ],
+  "pastedGraphic-39.jpg": [
+    "6.2_Modeling_a_Biplane"
+  ],
+  "pastedGraphic-40.jpg": [
+    "6.2_Modeling_a_Biplane"
+  ],
+  "pastedGraphic-41.jpg": [
+    "7.1_Mini_Tutorial_3D_Text"
+  ],
+  "pastedGraphic-42.jpg": [
+    "7.2_Package_Mockup"
+  ],
+  "pastedGraphic-119.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-120.jpg": [
+    "8_Modeling"
+  ],
+  "bolts.jpg": [
+    "8_Modeling"
+  ],
+  "DraggedImage-84.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-121.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-122.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-123.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-124.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-125.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-126.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-127.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-128.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-129.jpg": [
+    "8_Modeling"
+  ],
+  "pastedGraphic-171.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-172.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-173.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-174.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-175.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-176.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-177.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-178.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-179.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "pastedGraphic-180.jpg": [
+    "8.1_Model_Sheets_Blueprints"
+  ],
+  "DraggedImage-85.jpg": [
+    "8.2_Symmetry"
+  ],
+  "Screenshot%202014-02-13%2010.14.43.jpg": [
+    "8.2_Symmetry"
+  ],
+  "pastedGraphic-181.jpg": [
+    "8.2_Symmetry"
+  ],
+  "pastedGraphic-182.jpg": [
+    "8.2_Symmetry"
+  ],
+  "pastedGraphic-183.jpg": [
+    "8.2_Symmetry"
+  ],
+  "pastedGraphic-184.jpg": [
+    "8.2_Symmetry"
+  ],
+  "pastedGraphic-191.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-192.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-193.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-194.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-195.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-196.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-197.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-198.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-199.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-200.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-201.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-202.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-203.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-204.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-205.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-206.jpg": [
+    "8.4_Modeling_Tricks_Techniques"
+  ],
+  "pastedGraphic-185.jpg": [
+    "8.5_Subdivision_Surfaces"
+  ],
+  "pastedGraphic-186.jpg": [
+    "8.5_Subdivision_Surfaces"
+  ],
+  "pastedGraphic-187.jpg": [
+    "8.5_Subdivision_Surfaces"
+  ],
+  "pastedGraphic-188.jpg": [
+    "8.5_Subdivision_Surfaces"
+  ],
+  "pastedGraphic-189.jpg": [
+    "8.5_Subdivision_Surfaces"
+  ],
+  "pastedGraphic-190.jpg": [
+    "8.5_Subdivision_Surfaces"
+  ],
+  "pastedGraphic-130.jpg": [
+    "8.6_What_is_a_mesh"
+  ],
+  "pastedGraphic-131.jpg": [
+    "8.6_What_is_a_mesh"
+  ],
+  "pastedGraphic-132.jpg": [
+    "8.6_What_is_a_mesh"
+  ],
+  "pastedGraphic-133.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-134.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-135.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-136.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-137.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-138.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-139.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-140.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-141.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-142.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-143.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-144.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-145.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-146.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-147.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-148.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-149.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-150.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-151.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-152.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-153.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-154.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-155.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-156.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-157.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-158.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-159.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-160.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-161.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-162.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-163.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-164.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-165.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-166.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-167.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-168.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-169.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-170.jpg": [
+    "8.8_Polygon_Box_Modeling"
+  ],
+  "pastedGraphic-232.jpg": [
+    "8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact"
+  ],
+  "booleans-annotated.jpg": [
+    "8.11_Creators"
+  ],
+  "boolean-mesh.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-208.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-209.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-210.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-211.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-212.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-213.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-214.jpg": [
+    "8.11_Creators"
+  ],
+  "pastedGraphic-207.jpg": [
+    "9_Creators_Modifiers_Tags"
+  ],
+  "pastedGraphic-215.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-216.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-217.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-218.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-219.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-220.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-221.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-222.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-223.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-224.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-225.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-226.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-227.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-228.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-229.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-230.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-231.jpg": [
+    "9.1_Modifiers"
+  ],
+  "pastedGraphic-233.jpg": [
+    "9.3_Tags"
+  ],
+  "DraggedImage-86.jpg": [
+    "9.3_Tags"
+  ],
+  "DraggedImage-87.jpg": [
+    "9.3_Tags"
+  ],
+  "DraggedImage-88.jpg": [
+    "9.3_Tags"
+  ],
+  "DraggedImage-89.jpg": [
+    "9.3_Tags"
+  ],
+  "DraggedImage-90.jpg": [
+    "9.3_Tags"
+  ],
+  "Screenshot%202014-02-13%2009.41.56.jpg": [
+    "9.3_Tags"
+  ],
+  "DraggedImage-91.jpg": [
+    "9.3_Tags"
+  ],
+  "pastedGraphic-234.jpg": [
+    "9.3_Tags"
+  ],
+  "pastedGraphic-235.jpg": [
+    "9.3_Tags"
+  ],
+  "pastedGraphic-236.jpg": [
+    "9.3_Tags"
+  ],
+  "pastedGraphic-237.jpg": [
+    "9.3_Tags"
+  ],
+  "pastedGraphic-238.jpg": [
+    "10_Materials"
+  ],
+  "pastedGraphic-239.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-240.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-241.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-242.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-243.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-244.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-245.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-246.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-247.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-248.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-249.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-250.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-251.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-252.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-253.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-254.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-255.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-256.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-257.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-258.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-259.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-260.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-261.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-262.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-263.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-264.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-265.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-266.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-267.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-268.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-269.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-270.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-271.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-272.jpg": [
+    "10.1_Simple_Materials_Without_Nodes"
+  ],
+  "pastedGraphic-273.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-274.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-275.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-276.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-277.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-278.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-279.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-280.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-281.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-282.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-283.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-284.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-285.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-286.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-287.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-288.jpg": [
+    "10.2_Image_based_Materials"
+  ],
+  "pastedGraphic-294.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "pastedGraphic-295.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "pastedGraphic-296.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "pastedGraphic-297.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "pastedGraphic-298.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "pastedGraphic-299.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "pastedGraphic-300.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "DraggedImage-92.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "DraggedImage-93.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "DraggedImage-94.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "DraggedImage-95.jpg": [
+    "10.3_Transparent_Materials"
+  ],
+  "Screen%20Shot%202014-07-06%20at%205.22.09%20PM.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "Screen%20Shot%202014-07-06%20at%205.25.48%20PM.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-315.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-316.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-317.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-318.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-319.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-320.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-321.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "DraggedImage-96.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-322.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-323.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-324.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "Screen%20Shot%202014-07-06%20at%205.31.46%20PM.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "Screen%20Shot%202014-07-06%20at%205.32.45%20PM.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "Screen%20Shot%202014-07-06%20at%205.28.52%20PM.jpg": [
+    "10.4_Understanding_Nodes"
+  ],
+  "pastedGraphic-327.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-328.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-329.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-330.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-331.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-332.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-333.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-334.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-335.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-336.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-337.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-338.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-339.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-340.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-341.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-342.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-343.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-344.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-345.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-346.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-347.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-348.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-349.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-350.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-351.jpg": [
+    "10.5_Building_Procedural_Materials"
+  ],
+  "pastedGraphic-289.jpg": [
+    "10.6_Reflective_Materials"
+  ],
+  "pastedGraphic-290.jpg": [
+    "10.6_Reflective_Materials"
+  ],
+  "pastedGraphic-291.jpg": [
+    "10.6_Reflective_Materials"
+  ],
+  "pastedGraphic-292.jpg": [
+    "10.6_Reflective_Materials"
+  ],
+  "pastedGraphic-293.jpg": [
+    "10.6_Reflective_Materials"
+  ],
+  "rMTDU.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "GGMmw.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "X0trw.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-396.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-310.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-311.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-312.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-313.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-314.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-397.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-398.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-399.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-400.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-401.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-402.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-403.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-404.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-405.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-406.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-407.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-408.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-409.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "0d6e6d62-def8-4a3e-8643-1d9373eaabbe-Screen%20Shot%202013-04-27%20at%208.43.14%20PM.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "Screen%20Shot%202013-04-27%20at%208.50.07%20PM.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "shirt%20render.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-410.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-411.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-412.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-413.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-414.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-415.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-416.jpg": [
+    "10.7_UV_Mapping"
+  ],
+  "pastedGraphic-305.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-306.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-352.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-353.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-354.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-355.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-356.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-357.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-358.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-359.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-360.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-361.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-362.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-388.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-389.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-390.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-391.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-392.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-393.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-394.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-395.jpg": [
+    "10.8_How_Materials_Work"
+  ],
+  "pastedGraphic-325.jpg": [
+    "10.9_Node_Descriptions"
+  ],
+  "pastedGraphic-326.jpg": [
+    "10.9_Node_Descriptions"
+  ],
+  "pastedGraphic-363.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-364.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-365.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-366.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-367.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-368.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-369.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-370.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-371.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-372.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-373.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-374.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-375.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-376.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-377.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-378.jpg": [
+    "10.10_Faking_It"
+  ],
+  "pastedGraphic-379.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-380.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-381.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-382.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-383.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-384.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-385.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-386.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-387.jpg": [
+    "10.11_The_Math_of_Material_Nodes"
+  ],
+  "pastedGraphic-432.jpg": [
+    "10.12_How_Lights_Work"
+  ],
+  "pastedGraphic-433.jpg": [
+    "10.12_How_Lights_Work"
+  ],
+  "pastedGraphic-434.jpg": [
+    "10.12_How_Lights_Work"
+  ],
+  "pastedGraphic-435.jpg": [
+    "10.12_How_Lights_Work"
+  ],
+  "pastedGraphic-436.jpg": [
+    "10.12_How_Lights_Work"
+  ],
+  "pastedGraphic-437.jpg": [
+    "10.12_How_Lights_Work"
+  ],
+  "pastedGraphic-438.jpg": [
+    "10.13_Other_Lighting_Options"
+  ],
+  "pastedGraphic-439.jpg": [
+    "10.13_Other_Lighting_Options"
+  ],
+  "pastedGraphic-440.jpg": [
+    "10.13_Other_Lighting_Options"
+  ],
+  "pastedGraphic-441.jpg": [
+    "10.13_Other_Lighting_Options"
+  ],
+  "pastedGraphic-442.jpg": [
+    "10.13_Other_Lighting_Options"
+  ],
+  "pastedGraphic-443.jpg": [
+    "10.13_Other_Lighting_Options"
+  ],
+  "pastedGraphic-444.jpg": [
+    "10.14_Shadows"
+  ],
+  "pastedGraphic-445.jpg": [
+    "10.14_Shadows"
+  ],
+  "pastedGraphic-446.jpg": [
+    "10.14_Shadows"
+  ],
+  "pastedGraphic-447.jpg": [
+    "10.15_Advanced_Lighting"
+  ],
+  "pastedGraphic-448.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-449.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-450.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-451.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-452.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-453.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-454.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-455.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-456.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-457.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-458.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-459.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-460.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-461.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-462.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-463.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-464.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-465.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-466.jpg": [
+    "10.16_Caustics"
+  ],
+  "pastedGraphic-467.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-468.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-469.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-470.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-471.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-472.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-473.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-474.jpg": [
+    "10.17_Foolproof_Shadow_Catchers"
+  ],
+  "pastedGraphic-429.jpg": [
+    "11_Lighting"
+  ],
+  "pastedGraphic-430.jpg": [
+    "11_Lighting"
+  ],
+  "pastedGraphic-431.jpg": [
+    "11_Lighting"
+  ],
+  "pastedGraphic-537.jpg": [
+    "12_Rendering"
+  ],
+  "pastedGraphic-538.jpg": [
+    "12_Rendering"
+  ],
+  "pastedGraphic-539.jpg": [
+    "12.1_The_Camera_Object"
+  ],
+  "pastedGraphic-540.jpg": [
+    "12.1_The_Camera_Object"
+  ],
+  "pastedGraphic-541.jpg": [
+    "12.2_Projection_Settings"
+  ],
+  "pastedGraphic-542.jpg": [
+    "12.2_Projection_Settings"
+  ],
+  "pastedGraphic-543.jpg": [
+    "12.2_Projection_Settings"
+  ],
+  "pastedGraphic-544.jpg": [
+    "12.2_Projection_Settings"
+  ],
+  "pastedGraphic-545.jpg": [
+    "12.2_Projection_Settings"
+  ],
+  "pastedGraphic-546.jpg": [
+    "12.2_Projection_Settings"
+  ],
+  "pastedGraphic-547.jpg": [
+    "12.2_Projection_Settings"
+  ],
+  "pastedGraphic-548.jpg": [
+    "12.3_The_Render_Tag"
+  ],
+  "pastedGraphic-549.jpg": [
+    "12.3_The_Render_Tag"
+  ],
+  "pastedGraphic-550.jpg": [
+    "12.3_The_Render_Tag"
+  ],
+  "pastedGraphic-551.jpg": [
+    "12.3_The_Render_Tag"
+  ],
+  "pastedGraphic-565.jpg": [
+    "12.4_Dealing_with_Reality"
+  ],
+  "pastedGraphic-566.jpg": [
+    "12.4_Dealing_with_Reality"
+  ],
+  "pastedGraphic-567.jpg": [
+    "12.4_Dealing_with_Reality"
+  ],
+  "pastedGraphic-568.jpg": [
+    "12.4_Dealing_with_Reality"
+  ],
+  "pastedGraphic-569.jpg": [
+    "12.4_Dealing_with_Reality"
+  ],
+  "pastedGraphic-570.jpg": [
+    "12.4_Dealing_with_Reality"
+  ],
+  "pastedGraphic-571.jpg": [
+    "12.4_Dealing_with_Reality"
+  ],
+  "pastedGraphic-591.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-592.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-593.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-594.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-595.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-596.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-597.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-598.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-599.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-600.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-601.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-602.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-603.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-604.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-605.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-606.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-607.jpg": [
+    "12.5_Simple_Render_Setups"
+  ],
+  "pastedGraphic-608.jpg": [
+    "12.6_Rendering_Panoramas"
+  ],
+  "pastedGraphic-609.jpg": [
+    "12.6_Rendering_Panoramas"
+  ],
+  "pastedGraphic-613.jpg": [
+    "12.7_Rendering_a_Sky_Box"
+  ],
+  "pastedGraphic-552.jpg": [
+    "12.8_How_Raytracing_Works"
+  ],
+  "pastedGraphic-553.jpg": [
+    "12.9_Environments"
+  ],
+  "pastedGraphic-554.jpg": [
+    "12.9_Environments"
+  ],
+  "pastedGraphic-555.jpg": [
+    "12.9_Environments"
+  ],
+  "pastedGraphic-556.jpg": [
+    "12.9_Environments"
+  ],
+  "pastedGraphic-557.jpg": [
+    "12.9_Environments"
+  ],
+  "pastedGraphic-558.jpg": [
+    "12.9_Environments"
+  ],
+  "pastedGraphic-559.jpg": [
+    "12.9_Environments"
+  ],
+  "pastedGraphic-560.jpg": [
+    "12.10_Rendering_Reflected_Lights"
+  ],
+  "pastedGraphic-561.jpg": [
+    "12.10_Rendering_Reflected_Lights"
+  ],
+  "pastedGraphic-562.jpg": [
+    "12.10_Rendering_Reflected_Lights"
+  ],
+  "pastedGraphic-563.jpg": [
+    "12.10_Rendering_Reflected_Lights"
+  ],
+  "pastedGraphic-564.jpg": [
+    "12.10_Rendering_Reflected_Lights"
+  ],
+  "pastedGraphic-572.jpg": [
+    "12.11_Cartoon_Looks"
+  ],
+  "pastedGraphic-573.jpg": [
+    "12.11_Cartoon_Looks"
+  ],
+  "pastedGraphic-574.jpg": [
+    "12.11_Cartoon_Looks"
+  ],
+  "pastedGraphic-575.jpg": [
+    "12.11_Cartoon_Looks"
+  ],
+  "pastedGraphic-589.jpg": [
+    "12.12_Render_Manager"
+  ],
+  "pastedGraphic-590.jpg": [
+    "12.12_Render_Manager"
+  ],
+  "pastedGraphic-610.jpg": [
+    "12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting"
+  ],
+  "pastedGraphic-611.jpg": [
+    "12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting"
+  ],
+  "pastedGraphic-612.jpg": [
+    "12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting"
+  ],
+  "pastedGraphic-614.jpg": [
+    "12.14_Rendering_Tricks"
+  ],
+  "pastedGraphic-615.jpg": [
+    "12.14_Rendering_Tricks"
+  ],
+  "pastedGraphic-616.jpg": [
+    "12.14_Rendering_Tricks"
+  ],
+  "pastedGraphic-617.jpg": [
+    "12.14_Rendering_Tricks"
+  ],
+  "pastedGraphic-618.jpg": [
+    "12.14_Rendering_Tricks"
+  ],
+  "pastedGraphic-619.jpg": [
+    "12.14_Rendering_Tricks"
+  ],
+  "pastedGraphic-620.jpg": [
+    "12.14_Rendering_Tricks"
+  ],
+  "pastedGraphic-576.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-577.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-578.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-579.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-580.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-581.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-582.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-583.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-584.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-585.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-586.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-587.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-588.jpg": [
+    "12.15_Baking_Materials"
+  ],
+  "pastedGraphic-490.jpg": [
+    "12.16_Path_Animation"
+  ],
+  "pastedGraphic-487.jpg": [
+    "12.17_Tutorial_Animation_Basics"
+  ],
+  "pastedGraphic-488.jpg": [
+    "12.17_Tutorial_Animation_Basics"
+  ],
+  "pastedGraphic-489.jpg": [
+    "12.17_Tutorial_Animation_Basics"
+  ],
+  "pastedGraphic-491.jpg": [
+    "12.18_Forward_Kinematics_Robot_Arm_I"
+  ],
+  "pastedGraphic-492.jpg": [
+    "12.18_Forward_Kinematics_Robot_Arm_I"
+  ],
+  "pastedGraphic-483.jpg": [
+    "12.19_Animation_Concepts"
+  ],
+  "pastedGraphic-484.jpg": [
+    "12.19_Animation_Concepts"
+  ],
+  "pastedGraphic-485.jpg": [
+    "12.19_Animation_Concepts"
+  ],
+  "pastedGraphic-486.jpg": [
+    "12.19_Animation_Concepts"
+  ],
+  "pastedGraphic-493.jpg": [
+    "12.20_Inverse_Kinematics_Robot_Arm_II"
+  ],
+  "pastedGraphic-494.jpg": [
+    "12.20_Inverse_Kinematics_Robot_Arm_II"
+  ],
+  "pastedGraphic-475.jpg": [
+    "13_Animation"
+  ],
+  "pastedGraphic-476.jpg": [
+    "13_Animation"
+  ],
+  "pastedGraphic-477.jpg": [
+    "13_Animation"
+  ],
+  "pastedGraphic-478.jpg": [
+    "13_Animation"
+  ],
+  "pastedGraphic-479.jpg": [
+    "13_Animation"
+  ],
+  "pastedGraphic-480.jpg": [
+    "13_Animation"
+  ],
+  "pastedGraphic-481.jpg": [
+    "13_Animation"
+  ],
+  "pastedGraphic-88.jpg": [
+    "13.1_Animation_Overview"
+  ],
+  "pastedGraphic-89.jpg": [
+    "13.1_Animation_Overview"
+  ],
+  "pastedGraphic-482.jpg": [
+    "13.1_Animation_Overview"
+  ],
+  "pastedGraphic-495.jpg": [
+    "14_Character_Animation"
+  ],
+  "Screen%20Shot%202013-04-28%20at%2011.10.12%20AM.jpg": [
+    "14_Character_Animation"
+  ],
+  "pastedGraphic-496.jpg": [
+    "14.2_Character_Animation_Tutorials"
+  ],
+  "pastedGraphic-497.jpg": [
+    "14.2_Character_Animation_Tutorials"
+  ],
+  "pastedGraphic-498.jpg": [
+    "14.2_Character_Animation_Tutorials"
+  ],
+  "pastedGraphic-499.jpg": [
+    "14.2_Character_Animation_Tutorials"
+  ],
+  "pastedGraphic-500.jpg": [
+    "14.2_Character_Animation_Tutorials"
+  ],
+  "pastedGraphic-501.jpg": [
+    "14.2_Character_Animation_Tutorials"
+  ],
+  "pastedGraphic-523.jpg": [
+    "14.3_Mini_Tutorial_Idle"
+  ],
+  "pastedGraphic-524.jpg": [
+    "14.3_Mini_Tutorial_Idle"
+  ],
+  "pastedGraphic-525.jpg": [
+    "14.3_Mini_Tutorial_Idle"
+  ],
+  "pastedGraphic-502.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-503.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-504.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-505.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-506.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-507.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-508.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-509.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-510.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-511.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-512.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-513.jpg": [
+    "14.4_Tutorial_Simple_Character_Rig"
+  ],
+  "pastedGraphic-514.jpg": [
+    "14.5_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-515.jpg": [
+    "14.5_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-516.jpg": [
+    "14.5_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-517.jpg": [
+    "14.5_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-518.jpg": [
+    "14.5_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-514-1.jpg": [
+    "14.6_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-515-1.jpg": [
+    "14.6_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-516-1.jpg": [
+    "14.6_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-517-1.jpg": [
+    "14.6_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-518-1.jpg": [
+    "14.6_Tutorial_Walk_Cycle"
+  ],
+  "pastedGraphic-526.jpg": [
+    "14.7_Mini_Tutorial_Jumping"
+  ],
+  "pastedGraphic-527.jpg": [
+    "14.7_Mini_Tutorial_Jumping"
+  ],
+  "pastedGraphic-528.jpg": [
+    "14.7_Mini_Tutorial_Jumping"
+  ],
+  "pastedGraphic-417.jpg": [
+    "15_Particles"
+  ],
+  "pastedGraphic-418.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-419.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-420.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-421.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-422.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-423.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-424.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-425.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-426.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-427.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-428.jpg": [
+    "15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System"
+  ],
+  "pastedGraphic-530.jpg": [
+    "15.3_Using_a_Particle_System_as_a_Source_of_Objects"
+  ],
+  "pastedGraphic-531.jpg": [
+    "15.3_Using_a_Particle_System_as_a_Source_of_Objects"
+  ],
+  "pastedGraphic-532.jpg": [
+    "15.4_Building_Blocks"
+  ],
+  "pastedGraphic-533.jpg": [
+    "15.4_Building_Blocks"
+  ],
+  "pastedGraphic-529.jpg": [
+    "16_Dynamics"
+  ],
+  "pastedGraphic-534.jpg": [
+    "16.2_Using_Dynamics_to_Model"
+  ],
+  "pastedGraphic-535.jpg": [
+    "16.2_Using_Dynamics_to_Model"
+  ],
+  "pastedGraphic-536.jpg": [
+    "16.2_Using_Dynamics_to_Model"
+  ],
+  "pastedGraphic.jpg": [
+    "17_Mastering_Cheetah_3D_s_Interface"
+  ],
+  "pastedGraphic-1.jpg": [
+    "17.1_The_Object_Browser"
+  ],
+  "pastedGraphic-2.jpg": [
+    "17.3_Parents"
+  ],
+  "pastedGraphic-3-1.jpg": [
+    "17.4_Children"
+  ],
+  "pastedGraphic-4-1.jpg": [
+    "17.5_Managing_Complexity"
+  ],
+  "pastedGraphic-5.jpg": [
+    "17.5_Managing_Complexity"
+  ],
+  "pastedGraphic-6.jpg": [
+    "17.5_Managing_Complexity"
+  ],
+  "pastedGraphic-7.jpg": [
+    "17.5_Managing_Complexity"
+  ],
+  "pastedGraphic-8.jpg": [
+    "17.5_Managing_Complexity"
+  ],
+  "pastedGraphic-9.jpg": [
+    "17.5_Managing_Complexity"
+  ],
+  "pastedGraphic-631.jpg": [
+    "17.6_Cheetah_3D_Under_the_Hood"
+  ],
+  "pastedGraphic-632.jpg": [
+    "17.6_Cheetah_3D_Under_the_Hood"
+  ],
+  "pastedGraphic-633.jpg": [
+    "17.7_Workflow"
+  ],
+  "pastedGraphic-634.jpg": [
+    "17.8_Scripts"
+  ],
+  "pastedGraphic-635.jpg": [
+    "17.8_Scripts"
+  ],
+  "pastedGraphic-636.jpg": [
+    "17.8_Scripts"
+  ],
+  "pastedGraphic-637.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-638.jpg": [
+    "18.1_Glossary"
+  ],
+  "Screen%20Shot%202013-12-03%20at%203.32.59%20PM.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-639.jpg": [
+    "18.1_Glossary"
+  ],
+  "Screen%20Shot%202013-12-03%20at%203.40.42%20PM.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-640.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-641.jpg": [
+    "18.1_Glossary"
+  ],
+  "displacement.jpg": [
+    "18.1_Glossary"
+  ],
+  "displacement-render.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-642.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-643.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-644.jpg": [
+    "18.1_Glossary"
+  ],
+  "pastedGraphic-645.jpg": [
+    "18.1_Glossary"
+  ],
+  "Screen%20Shot%202013-12-09%20at%2011.23.44%20AM.jpg": [
+    "18.5_Alpha_Channels_in_Depth"
+  ],
+  "pastedGraphic-656.jpg": [
+    "18.5_Alpha_Channels_in_Depth"
+  ],
+  "pastedGraphic-657.jpg": [
+    "18.5_Alpha_Channels_in_Depth"
+  ],
+  "pastedGraphic-658.jpg": [
+    "18.5_Alpha_Channels_in_Depth"
+  ],
+  "pastedGraphic-659.jpg": [
+    "18.6_Faking_Motion_Blur"
+  ],
+  "pastedGraphic-646.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-647.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-648.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-649.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-650.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-651.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-652.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-653.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-654.jpg": [
+    "18.7_3D_Math"
+  ],
+  "pastedGraphic-655.jpg": [
+    "18.7_3D_Math"
+  ],
+  "Screen%20Shot%202013-12-09%20at%2012.15.03%20PM.jpg": [
+    "18.8_Rendering"
+  ]
+}

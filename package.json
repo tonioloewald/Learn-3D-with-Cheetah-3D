@@ -1,0 +1,17 @@
+{
+  "name": "c3dbook",
+  "version": "1.0.0",
+  "description": "Learn 3D with Cheetah 3D online version",
+  "main": "main.js",
+  "scripts": {
+    "test": "./node_modules/http-server/bin/http-server ."
+  },
+  "author": "Tonio Loewald",
+  "license": "ISC",
+  "dependencies": {
+    "@tonioloewald/b8r": "^0.2.17"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
