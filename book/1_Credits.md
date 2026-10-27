@@ -6,9 +6,15 @@
 
 Fourth Edition
 
-> **Note:** add the Fourth Edition’s date, and update the copyright years below (still 2011-2018). <!-- TODO editorial -->
+Tonio Loewald
 
-Written by and copyright ©2011-2018 Tonio Loewald.
+Copyright © 2026 Tonio Loewald
+
+All rights reserved. No part of this book may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
+
+ISBN 978-1-105-63859-6
+
+Imprint: Lulu.com
 
 ### Useful Links
 

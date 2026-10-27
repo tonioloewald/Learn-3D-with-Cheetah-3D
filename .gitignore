@@ -106,3 +106,4 @@ dist
 # tosijs-ui site
 tls/
 demo/docs.json
+.DS_Store

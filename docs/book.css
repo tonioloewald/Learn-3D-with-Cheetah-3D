@@ -1,0 +1,28 @@
+/* Site tweaks on top of tosijs-ui's doc-system theme (site.config.ts `theme`). */
+
+/* Figures (the cover is 791px wide) scale down to fit the reading column. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+Dark mode uses the favicon's gold instead of the system's brightened accent.
+`theme` has no dark accent yet (tosijs-ui #3525); the doubled class outranks
+the generated `.darkmode` rule.
+*/
+.darkmode.darkmode {
+  --brand-color: #ffbc00;
+}
+
+/*
+Blockquotes are speech bubbles; the cheetah replaces the default tosijs owl as
+the speaker. The icon isn't themeable yet (tosijs-ui #3526).
+*/
+body blockquote::after {
+  background: url(/favicon.png) center / contain no-repeat;
+  width: 36px;
+  height: 36px;
+  bottom: -38px;
+  right: -18px;
+}

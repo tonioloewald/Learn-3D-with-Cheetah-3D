@@ -19,8 +19,13 @@ export default defineSiteConfig({
   // A prose book: code blocks (e.g. Cheetah 3D scripts) are illustrations, never run.
   liveExamples: 'opt-in',
 
-  // Figures (the cover is 791px wide) scale down to fit the reading column.
-  headExtra: '<style>img { max-width: 100%; height: auto; }</style>',
+  // The darker of the favicon's two oranges (#ffbc00 / #5c4400); the doc system
+  // derives most of the palette from it.
+  theme: { accent: '#5c4400' },
+
+  // Tweaks the theme can't express yet (dark-mode gold, the blockquote icon,
+  // figure sizing) live in static/book.css.
+  headExtra: '<link rel="stylesheet" href="/book.css">',
 
   favicon: '/favicon.png',
   logo: '/logo.png',
