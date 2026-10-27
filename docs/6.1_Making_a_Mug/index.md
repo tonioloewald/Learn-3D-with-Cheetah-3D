@@ -68,11 +68,7 @@ We’re going to start by creating the main body of the mug using a cylinder pri
 
 1. Launch Cheetah 3D (if it’s not already running) and create a new, empty document (if you don’t already have one).
 
-> 
-
 ![](/images/pastedGraphic-14.jpg)
-
-> 
 
 > *By default, a cylinder has 32 longitudinal sections (i.e. it’s a cylinder of a 32-sided approximation of a circle).*
 

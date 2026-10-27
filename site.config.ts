@@ -1,4 +1,5 @@
-import { defineSiteConfig } from 'tosijs-ui/site'
+import { readFileSync } from 'fs'
+import { defineSiteConfig, DEFAULT_BOOK_CSS } from 'tosijs-ui/site'
 
 export default defineSiteConfig({
   name: 'Learn 3D with Cheetah 3D',
@@ -24,8 +25,11 @@ export default defineSiteConfig({
   theme: { accent: '#5c4400' },
 
   // Tweaks the theme can't express yet (dark-mode gold, the blockquote icon,
-  // figure sizing) live in static/book.css.
-  headExtra: '<link rel="stylesheet" href="/book.css">',
+  // figure sizing) live in static/book.css; heading styles shared with the ePub
+  // live in static/headings.css.
+  headExtra:
+    '<link rel="stylesheet" href="/book.css">' +
+    '<link rel="stylesheet" href="/headings.css">',
 
   favicon: '/favicon.png',
   logo: '/logo.png',
@@ -34,6 +38,8 @@ export default defineSiteConfig({
   epub: {
     author: 'Tonio Loewald',
     cover: 'static/images/cover-4th-edition.jpg',
+    // `css` replaces the book stylesheet, so extend the default rather than lose it.
+    css: DEFAULT_BOOK_CSS + '\n' + readFileSync('static/headings.css', 'utf8'),
     // A literal, not a clock, so the committed ePub only changes with the book.
     modified: '2026-10-27T00:00:00Z',
   },

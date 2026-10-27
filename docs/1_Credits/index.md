@@ -12,10 +12,6 @@ Copyright © 2026 Tonio Loewald
 
 All rights reserved. No part of this book may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
 
-ISBN 978-1-105-63859-6
-
-Imprint: Lulu.com
-
 ### Useful Links
 
 * [Learn 3D With Cheetah 3D 8 Website](http://loewald.com/c3dbook/)

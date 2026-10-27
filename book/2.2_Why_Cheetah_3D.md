@@ -25,9 +25,9 @@ Cheetah 3D is a remarkably simple and complete 3D package. It’s not complete i
 * A **non-destructive modifier chain** — you can apply modifiers to meshes while keeping the original meshes around.
 
 > ###### Non-Destructive?
-
+>
 > By “non-destructive” I mean that you can turn A into B while not “destroying” A and still being able to retrieve or perform operations on A. Non-destructive operations can be removed or adjusted later. 
-
+>
 > If you’re familiar with Photoshop, a **filter** is **destructive** (once you’ve used it on a layer, that layer is gone) whereas a **layer style** or an **adjustment layer** is **non-destructive** (you can turn off the adjustment layer and your unmodified image is still there).
 
 * **Node-based materials** (shaders) — the material system is powerful and flexible, although it can be a little intimidating to newcomers.

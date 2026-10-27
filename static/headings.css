@@ -1,0 +1,26 @@
+/*
+Minor headings never get smaller than body text: they are told apart by weight,
+small caps and italics instead of size. Shared by the site (linked via headExtra)
+and the ePub (appended to tosijs-ui's DEFAULT_BOOK_CSS), so every var() has a
+fallback for the book, which doesn't define the site's variables.
+*/
+
+/* like h3, but lighter and in small caps */
+h4 {
+  font-size: calc(var(--font-size, 1em) * var(--h3-scale, 1.25));
+  line-height: calc(var(--line-height, 1.5) * var(--h3-scale, 1.25));
+  font-weight: 500;
+  font-variant-caps: small-caps;
+}
+
+h5,
+h6 {
+  font-size: var(--font-size, 1em);
+  line-height: var(--line-height, 1.5);
+  font-weight: 600;
+  font-variant-caps: small-caps;
+}
+
+h6 {
+  font-style: italic;
+}
