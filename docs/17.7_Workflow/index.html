@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Workflow — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="A photo of an early maquette of Buzz Lightyear (on display at Disney California Adventure in Los Angeles)." />
   <link rel="canonical" href="https://learn3d.loewald.com/17.7_Workflow/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Workflow","description":"A photo of an early maquette of Buzz Lightyear (on display at Disney California Adventure in Los Angeles).","url":"https://learn3d.loewald.com/17.7_Workflow/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="17.7_Workflow.md">
 <!--{"parent": "17_Mastering_Cheetah_3D_s_Interface.md", "order": 7}--><h2 id="workflow">Workflow</h2>
 <p><img src="/images/pastedGraphic-633.jpg" alt=""></p>
@@ -50,13 +50,13 @@
 <p>But there are much, much worse cases that are far harder to avoid, and minimizing their impact can require careful planning. As a general rule, a lot of these issues involve the interaction of modeling, UV-mapping, and animation.</p>
 <h4 id="collapsing-symmetry">Collapsing Symmetry</h4>
 <p>As “points of no return” go, collapsing a symmetry modifier is not a big deal. It’s easy enough to delete half of the mesh and put a symmetry modifier back into it.</p>
-<p>The main reasons for collapsing symmetry modifiers are rigging (you can’t rig a mesh with a symmetry modifier because the mirrored geometry can’t be rigged) and UV-mapping (where you want the textures to be asymmetrical even if the geometry is symmetric. </p>
+<p>The main reasons for collapsing symmetry modifiers are rigging (you can’t rig a mesh with a symmetry modifier because the mirrored geometry can’t be rigged) and UV-mapping (where you want the textures to be asymmetrical even if the geometry is symmetric). </p>
 <p>The workflow issue that arises here is not the collapsing of the symmetry modifier, but the actions taken afterwards, since this work will be lost if you need to tweak the mesh using a symmetry modifier later.</p>
 <h4 id="rigging--animation">Rigging &amp; Animation</h4>
-<p>“Skinning a mesh” (i.e. attaching a Skeleton tag to a mesh, dragging a bunch of joints into the Skeleton tag, and then binding the mesh to those joints) is a point of no return. You cannot edit a mesh one it’s skinned without having horrible things happen to it.</p>
+<p>“Skinning a mesh” (i.e. attaching a Skeleton tag to a mesh, dragging a bunch of joints into the Skeleton tag, and then binding the mesh to those joints) is a point of no return. You cannot edit a mesh once it’s skinned without having horrible things happen to it.</p>
 <p>In a perfect world, no-one would skin meshes that aren’t perfect. But in the real world, the usual way one finds problems in a mesh is by skinning it and discovering that it does weird things when you deform it <em>just so</em>.</p>
-<p>Fortunately, the default binding method that Cheetah 3D uses is excellent, and it’s usually good enough to quickly test a mesh for obvious problems. What you should do is create your joint hierarchy, and then create a test animation that goes through the most extreme poses you expect character (or whatever it is) to go through. Then when you first skin your mesh you should play this animation while examining it carefully from all angles for problems — if you find any then you should remove the Skeleton tag and fix the problems immediately.</p>
-<p>Another thing that this test animation will be useful for is manually painting vertex weights should this be required.  You can scrub your test animation to a point where a deformation occurs and then paint vertex weights with the mesh in it’s problem pose until the problem is fixed.</p>
+<p>Fortunately, the default binding method that Cheetah 3D uses is excellent, and it’s usually good enough to quickly test a mesh for obvious problems. What you should do is create your joint hierarchy, and then create a test animation that goes through the most extreme poses you expect your character (or whatever it is) to go through. Then when you first skin your mesh you should play this animation while examining it carefully from all angles for problems — if you find any then you should remove the Skeleton tag and fix the problems immediately.</p>
+<p>Another thing that this test animation will be useful for is manually painting vertex weights should this be required.  You can scrub your test animation to a point where a deformation occurs and then paint vertex weights with the mesh in its problem pose until the problem is fixed.</p>
 <p>In any event, the one thing you stand to lose at this point is the binding. You can recover your mesh, and you can recover your joint hierarchy. But if you need to edit your mesh you need to throw away the binding between the two.</p>
 <h4 id="morphing">Morphing</h4>
 <p>As with skinning, morphing is a “point of no return”. The Morph tag stores vertex positions, and if you mess with the vertices in your mesh you’re going to screw up the Morph tag.</p>
@@ -78,7 +78,16 @@
 <h4 id="importing-stuff">Importing Stuff</h4>
 <p>In general, importing stuff into Cheetah 3D is a lossless process! The one exception to this is certain FBX files may have data in them that Cheetah does not support. For example, some Maya/3Ds Max deformers are supported in FBX that Cheetah 3D simply can’t understand and will ignore on import (or worse).</p>
 <h4 id="exporting-stuff">Exporting Stuff</h4>
-<p>Cheetah 3D exports to several widely used 3D file formats, including FBX (“Motionbuilder”), dae (“Collada”), and obj (Alias|Wavefront). FBX is the richest format, supporting animation data, Collada is potentially a very rich format but support for it is rudimentary, while obj faithfully preserves geometry and material assignments, but little else. Every other file format (e.g. 3Ds and STL) also loses geometric information.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 app bundle (its registered file types and export options); not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Cheetah 3D exports to several widely used 3D file formats, including FBX (“Motionbuilder”), dae (“Collada”), obj (Alias|Wavefront), and glTF/GLB, and it also handles USDZ and SceneKit (.scn) files. FBX is the richest format, supporting animation data; Collada and glTF exports also have options to include animation. obj faithfully preserves geometry and material assignments, but little else. Other formats (e.g. 3Ds and STL) lose even more information.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: whether Collada support is still “rudimentary”, which of glTF/GLB, USDZ and .scn can be both imported and exported, and how well glTF carries materials and animation. <!-- TODO verify --></p>
+</blockquote>
 <h4 id="working-with-an-external-image-editor">Working with an external image editor</h4>
 <p>Cheetah 3D generally plays well with external image editors. It usually detects when an image has been changed and updates itself automatically (worst case, you can always load the image again).</p>
 <p>Cheetah 3D also supports PSD files directly, so you don’t need to flatten and export them.</p>
@@ -87,6 +96,9 @@
 <h4 id="working-with-unity-3d">Working with Unity 3D</h4>
 <p>Working with Unity 3D is almost completely seamless. Simply move Cheetah 3D .jas files directly into Unity projects and they will come right through. </p>
 <p>Ideally, images used in materials in a scene should be in the same folder as the .jas file or in a subfolder. (Sometimes you may need to hook up materials with textures in Unity.)</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: whether current versions of Unity still import .jas files directly (Unity converts them via Cheetah 3D&#39;s FBX export). <!-- TODO verify --></p>
+</blockquote>
 <p>In Unity, you can double-click on models imported from Cheetah 3D and they’ll open right up in Cheetah 3D. Any changes you make will immediately be reflected in your Unity project. Note that changing the names of meshes or the object hierarchy can cause mesh components to become disassociated from their sources.</p>
 <p>You may need to explicitly enable the export of UV2 to FBX if you’re using UV2.</p>
 
@@ -274,6 +286,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

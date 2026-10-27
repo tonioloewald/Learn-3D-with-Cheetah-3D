@@ -14,34 +14,46 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Creating your own HDRIs for Image-Based Lighting — Learn 3D with Cheetah 3D</title>
-  <meta name="description" content="If you want to use a panoramic render for image-based lighting, the first thing to do is set your scene’s Render Preferences to toggle Cache HDRI on." />
+  <meta name="description" content="If you want to use a panoramic render for image-based lighting, the first thing to do is turn on Save G-Buffer in the renderer’s settings (with Color depth set…" />
   <link rel="canonical" href="https://learn3d.loewald.com/12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/" />
   <link rel="alternate" type="text/markdown" href="index.md" title="Creating your own HDRIs for Image-Based Lighting — Learn 3D with Cheetah 3D (markdown)" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
   <meta property="og:title" content="Creating your own HDRIs for Image-Based Lighting — Learn 3D with Cheetah 3D" />
-  <meta property="og:description" content="If you want to use a panoramic render for image-based lighting, the first thing to do is set your scene’s Render Preferences to toggle Cache HDRI on." />
+  <meta property="og:description" content="If you want to use a panoramic render for image-based lighting, the first thing to do is turn on Save G-Buffer in the renderer’s settings (with Color depth set…" />
   <meta property="og:url" content="https://learn3d.loewald.com/12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/" />
   <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Creating your own HDRIs for Image-Based Lighting","description":"If you want to use a panoramic render for image-based lighting, the first thing to do is set your scene’s Render Preferences to toggle Cache HDRI on.","url":"https://learn3d.loewald.com/12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Creating your own HDRIs for Image-Based Lighting","description":"If you want to use a panoramic render for image-based lighting, the first thing to do is turn on Save G-Buffer in the renderer’s settings (with Color depth set…","url":"https://learn3d.loewald.com/12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting.md">
 <!--{"parent": "12_Rendering.md", "order": 13}--><h2 id="creating-your-own-hdris-for-image-based-lighting">Creating your own HDRIs for Image-Based Lighting</h2>
 <p><img src="/images/pastedGraphic-610.jpg" alt=""></p>
-<p>If you want to use a panoramic render for image-based lighting, the first thing to do is set your scene’s Render Preferences to toggle <strong>Cache HDRI</strong> on. Then, after you render a panorama you can save the resulting image as an HDR file, suitable for use for image-based lighting.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>If you want to use a panoramic render for image-based lighting, the first thing to do is turn on <strong>Save G-Buffer</strong> in the renderer’s settings (with <strong>Color depth</strong> set to 16- or 32-bit). Then, after you render a panorama, the Render Manager will let you save the result as an EXR file, which an <strong>HDRI Light</strong> can load for image-based lighting.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-611.jpg" alt=""></p>
-<p><em>A steel sphere on a stucco cube rendered in the middle of the cityscape scene from the previous example.</em></p>
+<p><em>A steel sphere on a stucco cube rendered in the middle of the cityscape scene from <a href="/12.6_Rendering_Panoramas/">Rendering Panoramas</a>.</em></p>
 <p><img src="/images/pastedGraphic-612.jpg" alt=""></p>
 <p><em>The same simple model rendered using the rendered HDR image for image-based lighting. (Note that the panorama had to be rotated 180°.) Note that the backdrop doesn’t quite match because the test object has been rendered as though it was located where the camera was — to match the original scene I’d need to place the camera where the object is and then render a new HDR.</em></p>
-<p>In most cases, using HDR and a radiosity tag will result in much faster rendering than any reasonably sophisticated lighting setup.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>In most cases, using an HDRI Light together with radiosity will result in much faster rendering than any reasonably sophisticated lighting setup.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -227,6 +239,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -2,4 +2,6 @@
 
 ## Fine-Tuning Meshes
 
+> **Note:** this section is a stub (two headings, no text). <!-- TODO editorial -->
+
 ## Splitting Meshes Apart

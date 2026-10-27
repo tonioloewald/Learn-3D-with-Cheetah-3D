@@ -46,7 +46,7 @@ By default, when animating Cheetah 3D will smoothly interpolate your state chang
 
 F-Curves are adjustable representations of how Cheetah 3D is interpolating values in an animation. In determining how an object gets from A to B (where A and B might be positions or anything else — e.g. rotations, scales, or even colors) any number of interpolation methods may be used. Linear interpolation is the most obvious algorithm (the state changes at the same rate as time) but animators almost never want linear interpolation.
 
-The most common interpolation method used in animation is called easing. Ease-in means you start moving slowly and then accelerate, while ease-out means you start slow down as you approach your goal.
+The most common interpolation method used in animation is called easing. Ease-in means you start moving slowly and then accelerate, while ease-out means you start to slow down as you approach your goal.
 
 In *Disney Animation: The Illusion of Life* the authors suggest that the best way to interpolate a motion involves “point-to-point” (spend most of your time at the start and destination, and very little time in between — effectively ease-in and ease-out), anticipation, and overshoot. You can achieve all of these effects quite simply using the f-curve editor.
 
@@ -60,13 +60,15 @@ In 3D animation, a key frame is a point on the time line at which at least one a
 
 Cheetah 3D will show you where there are keys for the currently selected object on the timeline. (Annoyingly it won’t show you keys for child or parent objects.)
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: whether the timeline can now show keys for child objects (it has a “record also all child objects” toggle; manual: Timeline). <!-- TODO verify -->
+
 In traditional animation, a *key *frame was a drawing created by a lead animator. Because lead animators were the principal bottleneck in animated film production (in *Disney Animation: The Illusion of Life*, the authors contended that there were only ten artists good enough to work as lead animators for Disney features *in the world*), the idea was to minimize the work they had to do, so they drew key frames and less precious artists (“in-betweeners”) drew the intervening frames (or “tweens”).
 
 ### Instrumenting Rigs
 
 ![](/images/Screen%20Shot%202013-12-03%20at%203.32.59%20PM.jpg)
 
-*Filip C [posted a simple "blockman" rig demonstrating](http://www.cheetah3d.com/forum/showthread.php?t=8534) how you can create quite sophisticated rigs in Cheetah 3D (using splines, which don't render or create polygon meshes on their own) as instrumentation. If you search the forums you will find quite a lot of rigs, some very sophisticated.*
+*Filip C [posted a simple "blockman" rig demonstrating](https://www.cheetah3d.com/forum/index.php?threads/8534/) how you can create quite sophisticated rigs in Cheetah 3D (using splines, which don't render or create polygon meshes on their own) as instrumentation. If you search the forums you will find quite a lot of rigs, some very sophisticated.*
 
 Rigged characters can be very complicated objects, and most serious animators will “instrument” their rigs to make them easier to work with. Many 3D programs provide some kind of support for instrumenting rigs (e.g. they allow you to build virtual controls that float near the character and allow you to quickly select IK targets, or control settings or poses).
 
@@ -78,6 +80,8 @@ Morph target animation is a common technique for animating the faces of characte
 
 Today, morph target animation is falling out of favor and fully boned facial rigs with skin/bone/muscle deformers are being used instead.
 
+> **Note:** needs checking: morph targets (“blend shapes”) are still widely used for facial animation, so this claim may be dated. <!-- TODO verify -->
+
 ### Non-destructive Creator/Modifier Chain
 
 Cheetah 3D, like many other powerful 3D programs, allows you to progressively modify a mesh using one or more non-destructive modifiers. Because more than one modifier can be applied (and these modifiers are applied in fixed order) this is often referred to as a chain. The term “non-destructive” refers to the original mesh not being affected by the modifiers.
@@ -88,7 +92,7 @@ In Cheetah 3D a Creator is an object that generates a mesh by applying rules to 
 
 ### Modifier
 
-In Cheetah 3D a Modifier is an object that modifies its parent mesh. If a parent mesh has more than one modifier, the modifiers are applied in order (top to bottom). Modifiers differ from creators in that they operate on their parent (rather than their children) and thus can only affect on object, and they only operate on meshes. (It’s theoretically possible to write a Modifier plugin that can operate on non-meshes.)
+In Cheetah 3D a Modifier is an object that modifies its parent mesh. If a parent mesh has more than one modifier, the modifiers are applied in order (top to bottom). Modifiers differ from creators in that they operate on their parent (rather than their children) and thus can only affect one object, and they only operate on meshes. (It’s theoretically possible to write a Modifier plugin that can operate on non-meshes.)
 
 ### Node-Based, Shader, Material
 
@@ -112,7 +116,7 @@ In essence, a bump map treats greyscale data as a “height field” where the w
 
 A normal map simplifies this process by encoding a precalculated normal as an r,g,b value. Normal maps are thus colored and not greyscale, and *may* include much more precise information about the angle of the implied surface, but no information about its height. Normal maps are preferred for game engines because they save calculation steps.
 
-There is a third approach: sub-polygon **displacement**, which takes a bump map and uses it to deform the underlying geometry. This produces wonderful results. Cheetah 3D provides some support for displacement, which is discussed elsewhere.
+There is a third approach: sub-polygon **displacement**, which takes a bump map and uses it to deform the underlying geometry. This produces wonderful results. Cheetah 3D provides some support for displacement, which is discussed in [Modifiers](/9.1_Modifiers/).
 
 ### Procedural Texture
 
@@ -134,7 +138,7 @@ A convex shape in mathematics is defined as one where if you join any two points
 
 A quad is a four-sided polygon. Ideally, meshes should be composed entirely of quads and those quads should be convex and, ideally, “squarish”. (Why? Quads subdivide nicely, which means anything built of quads can be subdivided and deformed with generally good results. Texture-mapping that relies on UVs tends to work best — i.e. distort textures least — with squarish quads.)
 
-Cheetah 3D has tools for selecting any polygons in a mesh that aren’t quads, which is very helpful for cleaning up meshes. These tools are **Selection \> Select Triangles**, **Selection \> Select Quads**, and **Selection \> Select nGons \> 4**.
+Cheetah 3D has tools for selecting any polygons in a mesh that aren’t quads, which is very helpful for cleaning up meshes. These tools are **Selection \> Select Triangles**, **Selection \> Select Quads**, and **Selection \> Select nGon\>4**.
 
 ### Triangulation, Tessellation
 
@@ -142,7 +146,7 @@ Cheetah 3D has tools for selecting any polygons in a mesh that aren’t quads, w
 
 *A cube (left) and a triangulated cube (right).*
 
-Triangulation (sometimes tessellation) is referred to the process of converting a mesh composed of arbitrary n-gons (an n-gon is a polygon with n sides, n being 3 or more) into a mesh entirely composed of triangles.
+Triangulation (sometimes called tessellation) is the process of converting a mesh made of polygons with any number of sides (n-gons) into a mesh made entirely of triangles. <!-- TODO review -->
 
 Note that the word tessellation sounds fancier but is actually less accurate.
 
@@ -178,15 +182,19 @@ Mesh topology refers to the “niceness” of the mesh’s geometry. It’s hard
 
 To “retopologize” a mesh is to take a mesh that has the right shape but “bad topology” and rebuild it with a nicer topology (usually reducing the complexity and weight of the mesh in the process). 3D scanning and sculpting frequently produce “heavy” meshes with bad topology that need to be retopologized.
 
-### Box Modeling** This is the process of building 3D models by directly creating and modifying mesh elements, often used in concert with subdivision surfaces.
+### Box Modeling
 
-### Solid Modeling** Some 3D modeling programs treat virtual 3D objects as solid volumes rather than collections of points and polygons. This is very useful for engineering work. Cheetah 3D is not a solid modeler, but it can export to STL (a file format commonly used for 3D printing).
+This is the process of building 3D models by directly creating and modifying mesh elements, often used in concert with subdivision surfaces.
+
+### Solid Modeling
+
+Some 3D modeling programs treat virtual 3D objects as solid volumes rather than collections of points and polygons. This is very useful for engineering work. Cheetah 3D is not a solid modeler, but it can export to STL (a file format commonly used for 3D printing).
 
 ### NURBS
 
 Non-Uniform Rational B-Splines are the 3D cousin of bezier curves, and allow artists and engineers to precisely model curved surfaces. Cheetah 3D allows you to work with splines to achieve many NURBS-like effects, but not true NURBS. You can, of course, import meshes created with NURBS modelers into Cheetah 3D.
 
-You may find my **Normal Utilities** script useful for cleaning up the smoothing of imported NURBS meshes.
+You may find my **Surface Utilities** script useful for cleaning up the smoothing of imported NURBS meshes.
 
 ### Sweep
 
@@ -213,3 +221,5 @@ A lathe is a solid formed by revolving a 2D profile around an axis. Cheetah 3D�
 *If you create a text object and drop it into an Extrude creator, this is what you get.*
 
 An extrusion is a solid formed by pushing a 2D profile through a line (usually perpendicular to the plane of the 2D profile). Cheetah 3D’s Extrusion creator operates on a spline child object.
+
+> **Note:** Cheetah 3D 8.1.1 also has the Falcon renderer (an unbiased path tracer, manual: Falcon), expression tags (Tag scripts with performExpression), Takes (manual: Take Manager), and glTF/GLB and USDZ file support; glossary entries for Falcon, unbiased/physically based rendering, expression tag, Take, glTF, USDZ and EXR are not yet covered here. <!-- TODO missing -->

@@ -16,25 +16,25 @@ For example:
 
 *You should now have 100 small balls floating above a relief object.*
 
-1. Now collapse the **Particle Mesh** (double-click on it) and delete the plane (you don’t need it any more).
+4. Now collapse the **Particle Mesh** (double-click on it) and delete the plane (you don’t need it any more).
 
-2. Add a **Rigid Body** tag to the (former) particle mesh. (Note — assign it to the particle former Particle Mesh, not the particle itself.)
+5. Add a **Rigid Body** tag to the (former) particle mesh. (Note — assign it to the former Particle Mesh, not the particle itself.)
 
-3. Add a **Rigid Body** tag to the **Relief** object, set its Type to static and its Shape to concave (since it has dents in it, convex will screw it up).
+6. Add a **Rigid Body** tag to the **Relief** object, set its Type to static and its Shape to concave (since it has dents in it, convex will screw it up).
 
 ![](/images/pastedGraphic-531.jpg)
 
 *Here’s the setup. The object labelled “Particle Mesh” was a Particle Mesh but has been collapsed. The Plane that it used has been deleted. The Particle Mesh has a Rigid Body tag assigned to it, everything is default. The Relief object has a Rigid Body set to be static and concave.*
 
-1. Press Play. It kind of works — but some of the balls fall through the terrain.
+7. Press Play. It kind of works — but some of the balls fall through the terrain.
 
-2. Click on the **Dynamics** toolbar item, and in the Dynamics property panel, change Accuracy to 8x. This should stop the balls falling through the terrain.
+8. Click on the **Dynamics** toolbar item, and in the Dynamics property panel, change Accuracy to 8x. This should stop the balls falling through the terrain.
 
-3. Press Play again.
+9. Press Play again.
 
 ### Using Effectors to Influence Dynamics
 
-Force Effectors from the Particle System can act on dynamic objects (they have a property which determines whether or not they are affected by forces — its default setting is on.)
+The particle system’s Force Effectors can also act on dynamic objects. (Rigid Body tags have a **Forces On/Off** property that determines whether the object is affected by forces; it’s on by default.) <!-- TODO review -->
 
 1. You can use another Particle Mesh setup to have some fun with Force Effectors.
 
@@ -44,7 +44,9 @@ Force Effectors from the Particle System can act on dynamic objects (they have a
 
 4. Add a small Ball (radius 0.03) to the Particle Mesh. You should now have 100 small balls.
 
-5. Collapse the Particle Mesh by double-clicking it, and then add a Rigid Body tag. Set the Rigid Body’s margin to 0.0 (vs. the 0.02 default).
+5. Collapse the Particle Mesh by double-clicking it, and then add a Rigid Body tag. Leave the Rigid Body’s margin at its default (the manual warns that the margin should never be zero).
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: this step originally set the margin to 0.0; confirm the tutorial still behaves as described with the default margin. <!-- TODO verify -->
 
 6. Create another Plane, set its size to 2x2, add a Rigid Body tag to it, and set its Type to static.
 

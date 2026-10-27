@@ -8,17 +8,29 @@ This book is intended for anyone who wants to learn how to create 3D graphics, i
 
 ### Prerequisites
 
-While there’s nothing stopping you from simply reading this book for entertainment — aside from its utter lack of entertainment value — to make good use of this book you’ll need an Intel Mac running Mac OS X 10.6 (“Snow Leopard”) or later, a copy of Cheetah 3D 7 (and — ideally — a license). You can download and use Cheetah 3D for free, but certain important features (notably saving files) will be disabled until you buy a license. You can buy Cheetah 3D direct from the developer.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+While there’s nothing stopping you from simply reading this book for entertainment — aside from its utter lack of entertainment value — to make good use of this book you’ll need a Mac running macOS 10.15 (“Catalina”) or later — either an Apple Silicon or an Intel Mac — and a copy of Cheetah 3D 8 (and — ideally — a license). Cheetah 3D 8’s editor view uses Metal, so it wants a GPU from Apple, Intel, or AMD; some older Macs with NVIDIA graphics show display problems. You can buy Cheetah 3D direct from the developer.
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: is there still a free download in which saving is disabled until you buy a license? (The 3rd edition said so.) <!-- TODO verify -->
 
 I have tried not to assume specialized prior knowledge. (You do need to know how to use a Mac, and the basics of using an image editor such as Photoshop.) If you find that I have failed dismally, please let me know and I will try to improve future versions.
 
-You _can_ use this book with an *earlier* version of Cheetah 3D — especially any version 5.x or 6.x (possibly even running on a [PowerPC](voodoo://PowerPC)-based Mac) — but some features will be missing and the user interface will have changed somewhat.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+You _can_ use this book with an *earlier* version of Cheetah 3D — especially 7.x — but some features will be missing and the user interface will have changed somewhat.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ### Cheetah 3D’s Best Feature: The Community
 
 ![](/images/pastedGraphic-4.jpg)
 
-The best feature of Cheetah 3D is its active and helpful online community. Simply go to [the Cheetah 3D forums]((http://cheetah3d.com/forum/)) and you’re there! Most questions seem to be answered within hours, if not minutes.
+> **Note:** this screenshot shows the old Cheetah 3D forum; the website has changed significantly since, so it needs a fresh capture. <!-- TODO screenshot -->
+
+The best feature of Cheetah 3D is its active and helpful online community. Simply go to [the Cheetah 3D forums](https://www.cheetah3d.com/forum/) and you’re there! Most questions seem to be answered within hours, if not minutes.
 
 ### Classroom Use
 

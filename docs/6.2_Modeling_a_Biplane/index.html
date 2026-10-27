@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Modeling a Biplane — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Note: if you find this tutorial confusing, it may be helpful to go through A Quick Tour of Cheetah 3D (starting with Just Enough to be Dangerous), and possibly…" />
   <link rel="canonical" href="https://learn3d.loewald.com/6.2_Modeling_a_Biplane/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Modeling a Biplane","description":"Note: if you find this tutorial confusing, it may be helpful to go through A Quick Tour of Cheetah 3D (starting with Just Enough to be Dangerous), and possibly…","url":"https://learn3d.loewald.com/6.2_Modeling_a_Biplane/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="6.2_Modeling_a_Biplane.md">
 <!--{"parent": "6_Tutorials.md", "order": 2}--><h2 id="modeling-a-biplane">Modeling a Biplane</h2>
 <p><strong>Note</strong>: if you find this tutorial confusing, it may be helpful to go through <em>A Quick Tour of Cheetah 3D</em> (starting with <em>Just Enough to be Dangerous</em>), and possibly review the <em>Modeling</em> section. You definitely want to have gone through the <em>Making a Mug</em> tutorial.</p>
@@ -66,6 +66,9 @@
 <li><p>Also in the blueprint’s properties, set the scale values (all three of them) to 10.</p>
 </li>
 </ol>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does “scale values” mean the object’s Scale or the Blueprint’s size? The 8.1.1 Blueprint has Width (X), Height (Y), and Length (Z) properties. <!-- TODO verify --></p>
+</blockquote>
 <p>Note that I’ve set up these images so this “just works”. Exactly how to set up images for use in a Blueprint is discussed in detail elsewhere.</p>
 <h3 id="roughing-it-out">Roughing it Out</h3>
 <p>Note that if you have a nice big display you can do this in four-panel mode, allowing you to select faces from the easiest angle, and perform transforms in one panel while visually checking the results in another.</p>
@@ -109,22 +112,22 @@
 </li>
 <li><p>Again use the weld tool to weld the trailing edge of the horizontal stabilizer. </p>
 </li>
-<li><p>Note there’s a <strong>missing triangle</strong> on the back inner side of the elevator now. Use <strong>Polygon &gt; Add Polygon</strong> to add a triangle there — switch to Point mode to make the existing points easier to see, then click the vertices of the new triangle in anti-clockwise order.</p>
+<li><p>Note there’s a <strong>missing triangle</strong> on the back inner side of the elevator now. Use <strong>Polygon &gt; Create Polygon</strong> to add a triangle there — switch to Point mode to make the existing points easier to see, then click the vertices of the new triangle in anti-clockwise order.</p>
 </li>
 </ol>
 <h4 id="wings">Wings</h4>
 <ol>
-<li><p>In top view make, use Ring Cut to add a loop level with the edge of the elevator. Now drag to outside front edge to match the shape of the wing. </p>
+<li><p>In top view, use Ring Cut to add a loop level with the edge of the elevator. Now drag the outside front edge to match the shape of the wing. <!-- TODO review --></p>
 </li>
 <li><p>Select the top leading edge and then in the Right side view drag it back slightly to match the leading edge in the blueprint profile. Likewise, select the top trailing edge and drag it almost up to the new loop to match the profile. In a perspective view, drag the outer top edge towards the center slightly. You might want to turn off wireframe and view the wing and make adjustments at this point.</p>
 </li>
-<li><p>Rather than try to match that on the bottom wing, select the existing lower wing (click on one of its polygons, then <strong>Selection &gt; Extend Selection</strong> until it’s all selected) then delete it. Now select the fancy new top wing using the same method, duplicate it, and move the duplicate into place level with the bottom of the lower wing.</p>
+<li><p>Rather than try to match that on the bottom wing, select the existing lower wing (click on one of its polygons, then <strong>Selection &gt; Expand Selection</strong> until it’s all selected) then delete it. Now select the fancy new top wing using the same method, duplicate it, and move the duplicate into place level with the bottom of the lower wing.</p>
 </li>
 <li><p>Now select the fuselage (using the same trick) and <strong>Selection &gt; Hide Selection</strong>.</p>
 </li>
 <li><p>If you’re not using it, switch into four pane view (by clicking the widget at the top right of the 3D view). Select the lower wing again and in a perspective view <strong>Edge Rotate</strong> on its upper inside edge to rotate it to match the front view.</p>
 </li>
-<li><p><strong>Selection &gt; Show All</strong> to bring back the fuselage check your progress.</p>
+<li><p><strong>Selection &gt; Show All</strong> to bring back the fuselage and check your progress.</p>
 </li>
 </ol>
 <p><img src="/images/pastedGraphic-39.jpg" alt=""></p>
@@ -134,7 +137,7 @@
 </li>
 <li><p>Select the edge corresponding to the near lower edge of the cockpit and scale and move it to match the cockpit.</p>
 </li>
-<li><p>Select the polygon where the cockpit ought to be, use <strong>Tool &gt; Polygon &gt; Cover</strong> and then drag the polygon down into the fuselage, then use the green box widget to scale it down to a flat polygon. </p>
+<li><p>Select the polygon where the cockpit ought to be, use <strong>Tools &gt; Polygon &gt; Cover</strong> and then drag the polygon down into the fuselage, then use the green box widget to scale it down to a flat polygon. </p>
 </li>
 <li><p>You’ll probably see some weird edge chasing taking place on the side of the cockpit. This is because the inner side of the polygon overlaps with the outside edge of the fuselage. This won’t matter in a realtime application (the polygons face in opposite directions) but it’s still bad practice and will mess up renders. So in edge mode select the lower edge of that face and then in perspective view use the red arrow widget to move it slightly towards the centerline.</p>
 </li>
@@ -154,11 +157,11 @@
 </li>
 <li><p>Make the cylinder editable. Delete the caps and replace them using fill hole.</p>
 </li>
-<li><p>Select the biplane mesh and the cylinder mesh (click one, command-click the other) and use Tools &gt; Merge. (before C3D7: If it isn’t already, make the cylinder a child of the biplane mesh and then select the biplane mesh and use Tools &gt; Import Children. Delete the old cylinder mesh.</p>
+<li><p>Select the biplane mesh and the cylinder mesh (click one, command-click the other) and use Tools &gt; Merge.</p>
 </li>
 </ol>
 <p>There’s a lot more to do, of course, but this should give you a good idea of how to get it done. And between the first tutorial and this one you’ve now used most of the key polygon editing tools.</p>
-<p>If you wanted to create a more detailed model for rendering, there’s a huge amount of work left to do. If this were going to be model for a mobile device, you might stop adding much more geometry here (although right now your biplane should be well under 300 polygons), use transparent materials for the struts and landing gear detail, and rely on textures to bring the model to life.</p>
+<p>If you wanted to create a more detailed model for rendering, there’s a huge amount of work left to do. If this were going to be a model for a mobile device, you might stop adding much more geometry here (although right now your biplane should be well under 300 polygons), use transparent materials for the struts and landing gear detail, and rely on textures to bring the model to life.</p>
 <p><img src="/images/pastedGraphic-40.jpg" alt=""></p>
 <p><em>Here’s a version of the model with some extra details added. It’s up to 399 polygons. Adding a few more polygons for the machineguns and possibly a pilot would still leave it well under 500 polygons.</em></p>
 
@@ -346,6 +349,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -4,6 +4,8 @@
 
 Cheetah’s new renderer is a _unidirectional path tracer_. The key takeaway is that it’s a **physically based renderer** (PBR) rather than a ray tracer (like Cheetah’s old renderer, which is still available should you wish to use it). Because of this, it takes longer to render a final image than Cheetah 3D’s old renderer for simple things, but it _correctly models_ a lot of lighting effects that are “faked” by the old renderer at no additional cost in render or setup time.
 
+> **Note:** apart from Key Points, this chapter is general beginner material (much of it written for v6) rather than Falcon material, and some of it contradicts chapter 3; retitle it or fold it into chapters 5 and 8. 4.7 and 4.8 are stubs. <!-- TODO editorial -->
+
 <!-- toc -->
 - [Key Points](/4.1_Key_Points/)
 - [Primitives: Basic 3D Objects](/4.2_Primitives_Basic_3D_Objects/)

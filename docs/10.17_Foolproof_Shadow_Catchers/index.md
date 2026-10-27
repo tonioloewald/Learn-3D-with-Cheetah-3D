@@ -8,7 +8,7 @@
 
 ![](/images/pastedGraphic-468.jpg)
 
-*A simple scene with a plane under it. When I replace assign a shadowmat to the plane to turn it into a shadow catcher, two problems immediately become evident. First, the shadows aren’t cleanly captured but worse, because the geometry didn’t neatly end at the “ground plane” the shadow mat shows stuff that was hidden.*
+*A simple scene with a plane under it. When I assign a shadowmat to the plane to turn it into a shadow catcher, two problems immediately become evident. First, the shadows aren’t cleanly captured but worse, because the geometry didn’t neatly end at the “ground plane” the shadow mat shows stuff that was hidden.*
 
 ![](/images/pastedGraphic-469.jpg)
 
@@ -24,4 +24,4 @@ Above, I’ve made three renders. **Top**: white ground plane with shadows. **Mi
 
 ![](/images/pastedGraphic-474.jpg)
 
-***Top**: using the difference between the first two renders, you can create a perfect shadow layer. **Middle**: using the third render, you can create a perfect mask for the content. **Bottom**: and with these two, you can composite your object and its shadows *
+***Top**: using the difference between the first two renders, you can create a perfect shadow layer. **Middle**: using the third render, you can create a perfect mask for the content. **Bottom**: and with these two, you can composite your object and its shadows.*

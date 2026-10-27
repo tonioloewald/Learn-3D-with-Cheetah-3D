@@ -21,3 +21,7 @@ The Raytrace+Transparency shadow setting causes transparent objects to partially
 *Area light (5 samples)*
 
 Cheetah 3D renders soft shadows when shadow-casting lights are area or point lights with multiple samples. Image-based lighting and emissive object lighting produce very soft shadows.
+
+> **Note:** Cheetah 3D 8.1.1 also has a **Shadow softness** property that gives point, spot and distant lights soft shadows in Falcon, a **Shadow color** property, IES light profiles, and area light **Shape** and **Normalize** settings (Objects/SceneObjects/Light), not yet covered here. <!-- TODO missing -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the manual documents Samples for area lights only; do point lights still have Samples (see the captions above)? <!-- TODO verify -->

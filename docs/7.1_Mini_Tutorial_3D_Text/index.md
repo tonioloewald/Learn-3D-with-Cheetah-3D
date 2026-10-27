@@ -16,11 +16,11 @@ Launch Cheetah 3D and create a new document (if necessary).
 
 1. From the Spline toolbar item, pick Text. 
 
-2. In the Properties panel note the Text property has a triangle next to it (a “disclosure triangle”). Click on it! Change the text to whatever you want — all caps will probably look best. Click the Font button and pick a nice bold sans-serif font
+2. In the Properties panel note the Text property has a triangle next to it (a “disclosure triangle”). Click on it! Change the text to whatever you want — all caps will probably look best. Click the Font button and pick a nice bold sans-serif font.
 
-3. You should see a wire view of the text you’ve typed (cool huh?) — if it’s not all visible try using the pan and scale tools to get it all in view with a bit of space to spare (you can also use the orbit tool to adjust the angle, but keep it at an angle!
+3. You should see a wire view of the text you’ve typed (cool huh?) — if it’s not all visible try using the pan and scale tools to get it all in view with a bit of space to spare (you can also use the orbit tool to adjust the angle, but keep it at an angle!)
 
-4. Deselect everything (Selection \> Select Nothing, or click in the 3D view background). Add an Extrude creator to the scene and drag the text spline object you created onto the Extrude icon. Voila 3D text!
+4. Deselect everything (Selection \> Clear Selection, or click in the 3D view background). Add an Extrude creator to the scene and drag the text spline object you created onto the Extrude icon. Voila 3D text!
 
 ### Making it Metallic
 
@@ -28,10 +28,16 @@ Launch Cheetah 3D and create a new document (if necessary).
 
 2. Click the Render toolbar icon… Um, black? The problem is metals get their appearance from what they reflect, and there’s nothing in your scene to reflect, so let’s fix that.
 
-3. Add HDRI and Radiosity tags to the Camera. Load an HDR of your choice (there are two included with Cheetah 3D) into the HDRI tag (I recommend entrance\_hall\_pano.hdr). Set the Radiosity tag’s type to Radiosity.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
-4. Click the Render toolbar icon again. Better — except for the fuzzy background. This is because we’re using an HDRI “environment map” both as a faux scene for the metal to reflect and as a background (the tag’s default setting is to behave this way). Let’s fix that.
+3. Add an **HDRI Light** to the scene (**Objects \> Scene \> HDRI Light**). It comes with Oldtown.hdr loaded; you can load another HDR into its **HDR image** property (there are two included with Cheetah 3D — I recommend EntranceHall.hdr). Then click the render settings icon in the toolbar (the cheetah head), turn on **Radiosity**, and set its **Type** to **Radiosity**.
 
-5. Select the HDRI tag on the camera and uncheck background. While we’re at it, select the Camera’s background color to transparent.
+4. Click the Render toolbar icon again. Better — except for the fuzzy background. This is because we’re using an HDRI “environment map” both as a faux scene for the metal to reflect and as a background (the HDRI Light’s **Background** property). Let’s fix that.
+
+5. Select the HDRI Light and uncheck **Background**. While we’re at it, set the Camera’s background color to transparent.
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: run steps 3–5 with the Cheetah renderer selected (**Render \> Renderer**) and confirm that Steel renders as described. (The manual’s HDRI Rendering tutorial confirms that the HDRI Light shows its image as the background by default.) <!-- TODO verify -->
 
 6. Adjust the camera view to taste and hit Render again. Now you have created a properly “alpha channeled” 3D text image suitable for compositing onto your movie or page layout.

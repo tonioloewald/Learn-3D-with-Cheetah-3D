@@ -2,13 +2,15 @@
 
 ## Image Formats
 
+> **Note:** Cheetah 3D 8.1.1 also supports OpenEXR (.exr) images, e.g. for HDRI lighting (manual: HDRI Light; Third-Party Libraries), not yet covered here. <!-- TODO missing -->
+
 In a nutshell, the most important file formats to know about are PSD, PNG, JPG, and if you need to deal with 16 bpp images, TIFF, HDR, DNG, and [proprietary RAW formats](http://en.wikipedia.org/wiki/Raw_image_format) such as NEF (Nikon) and CR2 (Canon). You may also encounter TGA ("Targa") files, especially when dealing with high-end software (there's nothing magical about TGA, it just happens to have been a file format used by a lot of 3D packages back in the days when 3D meant spending as much on your computer as you would on a new Honda Civic).
 
 ### File Size
 
-Uncompressed image files tend to be huge — for a typical 24- or 32-bit image 4 bytes per pixel, so a 1024x768 image is 3MB uncompressed (or more when you include metadata). Most TIFF files are uncompressed, so unless you need more than 32-bit deep images, avoid TIFF.
+Uncompressed image files tend to be huge — a typical 24- or 32-bit image takes up to 4 bytes per pixel, so a 1024x768 image is 3MB uncompressed (or more when you include metadata). <!-- TODO review --> Most TIFF files are uncompressed, so unless you need more than 32-bit deep images, avoid TIFF.
 
-**RAW images**, produced by some cameras, are an unusual case, these store unprocessed sensor data, generally in the form of grids of red, green, and blue pixel data with 12 or more bits per pixel. Processing RAW images into something recognizable as a picture involves synthesizing RGB pixels (one for each reg, green, or blue source pixel) by interpolating color values from adjacent pixels, which in turn requires a knowledge of the structure of the camera's [Bayer filter](http://en.wikipedia.org/wiki/Bayer_filter).
+**RAW images**, produced by some cameras, are an unusual case, these store unprocessed sensor data, generally in the form of grids of red, green, and blue pixel data with 12 or more bits per pixel. Processing RAW images into something recognizable as a picture involves synthesizing RGB pixels (one for each red, green, or blue source pixel) by interpolating color values from adjacent pixels, which in turn requires a knowledge of the structure of the camera's [Bayer filter](http://en.wikipedia.org/wiki/Bayer_filter).
 
 RAW files are usually compressed, sometimes lossily and sometimes losslessly. A typical RAW image file from a 16 megapixel camera might be 10-15MB, which is a lot, but significantly less than the uncompressed size (which would be 24MB for 12-bit RAW).
 

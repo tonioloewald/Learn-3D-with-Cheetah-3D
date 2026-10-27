@@ -1,6 +1,6 @@
 {
   "name": "learn-3d-with-cheetah-3d",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "description": "Learn 3D with Cheetah 3D — the online edition",
   "type": "module",
@@ -19,6 +19,6 @@
     "tjs-lang": "^0.14.0-rc.5",
     "tosijs": "^1.10.9",
     "tosijs-schema": "^1.8.0",
-    "tosijs-ui": "^1.16.37"
+    "tosijs-ui": "^1.16.38"
   }
 }

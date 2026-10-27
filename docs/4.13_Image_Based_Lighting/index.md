@@ -4,13 +4,15 @@
 
 Image-based lighting (often abbreviated to IBL) is a powerful tool for creating very realistic lighting with remarkably little work. The basic idea is pretty simple — assume you’re rendering an object in some specific spot. You capture all the light coming towards that spot (from all directions) and then use that to render the object.
 
-_**Note**: this has changed significantly in Cheetah 3D 7._
-
-### Setting up image-based lighting in *Cheetah 3D 7*
+### Setting up image-based lighting
 
 ![](/images/Screen%20Shot%202016-12-01%20at%2010.30.54%20AM.jpg)
 
 Add an **HDRI Light** to the scene. You may want to customize its properties (e.g. **uncheck the Background option** if you don’t want the HDRI rendered in the background, load your own HDRI image, and/or set shadows to support transparency):
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the HDRI Light has no shadow-type property in the manual (HDR image, Type, Intensity, Clamp, Samples, MIS, Background); does “set shadows to support transparency” still apply? <!-- TODO verify -->
+
+> **Note:** Cheetah 3D 8.1.1 also has the HDRI Light’s Type (Probe, Cross, Panorama), Clamp, and MIS settings, and the fact that only the first HDRI or Sky light in a scene is used (manual: Objects › HDRI Light), not yet covered here. <!-- TODO missing -->
 
 ![](/images/Screen%20Shot%202016-12-01%20at%2010.35.49%20AM.jpg)
 
@@ -22,6 +24,8 @@ You’re ready to render!
 
 ### Setting up image-based lighting in a scene in *Cheetah 3D 6* and earlier:
 
+> **Note:** the HDRI and Radiosity tags described in this section no longer exist; consider cutting it or shrinking it to a short historical note. <!-- TODO editorial -->
+
 ![](/images/DraggedImage-51.jpg)
 
 **Add an HDRI tag to the camera you're rendering the scene with**. (The HDRI tag actually serves several purposes — it allows image-based lighting, reflection-mapping, and panoramic backgrounds.)
@@ -32,7 +36,7 @@ Next you'll need to **load a suitable image** into the HDR image slot. (I've pro
 
 Note that images for image-based lighting fall into three main types — panoramas, probes, and cubemaps. The pros and cons (and how to tell the difference) are discussed below.
 
-Any suitable image — not necessarily HDR — can work, although HDR images work much better.) Unless you want the image rendered as the background, you'll want to uncheck the background setting. If you're using a non-HDR image or the render is too dim for some other reason you may want to boost the Power to more than 1.0. (A power setting of 4 works well with the linked HDR file).
+Any suitable image — not necessarily HDR — can work, although HDR images work much better. Unless you want the image rendered as the background, you'll want to uncheck the background setting. If you're using a non-HDR image or the render is too dim for some other reason you may want to boost the Power to more than 1.0. (A power setting of 4 works well with the linked HDR file.) <!-- TODO review -->
 
 ![](/images/DraggedImage-53.jpg)
 
@@ -56,7 +60,7 @@ _Single Area light (with radiosity)_
 
 ![](/images/DraggedImage-58.jpg)
 
-_Sky ight (with radiosity)_
+_Sky light (with radiosity)_
 
 ![](/images/DraggedImage-59.jpg)
 
@@ -64,7 +68,7 @@ _Image-based lighting (with radiosity)_
 
 **Image-based lighting produces far richer-looking results than simple lighting setups**, but only very good\* HDRs provide good shadow definition. A common solution to the problem of shadow definition is to use a combination of IBL and in-scene lighting (e.g. spot and distant lights) to bring out convincing shadows. In the above render, the shadows look fine for an indoor scene or a cloudy day, but for a daylit scene you'd want to use extra trickery to bring out more defined shadows.
 
-> **Note**: \* by “good HDRI” I don’t mean high resolution so much as high dynamic range. The reason lights cast well-defined shadows is that they’re _enormously_ brighter than anything around them. How much brighter? The illuminated face of the moon is visible against a bright sky, and yet **the sun is 400,000 times brighter than the moon**. Thats 2^18, which means if you represented a pixel of the moon as having a brightness of 255 (i.e. 2^8 - 1, the maximum brightness in 24-bit color) you’d need to represent a pixel of the sun as 2^26. This is only possible with floating-point color depth, and most HDRI images aren’t even making good using of 16-bit per channel (integer) color.
+> **Note**: \* by “good HDRI” I don’t mean high resolution so much as high dynamic range. The reason lights cast well-defined shadows is that they’re _enormously_ brighter than anything around them. How much brighter? The illuminated face of the moon is visible against a bright sky, and yet **the sun is 400,000 times brighter than the moon**. That’s 2^18, which means if you represented a pixel of the moon as having a brightness of 255 (i.e. 2^8 - 1, the maximum brightness in 24-bit color) you’d need to represent a pixel of the sun as 2^26. This is only possible with floating-point color depth, and most HDRI images aren’t even making good use of 16-bit per channel (integer) color.
 
 ### Aside: limitations of image-based lighting
 

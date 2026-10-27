@@ -8,14 +8,18 @@ The most common uses of splines in Cheetah 3D are as profiles for the Lathe, Ext
 
 Splines can be created directly in Cheetah 3D (but the spline editing interface in Cheetah 3D is quite clumsy) or in a dedicated 2D drawing package such as Illustrator or Inkscape (free and open source), exported as SVG, and then imported.
 
-As with meshes, there are splines and there are **editable splines**. Also, as with meshes, you can convert a spline into an editable spline by double-clicking it in the Object Browser or selecting **Object \> Make Editable** from the menus.
+As with meshes, there are splines and there are **editable splines**. Also, as with meshes, you can convert a spline into an editable spline by double-clicking it in the Object Browser or selecting **Objects \> Make Editable** from the menus.
 
 **Why use splines?**
 
 The most common reason for using splines is to precisely recreate a logo or typographic design in 3D. It doesn’t hurt that these designs are usually created in a spline-centric drawing program, such as Illustrator.
 
-#### Importing Splines** Cheetah 3D will import splines from PDFs and SVGs, but you’re almost always better off using SVG if you can. 
+#### Importing Splines
+
+Cheetah 3D will import splines from PDFs and SVGs, but you’re almost always better off using SVG if you can. 
 
 **Note**: some versions of Illustrator will “pollute” the SVGs they create with a hundred or so reference objects, and you’ll need to find and delete them yourself!
 
-### Creators** Creators generate mesh objects from one or more input objects. The creators are described in more detail in their very own chapter.
+### Creators
+
+Creators generate mesh objects from one or more input objects. The creators are described in more detail in their very own section, [Creators](/8.11_Creators/).

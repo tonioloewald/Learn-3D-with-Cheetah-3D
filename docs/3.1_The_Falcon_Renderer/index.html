@@ -14,34 +14,42 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>The Falcon Renderer — Learn 3D with Cheetah 3D</title>
-  <meta name="description" content="The new “falcon” renderer is a “uni-directional path tracer”  which allows for long-requested enhancements to C3D’s output." />
+  <meta name="description" content="The new “falcon” renderer is a “uni-directional path tracer” which allows for long-requested enhancements to C3D’s output." />
   <link rel="canonical" href="https://learn3d.loewald.com/3.1_The_Falcon_Renderer/" />
   <link rel="alternate" type="text/markdown" href="index.md" title="The Falcon Renderer — Learn 3D with Cheetah 3D (markdown)" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
   <meta property="og:title" content="The Falcon Renderer — Learn 3D with Cheetah 3D" />
-  <meta property="og:description" content="The new “falcon” renderer is a “uni-directional path tracer”  which allows for long-requested enhancements to C3D’s output." />
+  <meta property="og:description" content="The new “falcon” renderer is a “uni-directional path tracer” which allows for long-requested enhancements to C3D’s output." />
   <meta property="og:url" content="https://learn3d.loewald.com/3.1_The_Falcon_Renderer/" />
   <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The Falcon Renderer","description":"The new “falcon” renderer is a “uni-directional path tracer”  which allows for long-requested enhancements to C3D’s output.","url":"https://learn3d.loewald.com/3.1_The_Falcon_Renderer/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The Falcon Renderer","description":"The new “falcon” renderer is a “uni-directional path tracer” which allows for long-requested enhancements to C3D’s output.","url":"https://learn3d.loewald.com/3.1_The_Falcon_Renderer/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="3.1_The_Falcon_Renderer.md">
 <!--{"parent": "3_What_s_new_in_Cheetah_3D_7.md", "order": 1}--><h2 id="the-falcon-renderer">The Falcon Renderer</h2>
-<p>The new “falcon” renderer is a “uni-directional path tracer”  which allows for long-requested enhancements to C3D’s output. The old renderer is still there for anyone needing to replicate the “look” of renders from earlier versions of C3D, or needing features that haven’t been brought forward into the new world. Also, in simple cases, the old renderer may be faster than the new renderer.</p>
+<p>The new “falcon” renderer is a “uni-directional path tracer” which allows for long-requested enhancements to C3D’s output. The old renderer is still there for anyone needing to replicate the “look” of renders from earlier versions of C3D, or needing features that haven’t been brought forward into the new world. Also, in simple cases, the old renderer may be faster than the new renderer.</p>
 <h3 id="top-ten-reasons-to-use-falcon">Top Ten Reasons to Use Falcon</h3>
 <ol>
-<li><p><em>Immediate</em> render feedback on the whole scene (yes, it’s grainy, but you can quickly tell whether you need to do more tweaking).</p>
-</li>
-<li><p><strong>Motion Blur</strong>. And it’s free. (Note that to get motion blur right now you need to render an animation, not a single frame, and it will only appear in the second and subsequent frames of the render — this is a known bug.)</p>
-</li>
+<li><em>Immediate</em> render feedback on the whole scene (yes, it’s grainy, but you can quickly tell whether you need to do more tweaking).</li>
+</ol>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<ol start="2">
+<li><strong>Motion Blur</strong>. And it’s free. (Note that motion blur only works when you render an animation, not a single frame. Its strength is set by the camera’s <strong>Shutter time</strong>, and the renderer settings let you turn camera, transformation, and deformation motion blur on and off separately.)</li>
+</ol>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<ol start="3">
 <li><p><strong>Far less tweaking</strong> required to get complex lighting effects working. You basically don’t need to use render tags at all.</p>
 </li>
 <li><p><strong>Radiosity/AO not needed</strong>. Falcon is a physical renderer and does the right stuff automatically. No more weird corner artifacts and blotches. No more guessing error values.</p>
@@ -56,8 +64,12 @@
 </li>
 <li><p><strong>HDRI lighting works better</strong> (i.e. perfectly) in Falcon (e.g. it’s easy to get sharp shadows from a good HDR by setting clamp to 0).</p>
 </li>
-<li><p><strong>Be surprised by awesomeness</strong> instead of glitches.</p>
-</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does a Clamp of 0 still mean “no clamping” on the HDRI Light? The manual warns against setting it too low. <!-- TODO verify --></p>
+</blockquote>
+<ol start="10">
+<li><strong>Be surprised by awesomeness</strong> instead of glitches.</li>
 </ol>
 
   </article>
@@ -244,6 +256,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Animation — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="To animate objects in 3D you start by saving “key” values for various object properties at various points in time." />
   <link rel="canonical" href="https://learn3d.loewald.com/13_Animation/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Animation","description":"To animate objects in 3D you start by saving “key” values for various object properties at various points in time.","url":"https://learn3d.loewald.com/13_Animation/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="13_Animation.md">
 <!--{"order": 14}--><h1 id="animation">Animation</h1>
 <p><img src="/images/pastedGraphic-475.jpg" alt=""></p>
@@ -46,7 +46,6 @@
 </li>
 <li><p>Cheetah 3D produces an animation by building successive versions of the scene at different points on the timeline (how many frames are produced per second can be set by the animator). When rendering a keyframe, the properties stored as part of that keyframe are used. When rendering any other frame, properties are interpolated between (or extrapolated from) values in keyframes. (At any given point in time, <em>most</em> properties will probably not have keyframe values. Even at keyframes, usually only some properties will be keyframed.)</p>
 </li>
-<li></li>
 </ul>
 <p>If that’s <em>still</em> not clear let’s discuss a simple example.</p>
 <p><img src="/images/pastedGraphic-477.jpg" alt=""></p>
@@ -62,6 +61,12 @@
 <p><img src="/images/pastedGraphic-481.jpg" alt=""></p>
 <p><em>The controls at the bottom right are used to control playback, record keys, and determine which keys are recorded. I’ve highlighted a few important items here. The settings you see are my preferred options for character animation.</em></p>
 <p>In order to animate a scene, you need to be able to move to different points in time, arrange the scene, and record keyframes (or store key values for certain properties of certain objects at that point in time). The animation timeline controller allows you to jump to different points in time by adjusting the slider, focus on specific portions of the timeline (by resizing the dark grey bar), record key values (using the record button), and play back the animation in real time (using the play button).</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual (Animation/TimeLine.txt) places the playback and record icon block at the <em>left</em> of the timeline, not the bottom right. <!-- TODO verify --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Key Editor (Animation/KeyEditor.txt) and Take Manager operations (Duplicate, Merge, Split, Reverse, Bake IK in the Takes pane&#39;s context menu; Animation/TakeManager/TakeManager.txt), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <!-- toc -->
 <ul>
 <li><a href="/13.1_Animation_Overview/">Animation Overview</a></li>
@@ -252,6 +257,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

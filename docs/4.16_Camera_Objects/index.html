@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Camera Objects — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The camera currently being used to render (and whose view is shown in the 3D camera view) is the one with the dark background." />
   <link rel="canonical" href="https://learn3d.loewald.com/4.16_Camera_Objects/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Camera Objects","description":"The camera currently being used to render (and whose view is shown in the 3D camera view) is the one with the dark background.","url":"https://learn3d.loewald.com/4.16_Camera_Objects/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="4.16_Camera_Objects.md">
 <!--{"parent": "4_Falcon.md", "order": 16}--><h2 id="camera-objects">Camera Objects</h2>
 <p><img src="/images/DraggedImage-69.jpg" alt=""></p>
@@ -43,25 +43,37 @@
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.14.12%20AM.jpg" alt=""></p>
 <p><em>Camera in Cheetah 3D 7 using <strong>Falcon</strong> renderer</em> The Falcon camera is a much simpler beast than the Cheetah camera, in large part because a lot of the hacky features of the Cheetah renderer “just work” via the new unbiased rendering model.</p>
 <p><img src="/images/DraggedImage-70.jpg" alt=""></p>
-<p>_Camera in Cheetah 3D 6</p>
+<p><em>Camera in Cheetah 3D 6</em></p>
+<blockquote>
+<p><strong>Note:</strong> the Cheetah 3D 6 camera screenshot can probably go. <!-- TODO editorial --></p>
+</blockquote>
 <p>The most important <strong>camera properties</strong> are:</p>
 <p><strong>Projection</strong> property — you can set the camera to render orthographic projections or panoramas.</p>
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.12.20%20AM.jpg" alt=""></p>
-<p><em>You can see that the camera’s field of view is represented as a subtle outline in the camera view, a frustrum (truncated pyramid) in other views, and shown numerically in the camera’s properties.</em></p>
+<p><em>You can see that the camera’s field of view is represented as a subtle outline in the camera view, a frustum (truncated pyramid) in other views, and shown numerically in the camera’s properties.</em></p>
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.12.31%20AM.jpg" alt=""></p>
 <p><em>Here the field of view has been increased, which is exactly like <strong>zooming</strong> with a camera lens (except that Cheetah 3D has perfect optics, whereas real lenses have distortion, falloff, field curvature, chromatic aberration, and so forth).</em></p>
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.13.00%20AM.jpg" alt=""></p>
 <p><em>Finally, here we’ve moved the camera towards the biplane along its own z-axis (by using the transform tool in Object mode)</em></p>
 <p><strong>Field of view</strong> — which is in degrees (a narrow field of view equates to a telephoto lens, while a wide field of view equates to a wide angle lens; many renders will look better if you narrow the field of view slightly from the default (try 10-30°).</p>
-<p><strong>Antialiasing Mode</strong> — this is the criterion Cheetah 3D uses in order to decide whether to render subpixels. The default rule is Edge —meaning it will render subpixels if an edge runs through a pixel in the rendered image. The other rule is Color — meaning it will render subpixels if the pixel differs significantly from an adjacent pixel in color. Use the Color option if you’re trying to render detailed material textures (e.g. product mockups).</p>
-<p><strong>Min Samples and Max Samples</strong> — these control the level of sub-pixel rendering. The default is to at minimum 1x1 (i.e. every pixel) and at most 4x4 (i.e. drill down into a grid of 4x4 subpixels). The higher the maximum, the sharper details will be rendered. The lower the minimum, the more crudely areas without much detail will be rendered. The default settings are usually fine, but increase the minimum if the renderer is missing details and switching Antialiasing Mode doesn’t help. Increase the maximum only if you need more detail.</p>
-<p><strong>Shadows</strong> — on by default. Usually this is fine.</p>
-<p><strong>Camera Light</strong> — auto by default. Usually this is fine.</p>
-<p><strong>Output Resolution</strong> — change these to get bigger or smaller rendered images.</p>
-<p><strong>Background Color</strong> — you may want to set this to a completely transparent color if you want a nice clean render ready for compositing, e.g. if you’re rendering an icon.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p><strong>Camera light</strong> — the active camera’s own light, which is why a scene without any light sources is still lit. Turn it off once you’ve set up your own lighting.</p>
+<p><strong>Background color</strong> and <strong>Background image</strong> — you may want to set the color to a completely transparent color if you want a nice clean render ready for compositing, e.g. if you’re rendering an icon.</p>
+<p><strong>Shutter time</strong> — controls how strong Falcon’s motion blur is (the longer the shutter time, the more blur).</p>
+<p><strong>Aperture size</strong>, <strong>Aperture blades</strong>, <strong>Aperture rotation</strong>, <strong>Focal distance</strong>, and <strong>Focus object</strong> — control depth of field (which you switch on in the renderer settings). <strong>Display DOF-Grid</strong> shows the plane of focus in the 3D view.</p>
+<p><strong>Clip near</strong> and <strong>Clip far</strong> — objects closer than the near clipping plane or farther than the far one are hidden in the 3D view.</p>
+<p>Antialiasing, samples, shadows, and output resolution are no longer camera properties — they’re renderer settings now (see <a href="/4.15_Rendering/">Rendering</a>).</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the Camera light’s default (the 3rd edition said “auto”; the manual describes a plain on/off property). <!-- TODO verify --></p>
+</blockquote>
 <p>Aside from that, cameras are objects like any other — they can be moved around, keyframed, and so forth. You can’t scale a camera though!</p>
 <p>If you have more than one Camera object in a scene you can determine which one is active (i.e. determines the view in the 3D Camera view and is used for rendering) by double-clicking it. Cameras also have a Make active camera button in their Properties panel.</p>
-<p>I won’t cover the more advanced settings here — there are sectiohs devoted to radiosity, depth of field, and so forth. That’s it. If you’ve gotten through this section, you should at least know your way around Cheetah 3D.</p>
+<p>I won’t cover the more advanced settings here — there are sections devoted to radiosity, depth of field, and so forth. That’s it. If you’ve gotten through this section, you should at least know your way around Cheetah 3D.</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -247,6 +259,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ _Using **cover**. I have the transform tool selected and select two faces, then 
 
 ![](/images/DraggedImage-13.jpg)
 
-_Unlike extrude, cover works just fine for **edges**. When in edge mode you’re defining the boundary that get’s “covered”._
+_Unlike extrude, cover works just fine for **edges**. When in edge mode you’re defining the boundary that gets “covered”._
 
 Extrude and cover both kind of do the same thing — if you select one or more polygons extrude and cover will both let you pull more geometry out of those polygons (i.e. extrude those faces). In general, most experienced Cheetah 3D users will simply use Cover all the time and forget about Extrude for two reasons:
 
@@ -54,7 +54,11 @@ _Here I’ve picked a vertex on a corner (because I can!) and used inner extrude
 
 ### Create Polygon
 
-Create polygon simply lets you add a new polygon to a mesh by clicking on (or creating) a series of vertices. You click on the vertices (in anti-clockwise order viewed from the side you want to be seen) ending where you started. You need to click four times to create a triangle (unfortunately).
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Create polygon simply lets you add a new polygon to a mesh by clicking on (or creating) a series of vertices. You click on the vertices (in anti-clockwise order viewed from the side you want to be seen) and then either click the starting vertex again or double-click the last vertex to finish the polygon. The tool’s **Type** property also offers quad-strip and triangle-strip modes for quickly building strips of polygons, and **Intersect scene** places new points on the surfaces of existing objects.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 It’s easy to sometimes click on the wrong vertex if your mesh has overlapping vertices (usually rotating your view slightly will solve the problem).
 
@@ -76,7 +80,7 @@ Bridge before (in object mode so you can see edges more clearly) and after. To u
 
 The bridge tool requires you to click a vertex on the starting polygon and another on the ending polygon. Note that the vertices must lie on a well-defined “ring” of edges, and it’s important for the normals to match.
 
-There are lots of ways bridges can go horribly wrong, and I try to explain them in depth in the detailed section on Troubleshooting the Bridge Tool.
+There are lots of ways bridges can go horribly wrong, and I try to explain them in depth in the detailed section on [Troubleshooting the Bridge Tool](/8.8_Polygon_Box_Modeling/).
 
 ### Fill Hole
 
@@ -108,23 +112,17 @@ Look ma, I made a hole!
 
 * Cutting a hole in a polygon. If you want to cut a hole in a polygon, first use the scalpel to cut the polygon into two (or more) pieces. Then using the edges now running through your polygon, build out the edges of the hole.
 
-￼
-
 ![](/images/DraggedImage-21.jpg)
 
 This is an artificial example, but on the top the selected polygon (which is vaguely C-shaped) is being triangulated very badly. On the bottom, breaking up the problem polygon into convex quads with a few cuts using the scalpel tool completely eliminates the problem. (It could definitely be done more tidily, this is simply demonstrating a point.)
 
 * Fixing problem polygons. Sometimes a polygon doesn’t get rendered correctly, especially if it isn’t convex. You can use the scalpel tool to chop complex polygons into simpler polygons that won’t confuse the triangulation algorithm.
 
-￼
-
 ![](/images/DraggedImage-22.jpg)
 
 Compare the bottom-right quad across these three (symmetric) meshes. The middle mesh is a result of triangulating the mesh, and shows the triangulation that is being used by Cheetah 3D to render the initial mesh. On the right I’ve used the scalpel tool to force a different triangulation for that polygon.
 
 * Forcing a specific triangulation. Sometimes a quad will simply get triangulated in just the wrong way. You can split the quad into two triangles using the scalpel to override this behavior.
-
-￼
 
 ![](/images/DraggedImage-23.jpg)
 
@@ -138,7 +136,11 @@ _Here I’m building out the base topology for a head, and I’ve created an edg
 
 ![](/images/DraggedImage-25.jpg)
 
-The ring cut tool splits a ring of edges and selects the newly created geometry. You select the tool and then move the mouse pointer over an edge of the mesh and click to create a cut your mesh.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+The ring cut tool splits a ring of edges (and, if its **Select cut** option is checked, selects the newly created geometry). You select the tool, move the mouse pointer over an edge of the mesh, and click to cut your mesh. If you keep the mouse button down you can drag to adjust the position of the cut, and holding Shift while dragging moves the cut in or out along the surface.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 The next paragraph is probably not going to make sense to you right away, but I’ll say it now anyway because at some point you’ll have an “aha!” moment and it will all make sense.
 
@@ -152,4 +154,4 @@ The ring cut tool is invaluable for adding more detail to a subdivision “cage�
 
 ![](/images/DraggedImage-27.jpg)
 
-Jigsaw is essentially a controlled ring cut. First, you select a series of quads (note how it can “turn a corner” and then you click on one of the edges that will be cut. The cut is terminated at the mesh edge or a terminal polygon.
+Jigsaw is essentially a controlled ring cut. First, you select a series of quads (note how it can “turn a corner”) and then you click on one of the edges that will be cut. The cut is terminated at the mesh edge or a terminal polygon.

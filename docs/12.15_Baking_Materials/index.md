@@ -2,7 +2,7 @@
 
 ## Baking Materials
 
-Originally, baking was used to precalculate the lighting of settings for 3D action games (*Quake* pioneered this technique). Back in the late-90s, calculating shadows on-the-fly was simply impractical for inexpensive computer hardware, so id software decided to “bake” lightmaps for their scenes. This allowed a game engine to render settings with elaborate lighting almost as quickly as a “flat” 3D scene.
+Originally, baking was used to precalculate the lighting of settings for 3D action games (*Quake* pioneered this technique). Back in the late-90s, calculating shadows on-the-fly was simply impractical for inexpensive computer hardware, so id Software decided to “bake” lightmaps for their scenes. This allowed a game engine to render settings with elaborate lighting almost as quickly as a “flat” 3D scene.
 
 For objects that aren’t transparent or reflective — “most objects” — you can precalculate the color of each point on a surface and “bake” it into a new texture that will allow the object to be rendered more quickly (especially for realtime applications). You can either bake everything into a new texture, or simply bake the precalculated lighting (and hence shadows) into a separate texture that, combined with the original textures, will allow the model to be rendered more quickly.
 
@@ -12,7 +12,7 @@ In addition to baking lighting, baking is also useful for turning procedural mat
 
 ### Tutorial: Baking in Five Minutes
 
-**Note**: baking works on one *editable* mesh at a time, but the mesh is rendered in situ using the current camera’s settings, so other objects will cast shadows onto the mesh you’re baking and if you have a radiosity tag on the camera, radiosity will be baked.
+**Note**: baking works on one *editable* mesh at a time, but the mesh is rendered in situ using the current camera’s settings, so other objects will cast shadows onto the mesh you’re baking and if you have Radiosity turned on in the renderer’s settings, radiosity will be baked.
 
 ![](/images/pastedGraphic-576.jpg)
 
@@ -20,17 +20,17 @@ In addition to baking lighting, baking is also useful for turning procedural mat
 
 2. Select the mesh.
 
-3. Click on the **Bake** toolbar icon (looks like an oven) which will add a **Bake Material** tag (looks like an upside-down flower pot — I think it’s supposed to be a clay oven) to the mesh.
+3. Click on the **Bake** toolbar icon (looks like an oven), or choose **Render \> Bake Texture**, which will add a **Bake Texture** tag (looks like an upside-down flower pot — I think it’s supposed to be a clay oven) to the mesh.
 
-4. In the Baking tag’s properties panel, click the OK button next to **Baking UV Coordinates**. (This will automatically unwrap your UV mesh to UV set 2.)
+4. In the Bake Texture tag’s properties panel, click the OK button next to **Baking UV coords**. (This will automatically unwrap your UV mesh to UV set 2.)
 
-5. Now (with the mesh still selected) click the Bake toolbar icon again (the toolbar item it adds a Bake Material tag to a mesh if it doesn’t have one, and bakes the mesh if it does).
+5. Now (with the mesh still selected) click the Bake toolbar icon again (the toolbar item adds a Bake Texture tag to a mesh if it doesn’t have one, and bakes the mesh if it does).
 
 ![](/images/pastedGraphic-577.jpg)
 
 *Baked materials generally look weird. This is the baked texture for the castle shown previously.*
 
-1. You should see a really funky image rendered. This is a new texture for your model, but it will only work with the newly baked UV2 UV map.
+6. You should see a really funky image rendered. This is a new texture for your model, but it will only work with the newly baked UV2 UV map.
 
 To see the baked texture in action:
 
@@ -42,7 +42,7 @@ To see the baked texture in action:
 
 *By default, your mesh will be using UV set 1 (a.k.a. UV1) and thus when you assign an image-based material to it that uses UV set 2 it will look horrible!*
 
-1. Add an image texture for the new material’s diffuse channel (ideally we’d use a Solid shader here, but Solid shaders do not preview correctly) and load the rendered image into it. Your mesh will probably look like crap right now!
+3. Add an image texture for the new material’s diffuse channel (ideally we’d use a Solid shader here, but Solid shaders do not preview correctly) and load the rendered image into it. Your mesh will probably look like crap right now!
 
 ![](/images/pastedGraphic-579.jpg)
 
@@ -54,7 +54,7 @@ To see the baked texture in action:
 
 *Once you set the mesh to use UV2 it should look amazing, from any angle! This is how the model looks in the Cheetah 3D viewport.*
 
-1. Click on the mesh’s icon (either in the property panel or the Object Browser) so you can see its properties, and change its UV Set to 2. It should look amazing now (try orbiting around it). For an even better result, you can turn off all the lights in your scene, and add a single ambient light.
+4. Click on the mesh’s icon (either in the property panel or the Object Browser) so you can see its properties, and change its UV Set to 2. It should look amazing now (try orbiting around it). For an even better result, you can turn off all the lights in your scene, and add a single ambient light.
 
 **Baking Procedural Materials**
 
@@ -66,7 +66,7 @@ To see the baked texture in action:
 
 ***Top**: the same castle, but now it’s been textured with procedural materials, including procedural cobbles on the ground, procedural terracotta on the walls, and procedural shingles on the roofs. **Middle**: the same castle after baking a 2048x2048 texture and previewing it. **Bottom**: zoomed in showing how detailed the final texture is.*
 
-**Baking a Tiling Textures from Procedural Textures**
+**Baking Tiling Textures from Procedural Textures**
 
 You can use the preceding technique to create a tiling image from a procedural texture using a torus. A torus has the wonderful property of having a perfectly tiling UV map. This allows a torus to create a perfect tiling pattern from any solid procedural texture.
 
@@ -80,11 +80,13 @@ This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius T
 
 This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius Tube 0.25, and then scaled vertically by 50%. There’s little apparent distortion and it still tiles well. It’s just not a square texture.
 
-**The Bake Material Tag**
+**The Bake Texture Tag**
 
 ![](/images/pastedGraphic-588.jpg)
 
-The Bake Material tag lets you control exactly how baking works, it automates UV unwrapping, and it determines what gets baked when you bake a mesh’s materials. 
+> **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
+
+The Bake Texture tag lets you control exactly how baking works, it automates UV unwrapping, and it determines what gets baked when you bake a mesh’s materials. 
 
 **Properties**
 
@@ -100,10 +102,10 @@ These settings affect the quality of the finished image.
 
 **Channels**
 
-This is a set of toggles that determines what ends up contributing to the baked image. The likely use cases are
+This is a set of toggles (**Color**, **Ambient**, **Diffuse**, **Emission**, **Bumps**, **Radiosity** and **Caustics**) that determines what ends up contributing to the baked image. The likely use cases are
 
 - Bake everything (which is the default)
 
-- Bake just the lighting (i.e. everything except Color) — i.e. bake a light map (this allows you to use the original image-based materials with precalculated lighting, which often allows you to use a low resolution lightmap in combination with high quality materials to get good results.
+- Bake just the lighting (i.e. everything except Color) — i.e. bake a light map (this allows you to use the original image-based materials with precalculated lighting, which often allows you to use a low resolution lightmap in combination with high quality materials to get good results).
 
 - Bake *just* the color (to convert procedural materials into image-based materials)

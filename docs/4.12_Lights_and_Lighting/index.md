@@ -6,6 +6,8 @@ Lighting is another critical component of 3D graphics. Just as lighting can make
 
 The Camera Light. By default, Cheetah 3D will light a scene with a “camera light” (this is a light that shines straight out from the camera). Like a flash (actually even worse than a flash) the camera light makes bad pictures. As soon as you add some form of lighting to a scene, the camera light will be switched off.
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: is the camera light still switched off automatically? The manual describes Camera light as a camera property you turn off yourself (Objects › Camera). <!-- TODO verify -->
+
 Cheetah 3D offers several different ways to light a scene. These are:
 
 ### The Light Object
@@ -32,7 +34,11 @@ A light from a point but restricted to a cone, kind of like a spotlight. Obvious
 
 (Samples set to 5)
 
-A light that shines in all directions. If you’re modeling a solar system, the sun might be treated as a Point light in the middle. Point lights can be given a radius and shadow samples beyond 1 to create soft shadows (much like an area light).
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+A light that shines in all directions. If you’re modeling a solar system, the sun might be treated as a Point light in the middle. In the Falcon renderer, point lights (and spot and distant lights) can cast soft shadows if you increase their **Shadow softness** (much like an area light).
+
+> *End of AI draft.* <!-- /AI draft -->
 
 #### Ambient light
 
@@ -48,7 +54,11 @@ Light emitted from all directions. An ambient light is a “cheap” way of faki
 
 A light emitted from a rectangular or elliptical surface (but only if you increase its Shadow samples to more than 1 — otherwise it just acts like a spot light). Area lights are useful for producing soft light, as you’d get from a window, and also for simulating diffuse light sources such as fluorescent tubes.
 
-#### Directional light
+> **Note:** needs checking in Cheetah 3D 8.1.1: does an area light still act like a spot light unless its Samples is above 1? The manual doesn’t say so. <!-- TODO verify -->
+
+> **Note:** Cheetah 3D 8.1.1 also has area light Shape, Normalize and Visible in camera, IES profiles for point and area lights, Clamp attenuation, Shadow color, and Shadow softness (manual: Objects › Light), not yet covered here. <!-- TODO missing -->
+
+#### Distant light
 
 ![](/images/DraggedImage-47.jpg)
 
@@ -68,7 +78,9 @@ The **color** and **intensity** of a light should be straightforward. Intensity 
 
 **Cut off** only affects spot lights and simply determines whether the spot light has a sharp or gradual cutoff around the edge.
 
-**Caustics** are settings that drive caustic simulations. These are discussed under Caustics.
+**Caustics** are settings that drive caustic simulations. These are discussed under [Caustics](/10.16_Caustics/).
+
+> **Note:** requires updating for Cheetah 3D 8.1.1: the light’s Caustic photons and Pure photon light settings only apply to the Cheetah renderer; Falcon’s reflective caustics are a renderer setting (manual: Render › Cheetah, Render › Falcon). <!-- TODO update -->
 
 ### Hint: Improving Editor Light Previews
 

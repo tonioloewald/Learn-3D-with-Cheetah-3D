@@ -10,7 +10,7 @@ Creators and modifiers are almost, but not quite, the same thing done in two dif
 
 The best way to “read” creators when trying to understand your scene hierarchy is simply to ignore the children they act on and think of them as being the object created.
 
-**But there’s more**: *creators hide any extra child meshes they may have from the renderer*. If a mesh operates on its first two children and its third child is a mesh, then that extra child *simply will not be rendered* but will be visible in the editor interface.
+**But there’s more**: *creators hide any extra child meshes they may have from the renderer*. If a creator operates on its first two children and its third child is a mesh, then that extra child *simply will not be rendered* but will be visible in the editor interface.
 
 **Tags are attached to objects and act on that object alone**. (Why have tags and modifiers? Modifiers act on an object’s geometry, whereas tags can act on arbitrary qualities of an object, e.g. directly modifying the way the object is rendered or interacts with the animation system.)
 

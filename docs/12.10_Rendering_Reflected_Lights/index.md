@@ -10,13 +10,19 @@
 
 ![](/images/pastedGraphic-562.jpg)
 
-***Top**: simple build of a car headlight — hemispherical silvered reflector with a point light inside it — smoothing mode set to flat. **Middle**: rendered with geometry off. Note that the reflector is showing reflections of the illuminated surface. **Bottom**: rendered with geometry on. (I’ve reduced the point light’s radius to 0.01.*
+***Top**: simple build of a car headlight — hemispherical silvered reflector with a point light inside it — smoothing mode set to flat. **Middle**: rendered with geometry off. Note that the reflector is showing reflections of the illuminated surface. **Bottom**: rendered with geometry on. (I’ve reduced the point light’s radius to 0.01.)*
 
-Some lights have a “geometry” option, this includes the sky light, area light, and point light. The other lights simply have no geometry option. This doesn’t matter so much since the “geometry” option doesn’t do a great job anyway — aside from the sky light’s geometry, the geometry of lights simply looks like an emissive rectangle or circle, and it’s not as bright as it should be (so it doesn’t look as bright in reflections as it should relative to reflections of objects that don’t shine).
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Area lights have a **Visible in camera** option (older versions called it “geometry”) that makes the light’s shape visible in renders and in reflections, and the Sky Light can be drawn as the **Background**. The other lights simply have no such option. This doesn’t matter so much since the option doesn’t do a great job anyway — aside from the sky light, a visible light simply looks like an emissive rectangle or circle, and it’s not as bright as it should be (so it doesn’t look as bright in reflections as it should relative to reflections of objects that don’t shine).
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: does the point light still have a Visible in camera (geometry) option, as the headlight example uses, and is a visible light still too dim in reflections, especially with Falcon? The manual documents Visible in camera only for area lights (manual: Objects › Light). <!-- TODO verify -->
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ![](/images/pastedGraphic-563.jpg)
 
-*With the lights built out with reflectors and geometry switched on the lights now look much better in reflections, but they’re still really not bright enough. *
+*With the lights built out with reflectors and geometry switched on the lights now look much better in reflections, but they’re still really not bright enough.*
 
 ![](/images/pastedGraphic-564.jpg)
 

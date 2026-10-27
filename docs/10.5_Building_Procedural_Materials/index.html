@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Building Procedural Materials — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="We’re going to build some materials from scratch in an effort to understand how all this stuff fits together." />
   <link rel="canonical" href="https://learn3d.loewald.com/10.5_Building_Procedural_Materials/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Building Procedural Materials","description":"We’re going to build some materials from scratch in an effort to understand how all this stuff fits together.","url":"https://learn3d.loewald.com/10.5_Building_Procedural_Materials/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.5_Building_Procedural_Materials.md">
 <!--{"parent": "10_Materials.md", "order": 5}--><h2 id="building-procedural-materials">Building Procedural Materials</h2>
 <p>We’re going to build some materials from scratch in an effort to understand how all this stuff fits together. We’ll start simple and then build up to some pretty complex concepts.</p>
@@ -55,24 +55,24 @@
 <p><em>Now I use a slightly different gradient node to produce a nice bump map.</em></p>
 <p>We can refine this material endlessly. The mix node could be selecting between two different textures instead of simple colors. Similarly the gradient node generating the bump map could itself drive a mix node selecting between two bump maps (one for the mortar and one for the stone)</p>
 <p><img src="/images/pastedGraphic-331.jpg" alt=""></p>
-<p>*The “Rusted Steel” material (which I believe comes bundled with Cheetah 3D) is a good example of this technique. *</p>
-<p>*The turbulence material is used to select between the clean metal and the rusted metal (black means the metal is clean, anything else indicates a certain level of rust. *</p>
-<p>*Noise is mixed by this value to produce bumps on the rusted areas, while color is mixed by it to give the rusted parts the correct color. *</p>
+<p><em>The “Rusted Steel” material (which I believe comes bundled with Cheetah 3D) is a good example of this technique.</em></p>
+<p><em>The turbulence material is used to select between the clean metal and the rusted metal (black means the metal is clean, anything else indicates a certain level of rust).</em></p>
+<p><em>Noise is mixed by this value to produce bumps on the rusted areas, while color is mixed by it to give the rusted parts the correct color.</em></p>
 <p><em>Finally, a MultiplyAdd node is used to invert the value to make the clean parts shiny (reflective in this case rather than specular).</em></p>
 <h4 id="orientation-based-materials">Orientation-based materials</h4>
 <p>There are two very common kinds of orientations that we often want to use to drive materials: spatial orientation, and orientation relative to the viewing angle.</p>
 <p>Spatial orientation is great for doing things like terrain shaders (e.g. snow and dust tends to gather on flat, horizontal surfaces, similarly cliffs don’t tend to be thickly vegetated).</p>
 <p>An orientation is represented by a normal. You can measure how similar a surface’s orientation is to a given normal by calculating its dot product with the surface’s normal.</p>
 <p><img src="/images/pastedGraphic-332.jpg" alt=""></p>
-<p>*Here we visualize the dot product of the surface normal (on the default sphere) and a normal pointing straight up (0,1,0) — which corresponds to green (hence the vector constant is displayed as a green ball). *</p>
-<p>*You can see on the “normal ball” that the normals look green at the top of the sphere (where the vectors start getting close to (0,1,0) and blue on the “front” on the sphere where the vectors start getting close to (0,0,1). *</p>
+<p><em>Here we visualize the dot product of the surface normal (on the default sphere) and a normal pointing straight up (0,1,0) — which corresponds to green (hence the vector constant is displayed as a green ball).</em></p>
+<p><em>You can see on the “normal ball” that the normals look green at the top of the sphere (where the vectors start getting close to (0,1,0)) and blue on the “front” on the sphere where the vectors start getting close to (0,0,1).</em></p>
 <p><em>But the real news is the dot product, which looks kind of like a bit of snow on a black ball. Neat huh?</em></p>
 <p><img src="/images/pastedGraphic-333.jpg" alt=""></p>
 <p><em>So now we refine our dot product using a gradient to sharpen the cutoff from snow to no snow. A quick test render shows we need to change the cutoff a bit, but the real problem is that our shader puts “snow” in the valleys as well as on the peaks.</em></p>
 <p><img src="/images/pastedGraphic-334.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-335.jpg" alt=""></p>
 <p><em>Changing the gradient can determine how horizontal a surface needs to be to be covered in snow, and how sharp the cut-off is.</em></p>
-<p><em>A more sophisticated version of this material might — if being used for terrain — take absolute altitude into account (e.g. the driving value for snow vs. no snow might be a combination of the dotproduct we just calculated and altitude (the y coordinate of position).</em></p>
+<p><em>A more sophisticated version of this material might — if being used for terrain — take absolute altitude into account (e.g. the driving value for snow vs. no snow might be a combination of the dotproduct we just calculated and altitude (the y coordinate of position)).</em></p>
 <p><strong>Viewing angle</strong> often drives optical properties such as reflection and transmission — the “fresnel” property of the material shader gives you an all-or-nothing implementation of the behavior of many real-world materials, but you might want a more subtle effect, or you might be producing a composite material (e.g. stained glass window) where some parts of the material have fresnel behavior and some don’t.</p>
 <p><img src="/images/pastedGraphic-336.jpg" alt=""></p>
 <p>The state node gives you an interesting output channel called I•N — the dot product of the viewing angle (I) and the normal of the surface you’re rendering (N). In short, a value that will be 1 (or white) for a surface pointing straight at the camera, 0 (or black) for a surface pointing off to the side, and –1 (or even blacker) for a surface pointing directly away from the camera.</p>
@@ -102,7 +102,7 @@
 <h4 id="using-a-texture-to-offset-spatial-mapping">Using a texture to offset spatial-mapping</h4>
 <p>So let’s suppose we’re creating a simple-minded terrain shader based on altitude. High bits are white (covered in snow) and low bits are covered in grass with the bits in between being brown.</p>
 <p><img src="/images/pastedGraphic-346.jpg" alt=""></p>
-<p><em>We pull the position and pull out the y coordinate. (This is position in local coordinate space, so we want our object’s geometry to sit between y=0 and y=1 or the y value will to “blow out”.) I feed this into a gradient (you don’t see any white because the sphere only gets up to y=0.5.</em></p>
+<p><em>We pull the position and pull out the y coordinate. (This is position in local coordinate space, so we want our object’s geometry to sit between y=0 and y=1 or the y value will “blow out”.) I feed this into a gradient (you don’t see any white because the sphere only gets up to y=0.5).</em></p>
 <p><img src="/images/pastedGraphic-347.jpg" alt=""></p>
 <p><em>Here’s our simple test terrain (carefully scaled so the top of the highest mountains lie at y=1 in its local coordinate space) with this material applied. It doesn’t look too bad for such a simple material… until you see it side-on.</em></p>
 <p><img src="/images/pastedGraphic-348.jpg" alt=""></p>
@@ -300,6 +300,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

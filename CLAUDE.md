@@ -34,8 +34,17 @@ There are no tests. `bun run build` is the check: it reports broken wikilinks, i
 - `liveExamples: 'opt-in'` is set, so code fences (e.g. the Cheetah 3D scripts in `17.8_Scripts.md`) are display-only and never run.
 - House style for figure captions: an italic paragraph right after the image(s). Menu paths are bold, e.g. `**Tools \> UV \> Unwrap UV**`.
 
+## Work-in-progress markers
+
+Everything awaiting the author ends in an HTML comment containing `TODO`, so `grep -rn TODO book/` finds it all. The comments are invisible to readers. The blockquotes are deliberately visible.
+
+- `> **AI draft:** … <!-- TODO review AI draft -->` … `> *End of AI draft.* <!-- /AI draft -->`: text drafted from the 8.1.1 manual, the app bundle or the scripting KB, not yet reviewed. Each marker sits on its own line with blank lines around it.
+- `<!-- TODO review -->` at the end of a paragraph: prose rewritten for clarity, to be reviewed.
+- `> **Note:** … <!-- TODO update -->` (out of date), `TODO missing` (8.x feature not covered), `TODO verify` (check in the app), `TODO screenshot` (shows old UI), `TODO editorial` (structure, stubs, decisions).
+
+Use the same forms for new work. When the author approves a draft, remove both of its markers.
+
 ## Known issues
 
-- The ePub has no figures until tosijs-ui binds local images into books (virta task #3519 on tosijs-ui). After that ships, bump `tosijs-ui` and rebuild.
-- `10.11_The_Math_of_Material_Nodes.md` references `DraggedImage.tiff`, which was never in the repo.
+- `reviews/2026-10-27-cheetah3d-8.1.1-review.md` lists what's out of date against Cheetah 3D 8.1.1. Much of the rendering and lighting material still describes v6.
 - If you change the book's content, also update the `epub.modified` date in `site.config.ts`. It's a fixed date, not a clock, so the committed ePub changes only when the book does.

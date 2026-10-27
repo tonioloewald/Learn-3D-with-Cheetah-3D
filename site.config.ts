@@ -19,13 +19,16 @@ export default defineSiteConfig({
   // A prose book: code blocks (e.g. Cheetah 3D scripts) are illustrations, never run.
   liveExamples: 'opt-in',
 
+  // Figures (the cover is 791px wide) scale down to fit the reading column.
+  headExtra: '<style>img { max-width: 100%; height: auto; }</style>',
+
   favicon: '/favicon.png',
   logo: '/logo.png',
   ogImage: '/logo.png',
 
   epub: {
     author: 'Tonio Loewald',
-    cover: 'static/images/cover design 3rd edition.jpg',
+    cover: 'static/images/cover-4th-edition.jpg',
     // A literal, not a clock, so the committed ePub only changes with the book.
     modified: '2026-10-27T00:00:00Z',
   },

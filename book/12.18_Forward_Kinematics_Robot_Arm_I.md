@@ -2,11 +2,13 @@
 
 ## Forward Kinematics: Robot Arm I
 
+> **Note:** this section (like 12.16–12.20) belongs in the Animation chapter (13); it was split off during conversion (image numbering and 12.19's reference to 13's train example confirm it). Suggested order: 13.2 Animation Concepts, then Animation Basics, Path Animation, Forward Kinematics, Inverse Kinematics. <!-- TODO editorial -->
+
 ![](/images/pastedGraphic-491.jpg)
 
 ![](/images/pastedGraphic-492.jpg)
 
-Imagine we’ve built a robot arm out of a hierarchy of parts. The hierarchy might look like what you see above left, while the robot arm might look like the model above right (when posed).
+Imagine we’ve built a robot arm out of a hierarchy of parts. The hierarchy might look like what you see in the first image above, while the robot arm might look like the model in the second image (when posed).
 
 If this model is properly set up then each object will have its pivot set to its center of rotation. In this case we would assume that the base rotates around its Y-axis and each of the other pieces rotates around its X-axis.
 

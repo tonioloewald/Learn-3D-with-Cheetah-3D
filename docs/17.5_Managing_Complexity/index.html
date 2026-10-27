@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Managing Complexity — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The most obvious use for particles is things like sparks and explosions, but perhaps the best use for particles in Cheetah 3D right now is producing multiple…" />
   <link rel="canonical" href="https://learn3d.loewald.com/17.5_Managing_Complexity/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Managing Complexity","description":"The most obvious use for particles is things like sparks and explosions, but perhaps the best use for particles in Cheetah 3D right now is producing multiple…","url":"https://learn3d.loewald.com/17.5_Managing_Complexity/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="17.5_Managing_Complexity.md">
 <!--{"parent": "17_Mastering_Cheetah_3D_s_Interface.md", "order": 5}--><h2 id="managing-complexity">Managing Complexity</h2>
 <h3 id="using-instances">Using Instances</h3>
@@ -62,7 +62,7 @@
 <p>Folders allow you to group objects together and move them as one. This is a simple but very useful tool for organizing complex scenes.</p>
 <p>Of course you can use any object as a “folder” too.</p>
 <h3 id="smart-folders">Smart Folders</h3>
-<p>Smart Folders allow you to use a one scene inside another scene. Smart Folders are useful but can behave a bit strangely — e.g. if you delete or modify some piece of a scene imported through a smart folder, the change will appear to occur, but when you reopen the file it will revert to its original form. Smart folder objects are “read only” (kind of).</p>
+<p>Smart Folders allow you to use one scene inside another scene. Smart Folders are useful but can behave a bit strangely — e.g. if you delete or modify some piece of a scene imported through a smart folder, the change will appear to occur, but when you reopen the file it will revert to its original form. Smart folder objects are “read only” (kind of).</p>
 <h3 id="takes">Takes</h3>
 <p>Takes allow you to split up animations into manageable components. The most common use of takes is to separate a character’s actions. (Takes work very well with Unity.)</p>
 <h3 id="custom-hotkeys">Custom Hotkeys</h3>
@@ -70,7 +70,7 @@
 <p><img src="/images/pastedGraphic-7.jpg" alt=""></p>
 <p>To edit Cheetah 3D’s hotkeys, simply open up its Preference window and click on the Keyboard icon. You may find it helpful to click on the Command heading to sort the commands into alphabetical order.</p>
 <p><strong>Custom View Layouts</strong></p>
-<p>Another powerful customization feature is the ability to completely customize the Cheetah 3D’s document window. (The one thing Cheetah 3D doesn’t do is allow you to use more than one window to view a document, which is a little unfortunate for those of us with multiple monitors.)</p>
+<p>Another powerful customization feature is the ability to completely customize Cheetah 3D’s document window. (The one thing Cheetah 3D doesn’t do is allow you to use more than one window to view a document, which is a little unfortunate for those of us with multiple monitors.)</p>
 <p>All you need to know is that you can resize panels by dragging on the boundaries between adjacent panels, and you can repurpose a panel by right-clicking on its name (this includes adding and removing tabs, and changing the purpose of a tab).</p>
 <p><img src="/images/pastedGraphic-8.jpg" alt=""></p>
 <p>You can save your layout by selecting Save Layout from the layout menu in the toolbar. <strong>Warning</strong>: you can’t choose which layout you’re saving, so by choosing Save Layout you are changing the layout you’re currently using.</p>
@@ -86,6 +86,9 @@
 <li><p><strong>Snap to raster</strong> (it should really be called “grid” to be more intuitive) means that objects will snap to whole multiples of the “Raster width” (or “grid spacing”) setting (by default this is 0.1). If you free move an object it will snap all three coordinates to multiples of the raster width. If you move an object along a single axis it will snap that coordinate to multiples of the raster width.</p>
 </li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has snapping to object centers, per-component snapping toggles (points, edges, polygons) and a rotation step size (manual: Transform Tool), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -271,6 +274,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

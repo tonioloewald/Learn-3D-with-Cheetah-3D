@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Other Lighting Options — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Sky Light (8:00am)." />
   <link rel="canonical" href="https://learn3d.loewald.com/10.13_Other_Lighting_Options/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Other Lighting Options","description":"Sky Light (8:00am).","url":"https://learn3d.loewald.com/10.13_Other_Lighting_Options/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.13_Other_Lighting_Options.md">
 <!--{"parent": "10_Materials.md", "order": 13}--><h2 id="other-lighting-options">Other Lighting Options</h2>
 <p><img src="/images/pastedGraphic-438.jpg" alt=""></p>
@@ -49,15 +49,30 @@
 <p><em>Camera Light. (Just say “No!”)</em></p>
 <p>In addition to the basic light object, Cheetah 3D provides several other methods of lighting a scene.</p>
 <ul>
-<li><p>The <strong>camera light</strong> (essentially a point light with no attenuation located where the camera is; by default, it is only active if a scene has no other lights in it).</p>
+<li>The <strong>camera light</strong> (essentially a point light with no attenuation located where the camera is; by default, it is only active if a scene has no other lights in it).</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual describes <strong>Camera light</strong> as an on/off property of the camera that you disable once you have your own lights (Objects/SceneObjects/Camera); is there still an “auto” setting? (Also the Glowing Torus caption above.) <!-- TODO verify --></p>
+</blockquote>
+<ul>
+<li>The <strong>Sky Light</strong> (a basic sky simulation which provides a passable simulacrum of the light produced by the sun and sky).</li>
+</ul>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<ul>
+<li><p><strong>Image-based lighting</strong> (if you add an <strong>HDRI Light</strong> object to your scene and load a suitable .hdr or .exr image into it, the image will light your scene; with the Cheetah renderer, also turn on <strong>Radiosity</strong> in its render settings, choosing Ambient occlusion or Radiosity).</p>
 </li>
-<li><p>The <strong>Sky Light</strong> (a basic sky simulation which provides a passable simulacrum of the light produced by the sun and sky.</p>
-</li>
-<li><p><strong>Image-based lighting</strong> (if you add an HDRI tag and a Radiosity tag to the active camera, and load a suitable image into the HDRI tag, the image will light your scene).</p>
-</li>
-<li><p><strong>Emissive Objects</strong> can light a scene in combination with the Radiosity tag (these work particularly well in combination with the radiosity tag and judiciously chosen settings). To make an object “emissive” you need to create a suitable material — generally using the Material shader. The light emitted is the diffuse color multiplied by the emissive color.</p>
+<li><p><strong>Emissive Objects</strong> can light a scene with Falcon, or with the Cheetah renderer when <strong>Radiosity</strong> is turned on in its render settings (these work particularly well with judiciously chosen Radiosity settings).</p>
 </li>
 </ul>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p>To make an object “emissive” you need to create a suitable material — generally using the Material shader. The light emitted is the diffuse color multiplied by the emissive color.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: is no light still emitted when the diffuse color is black, in both renderers? <!-- TODO verify --></p>
+</blockquote>
 <p><strong>Note</strong> that if the diffuse color is black, no matter what the emissive color is, no light will be emitted. I consider this to be a bug, but apparently it’s a feature. Note that to create a strongly emissive material you need to use a Color constant node (or some other vector of arbitrary size) to drive the Material Shader’s emissive channel — which allows you to dial up the intensity of the emission.</p>
 
   </article>
@@ -244,6 +259,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

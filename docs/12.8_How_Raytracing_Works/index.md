@@ -20,7 +20,7 @@ Assuming you do bump into something you need to decide what color that thing you
 
 The triangle you hit will have an assigned **material** (or shader, depending on your nomenclature) and the position you hit on the triangle will be translated into the material’s coordinate system. (Materials have a coordinate system? Why yes they do — that’s the UVW space you keep seeing references to.) We won’t go into materials in detail here, but the point is that the material will turn out to have, among other things, a diffuse color, a specular color, a hardness, a reflectiveness, and a transparency value at that specific point on that specific triangle. Oh, and the triangle will have a normal, and the point on the triangle you hit will either inherit that normal or have an interpolated value between that triangle’s normal and some adjacent triangle’s normal.
 
-So, having gotten these properties for this point on the triangle we hit we need to calculate how well it’s lit (based on its normal, and tracing back from that point to every light source in the scene unless you hit some other object in the scene before you get to the light — which is how shadows are calculated). The closer the angle between normal of the point and the direction to a given light source, the more brightly that light source will illuminate that point. (If the light source is more than 90° away from the normal, the light source is behind the triangle and can be ignored.) 
+Having found these properties for the point we hit, we need to work out how well it’s lit. To do that, we trace a line from the point to every light source in the scene; if that line hits some other object before it reaches the light, the point is in shadow from that light (which is how shadows are calculated). The more directly the surface faces a light (based on its normal), the more brightly that light illuminates it. (If the light is more than 90° away from the normal, it’s behind the triangle and can be ignored.) <!-- TODO review -->
 
 Light sources usually “fall off” with distance (real lights *always* do, but in 3D programs we often cheat to achieve specific effects or approximate something more cheaply — e.g. “distant” light sources, like the sun, can be treated as though they do not fall off with distance for most purposes).
 
@@ -30,7 +30,7 @@ Reflection is handled by raytracing along the reflected angle (repeating the who
 
 Transparency is handled by continuing to trace along the same path (bent by refraction if applicable) — again recursively performing the same steps again, and this time multiplying the result by the transparent color at this point.
 
-Once you’ve done all the recursing you have to do (either because you hit a completely non-reflective, non-transparent triangle or because you reach the recursion limit set in your Render Preferences) you’re done with that point.
+Once you’ve done all the recursing you have to do (either because you hit a completely non-reflective, non-transparent triangle or because you reach the recursion limit set by the Cheetah renderer’s **Max. ray depth**) you’re done with that point.
 
 How many “points” do we need to render this way? Generally one for every pixel in the image, plus more along the edges of things to antialias “jaggies”. Each pixel in an image tends to be the result of rendering one or more points “inside” that pixel and averaging the results.
 
@@ -42,4 +42,6 @@ Various special effects are achieved by using stochastic sampling methods at var
 
 E.g. the way you decide if a point is in shadow is by calculating the ray from that point to a light source and seeing if it hits something before it gets to the light. An area light is treated as a random collection of dimmer lights within an area, so instead of tracing back to one light source you might trace back to 10 light sources and average the result. This is how you get “soft” shadows.
 
-Similarly blurred reflections are achieved by calculating multiple reflections slightly deviating from the “correct” angle and averaging the result. Blurred transparency does the same thing for transparency. Depth of field is calculated by picking points offset from the camera position to start each ray (and because you start at a random positon, rather than splitting later in the process, depth of field is much more expensive than the other effects).
+Similarly blurred reflections are achieved by calculating multiple reflections slightly deviating from the “correct” angle and averaging the result. Blurred transparency does the same thing for transparency. Depth of field is calculated by picking points offset from the camera position to start each ray (and because you start at a random position, rather than splitting later in the process, depth of field is much more expensive than the other effects).
+
+> **Note:** Cheetah 3D 8.1.1 also has the Falcon renderer, an unbiased path tracer that follows random light paths (with diffuse, glossy and specular bounces) and refines the image with more samples per pixel; a paragraph on path tracing would round out this section (manual: Render › Falcon). <!-- TODO missing -->

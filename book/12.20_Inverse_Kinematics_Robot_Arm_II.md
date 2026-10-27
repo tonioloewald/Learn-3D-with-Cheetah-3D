@@ -2,6 +2,8 @@
 
 ## Inverse Kinematics: Robot Arm II
 
+> **Note:** this section (like 12.16–12.20) belongs in the Animation chapter (13); it was split off during conversion (image numbering and 12.19's reference to 13's train example confirm it). Suggested order: 13.2 Animation Concepts, then Animation Basics, Path Animation, Forward Kinematics, Inverse Kinematics. <!-- TODO editorial -->
+
 So, we see from our experiment with forward kinematics that getting something as simple as the robot arm to point its tool at a specific spot is an exercise in frustration. The trick is to tell the computer what we want and have it figure out all the crazy math for us.
 
 This is _inverse_ kinematics.

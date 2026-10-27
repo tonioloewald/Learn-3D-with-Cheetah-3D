@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Package Mockup — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Let’s suppose you’re designing the packaging for a new breakfast cereal and you want to mock up some 3D packages based on your designs." />
   <link rel="canonical" href="https://learn3d.loewald.com/7.2_Package_Mockup/" />
@@ -29,34 +29,34 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Package Mockup","description":"Let’s suppose you’re designing the packaging for a new breakfast cereal and you want to mock up some 3D packages based on your designs.","url":"https://learn3d.loewald.com/7.2_Package_Mockup/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="7.2_Package_Mockup.md">
 <!--{"parent": "7_Mini_Tutorials.md", "order": 2}--><h2 id="package-mockup">Package Mockup</h2>
 <p><img src="/images/pastedGraphic-42.jpg" alt=""></p>
 <p>Let’s suppose you’re designing the packaging for a new breakfast cereal and you want to mock up some 3D packages based on your designs.</p>
 <p>In this tutorial we’ll build a package using a box primitive, convert it to an editable mesh so we can apply different materials to each face of the box, and then create materials for the different faces. We’ll also create a very simple scene and lighting setup to give our render some context (vs. a box floating in space).</p>
-<p>Launch Cheetah 3D (if necessary). Create a new document (if necessary)</p>
+<p>Launch Cheetah 3D (if necessary). Create a new document (if necessary).</p>
 <ol>
 <li><p>Add a Box to the scene. Set the Box’s width, height, and depth to 0.6, 0.8, and 0.2 respectively. Now set its y coordinate (the middle value under Position) to 0.4.</p>
 </li>
 <li><p>Add a Plane to the scene and set its scale values to 100 (i.e. 100, 100, 100). It should now fill the view, but the box you created should be on top of it.</p>
 </li>
-<li><p>Add a Sky Light to the scene. (For variety! If you like, make an HDRI setup instead per the previous tutorial.) Set the Skylight’s Date to 13:00 (instead of 12:00, which is the default). This will affect the angle of lighting and shadows.</p>
+<li><p>Add a Sky Light to the scene. (For variety! If you like, make an HDRI setup instead per the <a href="/7.1_Mini_Tutorial_3D_Text/">previous tutorial</a>.) Set the Skylight’s Date to 13:00 (instead of 12:00, which is the default). This will affect the angle of lighting and shadows.</p>
 </li>
 <li><p>Click Render! It’s a box on a plane. Not very exciting.</p>
 </li>
 <li><p>Now, in the Object Browser, double-click on the Box icon to make it into an editable mesh.</p>
 </li>
-<li><p>In the Materials panel, create four new materials by clicking Add Material and selecting Material. Rename the materials: “front”, “side”, “top”. For each material, click on the bevel button to the right of its diffuse property, and select Texture &gt; Image to add an Image node, and load the appropriate image (Imperial Cereal.PSD for the front, and so on.)</p>
+<li><p>In the Materials panel, create three new materials by clicking Add Material and selecting Material. Rename the materials: “front”, “side”, “top”. For each material, click on the bevel button to the right of its diffuse property, and select Textures &gt; Image to add an Image node, and load the appropriate image (Imperial Cereal.PSD for the front, and so on.)</p>
 </li>
 <li><p>Now, select the box mesh, go into Polygon mode, select the front face and then drag the appropriate material onto it. Repeat for the side and top polygons (we won’t worry about the three faces we can’t see — I’m sure you get the idea).</p>
 </li>
 <li><p>From the Add Material popup, select <strong>Special &gt; Shadowmat</strong>. Drag this material onto the plane. Set the Camera’s background color to transparent.</p>
 </li>
-<li><p>Frame your box and hit Render. You’ve now got a nice render of your produce complete with a translucent shadow.</p>
+<li><p>Frame your box and hit Render. You’ve now got a nice render of your product complete with a translucent shadow.</p>
 </li>
 </ol>
 
@@ -244,6 +244,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

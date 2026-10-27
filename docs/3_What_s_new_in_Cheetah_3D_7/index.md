@@ -2,6 +2,10 @@
 
 # What’s new in Cheetah 3D 7?
 
+> **Note:** this chapter lists the changes in Cheetah 3D 7; retitle it (e.g. “Changes in Cheetah 3D 7”) or add a chapter on Cheetah 3D 8. <!-- TODO editorial -->
+
+> **Note:** Cheetah 3D 8.1.1 also has native Apple Silicon support, a Metal-based editor view, USDZ/STL/glTF file support, and Falcon features such as Filmic tone mapping, reflective caustics, MIS for the HDRI and Sky lights, Shadow softness, and IES light profiles (manual: Render › Falcon; Objects › Light, HDRI Light, Sky Light), not yet covered here. <!-- TODO missing -->
+
 The headline feature of C3D7 is the new renderer, **Falcon**, but there are many important new user interface refinements and features under the hood.
 
 ### User Interface Changes
@@ -9,6 +13,8 @@ The headline feature of C3D7 is the new renderer, **Falcon**, but there are many
 * New look for Yosemite (e.g. “flat” icons)
 
 * Support for “dark mode” in High Sierra and Mojave.
+
+> **Note:** macOS dark mode arrived in Mojave; High Sierra only had a dark menu bar and Dock. <!-- TODO editorial -->
 
 * Uses default system font
 
@@ -35,6 +41,8 @@ The headline feature of C3D7 is the new renderer, **Falcon**, but there are many
 * Layer Manager
 
 * Layer property added to mode tag
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the Layer Manager and the Mode tag’s Layer property (the 8.1.1 Mode tag manual page doesn’t list it). <!-- TODO verify -->
 
 * Layers can be displayed/edited directly in object manager
 
@@ -98,6 +106,8 @@ _If you’ve ever fiddled with material transparency or wireframe display modes 
 
 * Only works in vertex mode
 
+> **Note:** requires updating for Cheetah 3D 8.1.1: the Brush tool now works in point, edge, polygon and object mode (manual: Tools › Polygon › Brush). <!-- TODO update -->
+
 * Powerful falloff control
 
 * Allows **basic sculpting**
@@ -141,6 +151,8 @@ _If you’ve ever fiddled with material transparency or wireframe display modes 
 * **Boolean tool maintains material assignments**
 
 ### New Merge Tool
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: is this File › Merge (merging another file into the scene)? The 8.1.1 manual’s Merge tool (Tools › Merge) combines selected objects into one. <!-- TODO verify -->
 
 * Replaces import children
 

@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Baking Materials — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Originally, baking was used to precalculate the lighting of settings for 3D action games (Quake pioneered this technique)." />
   <link rel="canonical" href="https://learn3d.loewald.com/12.15_Baking_Materials/" />
@@ -29,34 +29,34 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Baking Materials","description":"Originally, baking was used to precalculate the lighting of settings for 3D action games (Quake pioneered this technique).","url":"https://learn3d.loewald.com/12.15_Baking_Materials/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.15_Baking_Materials.md">
 <!--{"parent": "12_Rendering.md", "order": 15}--><h2 id="baking-materials">Baking Materials</h2>
-<p>Originally, baking was used to precalculate the lighting of settings for 3D action games (<em>Quake</em> pioneered this technique). Back in the late-90s, calculating shadows on-the-fly was simply impractical for inexpensive computer hardware, so id software decided to “bake” lightmaps for their scenes. This allowed a game engine to render settings with elaborate lighting almost as quickly as a “flat” 3D scene.</p>
+<p>Originally, baking was used to precalculate the lighting of settings for 3D action games (<em>Quake</em> pioneered this technique). Back in the late-90s, calculating shadows on-the-fly was simply impractical for inexpensive computer hardware, so id Software decided to “bake” lightmaps for their scenes. This allowed a game engine to render settings with elaborate lighting almost as quickly as a “flat” 3D scene.</p>
 <p>For objects that aren’t transparent or reflective — “most objects” — you can precalculate the color of each point on a surface and “bake” it into a new texture that will allow the object to be rendered more quickly (especially for realtime applications). You can either bake everything into a new texture, or simply bake the precalculated lighting (and hence shadows) into a separate texture that, combined with the original textures, will allow the model to be rendered more quickly.</p>
 <p><strong>Note</strong>: this is a useful oversimplification. In reality anything other than solid metal is somewhat transparent, and all objects are somewhat reflective. But 3D rendering is all about oversimplification.</p>
 <p>In addition to baking lighting, baking is also useful for turning procedural materials (which can be prohibitively expensive to calculate in “real time”) into image textures. This also allows you to use procedural materials for realtime applications.</p>
 <h3 id="tutorial-baking-in-five-minutes">Tutorial: Baking in Five Minutes</h3>
-<p><strong>Note</strong>: baking works on one <em>editable</em> mesh at a time, but the mesh is rendered in situ using the current camera’s settings, so other objects will cast shadows onto the mesh you’re baking and if you have a radiosity tag on the camera, radiosity will be baked.</p>
+<p><strong>Note</strong>: baking works on one <em>editable</em> mesh at a time, but the mesh is rendered in situ using the current camera’s settings, so other objects will cast shadows onto the mesh you’re baking and if you have Radiosity turned on in the renderer’s settings, radiosity will be baked.</p>
 <p><img src="/images/pastedGraphic-576.jpg" alt=""></p>
 <ol>
 <li><p>Start with a textured <strong>editable</strong> mesh you want to bake.</p>
 </li>
 <li><p>Select the mesh.</p>
 </li>
-<li><p>Click on the <strong>Bake</strong> toolbar icon (looks like an oven) which will add a <strong>Bake Material</strong> tag (looks like an upside-down flower pot — I think it’s supposed to be a clay oven) to the mesh.</p>
+<li><p>Click on the <strong>Bake</strong> toolbar icon (looks like an oven), or choose <strong>Render &gt; Bake Texture</strong>, which will add a <strong>Bake Texture</strong> tag (looks like an upside-down flower pot — I think it’s supposed to be a clay oven) to the mesh.</p>
 </li>
-<li><p>In the Baking tag’s properties panel, click the OK button next to <strong>Baking UV Coordinates</strong>. (This will automatically unwrap your UV mesh to UV set 2.)</p>
+<li><p>In the Bake Texture tag’s properties panel, click the OK button next to <strong>Baking UV coords</strong>. (This will automatically unwrap your UV mesh to UV set 2.)</p>
 </li>
-<li><p>Now (with the mesh still selected) click the Bake toolbar icon again (the toolbar item it adds a Bake Material tag to a mesh if it doesn’t have one, and bakes the mesh if it does).</p>
+<li><p>Now (with the mesh still selected) click the Bake toolbar icon again (the toolbar item adds a Bake Texture tag to a mesh if it doesn’t have one, and bakes the mesh if it does).</p>
 </li>
 </ol>
 <p><img src="/images/pastedGraphic-577.jpg" alt=""></p>
 <p><em>Baked materials generally look weird. This is the baked texture for the castle shown previously.</em></p>
-<ol>
+<ol start="6">
 <li>You should see a really funky image rendered. This is a new texture for your model, but it will only work with the newly baked UV2 UV map.</li>
 </ol>
 <p>To see the baked texture in action:</p>
@@ -68,7 +68,7 @@
 </ol>
 <p><img src="/images/pastedGraphic-578.jpg" alt=""></p>
 <p><em>By default, your mesh will be using UV set 1 (a.k.a. UV1) and thus when you assign an image-based material to it that uses UV set 2 it will look horrible!</em></p>
-<ol>
+<ol start="3">
 <li>Add an image texture for the new material’s diffuse channel (ideally we’d use a Solid shader here, but Solid shaders do not preview correctly) and load the rendered image into it. Your mesh will probably look like crap right now!</li>
 </ol>
 <p><img src="/images/pastedGraphic-579.jpg" alt=""></p>
@@ -76,7 +76,7 @@
 <p><img src="/images/pastedGraphic-581.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-582.jpg" alt=""></p>
 <p><em>Once you set the mesh to use UV2 it should look amazing, from any angle! This is how the model looks in the Cheetah 3D viewport.</em></p>
-<ol>
+<ol start="4">
 <li>Click on the mesh’s icon (either in the property panel or the Object Browser) so you can see its properties, and change its UV Set to 2. It should look amazing now (try orbiting around it). For an even better result, you can turn off all the lights in your scene, and add a single ambient light.</li>
 </ol>
 <p><strong>Baking Procedural Materials</strong></p>
@@ -84,16 +84,19 @@
 <p><img src="/images/pastedGraphic-584.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-585.jpg" alt=""></p>
 <p><em><strong>Top</strong>: the same castle, but now it’s been textured with procedural materials, including procedural cobbles on the ground, procedural terracotta on the walls, and procedural shingles on the roofs. <strong>Middle</strong>: the same castle after baking a 2048x2048 texture and previewing it. <strong>Bottom</strong>: zoomed in showing how detailed the final texture is.</em></p>
-<p><strong>Baking a Tiling Textures from Procedural Textures</strong></p>
+<p><strong>Baking Tiling Textures from Procedural Textures</strong></p>
 <p>You can use the preceding technique to create a tiling image from a procedural texture using a torus. A torus has the wonderful property of having a perfectly tiling UV map. This allows a torus to create a perfect tiling pattern from any solid procedural texture.</p>
 <p>There is a downside to this — in order to prevent distortion of the resulting material you need to make the Radius Ring significantly larger than Radius tube, but this means the baked material will tile perfectly well but will be vertically stretched.</p>
 <p><img src="/images/pastedGraphic-586.jpg" alt=""></p>
 <p>This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius Tube 0.5. It gets kind of bunched up in the middle relative to the top and bottom (which map to the inner surface of the torus).</p>
 <p><img src="/images/pastedGraphic-587.jpg" alt=""></p>
 <p>This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius Tube 0.25, and then scaled vertically by 50%. There’s little apparent distortion and it still tiles well. It’s just not a square texture.</p>
-<p><strong>The Bake Material Tag</strong></p>
+<p><strong>The Bake Texture Tag</strong></p>
 <p><img src="/images/pastedGraphic-588.jpg" alt=""></p>
-<p>The Bake Material tag lets you control exactly how baking works, it automates UV unwrapping, and it determines what gets baked when you bake a mesh’s materials. </p>
+<blockquote>
+<p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
+</blockquote>
+<p>The Bake Texture tag lets you control exactly how baking works, it automates UV unwrapping, and it determines what gets baked when you bake a mesh’s materials. </p>
 <p><strong>Properties</strong></p>
 <p>These settings affect the quality of the finished image.</p>
 <p><strong>Bake to</strong> allows you to “bake to” UV1 or UV2. This affects which UV set gets overwritten when you click the OK button next to Baking UV coords, and determines which UV set is used for baking. </p>
@@ -101,11 +104,11 @@
 <p><strong>Pixel Border</strong> essentially expands out the edges of the baked image for each UV Group to reduce the visibility of errors in the UV map.</p>
 <p><strong>Background</strong> determines the background color of the baked image.</p>
 <p><strong>Channels</strong></p>
-<p>This is a set of toggles that determines what ends up contributing to the baked image. The likely use cases are</p>
+<p>This is a set of toggles (<strong>Color</strong>, <strong>Ambient</strong>, <strong>Diffuse</strong>, <strong>Emission</strong>, <strong>Bumps</strong>, <strong>Radiosity</strong> and <strong>Caustics</strong>) that determines what ends up contributing to the baked image. The likely use cases are</p>
 <ul>
 <li><p>Bake everything (which is the default)</p>
 </li>
-<li><p>Bake just the lighting (i.e. everything except Color) — i.e. bake a light map (this allows you to use the original image-based materials with precalculated lighting, which often allows you to use a low resolution lightmap in combination with high quality materials to get good results.</p>
+<li><p>Bake just the lighting (i.e. everything except Color) — i.e. bake a light map (this allows you to use the original image-based materials with precalculated lighting, which often allows you to use a low resolution lightmap in combination with high quality materials to get good results).</p>
 </li>
 <li><p>Bake <em>just</em> the color (to convert procedural materials into image-based materials)</p>
 </li>
@@ -295,6 +298,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

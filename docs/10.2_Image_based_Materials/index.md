@@ -98,4 +98,6 @@ Here are examples of the default UV-mappings for all the primitives and examples
 
 #### Quick and Dirty Bumpmaps
 
+> **Note:** Cheetah 3D 8.1.1 also has normal-map support: every shader node’s **Bump type** can be set to height, normal map Y+ or normal map Y− (see the shader node definitions in the app bundle), not yet covered here. <!-- TODO missing -->
+
 Often the easiest way to generate a bump map for a material is simply to use the same image you’re using as your diffuse map. Even if it’s not exactly accurate to treat “everything dark” as a crack or dent, it often works well as a first approximation.

@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Cheetah 3D Under the Hood — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="You can open Cheetah 3D’s Application Support folder by selecting Go \&gt; Go to folder… in Finder and entering this path: ~/Library/Application Support/Cheetah3D/" />
   <link rel="canonical" href="https://learn3d.loewald.com/17.6_Cheetah_3D_Under_the_Hood/" />
@@ -29,43 +29,70 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Cheetah 3D Under the Hood","description":"You can open Cheetah 3D’s Application Support folder by selecting Go \\> Go to folder… in Finder and entering this path: ~/Library/Application Support/Cheetah3D/","url":"https://learn3d.loewald.com/17.6_Cheetah_3D_Under_the_Hood/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="17.6_Cheetah_3D_Under_the_Hood.md">
 <!--{"parent": "17_Mastering_Cheetah_3D_s_Interface.md", "order": 6}--><h2 id="cheetah-3d-under-the-hood">Cheetah 3D Under the Hood</h2>
 <p><img src="/images/pastedGraphic-631.jpg" alt=""></p>
 <h3 id="cheetah-3ds-application-support-folder">Cheetah 3D’s Application Support Folder</h3>
 <p>You can open Cheetah 3D’s Application Support folder by selecting <strong>Go &gt; Go to folder…</strong> in Finder and entering this path: <strong>~/Library/Application Support/Cheetah3D/</strong></p>
-<p>Inside this folder you will find four folders:</p>
+<p>Inside this folder you will find six folders:</p>
 <h4 id="brushes">Brushes</h4>
 <p>Images you put in this folder will be available for use as brushes in Cheetah 3D’s texture painting tool.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 app bundle; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<h4 id="environment">Environment</h4>
+<p>This folder holds HDR environment images (Cheetah 3D 8.1.1 installs EntranceHall.hdr and Oldtown.hdr here) for image-based lighting.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h4 id="materials">Materials</h4>
 <p>This is where the materials available from the Material menu are found. If you want to add more materials (or remove materials you don’t like) here’s where to look.</p>
 <h4 id="render-history">Render History</h4>
 <p>This is where all the renders you’ve ever done with Cheetah 3D (using this particular user account) and not deleted can be found. Each render job has its own folder. Each folder will almost always include an image (in PNG format), a thumbnail (in JPEG format), some metadata (in an info.plist XML file). Animations will include multiple images and a movie wrapper named movie.mov. If you rendered with preferences set to cache HDR or EPIX then those will be here too.</p>
 <p>As I write this, I have over 4000 folders in my Render History.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the render folder checked held image.png, thumbnail.png (PNG, not JPEG) and info.plist; confirm the thumbnail format and whether the “cache HDR or EPIX” preference still exists. <!-- TODO verify --></p>
+</blockquote>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 app bundle; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<h4 id="samples">Samples</h4>
+<p>This folder holds the sample scenes that come with Cheetah 3D, sorted into Animation, Dynamics, Metaballs, Modeling, and Particle subfolders.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h4 id="scripts">Scripts</h4>
-<p>The Scripts folder has a number of subfolders for different kinds of scripts:</p>
+<p>The Scripts folder has a number of subfolders for different kinds of scripts (the folder a script is in decides what kind of script it is):</p>
 <ul>
-<li><p><strong>Macros</strong> are simple automations. They do something immediately and automatically with no further user input.</p>
+<li><p><strong>Macro</strong> scripts are simple automations. They do something immediately and automatically with no further user input.</p>
 </li>
-<li><p><strong>Particles</strong> are scripted Particle Systems.</p>
+<li><p><strong>Particle</strong> scripts are scripted Particle Systems.</p>
 </li>
 <li><p><strong>Polygonobj</strong> are scripted mesh primitives.</p>
 </li>
 <li><p><strong>Splineobj</strong> are scripted spline primitives.</p>
 </li>
-<li><p><strong>Tag</strong> are scripted tags. (They allow you to add custom properties to objects which can then be used by other scripts.)</p>
+</ul>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D scripting knowledge base and the scripts bundled with Cheetah 3D 8.1.1; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<ul>
+<li><p><strong>Tag</strong> scripts are scripted tags. Since Cheetah 3D 7 they are <em>expression tags</em>: the script&#39;s performExpression function drives the tag&#39;s owner (e.g. making it move in a circle, as the bundled CircleExpression.js does), and the tag can also hold custom properties.</p>
 </li>
-<li><p><strong>Tools</strong> bring up a UI panel which you can be used configure the tool or perform tasks.</p>
+<li><p><strong>Tool</strong> scripts bring up a UI panel, in the <strong>Tool</strong> tab of the properties panel, which can be used to configure the tool or perform tasks.</p>
 </li>
 </ul>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h3 id="jas-files">.jas Files</h3>
 <p><img src="/images/pastedGraphic-632.jpg" alt=""></p>
 <p><em>A simple .jas file open in BBEdit 10.</em></p>
-<p>If you open up a .jas file with a text editor (such as Text Edit — if you want a good, free text editor I highly recommend <strong>TextWrangler</strong> from <strong>barebones.com</strong>) you’ll see that it’s an XML file. It follows that you can perform major changes to .jas files — if you’re careful — using any of the huge variety of tools for manipulating XML. E.g. using XSL it should be possible to write simple transformations that document the contents of .jas files, convert them to other file formats, or perform systematic changes.</p>
+<p>If you open up a .jas file with a text editor (such as TextEdit — if you want a good, free text editor I highly recommend <strong>TextWrangler</strong> from <strong>barebones.com</strong>) you’ll see that it’s an XML file. It follows that you can perform major changes to .jas files — if you’re careful — using any of the huge variety of tools for manipulating XML. E.g. using XSL it should be possible to write simple transformations that document the contents of .jas files, convert them to other file formats, or perform systematic changes.</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -251,6 +278,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

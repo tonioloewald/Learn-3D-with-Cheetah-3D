@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Tutorial: Walk Cycle — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The simplest walk cycle comprises four keyframes, two of which are mirrors of the others." />
   <link rel="canonical" href="https://learn3d.loewald.com/14.6_Tutorial_Walk_Cycle/" />
@@ -29,12 +29,15 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Tutorial: Walk Cycle","description":"The simplest walk cycle comprises four keyframes, two of which are mirrors of the others.","url":"https://learn3d.loewald.com/14.6_Tutorial_Walk_Cycle/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="14.6_Tutorial_Walk_Cycle.md">
 <!--{"parent": "14_Character_Animation.md", "order": 6}--><h2 id="tutorial-walk-cycle">Tutorial: Walk Cycle</h2>
+<blockquote>
+<p><strong>Note:</strong> this page duplicates <a href="/14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a> (identical steps, byte-identical <code>-1</code> images); delete it and its images. <!-- TODO editorial --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-514-1.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-515-1.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-516-1.jpg" alt=""></p>
@@ -55,7 +58,7 @@
 <li>In the first frame, switch the view to Left and try to match the first pose — with right foot firmly planted on the ground and right leg straight, left leg bent and passing — above. Make sure hierarchy is toggled on under the record button (ideally, toggle off scale as well). Click the root bone and then click the <strong>Record</strong> button.</li>
 </ol>
 <p>A blue marker will appear on the timeline representing the current set of keyed values (including children of the selected node because hierarchy is toggled on).</p>
-<ol>
+<ol start="3">
 <li><p>Click on the blue marker. Copy it. Drag the time indicator to the middle frame (frame 12) and paste. Drag the time indicator to the last frame and paste.</p>
 </li>
 <li><p>Go to frame 6 and try to replicate the pose in the second pose — striding with left foot forward and left leg slightly bent, right leg back and straight with heel leaving the ground. When you’re happy, click on the root bone and then click <strong>Record</strong>.</p>
@@ -68,7 +71,7 @@
 <ol>
 <li><p>Go to the key frame you want to flip.</p>
 </li>
-<li><p>Click on the root bone, select Pose Utilities from <strong>Tool &gt; Script &gt; Tool Script &gt; Pose Utilities</strong>. Select the left/right naming convention you’re using (which should be set correctly by default if you’re using the latest version from my website) and click <strong>Swap Left and Right</strong>.</p>
+<li><p>Click on the root bone, select Pose Utilities from <strong>Tools &gt; Script &gt; Tool Script &gt; Pose Utilities</strong>. Select the left/right naming convention you’re using (which should be set correctly by default if you’re using the latest version from my website) and click <strong>Swap Left and Right</strong>.</p>
 </li>
 <li><p><strong>Click on the root bone <em>again</em></strong> and then click <strong>Record</strong>.</p>
 </li>
@@ -260,6 +263,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

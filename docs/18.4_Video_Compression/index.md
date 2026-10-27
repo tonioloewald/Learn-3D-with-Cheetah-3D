@@ -24,7 +24,7 @@ First, lossy compression throws away data based on what people tend to notice, w
 
 Second, lossy compression is designed for playback, and not scrubbing or random access. When you load lossily compressed video that uses temporal compression into a video editing package it is often very unresponsive because displaying arbitrary images from a lossily compressed video clip is computationally expensive. Some lossy compression codecs (notably MJPEG) do not use temporal compression and so do not suffer from this disadvantage.
 
-Finally, lossy compression does not support alpha channel transparency. So, even if the previous disadvantages can be minimized, any video clip which uses alpha transparency needs to be saved using a lossly codec.
+Finally, most lossy delivery codecs (such as H.264) do not support alpha channel transparency (ProRes 4444, mentioned above, is an exception). So, even if the previous disadvantages can be minimized, any video clip which uses alpha transparency needs to be saved using a lossless codec. <!-- TODO review -->
 
 ### Production or Delivery
 
@@ -39,6 +39,8 @@ Alpha channels are the most common mechanism for representing transparency. Most
 ### Picking Your Target(s): Web, iPhone, iPad, etc.
 
 The simplest way to prepare a video for distribution is to use the **QuickTime Player** included as part of recent versions of Mac OS X — its **Export** and **Export for Web** options will produce good results with no fuss.
+
+> **Note:** requires updating for Cheetah 3D 8.1.1: QuickTime Player 7 is 32-bit and can’t run on macOS 10.15 or later, which Cheetah 3D 8.1.1 requires (app Info.plist). <!-- TODO update -->
 
 **QuickTime Player 7** (which should still be present on your Mac) and **iMovie** offer more sophisticated Export options (iMovie has them in its **Share** menu) as do **Final Cut Pro** and **Motion**.
 

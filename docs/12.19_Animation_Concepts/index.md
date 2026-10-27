@@ -2,13 +2,15 @@
 
 ## Animation Concepts
 
+> **Note:** this section (like 12.16–12.20) belongs in the Animation chapter (13); it was split off during conversion (image numbering and 12.19's reference to 13's train example confirm it). Suggested order: 13.2 Animation Concepts, then Animation Basics, Path Animation, Forward Kinematics, Inverse Kinematics. <!-- TODO editorial -->
+
 ### Keyframes and Interpolation
 
 Interpolation means to “find a point between fixed points”. In animation terms, it means determining a value at a point in time between two key values. How values are interpolated is as important as the key values themselves.
 
-Let’s consider our train animation again. We want to animate a train *arriving* at a station. It starts short of the station, it ends at the platform. Is this all we need to know?
+Let’s consider our train animation (from [Animation](/13_Animation/)) again. We want to animate a train *arriving* at a station. It starts short of the station, it ends at the platform. Is this all we need to know?
 
-If we were to naively interpolate between the two values (this is usually called linear interpolation) we might say that if the train starts at position 0 and time 0, and ends at position 10 and time 10, then at time 1 we’d interpolate its position to be time 1, at time 5 it would be at position 5, and so on.
+If we were to naively interpolate between the two values (this is usually called linear interpolation) we might say that if the train starts at position 0 and time 0, and ends at position 10 and time 10, then at time 1 we’d interpolate its position to be position 1, at time 5 it would be at position 5, and so on.
 
 This would produce a *terrible* animation. The train would move to the platform at a constant speed and then immediately stop. Trains don’t do this.
 
@@ -30,9 +32,9 @@ Sometimes this is what you want, often it isn’t.
 
 ### Anticipation and Overshoot
 
-One of the principles of animation outlined in *Disney Animation: The Illusion of Life* — the idea is that any character who is about to perform an action will prepare for it by moving slightly in the opposite direction, and will always slightly overshoot on completion. (Think of a pitcher winding up to throw a ball and then following through after releasing the ball.) 
+Anticipation and overshoot are among the principles of animation outlined in *Disney Animation: The Illusion of Life*. The idea is that any character who is about to perform an action will prepare for it by moving slightly in the opposite direction, and will always slightly overshoot on completion. (Think of a pitcher winding up to throw a ball and then following through after releasing the ball.) <!-- TODO review -->
 
-Again, returning to our train, the bit where it lurches back slightly after coming to a stop is a case of overshoot. The basic principle is that not only do objects not suddenly start moving, but they also tend to anticipate motion (usually be moving slightly in the opposite direction before starting) and overshoot (move past their intended destination and then regain balance).
+Again, returning to our train, the bit where it lurches back slightly after coming to a stop is a case of overshoot. The basic principle is that not only do objects not suddenly start moving, but they also tend to anticipate motion (usually by moving slightly in the opposite direction before starting) and overshoot (move past their intended destination and then regain balance).
 
 ### Squash and Stretch
 
@@ -44,4 +46,4 @@ Again, returning to our train, the bit where it lurches back slightly after comi
 
 *Simple animation of a ball “jumping” from point A to point B. **Left**: anticipating the jump the ball is squashed. **Middle**: as it flies through the air it stretches along its axis of motion. **Right**: as it impacts its destination it squashes again.*
 
-One of the core principles of animation outlined in *Disney Animation: The Illusion of Life* — objects prepare for action and react to impact by being squashed, and stretch along the line of motion.
+Squash and stretch is another of the core principles of animation outlined in *Disney Animation: The Illusion of Life*: objects prepare for action and react to impact by squashing, and stretch along their line of motion as they move. <!-- TODO review -->

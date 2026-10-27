@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Transparent Materials — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="In simplistic terms, a transparent material is any material whose transparent color is something other than black in some places." />
   <link rel="canonical" href="https://learn3d.loewald.com/10.3_Transparent_Materials/" />
@@ -29,27 +29,33 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Transparent Materials","description":"In simplistic terms, a transparent material is any material whose transparent color is something other than black in some places.","url":"https://learn3d.loewald.com/10.3_Transparent_Materials/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.3_Transparent_Materials.md">
 <!--{"parent": "10_Materials.md", "order": 3}--><h2 id="transparent-materials">Transparent Materials</h2>
-<p>In simplistic terms, a transparent material is any material whose transparent color is something other than black in some places. Note: as soon as a material’s transparent color becomes non-black, rendering it becomes significantly slower</p>
+<p>In simplistic terms, a transparent material is any material whose transparent color is something other than black in some places. Note: as soon as a material’s transparent color becomes non-black, rendering it becomes significantly slower.</p>
 <h3 id="refraction">Refraction</h3>
 <p>Refractive Indices of various materials (source: <a href="http://en.wikipedia.org/wiki/List%5C_of%5C_refractive%5C_indices">http://en.wikipedia.org/wiki/List\_of\_refractive\_indices</a>):</p>
 <p><img src="/images/pastedGraphic-294.jpg" alt=""></p>
 <h3 id="fresnel-effect">Fresnel Effect</h3>
 <p><img src="/images/pastedGraphic-295.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-296.jpg" alt=""></p>
-<p><em><strong>Top</strong>: “glass” with transparency set to light grey and reflection set to black. <strong>Bottom</strong>: as left, but with the fresnel box checked.</em></p>
-<p>The Fresnel effect simulates the behavior of real-world materials by adjusting the transmission and reflection characteristics of a material based on the viewing angle. In general, the simplest way to produce a realistic transparent material is to check the fresnel box and set its rfractive index correctly.</p>
+<p><em><strong>Top</strong>: “glass” with transparency set to light grey and reflection set to black. <strong>Bottom</strong>: as above, but with the fresnel box checked.</em></p>
+<p>The Fresnel effect simulates the behavior of real-world materials by adjusting the transmission and reflection characteristics of a material based on the viewing angle. In general, the simplest way to produce a realistic transparent material is to check the fresnel box and set its refractive index correctly.</p>
 <h3 id="the-dielectric-shader">The Dielectric Shader</h3>
 <p><img src="/images/pastedGraphic-297.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-298.jpg" alt=""></p>
 <p><em><strong>Top</strong>: material shader “glass” (diffuse . <strong>Bottom</strong>: dielectric “glass”. Same transparency and refractive index. Very similar, but not quite identical.</em></p>
+<blockquote>
+<p><strong>Note:</strong> the caption above is truncated mid-sentence (“(diffuse .”); the missing text needs restoring. <!-- TODO editorial --></p>
+</blockquote>
 <p>The Dielectric Shader is designed to make creating realistic transparent materials easy. Anything you can do in the Dielectric Shader you can do in the Material Shader (with extra work and more control), but the Dielectric Shader is simpler to work with, and produces good results.</p>
 <p>Unlike the Metal shader, the dielectric shader doesn’t offer you any capabilities that the Material shader lacks, although its output is not exactly the same as a Material shader with the “obvious” equivalent inputs.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: in 8.1.1 the Dielectric shader has an Absorption and a Shadow parameter that the Material shader lacks, and its transparency color is a connectable input; does that change the statements here and under Soap Bubbles? <!-- TODO verify --></p>
+</blockquote>
 <h4 id="soap-bubbles">Soap Bubbles</h4>
 <p><img src="/images/pastedGraphic-299.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-300.jpg" alt=""></p>
@@ -61,11 +67,17 @@
 <p><em><strong>Above</strong>: a render of a shot glass. <strong>Below</strong>: the glass and the liquid inside it rendered apart to show how the scene was assembled. The liquid is slightly larger than the interior of the glass to avoid rendering errors. (Note that C3D’s caustics are not correctly picking up the color of the liquid.)</em></p>
 <p>To render liquid in a glass the best option turns out to be to model the liquid as an object that is slightly larger than the glass containing it. It’s as simple as that. </p>
 <p><strong>Note</strong>: in earlier editions of this book I incorrectly stated that the liquid should be slightly <em>smaller</em> than the container. It turns out that the most realistic-looking results are obtained by making the liquid slightly larger than the container.</p>
-<p>You’ll generally want to increase the <strong>Max Ray Depth</strong> in the <strong>Render Preferences</strong> for that scene.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>You’ll generally want to increase the ray depth for that scene. With the Cheetah renderer this is <strong>Max. ray depth</strong> (in the <strong>Other</strong> section of the renderer settings); with Falcon, raise <strong>Specular bounces</strong> and <strong>Transparency depth</strong> (in the <strong>Ray depth (bounces)</strong> section).</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h4 id="bubbles-in-water">Bubbles in Water</h4>
 <p><img src="/images/DraggedImage-94.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-95.jpg" alt=""></p>
-<p>To render bubbles in water you might think you could make the bubbles out of an “air” material that had a refractive index of 1.0, but Cheetah 3D’s renderer doesn’t do what you’d expect and the bubbles essentially disappear. The bubbles need to be holes in the geometry of the water. To accomplish this I made the bubbles out of spheres with all their polygons flipped (so the sphere “faces” inward), made a particle system of the bubbles, and then converted the particle system to a mesh (using Tool -&gt; Particle -&gt; Polygon). I then imported the resulting mesh into the water mesh.</p>
+<p>To render bubbles in water you might think you could make the bubbles out of an “air” material that had a refractive index of 1.0, but Cheetah 3D’s renderer doesn’t do what you’d expect and the bubbles essentially disappear. The bubbles need to be holes in the geometry of the water. To accomplish this I made the bubbles out of spheres with all their polygons flipped (so the sphere “faces” inward), made a particle system of the bubbles, and then converted the particle system to a mesh (using <strong>Tools &gt; Particle &gt; Particle To Polygon</strong>). I then imported the resulting mesh into the water mesh.</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -251,6 +263,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

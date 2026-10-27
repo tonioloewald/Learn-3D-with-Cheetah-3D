@@ -4,7 +4,7 @@
 
 ![](/images/pastedGraphic-534.jpg)
 
-*Imagine if you were going to model this bowl of jelly beans by hand. Placing each jelly bean would be a difficult enough. With a simple dynamic simulation you can fill a bowl with jelly beans, or any other object, in a few seconds.*
+*Imagine if you were going to model this bowl of jelly beans by hand. Placing each jelly bean would be difficult enough. With a simple dynamic simulation you can fill a bowl with jelly beans, or any other object, in a few seconds.*
 
 Dynamics is useful for making natural-looking arrangements of objects that are hard to do by hand (just think how hard it is to do something like lay a model of a screw on a flat surface), and in particular for working with large numbers of objects (and particles).
 
@@ -21,6 +21,8 @@ Now we have a bowl randomly filled with nonintersecting jelly beans — somethin
 ### Tutorial: Using a Soft Body to Drape Cloth
 
 Getting cloth to drape nicely using Soft Body simulations requires a bit of fiddling and cheating (as with everything in 3D!) but it’s much easier than doing it by hand, and can quickly produce quite satisfying results.
+
+> **Note:** this “tutorial” is a stub with no steps (the jelly-bean tutorial above is also prose only); relevant 8.1.1 Soft Body settings are Two sided, Self collision, Solver iterations, Margin, and Bending constraints (Tags/SoftBodyTag). <!-- TODO editorial -->
 
 ![](/images/pastedGraphic-535.jpg)
 

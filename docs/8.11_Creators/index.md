@@ -4,11 +4,17 @@
 
 A creator is an object that — given the correct number and type of children — will generate a mesh derived from those children. The easiest way to explain creators is to show what they do. Note that while I explain creators in alphabetical order, the Boolean creator is a terrible one to start with — skip it and come back afterwards!
 
+> **Note:** the creators below aren’t actually in alphabetical order (Polyplane and Isosurfaces come after Sweep); reorder them or drop the claim. <!-- TODO editorial -->
+
 ### Boolean
 
 ![](/images/booleans-annotated.jpg)
 
-*This shows the different boolean operations. The first three options perform a boolean operation on two “solid” meshes — union (add), difference (subtract), and intersection. The last two “inside” and “outside” options act on any surface in relation to a solid (e.g. if you want to cut a plane with a solid object.*
+*This shows the different boolean operations. The first three options perform a boolean operation on two “solid” meshes — union (add), difference (subtract), and intersection. The last two “inside” and “outside” options act on any surface in relation to a solid (e.g. if you want to cut a plane with a solid object.)*
+
+> **Note:** requires updating for Cheetah 3D 8.1.1: the Boolean creator now offers only Addition, Subtract and Intersect (no “inside”/“outside” options), triangulation is an option (**Triangulate**, which the manual says makes the algorithm more robust), and **Multi-Knife** lets it act on more than two children (Objects/CreatorObjects/BooleanObject). <!-- TODO update -->
+
+> **Note:** Cheetah 3D 8.1.1 also has a **Boolean modifier** (parent is A, child is B; Objects/ModifierObjects/Boolean) and **Boolean Add/Subtract/Intersect** polygon tools under **Tools \> Polygon** (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing -->
 
 The boolean is a very useful, very powerful, and potentially dangerous creator. You should use it sparingly and only when no reasonable alternative exists because it produces meshes that are difficult to work with.
 
@@ -18,9 +24,9 @@ The union mesh from the previous example is a complete mess (i.e. it has "awful 
 
 ![](/images/pastedGraphic-208.jpg)
 
-*This complex form was created using a series of booleans. First, a round cylinder was “subtracted” from a six-sided cylinder, then the corners were created by intersecting the result with a ball, and finally the beveling around the hole was achieved by subtracting a downward pointing cone. Note that the bottom of the hole has not been bevelled.*
+*This complex form was created using a series of booleans. First, a round cylinder was “subtracted” from a six-sided cylinder, then the corners were created by intersecting the result with a ball, and finally the beveling around the hole was achieved by subtracting a downward pointing cone. Note that the bottom of the hole has not been beveled.*
 
-*In practice, this is a bad way to get this result (and, as already stated, the bottom of the hole still isn’t bevelled and we haven’t even tried to model the screw-thread). Even if we were to use booleans, we’d be better off trying to reduce the number of booleans being used because each successive boolean creates a more degraded (“uglier”) mesh.*
+*In practice, this is a bad way to get this result (and, as already stated, the bottom of the hole still isn’t beveled and we haven’t even tried to model the screw-thread). Even if we were to use booleans, we’d be better off trying to reduce the number of booleans being used because each successive boolean creates a more degraded (“uglier”) mesh.*
 
 **When *not* to use booleans**: booleans should be used sparingly because they produce ugly meshes (i.e. triangulated meshes with no real topology). In general, if you can think of a way to do something without booleans, do so.
 
@@ -32,7 +38,7 @@ The union mesh from the previous example is a complete mess (i.e. it has "awful 
 
 ![](/images/pastedGraphic-209.jpg)
 
-The boolean chain creator produces multiple copies of an object along a spline. (That’s why it’s called “chain” — the obvious thing to do with it is make chains without modeling each link individually.)
+The chain creator produces multiple copies of an object along a spline. (That’s why it’s called “chain” — the obvious thing to do with it is make chains without modeling each link individually.)
 
 ### Extrude
 
@@ -47,6 +53,8 @@ Note that the extrude tool will not allow you to extrude a 2D mesh object. There
 ![](/images/pastedGraphic-211.jpg)
 
 The lathe creator creates a 3D object from a spline by rotating it around an axis. It’s called “lathe” because by default it creates objects similar to those you would produce by turning a piece of wood or metal on a lathe.
+
+> **Note:** Cheetah 3D 8.1.1 also has a **Loft** creator, which builds a smooth surface through two or more spline profiles (Sections U/V, Loop, Linear, Cover; Objects/CreatorObjects/LoftObject), not yet covered here. <!-- TODO missing -->
 
 ### Sweep
 
@@ -67,8 +75,6 @@ The polyplane creator creates a 2D mesh surface from a spline. (Splines aren’t
 ### Isosurfaces (Metaballs)
 
 ![](/images/pastedGraphic-214.jpg)
-
-Isosurfaces are a new feature in Cheetah 3D v6.
 
 Isosurfaces produce behavior that resembles surface tension in liquids, and are thus able to produce the kinds of shapes characteristic of liquids. In combination with particles, isosurfaces can be used for fluid simulations.
 

@@ -14,34 +14,44 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Faking Motion Blur — Learn 3D with Cheetah 3D</title>
-  <meta name="description" content="The best way to fake motion blur right now is to use a high-end motion graphics program (such as Motion or After Effects) to _interpolate_ the frames of a…" />
+  <meta name="description" content="If you render with Falcon, you don’t need to fake motion blur: Falcon has built-in motion blur for camera motion, object transformations, and mesh…" />
   <link rel="canonical" href="https://learn3d.loewald.com/18.6_Faking_Motion_Blur/" />
   <link rel="alternate" type="text/markdown" href="index.md" title="Faking Motion Blur — Learn 3D with Cheetah 3D (markdown)" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
   <meta property="og:title" content="Faking Motion Blur — Learn 3D with Cheetah 3D" />
-  <meta property="og:description" content="The best way to fake motion blur right now is to use a high-end motion graphics program (such as Motion or After Effects) to _interpolate_ the frames of a…" />
+  <meta property="og:description" content="If you render with Falcon, you don’t need to fake motion blur: Falcon has built-in motion blur for camera motion, object transformations, and mesh…" />
   <meta property="og:url" content="https://learn3d.loewald.com/18.6_Faking_Motion_Blur/" />
   <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Faking Motion Blur","description":"The best way to fake motion blur right now is to use a high-end motion graphics program (such as Motion or After Effects) to _interpolate_ the frames of a…","url":"https://learn3d.loewald.com/18.6_Faking_Motion_Blur/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Faking Motion Blur","description":"If you render with Falcon, you don’t need to fake motion blur: Falcon has built-in motion blur for camera motion, object transformations, and mesh…","url":"https://learn3d.loewald.com/18.6_Faking_Motion_Blur/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="18.6_Faking_Motion_Blur.md">
 <!--{"parent": "18_Appendices.md", "order": 6}--><h2 id="faking-motion-blur">Faking Motion Blur</h2>
 <p><img src="/images/pastedGraphic-659.jpg" alt=""></p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>If you render with <strong>Falcon</strong>, you don’t need to fake motion blur: Falcon has built-in motion blur for camera motion, object transformations, and mesh deformations, controlled mainly by the camera’s <strong>shutter time</strong> (it only works when rendering animations). The techniques below are still useful with the Cheetah renderer, or when you want to add motion blur afterwards.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p>The best way to fake motion blur right now is to use a high-end motion graphics program (such as <strong>Motion</strong> or <strong>After Effects</strong>) to <em>interpolate</em> the frames of a high-fps animation for you. The image above was created by rendering an animation at 120fps, then importing it into <strong>Motion 5</strong> and then turning on <strong>View &gt; Render Options &gt; Motion Blur</strong> and setting the <strong>Project Properties</strong> Motion Blur samples and shutter angle to values that produced the desired result (16 samples and 720° in this case).</p>
-<p><strong>Note</strong>: if you want to think of this in terms of photography, by default Cheetah 3d renders with a shutter speed of 0s (or 1/∞ – which is impossible, of course), but we&#39;re used to seeing images produced with an actual non-zero shutter speed during which some things will tend to move and thus become slightly smeared. By rendering at 120fps and then sampling 16 frames we are, in effect, simulating a shutter speed of 16/120 or roughly 1/8s. (The shutter angle determines how the frames are sampled.)</p>
+<p><strong>Note</strong>: if you want to think of this in terms of photography, by default Cheetah 3D renders with a shutter speed of 0s (or 1/∞ – which is impossible, of course), but we&#39;re used to seeing images produced with an actual non-zero shutter speed during which some things will tend to move and thus become slightly smeared. By rendering at 120fps and then sampling 16 frames we are, in effect, simulating a shutter speed of 16/120 or roughly 1/8s. (The shutter angle determines how the frames are sampled.)</p>
 <p>I believe similar results can be achieved using Adobe <strong>After Effects</strong>, but I haven’t got a recent version of After Effects to play with. (Motion is available from the App Store for $50.)</p>
 <h3 id="motion-blur-tool">Motion Blur Tool</h3>
 <p>A few years ago I wrote a free tool for doing something similar to what I’ve just described. It uses the same approach I’ve outlined above, but doesn’t have as high quality a rendering path as Motion does, so I’d only use it if you don’t have a better solution.</p>
 <p>You can obtain a copy of my Motion Blur Tool <a href="http://loewald.com/motionblur">here</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking: is the Motion Blur Tool download link still live? <!-- TODO verify --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -227,6 +237,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

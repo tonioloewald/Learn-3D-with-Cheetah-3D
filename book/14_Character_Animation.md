@@ -10,7 +10,9 @@ Character animation generally comprises two major jobs: rigging and animation. T
 
 ![](/images/Screen%20Shot%202013-04-28%20at%2011.10.12%20AM.jpg)
 
-Filip c's "blockman" rig makes use of splines to allow easy selection of IK targets and makes it obvious to the animator how each target is intended to be used. Filip has generously [made this rig available for free on the forums](http://www.cheetah3d.com/forum/showthread.php?p=70934#post70934).
+Filip c's "blockman" rig makes use of splines to allow easy selection of IK targets and makes it obvious to the animator how each target is intended to be used. Filip has generously [made this rig available for free on the forums](https://www.cheetah3d.com/forum/index.php?posts/70934/).
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the old forum link (post 70934) was converted to the new forum's post URL form; confirm it still resolves to Filip's rig. <!-- TODO verify -->
 
 We're not going to get that advanced here, but it's worth at least discussing.
 

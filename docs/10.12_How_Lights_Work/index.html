@@ -14,42 +14,71 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>How Lights Work — Learn 3D with Cheetah 3D</title>
-  <meta name="description" content="Because Cheetah 3D is a ray tracer and ray tracing works backwards from the observer to the light source, lights do not work exactly the way you might expect." />
+  <meta name="description" content="Cheetah 3D has two render engines, and you switch between them with Render \&gt; Renderer (or by holding down the render settings icon in the toolbar)." />
   <link rel="canonical" href="https://learn3d.loewald.com/10.12_How_Lights_Work/" />
   <link rel="alternate" type="text/markdown" href="index.md" title="How Lights Work — Learn 3D with Cheetah 3D (markdown)" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
   <meta property="og:title" content="How Lights Work — Learn 3D with Cheetah 3D" />
-  <meta property="og:description" content="Because Cheetah 3D is a ray tracer and ray tracing works backwards from the observer to the light source, lights do not work exactly the way you might expect." />
+  <meta property="og:description" content="Cheetah 3D has two render engines, and you switch between them with Render \&gt; Renderer (or by holding down the render settings icon in the toolbar)." />
   <meta property="og:url" content="https://learn3d.loewald.com/10.12_How_Lights_Work/" />
   <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How Lights Work","description":"Because Cheetah 3D is a ray tracer and ray tracing works backwards from the observer to the light source, lights do not work exactly the way you might expect.","url":"https://learn3d.loewald.com/10.12_How_Lights_Work/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How Lights Work","description":"Cheetah 3D has two render engines, and you switch between them with Render \\> Renderer (or by holding down the render settings icon in the toolbar).","url":"https://learn3d.loewald.com/10.12_How_Lights_Work/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.12_How_Lights_Work.md">
 <!--{"parent": "10_Materials.md", "order": 12}--><h2 id="how-lights-work">How Lights Work</h2>
 <h3 id="falcon-vs-cheetah">Falcon vs. Cheetah</h3>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Cheetah 3D has two render engines, and you switch between them with <strong>Render &gt; Renderer</strong> (or by holding down the render settings icon in the toolbar).</p>
+<ul>
+<li><strong>Cheetah</strong> is the original renderer: a recursive ray tracer that uses irradiance caching (Radiosity) and photon maps (Caustics) for global illumination. You turn those on in its render settings.</li>
+<li><strong>Falcon</strong> (introduced in Cheetah 3D 7.0) is an unbiased path tracer. Indirect light is part of how it works, so there is nothing to turn on; instead you control quality with <strong>Samples</strong> (paths per pixel) and the <strong>Ray depth (bounces)</strong> settings. Falcon only renders <em>reflective</em> caustics. According to the manual, future development will focus on Falcon.</li>
+</ul>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h3 id="lights-in-falcon">Lights in Falcon</h3>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Lights work the same way in both renderers, with a few Falcon-only extras:</p>
+<ul>
+<li><strong>Shadow softness</strong> lets point, spot and distant lights cast soft shadows. For point and spot lights it is the size of a virtual light; for a distant light it is an angle.</li>
+<li><strong>MIS</strong> (Multiple Importance Sampling) on the HDRI Light and Sky Light makes renders converge with fewer samples.</li>
+</ul>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h3 id="lights-in-cheetah">Lights in Cheetah</h3>
 <p>Because Cheetah 3D is a ray tracer and ray tracing works backwards from the observer to the light source, lights do not work exactly the way you might expect.</p>
-<p>To begin with, lights don’t “shine”. They’re simply used to calculate how brightly lit surfaces are. Without a surface to render, lights don’t do anything. If you point a camera at a light you get nothing (some lights have a “geometry” property which, if checked, adds an emissive surface that doesn’t cast shadows).</p>
+<p>To begin with, lights don’t “shine”. They’re simply used to calculate how brightly lit surfaces are. Without a surface to render, lights don’t do anything. &gt; <strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+<p>If you point a camera at a light you get nothing (area lights have a <strong>Visible in camera</strong> property which, if checked, makes the light’s shape visible, so it also shows up in reflections).</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-432.jpg" alt=""></p>
 <p><em>Point Light.</em></p>
 <p><img src="/images/pastedGraphic-433.jpg" alt=""></p>
 <p><em>Point Light with 5 samples.</em></p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual documents <strong>Samples</strong> for area lights only; soft shadows from point lights now come from <strong>Shadow softness</strong> (Falcon only). Does a point light still have Samples? <!-- TODO verify --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-434.jpg" alt=""></p>
-<p><em>Area Light with 5 samples (geometry is switched on)</em></p>
+<p><em>Area Light with 5 samples (Visible in camera is switched on)</em></p>
 <p><img src="/images/pastedGraphic-435.jpg" alt=""></p>
 <p><em>Spot Light.</em></p>
 <p><img src="/images/pastedGraphic-436.jpg" alt=""></p>
-<p><em>Directional Light.</em></p>
+<p><em>Distant Light.</em></p>
 <p><img src="/images/pastedGraphic-437.jpg" alt=""></p>
 <p><em>Ambient Light.</em></p>
 <p>Next, all lights in Cheetah 3D are either effectively point sources or distant lights. A spot light is a point source whose brightness varies based on direction. An area light is simply a stochastically sampled collection of point lights lying on a rectangle. And so forth. This is important because lighting calculations all require the rendering engine to calculate the direction from some point in space to a light source.</p>
@@ -251,6 +280,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

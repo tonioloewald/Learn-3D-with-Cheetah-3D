@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Render Manager — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Cheetah 3D’s Render Manager (it comes to the front whenever you initiate a render, but you can access it at any time from Render \&gt; Show Render Manager) allows…" />
   <link rel="canonical" href="https://learn3d.loewald.com/12.12_Render_Manager/" />
@@ -29,20 +29,29 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Render Manager","description":"Cheetah 3D’s Render Manager (it comes to the front whenever you initiate a render, but you can access it at any time from Render \\> Show Render Manager) allows…","url":"https://learn3d.loewald.com/12.12_Render_Manager/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.12_Render_Manager.md">
 <!--{"parent": "12_Rendering.md", "order": 12}--><h2 id="render-manager">Render Manager</h2>
 <p><img src="/images/pastedGraphic-589.jpg" alt=""></p>
-<p>Cheetah 3D’s Render Manager (it comes to the front whenever you initiate a render, but you can access it at any time from <strong>Render &gt; Show Render Manager</strong>) allows you to manage Cheetah 3D’s Render Cache, including currently active renders and all past renders (unless you delete them).</p>
-<p>Every time you render an image or animation, Cheetah 3D stores it along with a little bit of metadata in its Render Cache. You do not need to save it! Still images are stored as PNG (portable network graphics) files by default, and animations are stored as sequences of PNGs by default.</p>
+<blockquote>
+<p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
+</blockquote>
+<p>Cheetah 3D’s Render Manager (it comes to the front whenever you initiate a render, but you can access it at any time from <strong>Render &gt; Show Render Manager</strong>) allows you to manage Cheetah 3D’s Render History, including currently active renders and all past renders (unless you delete them).</p>
+<p>Every time you render an image or animation, Cheetah 3D stores it along with a little bit of metadata in its Render History. You do not need to save it! Still images are stored as PNG (portable network graphics) files by default, and animations are stored as sequences of PNGs by default.</p>
 <p><strong>Where are all those rendered images stored?</strong></p>
-<p>If you want to get at the Render Cache yourself, simply go to Finder and select <strong>Go &gt; Go to Folder…</strong> and enter this path: <strong>~/Library/Application Support/Cheetah3D/</strong></p>
-<p>As of Mac OS X 10.7 (Lion) the Library is “invisible” under normal circumstances. (If you’re a power user you can get around this, but normally you won’t see it.) Even so, when you go to this path, Finder will cheerfully show you the Cheetah3D directory in Application Support which is where you’ll find the Render Cache and other useful things such as the Scripts folder.</p>
+<p>If you want to get at the Render History yourself, simply go to Finder and select <strong>Go &gt; Go to Folder…</strong> and enter this path: <strong>~/Library/Application Support/Cheetah3D/</strong></p>
+<p>As of Mac OS X 10.7 (Lion) the Library is “invisible” under normal circumstances. (If you’re a power user you can get around this, but normally you won’t see it.) Even so, when you go to this path, Finder will cheerfully show you the Cheetah3D directory in Application Support which is where you’ll find the Render History folder and other useful things such as the Scripts folder.</p>
 <p><img src="/images/pastedGraphic-590.jpg" alt=""></p>
 <p><em>This is what the Cheetah3D folder in Application Support looks like. I’ve tweaked my system settings so that invisible files (such as .DS_Store) are visible — you probably won’t see those.</em></p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the Cheetah3D folder in Application Support now contains Brushes, Environment, Materials, Render History, Samples and Scripts; each render is a folder in Render History holding image.png, thumbnail.png and info.plist (checked on disk), so this screenshot is out of date. <!-- TODO update --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has Render Manager features for saving EXR files (when <strong>Save G-Buffer</strong> is on), copying the image to the pasteboard and sharing it, not yet covered here (manual: Render › Renderer, Render › Cheetah “G-Buffer”). <!-- TODO missing --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -228,6 +237,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

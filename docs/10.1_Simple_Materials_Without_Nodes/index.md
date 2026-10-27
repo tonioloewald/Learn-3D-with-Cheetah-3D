@@ -24,7 +24,7 @@ To create various simple materials, here’s a quick guide to how to adjust thes
 
 ![](/images/pastedGraphic-242.jpg)
 
-*A flat red material. You don’t need to do anything with nodes to make this material. Simply create a new material and set its diffuse color to red and its specular color to black. If you’re wondering why this object looks so eery in the test render, it’s because real world objects are never this intensely red. Generally, to make things look more realistic you need to make their colors a bit “murky” (darker and less saturated).*
+*A flat red material. You don’t need to do anything with nodes to make this material. Simply create a new material and set its diffuse color to red and its specular color to black. If you’re wondering why this object looks so eerie in the test render, it’s because real world objects are never this intensely red. Generally, to make things look more realistic you need to make their colors a bit “murky” (darker and less saturated).*
 
 - Set diffuse to the color you want the material to be
 
@@ -66,7 +66,11 @@ To create various simple materials, here’s a quick guide to how to adjust thes
 
 - Set reflection to the color of the metal
 
-- If you want the metal to render nicely, you’ll need to place it in an elaborate scene (so it can reflect stuff) or attach an HDRI tag to the camera and load a suitable image into it).
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+- If you want the metal to render nicely, you’ll need to place it in an elaborate scene (so it can reflect stuff) or add an **HDRI Light** object to the scene and load a suitable .hdr or .exr image into its **HDR image** property.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 Note that this is *not* the best way to make a simple metal material, but the best way involves using the node system to select a different shader (the Metal shader) or modifying one of the Metal shaders that comes bundled with Cheetah 3D.
 
@@ -132,6 +136,8 @@ Again, a better way of doing brushed metal is to use the Metal Shader (it also a
 
 The Fractal texture causes variation in the color of the material, while the Voronoi shader creates the texture. The higher the scale setting in the Fractal texture, the finer the grain will be.
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: the steps above set the scale on the Voronoi node, not the Fractal node; which node’s scale controls the grain here? <!-- TODO verify -->
+
 #### Procedural Wood
 
 ![](/images/pastedGraphic-251.jpg)
@@ -144,7 +150,7 @@ The Fractal texture causes variation in the color of the material, while the Vor
 
 - For polished wood, set the reflection to a dark grey.
 
-- Depending on how polished you want the wood to be, leave reflection blur at 0 (for very polished) or increase it beyond zero for less-polished looking marble.
+- Depending on how polished you want the wood to be, leave reflection blur at 0 (for very polished) or increase it beyond zero for less-polished looking wood.
 
 #### Simple, Image-Based Materials
 
@@ -192,11 +198,13 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Specular** controls the color of specular highlights (which are simulated reflections of light sources).
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: the bundled default Material (Materials/Default/Material.c3dmat) has its specular color set to black, not white, so new materials may no longer have highlights by default (also affects the caption above and 10.8). <!-- TODO verify -->
+
 ![](/images/pastedGraphic-258.jpg)
 
 ![](/images/pastedGraphic-259.jpg)
 
-*Specular size set to 80.0 (**top** — the default value) and 20 (**bottom**). Yes, the greater the specular size the smaller and duller the highlight.*
+*Specular size set to 80.0 (**top** — the default value) and 20 (**bottom**). Yes, the greater the specular size the smaller and sharper the highlight.*
 
 - **Specular Size** (number) is the smoothness of the object, but only for purposes of using specular. Higher specular size produces smaller, sharper specular highlights.
 
@@ -251,5 +259,7 @@ To answer this question, the shader needs a bunch of additional information, som
 *Default material with diffuse set to medium grey and Voronoi texture node’s color output applied to bumpmap.*
 
 - **Bumpmap** (monochrome) is the distance the surface of the object is considered to be pushed out from its actual position in 3D space for purposes of determining its shading.
+
+> **Note:** Cheetah 3D 8.1.1 also has a **Bump type** setting on the Material shader (height, normal map Y+, or normal map Y−), so the bumpmap channel can take a normal map; see [Node Descriptions](/10.9_Node_Descriptions/), not yet covered here. <!-- TODO missing -->
 
 Except where stated otherwise, these channels are expected to be RGB color values. Diffuse can be an RGBA color (i.e. include opacity) and the shader has a toggle option for using the A value as its Transparency input.

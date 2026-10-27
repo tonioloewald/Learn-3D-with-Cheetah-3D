@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Node Descriptions — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Car Paint: a shader designed to emulate the qualities of car paint (which is multilayered paint with a thin transparent coating which has interesting…" />
   <link rel="canonical" href="https://learn3d.loewald.com/10.9_Node_Descriptions/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Node Descriptions","description":"Car Paint: a shader designed to emulate the qualities of car paint (which is multilayered paint with a thin transparent coating which has interesting…","url":"https://learn3d.loewald.com/10.9_Node_Descriptions/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.9_Node_Descriptions.md">
 <!--{"parent": "10_Materials.md", "order": 9}--><h2 id="node-descriptions">Node Descriptions</h2>
 <h3 id="shader-nodes">Shader Nodes</h3>
@@ -42,6 +42,17 @@
 <p><strong>Membrane</strong>: very similar to C3D&#39;s old membrane material. In essence produces transparent film-like materials that get more opaque when viewed at an oblique angle.</p>
 <p><strong>Metal</strong>: you can create most metals quite nicely using the material shader, but the metal shader gives you access to anisotropic reflection. (I&#39;m not quite sure why this wasn&#39;t just built into the material shader.) The principal quality of metals is that they are reflective.</p>
 <p><strong>Shadow</strong>: shadow catcher material. The idea of a shadow catcher material is that it captures shadows that fall onto it, but is transparent if there’s no shadow. (Imagine you’re trying to render an object for inclusion in a composition, and you want its shadow, but you want to drop it on top of an arbitrary background.) It works by using a threshold value (which determines how dark it has to be to qualify as being “in shadow”).</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the 8.1.1 Shadow shader’s parameters are <strong>color</strong> and <strong>whitePoint</strong>; there is no threshold parameter (MaterialNodes/Shader/shadow.xml in the app bundle). <!-- TODO update --></p>
+</blockquote>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p><strong>PBR</strong>: a physically based shader (the default <strong>Material (PBR)</strong> in the Add Material menu). Its inputs are <strong>Base Color</strong>; <strong>Metalness</strong>, <strong>Specular Level</strong>, <strong>Specular Tint</strong>, <strong>Roughness</strong> and <strong>Anisotropy</strong> (all 0 to 1); <strong>Clearcoat</strong> and <strong>Clearcoat Roughness</strong> (a clear coating over the base, like car paint); <strong>Emissive</strong>; and <strong>Ambient Occlusion</strong>. Metalness 0 gives you a plastic or other non-metal; metalness 1 gives you a metal tinted by the base color. Between them, Metalness, Anisotropy and Clearcoat cover most of what the Metal and Car Paint shaders are used for.</p>
+<p><strong>Bump type</strong>: every shader node (Material, PBR, Metal, Dielectric, Car Paint, Membrane, Velvet) has a <strong>Bump type</strong> setting: height (the classic greyscale bump map) or a normal map, with the green channel pointing either up (Y+) or down (Y−). If a normal map looks “inside out”, try the other Y setting.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p><strong>Solid</strong>: solid color, as per old renderer. Now with intensity, allowing objects to function as light sources -- kind of.</p>
 <p>The solid shader is very handy for rendering masks for compositing (e.g. if you want to be able to select or mask a specific object in Photoshop you can assign it a solid black material and hide everything else in the scene and hit render and now you have a perfect mask).</p>
 <p><strong>Toon</strong>: the new toon shader. In essence the toon shader posterizes the light value. This may not be exactly what you want, and similar results can be achieved with other shaders using the gradient filter.</p>
@@ -64,14 +75,17 @@
 <p><strong>Voronoi</strong>: (3D) produces a somewhat regular grid of polygons. Very useful for creating not-quite-uniformly tiled surfaces, such as cobbled roads or scales.</p>
 <p><strong>Wireframe</strong>: (2D) renders the wireframe of the underlying model as a texture -- very nice for rendering smoothed wireframes.</p>
 <p><strong>Wood</strong>: (3D) renders turbulent noise tuned to look a bit like the rings in a tree.</p>
-<p><strong>Constant Nodes</strong></p>
-<p>There are three data types that are sent by connections between nodes. The three kinds of constant node reflect the three data types (which are discussed in more detail under <strong>Property Types</strong>.</p>
+<h3 id="constant-nodes">Constant Nodes</h3>
+<p>There are three data types that are sent by connections between nodes. The three kinds of constant node reflect the three data types (which are discussed in more detail under <a href="/10.4_Understanding_Nodes/">Channel Types</a>).</p>
 <p><strong>Color</strong>: a color!</p>
 <p><strong>Number</strong>: a number!</p>
 <p><strong>Vector</strong>: a vector!</p>
 <p>Note that colors and vectors are somewhat interchangeable, and that vectors can be used as numbers (the first value is used, the others are discarded) in a pinch and vice versa (a number n gets treated as the vector (n,n,n)).</p>
 <h3 id="filter-nodes">Filter Nodes</h3>
 <p><strong>Composite</strong> nodes allow you to blend two input colors using a blend value (which itself may be an input). Usually composite nodes aren&#39;t needed since the same thing can be achieved directly in other nodes.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the 8.1.1 Composite node has only two color inputs (color0, color1) and no blend value (MaterialNodes/Filter/composite.xml); how does it blend them? <!-- TODO verify --></p>
+</blockquote>
 <p><strong>Gradient</strong> nodes allow you to map an input value (think of it as a black-to-white spectrum) to an output gradient. E.g. if you want black to come out as blue, and middle grey to come out as red, and white to come out as green, then you&#39;d make the gradient blue to red to green. Each color transition in a gradient can be immediate or blended, the former allowing you to achieve (among other things) toon-render effects.</p>
 <p><strong>hsv2rgb</strong> and <strong>rgb2hsv</strong> lets you convert colors between the two color spaces. Note that C3D&#39;s colors are RGB natively, so you will need to convert them to HSV if you want to perform operations on them in the HSV color space.</p>
 <h3 id="the-state-node">The State Node</h3>
@@ -95,14 +109,14 @@
 <p>OK this is the one you&#39;ve been waiting for, right? Note that most math functions will operate on both scalars and vectors (and colors, which are treated as vectors). It even works for some strange things (e.g. division) which aren&#39;t well-defined for vectors.</p>
 <p><strong>abs</strong> returns the &quot;absolute value&quot; (i.e. positive size), so abs(-2) = 2.</p>
 <p><strong>add</strong> adds two values.</p>
-<p><strong>cosine</strong> and <strong>sine</strong> and <strong>tangent</strong> are your usual trigonometric functions (they assume <strong>radians</strong> as inputs — note that C3D’s user interface works in <strong>degrees</strong>). To get an intuitive grasp of trigonometry for 3D, the cosine of an angle is a measure of how parallel the lines forming that angle are to each other: 1 means exactly parallel (the angle is 0), -1 means exactly opposite (the angle is π radians -- 180°), and 0 means perpendicular. Sine is the other way around -- perpendicular = -1 or 1, and parallel or opposite = 0.</p>
+<p><strong>cosine</strong> and <strong>sine</strong> and <strong>tangent</strong> are your usual trigonometric functions (they assume <strong>radians</strong> as inputs — note that C3D’s user interface works in <strong>degrees</strong>). To get an intuitive grasp of trigonometry for 3D, the cosine of an angle is a measure of how parallel the lines forming that angle are to each other: 1 means exactly parallel (the angle is 0), -1 means exactly opposite (the angle is π radians -- 180°), and 0 means perpendicular. Sine is the other way around: it is 1 when the lines are perpendicular, and 0 when they are parallel or opposite. <!-- TODO review --></p>
 <h4 id="note-on-converting-between-degrees-and-radians">Note on converting between degrees and radians</h4>
-<p>If you want to quickly convert radians to degrees, multiply by 180/π (57.296 is more than close enough). Similarly, to convert degrees to radians, multiply by π/180 (0.017459).</p>
-<p><strong>dotprod</strong> is a scalar value telling you how parallel two vectors are. For unit vectors, the dot product is the same as the cosine of the angle they form; for non-unit vectors multiply the cosine by the product of the vectors&#39; magnitudes. crossproduct is the dual of dotprod, returning a vector perpendicular to the plane containing the two vectors whose magnitude is the sine of the angle they form multiplied by the product of their magnitudes.</p>
+<p>If you want to quickly convert radians to degrees, multiply by 180/π (57.296 is more than close enough). Similarly, to convert degrees to radians, multiply by π/180 (0.017453).</p>
+<p><strong>dotprod</strong> is a scalar value telling you how parallel two vectors are. For unit vectors, the dot product is the same as the cosine of the angle they form; for non-unit vectors multiply the cosine by the product of the vectors&#39; magnitudes. <strong>crossprod</strong> is the dual of dotprod, returning a vector perpendicular to the plane containing the two vectors whose magnitude is the sine of the angle they form multiplied by the product of their magnitudes.</p>
 <p><strong>divide</strong> divides one value by another.</p>
 <p><strong>float2vec</strong> and <strong>vec2float</strong> let you pull vectors apart and put them back together again.</p>
 <p><strong>mix</strong> blends two colors using a third value. Actually it should be in the Filter menu. (Because it operates on colors, it also mixes alpha values.)</p>
-<p><strong>modulo</strong> turns an open-ended value t into a repeating value by &quot;wrapping&quot; it into the interval [0 .. denominator\]</p>
+<p><strong>modulo</strong> turns an open-ended value t into a repeating value by &quot;wrapping&quot; it into the interval [0 .. denominator]</p>
 <p><strong>multiply</strong> multiplies two values.</p>
 <p><strong>multiplyadd</strong> multiplies two values and then adds a third value.</p>
 <p><strong>norm</strong> returns the <em>magnitude</em> of a vector (this is a correction). To unitize a vector scale it by the inverse of its norm.</p>
@@ -111,6 +125,9 @@
 <p><strong>pulsetrain</strong> is like pulse but it performs the mapping 1/period times across the [0,1] interval. Um, that&#39;s not very user-friendly. It&#39;s like pulse but it scales the input by 1/period and then wraps it back to [0,1] and it only has a lower threshold value. Play with it – it&#39;s trippy.</p>
 <p><strong>squareroot</strong> calculates square roots. Same as using <strong>power</strong> and setting the exponent to 0.5.</p>
 <p><strong>step</strong> is like pulsetrain but upside down and with only one threshold value.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the step node has inputs t, edge and smooth; is it really “pulsetrain upside down”, or 0 below the edge and 1 above it? <!-- TODO verify --></p>
+</blockquote>
 <p><strong>subtract</strong> subtracts one thing from another.</p>
 
   </article>
@@ -297,6 +314,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

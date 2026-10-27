@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Getting the most out of Cheetah 3D’s Particle System — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Cheetah 3D’s particle system is very powerful, but what you can do with it directly is sometimes limited by the renderer." />
   <link rel="canonical" href="https://learn3d.loewald.com/15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/" />
@@ -29,19 +29,31 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Getting the most out of Cheetah 3D’s Particle System","description":"Cheetah 3D’s particle system is very powerful, but what you can do with it directly is sometimes limited by the renderer.","url":"https://learn3d.loewald.com/15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System.md">
 <!--{"parent": "15_Particles.md", "order": 1}--><h2 id="getting-the-most-out-of-cheetah-3ds-particle-system">Getting the most out of Cheetah 3D’s Particle System</h2>
 <p>Cheetah 3D’s particle system is very powerful, but what you can do with it directly is sometimes limited by the renderer. </p>
 <p>Because Cheetah 3D doesn’t support volumetrics and is a ray tracer, there’s no really good way to render classic volumetric particle effects, such as clouds of billowing smoke, nicely. </p>
-<p>Because the motion of particles is frequently crucial, Cheetah 3D’s lack of vector motion blur imposes further limitations (particles tend to be rendered “frozen” in space, rather than “smeared”, which is often not the look you are after).</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Because the motion of particles is frequently crucial, motion blur matters. The Falcon renderer supports motion blur (turn on <strong>Camera</strong>, <strong>Transformation</strong>, and/or <strong>Deformation</strong> under Motion blur in the renderer settings; the camera’s <strong>Shutter time</strong> controls its strength), but only when rendering animations, not single frames. Without it, particles are rendered “frozen” in space rather than “smeared”, which is often not the look you are after.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p>And finally, because Cheetah 3D doesn’t internally support post-processing render passes, you can’t make particles glow.</p>
 <p>At this point you might like to review the sections in the Materials chapter on faking volumetrics.</p>
 <h3 id="workarounds">Workarounds</h3>
-<p>The lack of motion blur is unfortunate, but the other two issues can be worked around by performing separate render passes and using a compositing program such as Photoshop (for still images) or Premiere / After Effects / Final Cut Pro / Motion for animated sequences.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>The volumetric and glow issues can be worked around by performing separate render passes and using a compositing program such as Photoshop (for still images) or Premiere / After Effects / Final Cut Pro / Motion for animated sequences. Falcon’s <strong>G-Buffer</strong> option helps here: it saves an EXR file with HDR color plus optional Z-buffer, Layer ID, Object ID, and Material ID channels for compositing.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h3 id="basic-setup-particle-emitter">Basic Setup: Particle Emitter</h3>
 <p>Setting up a particle system requires a minimum of two steps.</p>
 <ol>
@@ -66,7 +78,7 @@
 <p><img src="/images/pastedGraphic-423.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-424.jpg" alt=""></p>
 <p><em>This particle emitter has one child, a green plane, but it has a particle tag assigned to it that randomly varies its heading by up to 180°.</em></p>
-<p><strong>Note</strong> that for most objects the rotation order is HPV, i.e. YXZ, but for the Particle tag (and some other newer tags) it is XYZ. This is part of an ongoing effort on Martin Wengemeyer’s part to make Cheetah 3D more consistent with other 3D applications (which have the same order for rotations and coordinates).</p>
+<p><strong>Note</strong> that for most objects the rotation order is HPB, i.e. YXZ, but for the Particle tag (and some other newer tags) it is XYZ. This is part of an ongoing effort on Martin Wengemeyer’s part to make Cheetah 3D more consistent with other 3D applications (which have the same order for rotations and coordinates).</p>
 <p><strong>You can assign a Particle Tag to the child object</strong> and set degrees of variation in different properties (position, rotation, scale).</p>
 <p><strong>You can create materials</strong> that use the Instance node to use properties of the individual instances to drive shader properties. (There’s even a random property that can be used to add random variations to materials assigned to instances.)</p>
 <h3 id="making-particles-do-something">Making Particles do Something</h3>
@@ -78,7 +90,10 @@
 <p>Now hit rewind and play again. (Be careful that your Wind effector didn’t end up a child of the Particle Emitter — that doesn’t work well.)</p>
 <p><img src="/images/pastedGraphic-426.jpg" alt=""></p>
 <p><em>Windblown particles.</em></p>
-<p>The best way to understand effectors is imply to play with them. Try out different effectors and combinations of effectors to see what you can do with them.</p>
+<p>The best way to understand effectors is simply to play with them. Try out different effectors and combinations of effectors to see what you can do with them.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Orientation (state) effector and the forces Attraction, Deflector, Drag, Gravitation, Radial, Turbulence, and Wind (Objects/EffectorObjects/), plus the Particle tag’s Instantiate switch (Tags/ParticleTag), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h3 id="particle-dynamics">Particle Dynamics</h3>
 <p>Particles on their own will do some things that are problematic — e.g. they will pass through one another. Some effectors allow you to simulate things like solid surfaces which will deflect particles, but you can’t get sophisticated dynamic behavior without using the Dynamics system.</p>
 <h3 id="basic-setup-particle-mesh">Basic Setup: Particle Mesh</h3>
@@ -86,8 +101,8 @@
 <p><img src="/images/pastedGraphic-428.jpg" alt=""></p>
 <p><em><strong>Top</strong>: a single pillar mesh and a weird mesh consisting only of points (no polygons). <strong>Bottom</strong>: a particle mesh with the pillar as child and the point mesh assigned to it.</em></p>
 <p>The Particle Mesh, Particle Spline, and Particle Array objects aren’t about generating fountains of sparks or smoke, but about creating instances of objects. (They can be used to create the raw materials for Dynamics effects, but we won’t talk about that here.)</p>
-<p>Imagine you’re building a model of the Parthenon. Rather than model each pillar individually, or model one pillar then duplicate it to create all the pillars — and then discover you’ve made a mistake and need to start over, you can use a Particle Mesh, a Pillar Object, and a mesh comprising one point for each pillar you need to create all your pillars as <em>instances</em>. </p>
-<p>Using a Particle Mesh (or Particle Array or Particle Spline) lets you have the simplicity of creating one pillar and copying it all over the place with the ease of editing of having one pillar you can fix or refine later.</p>
+<p>Imagine you’re building a model of the Parthenon. You could model each pillar individually, or model one pillar and duplicate it (and then discover you’ve made a mistake and need to start over). Instead, you can use a Particle Mesh, one pillar object, and a mesh with one point for each pillar you need, and create all your pillars as <em>instances</em>. <!-- TODO review --></p>
+<p>Using a Particle Mesh (or Particle Array or Particle Spline) gives you the convenience of copying one pillar all over the place, while keeping a single pillar you can fix or refine later. <!-- TODO review --></p>
 <p>This topic is also discussed under <strong>Managing Complexity</strong> (in the chapter on <strong>Mastering Cheetah 3D’s Interface</strong>).</p>
 
   </article>
@@ -274,6 +289,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

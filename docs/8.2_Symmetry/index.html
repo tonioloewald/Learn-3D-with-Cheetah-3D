@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Symmetry — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="_Many objects, including most animals and vehicles, are (at least roughly) symmetric. The symmetric creator and modifier allow you to infer half of your model…" />
   <link rel="canonical" href="https://learn3d.loewald.com/8.2_Symmetry/" />
@@ -29,23 +29,26 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Symmetry","description":"_Many objects, including most animals and vehicles, are (at least roughly) symmetric. The symmetric creator and modifier allow you to infer half of your model…","url":"https://learn3d.loewald.com/8.2_Symmetry/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="8.2_Symmetry.md">
 <!--{"parent": "8_Modeling.md", "order": 2}--><h2 id="symmetry">Symmetry</h2>
 <p><img src="/images/DraggedImage-85.jpg" alt=""></p>
 <p><em>Many objects, including most animals and vehicles, are (at least roughly) symmetric. The symmetric creator and modifier allow you to infer half of your model from the other half, making creating (and tweaking) your model much easier.</em></p>
 <p><img src="/images/Screenshot%202014-02-13%2010.14.43.jpg" alt=""></p>
 <p><em>Rotationally symmetric objects can be modeled using the ring modifier, although in order to subdivide the mesh you&#39;ll need to manually flatten and optimize the mesh (because the ring modifier doesn&#39;t &quot;weld&quot; points the way the symmetry modifier does).</em></p>
-<p>Most living creatures (at least visible ones) are symmetric in some way, as are many other real-world objects. (Sometimes objects are largely symmetric but have asymmetric detail, e.g. cars are mostly symmetric but have a steering wheel and instruments on one side; aircraft often have pitot tubes and antennae arranged asymmetrically.</p>
+<p>Most living creatures (at least visible ones) are symmetric in some way, as are many other real-world objects. (Sometimes objects are largely symmetric but have asymmetric detail, e.g. cars are mostly symmetric but have a steering wheel and instruments on one side; aircraft often have pitot tubes and antennae arranged asymmetrically.)</p>
 <p>Cheetah 3D has two powerful modifiers for efficiently modeling symmetric objects — <strong>Symmetry</strong> and <strong>Ring</strong>. (Ring?! Yes, Ring allows you to efficiently model rotationally symmetric objects, like Octopuses and many plant parts. Unfortunately, the Ring modifier wasn’t designed for this kind of use, so it’s more fiddly to use for modeling than the Symmetry tool.)</p>
 <p>In any event, bilateral symmetry, which is what the Symmetry modifier (and its unloved cousin the Symmetry creator) is designed for, is much more commonly required.</p>
 <h3 id="symmetry-modeling-tips">Symmetry Modeling Tips</h3>
 <h4 id="snapping-to-the-symmetry-planes">Snapping to the Symmetry Plane(s)</h4>
 <p>When modeling symmetric meshes you often want points to lie exactly on the symmetry plane. The simplest way to snap a point to the symmetry plane is to set the Transform tool to snap to raster, then if you move a point along the axis perpendicular to the symmetry plane (x for a default symmetry) it will be easy to snap it to the symmetry plane. (To make it even easier, set Raster width: to a large value, like 1.0.)</p>
-<p>If you want to snap a lot of points near the symmetry plane to the symmetry plane, area select them (switch to the four-quadrant view or the view straight down the symmetry plane (Front or Back view for a default symmetry) and then scale the selected points down on the axis perpendicular to the symmetry plane (the x-axis for a default symmetry) and then snap the entire selection using the previous trick.</p>
+<p>If you want to snap a lot of points near the symmetry plane to the symmetry plane, area select them (switch to the four-quadrant view or the view straight down the symmetry plane (Front or Back view for a default symmetry)) and then scale the selected points down on the axis perpendicular to the symmetry plane (the x-axis for a default symmetry) and then snap the entire selection using the previous trick.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Symmetrical</strong> checkbox on the Symmetry modifier and creator, which snaps points within the Attraction radius to the symmetry plane automatically (Objects/ModifierObjects/Symmetry), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h4 id="not-quite-symmetric">Not Quite Symmetric</h4>
 <p>Often you’ll find that your mesh is not-quite-symmetric. E.g. a human character might be almost entirely symmetric but have an asymmetric face and hairstyle. (Perfectly symmetric faces never look right!) Similarly, an Octopus’s lower body might be rotationally symmetric, but its upper body is only bilaterally symmetric.</p>
 <p>There’s no single solution to these issues.</p>
@@ -67,7 +70,7 @@
 <p>Sometimes an object has asymmetric textures while having a symmetric form. The only way to do this is to collapse the symmetry modifier and then do the UV-mapping afterwards (or use a procedural material). In this case you may want to keep a copy of the uncollapsed mesh lying around (but it’s usually pretty easy to recover the “half mesh” if you don’t).</p>
 <p>A rather common case is objects that are mostly symmetric in terms of material appearance, but have asymmetric parts (e.g. consider a person who might have symmetric-looking clothes and appendages, but has an asymmetric face and hairstyle). You’ll need to use your judgement in dealing with these kinds of workflows. One option is to separate the symmetric and asymmetric parts of the mesh for UV-mapping, then merge the meshes again later in the workflow.</p>
 <h4 id="rigging-symmetric-objects">Rigging Symmetric Objects</h4>
-<p>You can’t rig an object with Ring or Symmetry modifiers applied to it, because the Skeleton modifier will only bind the base mesh’s vertices to the bones. (You <em>can</em> rig a mesh with modifiers intact if you want its poses to be symmetric! E.g. you might be able to rig a blooming flower this way.)</p>
+<p>You can’t rig an object with Ring or Symmetry modifiers applied to it, because the Skeleton tag will only bind the base mesh’s vertices to the bones. (You <em>can</em> rig a mesh with modifiers intact if you want its poses to be symmetric! E.g. you might be able to rig a blooming flower this way.)</p>
 <p>Moving from modeling to rigging involves collapsing the symmetry part of your modifier chain and is, therefore, an irreversible step. (You do <em>not</em> need to collapse other modifiers, such as subdivision.)</p>
 
   </article>
@@ -254,6 +257,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

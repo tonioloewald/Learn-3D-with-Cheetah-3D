@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>The Math of Material Nodes — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="OMG! You didn’t tell me there’d be math!" />
   <link rel="canonical" href="https://learn3d.loewald.com/10.11_The_Math_of_Material_Nodes/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The Math of Material Nodes","description":"OMG! You didn’t tell me there’d be math!","url":"https://learn3d.loewald.com/10.11_The_Math_of_Material_Nodes/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.11_The_Math_of_Material_Nodes.md">
 <!--{"parent": "10_Materials.md", "order": 11}--><h2 id="the-math-of-material-nodes">The Math of Material Nodes</h2>
 <p><strong>OMG! You didn’t tell me there’d be math!</strong></p>
@@ -41,18 +41,18 @@
 <h3 id="points">Points</h3>
 <p><img src="/images/pastedGraphic-379.jpg" alt=""></p>
 <p>A point is a position in 3D space represented by three floating point values for x, y, and z. </p>
-<p>Usually points will be represented in their local coordinate system (e.g. if you’re looking at an object points — such as the child object’s position — will be described in terms of the parent object’s coordinate system (and not the global coordinate system, unless the object has no parent).</p>
+<p>Usually points are described in their local coordinate system. E.g. a child object’s position is given in terms of its parent object’s coordinate system, not the global coordinate system (unless the object has no parent, in which case the two are the same). <!-- TODO review --></p>
 <p>The points of a mesh are treated as children of that object (i.e. they are described as children of the object).</p>
 <h3 id="planes">Planes</h3>
 <p>A plane is a flat surface.</p>
 <p>Any three points will lie in a plane (and thus can form a triangle). In general, any larger number of points cannot be relied on to be <em>coplanar</em> (i.e. they may not lie in a plane). For this reason, 3D programs tend to reduce any polygon with more than three sides to triangles (which will always lie in a plane).</p>
 <h3 id="planarity-coplanarity">Planarity, Coplanarity</h3>
 <p>Objects are said to be coplanar if they lie within a plane. Figuring out if a given point lies (to some approximation) in a plane is very useful for doing things like merging and splitting adjacent polygons. It&#39;s less likely to be useful for materials than for <em>scripts</em>.</p>
-<p><img src="/images/DraggedImage.tiff" alt=""></p>
+<p><img src="/images/DraggedImage.png" alt=""></p>
 <p>If you have a point <strong>p</strong> on a plane and the normal of the plane <strong>n</strong>, you can tell that another point <strong>q</strong> lies on the plane by looking at the vector <strong>q-p</strong> and projecting it onto <strong>n</strong> (i.e. the dot product <strong>(q-p).n</strong>). The magnitude of this product is how far the point q is from the plane.</p>
 <h3 id="vector">Vector</h3>
 <p><img src="/images/pastedGraphic-380.jpg" alt=""></p>
-<p>A vector is a direction and a magnitude. Vectors, like points, are described by three values (x, y, and z), but instead of thinking of those values as describing a position, you should think of them as describing a velocity (or perhaps as arrow formed by drawing a line from 0,0,0 to the point described by x,y,z).</p>
+<p>A vector is a direction and a magnitude. Vectors, like points, are described by three values (x, y, and z), but instead of thinking of those values as describing a position, you should think of them as describing a velocity (or perhaps as an arrow formed by drawing a line from 0,0,0 to the point described by x,y,z).</p>
 <p>Usually in 3D we’re interested in unit vectors — i.e. vectors whose magnitude (length) is exactly 1. In general, when I describe 3D math I will simplify it by assuming we’re talking about unit vectors.</p>
 <h3 id="normal">Normal</h3>
 <p><img src="/images/pastedGraphic-381.jpg" alt=""></p>
@@ -84,8 +84,8 @@
 <p><em>Simple glass material with fresnel checked off and on, respectively. (The non-fresnel version is much more reflective in general, but less reflective at the edges — the blue you see is a reflection of the background color.)</em></p>
 <p>If you look at a pane of glass from an oblique angle then it behaves much like a mirror — not much light passes through it, but it reflects quite well. On the other hand if you look at a pane of glass straight on, light passes through it very well while relatively little is reflected.</p>
 <p>This is called the Fresnel effect or Fresnel reflectance.</p>
-<p>You can simulate this in Cheetah 3D by feeding I•R from a State node into a Material shader’s transparency input. I•R is the <strong>dot product</strong> of the viewing angle (the direction from the point being rendered to the camera) and the surface normal at that point. Since the dot product effectively measures how similar these vectors are, it will be one if you’re looking at the surface straight on, and close to zero if you’re viewing it obliquely.</p>
-<p>Similarly, you can feed (1 – this dot product) into the reflection input of the shader to make the surface more reflective when viewed at an oblique angle and non-reflective when viewed straight on. This is the same as the magnitude of I×R (the cross product of I and R), but its easier to use I•R (since the State node has a dedicated output channel for this value).</p>
+<p>You can simulate this in Cheetah 3D by feeding I•N from a State node into a Material shader’s transparency input. I•N is the <strong>dot product</strong> of the viewing angle (the direction from the point being rendered to the camera) and the surface normal at that point. Since the dot product effectively measures how similar these vectors are, it will be one if you’re looking at the surface straight on, and close to zero if you’re viewing it obliquely.</p>
+<p>Similarly, you can feed (1 – this dot product) into the reflection input of the shader to make the surface more reflective when viewed at an oblique angle and non-reflective when viewed straight on. Note that this is <em>not</em> the same as the magnitude of I×N (the cross product of I and N), which is the <em>sine</em> of the angle; but it’s easier to use I•N anyway (since the State node has a dedicated output channel for this value).</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -271,6 +271,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Subdivision Surfaces — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Subdivision surfaces are a powerful tool for creating smooth meshes. They are useful for both hard surface modeling (industrial design and similar kinds of…" />
   <link rel="canonical" href="https://learn3d.loewald.com/8.5_Subdivision_Surfaces/" />
@@ -29,14 +29,20 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Subdivision Surfaces","description":"Subdivision surfaces are a powerful tool for creating smooth meshes. They are useful for both hard surface modeling (industrial design and similar kinds of…","url":"https://learn3d.loewald.com/8.5_Subdivision_Surfaces/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="8.5_Subdivision_Surfaces.md">
 <!--{"parent": "8_Modeling.md", "order": 5}--><h2 id="subdivision-surfaces">Subdivision Surfaces</h2>
 <p>Subdivision surfaces are a powerful tool for creating smooth meshes. They are useful for both hard surface modeling (industrial design and similar kinds of modeling) and character modeling.</p>
-<p>The base mesh to which subdivision is applied is often referred to as its “control cage” or “cage mesh”. The cage mesh affect the shape of the subdivision surface in much the same way as the control handles of a bezier control its curvature, and — as with bezier curves — the only way to get a good feel for how they work is to play with them.</p>
+<p>The base mesh to which subdivision is applied is often referred to as its “control cage” or “cage mesh”. The cage mesh affects the shape of the subdivision surface in much the same way as the control handles of a bezier control its curvature, and — as with bezier curves — the only way to get a good feel for how they work is to play with them.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a choice of subdivision schemes in the Subdivision modifier — Catmull-Clark, <strong>Stam-Loop</strong> (which avoids Catmull-Clark’s artifacts on meshes mixing triangles and quads) and Linear (Objects/ModifierObjects/SubDiv), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the “Modifier On/Off” hotkey (or the Mode tag’s modifier checkbox) for reaching cage points hidden by the subdivided surface, and the Mode tag’s isoparameter editor shading for highlighting the cage edges (Objects/ModifierObjects/SubDiv), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h3 id="controlling-curves">Controlling Curves</h3>
 <p><img src="/images/pastedGraphic-185.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-186.jpg" alt=""></p>
@@ -235,6 +241,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

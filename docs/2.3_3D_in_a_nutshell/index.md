@@ -4,7 +4,7 @@
 
 We are wired to think in 3D.
 
-When you look at the world you immediately have a feel for how far away things are, you recognize familiar objects and recognizes or extrapolate their three dimensional form. It’s not just eyesight — blind people can make their way around cluttered rooms, and we can all reach into our pockets, or for a light switch, or open a door without looking.
+When you look at the world you immediately have a feel for how far away things are, you recognize familiar objects and recognize or extrapolate their three dimensional form. It’s not just eyesight — blind people can make their way around cluttered rooms, and we can all reach into our pockets, or for a light switch, or open a door without looking.
 
 Research has shown we don’t need stereoscopic vision to "see in 3D". Although the brain does make use of stereo vision to gauge depth, it also uses other cues including overlap, focus distance, and depth of field.
 

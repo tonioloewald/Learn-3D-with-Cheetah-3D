@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Building Blocks — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball)." />
   <link rel="canonical" href="https://learn3d.loewald.com/15.4_Building_Blocks/" />
@@ -29,16 +29,16 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Building Blocks","description":"The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball).","url":"https://learn3d.loewald.com/15.4_Building_Blocks/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="15.4_Building_Blocks.md">
 <!--{"parent": "15_Particles.md", "order": 4}--><h2 id="building-blocks">Building Blocks</h2>
 <h3 id="dynamics-tags">Dynamics Tags</h3>
 <p><img src="/images/pastedGraphic-532.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-533.jpg" alt=""></p>
-<p><em>The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball). The blocks are a collapsed particle mesh system with a dynamic rigidbody tag. The ground plane has a static rigidbody tag. The ball has a dynamic rididbody tag.</em></p>
+<p><em>The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball). The blocks are a collapsed particle mesh system with a dynamic rigidbody tag. The ground plane has a static rigidbody tag. The ball has a dynamic rigidbody tag.</em></p>
 <p>Objects which have Dynamics tags assigned to them will take part in dynamic Simulations. Objects which don’t, won’t. Because dynamic simulations can be memory and processor intensive, it’s a good idea not to apply Dynamics tags to things that won’t be moving or struck by other objects.</p>
 <p>Once an object has a Dynamics tag assigned, running a dynamic simulation will affect its behavior.</p>
 <h3 id="rigid-body">Rigid Body</h3>
@@ -47,17 +47,26 @@
 <p><strong>Dynamic</strong>. This is the default. The object will be affected by forces, collide with things, and so forth.</p>
 <p><strong>Static</strong>. The object is fixed in space, but other objects can collide with it. Large, immovable objects should be made static rigidbodies.</p>
 <p><strong>Kinematic</strong>. The object is being animated conventionally, but you want it to affect the Dynamics behavior of other objects. You might set an animated character to be kinematic, but the clothing on the character to be a soft body. Similarly, a sailing ship might be conventionally animated, but its sails and flags could be soft bodies, its rigging could be ropes, and stuff on its deck could be dynamic rigidbodies.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has Rigid Body Activate options (Immediately / Collision / Time), initial Velocity, and Linear/Angular factors, and the tag can be put on a folder to cover its children (Tags/RigidBodyTag), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h3 id="rope">Rope</h3>
 <p>Rope tags are used to give splines rope-like behavior.</p>
 <p>Generally, you’ll want to use anchor tags to give ropes interesting behavior.</p>
 <p>Note that you should set a spline to Bezier Curve, Linear, or NURBS (rather than the default Bezier Spline) setting because dynamic simulations won’t move control handles around, leading to odd results.</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the Rope tag page (Tags/RopeTag) recommends a spline of Type = Linear and limits ropes to 10,000 control points. <!-- TODO update --></p>
+</blockquote>
 <h3 id="soft-body">Soft Body</h3>
 <p>Soft body tags make surfaces behave like cloth, and (with volume preservation) make closed meshes behave like jelly or fluid-filled objects (like balloons).</p>
-<p>The soft body tag is limited to objects with 10,000 points or fewer. If you assign a soft body tag to an object with too many tags it won’t do anything.</p>
+<p>The soft body tag is limited to objects with 10,000 points or fewer. If you assign a soft body tag to an object with too many points it won’t do anything.</p>
 <h3 id="anchor">Anchor</h3>
 <p>Anchor tags do two different things.</p>
 <p><strong>Fixing the position of vertices</strong>. If you simply select one or more vertices of a mesh or spline, add an anchor tag to it and Set anchors, those vertices will be fixed in position relative to the parent’s coordinate system (or global space).</p>
 <p><strong>Attaching other objects</strong>. If you select one or more vertices and then drag an object to the Attach to Object socket, then instead of the vertices being fixed in position, the attached object will be attached to those vertices.</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: per Tags/AnchorTag, unattached anchors are pinned in the global coordinate system, and the tag pins soft-body or rope points to a rigid body. <!-- TODO update --></p>
+</blockquote>
 <h3 id="particles">Particles</h3>
 <p>Normally, you cannot assign a Rigidbody tag (for example) to a particle system and assigning it to a particle produces ugly results (Dynamics gets applied to the single particle, and its motion is replicated for every particle).</p>
 <p>If you collapse a particle system (double-click on it in the Object Browser or <strong>Objects &gt; Make Editable</strong>) you turn it into a static collection of instances, and now you can assign a Rigidbody tag to the entire collection, and it behaves as you’d expect.</p>
@@ -248,6 +257,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

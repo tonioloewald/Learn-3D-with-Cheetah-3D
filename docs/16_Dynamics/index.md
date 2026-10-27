@@ -10,7 +10,7 @@ The 3D “world” in which cg artists work is a mathematical construct. A polyg
 
 Just as ray tracing attempts to simulate the image you’d get if the virtual objects in a scene were lit with the virtual lights and photographed with the virtual camera, the term dynamics in the context of 3D graphics refers to the attempt to simulate mechanical interactions in the virtual world.
 
-Dynamic simulations are useful both as a convenience (want to place an 3D apple in a 3D bowl? drop it!) and to automatically create effects that would be extraordinarily difficult to do by hand (e.g. accurately model huge numbers of interactions, such as explosions or fluid dynamic effects).
+Dynamic simulations are useful both as a convenience (want to place a 3D apple in a 3D bowl? drop it!) and to automatically create effects that would be extraordinarily difficult to do by hand (e.g. accurately model huge numbers of interactions, such as explosions or fluid dynamic effects).
 
 ### Bullet Physics Library
 

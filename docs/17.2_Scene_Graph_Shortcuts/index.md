@@ -10,4 +10,4 @@ Double-clicking on an object’s name allows you to rename it.
 
 **Clicking on an icon** gives you access to its properties, via the properties panel. Clicking on a tag lets you edit that tag’s properties.
 
-**Standard keyboard navigation works** (arrows keys can move around, disclose or collapse nodes, and so forth).
+**Standard keyboard navigation works** (arrow keys can move around, disclose or collapse nodes, and so forth).

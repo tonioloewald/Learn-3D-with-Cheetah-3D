@@ -42,11 +42,11 @@ We can refine this material endlessly. The mix node could be selecting between t
 
 ![](/images/pastedGraphic-331.jpg)
 
-*The “Rusted Steel” material (which I believe comes bundled with Cheetah 3D) is a good example of this technique. *
+*The “Rusted Steel” material (which I believe comes bundled with Cheetah 3D) is a good example of this technique.*
 
-*The turbulence material is used to select between the clean metal and the rusted metal (black means the metal is clean, anything else indicates a certain level of rust. *
+*The turbulence material is used to select between the clean metal and the rusted metal (black means the metal is clean, anything else indicates a certain level of rust).*
 
-*Noise is mixed by this value to produce bumps on the rusted areas, while color is mixed by it to give the rusted parts the correct color. *
+*Noise is mixed by this value to produce bumps on the rusted areas, while color is mixed by it to give the rusted parts the correct color.*
 
 *Finally, a MultiplyAdd node is used to invert the value to make the clean parts shiny (reflective in this case rather than specular).*
 
@@ -60,9 +60,9 @@ An orientation is represented by a normal. You can measure how similar a surface
 
 ![](/images/pastedGraphic-332.jpg)
 
-*Here we visualize the dot product of the surface normal (on the default sphere) and a normal pointing straight up (0,1,0) — which corresponds to green (hence the vector constant is displayed as a green ball). *
+*Here we visualize the dot product of the surface normal (on the default sphere) and a normal pointing straight up (0,1,0) — which corresponds to green (hence the vector constant is displayed as a green ball).*
 
-*You can see on the “normal ball” that the normals look green at the top of the sphere (where the vectors start getting close to (0,1,0) and blue on the “front” on the sphere where the vectors start getting close to (0,0,1). *
+*You can see on the “normal ball” that the normals look green at the top of the sphere (where the vectors start getting close to (0,1,0)) and blue on the “front” on the sphere where the vectors start getting close to (0,0,1).*
 
 *But the real news is the dot product, which looks kind of like a bit of snow on a black ball. Neat huh?*
 
@@ -76,7 +76,7 @@ An orientation is represented by a normal. You can measure how similar a surface
 
 *Changing the gradient can determine how horizontal a surface needs to be to be covered in snow, and how sharp the cut-off is.*
 
-*A more sophisticated version of this material might — if being used for terrain — take absolute altitude into account (e.g. the driving value for snow vs. no snow might be a combination of the dotproduct we just calculated and altitude (the y coordinate of position).*
+*A more sophisticated version of this material might — if being used for terrain — take absolute altitude into account (e.g. the driving value for snow vs. no snow might be a combination of the dotproduct we just calculated and altitude (the y coordinate of position)).*
 
 **Viewing angle** often drives optical properties such as reflection and transmission — the “fresnel” property of the material shader gives you an all-or-nothing implementation of the behavior of many real-world materials, but you might want a more subtle effect, or you might be producing a composite material (e.g. stained glass window) where some parts of the material have fresnel behavior and some don’t.
 
@@ -136,7 +136,7 @@ So let’s suppose we’re creating a simple-minded terrain shader based on alti
 
 ![](/images/pastedGraphic-346.jpg)
 
-*We pull the position and pull out the y coordinate. (This is position in local coordinate space, so we want our object’s geometry to sit between y=0 and y=1 or the y value will to “blow out”.) I feed this into a gradient (you don’t see any white because the sphere only gets up to y=0.5.*
+*We pull the position and pull out the y coordinate. (This is position in local coordinate space, so we want our object’s geometry to sit between y=0 and y=1 or the y value will “blow out”.) I feed this into a gradient (you don’t see any white because the sphere only gets up to y=0.5).*
 
 ![](/images/pastedGraphic-347.jpg)
 

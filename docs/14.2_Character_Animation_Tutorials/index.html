@@ -14,30 +14,30 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Character Animation Tutorials — Learn 3D with Cheetah 3D</title>
-  <meta name="description" content="To rig a mesh you start be creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create." />
+  <meta name="description" content="To rig a mesh you start by creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create." />
   <link rel="canonical" href="https://learn3d.loewald.com/14.2_Character_Animation_Tutorials/" />
   <link rel="alternate" type="text/markdown" href="index.md" title="Character Animation Tutorials — Learn 3D with Cheetah 3D (markdown)" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
   <meta property="og:title" content="Character Animation Tutorials — Learn 3D with Cheetah 3D" />
-  <meta property="og:description" content="To rig a mesh you start be creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create." />
+  <meta property="og:description" content="To rig a mesh you start by creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create." />
   <meta property="og:url" content="https://learn3d.loewald.com/14.2_Character_Animation_Tutorials/" />
   <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Character Animation Tutorials","description":"To rig a mesh you start be creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create.","url":"https://learn3d.loewald.com/14.2_Character_Animation_Tutorials/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Character Animation Tutorials","description":"To rig a mesh you start by creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create.","url":"https://learn3d.loewald.com/14.2_Character_Animation_Tutorials/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="14.2_Character_Animation_Tutorials.md">
 <!--{"parent": "14_Character_Animation.md", "order": 2}--><h2 id="character-animation-tutorials">Character Animation Tutorials</h2>
 <h3 id="rigging-a-simple-flexible-object">Rigging a simple flexible object</h3>
 <p><img src="/images/pastedGraphic-496.jpg" alt=""></p>
-<p>To rig a mesh you start be creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create.</p>
+<p>To rig a mesh you start by creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create.</p>
 <p><img src="/images/pastedGraphic-497.jpg" alt=""></p>
 <ol>
 <li>Switch to the Left view and select the Joint Tool (Tools &gt; Character &gt; Joint). Set the joint tool’s color to whatever you like and switch to diamond display mode. We want to click in the places in the order shown below:</li>
@@ -51,20 +51,29 @@
 <p>If you select the various joints in the hierarchy you should see that their axes are all lined up with the global axis, and that in particular the red x-axis is lined up so that it’s the axis we’re going to want to mainly rotate that joint around. This is convenient — you generally want to ensure this for any joint hierarchy before you bind it to your mesh. For a more complex rig, you’ll probably need to rotate some joints along their y axes to line up the x axes properly.</p>
 <p>You can try rotating some joints at this point (undo afterwards!). The joints rotate as you’d expect, and each rotates its children, but aside from that they don’t do anything yet.</p>
 <p>Having created our joints, we need to attach them to our mesh. </p>
-<ol>
+<ol start="3">
 <li>Select the mesh (named “Tentacle” in this case), add a Skeleton tag to it, and then with the Skeleton tag still selected click the root Joint (named Joint) and drag it to the list box in the Skeleton tag’s properties. If you mess up the Skeleton tag will get deselected and you’ll need to select it and start over. (This is the case whenever you need to drag an object into a tag property.)</li>
 </ol>
 <p>You should end up with the entire hierarchy of joints in the Skeleton tag’s list box, like this:</p>
 <p><img src="/images/pastedGraphic-500.jpg" alt=""></p>
-<ol>
-<li><p>Click the button to “Bind mesh”. This will use the “heat binding” algorithm to bind your joint hierarchy (“skeleton”) to the mesh.</p>
-</li>
-<li><p>Now one-by-one select joints 2, 3, and 4 and rotate each slightly on its x-axis to curl the tentacle inward. You should get something like this:</p>
-</li>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<ol start="4">
+<li>In the Skeleton tag’s properties, set <strong>Binding method</strong> to <strong>Heat</strong> (the other choice is <strong>Distance</strong>), then click <strong>Bind mesh</strong>. This uses the “heat binding” algorithm to bind your joint hierarchy (“skeleton”) to the mesh. <strong>Max. influence</strong> (the most joints that can affect one vertex; 2–4 is normally enough) and <strong>Dropoff rate</strong> (how quickly a joint’s influence falls off) also affect the result.</li>
+</ol>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: whether Heat is the default Binding method (the Binding method popup isn&#39;t in the manual&#39;s Tags/SkeletonTag page; it is in the app&#39;s UI strings). <!-- TODO verify --></p>
+</blockquote>
+<ol start="5">
+<li>Now one-by-one select joints 2, 3, and 4 and rotate each slightly on its x-axis to curl the tentacle inward. You should get something like this:</li>
 </ol>
 <p><img src="/images/pastedGraphic-501.jpg" alt=""></p>
 <p>The reason we do this is to give the IK system a hint as to our preferred rotation for each joint. This will make the IK setup incredibly simple. </p>
-<ol>
+<ol start="6">
 <li><p>Add an IK Handle tag to joint 4 and set its length to 3. </p>
 </li>
 <li><p>Now try moving joint 4 around. Magic!</p>
@@ -73,6 +82,12 @@
 <p>You’ve rigged a tentacle, and you can keyframe it, store poses, and so forth exactly as you’d expect. You’ve also learned all the fundamental tools required to rig most characters. This section will focus on animating a character suitable for a game rather than long form animation. From what I’ve seen in the forum, more Cheetah 3D users are interested in game development than long form animation, and in any event Cheetah 3D currently lacks an interface for managing the complexity of long form animations.</p>
 <p><strong>Note</strong>: “Long form” is relative. In this case, I mean animations longer than a second or two, and more complex than a single character performing a single action.</p>
 <p>These tutorials are easier to complete if you install and use tg_jp’s <strong>Mirror Copy.js</strong> and my <strong>Pose Utilities.js</strong> scripts. Both are available for free and links can be found in the section on Scripting or on the Cheetah 3D forum. Instructions on installing scripts can be found in the section on Scripting or in the Cheetah 3D help.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: forum reports on Pose Utilities.js and Mirror Copy.js are mixed for recent versions (forum threads 5358 and 1448). <!-- TODO verify --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Spline IK tag and the Split Joint tool (Tags/SplineIKTag, Tools/Character/JointSplitTool), a natural fit for tentacles and tails, not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -258,6 +273,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

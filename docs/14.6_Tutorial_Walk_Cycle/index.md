@@ -2,6 +2,8 @@
 
 ## Tutorial: Walk Cycle
 
+> **Note:** this page duplicates [Tutorial: Walk Cycle](/14.5_Tutorial_Walk_Cycle/) (identical steps, byte-identical `-1` images); delete it and its images. <!-- TODO editorial -->
+
 ![](/images/pastedGraphic-514-1.jpg)
 
 ![](/images/pastedGraphic-515-1.jpg)
@@ -34,11 +36,11 @@ Oh, and **make sure the Animation Control Panel is active**.
 
 A blue marker will appear on the timeline representing the current set of keyed values (including children of the selected node because hierarchy is toggled on).
 
-1. Click on the blue marker. Copy it. Drag the time indicator to the middle frame (frame 12) and paste. Drag the time indicator to the last frame and paste.
+3. Click on the blue marker. Copy it. Drag the time indicator to the middle frame (frame 12) and paste. Drag the time indicator to the last frame and paste.
 
-2. Go to frame 6 and try to replicate the pose in the second pose — striding with left foot forward and left leg slightly bent, right leg back and straight with heel leaving the ground. When you’re happy, click on the root bone and then click **Record**.
+4. Go to frame 6 and try to replicate the pose in the second pose — striding with left foot forward and left leg slightly bent, right leg back and straight with heel leaving the ground. When you’re happy, click on the root bone and then click **Record**.
 
-3. Copy the blue marker for frame 6, move to frame 18 and paste it.
+5. Copy the blue marker for frame 6, move to frame 18 and paste it.
 
 If you run the animation now, it will look pretty weird (for reasons that should be obvious). We need to flip the poses in frames 12 and 18. You can either do this manually, trying to match the third and fourth poses above, or you can cheat and use my **Pose Utilities.js** script.
 
@@ -46,7 +48,7 @@ Using Pose Utilities to “flip” a keyframe requires you to:
 
 1. Go to the key frame you want to flip.
 
-2. Click on the root bone, select Pose Utilities from **Tool \> Script \> Tool Script \> Pose Utilities**. Select the left/right naming convention you’re using (which should be set correctly by default if you’re using the latest version from my website) and click **Swap Left and Right**.
+2. Click on the root bone, select Pose Utilities from **Tools \> Script \> Tool Script \> Pose Utilities**. Select the left/right naming convention you’re using (which should be set correctly by default if you’re using the latest version from my website) and click **Swap Left and Right**.
 
 3. **Click on the root bone *again*** and then click **Record**.
 

@@ -14,32 +14,39 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Reflected Lights — Learn 3D with Cheetah 3D</title>
-  <meta name="description" content="There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights without a geometry property do not appear in reflections…" />
+  <meta name="description" content="There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights do not appear in reflections (aside from the faux…" />
   <link rel="canonical" href="https://learn3d.loewald.com/10.18_Reflected_Lights/" />
   <link rel="alternate" type="text/markdown" href="index.md" title="Reflected Lights — Learn 3D with Cheetah 3D (markdown)" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
   <meta property="og:title" content="Reflected Lights — Learn 3D with Cheetah 3D" />
-  <meta property="og:description" content="There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights without a geometry property do not appear in reflections…" />
+  <meta property="og:description" content="There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights do not appear in reflections (aside from the faux…" />
   <meta property="og:url" content="https://learn3d.loewald.com/10.18_Reflected_Lights/" />
   <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Reflected Lights","description":"There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights without a geometry property do not appear in reflections…","url":"https://learn3d.loewald.com/10.18_Reflected_Lights/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Reflected Lights","description":"There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights do not appear in reflections (aside from the faux…","url":"https://learn3d.loewald.com/10.18_Reflected_Lights/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.18_Reflected_Lights.md">
 <!--{"parent": "10_Materials.md", "order": 18}--><h2 id="reflected-lights">Reflected Lights</h2>
-<p>There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights without a geometry property do not appear in reflections (aside from the faux reflections produced by specular materials). Those with a geometry property can appear in reflections but don’t look terribly convincing. If you want light sources to appear in reflections and look decent, you need to build out the light sources using suitably emissive materials, reflectors, and so forth.</p>
-<p>This is discussed in greater detail in the <strong>Rendering</strong> chapter in the section on Reflected Lights.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights do not appear in reflections (aside from the faux reflections produced by specular materials) unless they are area lights with <strong>Visible in camera</strong> turned on. Those can appear in reflections but don’t look terribly convincing.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p>If you want light sources to appear in reflections and look decent, you need to build out the light sources using suitably emissive materials, reflectors, and so forth.</p>
+<p>This is discussed in greater detail in the <strong>Rendering</strong> chapter in the section on <a href="/12.10_Rendering_Reflected_Lights/">Reflected Lights</a>.</p>
 <h3 id="specular-vs-real">Specular vs. “Real”</h3>
 <p>Specular highlights are, in essence, fake reflections of light sources. If you don’t have time to build out light sources in a scene you can simply use the specular property of materials to render reasonably decent fake reflected light sources.</p>
-<p>Again, this is discussed in greater detail in the <strong>Rendering</strong> chapter.</p>
+<p>Again, this is discussed in greater detail in the <a href="/12_Rendering/">Rendering</a> chapter.</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -225,6 +232,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

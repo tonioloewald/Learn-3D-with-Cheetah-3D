@@ -4,7 +4,7 @@
 
 ![](/images/DraggedImage-72.jpg)
 
-Here’s the default Cheetah 3D layout (with Modeling selected from the Layout menu and the toolbar set to display small icons only).  Note that your initial layout may not exactly match the screenshot (e.g. the animation controls on the bottom are not visible by default, and Cheetah 3d lets use multiple customizable layouts).
+Here’s the default Cheetah 3D layout (with Modeling selected from the Layout menu and the toolbar set to display small icons only).  Note that your initial layout may not exactly match the screenshot (e.g. the animation controls on the bottom are not visible by default, and Cheetah 3d lets you use multiple customizable layouts).
 
 ### The Cheetah 3D Toolbar
 
@@ -12,13 +12,15 @@ Here’s the default Cheetah 3D layout (with Modeling selected from the Layout m
 
 **Toolbar** is where Cheetah 3D’s tools are located. Not shown above is the search field (by default on the right) which filters the content of the _Object Browser_. Not everything in the toolbar is what Cheetah 3D considers a “tool”, as per the above diagram.
 
-* **Layout** is menu that lets you pick one of several customizable layouts for the window.
+* **Layout** is a menu that lets you pick one of several customizable layouts for the window.
 
 * **Tools** are in fact tools (select, transform, and the ruler respectively).
 
 * **Modes** determine what can be selected and worked on (points, edges, polygons, objects, and pivots respectively). What’s a “pivot”? It’s the center of a given object’s coordinate system (think of it as living in a universe of its own, the pivot is the center of the universe and its orientation represents its axes.)
 
 * **Things** are objects you can add to the scene or to objects in the scene. (Objects in a loose sense — some are actual geometric objects, while others are things that affect objects in some way.)
+
+> **Note:** Cheetah 3D 8.1.1 also has a choice of two renderers, Cheetah and Falcon, picked with **Render \> Renderer** or by holding down the render settings toolbar icon. It also has separate toolbar buttons for rendering a still, an animation, or a bake (manual: Rendering › Renderer). None of this is covered here yet. <!-- TODO missing -->
 
 The toolbar is a standard Mac OS X toolbar, so you can customize it the usual way…
 
@@ -32,7 +34,7 @@ The easiest way to understand views is to play with them — see _Navigating the
 
 ![](/images/Screen%20Shot%202016-11-28%20at%209.18.29%20AM.jpg)
 
-(And yes, since you can have more than one camera in a scene, the active camera is the indicated in the object browser and controls and is controlled by 3D views in camera mode. Did I say views? You can customize layouts to have more than one view, and you can also switch a view into a 4-pane view which can have more than one pane in camera mode.)
+(And yes, since you can have more than one camera in a scene, the active camera is the one whose icon is highlighted in the object browser. It's the camera you see through, and move, in 3D views set to camera mode. Did I say views? You can customize layouts to have more than one view, and you can also switch a view into a 4-pane view which can have more than one pane in camera mode.) <!-- TODO review -->
 
 ![](/images/Screen%20Shot%202016-11-28%20at%209.01.27%20AM.jpg)
 
@@ -58,17 +60,21 @@ The Object Browser is also highly customizable…
 
 **Materials** is where any materials in the scene will be found. You can select materials (and thus see their properties) here, and you can apply materials to things in the scene by:
 
-Dragging a material onto something (in the 3d view or object browser)
+* Dragging a material onto something (in the 3d view or object browser).
 
-Selecting polygons in polygon mode and 
+* Selecting polygons in polygon mode and then dragging the material onto them (the material is applied only to the selected polygons). <!-- TODO review -->
 
 **Animation Timeline** is where you control time within a scene. Think of your scene as a kind of videotape where you can decide where in time you want to be and see (and change) how the scene looked at that time. By default, nothing will happen because objects’ properties remain constant for all time by default.
 
 Animation simply means changing the properties of things over time — to animate things you simply go to different points in time and _keyframe_ their properties. (Keyframe? A keyframe is a state at a particular time; usually when you mess with an object’s properties you are changing them for all time. An animated object can have keyframed properties.) 
 
-_You can keyframe one or more properties_ by selecting the thing whose property you want to keyframe, adjusting the property, and then clicking “record” (the red circle). By default posite, scale, and rotation are recorded. To record other properties, right-click the record button and choose the value you want to record. To record everything, toggle on the P setting. If you toggle the key icon you’ll keyframe everything you change automatically. The little graph lets you restrict keyframing to parameters that change.
+_You can keyframe one or more properties_ by selecting the thing whose property you want to keyframe, adjusting the property, and then clicking “record” (the red circle). By default position, scale, and rotation are recorded. To record other properties, right-click the record button and choose the value you want to record. To record everything, toggle on the P setting. If you toggle the key icon you’ll keyframe everything you change automatically. The little graph lets you restrict keyframing to parameters that change.
+
+> **Note:** requires updating for Cheetah 3D 8.1.1: the manual's Timeline page lists the recording-mask toggles as position, scale, rotation, all parameters, autokeying, record child objects, and record only changed parameters. There's no "P", and the child-object toggle isn't mentioned here. <!-- TODO update -->
 
 ### Other Views
+
+> **Note:** Cheetah 3D 8.1.1 also has Takes, Layers, Poses, Images, Console, and Script views (the take manager is in the manual under Animation › Take Manager), not yet covered here. <!-- TODO missing -->
 
 ![](/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM.jpg)
 
@@ -138,7 +144,9 @@ There’s a small row of icons at the top-right of the 3D view. These allow you 
 
 ![](/images/DraggedImage-74.jpg)
 
-￼From left to right, the icons are: focus camera, pan, “zoom”, orbit, pivot, toggle 4-way view, and finally the gear (new in Cheetah 3D 7) controls other settings. Note that focus camera also sets the point around which you will orbit.
+From left to right, the icons are: focus camera, pan, “zoom”, orbit, pivot, toggle 4-way view, and finally the gear controls other settings. Note that focus camera also sets the point around which you will orbit.
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the manual's 3D View page lists the icons as camera projection, style, focus, move, zoom, rotate around the selected object, turn camera, and quad view. It mentions no gear, and it says orbiting rotates around the selected object. <!-- TODO verify -->
 
 There are also shortcuts for view navigation: holding down the option (alt) key allows you to “orbit” by dragging the mouse/trackpad; scrolling (gesture, mousewheel, etc.) or option-command dragging allows you to “zoom”; and control-option allows you to pan by dragging.
 
@@ -158,6 +166,8 @@ _The menu at the top-left of the 3D view allows you to select views. The camera 
 
 _It’s important to remember that when you’re in a camera view, changing the view moves the camera around (and undo won’t move it back). This is a bit annoying, and you may want to try to remember to work in perspective views unless you want to move the camera. You can also lock the camera by right-clicking its icon in the Properties Panel and selecting “Lock Parameter” to avoid accidentally messing up a camera._
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: does a “Lock Parameter” command still exist? Neither the manual nor the app's strings mention one. <!-- TODO verify -->
+
 ![](/images/DraggedImage-77.jpg)
 
 _Another trick suggested on the forums is to add a Pose tag to a camera and save a pose whenever you want to be able to restore a specific camera view. Once you get into this habit you have the best of both worlds — you can quickly move the camera around and make test renders, but you don’t lose views you want to keep._
@@ -174,7 +184,7 @@ Cheetah 3D is always in one of five modes. The first two modes apply to any kind
 
 **Pivot mode** allows you to manipulate an object’s coordinate system for purposes of transforming it. Most objects, by default, will have their pivot point in the middle of the object (sometimes the “middle of the base of the object”). But you might want to rotate the object around a different point (e.g. if you wanted to open a door it would rotate around the door’s hinges, which are near its edge). 
 
-Note that the pivot of an object affects how it is transformed, but doesn’t change the object’s position or orientation in space (in other words, the pivot isn’t affecting the object’s internal coordinate system.
+Note that the pivot of an object affects how it is transformed, but doesn’t change the object’s position or orientation in space (in other words, moving the pivot moves the object’s coordinate system, not its geometry). <!-- TODO review -->
 
 ### Mesh/Spline Editing Modes
 
@@ -190,7 +200,7 @@ Note that if you are in one of these modes and you have an editable mesh selecte
 
 When you are in one of the mesh editing modes you will also have a powerful context menu available via the right mouse button (or equivalent gesture). This provides convenient access to Cheetah 3D’s selection and polygon tools.
 
-### Select vs. Transform￼
+### Select vs. Transform
 
 ![](/images/DraggedImage-79.jpg)
 
@@ -218,7 +228,7 @@ You can double-click the central manipulator to switch to gadget mode. Gadget mo
 
 ### Two Axis Scaling
 
-The transform tool’s scale functions also have a clever shortcut. If you hold down the shift key and drag on a box, it will uniformly scale the object on the other two axes, (so if you shift-drag on the red box, it will scale the object uniformly in y and z — very useful indeed.
+The transform tool’s scale functions also have a clever shortcut. If you hold down the shift key and drag on a box, it will uniformly scale the object on the other two axes, (so if you shift-drag on the red box, it will scale the object uniformly in y and z) — very useful indeed.
 
 ### Working with Selections
 
@@ -250,9 +260,9 @@ While being able to navigate a 3D view is very useful, sometimes you want a more
 
 ![](/images/DraggedImage-81.jpg)
 
-The object browser lets you see and select everything in your scene, including abstract things like modifiers, and things that aren’t visible (or aren’t in view).
+_The object browser lets you see and select everything in your scene, including abstract things like modifiers, and things that aren’t visible (or aren’t in view)._
 
-It also shows the scene hierarchy, i.e. which objects “are parented to” or “belong” to other objects. The concept of hierarchies is very powerful in 3D graphics. They’re a bit like “grouping” in an vector drawing program but far more useful and flexible.
+It also shows the scene hierarchy, i.e. which objects “are parented to” or “belong” to other objects. The concept of hierarchies is very powerful in 3D graphics. They’re a bit like “grouping” in a vector drawing program but far more useful and flexible.
 
 ![](/images/DraggedImage-82.jpg)
 
@@ -262,13 +272,13 @@ Typically if B is connected to or resting on A then it’s usually a good idea t
 
 If you find something in the object browser and want to see it in the 3D view (or “viewport”), you can use the Focus Camera icon. Focus camera is so useful, I recommend giving it an easily remembered keyboard shortcut (I use “F”).
 
-Adding items from the object browser to the Properties Panel
+### Adding items from the object browser to the Properties Panel
 
 Sometimes Cheetah 3D expects you to drag one or more items from the Object Browser to a list or “socket” in the Properties Panel. E.g. if you create a Particle Mesh object you need to tell it which mesh to use as its basis.
 
 ![](/images/DraggedImage-83.jpg)
 
-The Particle Mesh object’s Properties panel includes a “socket” which you need to drag a mesh object into.
+_The Particle Mesh object’s Properties panel includes a “socket” which you need to drag a mesh object into._
 
 This is a bit of a paradox, because if you click on an object in the Object Browser then the Properties panel you need to drag to disappears!
 

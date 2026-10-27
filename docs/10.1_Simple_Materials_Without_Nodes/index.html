@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Simple Materials Without Nodes — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="When you create a new material and select it, its Properties panel will look something like this (top)." />
   <link rel="canonical" href="https://learn3d.loewald.com/10.1_Simple_Materials_Without_Nodes/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Simple Materials Without Nodes","description":"When you create a new material and select it, its Properties panel will look something like this (top).","url":"https://learn3d.loewald.com/10.1_Simple_Materials_Without_Nodes/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.1_Simple_Materials_Without_Nodes.md">
 <!--{"parent": "10_Materials.md", "order": 1}--><h2 id="simple-materials-without-nodes">Simple Materials Without Nodes</h2>
 <h3 id="material-shader-properties">Material Shader Properties</h3>
@@ -46,7 +46,7 @@
 <h4 id="flat-colors">Flat Colors</h4>
 <p><img src="/images/pastedGraphic-241.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-242.jpg" alt=""></p>
-<p><em>A flat red material. You don’t need to do anything with nodes to make this material. Simply create a new material and set its diffuse color to red and its specular color to black. If you’re wondering why this object looks so eery in the test render, it’s because real world objects are never this intensely red. Generally, to make things look more realistic you need to make their colors a bit “murky” (darker and less saturated).</em></p>
+<p><em>A flat red material. You don’t need to do anything with nodes to make this material. Simply create a new material and set its diffuse color to red and its specular color to black. If you’re wondering why this object looks so eerie in the test render, it’s because real world objects are never this intensely red. Generally, to make things look more realistic you need to make their colors a bit “murky” (darker and less saturated).</em></p>
 <ul>
 <li><p>Set diffuse to the color you want the material to be</p>
 </li>
@@ -88,9 +88,16 @@
 </li>
 <li><p>Set reflection to the color of the metal</p>
 </li>
-<li><p>If you want the metal to render nicely, you’ll need to place it in an elaborate scene (so it can reflect stuff) or attach an HDRI tag to the camera and load a suitable image into it).</p>
-</li>
 </ul>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<ul>
+<li>If you want the metal to render nicely, you’ll need to place it in an elaborate scene (so it can reflect stuff) or add an <strong>HDRI Light</strong> object to the scene and load a suitable .hdr or .exr image into its <strong>HDR image</strong> property.</li>
+</ul>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p>Note that this is <em>not</em> the best way to make a simple metal material, but the best way involves using the node system to select a different shader (the Metal shader) or modifying one of the Metal shaders that comes bundled with Cheetah 3D.</p>
 <h4 id="brushed-metal">Brushed Metal</h4>
 <p><img src="/images/pastedGraphic-246.jpg" alt=""></p>
@@ -151,6 +158,9 @@
 </li>
 </ul>
 <p>The Fractal texture causes variation in the color of the material, while the Voronoi shader creates the texture. The higher the scale setting in the Fractal texture, the finer the grain will be.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the steps above set the scale on the Voronoi node, not the Fractal node; which node’s scale controls the grain here? <!-- TODO verify --></p>
+</blockquote>
 <h4 id="procedural-wood">Procedural Wood</h4>
 <p><img src="/images/pastedGraphic-251.jpg" alt=""></p>
 <ul>
@@ -162,7 +172,7 @@
 </li>
 <li><p>For polished wood, set the reflection to a dark grey.</p>
 </li>
-<li><p>Depending on how polished you want the wood to be, leave reflection blur at 0 (for very polished) or increase it beyond zero for less-polished looking marble.</p>
+<li><p>Depending on how polished you want the wood to be, leave reflection blur at 0 (for very polished) or increase it beyond zero for less-polished looking wood.</p>
 </li>
 </ul>
 <h4 id="simple-image-based-materials">Simple, Image-Based Materials</h4>
@@ -199,9 +209,12 @@
 <ul>
 <li><strong>Specular</strong> controls the color of specular highlights (which are simulated reflections of light sources).</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the bundled default Material (Materials/Default/Material.c3dmat) has its specular color set to black, not white, so new materials may no longer have highlights by default (also affects the caption above and 10.8). <!-- TODO verify --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-258.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-259.jpg" alt=""></p>
-<p><em>Specular size set to 80.0 (<strong>top</strong> — the default value) and 20 (<strong>bottom</strong>). Yes, the greater the specular size the smaller and duller the highlight.</em></p>
+<p><em>Specular size set to 80.0 (<strong>top</strong> — the default value) and 20 (<strong>bottom</strong>). Yes, the greater the specular size the smaller and sharper the highlight.</em></p>
 <ul>
 <li><strong>Specular Size</strong> (number) is the smoothness of the object, but only for purposes of using specular. Higher specular size produces smaller, sharper specular highlights.</li>
 </ul>
@@ -245,6 +258,9 @@
 <ul>
 <li><strong>Bumpmap</strong> (monochrome) is the distance the surface of the object is considered to be pushed out from its actual position in 3D space for purposes of determining its shading.</li>
 </ul>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Bump type</strong> setting on the Material shader (height, normal map Y+, or normal map Y−), so the bumpmap channel can take a normal map; see <a href="/10.9_Node_Descriptions/">Node Descriptions</a>, not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <p>Except where stated otherwise, these channels are expected to be RGB color values. Diffuse can be an RGBA color (i.e. include opacity) and the shader has a toggle option for using the A value as its Transparency input.</p>
 
   </article>
@@ -431,6 +447,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

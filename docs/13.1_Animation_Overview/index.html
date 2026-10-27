@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Animation Overview — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Timeline interface, which appears at the bottom of Cheetah 3D’s document window. If it’s not there you can toggle it on using the toolbar item (it looks like a…" />
   <link rel="canonical" href="https://learn3d.loewald.com/13.1_Animation_Overview/" />
@@ -29,23 +29,22 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Animation Overview","description":"Timeline interface, which appears at the bottom of Cheetah 3D’s document window. If it’s not there you can toggle it on using the toolbar item (it looks like a…","url":"https://learn3d.loewald.com/13.1_Animation_Overview/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="13.1_Animation_Overview.md">
 <!--{"parent": "13_Animation.md", "order": 1}--><h2 id="animation-overview">Animation Overview</h2>
 <p><img src="/images/pastedGraphic-88.jpg" alt=""></p>
-<p>*This is the Timeline interface, which appears at the bottom of Cheetah 3D’s document window. If it’s not there you can toggle it on using the toolbar item (it looks like a stopwatch) *</p>
+<p><em>This is the Timeline interface, which appears at the bottom of Cheetah 3D’s document window. If it’s not there you can toggle it on using the toolbar item (it looks like a stopwatch)</em></p>
 <p>The first thing you need to know about animation in Cheetah 3D is how to toggle the <strong>Timeline</strong> interface component. (See above.) Note that switching to the Animation Layout does not make the timeline appear, nor is the state of the timeline component stored as part of a layout.</p>
 <h3 id="keyframes">Keyframes</h3>
 <p>The basic principle of animation in Cheetah 3D is keyframes. In essence, Cheetah 3D animates objects by interpolating object properties between keyframe values over time. By default, any property of an object is “for all time”, and when you change it you’re changing it for all time. This all changes for a given property when that property is keyframed.</p>
 <p>Note that keyframes only affect some properties and not others (unless you keyframe everything). It’s quite possible (and indeed likely) for most of an object’s properties to be set “for all time” and a few to be keyframed. E.g. character animation typically involves rotating and sometimes translating bones, but often that’s all. So, for example, the scale of those bones is set “for all time”.</p>
 <p>In order to keyframe an object’s properties at a given point in time you:</p>
-<ul>
-<li>Move the timeline to the correct point.</li>
-</ul>
 <ol>
+<li><p>Move the timeline to the correct point.</p>
+</li>
 <li><p>Set the property to the value you want to keyframe (e.g. position the object where you want it)</p>
 </li>
 <li><p>Then click the record button in the Timeline control.</p>
@@ -53,7 +52,7 @@
 </ol>
 <p><img src="/images/pastedGraphic-89.jpg" alt=""></p>
 <ul>
-<li>Note that by default, clicking the record button keyframes the currently selected object’s translation information (position, rotation, and scale). To keyframe other properties, right-click the record button to specify the exact thing you want to keyframe. Almost any property (including those in tags) can be keyframed and thus animated.</li>
+<li>Note that by default, clicking the record button keyframes the currently selected object’s transform information (position, rotation, and scale). To keyframe other properties, right-click the record button to specify the exact thing you want to keyframe. Almost any property (including those in tags) can be keyframed and thus animated.</li>
 </ul>
 <h3 id="how-keyframes-work">How Keyframes Work</h3>
 <p>Once a property is keyframed its value at any given point on the timeline can be calculated:</p>
@@ -70,12 +69,15 @@
 <p><img src="/images/pastedGraphic-482.jpg" alt=""></p>
 <p><em>The F-Curve editor both shows how values are being interpolated and allows you to directly manipulate this interpolation. Cheetah 3D’s default “smooth” interpolation can have unanticipated effects. Note how the red line (which is x axis rotation) is being pushed in the reverse direction by the change that takes place between the second and third keyframes.</em></p>
 <p>The interpolation (and extrapolation) of values from keyframes is calculated by using bezier curves, and you can edit these curves (thus adjusting the interpolation directly) using the <strong>F-Curve</strong> pane.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual (Animation/FCurveEditor.txt) says <em>linear</em> is the default interpolation, not smooth; interpolation is changed via <strong>Animation &gt; Tangent</strong> (Constant, Linear, Smooth, Spline), which isn&#39;t explained here. <!-- TODO verify --></p>
+</blockquote>
 <h3 id="character-animation--joints">Character Animation &amp; Joints</h3>
 <p>If you don’t know anything about Character Animation, it’s not possible to cover the necessary ground in a small amount of space. Assuming you have a rough idea of how 3D character animation works, here’s a quick rundown of how it works in Cheetah 3D.</p>
 <p>To rig a character mesh for animation or posing, create a hierarchy of “joints” (a.k.a. “bones”) using the Joint tool (found in the menu bar <strong>Tools &gt; Character &gt; Joint</strong>), forming a simplified “skeleton” or “armature” for the character mesh.</p>
-<p>Position the bones inside the character mesh, add a <strong>Skeleton tag</strong> to the mesh, drag the <strong>root bone</strong> of your mesh into the Skeleton tag’s listbox, then click <strong>Bind Mesh</strong>. Now if you move or rotate the bones, the mesh should now be deformed by it. Inverse kinematics is implemented by adding <strong>constraint tags</strong> to the bones and controller objects.</p>
+<p>Position the bones inside the character mesh, add a <strong>Skeleton tag</strong> to the mesh, drag the <strong>root bone</strong> of your mesh into the Skeleton tag’s listbox, then click <strong>Bind Mesh</strong>. Now when you move or rotate the bones, the mesh should deform with them. Inverse kinematics is implemented by adding <strong>IK Handle</strong> tags to joints (and, optionally, <strong>IK Constraints</strong> tags to limit their rotation). <!-- TODO review --></p>
 <p><strong>Note</strong>: adding bones to a skeleton tag&#39;s list box can be a wee bit fiddly. To do it reliably you need to select the tag, then <em>in one motion</em> click and drag the root bone into the listbox. If you don’t do it in one motion the Skeleton tag becomes deselected and you can’t drag anything to it. (Select the skeleton tag again and start over.)</p>
-<p>If all this didn’t make any sense at all, you’ll probably need to look at the more detailed tutorials in the <strong>Animation</strong> section.</p>
+<p>If all this didn’t make any sense at all, you’ll probably need to look at the more detailed tutorials in the <a href="/14_Character_Animation/">Character Animation</a> section.</p>
 <h3 id="animating-tags">Animating Tags</h3>
 <p>In addition to animating the properties of objects, you can animate the properties of their tags. For example, you can key the “Visible in Renderer” property of an object’s mode tag. Simply select the tag, and then right-click the record button in the Animation Timeline to select the property to key.</p>
 <h3 id="animating-materials">Animating Materials</h3>
@@ -270,6 +272,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

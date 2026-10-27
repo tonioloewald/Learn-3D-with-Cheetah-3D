@@ -32,19 +32,19 @@ But there are much, much worse cases that are far harder to avoid, and minimizin
 
 As “points of no return” go, collapsing a symmetry modifier is not a big deal. It’s easy enough to delete half of the mesh and put a symmetry modifier back into it.
 
-The main reasons for collapsing symmetry modifiers are rigging (you can’t rig a mesh with a symmetry modifier because the mirrored geometry can’t be rigged) and UV-mapping (where you want the textures to be asymmetrical even if the geometry is symmetric. 
+The main reasons for collapsing symmetry modifiers are rigging (you can’t rig a mesh with a symmetry modifier because the mirrored geometry can’t be rigged) and UV-mapping (where you want the textures to be asymmetrical even if the geometry is symmetric). 
 
 The workflow issue that arises here is not the collapsing of the symmetry modifier, but the actions taken afterwards, since this work will be lost if you need to tweak the mesh using a symmetry modifier later.
 
 #### Rigging & Animation
 
-“Skinning a mesh” (i.e. attaching a Skeleton tag to a mesh, dragging a bunch of joints into the Skeleton tag, and then binding the mesh to those joints) is a point of no return. You cannot edit a mesh one it’s skinned without having horrible things happen to it.
+“Skinning a mesh” (i.e. attaching a Skeleton tag to a mesh, dragging a bunch of joints into the Skeleton tag, and then binding the mesh to those joints) is a point of no return. You cannot edit a mesh once it’s skinned without having horrible things happen to it.
 
 In a perfect world, no-one would skin meshes that aren’t perfect. But in the real world, the usual way one finds problems in a mesh is by skinning it and discovering that it does weird things when you deform it *just so*.
 
-Fortunately, the default binding method that Cheetah 3D uses is excellent, and it’s usually good enough to quickly test a mesh for obvious problems. What you should do is create your joint hierarchy, and then create a test animation that goes through the most extreme poses you expect character (or whatever it is) to go through. Then when you first skin your mesh you should play this animation while examining it carefully from all angles for problems — if you find any then you should remove the Skeleton tag and fix the problems immediately.
+Fortunately, the default binding method that Cheetah 3D uses is excellent, and it’s usually good enough to quickly test a mesh for obvious problems. What you should do is create your joint hierarchy, and then create a test animation that goes through the most extreme poses you expect your character (or whatever it is) to go through. Then when you first skin your mesh you should play this animation while examining it carefully from all angles for problems — if you find any then you should remove the Skeleton tag and fix the problems immediately.
 
-Another thing that this test animation will be useful for is manually painting vertex weights should this be required.  You can scrub your test animation to a point where a deformation occurs and then paint vertex weights with the mesh in it’s problem pose until the problem is fixed.
+Another thing that this test animation will be useful for is manually painting vertex weights should this be required.  You can scrub your test animation to a point where a deformation occurs and then paint vertex weights with the mesh in its problem pose until the problem is fixed.
 
 In any event, the one thing you stand to lose at this point is the binding. You can recover your mesh, and you can recover your joint hierarchy. But if you need to edit your mesh you need to throw away the binding between the two.
 
@@ -88,7 +88,13 @@ In general, importing stuff into Cheetah 3D is a lossless process! The one excep
 
 #### Exporting Stuff
 
-Cheetah 3D exports to several widely used 3D file formats, including FBX (“Motionbuilder”), dae (“Collada”), and obj (Alias|Wavefront). FBX is the richest format, supporting animation data, Collada is potentially a very rich format but support for it is rudimentary, while obj faithfully preserves geometry and material assignments, but little else. Every other file format (e.g. 3Ds and STL) also loses geometric information.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 app bundle (its registered file types and export options); not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Cheetah 3D exports to several widely used 3D file formats, including FBX (“Motionbuilder”), dae (“Collada”), obj (Alias|Wavefront), and glTF/GLB, and it also handles USDZ and SceneKit (.scn) files. FBX is the richest format, supporting animation data; Collada and glTF exports also have options to include animation. obj faithfully preserves geometry and material assignments, but little else. Other formats (e.g. 3Ds and STL) lose even more information.
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: whether Collada support is still “rudimentary”, which of glTF/GLB, USDZ and .scn can be both imported and exported, and how well glTF carries materials and animation. <!-- TODO verify -->
 
 #### Working with an external image editor
 
@@ -105,6 +111,8 @@ The best way to get data in and out of Cheetah 3D (aside from its own files) is 
 Working with Unity 3D is almost completely seamless. Simply move Cheetah 3D .jas files directly into Unity projects and they will come right through. 
 
 Ideally, images used in materials in a scene should be in the same folder as the .jas file or in a subfolder. (Sometimes you may need to hook up materials with textures in Unity.)
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: whether current versions of Unity still import .jas files directly (Unity converts them via Cheetah 3D's FBX export). <!-- TODO verify -->
 
 In Unity, you can double-click on models imported from Cheetah 3D and they’ll open right up in Cheetah 3D. Any changes you make will immediately be reflected in your Unity project. Note that changing the names of meshes or the object hierarchy can cause mesh components to become disassociated from their sources.
 

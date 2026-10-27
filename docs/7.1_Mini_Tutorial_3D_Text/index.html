@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Mini-Tutorial: 3D Text — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Here we’re going to build 3D text suitable for use as a big heading on a poster, or a page layout." />
   <link rel="canonical" href="https://learn3d.loewald.com/7.1_Mini_Tutorial_3D_Text/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Mini-Tutorial: 3D Text","description":"Here we’re going to build 3D text suitable for use as a big heading on a poster, or a page layout.","url":"https://learn3d.loewald.com/7.1_Mini_Tutorial_3D_Text/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="7.1_Mini_Tutorial_3D_Text.md">
 <!--{"parent": "7_Mini_Tutorials.md", "order": 1}--><h2 id="mini-tutorial-3d-text">Mini-Tutorial: 3D Text</h2>
 <p><img src="/images/pastedGraphic-41.jpg" alt=""></p>
@@ -44,11 +44,11 @@
 <ol>
 <li><p>From the Spline toolbar item, pick Text. </p>
 </li>
-<li><p>In the Properties panel note the Text property has a triangle next to it (a “disclosure triangle”). Click on it! Change the text to whatever you want — all caps will probably look best. Click the Font button and pick a nice bold sans-serif font</p>
+<li><p>In the Properties panel note the Text property has a triangle next to it (a “disclosure triangle”). Click on it! Change the text to whatever you want — all caps will probably look best. Click the Font button and pick a nice bold sans-serif font.</p>
 </li>
-<li><p>You should see a wire view of the text you’ve typed (cool huh?) — if it’s not all visible try using the pan and scale tools to get it all in view with a bit of space to spare (you can also use the orbit tool to adjust the angle, but keep it at an angle!</p>
+<li><p>You should see a wire view of the text you’ve typed (cool huh?) — if it’s not all visible try using the pan and scale tools to get it all in view with a bit of space to spare (you can also use the orbit tool to adjust the angle, but keep it at an angle!)</p>
 </li>
-<li><p>Deselect everything (Selection &gt; Select Nothing, or click in the 3D view background). Add an Extrude creator to the scene and drag the text spline object you created onto the Extrude icon. Voila 3D text!</p>
+<li><p>Deselect everything (Selection &gt; Clear Selection, or click in the 3D view background). Add an Extrude creator to the scene and drag the text spline object you created onto the Extrude icon. Voila 3D text!</p>
 </li>
 </ol>
 <h3 id="making-it-metallic">Making it Metallic</h3>
@@ -57,14 +57,26 @@
 </li>
 <li><p>Click the Render toolbar icon… Um, black? The problem is metals get their appearance from what they reflect, and there’s nothing in your scene to reflect, so let’s fix that.</p>
 </li>
-<li><p>Add HDRI and Radiosity tags to the Camera. Load an HDR of your choice (there are two included with Cheetah 3D) into the HDRI tag (I recommend entrance_hall_pano.hdr). Set the Radiosity tag’s type to Radiosity.</p>
+</ol>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<ol start="3">
+<li><p>Add an <strong>HDRI Light</strong> to the scene (<strong>Objects &gt; Scene &gt; HDRI Light</strong>). It comes with Oldtown.hdr loaded; you can load another HDR into its <strong>HDR image</strong> property (there are two included with Cheetah 3D — I recommend EntranceHall.hdr). Then click the render settings icon in the toolbar (the cheetah head), turn on <strong>Radiosity</strong>, and set its <strong>Type</strong> to <strong>Radiosity</strong>.</p>
 </li>
-<li><p>Click the Render toolbar icon again. Better — except for the fuzzy background. This is because we’re using an HDRI “environment map” both as a faux scene for the metal to reflect and as a background (the tag’s default setting is to behave this way). Let’s fix that.</p>
+<li><p>Click the Render toolbar icon again. Better — except for the fuzzy background. This is because we’re using an HDRI “environment map” both as a faux scene for the metal to reflect and as a background (the HDRI Light’s <strong>Background</strong> property). Let’s fix that.</p>
 </li>
-<li><p>Select the HDRI tag on the camera and uncheck background. While we’re at it, select the Camera’s background color to transparent.</p>
+<li><p>Select the HDRI Light and uncheck <strong>Background</strong>. While we’re at it, set the Camera’s background color to transparent.</p>
 </li>
-<li><p>Adjust the camera view to taste and hit Render again. Now you have created a properly “alpha channeled” 3D text image suitable for compositing onto your movie or page layout.</p>
-</li>
+</ol>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: run steps 3–5 with the Cheetah renderer selected (<strong>Render &gt; Renderer</strong>) and confirm that Steel renders as described. (The manual’s HDRI Rendering tutorial confirms that the HDRI Light shows its image as the background by default.) <!-- TODO verify --></p>
+</blockquote>
+<ol start="6">
+<li>Adjust the camera view to taste and hit Render again. Now you have created a properly “alpha channeled” 3D text image suitable for compositing onto your movie or page layout.</li>
 </ol>
 
   </article>
@@ -251,6 +263,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

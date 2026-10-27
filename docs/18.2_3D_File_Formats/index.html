@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>3D File Formats — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which supports animation data." />
   <link rel="canonical" href="https://learn3d.loewald.com/18.2_3D_File_Formats/" />
@@ -29,18 +29,38 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"3D File Formats","description":"Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which supports animation data.","url":"https://learn3d.loewald.com/18.2_3D_File_Formats/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="18.2_3D_File_Formats.md">
 <!--{"parent": "18_Appendices.md", "order": 2}--><h2 id="3d-file-formats">3D File Formats</h2>
-<p>Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which supports animation data. The most compatible format is OBJ which almost any 3D app can load or export, and is pretty human readable too (it’s a simple text format). DAE (Collada) is theoretically richer than FBX and promises to be a vendor-neutral alternative to FBX but so far it’s not well or widely supported (it was actually created by Sony and then “opened”). Indeed, C3D’s collada support is provided by Autodesk’s FBX SDK, without which it would probably not support collada at all. Finally, Cheetah 3D provides good support for Silo v1.x files and moving between Cheetah 3D and Silo this way is slightly better than using OBJs. There’s really not much reason to use any other formats unless you have to.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also supports glTF/GLB, USDZ and SceneKit (.scn) files (app bundle file types), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
+<p>Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which supports animation data. The most compatible format is OBJ which almost any 3D app can load or export, and is pretty human readable too (it’s a simple text format). DAE (Collada) is theoretically richer than FBX and promises to be a vendor-neutral alternative to FBX but so far it’s not well or widely supported (it was actually created by Sony and then “opened”). Indeed, C3D’s collada support is provided by Autodesk’s FBX SDK, without which it would probably not support collada at all.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: whether Collada support still comes from the FBX SDK (8.1.1 has its own Collada export options, including “Export animations”). <!-- TODO verify -->
+ Finally, Cheetah 3D provides good support for Silo v1.x files and moving between Cheetah 3D and Silo this way is slightly better than using OBJs. There’s really not much reason to use any other formats unless you have to.</p>
+</blockquote>
 <h3 id="geometry">Geometry</h3>
 <p><strong>Here’s the good news</strong>. It’s pretty easy to get your geometry into or out of Cheetah 3D. Probably the “sturdiest” format for moving geometry around is the venerable .OBJ format, which dates back to the early 90s, but still does the job.</p>
 <p><strong>Here’s the bad news</strong>. There’s no way of preserving parameterized objects (e.g. primitives, creators, modifiers) or splines when you save to any format except Cheetah 3D’s native .jas format. (Collada supports most of this stuff <em>in theory</em>, but Cheetah 3D doesn’t support those parts of the collada file spec, nor do many other programs.) Saving to OBJ (or any other format) is, at best, the equivalent of turning everything in sight into an editable mesh and throwing away all your lights and cameras. At worst you’ll lose some geometry too!</p>
 <h3 id="animation">Animation</h3>
-<p>The only way to get animation data in or out of Cheetah 3D is via FBX. Cheetah 3D’s FBX export is (as of 5.8) pretty smart, so it will automatically key things that are being animated by constraints (e.g. typically you might use an IK rig to move a character’s legs around and key IK targets rather than bones). Cheetah 3D will automatically “bake” the keys for the bones. </p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 app bundle (its export options); not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>The best way to get animation data in or out of Cheetah 3D is via FBX, although the Collada and glTF exporters also have options to export animation.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: how much animation (skinning, takes, constraint-driven motion) the Collada and glTF exporters actually carry. <!-- TODO verify --></p>
+</blockquote>
+<p>Cheetah 3D’s FBX export is pretty smart, so it will automatically key things that are being animated by constraints (e.g. typically you might use an IK rig to move a character’s legs around and key IK targets rather than bones). Cheetah 3D will automatically “bake” the keys for the bones. </p>
+<blockquote>
+<p><strong>Note:</strong> this paragraph about pre-5.8 versions is probably no longer needed. <!-- TODO editorial --></p>
+</blockquote>
 <p>For earlier versions of Cheetah 3D you can add a single key at the beginning of each take for any bone that is being animated this way and you should get the same result.</p>
 <h3 id="lighting-cameras-material-definitions-rigs">Lighting, Cameras, Material Definitions, Rigs</h3>
 <p>All of this information is lost when you export to a non JAS file format. Which material is assigned to which mesh will be recorded, but not how the material worked. </p>
@@ -230,6 +250,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

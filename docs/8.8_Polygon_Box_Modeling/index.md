@@ -48,13 +48,23 @@ If you want to create a polygon to fill an “obvious” hole in your mesh you c
 
 Fill Hole will produce no result (it will beep) or a very bad result if there are problems with your mesh (e.g. gaps, flipped polygons, or the “hole” would produce a very odd polygon).
 
-#### Magnet
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+#### Soft Selection and the Brush Tool
 
 ![](/images/pastedGraphic-134.jpg)
 
-*The Magnet tool lets you manipulate a mesh with “falloff”. It’s a bit like “soft selections” in other modeling programs but a lot less useful (unfortunately).*
+*Manipulating a mesh with “falloff”.*
 
-The magnet tool allows you to manipulate a mesh as though it were made of some kind of viscous goo, but it is really hard to work with because it only works in screen space or normal to the selection (and every time you do something the normal changes) which means you tend to have to get it right the first time (also it provides no useful visual feedback). If you really need this kind of functionality for anything more than a trivial tweak, I’d suggest using another program.
+Earlier versions of Cheetah 3D had a Magnet tool. Cheetah 3D 8.1.1 doesn’t; instead it gives you two ways to manipulate a mesh as though it were made of some kind of viscous goo:
+
+- **Soft selection**: the Select tool’s **Falloff radius** property sets the falloff for soft selections. Soft selection only works in point mode on editable meshes.
+
+- **The Brush tool** (**Tools \> Polygon \> Brush**) lets you sculpt an editable mesh directly. The **Move** brush works like a magnet, pulling the vertices within the brush radius in the direction of the mouse; **Pull/Push** and **Emboss** move vertices along their normals; and **Smooth** smooths out uneven areas. **Strength**, **Radius** (in screen pixels), **Focus** (an inner radius where vertices get the full effect) and the **Falloff** curve control how the brush behaves. (There’s also a **Color** brush, which paints vertex colors.)
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: how soft selection behaves with the Transform tool (the manual only documents the Falloff radius property). <!-- TODO verify -->
 
 #### Cover, Extrude
 
@@ -80,7 +90,7 @@ Extrude always leaves the edges of the extruded polygons intact, cover does not 
 
 ![](/images/pastedGraphic-139.jpg)
 
-The Shell tool allows you to turn single-sided surfaces into two-sided solids (as per the before and after meshes shown above). Note that Cheetah 3D v6 introduces a Shell modifier which is both non-destructive and allows you to finely control the thickness of the output mesh. In most cases you’ll want to use the modifier rather than the tool.
+The Shell tool allows you to turn single-sided surfaces into two-sided solids (as per the before and after meshes shown above). Note that Cheetah 3D also has a Shell modifier which is both non-destructive and allows you to finely control the thickness of the output mesh. In most cases you’ll want to use the modifier rather than the tool.
 
 #### Ring Cut, Jigsaw, Scalpel
 
@@ -112,9 +122,9 @@ When you select the ring cut tool **clicking on an edge**:
 
 *The jigsaw tool cut the path shown through the selected polygons.*
 
-The Jigsaw is a like the ring cut tool, but follows a selected path of polygons rather than a ring, so you can “steer” it. The jigsaw will stop cutting at the edge of a mesh or before the last polygon on a path.
+The Jigsaw is like the ring cut tool, but follows a selected path of polygons rather than a ring, so you can “steer” it. The jigsaw will stop cutting at the edge of a mesh or before the last polygon on a path.
 
-The Scalpel tool lets you cut a series edges manually. You must start the series of edges on an existing edge or point, and then click out new edges one point at a time. A new edge cannot cross another edge, so to cut an edge from one polygon to another you must go through an existing edge or point.
+The Scalpel tool lets you cut a series of edges manually. You must start the series of edges on an existing edge or point, and then click out new edges one point at a time. A new edge cannot cross another edge, so to cut an edge from one polygon to another you must go through an existing edge or point.
 
 #### Normal Scale, Rotate, Move
 
@@ -142,7 +152,7 @@ Collapse and weld are used for simplifying a mesh’s geometry. Weld lets you me
 
 Weld has a very important setting — “to” which determines whether the final point is the first of the two points you weld together, or the middle (average) of them.
 
-Collapse, similarly, has a “to” setting which determines where the vertex that replaces the thing you click on is the point you clicked or the middle of the thing you clicked.
+Collapse, similarly, has a “to” setting which determines whether the single point that replaces the polygon ends up where you clicked or in the middle of the polygon. <!-- TODO review -->
 
 #### Collapsing Edges
 
@@ -158,7 +168,7 @@ Optimize is a very useful tool for cleaning up meshes. Usually the only thing yo
 
 **Weld close vertices** merges vertices within a threshold distance — the Weld Radius — of one another (this is very helpful for optimizing meshes).
 
-I’m not sure what **Optimize polygons** does (and the online help is no use here) but I suspect it removes zero-length edges from polygons
+I’m not sure what **Optimize polygons** does (and the online help is no use here) but I suspect it removes zero-length edges from polygons.
 
 #### Array, Clone
 
@@ -224,17 +234,21 @@ The triangulate tool instantly triangulates the current selection (or the entire
 
 Generally you do not want to triangulate meshes, but there may be cases (e.g. Symmetric models) where you want fine control over the way the mesh is triangulated.
 
-#### Catmull-Clarke Subdivide, Linear Subdivide
+#### Catmull-Clark Subdivide, Linear Subdivide
 
 ![](/images/pastedGraphic-159.jpg)
 
 ![](/images/pastedGraphic-160.jpg)
 
-*Here I have selected one face and applied the Catmull-Clarke Subdivision tool to it twice. This technique is sometimes suggested as a good way to put round holes in square faces, but there are better and more precise methods. I would suggest that unless you know exactly what you’re doing, don’t use these tools.*
+*Here I have selected one face and applied the Catmull-Clark Subdivision tool to it twice. This technique is sometimes suggested as a good way to put round holes in square faces, but there are better and more precise methods. I would suggest that unless you know exactly what you’re doing, don’t use these tools.*
 
 These tools allow you to immediately apply one level of subdivision to selected polygons. 
 
 In general if you want to subdivide an entire mesh you should use the Subdivision modifier which offers more options, greater control, and is non-destructive. Occasionally you may want to have complete control over subdivision, in which case these tools can be useful.
+
+> **Note:** Cheetah 3D 8.1.1 also has a **Simplify** tool (**Tools \> Polygon \> Simplify**), which reduces a mesh to a target number of triangles (Tools/Polygon/SimplifyTool), not yet covered here. <!-- TODO missing -->
+
+> **Note:** Cheetah 3D 8.1.1 also has **Boolean Add**, **Boolean Subtract** and **Boolean Intersect** tools under **Tools \> Polygon**, which combine selected polygon objects destructively (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing -->
 
 #### Split
 
@@ -242,9 +256,7 @@ Split breaks off your current selection into a new (separate) mesh. If your orig
 
 ##### Aside: Merging Meshes 
 
-**To merge two or more meshes in C3D7** simply select them (you can select a range by click and shift-click, or toggle the selection of individual meshes using command-click) and select **Tools \> Merge**.
-
-**To merge two or more missions in earlier versions of C3D**: pick one mesh to be the “parent” and make all the others its children, then select the parent mesh and use **Tools \> Import Children** (you can now delete the children or collapse the parent).
+**To merge two or more meshes** simply select them (you can select a range by click and shift-click, or toggle the selection of individual meshes using command-click) and select **Tools \> Merge**.
 
 #### Bevel, Inner Extrude
 
@@ -254,7 +266,7 @@ Split breaks off your current selection into a new (separate) mesh. If your orig
 
 ![](/images/pastedGraphic-163.jpg)
 
-*Starting with the three edges selected on the left, I perform a linear bevel with bevelLevel 0 or a Concave bevel with bevelLevel 10.*
+*Starting with the three edges selected on the left, I perform a linear bevel with Level 0 or a Concave bevel with Level 10.*
 
 Bevel is used to refine corners where two polygons meet by introducing new geometry. Since almost no real world objects have perfectly sharp corners, beveling is very useful for making models a little bit more realistic. It’s also very useful for refining subdivision cages.
 
@@ -280,7 +292,7 @@ Sometimes the bridge tool simply refuses to work. This is usually because either
 
 ![](/images/pastedGraphic-168.jpg)
 
-In this example I’ve flipped the normals of the top portion of the mesh, which confuses the bridge tool (because it reverses the order of the polygon its joining up) and completely messes up the resulting bridge.
+In this example I’ve flipped the normals of the top portion of the mesh, which confuses the bridge tool (because it reverses the order of the polygon it’s joining up) and completely messes up the resulting bridge.
 
 ![](/images/pastedGraphic-169.jpg)
 

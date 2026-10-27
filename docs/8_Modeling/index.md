@@ -62,7 +62,7 @@ In general, to produce good work you must have a balance of **ability** (to do w
 
 Of course some of what we lack can be made up for by our friends and colleagues. Asking people you respect for their opinions of your work is a useful way of benefiting from their experience and criticism. But in the end, we can’t ask someone else to judge every little thing we do — we all need to be able to critically assess our own work.
 
-In my experience best way to develop critical faculties is to examine things you like and then understand *why* you like them, and similarly to examine things you dislike and figure out *why* you dislike them.
+In my experience the best way to develop critical faculties is to examine things you like and then understand *why* you like them, and similarly to examine things you dislike and figure out *why* you dislike them.
 
 The best way to hone your abilities is simple: do stuff and pay attention.
 
@@ -94,15 +94,15 @@ In a sense, NURBS and similar constructs (including swept splines, which Cheetah
 
 If you’re interested in NURBS modeling, the best known NURBS modeler is Rhino 3D. The original developer of Rhino has created a similar but much simpler (and less expensive) program called MoI (“Moment of Inspiration”) which is excellent, but is a bit strange on the Mac (it runs using an integrated Windows emulator based on WINE).
 
-#### A Tale of Two Wineglasses — and a B-29 bomber: The Pros & Cons of Splines** 
+#### A Tale of Two Wineglasses — and a B-29 bomber: The Pros & Cons of Splines
 
 ![](/images/pastedGraphic-121.jpg)
 
-*A Reidel wineglass.*
+*A Riedel wineglass.*
 
 So when should you use splines and when should you box model? The short answer is do whatever gets the job done quickest. The long answer is, of course, more complicated and best illustrated with some simple examples.
 
-##### Tutorial: Making a Wineglass with a Spline and the Lathe Creator** 
+##### Tutorial: Making a Wineglass with a Spline and the Lathe Creator
 
 ![](/images/pastedGraphic-122.jpg)
 
@@ -110,13 +110,13 @@ The Lathe creator is a very effective tool for creating rotationally symmetric o
 
 (Actually, it’s a cinch to create the profile using a good drawing program like Illustrator or Inkscape. It’s possible, but not nearly as easy, to do it in Cheetah 3D.)
 
-##### Tutorial: Making a Wineglass with using Box Modeling and Subdivision** 
+##### Tutorial: Making a Wineglass using Box Modeling and Subdivision
 
 ![](/images/pastedGraphic-123.jpg)
 
 Even though using box modeling and subdivision to get the same result might seem like a much more roundabout way of achieving the same result, it’s surprisingly easy to do, doesn’t require using a dedicated vector drawing program (or struggling with Cheetah 3D’s somewhat limited spline drawing tools), and produces a very elegant result that is also more versatile.
 
-There is one significant disadvantage to this approach though — subdivision creates more polygons to produce a smoother result, but the way the polygons are added is indiscriminate — areas that do not need more detail gain polygons just as quickly as those that do. Subdivided meshes can be “heavier’ than lathed meshes.
+There is one significant disadvantage to this approach though — subdivision creates more polygons to produce a smoother result, but the way the polygons are added is indiscriminate — areas that do not need more detail gain polygons just as quickly as those that do. Subdivided meshes can be “heavier” than lathed meshes.
 
 ![](/images/pastedGraphic-124.jpg)
 
@@ -156,17 +156,27 @@ Also note that none of these tradeoffs exist if you’re working with a dedicate
 
 Splines are very useful things in Cheetah 3D. You can animate objects along them, you can use them to create objects via various kinds of sweeps, and you can even emit particles from them. But creating and editing splines in Cheetah 3D is pretty ugly.
 
-If you’re used to editing splines in a dedicated Bezier drawing program like Illustrator, prepare for disappointment. Indeed, the best way to get a good 2D spline into Cheetah 3D is to create it in a dedicated spline drawing program and export it as SVG. (If you don’t own Illustrator or something similar, I heartily recommend highly recommend iDraw, which I prefer to Illustrator. If you want something perfectly good and free,  look no further than [Inkscape](http://inkscape.org/).)
+If you’re used to editing splines in a dedicated Bezier drawing program like Illustrator, prepare for disappointment. Indeed, the best way to get a good 2D spline into Cheetah 3D is to create it in a dedicated spline drawing program and export it as SVG. (If you don’t own Illustrator or something similar, I highly recommend iDraw, which I prefer to Illustrator. If you want something perfectly good and free, look no further than [Inkscape](http://inkscape.org/).)
 
 #### Spline Tools
 
 If you need to create a spline in Cheetah 3D (and if you need a 3D spline then it’s probably your best option) you either need to draw it using Cheetah 3D’s spline tools or use a script.
 
-Use **Tools \> Splines \> Create Spline** to create new splines. You probably want to be in one of the orthogonal views (e.g. Top) or it will be even more confusing when you start. The first click creates a new spline object with its first point where you clicked; each subsequent click adds a point to the spline. You can click and drag when creating points to determine the spline tangent, much as in Illustrator, but you have no control over the starting tangent (just accept it — you can go back and fix it later).
+Use **Tools \> Spline \> Create Spline** to create new splines. You probably want to be in one of the orthogonal views (e.g. Top) or it will be even more confusing when you start. The first click creates a new spline object with its first point where you clicked; each subsequent click adds a point to the spline. You can click and drag when creating points to determine the spline tangent, much as in Illustrator, but you have no control over the starting tangent (just accept it — you can go back and fix it later).
 
 Also — constraints (e.g. the shift-key) don’t work. So you’ll need a steady hand.
 
-Once you’ve created a spline, it’s impossible to add new points or subtract them. The only option is to use the **Break Segment** tool (which cuts the spline at a selected point) to excise a problem area, draw a replacement, and then use **Join Segments** to hook it back together.
+> **Note:** needs checking in Cheetah 3D 8.1.1: whether the starting tangent still can’t be set and whether shift-constraints still don’t work while drawing splines (the manual’s Create Spline page says nothing either way; raster snapping in the Transform tool may be an alternative). <!-- TODO verify -->
+
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Once you’ve created a spline, you can still add points to it. With the spline selected, **Tools \> Spline \> Create Spline** extends it rather than creating a new spline object (use the tool’s **New spline** button to start another curve in the same object, and **Close spline** to close the current one). To add a point in the middle of an existing curve, switch to point mode, pick **Insert Point** from the **Tools** menu, and click on the path — Cheetah 3D inserts a point without changing the shape of the curve.
+
+For bigger surgery you can still use the **Break Segment** tool (which cuts the spline at a selected point) to excise a problem area, draw a replacement, and then use **Join Segment** to hook it back together. (Join Segment only connects curves within the same spline object.)
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: whether selected spline points can simply be deleted (the manual doesn’t say). <!-- TODO verify -->
 
 You do have some tools for changing individual points from hard interpolation (sharp corners) to soft (smooth interpolation) and equalizing tangent directions. But these are pretty basic.
 

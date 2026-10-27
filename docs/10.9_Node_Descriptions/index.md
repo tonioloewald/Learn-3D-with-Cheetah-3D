@@ -16,6 +16,16 @@
 
 **Shadow**: shadow catcher material. The idea of a shadow catcher material is that it captures shadows that fall onto it, but is transparent if there’s no shadow. (Imagine you’re trying to render an object for inclusion in a composition, and you want its shadow, but you want to drop it on top of an arbitrary background.) It works by using a threshold value (which determines how dark it has to be to qualify as being “in shadow”).
 
+> **Note:** requires updating for Cheetah 3D 8.1.1: the 8.1.1 Shadow shader’s parameters are **color** and **whitePoint**; there is no threshold parameter (MaterialNodes/Shader/shadow.xml in the app bundle). <!-- TODO update -->
+
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+**PBR**: a physically based shader (the default **Material (PBR)** in the Add Material menu). Its inputs are **Base Color**; **Metalness**, **Specular Level**, **Specular Tint**, **Roughness** and **Anisotropy** (all 0 to 1); **Clearcoat** and **Clearcoat Roughness** (a clear coating over the base, like car paint); **Emissive**; and **Ambient Occlusion**. Metalness 0 gives you a plastic or other non-metal; metalness 1 gives you a metal tinted by the base color. Between them, Metalness, Anisotropy and Clearcoat cover most of what the Metal and Car Paint shaders are used for.
+
+**Bump type**: every shader node (Material, PBR, Metal, Dielectric, Car Paint, Membrane, Velvet) has a **Bump type** setting: height (the classic greyscale bump map) or a normal map, with the green channel pointing either up (Y+) or down (Y−). If a normal map looks “inside out”, try the other Y setting.
+
+> *End of AI draft.* <!-- /AI draft -->
+
 **Solid**: solid color, as per old renderer. Now with intensity, allowing objects to function as light sources -- kind of.
 
 The solid shader is very handy for rendering masks for compositing (e.g. if you want to be able to select or mask a specific object in Photoshop you can assign it a solid black material and hide everything else in the scene and hit render and now you have a perfect mask).
@@ -60,9 +70,9 @@ Probably the single most important texture node — certainly for real-time appl
 
 **Wood**: (3D) renders turbulent noise tuned to look a bit like the rings in a tree.
 
-**Constant Nodes**
+### Constant Nodes
 
-There are three data types that are sent by connections between nodes. The three kinds of constant node reflect the three data types (which are discussed in more detail under **Property Types**.
+There are three data types that are sent by connections between nodes. The three kinds of constant node reflect the three data types (which are discussed in more detail under [Channel Types](/10.4_Understanding_Nodes/)).
 
 **Color**: a color!
 
@@ -75,6 +85,8 @@ Note that colors and vectors are somewhat interchangeable, and that vectors can 
 ### Filter Nodes
 
 **Composite** nodes allow you to blend two input colors using a blend value (which itself may be an input). Usually composite nodes aren't needed since the same thing can be achieved directly in other nodes.
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the 8.1.1 Composite node has only two color inputs (color0, color1) and no blend value (MaterialNodes/Filter/composite.xml); how does it blend them? <!-- TODO verify -->
 
 **Gradient** nodes allow you to map an input value (think of it as a black-to-white spectrum) to an output gradient. E.g. if you want black to come out as blue, and middle grey to come out as red, and white to come out as green, then you'd make the gradient blue to red to green. Each color transition in a gradient can be immediate or blended, the former allowing you to achieve (among other things) toon-render effects.
 
@@ -122,13 +134,13 @@ OK this is the one you've been waiting for, right? Note that most math functions
 
 **add** adds two values.
 
-**cosine** and **sine** and **tangent** are your usual trigonometric functions (they assume **radians** as inputs — note that C3D’s user interface works in **degrees**). To get an intuitive grasp of trigonometry for 3D, the cosine of an angle is a measure of how parallel the lines forming that angle are to each other: 1 means exactly parallel (the angle is 0), -1 means exactly opposite (the angle is π radians -- 180°), and 0 means perpendicular. Sine is the other way around -- perpendicular = -1 or 1, and parallel or opposite = 0.
+**cosine** and **sine** and **tangent** are your usual trigonometric functions (they assume **radians** as inputs — note that C3D’s user interface works in **degrees**). To get an intuitive grasp of trigonometry for 3D, the cosine of an angle is a measure of how parallel the lines forming that angle are to each other: 1 means exactly parallel (the angle is 0), -1 means exactly opposite (the angle is π radians -- 180°), and 0 means perpendicular. Sine is the other way around: it is 1 when the lines are perpendicular, and 0 when they are parallel or opposite. <!-- TODO review -->
 
 #### Note on converting between degrees and radians
 
-If you want to quickly convert radians to degrees, multiply by 180/π (57.296 is more than close enough). Similarly, to convert degrees to radians, multiply by π/180 (0.017459).
+If you want to quickly convert radians to degrees, multiply by 180/π (57.296 is more than close enough). Similarly, to convert degrees to radians, multiply by π/180 (0.017453).
 
-**dotprod** is a scalar value telling you how parallel two vectors are. For unit vectors, the dot product is the same as the cosine of the angle they form; for non-unit vectors multiply the cosine by the product of the vectors' magnitudes. crossproduct is the dual of dotprod, returning a vector perpendicular to the plane containing the two vectors whose magnitude is the sine of the angle they form multiplied by the product of their magnitudes.
+**dotprod** is a scalar value telling you how parallel two vectors are. For unit vectors, the dot product is the same as the cosine of the angle they form; for non-unit vectors multiply the cosine by the product of the vectors' magnitudes. **crossprod** is the dual of dotprod, returning a vector perpendicular to the plane containing the two vectors whose magnitude is the sine of the angle they form multiplied by the product of their magnitudes.
 
 **divide** divides one value by another.
 
@@ -136,7 +148,7 @@ If you want to quickly convert radians to degrees, multiply by 180/π (57.296 is
 
 **mix** blends two colors using a third value. Actually it should be in the Filter menu. (Because it operates on colors, it also mixes alpha values.)
 
-**modulo** turns an open-ended value t into a repeating value by "wrapping" it into the interval [0 .. denominator\\]
+**modulo** turns an open-ended value t into a repeating value by "wrapping" it into the interval [0 .. denominator\]
 
 **multiply** multiplies two values.
 
@@ -153,5 +165,7 @@ If you want to quickly convert radians to degrees, multiply by 180/π (57.296 is
 **squareroot** calculates square roots. Same as using **power** and setting the exponent to 0.5.
 
 **step** is like pulsetrain but upside down and with only one threshold value.
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the step node has inputs t, edge and smooth; is it really “pulsetrain upside down”, or 0 below the edge and 1 above it? <!-- TODO verify -->
 
 **subtract** subtracts one thing from another.

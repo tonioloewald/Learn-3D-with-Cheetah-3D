@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Instances — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="An instance is an object that refers to another object in the scene. It doesn’t own its own data, it merely says “I’m like that guy over there” (but with my…" />
   <link rel="canonical" href="https://learn3d.loewald.com/15.2_Instances/" />
@@ -29,15 +29,18 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Instances","description":"An instance is an object that refers to another object in the scene. It doesn’t own its own data, it merely says “I’m like that guy over there” (but with my…","url":"https://learn3d.loewald.com/15.2_Instances/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="15.2_Instances.md">
 <!--{"parent": "15_Particles.md", "order": 2}--><h2 id="instances">Instances</h2>
 <p>An instance is an object that refers to another object in the scene. It doesn’t own its own data, it merely says “I’m like that guy over there” (but with my own position, scale, and rotation). Anything you do to the object an instance refers to will cause the instance to change.</p>
-<p>Instances are useful both from a maintenance point of view (rather than fix 50 different copies of something you can just fix one and have the other 49 update automatically) and from a technical point of view (they consume less memory, which generally means they improve peformance as well).</p>
+<p>Instances are useful both from a maintenance point of view (rather than fix 50 different copies of something you can just fix one and have the other 49 update automatically) and from a technical point of view (they consume less memory, which generally means they improve performance as well).</p>
 <p>In Cheetah 3D, the only way to create instances is via Particle Systems.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: whether the Chain object (whose manual page speaks of “every instance”) or the Array modifier also create instances. <!-- TODO verify --></p>
+</blockquote>
 <h3 id="from-particles-to-geometry">From Particles to Geometry</h3>
 <p>You can turn a particle system into a static set of instances by collapsing it (double clicking on it in the Object Browser).</p>
 <p>You can turn a set of instances (as per above) or a particle system into a mesh using <strong>Tools &gt; Particle &gt; Particle -&gt; Polygon</strong>. Note that this leaves the particles or instances intact and creates a new mesh object.</p>
@@ -226,6 +229,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

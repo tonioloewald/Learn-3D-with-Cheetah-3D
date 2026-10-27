@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Video Compression — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The one line version of this section is this: when you save an animation from Cheetah 3D, the best compression option to use is either PNG (if you plan to use…" />
   <link rel="canonical" href="https://learn3d.loewald.com/18.4_Video_Compression/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Video Compression","description":"The one line version of this section is this: when you save an animation from Cheetah 3D, the best compression option to use is either PNG (if you plan to use…","url":"https://learn3d.loewald.com/18.4_Video_Compression/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="18.4_Video_Compression.md">
 <!--{"parent": "18_Appendices.md", "order": 4}--><h2 id="video-compression">Video Compression</h2>
 <p>The one line version of this section is this: when you save an animation from Cheetah 3D, the best compression option to use is either PNG (if you plan to use the animation in a video editor, such as Final Cut Pro, Premiere, After Effects, or Motion) or H264 if you want to distribute it in its current form somewhere.</p>
@@ -46,7 +46,7 @@
 <p>Lossy compression can be <em>very</em> efficient (e.g. typically you don’t notice any image degradation in a 3GB 1080P movie when you watch it at normal speed — even though this represents a compression ratio of over 400:1) but there are significant downsides to using lossy compression if you plan to make changes to video.</p>
 <p>First, lossy compression throws away data based on what people tend to notice, which becomes a big problem if you make changes to the data which violate these assumptions. As a simple example — people tend not to notice detail in blue and dark areas of an image, so lossy image compression tends to “throw out” this detail. But if you perform hue or brightness adjustments to your image then missing detail that would have gone unnoticed suddenly becomes glaringly obvious.</p>
 <p>Second, lossy compression is designed for playback, and not scrubbing or random access. When you load lossily compressed video that uses temporal compression into a video editing package it is often very unresponsive because displaying arbitrary images from a lossily compressed video clip is computationally expensive. Some lossy compression codecs (notably MJPEG) do not use temporal compression and so do not suffer from this disadvantage.</p>
-<p>Finally, lossy compression does not support alpha channel transparency. So, even if the previous disadvantages can be minimized, any video clip which uses alpha transparency needs to be saved using a lossly codec.</p>
+<p>Finally, most lossy delivery codecs (such as H.264) do not support alpha channel transparency (ProRes 4444, mentioned above, is an exception). So, even if the previous disadvantages can be minimized, any video clip which uses alpha transparency needs to be saved using a lossless codec. <!-- TODO review --></p>
 <h3 id="production-or-delivery">Production or Delivery</h3>
 <p>Most video formats are intended for either production (i.e. raw materials for producing a finished product) or delivery (i.e. the finished product ready for distribution). A simple analogy would be RAW images or negatives (production) vs. JPEG images or prints (delivery).</p>
 <p>Typically, a production format is bigger, more complex, and less compatible with other software than a delivery format.</p>
@@ -54,6 +54,9 @@
 <p>Alpha channels are the most common mechanism for representing transparency. Most image and video codecs do not support alpha channels. PNG and TIFF are two image formats with good alpha channel support.</p>
 <h3 id="picking-your-targets-web-iphone-ipad-etc">Picking Your Target(s): Web, iPhone, iPad, etc.</h3>
 <p>The simplest way to prepare a video for distribution is to use the <strong>QuickTime Player</strong> included as part of recent versions of Mac OS X — its <strong>Export</strong> and <strong>Export for Web</strong> options will produce good results with no fuss.</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: QuickTime Player 7 is 32-bit and can’t run on macOS 10.15 or later, which Cheetah 3D 8.1.1 requires (app Info.plist). <!-- TODO update --></p>
+</blockquote>
 <p><strong>QuickTime Player 7</strong> (which should still be present on your Mac) and <strong>iMovie</strong> offer more sophisticated Export options (iMovie has them in its <strong>Share</strong> menu) as do <strong>Final Cut Pro</strong> and <strong>Motion</strong>.</p>
 <p>In general, the most compatible and highest quality format for delivering video on the web today is <strong>h264</strong> (sometimes referred to as MP4 or MPEG4, although there is more to MP4 and MPEG4 than h264).</p>
 
@@ -241,6 +244,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

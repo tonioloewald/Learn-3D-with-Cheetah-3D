@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Caustics — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Caustics simulate the reflection and refraction of light. Note that the light creating the caustics is set to have solid (“Raytrace”) shadows." />
   <link rel="canonical" href="https://learn3d.loewald.com/10.16_Caustics/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Caustics","description":"Caustics simulate the reflection and refraction of light. Note that the light creating the caustics is set to have solid (“Raytrace”) shadows.","url":"https://learn3d.loewald.com/10.16_Caustics/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.16_Caustics.md">
 <!--{"parent": "10_Materials.md", "order": 16}--><h2 id="caustics">Caustics</h2>
 <p><img src="/images/pastedGraphic-448.jpg" alt=""></p>
@@ -41,16 +41,22 @@
 <p><img src="/images/pastedGraphic-449.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-450.jpg" alt=""></p>
 <p><em>Without caustics, the glass either casts a solid shadow or a completely undistorted shadow (depending on whether the lights are set to “raytrace” or “raytrace+transparency”). Neither looks realistic.</em></p>
-<p>The way caustics work (at least in Cheetah 3D) is that you create a “photon” light (a spotlight) and add a Caustics tag to the camera you’ll be rendering with.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>The way caustics work (at least in the Cheetah renderer) is that you create a “photon” light (a spotlight), give it some <strong>Caustic photons</strong>, and set the <strong>Strength</strong>, <strong>Samples</strong> and <strong>Blur</strong> in the <strong>Caustics</strong> section of the Cheetah renderer’s settings. (Falcon only renders <em>reflective</em> caustics, which you turn on with <strong>Reflective caustics</strong> in its settings.)</p>
 <h3 id="settings">Settings</h3>
-<p>Once you’re using a Caustics tag, the Caustics settings of lights in the scene become very important.</p>
+<p>Once you’re rendering caustics, the caustics settings of lights in the scene (<strong>Caustic photons</strong> and <strong>Pure photon light</strong>) become very important.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p>In general, when rendering caustics, a light should either emit NO caustic photons (and you might want to set its shadow type to “None” or “Raytrace+Transparency”) or a lot of them.</p>
 <p>Caustics are expensive in terms of CPU time, and it’s very difficult to do them well for everything in a scene. Generally you simply want to produce good caustics for something that’s going to be the center of attention. </p>
 <p>The simplest and most efficient case is to use one spotlight to emit caustic photons and zero out the photons from every other light. You might even want to use a “pure photon light” to simulate caustics from a specific light source for a particular effect.</p>
 <h4 id="under-the-hood">Under the Hood</h4>
-<p>When you render caustics, Cheetah 3D then does some pre-processing: it fires the number of photons you specify out of the light and into the scene, and figures out where they go (using stochastic methods: e.g. if a photon hits glass it has some chance of being reflected, and some chance of being transmitted). Then, based on where the photon ends up, it adds to the lighting of that spot in the image (and, to make up for using a small number of photons, some blurring is applied to the effect.</p>
+<p>When you render caustics, Cheetah 3D then does some pre-processing: it fires the number of photons you specify out of the light and into the scene, and figures out where they go (using stochastic methods: e.g. if a photon hits glass it has some chance of being reflected, and some chance of being transmitted). Then, based on where the photon ends up, it adds to the lighting of that spot in the image (and, to make up for using a small number of photons, some blurring is applied to the effect).</p>
 <h4 id="fine-tuning-caustics">Fine-Tuning Caustics</h4>
-<p>The following table shows the impact of changing the number of photons emitted by a photon light and the number of samples in the Caustics tag. In each case blur is set to 10 pixels and strength is set to 5.0 in order to exaggerate the effects. </p>
+<p>The following table shows the impact of changing the number of photons emitted by a photon light and the number of caustic samples in the renderer settings. In each case blur is set to 10 pixels and strength is set to 5.0 in order to exaggerate the effects. </p>
 <p>I would recommend starting around strength 1.0 and blur 20 pixels for a better looking result in practice, but reducing the blur and increasing the strength makes it easier to fine-tune your settings.</p>
 <p>I should add that for this (simple) scene, the settings had almost no impact on rendering time until I went up to 5M photons, i.e. it was almost as fast to render with 500K photons and 1000 samples as with 5k and 10!</p>
 <p><img src="/images/pastedGraphic-451.jpg" alt=""></p>
@@ -72,11 +78,11 @@
 <p>One of the things this set of test renders demonstrates is that the more photons you get to work with, the better. Since the glass doesn’t reflect much light, the reflected light is dominated by a few random spots, while the transmitted light (where most of the photons are going) gets much better as you add photons.</p>
 <p>To really handle the reflected light well, you might be better off rendering the scene twice, once with a non-reflective glass, and once with a mirror-reflecting glass, and then carefully composite the two images.</p>
 <p><img src="/images/pastedGraphic-463.jpg" alt=""></p>
-<p><em>Here’s the same test scene, rendered with 5M photons, 1000 samples, and the render tag settings set to a more reasonable strength (1.0) and blur (20.0). Because glass isn’t very reflective, there’s essentially nothing we can do to really get the reflected light right. (If you look closely, it’s very splotchy.)</em></p>
+<p><em>Here’s the same test scene, rendered with 5M photons, 1000 samples, and the caustics settings set to a more reasonable strength (1.0) and blur (20.0). Because glass isn’t very reflective, there’s essentially nothing we can do to really get the reflected light right. (If you look closely, it’s very splotchy.)</em></p>
 <p><img src="/images/pastedGraphic-464.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-465.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-466.jpg" alt=""></p>
-<p><em>Here I used only 500K photons, but rendered twice, the second time with a mirrored glass, then using a garbage matte in Photoshop I combined the two images. Note the very nice and subtle reflected light from the glass (it should probably be toned down a bit (since the glass can’t reflect and transmit 100% of the light falling on it) but it looks pretty nice.</em></p>
+<p><em>Here I used only 500K photons, but rendered twice, the second time with a mirrored glass, then using a garbage matte in Photoshop I combined the two images. Note the very nice and subtle reflected light from the glass (it should probably be toned down a bit (since the glass can’t reflect and transmit 100% of the light falling on it) but it looks pretty nice).</em></p>
 <p><strong>Note</strong>: the term “garbage matte” refers to a quick, crude, often hand-drawn matte used to separate parts of an image. In this case I simply needed to separate the region of the image containing light <em>reflected</em> from the silvered glass from the rest of the image.</p>
 
   </article>
@@ -263,6 +269,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -4,7 +4,11 @@
 
 Subdivision surfaces are a powerful tool for creating smooth meshes. They are useful for both hard surface modeling (industrial design and similar kinds of modeling) and character modeling.
 
-The base mesh to which subdivision is applied is often referred to as its “control cage” or “cage mesh”. The cage mesh affect the shape of the subdivision surface in much the same way as the control handles of a bezier control its curvature, and — as with bezier curves — the only way to get a good feel for how they work is to play with them.
+The base mesh to which subdivision is applied is often referred to as its “control cage” or “cage mesh”. The cage mesh affects the shape of the subdivision surface in much the same way as the control handles of a bezier control its curvature, and — as with bezier curves — the only way to get a good feel for how they work is to play with them.
+
+> **Note:** Cheetah 3D 8.1.1 also has a choice of subdivision schemes in the Subdivision modifier — Catmull-Clark, **Stam-Loop** (which avoids Catmull-Clark’s artifacts on meshes mixing triangles and quads) and Linear (Objects/ModifierObjects/SubDiv), not yet covered here. <!-- TODO missing -->
+
+> **Note:** Cheetah 3D 8.1.1 also has the “Modifier On/Off” hotkey (or the Mode tag’s modifier checkbox) for reaching cage points hidden by the subdivided surface, and the Mode tag’s isoparameter editor shading for highlighting the cage edges (Objects/ModifierObjects/SubDiv), not yet covered here. <!-- TODO missing -->
 
 ### Controlling Curves
 

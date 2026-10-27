@@ -38,6 +38,8 @@ Launch Cheetah 3D (if necessary). Create a new document (if necessary).
 
 3. Also in the blueprint’s properties, set the scale values (all three of them) to 10.
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: does “scale values” mean the object’s Scale or the Blueprint’s size? The 8.1.1 Blueprint has Width (X), Height (Y), and Length (Z) properties. <!-- TODO verify -->
+
 Note that I’ve set up these images so this “just works”. Exactly how to set up images for use in a Blueprint is discussed in detail elsewhere.
 
 ### Roughing it Out
@@ -88,21 +90,21 @@ Right now, I’d say that the most glaring issues are that the wings and especia
 
 2. Again use the weld tool to weld the trailing edge of the horizontal stabilizer. 
 
-3. Note there’s a **missing triangle** on the back inner side of the elevator now. Use **Polygon \> Add Polygon** to add a triangle there — switch to Point mode to make the existing points easier to see, then click the vertices of the new triangle in anti-clockwise order.
+3. Note there’s a **missing triangle** on the back inner side of the elevator now. Use **Polygon \> Create Polygon** to add a triangle there — switch to Point mode to make the existing points easier to see, then click the vertices of the new triangle in anti-clockwise order.
 
 #### Wings
 
-1. In top view make, use Ring Cut to add a loop level with the edge of the elevator. Now drag to outside front edge to match the shape of the wing. 
+1. In top view, use Ring Cut to add a loop level with the edge of the elevator. Now drag the outside front edge to match the shape of the wing. <!-- TODO review -->
 
 2. Select the top leading edge and then in the Right side view drag it back slightly to match the leading edge in the blueprint profile. Likewise, select the top trailing edge and drag it almost up to the new loop to match the profile. In a perspective view, drag the outer top edge towards the center slightly. You might want to turn off wireframe and view the wing and make adjustments at this point.
 
-3. Rather than try to match that on the bottom wing, select the existing lower wing (click on one of its polygons, then **Selection \> Extend Selection** until it’s all selected) then delete it. Now select the fancy new top wing using the same method, duplicate it, and move the duplicate into place level with the bottom of the lower wing.
+3. Rather than try to match that on the bottom wing, select the existing lower wing (click on one of its polygons, then **Selection \> Expand Selection** until it’s all selected) then delete it. Now select the fancy new top wing using the same method, duplicate it, and move the duplicate into place level with the bottom of the lower wing.
 
 4. Now select the fuselage (using the same trick) and **Selection \> Hide Selection**.
 
 5. If you’re not using it, switch into four pane view (by clicking the widget at the top right of the 3D view). Select the lower wing again and in a perspective view **Edge Rotate** on its upper inside edge to rotate it to match the front view.
 
-6. **Selection \> Show All** to bring back the fuselage check your progress.
+6. **Selection \> Show All** to bring back the fuselage and check your progress.
 
 ![](/images/pastedGraphic-39.jpg)
 
@@ -112,7 +114,7 @@ Right now, I’d say that the most glaring issues are that the wings and especia
 
 2. Select the edge corresponding to the near lower edge of the cockpit and scale and move it to match the cockpit.
 
-3. Select the polygon where the cockpit ought to be, use **Tool \> Polygon \> Cover** and then drag the polygon down into the fuselage, then use the green box widget to scale it down to a flat polygon. 
+3. Select the polygon where the cockpit ought to be, use **Tools \> Polygon \> Cover** and then drag the polygon down into the fuselage, then use the green box widget to scale it down to a flat polygon. 
 
 4. You’ll probably see some weird edge chasing taking place on the side of the cockpit. This is because the inner side of the polygon overlaps with the outside edge of the fuselage. This won’t matter in a realtime application (the polygons face in opposite directions) but it’s still bad practice and will mess up renders. So in edge mode select the lower edge of that face and then in perspective view use the red arrow widget to move it slightly towards the centerline.
 
@@ -130,11 +132,11 @@ Right now, I’d say that the most glaring issues are that the wings and especia
 
 2. Make the cylinder editable. Delete the caps and replace them using fill hole.
 
-3. Select the biplane mesh and the cylinder mesh (click one, command-click the other) and use Tools \> Merge. (before C3D7: If it isn’t already, make the cylinder a child of the biplane mesh and then select the biplane mesh and use Tools \> Import Children. Delete the old cylinder mesh.
+3. Select the biplane mesh and the cylinder mesh (click one, command-click the other) and use Tools \> Merge.
 
 There’s a lot more to do, of course, but this should give you a good idea of how to get it done. And between the first tutorial and this one you’ve now used most of the key polygon editing tools.
 
-If you wanted to create a more detailed model for rendering, there’s a huge amount of work left to do. If this were going to be model for a mobile device, you might stop adding much more geometry here (although right now your biplane should be well under 300 polygons), use transparent materials for the struts and landing gear detail, and rely on textures to bring the model to life.
+If you wanted to create a more detailed model for rendering, there’s a huge amount of work left to do. If this were going to be a model for a mobile device, you might stop adding much more geometry here (although right now your biplane should be well under 300 polygons), use transparent materials for the struts and landing gear detail, and rely on textures to bring the model to life.
 
 ![](/images/pastedGraphic-40.jpg)
 

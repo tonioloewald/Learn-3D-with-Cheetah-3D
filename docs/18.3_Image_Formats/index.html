@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Image Formats — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="In a nutshell, the most important file formats to know about are PSD, PNG, JPG, and if you need to deal with 16 bpp images, TIFF, HDR, DNG, and proprietary RAW…" />
   <link rel="canonical" href="https://learn3d.loewald.com/18.3_Image_Formats/" />
@@ -29,16 +29,19 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Image Formats","description":"In a nutshell, the most important file formats to know about are PSD, PNG, JPG, and if you need to deal with 16 bpp images, TIFF, HDR, DNG, and proprietary RAW…","url":"https://learn3d.loewald.com/18.3_Image_Formats/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="18.3_Image_Formats.md">
 <!--{"parent": "18_Appendices.md", "order": 3}--><h2 id="image-formats">Image Formats</h2>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also supports OpenEXR (.exr) images, e.g. for HDRI lighting (manual: HDRI Light; Third-Party Libraries), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <p>In a nutshell, the most important file formats to know about are PSD, PNG, JPG, and if you need to deal with 16 bpp images, TIFF, HDR, DNG, and <a href="http://en.wikipedia.org/wiki/Raw_image_format">proprietary RAW formats</a> such as NEF (Nikon) and CR2 (Canon). You may also encounter TGA (&quot;Targa&quot;) files, especially when dealing with high-end software (there&#39;s nothing magical about TGA, it just happens to have been a file format used by a lot of 3D packages back in the days when 3D meant spending as much on your computer as you would on a new Honda Civic).</p>
 <h3 id="file-size">File Size</h3>
-<p>Uncompressed image files tend to be huge — for a typical 24- or 32-bit image 4 bytes per pixel, so a 1024x768 image is 3MB uncompressed (or more when you include metadata). Most TIFF files are uncompressed, so unless you need more than 32-bit deep images, avoid TIFF.</p>
-<p><strong>RAW images</strong>, produced by some cameras, are an unusual case, these store unprocessed sensor data, generally in the form of grids of red, green, and blue pixel data with 12 or more bits per pixel. Processing RAW images into something recognizable as a picture involves synthesizing RGB pixels (one for each reg, green, or blue source pixel) by interpolating color values from adjacent pixels, which in turn requires a knowledge of the structure of the camera&#39;s <a href="http://en.wikipedia.org/wiki/Bayer_filter">Bayer filter</a>.</p>
+<p>Uncompressed image files tend to be huge — a typical 24- or 32-bit image takes up to 4 bytes per pixel, so a 1024x768 image is 3MB uncompressed (or more when you include metadata). <!-- TODO review --> Most TIFF files are uncompressed, so unless you need more than 32-bit deep images, avoid TIFF.</p>
+<p><strong>RAW images</strong>, produced by some cameras, are an unusual case, these store unprocessed sensor data, generally in the form of grids of red, green, and blue pixel data with 12 or more bits per pixel. Processing RAW images into something recognizable as a picture involves synthesizing RGB pixels (one for each red, green, or blue source pixel) by interpolating color values from adjacent pixels, which in turn requires a knowledge of the structure of the camera&#39;s <a href="http://en.wikipedia.org/wiki/Bayer_filter">Bayer filter</a>.</p>
 <p>RAW files are usually compressed, sometimes lossily and sometimes losslessly. A typical RAW image file from a 16 megapixel camera might be 10-15MB, which is a lot, but significantly less than the uncompressed size (which would be 24MB for 12-bit RAW).</p>
 <h3 id="bit-depth">Bit Depth</h3>
 <p>Bit depth refers to how much color information is retained for each pixel in an image. The standard options are 8-bit (for standard monochrome images), 24-bit for RGB color with 16M or so different colors, 32-bit for 24-bit RGB with an 8-bit alpha (transparency) channel, and bigger numbers for images with more color detail or dynamic range (there are a lot of possibilities here, so I won’t go through them all). HDR (high dynamic range) generally refers to 48-bit or even deeper image files.</p>
@@ -236,6 +239,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

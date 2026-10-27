@@ -4,7 +4,7 @@
 
 There are five critical components to producing an image with a 3D package, and modeling and animation are only two of them. The others are materials, lights, and rendering. In simple terms, modeling is geometry and material is color, but the two often overlap — e.g. “bump” and “normal” maps allow you to make a flat surface look like it has three dimensional detail, and “baking normal maps” allows you to convert geometric detail into textural detail.
 
-### “Material” vs. “Texture“
+### “Material” vs. “Texture”
 
 It’s easy to confuse the terms “material” and “texture” (and there’s also “shader”) and different artists will use the terms in different ways, or even interchangeably. In this book I will try to consistently use these words to mean exact and distinct things:
 
@@ -56,11 +56,15 @@ To make a reflective material, simply set the reflection color of the material s
 
 If you make a chrome ball in Cheetah 3D and render it then you get a whole bunch of nothing. Why? A Cheetah 3D world starts out empty (except for a camera). When you create a chrome ball, there’s nothing for that ball to reflect, so it appears black.
 
-The simplest way to make reflective things look reflective is to put stuff in the scene for them to reflect or to add a reflection map to the camera (or both). Adding a reflection map is quite easy — add an HDRI tag to the camera (select the Camera and then select HDRI from the Tag toolbar item) and load an image into it. (Why “HDRI” — it stands for “High Dynamic Range Image” because HDRIs are usually used for image-based lighting, which is what the tag is chiefly for; but it also functions as a reflection map.) You may wish to uncheck “Background” in the HDRI tag’s properties to avoid having the image appear in the background of your renders.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+The simplest way to make reflective things look reflective is to put stuff in the scene for them to reflect or to add an HDRI Light to the scene (or both). Adding an HDRI Light is quite easy — add one to the scene (it’s one of the scene objects, alongside the Camera and Light) and load an image (.hdr or .exr) into it. (Why “HDRI”? It stands for “High Dynamic Range Image” because HDRIs are usually used for image-based lighting, which is what the HDRI Light is chiefly for; but it also provides reflections.) You may wish to uncheck **Background** in the HDRI Light’s properties to avoid having the image appear in the background of your renders.
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: where the HDRI Light lives in the 8.1.1 menus and toolbar, so the text can give the exact path. <!-- TODO verify -->
 
 Note that making the reflection color of a material anything other than black immediately makes that material more expensive (in computational terms) to render, but what really makes a material expensive is blurred reflections with lots of samples.
-
-￼
 
 ![](/images/DraggedImage-37.jpg)
 
@@ -78,13 +82,13 @@ As with reflection, to make a material transparent, simply set its transparency 
 
 **Transparency and Shadows**. By default, lights will not shine through transparent materials. To make lights behave in the expected way (kind of) set their Shadow type to “Raytrace + Transparency”.
 
-When I say “kind of”, the problem is that transparent objects are usually refractive to some extent, and the way Cheetah 3D handles shadows for transparent objects doesn’t (cough) reflect this. Simulating the way transparent objects transmit light is discussed under Caustics.
+When I say “kind of”, the problem is that transparent objects are usually refractive to some extent, and the way Cheetah 3D handles shadows for transparent objects doesn’t (cough) reflect this. Simulating the way transparent objects transmit light is discussed under [Caustics](/10.16_Caustics/).
 
 ![](/images/DraggedImage-39.jpg)
 
 ![](/images/DraggedImage-40.jpg)
 
-_Two versions of the chainlink material. The one on the left has a refractive index of 1.5 (the default) — note how the “ground” appears to be bent, and there’s something weird going on at the right edge of the “fence”. On the right I’ve set the refractive index to 1.0. This is actually a pretty subtle example of unwanted refraction — real world examples will often be much worse. _
+_Two versions of the chainlink material. The one on the left has a refractive index of 1.5 (the default) — note how the “ground” appears to be bent, and there’s something weird going on at the right edge of the “fence”. On the right I’ve set the refractive index to 1.0. This is actually a pretty subtle example of unwanted refraction — real world examples will often be much worse._
 
 Just take a look at this example from the forums:
 

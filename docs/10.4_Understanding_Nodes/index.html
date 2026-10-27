@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Understanding Nodes — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Shader: the heart of a material. Literally the software gizmo that decides what color to make a pixel (or subpixel) based on the information available (lights…" />
   <link rel="canonical" href="https://learn3d.loewald.com/10.4_Understanding_Nodes/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Understanding Nodes","description":"Shader: the heart of a material. Literally the software gizmo that decides what color to make a pixel (or subpixel) based on the information available (lights…","url":"https://learn3d.loewald.com/10.4_Understanding_Nodes/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.4_Understanding_Nodes.md">
 <!--{"parent": "10_Materials.md", "order": 4}--><h2 id="understanding-nodes">Understanding Nodes</h2>
 <h3 id="node-types">Node Types</h3>
@@ -44,7 +44,7 @@
 <p><strong>Math</strong>: a mathematical function that takes one or more inputs, performs math on them, and produces an output (e.g. addition, average, dot product, and so forth).</p>
 <p><strong>Other</strong>: this is where you find the &quot;state&quot; and “instance” nodes which gives you access to information about the thing being rendered and the scene it resides in for use as input into other shaders. </p>
 <p>You might use the state node to use positional information about an object to affect its properties. Similarly, you can use instance node properties to drive particles (e.g. they might change color as they get older).</p>
-<p><strong>Textures</strong>: a software gizmo that generates texture maps somehow or other. The most popular one is the image texture which outputs an infinite plane (by default with the image tiled on it, but this can be switched off in either axis). The other filters are a combination of simple repeating functions (e.g. bricks) and various fractal noise algorithms.</p>
+<p><strong>Textures</strong>: a software gizmo that generates texture maps somehow or other. The most popular one is the image texture which outputs an infinite plane (by default with the image tiled on it, but this can be switched off in either axis). The other textures are a combination of simple repeating functions (e.g. bricks) and various fractal noise algorithms.</p>
 <h3 id="connecting-nodes">Connecting Nodes</h3>
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%205.22.09%20PM.jpg" alt=""></p>
 <p>It’s perfectly possible to create some useful materials without using anything other than a shader node, but more complex materials will involve connecting nodes to one another.</p>
@@ -56,7 +56,7 @@
 </li>
 </ul>
 <h4 id="visualizing-an-output-channel">Visualizing an Output Channel</h4>
-<p>You can see any output channel of any node displayed visually by clicking on it.** This shows you how that output channel varies across the surface of a sphere if that output channel were to determine its color.</p>
+<p><strong>You can see any output channel of any node displayed visually by clicking on it.</strong> This shows you how that output channel varies across the surface of a sphere if that output channel were to determine its color.</p>
 <p>Perhaps the most intuitive node you can visualize is an Image node.</p>
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%205.25.48%20PM.jpg" alt=""></p>
 <p><em>Here’s the same image node, but with the color vs. value outputs selected. The value output shows grayscale output (note that it isn’t just the red channel).</em></p>
@@ -91,7 +91,11 @@
 <p>Vectors can represent positions in 3D space, directions, directions with magnitude (think &quot;velocity&quot;), and even colors and orientations (x, y, z rotation). In C3D they&#39;re usually used to represent positions or directions, but occasionally it&#39;s useful to think of colors as being vectors too.</p>
 <h3 id="converting-between-types">Converting Between Types</h3>
 <p>In general, conversion tends to work best when all values are in the range [0,1] (that’s math notation for a number greater than or equal to zero, and less than or equal to one). In general, color values below zero are treated as zero, while those above 1 may be interpreted as clipped to 1 or intensely bright (depending on context).</p>
-<p>E.g. if you feed the constant 10.0 into the diffuse channel of the material shader it acts just like white. But if you feed it into the emissive channel (and you attach a radiosity tag to your camera) the difference from 1.0 will be enormous.</p>
+<p>E.g. if you feed the constant 10.0 into the diffuse channel of the material shader it acts just like white. &gt; <strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+<p>But if you feed it into the emissive channel (and turn on <strong>Radiosity</strong> in the Cheetah renderer’s settings, or render with Falcon, which computes indirect light on its own) the difference from 1.0 will be enormous.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-322.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-323.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-324.jpg" alt=""></p>
@@ -108,7 +112,7 @@
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%205.28.52%20PM.jpg" alt=""></p>
 <p><em>This shows the value output of an image material compared with the value output of a multiplication node that’s multiplying the color input by (1,1,1).</em></p>
 <p><strong>Number to Vector</strong>: the number gets copied to all three values (so 0.5 becomes 0.5, 0.5, 0.5).</p>
-<p><strong>Number to Color</strong>: the number gets converted into a greyscale value (so the value goes to all three channels, but alpha is made 100% (completely opaque).</p>
+<p><strong>Number to Color</strong>: the number gets converted into a greyscale value (so the value goes to all three channels, but alpha is made 100% (completely opaque)).</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -294,6 +298,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

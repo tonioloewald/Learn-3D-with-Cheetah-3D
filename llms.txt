@@ -1,4 +1,4 @@
-# Learn 3D with Cheetah 3D v3.0.0
+# Learn 3D with Cheetah 3D v4.0.0
 
 The Missing Manual for Cheetah 3D — modeling, materials, lighting, rendering and animation.
 
@@ -68,7 +68,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/9_Creators_Modifiers_Tags/ — Creators, Modifiers, & Tags
   ![](/images/pastedGraphic-207.jpg)
 - https://learn3d.loewald.com/1_Credits/ — Credits
-  Version 4.0, March 2018
+  Fourth Edition
 - https://learn3d.loewald.com/12.4_Dealing_with_Reality/ — Dealing with Reality
   ![](/images/pastedGraphic-565.jpg)
 - https://learn3d.loewald.com/16_Dynamics/ — Dynamics
@@ -89,13 +89,13 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/12.18_Forward_Kinematics_Robot_Arm_I/ — Forward Kinematics: Robot Arm I
   ![](/images/pastedGraphic-491.jpg)
 - https://learn3d.loewald.com/0_Front_Matter/ — Front Matter
-  ![](/images/cover%20design%203rd%20edition.jpg)
+  ![](/images/cover-4th-edition.jpg)
 - https://learn3d.loewald.com/15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/ — Getting the most out of Cheetah 3D’s Particle System
   Cheetah 3D’s particle system is very powerful, but what you can do with it directly is sometimes limited by the rende...
 - https://learn3d.loewald.com/18.1_Glossary/ — Glossary
   Or, miscellaneous, possibly useful information in no particular order that may be useful if you search for an unfamil...
 - https://learn3d.loewald.com/10.12_How_Lights_Work/ — How Lights Work
-  Because Cheetah 3D is a ray tracer and ray tracing works backwards from the observer to the light source, lights do n...
+  Cheetah 3D has two render engines, and you switch between them with **Render \> Renderer** (or by holding down the re...
 - https://learn3d.loewald.com/10.8_How_Materials_Work/ — How Materials Work
   Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the mater...
 - https://learn3d.loewald.com/12.8_How_Raytracing_Works/ — How Raytracing Works
@@ -133,7 +133,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/4.11_Materials_Overview/ — Materials Overview
   There are five critical components to producing an image with a 3D package, and modeling and animation are only two o...
 - https://learn3d.loewald.com/4.9_Mesh_Smoothing/ — Mesh Smoothing
-  In Photoshop you can non-destructively apply various filters to a one or more image layers at a time. These layers us...
+  In Photoshop you can apply various effects (such as smart filters and adjustment layers) to one or more image layers ...
 - https://learn3d.loewald.com/4.5_Meshes/ — Meshes
   Cheetah 3D is all about meshes. If you can see it in a render then, aside from the background color, it’s a mesh.
 - https://learn3d.loewald.com/7.1_Mini_Tutorial_3D_Text/ — Mini-Tutorial: 3D Text
@@ -143,7 +143,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/14.7_Mini_Tutorial_Jumping/ — Mini-Tutorial: Jumping
   Most characters in computer games don’t jump — they only land. This is because when a real person jumps they need to ...
 - https://learn3d.loewald.com/14.1_Mini_Tutorial_Run_Cycle/ — Mini-Tutorial: Run Cycle
-  ￼￼￼￼
+  Run cycles are much more difficult to get right than walk cycles. This is because a run cycle involves much more sudd...
 - https://learn3d.loewald.com/7_Mini_Tutorials/ — Mini-Tutorials
 - https://learn3d.loewald.com/8.1_Model_Sheets_Blueprints/ — Model Sheets & Blueprints
   ![](/images/pastedGraphic-171.jpg)
@@ -152,7 +152,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/6.2_Modeling_a_Biplane/ — Modeling a Biplane
   We’re going to create a biplane with a very low polygon count, suitable for a mobile game. We’re only doing the mesh,...
 - https://learn3d.loewald.com/8.4_Modeling_Tricks_Techniques/ — Modeling Tricks & Techniques
-  Cheetah 3D has an amazingly powerful feature called "gadget mode". It you've ever wished you had something like Blend...
+  Cheetah 3D has an amazingly powerful feature called "gadget mode". If you've ever wished you had something like Blend...
 - https://learn3d.loewald.com/9.1_Modifiers/ — Modifiers
   Cheetah 3D’s non-destructive modifiers are simply wonderful. Many high end 3D packages have similar functionality, bu...
 - https://learn3d.loewald.com/10.9_Node_Descriptions/ — Node Descriptions
@@ -174,13 +174,13 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/12.2_Projection_Settings/ — Projection Settings
   These settings all relate to how the camera looks out into the scene.
 - https://learn3d.loewald.com/10.18_Reflected_Lights/ — Reflected Lights
-  There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights without a geome...
+  There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights do not appear i...
 - https://learn3d.loewald.com/10.6_Reflective_Materials/ — Reflective Materials
   ![](/images/pastedGraphic-289.jpg)
 - https://learn3d.loewald.com/12.12_Render_Manager/ — Render Manager
   ![](/images/pastedGraphic-589.jpg)
 - https://learn3d.loewald.com/18.8_Rendering/ — Rendering
-  Because 3D rendering is easily parallelized (i.e. split into multiple independent tasks) an obvious way to accelerate...
+  Cheetah 3D is currently limited to rendering 5000x5000 pixel images.
 - https://learn3d.loewald.com/12_Rendering/ — Rendering
   ![](/images/pastedGraphic-537.jpg)
 - https://learn3d.loewald.com/4.15_Rendering/ — Rendering
@@ -219,7 +219,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/12.1_The_Camera_Object/ — The Camera Object
   ![](/images/pastedGraphic-539.jpg)
 - https://learn3d.loewald.com/3.1_The_Falcon_Renderer/ — The Falcon Renderer
-  The new “falcon” renderer is a “uni-directional path tracer”  which allows for long-requested enhancements to C3D’s o...
+  The new “falcon” renderer is a “uni-directional path tracer” which allows for long-requested enhancements to C3D’s ou...
 - https://learn3d.loewald.com/10.11_The_Math_of_Material_Nodes/ — The Math of Material Nodes
   I don’t know how old you are, but I can remember back when I was studying trigonometry and I wondered “what the heck ...
 - https://learn3d.loewald.com/17.1_The_Object_Browser/ — The Object Browser

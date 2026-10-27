@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Modifiers — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Cheetah 3D’s non-destructive modifiers are simply wonderful. Many high end 3D packages have similar functionality, but Cheetah 3D’s implementation is both…" />
   <link rel="canonical" href="https://learn3d.loewald.com/9.1_Modifiers/" />
@@ -29,29 +29,29 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Modifiers","description":"Cheetah 3D’s non-destructive modifiers are simply wonderful. Many high end 3D packages have similar functionality, but Cheetah 3D’s implementation is both…","url":"https://learn3d.loewald.com/9.1_Modifiers/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="9.1_Modifiers.md">
 <!--{"parent": "9_Creators_Modifiers_Tags.md", "order": 1}--><h2 id="modifiers">Modifiers</h2>
 <p>Cheetah 3D’s non-destructive modifiers are simply wonderful. Many high end 3D packages have similar functionality, but Cheetah 3D’s implementation is both simple and powerful.</p>
 <p>The basic idea of a modifier is that you apply it to a mesh object and it becomes a child of the mesh and modifies it. Modifiers are applied top-to-bottom.</p>
-<p>Modifiers fall into three broad categories: ** subdivision** (a modifier that increases the detail in the parent mesh), <strong>replicators</strong> (modifiers that produce one or more transformed copies the parent mesh’s geometry), <strong>deformations</strong> (modifiers that deform the parent mesh by warping or otherwise modifying their spatial coordinates).</p>
+<p>Modifiers fall into three broad categories: <strong>subdivision</strong> (a modifier that increases the detail in the parent mesh), <strong>replicators</strong> (modifiers that produce one or more transformed copies of the parent mesh’s geometry), <strong>deformations</strong> (modifiers that deform the parent mesh by warping or otherwise modifying their spatial coordinates).</p>
 <p>The easiest way to explain modifiers is simply to show what they do.</p>
 <h3 id="subdivision">Subdivision</h3>
 <p><img src="/images/pastedGraphic-215.jpg" alt=""></p>
 <p><em>Subdivision, by default, turns pretty much anything into a rounded blob.</em></p>
-<p>Subdivision is probably the single most important modifier in Cheetah 3D. First of all, it’s very useful. And secondly, it would be exceedingly difficult to replicate its functionality if it didn’t exist. In its default incarnation (“Catmull-Clarke”) it increases a mesh’s resolution and smoothly interpolates its surfaces, turning hard edges into smooth curves.</p>
-<p><strong>Catmull-Clarke</strong> — the default setting — produces smoothly interpolated meshes, particularly well-suited to modeling organic objects, such as characters. Catmull-Clarke is named after Edwin Catmull and Jim Clarke, the computer scientists who first described subdivision surfaces. (Ed Catmull is one of the founders of Pixar.)</p>
+<p>Subdivision is probably the single most important modifier in Cheetah 3D. First of all, it’s very useful. And secondly, it would be exceedingly difficult to replicate its functionality if it didn’t exist. In its default incarnation (“Catmull-Clark”) it increases a mesh’s resolution and smoothly interpolates its surfaces, turning hard edges into smooth curves.</p>
+<p><strong>Catmull-Clark</strong> — the default setting — produces smoothly interpolated meshes, particularly well-suited to modeling organic objects, such as characters. Catmull-Clark is named after Edwin Catmull and Jim Clark, the computer scientists who first described subdivision surfaces. (Ed Catmull is one of the founders of Pixar.)</p>
 <p><img src="/images/pastedGraphic-216.jpg" alt=""></p>
-<p><em>Catmull-Clarke can be controlled by selecting edges and marking them as <strong>creased</strong> (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)</em></p>
+<p><em>Catmull-Clark can be controlled by selecting edges and marking them as <strong>creased</strong> (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)</em></p>
 <p><img src="/images/pastedGraphic-217.jpg" alt=""></p>
-<p><em>Catmull-Clarke subdivision can be controlled more subtly by adding fine-tuning the “cage mesh”. In this case three edges have been bevelled to better define those edges (rather than simply make them hard).</em></p>
+<p><em>Catmull-Clark subdivision can be controlled more subtly by fine-tuning the “cage mesh”. In this case three edges have been beveled to better define those edges (rather than simply make them hard).</em> <!-- TODO review --></p>
 <p><img src="/images/pastedGraphic-218.jpg" alt=""></p>
-<p><em>On the left is an icosahedron with one level of Catmull-Clarke subdivision; on the right is an identical icosahedron with one level of Stam-Loop subdivision. As you can see what started as a regular triangulated mesh becomes more irregular under Catmull-Clarke subdivision than Stam-Loop.</em></p>
-<p>(There are some refinements of Catmull-Clarke subdivision which Cheetah 3D does not, as I write this, support. These in essence allow finer control of the interpolated curves and allow you to produce better results with fewer subdivision iterations.)</p>
-<p><strong>Stam-Loop</strong> (named after Jos Stam and Charles Loop) is an alternative subdivision surface algorithm that produces different results, especially with respect to triangles (Catmull-Clarke is designed to handle quads and tends to produce nasty results around triangles; Stam Loop is intended to work well for triangles, especially entirely triangulated meshes, and produces nearly identical results to Catmull-Clarke on pure quad meshes).</p>
+<p><em>On the left is an icosahedron with one level of Catmull-Clark subdivision; on the right is an identical icosahedron with one level of Stam-Loop subdivision. As you can see what started as a regular triangulated mesh becomes more irregular under Catmull-Clark subdivision than Stam-Loop.</em></p>
+<p>(There are some refinements of Catmull-Clark subdivision which Cheetah 3D does not, as I write this, support. These in essence allow finer control of the interpolated curves and allow you to produce better results with fewer subdivision iterations.)</p>
+<p><strong>Stam-Loop</strong> (named after Jos Stam and Charles Loop) is an alternative subdivision surface algorithm that produces different results, especially with respect to triangles (Catmull-Clark is designed to handle quads and tends to produce nasty results around triangles; Stam Loop is intended to work well for triangles, especially entirely triangulated meshes, and produces nearly identical results to Catmull-Clark on pure quad meshes).</p>
 <p><strong>Linear</strong> subdivision subdivides the mesh without softening the geometry (in essence, using a linear rather than a quadratic interpolation to produce intermediate points). Linear subdivision is useful for creating smoothly deformable meshes (e.g. if you want to curve some extruded text around a sphere, you can linear subdivide it first to produce a cleaner result).</p>
 <h3 id="replicators">Replicators</h3>
 <p>Replicators produce multiple copies of the base geometry in a variety of different ways. If you need to produce rows, grids, or rings of identical objects, these tools can be invaluable. (If you want to produce a string or chain of objects along a path, take a look at the <strong>Chain</strong> creator.)</p>
@@ -62,11 +62,17 @@
 <p>Build isn’t, strictly speaking, a replicator, since it removes geometry rather than duplicating it, but it doesn’t deserve its own category so I’ll shove it in here!</p>
 <p><img src="/images/pastedGraphic-220.jpg" alt=""></p>
 <p><em>The Build modifier is showing 50% of the polygons in the original mesh.</em></p>
-<p>The Build modifier randomly hides a proportion of the faces of a mesh. If its “percent” (which is actually a proportion and not a percentage — so 1.0 means “all”) is animated then the mesh will appear or disappear one polygon by polygon.</p>
+<p>The Build modifier randomly hides a proportion of the faces of a mesh. If its “percent” (which is actually a proportion and not a percentage — so 1.0 means “all”) is animated then the mesh will appear or disappear polygon by polygon. <!-- TODO review --></p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1’s Build modifier also has a <strong>Type</strong> property that chooses the algorithm for picking polygons (manual: Build Modifier), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h4 id="ring">Ring</h4>
 <p><img src="/images/pastedGraphic-221.jpg" alt=""></p>
 <p>The Ring modifier turns your mesh into an evenly spaced ring (or partial ring) of copies of itself.</p>
 <h3 id="deformations">Deformations</h3>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Boolean, Crumple, and Smooth modifiers (manual: Objects › Modifier Objects) and a Symmetry creator object alongside the Symmetry modifier, not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h4 id="bend">Bend</h4>
 <p><img src="/images/pastedGraphic-222.jpg" alt=""></p>
 <p>The bend modifier bends things. Like Bender, but not as funny or evil.</p>
@@ -76,9 +82,12 @@
 <h4 id="displace">Displace</h4>
 <p><img src="/images/pastedGraphic-224.jpg" alt=""></p>
 <p><em>Here you can see a plane being displaced by a bitmap. The whiter the bitmap, the greater the displacement.</em></p>
-<p>The Displacement modifier distorts meshes by pushing offsetting vertices based on an input image, referred to as a “displacement map”. In the displacement map white means “move it a long way” and black means “leave it alone”.</p>
+<p>The Displacement modifier distorts meshes by pushing vertices outward based on an input image, referred to as a “displacement map”. In the displacement map white means “move it a long way” and black means “leave it alone”. <!-- TODO review --></p>
 <p>Displacement pushes vertices in the direction normal to the surface they belong to (so “away” from the face they’re on). Which pixel(s) of the image are used to displace a given vertex is determined by UV mapping (as though the displacement map were a material).</p>
-<h4 id="skew">Skew</h4>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does the Displacement modifier sample its map through the mesh’s UVs? The manual says only that it has its own <strong>Texture</strong> (a height map) and <strong>Offset</strong> properties. <!-- TODO verify --></p>
+</blockquote>
+<h4 id="shear">Shear</h4>
 <p><img src="/images/pastedGraphic-225.jpg" alt=""></p>
 <p>Shear skews a mesh in its XY plane.  </p>
 <h4 id="spherify">Spherify</h4>
@@ -95,11 +104,11 @@
 <p>When it becomes time to rig or animate a mesh, you’ll need to “bake the symmetry in” by collapsing the symmetry modifier (this is because you need to control all the vertices of the mesh, not just half of them).</p>
 <h4 id="taper">Taper</h4>
 <p><img src="/images/pastedGraphic-229.jpg" alt=""></p>
-<p><em>Taper produces a kind of organic stretching effect (if you set the curvature to zero it essentially deforms your mesh into a cone.</em></p>
+<p><em>Taper produces a kind of organic stretching effect (if you set the curvature to zero it essentially deforms your mesh into a cone.)</em></p>
 <h4 id="transform">Transform</h4>
 <p>It’s hard to display the effects of the transform modifier since it simply applies its own transformation to its parent object (which makes it appear that object is now somewhere else).</p>
 <p>Why would you use such a thing? </p>
-<p>Well, it allows you to move reposition (or rotate or scale) an object without actually repositioning (or rotating or scaling) it. You might want to experiment with a scene without potentially messing things up. Or you might use it for special animation effects (e.g. you could render one set of motions with the tag switched on, and another with it switched off, and then composite.</p>
+<p>Well, it allows you to reposition (or rotate or scale) an object without actually repositioning (or rotating or scaling) it. You might want to experiment with a scene without potentially messing things up. Or you might use it for special animation effects (e.g. you could render one set of motions with the modifier switched on, and another with it switched off, and then composite.) <!-- TODO review --></p>
 <h4 id="twist">Twist</h4>
 <p><img src="/images/pastedGraphic-230.jpg" alt=""></p>
 <p><em>The Twist modifier does pretty much what you’d expect it to do — twisting the parent mesh around its local y axis.</em></p>
@@ -291,6 +300,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Image-Based Lighting — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Image-based lighting (often abbreviated to IBL) is a powerful tool for creating very realistic lighting with remarkably little work." />
   <link rel="canonical" href="https://learn3d.loewald.com/4.13_Image_Based_Lighting/" />
@@ -29,28 +29,36 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Image-Based Lighting","description":"Image-based lighting (often abbreviated to IBL) is a powerful tool for creating very realistic lighting with remarkably little work.","url":"https://learn3d.loewald.com/4.13_Image_Based_Lighting/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="4.13_Image_Based_Lighting.md">
 <!--{"parent": "4_Falcon.md", "order": 13}--><h2 id="image-based-lighting">Image-Based Lighting</h2>
 <p>Image-based lighting (often abbreviated to IBL) is a powerful tool for creating very realistic lighting with remarkably little work. The basic idea is pretty simple — assume you’re rendering an object in some specific spot. You capture all the light coming towards that spot (from all directions) and then use that to render the object.</p>
-<p><em><strong>Note</strong>: this has changed significantly in Cheetah 3D 7.</em></p>
-<h3 id="setting-up-image-based-lighting-in-cheetah-3d-7">Setting up image-based lighting in <em>Cheetah 3D 7</em></h3>
+<h3 id="setting-up-image-based-lighting">Setting up image-based lighting</h3>
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2010.30.54%20AM.jpg" alt=""></p>
 <p>Add an <strong>HDRI Light</strong> to the scene. You may want to customize its properties (e.g. <strong>uncheck the Background option</strong> if you don’t want the HDRI rendered in the background, load your own HDRI image, and/or set shadows to support transparency):</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the HDRI Light has no shadow-type property in the manual (HDR image, Type, Intensity, Clamp, Samples, MIS, Background); does “set shadows to support transparency” still apply? <!-- TODO verify --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the HDRI Light’s Type (Probe, Cross, Panorama), Clamp, and MIS settings, and the fact that only the first HDRI or Sky light in a scene is used (manual: Objects › HDRI Light), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2010.35.49%20AM.jpg" alt=""></p>
 <p>If you’re using the new Falcon renderer, you are done. If you’re using the old Cheetah renderer, you may (optionally) want to <strong>enable the relevant renderer settings</strong> (notably radiosity):</p>
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2010.32.16%20AM.jpg" alt=""></p>
 <p>You’re ready to render!</p>
 <h3 id="setting-up-image-based-lighting-in-a-scene-in-cheetah-3d-6-and-earlier">Setting up image-based lighting in a scene in <em>Cheetah 3D 6</em> and earlier:</h3>
+<blockquote>
+<p><strong>Note:</strong> the HDRI and Radiosity tags described in this section no longer exist; consider cutting it or shrinking it to a short historical note. <!-- TODO editorial --></p>
+</blockquote>
 <p><img src="/images/DraggedImage-51.jpg" alt=""></p>
 <p><strong>Add an HDRI tag to the camera you&#39;re rendering the scene with</strong>. (The HDRI tag actually serves several purposes — it allows image-based lighting, reflection-mapping, and panoramic backgrounds.)</p>
 <p><img src="/images/DraggedImage-52.jpg" alt=""></p>
 <p>Next you&#39;ll need to <strong>load a suitable image</strong> into the HDR image slot. (I&#39;ve provided a panorama-type HDR image on the support site — <a href="http://loewald.com/c3dbook/00_Tutorials/faux%20hdri%20setup.hdr.zip">http://loewald.com/c3dbook/00_Tutorials/faux%20hdri%20setup.hdr.zip</a> .) </p>
 <p>Note that images for image-based lighting fall into three main types — panoramas, probes, and cubemaps. The pros and cons (and how to tell the difference) are discussed below.</p>
-<p>Any suitable image — not necessarily HDR — can work, although HDR images work much better.) Unless you want the image rendered as the background, you&#39;ll want to uncheck the background setting. If you&#39;re using a non-HDR image or the render is too dim for some other reason you may want to boost the Power to more than 1.0. (A power setting of 4 works well with the linked HDR file).</p>
+<p>Any suitable image — not necessarily HDR — can work, although HDR images work much better. Unless you want the image rendered as the background, you&#39;ll want to uncheck the background setting. If you&#39;re using a non-HDR image or the render is too dim for some other reason you may want to boost the Power to more than 1.0. (A power setting of 4 works well with the linked HDR file.) <!-- TODO review --></p>
 <p><img src="/images/DraggedImage-53.jpg" alt=""></p>
 <p>Now <strong>add a Radiosity tag to the same camera</strong>. You need both a radiosity tag and an HDRI tag for image-based lighting. Without radiosity, an HDRI tag only creates reflection and background, without an HDRI tag a radiosity tag simply enhances other light sources in a scene.</p>
 <p><img src="/images/DraggedImage-54.jpg" alt=""></p>
@@ -62,12 +70,12 @@
 <p><img src="/images/DraggedImage-57.jpg" alt=""></p>
 <p><em>Single Area light (with radiosity)</em></p>
 <p><img src="/images/DraggedImage-58.jpg" alt=""></p>
-<p><em>Sky ight (with radiosity)</em></p>
+<p><em>Sky light (with radiosity)</em></p>
 <p><img src="/images/DraggedImage-59.jpg" alt=""></p>
 <p><em>Image-based lighting (with radiosity)</em></p>
 <p><strong>Image-based lighting produces far richer-looking results than simple lighting setups</strong>, but only very good* HDRs provide good shadow definition. A common solution to the problem of shadow definition is to use a combination of IBL and in-scene lighting (e.g. spot and distant lights) to bring out convincing shadows. In the above render, the shadows look fine for an indoor scene or a cloudy day, but for a daylit scene you&#39;d want to use extra trickery to bring out more defined shadows.</p>
 <blockquote>
-<p><strong>Note</strong>: * by “good HDRI” I don’t mean high resolution so much as high dynamic range. The reason lights cast well-defined shadows is that they’re <em>enormously</em> brighter than anything around them. How much brighter? The illuminated face of the moon is visible against a bright sky, and yet <strong>the sun is 400,000 times brighter than the moon</strong>. Thats 2^18, which means if you represented a pixel of the moon as having a brightness of 255 (i.e. 2^8 - 1, the maximum brightness in 24-bit color) you’d need to represent a pixel of the sun as 2^26. This is only possible with floating-point color depth, and most HDRI images aren’t even making good using of 16-bit per channel (integer) color.</p>
+<p><strong>Note</strong>: * by “good HDRI” I don’t mean high resolution so much as high dynamic range. The reason lights cast well-defined shadows is that they’re <em>enormously</em> brighter than anything around them. How much brighter? The illuminated face of the moon is visible against a bright sky, and yet <strong>the sun is 400,000 times brighter than the moon</strong>. That’s 2^18, which means if you represented a pixel of the moon as having a brightness of 255 (i.e. 2^8 - 1, the maximum brightness in 24-bit color) you’d need to represent a pixel of the sun as 2^26. This is only possible with floating-point color depth, and most HDRI images aren’t even making good use of 16-bit per channel (integer) color.</p>
 </blockquote>
 <h3 id="aside-limitations-of-image-based-lighting">Aside: limitations of image-based lighting</h3>
 <p>Sampling “all the light” coming towards a point is, of course, easier said than done. The simplest option is to use a “light probe”. (This technique was pioneered by ILM and Pixar for Terminator 2 — the liquid metal robot.) You take a mirrored ball, place it at the position you’re going to be rendering the object at, and then photograph it (perhaps several times to capture a “high dynamic range” image, and quite possibly shooting a reverse shot so you’ll have material to “paint out” the camera). The resulting circular image samples light in (theoretically) 360°, albeit increasingly inaccurately as you get to the edges (which are sampling light coming from the far side of the ball).</p>
@@ -264,6 +272,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

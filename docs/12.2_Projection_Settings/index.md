@@ -12,7 +12,9 @@ By default, cameras render a perspective projection. There are two other options
 
 ![](/images/pastedGraphic-542.jpg)
 
-**Top**: cityscape rendered through a camera with perspective. **Bottom**: cityscape rendered through an orthographic camera.* **Orthographic** rendering is useful for engineering and architecture applications, and for rendering components for isometric “faux 3D” games. (And, new in Cheetah 3D v6, orthographic projection is properly previewed in the 3D view.)
+***Top**: cityscape rendered through a camera with perspective. **Bottom**: cityscape rendered through an orthographic camera.*
+
+**Orthographic** rendering is useful for engineering and architecture applications, and for rendering components for isometric “faux 3D” games.
 
 ![](/images/pastedGraphic-543.jpg)
 
@@ -28,13 +30,13 @@ By default, cameras render a perspective projection. There are two other options
 
 For perspective cameras, field of view determines the kind of “lens” your camera uses. Normally when you “zoom in” or “zoom out” using the camera controls you’re moving the active camera forward and backward (i.e. along its own z-axis). If you want to zoom in and out the way a camera lens does, you need to change the field of view — a wide field of view (e.g. 100°) would be equivalent to a very wide angle lens (approximately a 15mm lens on 35mm camera or 24x36mm “full frame” DSLR) while 5° is roughly the equivalent of a 400mm lens.
 
-The following values are from Wikipedia’s article on Angle of View. Note that I am using their horizontal field of view values because Cheetah 3D’s field of view value determines the angle forming the square from which the final image is cropped.
+The following values are from Wikipedia’s article on Angle of View. I’ve used their horizontal field of view values, because Cheetah 3D’s field of view is the angle across a square, and the final image is cropped from that square. <!-- TODO review -->
 
 ![](/images/pastedGraphic-545.jpg)
 
 ### Zoom
 
-For orthographic cameras, zoom determines the how large the scene is rendered in the camera view (since field of view is meaningless in an orthographic view).
+For orthographic cameras, zoom determines how large the scene is rendered in the camera view (since field of view is meaningless in an orthographic view).
 
 ### Clip Near, Clip Far
 
@@ -50,21 +52,41 @@ This button explicitly makes the camera active (unless this camera or the active
 
 ### Render Settings
 
-These settings all affect the quality (and speed) of rendering with the camera.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
-#### Anti-Aliasing Mode, Min Samples, Max Samples, Tolerance
+In Cheetah 3D 8, the settings that control render quality belong to the *renderer*, not the camera. Choose a renderer (**Cheetah** or **Falcon**) with **Render \> Renderer**, then click the renderer icon in the toolbar (the cheetah head) to show its settings in the Properties panel. These settings are stored with the scene and apply to whichever camera is active.
+
+Both renderers’ **General** settings include **Resolution** (the size of the rendered image or movie), **Exposure**, **Gamma** and **Dither**. Falcon adds **Filmic**, a filmic tone mapper (use it with a Gamma of 2.2).
+
+The camera itself keeps **Camera light**, the **Background**, and the depth of field and shutter settings.
+
+> *End of AI draft.* <!-- /AI draft -->
+
+#### Antialiasing, Min. samples, Max. samples, Tolerance (Cheetah renderer)
+
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+These settings are in the **General** section of the Cheetah renderer. Falcon has none of them: it simply traces a fixed number of paths per pixel, set by **Samples** (0 means it keeps refining until you stop the render yourself).
+
+> *End of AI draft.* <!-- /AI draft -->
 
 Anti-aliasing is a graphics trick whereby images are made to look smoother by interpolating the colors of pixels that lie on edge detail in an image. Rendering is a tradeoff between speed and quality — and one of the things all renderers do is try to avoid doing as much work as possible.
 
-**Min Samples** determines the minimum level of detail — i.e. number of rays — Cheetah 3D will render (1x1 means it will fire off one ray for each pixel, 4x4 means it will divide a pixel into a 4x4 grid and fire one ray off through each of them — you’ll see that Cheetah 3D is willing to go down as far as only firing one ray for every 4x4 set of pixels).
+**Min. samples** determines the minimum level of detail — i.e. number of rays — Cheetah 3D will render (1x1 means it will fire off one ray for each pixel, 4x4 means it will divide a pixel into a 4x4 grid and fire one ray off through each of them — you’ll see that Cheetah 3D is willing to go down as far as only firing one ray for every 4x4 set of pixels).
 
-**Max Samples** determines the maximum level of detail —i.e. number of rays — Cheetah 3D will render for a given pixel.
+> **Note:** needs checking in Cheetah 3D 8.1.1: can Min. samples still go below 1x1 (one ray for every 4x4 set of pixels)? The manual says “1x1 results in no anti-aliasing” and doesn’t mention lower settings. <!-- TODO verify -->
 
-**Anti-Aliasing Mode** and **Tolerance** dictate Cheetah 3D’s criteria for deciding whether to go beyond the minimum and fire off more rays to render a given pixel. **Edge** means that Cheetah 3D will fire off more rays if the pixel (or grid of pixels, or subpixel) it has just rendered has an edge running through it. **Color** means that it will fire off more rays if the pixel just rendered is different in color from a neighboring pixel relative to a specified **Threshold**.
+**Max. samples** determines the maximum level of detail —i.e. number of rays — Cheetah 3D will render for a given pixel.
 
-In theory, using the Color antialiasing mode will be slower and produce better output than using the Edge method because it will pick up fine detail in materials which the edge method will ignore. In practice, both methods seem to use **threshold** as a criterion to render more detail, and there seems to be little difference in the results.
+**Antialiasing** and **Tolerance** dictate Cheetah 3D’s criteria for deciding whether to go beyond the minimum and fire off more rays to render a given pixel. **Edge** means that Cheetah 3D will fire off more rays if the pixel (or grid of pixels, or subpixel) it has just rendered has an edge running through it. **Color** means that it will fire off more rays if the pixel just rendered is different in color from a neighboring pixel relative to a specified **Tolerance**.
 
-**Shadows** allows you to toggle shadows on or off for the entire scene (overriding the settings of individual lights and render tags).
+In theory, using the Color antialiasing mode will be slower and produce better output than using the Edge method because it will pick up fine detail in materials which the edge method will ignore. In practice, both methods seem to use **tolerance** as a criterion to render more detail, and there seems to be little difference in the results.
+
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+**Shadows** (in the Cheetah renderer’s **Other** section) allows you to toggle shadows on or off for all light sources in the scene.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 **Camera Light** acts like a “flash”. By default it’s set to auto, which means if there’s no light in a scene it will be active (it acts like a directional light pointing out of the camera) otherwise it automatically turns off. You almost *never* want the camera light, but its auto setting means you hardly ever notice it. 
 
@@ -72,20 +94,30 @@ You may have issues with the camera light when rendering scenes entirely lit by 
 
 #### Output
 
-Output settings determine the dimensions of images rendered using the camera.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+The dimensions of rendered images are now set by the renderer’s **Resolution** setting (see above), not by the camera.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 #### Background
 
 Background settings determine the background color or image. By default, Cheetah 3D renders a black background. Probably the best background option is 100% transparent since this allows you to composite your rendered images if so desired.
 
-#### Renderer Preferences
+#### Renderer Settings
 
 ![](/images/pastedGraphic-547.jpg)
 
-Render Preferences (**Render \> Render Preferences**) are settings that apply to any camera in a scene (they are local to the current scene though — they are scene settings and not Cheetah 3D preferences).
+> **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 
-It’s odd that you can globally turn off shadows via camera settings but reflections and textures via render preferences. Oh well.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
-The most commonly needed settings here are **Max. ray depth** (which determines how many transmissions and reflections a ray will be allowed to calculate before giving up) and **Cache HDRI** and **Cache EPIX** which allow you to save HDR versions of renders and may improve the rendering of animations when using Radiosity, respectively.
+There is no longer a separate Render Preferences panel: what used to be there is now part of each renderer’s settings (**Render \> Renderer**, or the renderer icon in the toolbar). They are scene settings, not Cheetah 3D preferences.
 
-Increase Max. ray depth for scenes with many transparent and reflective objects, or if you see mysterious black patches appear when rendering transparent or reflective objects.
+In the Cheetah renderer’s **Other** section, **Max. ray depth** determines how many transmissions and reflections a ray will be allowed to calculate before giving up, and **Textures**, **Reflections**, **Transparency** and **Shadows** switch those features off for the whole scene. Falcon replaces Max. ray depth with its **Ray depth (bounces)** settings: **Total bounces**, **Diffuse bounces**, **Glossy bounces**, **Specular bounces** and **Transparency depth**.
+
+To keep a high dynamic range version of a render (what **Cache HDRI** used to do), turn on **Save G-Buffer** in either renderer. The G-Buffer records HDR color (16- or 32-bit per component) and, optionally, **Z-Buffer** depth, **Layer ID**, **Object ID** and **Material ID** to an EXR file, and the Render Manager will then let you save EXR files.
+
+> *End of AI draft.* <!-- /AI draft -->
+
+Increase Max. ray depth (or Falcon’s bounces) for scenes with many transparent and reflective objects, or if you see mysterious black patches appear when rendering transparent or reflective objects.

@@ -4,6 +4,8 @@
 
 ![](/images/DraggedImage-2.jpg)
 
+> **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
+
 Each object has its own Properties panel.
 
 When you select an object (either in the 3D view or the browser) the Properties panel will display that object’s properties. 
@@ -11,6 +13,8 @@ When you select an object (either in the 3D view or the browser) the Properties 
 The top of the panel is a row of tags, which each contain their own properties. You can add tags to objects to give them even more properties. 
 
 One object that’s very prone to collecting tags is the camera object (shown here with an HDRI tag, a Radiosity tag, and a Depth of Field tag — a perfectly plausible setup).
+
+> **Note:** requires updating for Cheetah 3D 8.1.1: cameras no longer take HDRI, Radiosity or Depth of Field tags; these are now the HDRI Light object, Cheetah renderer settings, and camera properties (manual: Objects › HDRI Light, Camera; Render › Cheetah). <!-- TODO update -->
 
 Most mesh objects will end up with three or more tags — their own property tag (which will vary based on the kind of object they are), a Mode tag (which controls their visibility and whether or not their creator or modifier chains are active), and one or more Material tags (which assign the material to the mesh, or sometimes just parts of an editable mesh, and can also affect how the material is mapped onto that mesh — this topic is covered in more depth in the section on Materials).
 
@@ -38,12 +42,16 @@ The Material tag assigns a material to a mesh (it may assign the material to all
 
 If more than one material is assigned to a mesh (or polygon) then the rightmost material takes precedence.
 
-#### The HDRI and Radiosity Tags
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
-These tags are often seen together attached to a Camera. (They can only be assigned to cameras.) An HDRI tag on its own, with a suitable image loaded, can be used to provide a reflection map for your scene (i.e. something for objects to reflect other than geometry in the scene itself). 
+#### HDRI Light and Radiosity (formerly tags)
 
-By default an image loaded into an HDRI tag will also be rendered as your scene’s background, but the results are seldom good (unless the image has improbably high resolution) and I recommend toggling that option off. The best way to render something in front of a photographic backdrop is to use the combination of an HDR for lighting and a background image loaded into the Camera.
+In earlier versions of Cheetah 3D, image-based lighting was set up by adding HDRI and Radiosity tags to the camera. These tags no longer exist:
 
-Together with a Radiosity tag (generally set to Radiosity rather than Ambient Occlusion) an HDRI will provide image-based lighting, which is a great way to quickly light a scene with good results.
+* The **HDRI Light** is now an object you add to the scene. Load an image (.hdr or .exr) into it and it provides image-based lighting and reflections, and (optionally) the background. Uncheck **Background** if you don’t want the image rendered behind your scene. The best way to render something in front of a photographic backdrop is still to use the combination of an HDR for lighting and a background image loaded into the Camera.
 
-In general, image-based lighting will produce good looking renders with little effort and relatively short rendering times, but shadows will not be very soft (because HDRs generally don’t do a great job of replicating intense light sources).
+* **Radiosity** (and ambient occlusion) is now a section of the **Cheetah** renderer’s settings (**Render \> Renderer**). The Falcon renderer computes indirect lighting automatically, so it has no radiosity settings at all.
+
+See [Image-Based Lighting](/4.13_Image_Based_Lighting/) for details.
+
+> *End of AI draft.* <!-- /AI draft -->

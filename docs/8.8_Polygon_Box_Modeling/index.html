@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Polygon/Box Modeling — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The easiest way to understand box modeling is to try it. Once you’ve done it, then we can discuss exactly what’s going on, what works well and what doesn’t." />
   <link rel="canonical" href="https://learn3d.loewald.com/8.8_Polygon_Box_Modeling/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Polygon/Box Modeling","description":"The easiest way to understand box modeling is to try it. Once you’ve done it, then we can discuss exactly what’s going on, what works well and what doesn’t.","url":"https://learn3d.loewald.com/8.8_Polygon_Box_Modeling/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="8.8_Polygon_Box_Modeling.md">
 <!--{"parent": "8_Modeling.md", "order": 8}--><h2 id="polygonbox-modeling">Polygon/Box Modeling</h2>
 <p><strong>The easiest way to understand box modeling is to try it</strong>. Once you’ve done it, then we can discuss exactly what’s going on, what works well and what doesn’t.</p>
@@ -66,10 +66,25 @@
 <h4 id="fill-hole">Fill Hole</h4>
 <p>If you want to create a polygon to fill an “obvious” hole in your mesh you can use the Fill Hole tool and simply click on one point on the edge of the hole.</p>
 <p>Fill Hole will produce no result (it will beep) or a very bad result if there are problems with your mesh (e.g. gaps, flipped polygons, or the “hole” would produce a very odd polygon).</p>
-<h4 id="magnet">Magnet</h4>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<h4 id="soft-selection-and-the-brush-tool">Soft Selection and the Brush Tool</h4>
 <p><img src="/images/pastedGraphic-134.jpg" alt=""></p>
-<p><em>The Magnet tool lets you manipulate a mesh with “falloff”. It’s a bit like “soft selections” in other modeling programs but a lot less useful (unfortunately).</em></p>
-<p>The magnet tool allows you to manipulate a mesh as though it were made of some kind of viscous goo, but it is really hard to work with because it only works in screen space or normal to the selection (and every time you do something the normal changes) which means you tend to have to get it right the first time (also it provides no useful visual feedback). If you really need this kind of functionality for anything more than a trivial tweak, I’d suggest using another program.</p>
+<p><em>Manipulating a mesh with “falloff”.</em></p>
+<p>Earlier versions of Cheetah 3D had a Magnet tool. Cheetah 3D 8.1.1 doesn’t; instead it gives you two ways to manipulate a mesh as though it were made of some kind of viscous goo:</p>
+<ul>
+<li><p><strong>Soft selection</strong>: the Select tool’s <strong>Falloff radius</strong> property sets the falloff for soft selections. Soft selection only works in point mode on editable meshes.</p>
+</li>
+<li><p><strong>The Brush tool</strong> (<strong>Tools &gt; Polygon &gt; Brush</strong>) lets you sculpt an editable mesh directly. The <strong>Move</strong> brush works like a magnet, pulling the vertices within the brush radius in the direction of the mouse; <strong>Pull/Push</strong> and <strong>Emboss</strong> move vertices along their normals; and <strong>Smooth</strong> smooths out uneven areas. <strong>Strength</strong>, <strong>Radius</strong> (in screen pixels), <strong>Focus</strong> (an inner radius where vertices get the full effect) and the <strong>Falloff</strong> curve control how the brush behaves. (There’s also a <strong>Color</strong> brush, which paints vertex colors.)</p>
+</li>
+</ul>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: how soft selection behaves with the Transform tool (the manual only documents the Falloff radius property). <!-- TODO verify --></p>
+</blockquote>
 <h4 id="cover-extrude">Cover, Extrude</h4>
 <p>Cover and Extrude allow you to “pull” more geometry out of a selection.</p>
 <p>Cover is instant. Extrude is modal. This makes Cover much more pleasant to use than Extrude. Also, Cover works on edges and Extrude doesn’t.</p>
@@ -82,7 +97,7 @@
 <h4 id="shell">Shell</h4>
 <p><img src="/images/pastedGraphic-138.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-139.jpg" alt=""></p>
-<p>The Shell tool allows you to turn single-sided surfaces into two-sided solids (as per the before and after meshes shown above). Note that Cheetah 3D v6 introduces a Shell modifier which is both non-destructive and allows you to finely control the thickness of the output mesh. In most cases you’ll want to use the modifier rather than the tool.</p>
+<p>The Shell tool allows you to turn single-sided surfaces into two-sided solids (as per the before and after meshes shown above). Note that Cheetah 3D also has a Shell modifier which is both non-destructive and allows you to finely control the thickness of the output mesh. In most cases you’ll want to use the modifier rather than the tool.</p>
 <h4 id="ring-cut-jigsaw-scalpel">Ring Cut, Jigsaw, Scalpel</h4>
 <p>Ring Cut, Jigsaw, and Scalpel are all tools for adding new edges to a mesh.</p>
 <p><img src="/images/pastedGraphic-140.jpg" alt=""></p>
@@ -103,8 +118,8 @@
 <p><img src="/images/pastedGraphic-142.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-143.jpg" alt=""></p>
 <p><em>The jigsaw tool cut the path shown through the selected polygons.</em></p>
-<p>The Jigsaw is a like the ring cut tool, but follows a selected path of polygons rather than a ring, so you can “steer” it. The jigsaw will stop cutting at the edge of a mesh or before the last polygon on a path.</p>
-<p>The Scalpel tool lets you cut a series edges manually. You must start the series of edges on an existing edge or point, and then click out new edges one point at a time. A new edge cannot cross another edge, so to cut an edge from one polygon to another you must go through an existing edge or point.</p>
+<p>The Jigsaw is like the ring cut tool, but follows a selected path of polygons rather than a ring, so you can “steer” it. The jigsaw will stop cutting at the edge of a mesh or before the last polygon on a path.</p>
+<p>The Scalpel tool lets you cut a series of edges manually. You must start the series of edges on an existing edge or point, and then click out new edges one point at a time. A new edge cannot cross another edge, so to cut an edge from one polygon to another you must go through an existing edge or point.</p>
 <h4 id="normal-scale-rotate-move">Normal Scale, Rotate, Move</h4>
 <p>The tools do the same thing as the Transform tool with Orientation set to Normal. I suggest using the Transform tool instead as these tools are no longer needed.</p>
 <h4 id="edge-rotate">Edge Rotate</h4>
@@ -118,7 +133,7 @@
 <h4 id="collapse-weld">Collapse, Weld</h4>
 <p>Collapse and weld are used for simplifying a mesh’s geometry. Weld lets you merge two points (and makes all the necessary changes to edges and polygons that use those points) while Collapse turns a specified polygon into a single point.</p>
 <p>Weld has a very important setting — “to” which determines whether the final point is the first of the two points you weld together, or the middle (average) of them.</p>
-<p>Collapse, similarly, has a “to” setting which determines where the vertex that replaces the thing you click on is the point you clicked or the middle of the thing you clicked.</p>
+<p>Collapse, similarly, has a “to” setting which determines whether the single point that replaces the polygon ends up where you clicked or in the middle of the polygon. <!-- TODO review --></p>
 <h4 id="collapsing-edges">Collapsing Edges</h4>
 <p>There is no convenient tool for “collapsing” edges, but welding the points at either end of an edge has the equivalent effect.</p>
 <h4 id="optimize">Optimize</h4>
@@ -126,7 +141,7 @@
 <p>Optimize is a very useful tool for cleaning up meshes. Usually the only thing you might want to change from the default setting is to change the weld radius.</p>
 <p><strong>Remove unused vertices</strong> deletes any vertices (points) from the mesh that aren’t part of any polygon.</p>
 <p><strong>Weld close vertices</strong> merges vertices within a threshold distance — the Weld Radius — of one another (this is very helpful for optimizing meshes).</p>
-<p>I’m not sure what <strong>Optimize polygons</strong> does (and the online help is no use here) but I suspect it removes zero-length edges from polygons</p>
+<p>I’m not sure what <strong>Optimize polygons</strong> does (and the online help is no use here) but I suspect it removes zero-length edges from polygons.</p>
 <h4 id="array-clone">Array, Clone</h4>
 <p><img src="/images/pastedGraphic-148.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-149.jpg" alt=""></p>
@@ -159,22 +174,27 @@
 <p><em>A dodecahedron before and after triangulation. (Because no polygons were selected the entire mesh was triangulated.)</em></p>
 <p>The triangulate tool instantly triangulates the current selection (or the entire mesh if all or no polygons are selected). </p>
 <p>Generally you do not want to triangulate meshes, but there may be cases (e.g. Symmetric models) where you want fine control over the way the mesh is triangulated.</p>
-<h4 id="catmull-clarke-subdivide-linear-subdivide">Catmull-Clarke Subdivide, Linear Subdivide</h4>
+<h4 id="catmull-clark-subdivide-linear-subdivide">Catmull-Clark Subdivide, Linear Subdivide</h4>
 <p><img src="/images/pastedGraphic-159.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-160.jpg" alt=""></p>
-<p><em>Here I have selected one face and applied the Catmull-Clarke Subdivision tool to it twice. This technique is sometimes suggested as a good way to put round holes in square faces, but there are better and more precise methods. I would suggest that unless you know exactly what you’re doing, don’t use these tools.</em></p>
+<p><em>Here I have selected one face and applied the Catmull-Clark Subdivision tool to it twice. This technique is sometimes suggested as a good way to put round holes in square faces, but there are better and more precise methods. I would suggest that unless you know exactly what you’re doing, don’t use these tools.</em></p>
 <p>These tools allow you to immediately apply one level of subdivision to selected polygons. </p>
 <p>In general if you want to subdivide an entire mesh you should use the Subdivision modifier which offers more options, greater control, and is non-destructive. Occasionally you may want to have complete control over subdivision, in which case these tools can be useful.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Simplify</strong> tool (<strong>Tools &gt; Polygon &gt; Simplify</strong>), which reduces a mesh to a target number of triangles (Tools/Polygon/SimplifyTool), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has <strong>Boolean Add</strong>, <strong>Boolean Subtract</strong> and <strong>Boolean Intersect</strong> tools under <strong>Tools &gt; Polygon</strong>, which combine selected polygon objects destructively (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h4 id="split">Split</h4>
 <p>Split breaks off your current selection into a new (separate) mesh. If your original mesh was called “foo” then the selection will be moved to a new mesh (with the same coordinate system) called “foo.split”.</p>
 <h5 id="aside-merging-meshes">Aside: Merging Meshes</h5>
-<p><strong>To merge two or more meshes in C3D7</strong> simply select them (you can select a range by click and shift-click, or toggle the selection of individual meshes using command-click) and select <strong>Tools &gt; Merge</strong>.</p>
-<p><strong>To merge two or more missions in earlier versions of C3D</strong>: pick one mesh to be the “parent” and make all the others its children, then select the parent mesh and use <strong>Tools &gt; Import Children</strong> (you can now delete the children or collapse the parent).</p>
+<p><strong>To merge two or more meshes</strong> simply select them (you can select a range by click and shift-click, or toggle the selection of individual meshes using command-click) and select <strong>Tools &gt; Merge</strong>.</p>
 <h4 id="bevel-inner-extrude">Bevel, Inner Extrude</h4>
 <p><img src="/images/pastedGraphic-161.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-162.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-163.jpg" alt=""></p>
-<p><em>Starting with the three edges selected on the left, I perform a linear bevel with bevelLevel 0 or a Concave bevel with bevelLevel 10.</em></p>
+<p><em>Starting with the three edges selected on the left, I perform a linear bevel with Level 0 or a Concave bevel with Level 10.</em></p>
 <p>Bevel is used to refine corners where two polygons meet by introducing new geometry. Since almost no real world objects have perfectly sharp corners, beveling is very useful for making models a little bit more realistic. It’s also very useful for refining subdivision cages.</p>
 <p><img src="/images/pastedGraphic-164.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-165.jpg" alt=""></p>
@@ -187,7 +207,7 @@
 <h5 id="aside-troubleshooting-the-bridge-tool">Aside: Troubleshooting the Bridge Tool</h5>
 <p>Sometimes the bridge tool simply refuses to work. This is usually because either one or more of the faces bordering on one of the polygons is flipped, which means that the polygon isn’t well-formed.</p>
 <p><img src="/images/pastedGraphic-168.jpg" alt=""></p>
-<p>In this example I’ve flipped the normals of the top portion of the mesh, which confuses the bridge tool (because it reverses the order of the polygon its joining up) and completely messes up the resulting bridge.</p>
+<p>In this example I’ve flipped the normals of the top portion of the mesh, which confuses the bridge tool (because it reverses the order of the polygon it’s joining up) and completely messes up the resulting bridge.</p>
 <p><img src="/images/pastedGraphic-169.jpg" alt=""></p>
 <p>You should also pick the vertexes you click on with the understanding that the first vertex will be joined to the second, and everything else will follow from that. So if you pick the mismatched vertices, the bridge will be twisted. (This “twisting” effect can actually be used to your advantage in some cases.)</p>
 <p><img src="/images/pastedGraphic-170.jpg" alt=""></p>
@@ -377,6 +397,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

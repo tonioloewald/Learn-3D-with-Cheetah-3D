@@ -12,19 +12,31 @@ Want to render a vampire looking in a mirror? You can prevent an object from app
 
 Probably the most important settings are **Cast shadows** (e.g. if you want an object to not cast any shadows at all, this is the property to uncheck), **Receive shadows**, **Receive radiosity** (glass often causes problems in radiosity renderings of interiors, adding a render tag to glass panes and setting them to not receive or be **Visible in radiosity** often helps remove artifacts) and **Visible for primary rays** (if unchecked the object still casts shadows and appears in reflections and refractions, but otherwise it disappears — great for building environments around objects being rendered as icons, for example).
 
-### The HDRI Tag
+> **Note:** needs checking in Cheetah 3D 8.1.1: the render tag’s property names. The manual still lists Cast shadows / Visible in Radiosity / Visible for primary rays, but the app’s strings label them Visible in shadows, Visible in diffuse, Visible in reflections, Visible in refractions and Visible in camera, plus Receive HDRI refl., Receive caustics and Filter textures (manual: Tags › Render Tag; en.lproj/Localizable.strings). <!-- TODO verify -->
 
-The HDRI tag attaches a reflection and/or lighting map to a camera. 
+### The HDRI Light
 
-By default an HDRI tag will act as a **reflection map** and **background** (unless you have a very high resolution background, an HDRI tag will usually produce an ugly background, so you might want to uncheck the **Background** property).
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
-If you add a **Radiosity tag** (whether in Ambient Occlusion or Radiosity mode) to a camera with an HDRI tag it will also act as an image-based light source.
+In Cheetah 3D 8, image-based lighting comes from an **HDRI Light** object (**Objects \> Scene \> HDRI light**, or the toolbar) rather than a tag on the camera. It loads an .hdr or .exr image (Oldtown.hdr by default), and its **Type** must match the image’s mapping (**Probe**, **Cross** or **Panorama**).
 
-### The Radiosity Tag
+An HDRI Light lights the scene by itself, shows up in reflections and refractions, and by default draws the **Background** (unless you have a very high resolution image, the background will usually look ugly, so you might want to uncheck **Background**). **Intensity** scales the image’s brightness, **Clamp** tames very bright pixels (like the sun) that cause noise with ambient occlusion or radiosity, and **Samples** trades render time for smoother shadows. **MIS** speeds up convergence, but only in Falcon.
 
-The Radiosity Tag has two modes — ambient occlusion and radiosity. These two modes do very different things. Of the two, ambient occlusion is by far the quicker and radiosity tends to produce better results. 
+You can have several HDRI and Sky Lights in a scene, but only the first one is used for rendering.
 
-You cannot use both ambient occlusion and radiosity in a single render (if you assign two Radiosity tags to a camera, only the last one is used).
+> *End of AI draft.* <!-- /AI draft -->
+
+### Radiosity Settings
+
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Radiosity is no longer a tag. In the Cheetah renderer’s settings (**Render \> Renderer**), turn on **Radiosity** and pick its **Type**: **Ambient occlusion** or **Radiosity**. These two modes do very different things. Of the two, ambient occlusion is by far the quicker and radiosity tends to produce better results. **Intensity**, **Samples**, **Diffuse bounces**, **Specular bounces**, **Error**, **Rmin**, **Rmax** and **Detail detection** fine-tune the result.
+
+Since Type is a single setting, you cannot use both ambient occlusion and radiosity in a single render.
+
+Falcon doesn’t have these settings: as a path tracer it includes bounced light in every render, and its **Ray depth** settings control how many bounces it follows.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ### Ambient Occlusion
 

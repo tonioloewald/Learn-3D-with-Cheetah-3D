@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Selecting and Moving Objects — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="In general, a huge amount of the work in creating 3D scenes involves using the Transform tool to move bits and pieces around and using other tools now and then…" />
   <link rel="canonical" href="https://learn3d.loewald.com/4.4_Selecting_and_Moving_Objects/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Selecting and Moving Objects","description":"In general, a huge amount of the work in creating 3D scenes involves using the Transform tool to move bits and pieces around and using other tools now and then…","url":"https://learn3d.loewald.com/4.4_Selecting_and_Moving_Objects/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="4.4_Selecting_and_Moving_Objects.md">
 <!--{"parent": "4_Falcon.md", "order": 4}--><h2 id="selecting-and-moving-objects">Selecting and Moving Objects</h2>
 <p>In general, a huge amount of the work in creating 3D scenes involves using the <strong>Transform</strong> tool to move bits and pieces around and using other tools now and then to add more geometry.</p>
@@ -40,6 +40,9 @@
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%206.05.24%20PM.jpg" alt=""></p>
 <p>These let you transform a selection by translation (moving), rotation, scaling, or (in the case of the Transform tool itself) any of the above.</p>
 <p>I’ll only discuss the transform tool itself, since the others are just restricted variations of the transform tool and most people don’t really use them. (The main advantage of them is to prevent accidents, e.g. you might want to move a bunch of things around without accidentally rotating or scaling anything.)</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: are there still separate Move, Rotate, and Scale tools? The manual describes a single Transform tool (“three tools in one”). <!-- TODO verify --></p>
+</blockquote>
 <h3 id="selection">Selection</h3>
 <p>First of all, the Transform tool lets you select things. You can select things by clicking on them, select multiple objects by “painting” (dragging across) multiple things (but don’t do this if you already have something selected, or you’ll transform it instead), and finally add to and subtract from selections by shift- or command- clicking respectively.</p>
 <p>Note that Cheetah 3D also has a <strong>selection tool</strong> which is useful for selecting things when you don’t want to accidentally nudge them. (It’s kind of like a transform tool that doesn’t do transforms.) It behaves just like the transform tool for selection purposes.</p>
@@ -48,19 +51,25 @@
 <p>The transform tool has three kinds of widgets associated with it. For each axis there’s a <strong>cone</strong> (to <strong>move</strong> the selection along that axis), a <strong>cube</strong> (to <strong>scale</strong> the selection along that axis), and a <strong>ring</strong> (to <strong>rotate</strong> the selection around that axis).</p>
 <p>The sphere in the center is referred to in the documentation as the “gadget”, and it’s quite weird and wonderful.</p>
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%206.16.20%20PM.jpg" alt=""></p>
-<p><em>The last tool used was a ring (see how the rings are hilighted) which means the gadget tool is in free rotate mode.</em></p>
+<p><em>The last tool used was a ring (see how the rings are highlighted) which means the gadget tool is in free rotate mode.</em></p>
 <p>First of all, based on which other gadget was last used (cone, cube, or ring) it will act as a free “move parallel to view plane”, proportional scale, or free rotate tool. (Of these, proportional scale is by far the most useful.)</p>
 <h3 id="gadget-mode">Gadget Mode</h3>
 <p><img src="/images/DraggedImage-7.jpg" alt=""></p>
 <p><em>We’re in gadget mode (you can tell because the gadget is colored cyan). The mouse pointer (not captured in the screenshot) is hovering over an edge which is highlighted, ready to snap to it if clicked.</em></p>
 <p>You can double-click the gadget tool to enter (and leave) “gadget mode”. In gadget mode, you can move the “frame of reference” for the transform tool around. (You use the cones and rings to move and rotate the gadget, but scale has no effect.) But most usefully you can snap the gadget to components of meshes (e.g. vertices, and the middles of faces and edges). When you leave gadget mode (by double-clicking on the gadget again), the transform tool will act as if the object is centered on and oriented around the transformed gadget.</p>
 <p>Gadget mode lets you easily rotate selections around a specific edge, or scale a face out from a corner, and so forth. But <strong>note that the gadget’s position and orientation will be lost when the selection changes</strong> (and will not be restored by undo).</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Transform tool’s Tweak mode (with nothing selected, hold Shift+Alt and drag a highlighted point, edge or polygon directly), and pressing ESC to return the gadget to its automatic position (manual: Tools › Common › Transform), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h3 id="editable-meshes-and-the-transform-tool">Editable Meshes and the Transform Tool</h3>
 <p>The Transform tool has some very helpful capabilities for editing meshes. To begin with, you can move, rotate, and scale any selected collection of vertices, edges, or polygons when in the appropriate mode.</p>
 <p><img src="/images/DraggedImage-8.jpg" alt=""></p>
 <p><strong>Orientation</strong> has three possible settings: Object (the default) where the transform tool is aligned to the object’s internal coordinate system, Global where it’s aligned to the world, and Normal which aligns the tool to the normal of the selection (which may or may not make much sense based on what you have selected, but works properly when the selection has a normal that makes sense).</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does Orientation still offer Normal? The manual lists only the object’s local and the global coordinate systems (Tools › Common › Transform). <!-- TODO verify --></p>
+</blockquote>
 <p><strong>Auto Mode</strong> allows the transform tool to change mode based on where on a mesh you click. If you click on a polygon you switch to polygon mode, if you click on an edge you switch to edge mode, and so forth. This is great when you’re fine tuning a mesh and don’t want to have to constantly change mode, but it can also lead to accidents, so be careful.</p>
-<p><strong>Snapping</strong> supports three kinds of snapping (snapping means that when you move things around it will “stick” in various places). Component allows you to snap to different parts of existing meshes (not just the mesh you’re editing, but other meshes in the scene). Surface snaps to surfaces (it’s a lot like picking Component and only checking Polygon). <strong>Raster</strong> snaps to a 3D grid in world space (where the grid spacing is equal to the Raster Width value.</p>
+<p><strong>Snapping</strong> supports three kinds of snapping (snapping means that when you move things around it will “stick” in various places). Component allows you to snap to different parts of existing meshes (not just the mesh you’re editing, but other meshes in the scene). Surface snaps to surfaces (it’s a lot like picking Component and only checking Polygon). <strong>Raster</strong> snaps to a 3D grid in world space (where the grid spacing is equal to the Raster Width value).</p>
 <p>If you’re transforming an object using a specific tool, e.g. moving an object along its x axis, snapping will not override the limitations of the tool. This means, for example, that you can use Raster snapping to snap vertices in just one dimension at a time, which is very useful for fixing up small errors in symmetric meshes or lathe profiles where you need a vertex to have an x value of exactly zero, but you don’t want to change its y and z values.</p>
 
   </article>
@@ -247,6 +256,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

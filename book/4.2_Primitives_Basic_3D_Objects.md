@@ -8,6 +8,8 @@ The primitives, or polygon objects, are meshes created mathematically based on v
 
 Check out the **Torus** primitive. It has some pretty funky properties.
 
+> **Note:** Cheetah 3D 8.1.1 also has the Capsule, Fractal, Polyhedra, and Relief primitives (manual: Objects › Polygon Objects), not yet covered here. <!-- TODO missing -->
+
 ![](/images/Screen%20Shot%202014-07-01%20at%209.32.53%20AM.jpg)
 
 ![](/images/Screen%20Shot%202014-07-01%20at%209.32.40%20AM.jpg)

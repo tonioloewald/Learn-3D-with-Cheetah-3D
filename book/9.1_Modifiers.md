@@ -6,7 +6,7 @@ Cheetah 3D’s non-destructive modifiers are simply wonderful. Many high end 3D 
 
 The basic idea of a modifier is that you apply it to a mesh object and it becomes a child of the mesh and modifies it. Modifiers are applied top-to-bottom.
 
-Modifiers fall into three broad categories: ** subdivision** (a modifier that increases the detail in the parent mesh), **replicators** (modifiers that produce one or more transformed copies the parent mesh’s geometry), **deformations** (modifiers that deform the parent mesh by warping or otherwise modifying their spatial coordinates).
+Modifiers fall into three broad categories: **subdivision** (a modifier that increases the detail in the parent mesh), **replicators** (modifiers that produce one or more transformed copies of the parent mesh’s geometry), **deformations** (modifiers that deform the parent mesh by warping or otherwise modifying their spatial coordinates).
 
 The easiest way to explain modifiers is simply to show what they do.
 
@@ -16,25 +16,25 @@ The easiest way to explain modifiers is simply to show what they do.
 
 *Subdivision, by default, turns pretty much anything into a rounded blob.*
 
-Subdivision is probably the single most important modifier in Cheetah 3D. First of all, it’s very useful. And secondly, it would be exceedingly difficult to replicate its functionality if it didn’t exist. In its default incarnation (“Catmull-Clarke”) it increases a mesh’s resolution and smoothly interpolates its surfaces, turning hard edges into smooth curves.
+Subdivision is probably the single most important modifier in Cheetah 3D. First of all, it’s very useful. And secondly, it would be exceedingly difficult to replicate its functionality if it didn’t exist. In its default incarnation (“Catmull-Clark”) it increases a mesh’s resolution and smoothly interpolates its surfaces, turning hard edges into smooth curves.
 
-**Catmull-Clarke** — the default setting — produces smoothly interpolated meshes, particularly well-suited to modeling organic objects, such as characters. Catmull-Clarke is named after Edwin Catmull and Jim Clarke, the computer scientists who first described subdivision surfaces. (Ed Catmull is one of the founders of Pixar.)
+**Catmull-Clark** — the default setting — produces smoothly interpolated meshes, particularly well-suited to modeling organic objects, such as characters. Catmull-Clark is named after Edwin Catmull and Jim Clark, the computer scientists who first described subdivision surfaces. (Ed Catmull is one of the founders of Pixar.)
 
 ![](/images/pastedGraphic-216.jpg)
 
-*Catmull-Clarke can be controlled by selecting edges and marking them as **creased** (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)*
+*Catmull-Clark can be controlled by selecting edges and marking them as **creased** (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)*
 
 ![](/images/pastedGraphic-217.jpg)
 
-*Catmull-Clarke subdivision can be controlled more subtly by adding fine-tuning the “cage mesh”. In this case three edges have been bevelled to better define those edges (rather than simply make them hard).*
+*Catmull-Clark subdivision can be controlled more subtly by fine-tuning the “cage mesh”. In this case three edges have been beveled to better define those edges (rather than simply make them hard).* <!-- TODO review -->
 
 ![](/images/pastedGraphic-218.jpg)
 
-*On the left is an icosahedron with one level of Catmull-Clarke subdivision; on the right is an identical icosahedron with one level of Stam-Loop subdivision. As you can see what started as a regular triangulated mesh becomes more irregular under Catmull-Clarke subdivision than Stam-Loop.*
+*On the left is an icosahedron with one level of Catmull-Clark subdivision; on the right is an identical icosahedron with one level of Stam-Loop subdivision. As you can see what started as a regular triangulated mesh becomes more irregular under Catmull-Clark subdivision than Stam-Loop.*
 
-(There are some refinements of Catmull-Clarke subdivision which Cheetah 3D does not, as I write this, support. These in essence allow finer control of the interpolated curves and allow you to produce better results with fewer subdivision iterations.)
+(There are some refinements of Catmull-Clark subdivision which Cheetah 3D does not, as I write this, support. These in essence allow finer control of the interpolated curves and allow you to produce better results with fewer subdivision iterations.)
 
-**Stam-Loop** (named after Jos Stam and Charles Loop) is an alternative subdivision surface algorithm that produces different results, especially with respect to triangles (Catmull-Clarke is designed to handle quads and tends to produce nasty results around triangles; Stam Loop is intended to work well for triangles, especially entirely triangulated meshes, and produces nearly identical results to Catmull-Clarke on pure quad meshes).
+**Stam-Loop** (named after Jos Stam and Charles Loop) is an alternative subdivision surface algorithm that produces different results, especially with respect to triangles (Catmull-Clark is designed to handle quads and tends to produce nasty results around triangles; Stam Loop is intended to work well for triangles, especially entirely triangulated meshes, and produces nearly identical results to Catmull-Clark on pure quad meshes).
 
 **Linear** subdivision subdivides the mesh without softening the geometry (in essence, using a linear rather than a quadratic interpolation to produce intermediate points). Linear subdivision is useful for creating smoothly deformable meshes (e.g. if you want to curve some extruded text around a sphere, you can linear subdivide it first to produce a cleaner result).
 
@@ -56,7 +56,9 @@ Build isn’t, strictly speaking, a replicator, since it removes geometry rather
 
 *The Build modifier is showing 50% of the polygons in the original mesh.*
 
-The Build modifier randomly hides a proportion of the faces of a mesh. If its “percent” (which is actually a proportion and not a percentage — so 1.0 means “all”) is animated then the mesh will appear or disappear one polygon by polygon.
+The Build modifier randomly hides a proportion of the faces of a mesh. If its “percent” (which is actually a proportion and not a percentage — so 1.0 means “all”) is animated then the mesh will appear or disappear polygon by polygon. <!-- TODO review -->
+
+> **Note:** Cheetah 3D 8.1.1’s Build modifier also has a **Type** property that chooses the algorithm for picking polygons (manual: Build Modifier), not yet covered here. <!-- TODO missing -->
 
 #### Ring
 
@@ -65,6 +67,8 @@ The Build modifier randomly hides a proportion of the faces of a mesh. If its �
 The Ring modifier turns your mesh into an evenly spaced ring (or partial ring) of copies of itself.
 
 ### Deformations
+
+> **Note:** Cheetah 3D 8.1.1 also has the Boolean, Crumple, and Smooth modifiers (manual: Objects › Modifier Objects) and a Symmetry creator object alongside the Symmetry modifier, not yet covered here. <!-- TODO missing -->
 
 #### Bend
 
@@ -84,11 +88,13 @@ Bulge produces inward or outward bulges in your mesh. (It’s very similar to, b
 
 *Here you can see a plane being displaced by a bitmap. The whiter the bitmap, the greater the displacement.*
 
-The Displacement modifier distorts meshes by pushing offsetting vertices based on an input image, referred to as a “displacement map”. In the displacement map white means “move it a long way” and black means “leave it alone”.
+The Displacement modifier distorts meshes by pushing vertices outward based on an input image, referred to as a “displacement map”. In the displacement map white means “move it a long way” and black means “leave it alone”. <!-- TODO review -->
 
 Displacement pushes vertices in the direction normal to the surface they belong to (so “away” from the face they’re on). Which pixel(s) of the image are used to displace a given vertex is determined by UV mapping (as though the displacement map were a material).
 
-#### Skew
+> **Note:** needs checking in Cheetah 3D 8.1.1: does the Displacement modifier sample its map through the mesh’s UVs? The manual says only that it has its own **Texture** (a height map) and **Offset** properties. <!-- TODO verify -->
+
+#### Shear
 
 ![](/images/pastedGraphic-225.jpg)
 
@@ -122,7 +128,7 @@ When it becomes time to rig or animate a mesh, you’ll need to “bake the symm
 
 ![](/images/pastedGraphic-229.jpg)
 
-*Taper produces a kind of organic stretching effect (if you set the curvature to zero it essentially deforms your mesh into a cone.*
+*Taper produces a kind of organic stretching effect (if you set the curvature to zero it essentially deforms your mesh into a cone.)*
 
 #### Transform
 
@@ -130,7 +136,7 @@ It’s hard to display the effects of the transform modifier since it simply app
 
 Why would you use such a thing? 
 
-Well, it allows you to move reposition (or rotate or scale) an object without actually repositioning (or rotating or scaling) it. You might want to experiment with a scene without potentially messing things up. Or you might use it for special animation effects (e.g. you could render one set of motions with the tag switched on, and another with it switched off, and then composite.
+Well, it allows you to reposition (or rotate or scale) an object without actually repositioning (or rotating or scaling) it. You might want to experiment with a scene without potentially messing things up. Or you might use it for special animation effects (e.g. you could render one set of motions with the modifier switched on, and another with it switched off, and then composite.) <!-- TODO review -->
 
 #### Twist
 

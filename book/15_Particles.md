@@ -10,7 +10,7 @@ Sometimes when you’re creating a scene you want lots and lots of “stuff” b
 
 A particle system comprises the following things:
 
-One or more base **Particle **objects. These are just mesh objects — any kind will work. Each object you use as a particle may have a **Particle tag**.
+One or more base **Particle** objects. These are just mesh objects — any kind will work. Each object you use as a particle may have a **Particle tag**.
 
 A **Particle** **Emitter**.
 

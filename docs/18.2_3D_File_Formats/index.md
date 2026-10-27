@@ -2,7 +2,12 @@
 
 ## 3D File Formats
 
-Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which supports animation data. The most compatible format is OBJ which almost any 3D app can load or export, and is pretty human readable too (it’s a simple text format). DAE (Collada) is theoretically richer than FBX and promises to be a vendor-neutral alternative to FBX but so far it’s not well or widely supported (it was actually created by Sony and then “opened”). Indeed, C3D’s collada support is provided by Autodesk’s FBX SDK, without which it would probably not support collada at all. Finally, Cheetah 3D provides good support for Silo v1.x files and moving between Cheetah 3D and Silo this way is slightly better than using OBJs. There’s really not much reason to use any other formats unless you have to.
+> **Note:** Cheetah 3D 8.1.1 also supports glTF/GLB, USDZ and SceneKit (.scn) files (app bundle file types), not yet covered here. <!-- TODO missing -->
+
+Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which supports animation data. The most compatible format is OBJ which almost any 3D app can load or export, and is pretty human readable too (it’s a simple text format). DAE (Collada) is theoretically richer than FBX and promises to be a vendor-neutral alternative to FBX but so far it’s not well or widely supported (it was actually created by Sony and then “opened”). Indeed, C3D’s collada support is provided by Autodesk’s FBX SDK, without which it would probably not support collada at all.
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: whether Collada support still comes from the FBX SDK (8.1.1 has its own Collada export options, including “Export animations”). <!-- TODO verify -->
+ Finally, Cheetah 3D provides good support for Silo v1.x files and moving between Cheetah 3D and Silo this way is slightly better than using OBJs. There’s really not much reason to use any other formats unless you have to.
 
 ### Geometry
 
@@ -12,7 +17,17 @@ Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it
 
 ### Animation
 
-The only way to get animation data in or out of Cheetah 3D is via FBX. Cheetah 3D’s FBX export is (as of 5.8) pretty smart, so it will automatically key things that are being animated by constraints (e.g. typically you might use an IK rig to move a character’s legs around and key IK targets rather than bones). Cheetah 3D will automatically “bake” the keys for the bones. 
+> **AI draft:** generated from the Cheetah 3D 8.1.1 app bundle (its export options); not yet reviewed by the author. <!-- TODO review AI draft -->
+
+The best way to get animation data in or out of Cheetah 3D is via FBX, although the Collada and glTF exporters also have options to export animation.
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: how much animation (skinning, takes, constraint-driven motion) the Collada and glTF exporters actually carry. <!-- TODO verify -->
+
+Cheetah 3D’s FBX export is pretty smart, so it will automatically key things that are being animated by constraints (e.g. typically you might use an IK rig to move a character’s legs around and key IK targets rather than bones). Cheetah 3D will automatically “bake” the keys for the bones. 
+
+> **Note:** this paragraph about pre-5.8 versions is probably no longer needed. <!-- TODO editorial -->
 
 For earlier versions of Cheetah 3D you can add a single key at the beginning of each take for any bone that is being animated this way and you should get the same result.
 

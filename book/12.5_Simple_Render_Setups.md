@@ -24,7 +24,7 @@ Another popular option is to use a wireframe shader to show off its underlying g
 
 ![](/images/pastedGraphic-595.jpg)
 
-*Here’s the elephant rendered with a shader that uses the wireframe texture to send a dark cyan color to the emission channel. On **top**, the wireframe shader is set to Edge mode, on the **bottom** it’s set to Iso mode (which only generates lines for the edges of a subdivided surface’s control cage.*
+*Here’s the elephant rendered with a shader that uses the wireframe texture to send a dark cyan color to the emission channel. On **top**, the wireframe shader is set to Edge mode, on the **bottom** it’s set to Iso mode (which only generates lines for the edges of a subdivided surface’s control cage.)*
 
 ### Product Shots
 
@@ -40,11 +40,11 @@ Let’s start with a bad example.
 
 *This is a fake “iPhone 5” render I did for fun, based on the idea that Apple would release an iPhone with a Micro Four-Thirds sensor and lens mount. (I still think this is a kickass idea, although maybe a Nikon CX mount would be better.) The goal of this render was to look like a photo an amateur might have taken under crappy lighting conditions (I used the Entrance Hall Panorama HDR that comes with Cheetah 3D). No-one would do a real product shot with this kind of lighting (or on a textured surface).*
 
-Creating a nice “set” for product shots simply involves building a small room with neutrally colored walls (not all one shade of grey, and no pure blacks or whites — you need some variety) and lighting it with several large area lights with their geometry property switched on (even better, you can build you own glowing material and build out your own “lightboxes”.
+Creating a nice “set” for product shots simply involves building a small room with neutrally colored walls (not all one shade of grey, and no pure blacks or whites — you need some variety) and lighting it with several large area lights with their **Visible in camera** property switched on (even better, you can build your own glowing material and build out your own “lightboxes”).
 
 ![](/images/pastedGraphic-597.jpg)
 
-*Here’s my product shot set. The room has walls that are varying shades of grey (alternating light and dark). The recesses have a very strong emission, and there are area lights in them. The lights are very strong too, and I render shots with Radiosity and HDR caching switched on. This produces renders with tons of light and plenty of scope for finessing the exposure.*
+*Here’s my product shot set. The room has walls that are varying shades of grey (alternating light and dark). The recesses have a very strong emission, and there are area lights in them. The lights are very strong too, and I render shots with Radiosity and **Save G-Buffer** (HDR output) switched on. This produces renders with tons of light and plenty of scope for finessing the exposure.*
 
 You can either render objects in the set or render an HDR panorama by placing a camera in the middle of the set. Here’s the HDR panorama rendered from this setup.
 
@@ -52,13 +52,17 @@ You can either render objects in the set or render an HDR panorama by placing a 
 
 *To render this HDR, I hid the table (a plane) and placed a camera in the middle of the room with all coordinates and rotation set to zero, then rendered a 1024x512 panorama.*
 
-Now you can create a new scene containing only the camera, the “table”, and whatever you want to make a product shot of, add an HDRI tag and a Radiosity tag to the camera and render shots like these in a couple of minutes.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Now you can create a new scene containing only the camera, the “table”, and whatever you want to make a product shot of, add an **HDRI Light** with your panorama loaded into it, turn on **Radiosity** in the Cheetah renderer’s settings, and render shots like these in a couple of minutes.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ![](/images/pastedGraphic-599.jpg)
 
 ![](/images/pastedGraphic-600.jpg)
 
-**Note on fine-tuning Radiosity tag settings**: when rendering this image I had problems with blotchy shadows under the camera lens. It turned out that the critical value to alter here is Rmin, which I set to 0.1. This appears to determine how deep into “nooks and crannies” the Radiosity algorithm goes.
+**Note on fine-tuning Radiosity settings**: when rendering this image I had problems with blotchy shadows under the camera lens. It turned out that the critical value to alter here is Rmin, which I set to 0.1. This appears to determine how deep into “nooks and crannies” the Radiosity algorithm goes.
 
 ### Natural Environments
 
@@ -72,13 +76,13 @@ The Sky Light does have two significant limitations:
 
 You can work around the second issue by rendering a panorama using the Sky Light (or any other method you like) and then using that to generate the reflections in concert with using the Sky Light for lighting or using Image-Based Lighting. 
 
-Unfortunately, even if you capture a panorama of the skylight as an HDR the lighting produced by the panorama when loaded into an HDRI tag will not be very similar to the lighting from a Sky Light tag.
+Unfortunately, even if you capture a panorama of the skylight as an HDR the lighting produced by the panorama when loaded into an HDRI Light will not be very similar to the lighting from a Sky Light.
 
 Thus, if you want to go beyond the Sky Light you’re going to need to do quite a bit of work.
 
 ### Interiors
 
-Lighting interiors well is very tricky because interiors are largely lit by internal reflections (effects simulated by the **Radiosity tag**) and not direct lighting. Since radiosity is handled *stochastically*, it can produce noisy results and it can time-consuming to refine your render settings to eliminate artifacts and even more time-consuming to do final renders at high resolution.
+Lighting interiors well is very tricky because interiors are largely lit by internal reflections (effects simulated by **Radiosity**) and not direct lighting. Since radiosity is handled *stochastically*, it can produce noisy results and it can be time-consuming to refine your render settings to eliminate artifacts and even more time-consuming to do final renders at high resolution.
 
 **Natural Light**
 
@@ -92,7 +96,7 @@ Lighting interiors well is very tricky because interiors are largely lit by inte
 
 ![](/images/pastedGraphic-603.jpg)
 
-*Here, I’ve increased the intensity of the radiosity tag to 3.0 to increase the degree to which reflected light illuminates the room. This reveals another common issue with lighting interiors — blotchy artifacts from radiosity. At this point, I had already increased samples from 400 to 1000, reduced the Error from 0.15 to 0.1, and toggle Detail detection on. Reducing error further had no visible effect, so the other obvious option was to increase samples dramatically.*
+*Here, I’ve increased the radiosity intensity to 3.0 to increase the degree to which reflected light illuminates the room. This reveals another common issue with lighting interiors — blotchy artifacts from radiosity. At this point, I had already increased samples from 400 to 1000, reduced the Error from 0.15 to 0.1, and toggled Detail detection on. Reducing error further had no visible effect, so the other obvious option was to increase samples dramatically.*
 
 ![](/images/pastedGraphic-604.jpg)
 
@@ -104,11 +108,17 @@ Lighting interiors well is very tricky because interiors are largely lit by inte
 
 *Visualizations of different lights generated from their IES files.*
 
-Doing artificial lighting well presents a whole new set of problems. The Illuminating Engineering Society (IES) has created a file specification for representing the way in which different electrical lights distribute light. Some 3D programs — unfortunately not including Cheetah 3D yet — can use IES files directly to simulate lights.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Doing artificial lighting well presents a whole new set of problems. The Illuminating Engineering Society (IES) has created a file specification for representing the way in which different electrical lights distribute light, and most light manufacturers offer such profiles for their products. Cheetah 3D can use them directly: load an .ies file into a point or area light’s **IES profile** property to simulate a real-world light.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 The key is building out lights carefully, using emissive materials for shades and covers.
 
 ### Faking IES Lights
+
+> **Note:** this technique is now optional, since point and area lights accept IES profiles directly (manual: Objects › Light). <!-- TODO editorial -->
 
 ![](/images/pastedGraphic-606.jpg)
 

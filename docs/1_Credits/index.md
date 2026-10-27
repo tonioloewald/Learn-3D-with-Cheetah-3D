@@ -2,15 +2,17 @@
 
 # Credits
 
-## Learn 3D with Cheetah 3D 7
+## Learn 3D with Cheetah 3D 8
 
-Version 4.0, March 2018
+Fourth Edition
+
+> **Note:** add the Fourth Edition’s date, and update the copyright years below (still 2011-2018). <!-- TODO editorial -->
 
 Written by and copyright ©2011-2018 Tonio Loewald.
 
 ### Useful Links
 
-* [Learn 3D With Cheetah 3D 7 Website](http://loewald.com/c3dbook/)
+* [Learn 3D With Cheetah 3D 8 Website](http://loewald.com/c3dbook/)
 
 * [Support files for Tutorials](http://loewald.com/c3dbook/Tutorials/)
 
@@ -20,7 +22,7 @@ Written by and copyright ©2011-2018 Tonio Loewald.
 
 The following people helped me — directly or indirectly — make this a better book. Any errors and omissions are my own.
 
-* Pamina Loewald — Proof-Reader and-Editor
+* Pamina Loewald — Proof-Reader and Editor
 
 * Tony Craig, Swizl — Volunteer Proof Readers Extraordinaire
 
@@ -30,7 +32,7 @@ The following people helped me — directly or indirectly — make this a better
 
 * Andreu Cabré, Alessandro Reffo — Forum Experts who sleep more than Frank
 
-* My wife Rosanna, and my daughters Jaelle and Romilly, for putting up with me when I go into "productivity mode" and tune them out for hours (days!) at a time.
+* My children, for putting up with me when I go into "productivity mode" and tune them out for hours (days!) at a time.
 
 Finally, I’d like to thank Frank Beckmann for his untiring efforts to — it seems — answer any question posted on the forums patiently and insightfully within seconds of its being posted.
 

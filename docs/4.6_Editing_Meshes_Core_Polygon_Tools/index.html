@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Editing Meshes: Core Polygon Tools — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Upshot: you _generally_ want to use cover, not extrude." />
   <link rel="canonical" href="https://learn3d.loewald.com/4.6_Editing_Meshes_Core_Polygon_Tools/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Editing Meshes: Core Polygon Tools","description":"Upshot: you _generally_ want to use cover, not extrude.","url":"https://learn3d.loewald.com/4.6_Editing_Meshes_Core_Polygon_Tools/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="4.6_Editing_Meshes_Core_Polygon_Tools.md">
 <!--{"parent": "4_Falcon.md", "order": 6}--><h2 id="editing-meshes-core-polygon-tools">Editing Meshes: Core Polygon Tools</h2>
 <h3 id="duck-i-mean-extrude-and-cover">Duck… I mean Extrude and Cover</h3>
@@ -42,7 +42,7 @@
 <p><em>Using <strong>cover</strong>. I have the transform tool selected and select two faces, then select cover (Tools &gt; Polygon &gt; Cover), then simply move the selected faces — new geometry has been created “covering” the boundary of my selection. Note that you’ll find cover the single most useful tool for polygon modeling — I map it to the C key, so in fact I simply selected some polygons, pressed C, and dragged out the new geometry.</em></p>
 <p><img src="/images/DraggedImage-12.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-13.jpg" alt=""></p>
-<p><em>Unlike extrude, cover works just fine for <strong>edges</strong>. When in edge mode you’re defining the boundary that get’s “covered”.</em></p>
+<p><em>Unlike extrude, cover works just fine for <strong>edges</strong>. When in edge mode you’re defining the boundary that gets “covered”.</em></p>
 <p>Extrude and cover both kind of do the same thing — if you select one or more polygons extrude and cover will both let you pull more geometry out of those polygons (i.e. extrude those faces). In general, most experienced Cheetah 3D users will simply use Cover all the time and forget about Extrude for two reasons:</p>
 <ul>
 <li><p>Cover instantly creates the new geometry without switching tools. This usually means you can just “live” in the Transform tool. </p>
@@ -67,7 +67,13 @@
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg" alt=""></p>
 <p><em>Here I’ve picked a vertex on a corner (because I can!) and used inner extrude to create a loop of geometry around it, which I could easily turn into a hole by deleting the original vertex.</em></p>
 <h3 id="create-polygon">Create Polygon</h3>
-<p>Create polygon simply lets you add a new polygon to a mesh by clicking on (or creating) a series of vertices. You click on the vertices (in anti-clockwise order viewed from the side you want to be seen) ending where you started. You need to click four times to create a triangle (unfortunately).</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Create polygon simply lets you add a new polygon to a mesh by clicking on (or creating) a series of vertices. You click on the vertices (in anti-clockwise order viewed from the side you want to be seen) and then either click the starting vertex again or double-click the last vertex to finish the polygon. The tool’s <strong>Type</strong> property also offers quad-strip and triangle-strip modes for quickly building strips of polygons, and <strong>Intersect scene</strong> places new points on the surfaces of existing objects.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p>It’s easy to sometimes click on the wrong vertex if your mesh has overlapping vertices (usually rotating your view slightly will solve the problem).</p>
 <p><img src="/images/DraggedImage-14.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-15.jpg" alt=""></p>
@@ -78,7 +84,7 @@
 <p><img src="/images/DraggedImage-17.jpg" alt=""></p>
 <p>Bridge before (in object mode so you can see edges more clearly) and after. To use the tool you select Tools &gt; Polygon &gt; Bridge and then click a point on the first “hole” and then click the point you want to bridge to on the second “hole”.</p>
 <p>The bridge tool requires you to click a vertex on the starting polygon and another on the ending polygon. Note that the vertices must lie on a well-defined “ring” of edges, and it’s important for the normals to match.</p>
-<p>There are lots of ways bridges can go horribly wrong, and I try to explain them in depth in the detailed section on Troubleshooting the Bridge Tool.</p>
+<p>There are lots of ways bridges can go horribly wrong, and I try to explain them in depth in the detailed section on <a href="/8.8_Polygon_Box_Modeling/">Troubleshooting the Bridge Tool</a>.</p>
 <h3 id="fill-hole">Fill Hole</h3>
 <p>Fill hole is simple and useful. If you have a hole in a mesh surface you can use fill hole to make it into a new polygon. Generally this works best if the new “polygon” is reasonably flat (i.e. the edges and vertices used to form it are roughly coplanar).</p>
 <p><img src="/images/DraggedImage-18.jpg" alt=""></p>
@@ -101,19 +107,16 @@
 <ul>
 <li>Cutting a hole in a polygon. If you want to cut a hole in a polygon, first use the scalpel to cut the polygon into two (or more) pieces. Then using the edges now running through your polygon, build out the edges of the hole.</li>
 </ul>
-<p>￼</p>
 <p><img src="/images/DraggedImage-21.jpg" alt=""></p>
 <p>This is an artificial example, but on the top the selected polygon (which is vaguely C-shaped) is being triangulated very badly. On the bottom, breaking up the problem polygon into convex quads with a few cuts using the scalpel tool completely eliminates the problem. (It could definitely be done more tidily, this is simply demonstrating a point.)</p>
 <ul>
 <li>Fixing problem polygons. Sometimes a polygon doesn’t get rendered correctly, especially if it isn’t convex. You can use the scalpel tool to chop complex polygons into simpler polygons that won’t confuse the triangulation algorithm.</li>
 </ul>
-<p>￼</p>
 <p><img src="/images/DraggedImage-22.jpg" alt=""></p>
 <p>Compare the bottom-right quad across these three (symmetric) meshes. The middle mesh is a result of triangulating the mesh, and shows the triangulation that is being used by Cheetah 3D to render the initial mesh. On the right I’ve used the scalpel tool to force a different triangulation for that polygon.</p>
 <ul>
 <li>Forcing a specific triangulation. Sometimes a quad will simply get triangulated in just the wrong way. You can split the quad into two triangles using the scalpel to override this behavior.</li>
 </ul>
-<p>￼</p>
 <p><img src="/images/DraggedImage-23.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-24.jpg" alt=""></p>
 <p><em>Here I’m building out the base topology for a head, and I’ve created an edge-loop around what will be the character’s mouth. On the left, the non-quads I’ve created have been selected and are highlighted. On the right, using the scalpel tool I cut two new edges and then used point-slide to make the quads less distorted, resulting in all of the resulting faces becoming quads. This is a very common operation in character animation — creating edge loops and cleaning up the resulting non-quads using the scalpel.</em></p>
@@ -122,14 +125,20 @@
 </ul>
 <h3 id="ring-cut">Ring Cut</h3>
 <p><img src="/images/DraggedImage-25.jpg" alt=""></p>
-<p>The ring cut tool splits a ring of edges and selects the newly created geometry. You select the tool and then move the mouse pointer over an edge of the mesh and click to create a cut your mesh.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>The ring cut tool splits a ring of edges (and, if its <strong>Select cut</strong> option is checked, selects the newly created geometry). You select the tool, move the mouse pointer over an edge of the mesh, and click to cut your mesh. If you keep the mouse button down you can drag to adjust the position of the cut, and holding Shift while dragging moves the cut in or out along the surface.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p>The next paragraph is probably not going to make sense to you right away, but I’ll say it now anyway because at some point you’ll have an “aha!” moment and it will all make sense.</p>
 <p>When using box modeling techniques, it’s a good idea to create as simple a mesh as possible, only adding more detail to your mesh when you absolutely have to. Usually this means keeping your mesh very simple until you’ve blocked out the form you want, making the topology as clean as possible, and then using ring cut as sparingly as possible to add detail to the mesh where it’s needed.</p>
 <p>The ring cut tool is invaluable for adding more detail to a subdivision “cage” mesh (i.e. a mesh you’re applying subdivision to). This allows you to refine the behavior of subdivision exactly where you need it.</p>
 <h3 id="jigsaw">Jigsaw</h3>
 <p><img src="/images/DraggedImage-26.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-27.jpg" alt=""></p>
-<p>Jigsaw is essentially a controlled ring cut. First, you select a series of quads (note how it can “turn a corner” and then you click on one of the edges that will be cut. The cut is terminated at the mesh edge or a terminal polygon.</p>
+<p>Jigsaw is essentially a controlled ring cut. First, you select a series of quads (note how it can “turn a corner”) and then you click on one of the edges that will be cut. The cut is terminated at the mesh edge or a terminal polygon.</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -315,6 +324,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

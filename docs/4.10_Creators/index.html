@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Creators — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="A creator produces a mesh non-destructively from one or more input child objects. Creators are essentially like Modifiers except they can operate on more than…" />
   <link rel="canonical" href="https://learn3d.loewald.com/4.10_Creators/" />
@@ -29,31 +29,41 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Creators","description":"A creator produces a mesh non-destructively from one or more input child objects. Creators are essentially like Modifiers except they can operate on more than…","url":"https://learn3d.loewald.com/4.10_Creators/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="4.10_Creators.md">
 <!--{"parent": "4_Falcon.md", "order": 10}--><h2 id="creators">Creators</h2>
 <p>A creator produces a mesh non-destructively from one or more input child objects. Creators are essentially like Modifiers except they can operate on more than one object and they work on their children rather than their parents (which is necessary in order for the hierarchy to communicate to them what their inputs are). There are two important types of creator:</p>
 <h3 id="sweeps">Sweeps</h3>
 <p><img src="/images/DraggedImage-30.jpg" alt=""></p>
 <p>Yet another way to create a wineglass — demonstrating that a lathe is just a special case of a sweep. In this case you can see a wineglass created by lathing a profile, and a nearly identical wineglass created by sweeping the same profile around a tiny, tiny circle (and flipping the normals).</p>
-<p>The sweep, lathe, and extrude creators are all variations of the sweep operation. A sweep operation derives a solid from two curves by “pushing” one curve (the “profile” through space along the other curve (the “control curve”).</p>
+<p>The sweep, lathe, and extrude creators are all variations of the sweep operation. A sweep operation derives a solid from two curves by “pushing” one curve (the “profile”) through space along the other curve (the “control curve”).</p>
 <p><img src="/images/DraggedImage-31.jpg" alt=""></p>
-<p>In Cheetah 3D v6 the Sweep creator has two new properties: Rotate sweep and Scale sweep. Rotate sweep lets you fine tune the rotation of the profile as it is “pushed” along the control curve. Scale has the obvious effect.</p>
+<p>The Sweep creator has two especially useful properties: Rotate sweep and Scale sweep. Rotate sweep lets you fine tune the rotation of the profile as it is “pushed” along the control curve. Scale has the obvious effect.</p>
 <p><img src="/images/DraggedImage-32.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-33.jpg" alt=""></p>
-<p>On the top is what you get when you sweep a small square along a helix, note how the square ends up rotated a bit at the end. On the bottom, with Cheetah 3D v6 you can adjust the rotation to correct for this (I set the Sweep rotation property to -69°).</p>
+<p>On the top is what you get when you sweep a small square along a helix, note how the square ends up rotated a bit at the end. On the bottom, you can adjust the rotation to correct for this (I set the Sweep rotation property to -69°).</p>
 <p>An Extrude creator sweeps a profile along a straight line. An Extrude creator operates on one spline which acts as the profile (the Extrude implicitly generates the control line). The Extrude creator can do a few things that a Sweep can’t, in particular adding bevels and controlling the end-caps.</p>
 <p>A Lathe creator sweeps a profile along a circular arc. A Lathe creator operates on one spline which acts as the profile (the Lathe implicitly generates the control arc).</p>
 <p>Some programs allow a sweep to have more than one profile or control curve, interpolating the curves in the obvious way. Consider, for example, an aircraft wing — near the fuselage the wing’s profile is a tear drop, it then quickly becomes a classic airfoil which then turns back to a tear drop at the trailing edge. The control curves also need to reflect the fact that the wing tapers in length.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Loft</strong> creator, which builds a surface through two or more spline profiles (exactly the “more than one profile” case above), plus the Chain, Isosurface, Polyplane, and Symmetry creators (manual: Objects › Creator Objects), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <h3 id="booleans">Booleans</h3>
-<p>The Boolean creator performs boolean operations on two meshes. (You can determine which boolean operation is performed by selecting the Operation from its Property panel.) By “boolean” we essentially mean unions, differences, and intersections. A union merges two objects. A difference subtracts the second child from the first child. An intersection finds the overlap between two objects.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>The Boolean creator performs boolean operations on its first two child objects (or, with <strong>Multi-Knife</strong> checked, on more than two). (You can determine which boolean operation is performed by selecting the Operation from its Property panel.) By “boolean” we essentially mean unions, differences, and intersections. A union merges two objects. A difference subtracts the second child from the first child. An intersection finds the overlap between two objects.</p>
 <p>Cheetah 3D’s booleans are very forgiving in that they will try to do something sensible, even if one or both inputs isn’t a proper solid. Exactly what they will do is unpredictable.</p>
-<p>On the other hand, Cheetah 3D’s booleans have two significant problems. </p>
-<p>Booleans tend to produce bad output if vertices in one object are coplanar with faces in the other (you can sometimes work around this by changing the input geometries in ways that don’t affect the output, or nudging something slightly).</p>
-<p>Worse, booleans always produce triangulated meshes, which means the topology of a boolean creator’s output will be a complete mess. This means that if you must use a boolean, try to use it after doing everything else you need to do.</p>
+<p>On the other hand, Cheetah 3D’s booleans have some limitations.</p>
+<p>Booleans tend to produce bad output if vertices in one object are coplanar with faces in the other (you can sometimes work around this by changing the input geometries in ways that don’t affect the output, or nudging something slightly). They also need flat polygons: twisted (non-coplanar) polygons can make a boolean fail, so triangulate those first.</p>
+<p>Booleans no longer have to triangulate their output. The <strong>Triangulate</strong> option triangulates the meshes before the operation, which makes it more robust, but then the topology of the output will be a complete mess. Either way, if you must use a boolean, try to use it after doing everything else you need to do.</p>
+<p>Besides the Boolean creator there is a <strong>Boolean modifier</strong> (its parent object is A and its child is B) and the destructive <strong>Tools &gt; Polygon &gt; Boolean Add</strong>, <strong>Boolean Subtract</strong>, and <strong>Boolean Intersect</strong> tools.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h3 id="toggling-creators">Toggling Creators</h3>
 <p>Like Modifiers, Creators can be toggled on/off via the creator object’s Mode tag. (Toggling the setting on a creator’s input objects has no effect.)</p>
 
@@ -241,6 +251,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>What’s new in Cheetah 3D 7? — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The headline feature of C3D7 is the new renderer, Falcon, but there are many important new user interface refinements and features under the hood." />
   <link rel="canonical" href="https://learn3d.loewald.com/3_What_s_new_in_Cheetah_3D_7/" />
@@ -29,12 +29,18 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"What’s new in Cheetah 3D 7?","description":"The headline feature of C3D7 is the new renderer, Falcon, but there are many important new user interface refinements and features under the hood.","url":"https://learn3d.loewald.com/3_What_s_new_in_Cheetah_3D_7/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="3_What_s_new_in_Cheetah_3D_7.md">
 <!--{"order": 4}--><h1 id="whats-new-in-cheetah-3d-7">What’s new in Cheetah 3D 7?</h1>
+<blockquote>
+<p><strong>Note:</strong> this chapter lists the changes in Cheetah 3D 7; retitle it (e.g. “Changes in Cheetah 3D 7”) or add a chapter on Cheetah 3D 8. <!-- TODO editorial --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has native Apple Silicon support, a Metal-based editor view, USDZ/STL/glTF file support, and Falcon features such as Filmic tone mapping, reflective caustics, MIS for the HDRI and Sky lights, Shadow softness, and IES light profiles (manual: Render › Falcon; Objects › Light, HDRI Light, Sky Light), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 <p>The headline feature of C3D7 is the new renderer, <strong>Falcon</strong>, but there are many important new user interface refinements and features under the hood.</p>
 <h3 id="user-interface-changes">User Interface Changes</h3>
 <ul>
@@ -42,6 +48,11 @@
 </li>
 <li><p>Support for “dark mode” in High Sierra and Mojave.</p>
 </li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> macOS dark mode arrived in Mojave; High Sierra only had a dark menu bar and Dock. <!-- TODO editorial --></p>
+</blockquote>
+<ul>
 <li><p>Uses default system font</p>
 </li>
 <li><p>Smaller download size (about 27MB!)</p>
@@ -68,6 +79,11 @@
 </li>
 <li><p>Layer property added to mode tag</p>
 </li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the Layer Manager and the Mode tag’s Layer property (the 8.1.1 Mode tag manual page doesn’t list it). <!-- TODO verify --></p>
+</blockquote>
+<ul>
 <li><p>Layers can be displayed/edited directly in object manager</p>
 </li>
 <li><p>Improved Properties Editor</p>
@@ -130,6 +146,11 @@
 </li>
 <li><p>Only works in vertex mode</p>
 </li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the Brush tool now works in point, edge, polygon and object mode (manual: Tools › Polygon › Brush). <!-- TODO update --></p>
+</blockquote>
+<ul>
 <li><p>Powerful falloff control</p>
 </li>
 <li><p>Allows <strong>basic sculpting</strong></p>
@@ -178,6 +199,9 @@
 </li>
 </ul>
 <h3 id="new-merge-tool">New Merge Tool</h3>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: is this File › Merge (merging another file into the scene)? The 8.1.1 manual’s Merge tool (Tools › Merge) combines selected objects into one. <!-- TODO verify --></p>
+</blockquote>
 <ul>
 <li><p>Replaces import children</p>
 </li>
@@ -414,6 +438,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

@@ -12,6 +12,10 @@ Cheetah 3D behaves quite differently when you’re in “object mode” (and the
 
 When you’re in object mode, you can only deal with entire objects (including multiple objects). E.g. you might want to select two objects and move, scale, or rotate them together.
 
+> **Note:** this section is a stub: most of the headings below (Objects, Pivots, Mesh Editing Modes, Area Select, Group Select, Converting Selections, reference point) have no content yet. <!-- TODO editorial -->
+
+> **Note:** Cheetah 3D 8.1.1 also has soft selection (the Select tool’s Falloff radius, point mode only; Tools/Common/SelectTool) and Selection menu commands such as Expand/Reduce Selection, Select Triangles/Quads/nGon>4, Convert Selection To Points/Edges/Polygons and Hide Selection/Show All, not yet covered here. <!-- TODO missing -->
+
 ### Objects
 
 ### Pivots
@@ -26,7 +30,7 @@ When you’re in object mode, you can only deal with entire objects (including m
 
 ### Ring Select
 
-**Tip**: you can select a partial ring by (when in Loop Select mode) clicking on one end of your desired “partial ring” and then dragging to the other end.
+**Tip**: you can select a partial ring by (when in Ring Select mode) clicking on one end of your desired “partial ring” and then dragging to the other end.
 
 ### Group Select
 

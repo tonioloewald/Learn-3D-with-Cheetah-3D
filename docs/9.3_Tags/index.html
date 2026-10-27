@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Tags — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Tags don’t do anything by themselves, instead they _attach extra information to an object_ that can be used by Cheetah 3D’s internal functions (or scripts)." />
   <link rel="canonical" href="https://learn3d.loewald.com/9.3_Tags/" />
@@ -29,13 +29,16 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Tags","description":"Tags don’t do anything by themselves, instead they _attach extra information to an object_ that can be used by Cheetah 3D’s internal functions (or scripts).","url":"https://learn3d.loewald.com/9.3_Tags/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="9.3_Tags.md">
 <!--{"parent": "9_Creators_Modifiers_Tags.md", "order": 3}--><h2 id="tags">Tags</h2>
 <p>Tags don’t do anything by themselves, instead they <em>attach extra information to an object</em> that can be used by Cheetah 3D’s internal functions (or scripts). Most tags are only meaningful in specific contexts and can only be attached to certain objects.</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the tag categories and lists below are stale. The manual&#39;s Tags section lists Anchor, Bake Texture, IK Constraints, IK Handle, Material, Metaball, Mode, Morph, Orient Constraint, Parent Constraint, Particle, Point Constraint, Pose, Render, Rigid Body, Rope, Skeleton, Soft Body, Spline IK, Spline Tracking, Target and Vertex Color, and no camera render tags. <!-- TODO update --></p>
+</blockquote>
 <p>Cheetah 3D groups tags into five categories (six if you include scripted tags). These categories can be thought of as:</p>
 <ul>
 <li><p>Rendering</p>
@@ -51,45 +54,116 @@
 </ul>
 <h3 id="rendering-tags">Rendering Tags</h3>
 <p><img src="/images/pastedGraphic-233.jpg" alt=""></p>
+<blockquote>
+<p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
+</blockquote>
 <p>Most of these tags are further discussed in more detail elsewhere.</p>
-<p>Note that the <strong>Bake Texture</strong> and <strong>Render tags</strong> go on objects in the scene, whereas the other render tags are all applied to <strong>Cameras</strong> and affect how the tagged camera renders the world.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>In Cheetah 3D 8.1.1 only two rendering tags are left, <strong>Bake Texture</strong> and <strong>Render</strong>, and both go on polygon objects. The effects that used to be camera tags have moved:</p>
+<ul>
+<li><strong>Caustics</strong>, <strong>Radiosity</strong>, and <strong>Depth of field</strong> are sections of the Cheetah renderer&#39;s settings (<strong>Render &gt; Renderer</strong>, or the render settings icon in the toolbar).</li>
+<li>The depth of field parameters themselves (aperture, focal distance) are now properties of the <strong>Camera</strong>.</li>
+<li><strong>HDRI</strong> and <strong>Fog</strong> are now scene objects: the <strong>HDRI Light</strong> and the <strong>Fog</strong> object (<strong>Objects &gt; Scene</strong>).</li>
+</ul>
+<p>I&#39;ve kept them all here because this is where you&#39;d look for them.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h4 id="bake-texture">Bake Texture</h4>
-<p>You assign this tag to a mesh you’re planning to bake, and it controls and facilitates the baking process. (Oddly enough, the Bake toolbar button has two different effects. If your current selection is a mesh and has a Bake tag assigned to it, it bakes the mesh. If your current selection is a mesh without a Bake tag, it adds a Bake tag to it.)</p>
+<p>You assign this tag to a mesh you’re planning to bake, and it controls and facilitates the baking process. (Oddly enough, the Bake toolbar button has two different effects. If your current selection is a mesh and has a Bake Texture tag assigned to it, it bakes the mesh. If your current selection is a mesh without a Bake Texture tag, it adds a Bake Texture tag to it.)</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does the bake toolbar button still add a Bake Texture tag when the selected mesh has none? The manual only says it &quot;starts a baking rendering job&quot; (also <strong>Render &gt; Bake Texture</strong>). <!-- TODO verify --></p>
+</blockquote>
 <h4 id="caustics">Caustics</h4>
 <p><img src="/images/DraggedImage-86.jpg" alt=""></p>
 <p><em>A glass cube with a spotlight (set to ray-traced shadows).</em></p>
 <p><img src="/images/DraggedImage-87.jpg" alt=""></p>
 <p><em>Ray-tracing with transparency creates very implausible results.</em></p>
 <p><img src="/images/DraggedImage-88.jpg" alt=""></p>
-<p>_Adding a caustic tag results in more realistic scattered light appearing in shadows, although tweaking the settings to get good results requires both judgment and effort. (1,000,000 photons, 0.1 strength, 1000 samples.) </p>
-<p>Caustics are visual effects caused by light being refracted or reflected, especially into the shadows of objects (where that are most noticeable). Objects tend to cast shadows, but if they&#39;re transparent the light <em>goes</em> somewhere, and that&#39;s what caustics simulate.</p>
-<p>Caustics are implemented using a good deal of fakery behind the scenes, and in particular spotlights are the best source of caustic &quot;photons&quot; because you can concentrate them on the specific part of the scene you want the caustic to show up in. If you just want caustics to appear correctly and organically everywhere, e.g. in giant architecture renderings) you should probably use an unbiased (or physically-based) renderer such as Luxrender, Octane, or Indigo. (Note that Falcon is an unbiased renderer too, as is Blender’s Cycles, but neither handle caustics at this time.)</p>
+<p><em>Adding caustics results in more realistic scattered light appearing in shadows, although tweaking the settings to get good results requires both judgment and effort. (1,000,000 photons, 0.1 strength, 1000 samples.)</em></p>
+<p>Caustics are visual effects caused by light being refracted or reflected, especially into the shadows of objects (where they are most noticeable). Objects tend to cast shadows, but if they&#39;re transparent the light <em>goes</em> somewhere, and that&#39;s what caustics simulate.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>In Cheetah 3D 8.1.1 caustics are a section of the Cheetah renderer&#39;s settings (<strong>Render &gt; Renderer</strong>) rather than a tag. They work together with each light&#39;s <strong>Caustic photons</strong> property: the light shoots that many photons into the scene, they&#39;re stored where they hit (the &quot;photon map&quot;), and the renderer then gathers nearby photons to work out how bright each caustic is. The renderer&#39;s <strong>Strength</strong> sets the intensity of the caustics, <strong>Samples</strong> sets how many photons are used for each estimate (too few gives blotchy caustics), and <strong>Blur</strong> sets the radius they&#39;re gathered from (higher is smoother).</p>
+<p>Caustics are implemented using a good deal of fakery behind the scenes, and in particular spotlights are the best source of caustic &quot;photons&quot; because you can concentrate them on the specific part of the scene you want the caustic to show up in (a point light sprays its photons in every direction). A light&#39;s <strong>Pure photon light</strong> option turns it into a fake light that only shoots photons and doesn&#39;t light the scene directly. If you just want caustics to appear correctly and organically everywhere (e.g. in giant architecture renderings) you should probably use an unbiased (or physically-based) renderer.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: what caustics can Falcon (Cheetah 3D&#39;s unbiased renderer) render now? The book said it couldn&#39;t; the app&#39;s Falcon settings include a &quot;Disable caustics&quot; option, but the manual&#39;s Falcon page doesn&#39;t mention caustics. <!-- TODO verify --></p>
+</blockquote>
 <h4 id="depth-of-field">Depth of Field</h4>
 <p><img src="/images/DraggedImage-89.jpg" alt=""></p>
-<p>No depth of field tag used.</p>
+<p>No depth of field.</p>
 <p><img src="/images/DraggedImage-90.jpg" alt=""></p>
-<p>Depth of field tag used (the point of the central cone is in near-perfect focus).</p>
-<p>C3D&#39;s Depth of Field tag will cause Cheetah 3d&#39;s usual &quot;perfect&quot; camera to suffer from depth of field effects somewhat like a real camera. </p>
+<p>Depth of field (the point of the central cone is in near-perfect focus).</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Depth of field will cause Cheetah 3D&#39;s usual &quot;perfect&quot; camera to suffer from depth of field effects somewhat like a real camera. In Cheetah 3D 8.1.1 it&#39;s set up on the <strong>Camera</strong> rather than with a tag:</p>
+<ul>
+<li><strong>Aperture size</strong>: the bigger the aperture, the stronger the effect.</li>
+<li><strong>Focal distance</strong>: objects near this distance stay sharp. Alternatively, pick a <strong>Focus object</strong> and the camera will keep that object in focus automatically, which is especially handy in animations.</li>
+<li><strong>Aperture blades</strong> and <strong>Aperture rotation</strong>: these shape the bokeh (0 blades gives a circular aperture).</li>
+</ul>
+<p>With the Cheetah renderer you also need to turn on <strong>Depth of field</strong> in the renderer settings. Its <strong>Camera samples</strong> property sets the quality: more samples, less noise.</p>
 <p><img src="/images/Screenshot%202014-02-13%2009.41.56.jpg" alt=""></p>
-<p>Once the depth of field tag is assigned to a camera and the tag is selected, you can see and adjust the focus plane in the viewport (an awesome feature).</p>
-<p><strong>Hint</strong>: you can use a Depth of Field tag (turned off) to determine the distance from the camera to objects in the scene for setting similar properties such as Fog starting distance.</p>
+<blockquote>
+<p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
+</blockquote>
+<p>Turn on the camera&#39;s <strong>Display DOF-Grid</strong> to see the plane of focus in the viewport (an awesome feature).</p>
+<p><strong>Hint</strong>: you can use the DOF grid to judge the distance from the camera to objects in the scene, for setting similar properties such as the Fog object&#39;s <strong>Start</strong> distance.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does Falcon render depth of field from the camera settings alone, or does it also need a checkbox? The manual documents the Depth of field checkbox only for the Cheetah renderer. <!-- TODO verify --></p>
+</blockquote>
 <p>A real camera will only be perfectly focused on a plane (or sometimes a curved surface) in space. Everything that is closer to, or further from the camera than that surface will be out of focus to some extent. The distance away from the surface within which a subject remains acceptably sharp is referred to as the <strong>depth of field</strong>. The &quot;longer&quot; the camera&#39;s lens (i.e. the narrower its angle of view) and the &quot;wider&quot; its aperture (i.e. the larger the hole light passes through) the smaller the depth of field will be, and the blurrier objects outside the depth of field will become.</p>
 <p>The depth of field effect is achieved <em>stochastically</em> (i.e. by randomly sampling multiple rays) so it&#39;s computationally expensive and will tend to increase render times by a factor proportional to the number of samples.</p>
 <h4 id="fog">Fog</h4>
 <p><img src="/images/DraggedImage-91.jpg" alt=""></p>
 <p><em>Cones in the fog</em></p>
-<p>Adding fog to a camera will cause the scene to &quot;disappear into fog&quot; (of a chosen color) at a specified rate, and beyond a specified distance. It&#39;s a very simple effect. In particular, you fog doesn&#39;t cause any blurring, so it may be helpful to use a subtle Depth of Field tag in concert with a fog tag if you want mist effects.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Fog is now a <strong>Fog object</strong> (<strong>Objects &gt; Scene &gt; Fog</strong>) rather than a camera tag, and it works only with the Cheetah renderer. Adding fog to a scene will cause the scene to &quot;disappear into fog&quot; of a chosen <strong>Color</strong>. <strong>Type</strong> (Linear, Exp, or Exp^2) sets how quickly the fog thickens, <strong>Density</strong> sets how foggy it gets, and <strong>Start</strong> sets the distance from the camera where the fog begins. It&#39;s a very simple effect. In particular, fog doesn&#39;t cause any blurring, so it may be helpful to use a subtle depth of field in concert with fog if you want mist effects. Black fog is handy for darkening the back of a night scene, and blue fog for underwater scenes.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <p><em>One important side-effect of fog is that it effectively becomes the background color, including in reflections</em>. This makes subtle use of fog very helpful for quickly putting together simple, good-looking renders (such as product shots). It also prevents you from using fog if you want a transparent background.</p>
 <h4 id="hdri">HDRI</h4>
-<p>HDRI is used to assign an image, usually an HDR image, to a camera which will then be used for reflections and image-based lighting. If you want to use image-based lighting, you should also add a Radiosity tag to the camera.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>HDRI is now a scene object, the <strong>HDRI Light</strong> (<strong>Objects &gt; Scene &gt; HDRI Light</strong>), rather than a camera tag. It assigns an HDR image (.hdr or .exr) to the whole scene, and that image is then used for image-based lighting, reflections, and (if <strong>Background</strong> is on) the background. <strong>Type</strong> sets the image&#39;s mapping (Probe, Cross, or Panorama), <strong>Intensity</strong> scales its brightness, and <strong>Clamp</strong> tames very bright pixels (like the sun) that would otherwise cause noise in radiosity or ambient occlusion renders. With the Cheetah renderer you should also turn on <strong>Radiosity</strong> in the renderer settings if you want image-based lighting. You can have several HDRI and Sky Lights in a scene, but only the first one is used for rendering.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h4 id="radiosity">Radiosity</h4>
-<p>Adding a Radiosity tag to a camera means that it will render using either the ambient occlusion or radiosity algorithms rather than simple ray-tracing. Both ambient occlusion and radiosity are techniques designed to account for the shortcomings of simple rendering models which don&#39;t account for <em>scattered light</em>.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Turning on <strong>Radiosity</strong> in the Cheetah renderer&#39;s settings (<strong>Render &gt; Renderer</strong>) means that it will render using either the ambient occlusion or radiosity algorithms rather than simple ray-tracing.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p>Both ambient occlusion and radiosity are techniques designed to account for the shortcomings of simple rendering models which don&#39;t account for <em>scattered light</em>.</p>
 <p><strong>Ambient occlusion</strong> applies a simple heuristic to scenes where surfaces receive more light if they are far from a sharp corner and receive less light if they are close to a sharp corner.</p>
 <p>In practice, ambient occlusion produces very bright renders, but darkens nooks and crannies.</p>
-<p><strong>Radiosity</strong> applies a more computationally expensive approach and assumes surfaces will be lit (in part) by light scattered from other surfaces. (If you&#39;re into theory — it&#39;s the ray-tracing approach to the the problem that unbiased rendering solves in a more realistic way.) </p>
+<p><strong>Radiosity</strong> applies a more computationally expensive approach and assumes surfaces will be lit (in part) by light scattered from other surfaces. (If you&#39;re into theory — it&#39;s the ray-tracing approach to the problem that unbiased rendering solves in a more realistic way.) </p>
 <p>In practice, radiosity adds a good deal of realism to renders. It causes bright surfaces to diffusely illuminate nearby surfaces, and — similarly — colored surfaces to bleed into nearby objects.</p>
-<p>Radiosity also treats an image-based lighting source (HDRI tag) as input data for its algorithm.</p>
-<p><strong>Important Note</strong>: by default, the Radiosity tag is set to Ambient Occlusion (and not Radiosity). In most cases you probably want to choose <strong>Radiosity</strong> and turn on <strong>Detail Detection</strong>.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Radiosity also treats an image-based lighting source (the HDRI Light) as input data for its algorithm.</p>
+<p><strong>Important Note</strong>: radiosity is off until you tick the <strong>Radiosity</strong> checkbox, and its <strong>Type</strong> can be either <strong>Ambient occlusion</strong> or <strong>Radiosity</strong>. In most cases you probably want to choose <strong>Radiosity</strong> and turn on <strong>Detail detection</strong>. Falcon, Cheetah 3D&#39;s unbiased path tracer, doesn&#39;t use these settings.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h4 id="render">Render</h4>
 <p>The Render tag is assigned to mesh objects and controls how they are rendered. E.g. if a particular object is creating a problematic shadow, you can make its shadow disappear.</p>
 <h3 id="inverse-kinematics-tags">Inverse Kinematics Tags</h3>
@@ -106,11 +180,14 @@
 <h3 id="system-properties-tags">System Properties Tags</h3>
 <p><img src="/images/pastedGraphic-236.jpg" alt=""></p>
 <p>The Particle and Metaball tags affect the behavior of individual meshes within a Particle System or Isosurface Creator.</p>
+<blockquote>
+<p><strong>Note:</strong> &quot;Dynamics Tags&quot; and &quot;Material Tags&quot; are <code>####</code> headings filed under System Properties Tags; they should probably be <code>###</code>. <!-- TODO editorial --></p>
+</blockquote>
 <h4 id="dynamics-tags">Dynamics Tags</h4>
 <p><img src="/images/pastedGraphic-237.jpg" alt=""></p>
-<p>The Dynamics tags assign dynamic behavior to meshes. They are described in greater detail in the chapter on Dynamics.</p>
-<h4 id="material-assignment-tags">Material Assignment Tags</h4>
-<p>In addition to the property tag every object automatically receives, when a material is assigned to an object it is represented by a Material Assignment Tag, which is covered in more detail in section on Materials.</p>
+<p>The Dynamics tags assign dynamic behavior to meshes. They are described in greater detail in the chapter on <a href="/16_Dynamics/">Dynamics</a>.</p>
+<h4 id="material-tags">Material Tags</h4>
+<p>In addition to the Mode tag every object (except a camera) automatically receives, when a material is assigned to an object it is represented by a Material tag, which is covered in more detail in the section on <a href="/10_Materials/">Materials</a>.</p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -296,6 +373,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

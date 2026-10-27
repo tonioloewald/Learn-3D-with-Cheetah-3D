@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Tutorial: Animation Basics — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="When I have taught animation classes the first task I set my students is this. Move a simple shape (usually a cube or a sphere) from point A to point B." />
   <link rel="canonical" href="https://learn3d.loewald.com/12.17_Tutorial_Animation_Basics/" />
@@ -29,12 +29,15 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Tutorial: Animation Basics","description":"When I have taught animation classes the first task I set my students is this. Move a simple shape (usually a cube or a sphere) from point A to point B.","url":"https://learn3d.loewald.com/12.17_Tutorial_Animation_Basics/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.17_Tutorial_Animation_Basics.md">
 <!--{"parent": "12_Rendering.md", "order": 17}--><h2 id="tutorial-animation-basics">Tutorial: Animation Basics</h2>
+<blockquote>
+<p><strong>Note:</strong> this section (like 12.16–12.20) belongs in the Animation chapter (13); it was split off during conversion (image numbering and 12.19&#39;s reference to 13&#39;s train example confirm it). Suggested order: 13.2 Animation Concepts, then Animation Basics, Path Animation, Forward Kinematics, Inverse Kinematics. <!-- TODO editorial --></p>
+</blockquote>
 <h3 id="a-ball-jumps-from-point-a-to-point-b">A ball jumps from Point A to Point B</h3>
 <p>When I have taught animation classes the first task I set my students is this. Move a simple shape (usually a cube or a sphere) from point A to point B. Then, see if you can make it interesting.</p>
 <p>So let’s try that.</p>
@@ -47,7 +50,7 @@
 </li>
 <li><p>Now make sure the Animation Timeline Controller is visible (click on the Timeline toolbar icon if necessary — if somehow your toolbar icon is missing, you may need to customize your toolbar).</p>
 </li>
-<li><p>Select the ball, and click the record icon. (By default of the row of small icons below the playback controls should have the three leftmost icons — position, scale, and rotation — active. This means clicking record will key position, scale, and rotation.</p>
+<li><p>Select the ball, and click the record icon. (By default the row of small icons below the playback controls should have the three leftmost icons — position, scale, and rotation — active.) This means clicking record will key position, scale, and rotation.</p>
 </li>
 <li><p>Now, drag the time in the timeline over to 1.0 seconds (frame 30) and then drag the ball to somewhere around 2,0.5,0 (move it using the red arrow or type in the new coordinates). Click record again.</p>
 </li>
@@ -65,17 +68,21 @@
 </li>
 <li><p>Now let’s turn our simple, smooth motion into a jump. Go to the middle of the timeline (0.5 seconds) and then drag the ball up into the air and rotate it slightly on its x axis (pitch). You can rotate it forward or backward (your choice — I pick backward). Click record.</p>
 </li>
-<li><p>A jump is intrinsically more interesting that just sliding, right?</p>
+<li><p>A jump is intrinsically more interesting than just sliding, right?</p>
 </li>
 <li><p>Now let’s add <strong>anticipation</strong> and <strong>overshoot</strong> to the animation (that’s what those four frames are for).</p>
 </li>
 <li><p>Anticipate the jump by going to 0.0 seconds, select the keyframe from frame 4, and paste. Click record.</p>
 </li>
-<li><p>Go to the second keyframe (frame 4) and set the sphere’s scale to 1.2,0.8,1.2 (so it’s squashed) and tilt it back slightly. Click record.</p>
-</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> this step is unclear: it says to select the keyframe from frame 4 and paste, but there is no copy step and it isn’t clear what is copied where. Spell out the copy and paste. <!-- TODO editorial --></p>
+</blockquote>
+<ol start="7">
+<li>Go to the second keyframe (frame 4) and set the sphere’s scale to 1.2,0.8,1.2 (so it’s squashed) and tilt it back slightly. Click record.</li>
 </ol>
 <p>If you hit play at this point you’ll see your ball tensing up before the jump.</p>
-<ol>
+<ol start="8">
 <li><p>Go to the midpoint keyframe and change the scale to 0.9,1.1,0.9 (stretched in mid jump) and click record.</p>
 </li>
 <li><p>Go to the final frame (1.0 seconds) and then copy and paste the final keyframe.</p>
@@ -85,9 +92,9 @@
 <li><p>Now go forward two frames — in between the last two keyframes — drag the ball slightly forward and click record.</p>
 </li>
 </ol>
-<p>If you hit play, the ball tenses for the jump stretches out as it flies through the air, squashes on impact and slides slightly forward before recovering its balance.</p>
-<p>What we’d really like the squash to do is go from squashed in before jumping to its slightly stretched “flying through the air” state very quickly, and then stay that way until just before impact.</p>
-<ol>
+<p>If you hit play, the ball tenses for the jump, stretches out as it flies through the air, squashes on impact and slides slightly forward before recovering its balance.</p>
+<p>What we’d really like is for the ball to go very quickly from squashed (just before the jump) to its slightly stretched “flying through the air” state, and then stay that way until just before impact. <!-- TODO review --></p>
+<ol start="12">
 <li><p>So let’s go to the frame two frames after take off (frame 6) set the scale to 0.9,1.1,0.9 and then <strong>right-click</strong> on record and select <strong>Record Scale</strong>.</p>
 </li>
 <li><p>Let’s do the same thing at the frame <em>immediately</em> before impact.</p>
@@ -283,6 +290,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

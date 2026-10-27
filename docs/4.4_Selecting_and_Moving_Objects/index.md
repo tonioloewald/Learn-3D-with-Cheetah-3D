@@ -12,6 +12,8 @@ These let you transform a selection by translation (moving), rotation, scaling, 
 
 I’ll only discuss the transform tool itself, since the others are just restricted variations of the transform tool and most people don’t really use them. (The main advantage of them is to prevent accidents, e.g. you might want to move a bunch of things around without accidentally rotating or scaling anything.)
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: are there still separate Move, Rotate, and Scale tools? The manual describes a single Transform tool (“three tools in one”). <!-- TODO verify -->
+
 ### Selection
 
 First of all, the Transform tool lets you select things. You can select things by clicking on them, select multiple objects by “painting” (dragging across) multiple things (but don’t do this if you already have something selected, or you’ll transform it instead), and finally add to and subtract from selections by shift- or command- clicking respectively.
@@ -28,7 +30,7 @@ The sphere in the center is referred to in the documentation as the “gadget”
 
 ![](/images/Screen%20Shot%202014-07-06%20at%206.16.20%20PM.jpg)
 
-_The last tool used was a ring (see how the rings are hilighted) which means the gadget tool is in free rotate mode._
+_The last tool used was a ring (see how the rings are highlighted) which means the gadget tool is in free rotate mode._
 
 First of all, based on which other gadget was last used (cone, cube, or ring) it will act as a free “move parallel to view plane”, proportional scale, or free rotate tool. (Of these, proportional scale is by far the most useful.)
 
@@ -42,6 +44,8 @@ You can double-click the gadget tool to enter (and leave) “gadget mode”. In 
 
 Gadget mode lets you easily rotate selections around a specific edge, or scale a face out from a corner, and so forth. But **note that the gadget’s position and orientation will be lost when the selection changes** (and will not be restored by undo).
 
+> **Note:** Cheetah 3D 8.1.1 also has the Transform tool’s Tweak mode (with nothing selected, hold Shift+Alt and drag a highlighted point, edge or polygon directly), and pressing ESC to return the gadget to its automatic position (manual: Tools › Common › Transform), not yet covered here. <!-- TODO missing -->
+
 ### Editable Meshes and the Transform Tool
 
 The Transform tool has some very helpful capabilities for editing meshes. To begin with, you can move, rotate, and scale any selected collection of vertices, edges, or polygons when in the appropriate mode.
@@ -50,8 +54,10 @@ The Transform tool has some very helpful capabilities for editing meshes. To beg
 
 **Orientation** has three possible settings: Object (the default) where the transform tool is aligned to the object’s internal coordinate system, Global where it’s aligned to the world, and Normal which aligns the tool to the normal of the selection (which may or may not make much sense based on what you have selected, but works properly when the selection has a normal that makes sense).
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: does Orientation still offer Normal? The manual lists only the object’s local and the global coordinate systems (Tools › Common › Transform). <!-- TODO verify -->
+
 **Auto Mode** allows the transform tool to change mode based on where on a mesh you click. If you click on a polygon you switch to polygon mode, if you click on an edge you switch to edge mode, and so forth. This is great when you’re fine tuning a mesh and don’t want to have to constantly change mode, but it can also lead to accidents, so be careful.
 
-**Snapping** supports three kinds of snapping (snapping means that when you move things around it will “stick” in various places). Component allows you to snap to different parts of existing meshes (not just the mesh you’re editing, but other meshes in the scene). Surface snaps to surfaces (it’s a lot like picking Component and only checking Polygon). **Raster** snaps to a 3D grid in world space (where the grid spacing is equal to the Raster Width value.
+**Snapping** supports three kinds of snapping (snapping means that when you move things around it will “stick” in various places). Component allows you to snap to different parts of existing meshes (not just the mesh you’re editing, but other meshes in the scene). Surface snaps to surfaces (it’s a lot like picking Component and only checking Polygon). **Raster** snaps to a 3D grid in world space (where the grid spacing is equal to the Raster Width value).
 
 If you’re transforming an object using a specific tool, e.g. moving an object along its x axis, snapping will not override the limitations of the tool. This means, for example, that you can use Raster snapping to snap vertices in just one dimension at a time, which is very useful for fixing up small errors in symmetric meshes or lathe profiles where you need a vertex to have an x value of exactly zero, but you don’t want to change its y and z values.

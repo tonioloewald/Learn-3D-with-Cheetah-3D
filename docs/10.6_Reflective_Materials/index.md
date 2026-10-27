@@ -16,6 +16,8 @@
 
 The Metal shader offers one key feature that the Material Shader does not, and that is anisotropic reflection, which essentially means that it lets you *bias* the way reflections are blurred (to produce the effect of brushed metal). Aside from that, anything the Metal shader can do, the Material shader can do with more work (and control).
 
+> **Note:** Cheetah 3D 8.1.1 also has a **PBR** shader (**Material (PBR)** in the Add Material menu) with Metalness, Roughness, Anisotropy and Clearcoat inputs, which covers much of what this section says needs the Metal or Car Paint shader; see [Node Descriptions](/10.9_Node_Descriptions/), not yet covered here. <!-- TODO missing -->
+
 ### The Car Paint Shader
 
 ![](/images/pastedGraphic-292.jpg)

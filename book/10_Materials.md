@@ -12,6 +12,8 @@ But… creating materials that do *exactly* what you want can be *very* difficul
 
 We’ll start by showing how to create a bunch of simple, typical materials from scratch. Going beyond the basics requires a combination of experimentation, imagination, and an intuitive grasp of 3D math and how rendering works.
 
+> **Note:** sections 10.12–10.18 (How Lights Work, Other Lighting Options, Shadows, Advanced Lighting, Caustics, Foolproof Shadow Catchers, Reflected Lights) are about lighting, not materials, and belong under 11 Lighting (a `parent`/`order` change in each page's metadata line). 10.10 and 10.11 stay here. <!-- TODO editorial -->
+
 <!-- toc -->
 - [Simple Materials Without Nodes](/10.1_Simple_Materials_Without_Nodes/)
 - [Image-based Materials](/10.2_Image_based_Materials/)

@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>The Sky Light Object — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="_What do these two scenes have in common? Each is lit by a single Sky Light._" />
   <link rel="canonical" href="https://learn3d.loewald.com/4.14_The_Sky_Light_Object/" />
@@ -29,19 +29,40 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The Sky Light Object","description":"_What do these two scenes have in common? Each is lit by a single Sky Light._","url":"https://learn3d.loewald.com/4.14_The_Sky_Light_Object/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="4.14_The_Sky_Light_Object.md">
 <!--{"parent": "4_Falcon.md", "order": 14}--><h2 id="the-sky-light-object">The Sky Light Object</h2>
 <p><img src="/images/DraggedImage-63.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-64.jpg" alt=""></p>
 <p><em>What do these two scenes have in common? Each is lit by a single Sky Light.</em></p>
-<p>A quick and simple way of producing quite nice results is simply to add a Sky Light object to a scene and (if you have reflective surfaces) to toggle on its Geometry property. The Sky Light roughly simulates light from the sun and sky based on latitude, longitude, date, and time. It doesn’t render clouds or anything that sophisticated, although the turbidity setting produces a kind of haze effect.￼</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>A quick and simple way of producing quite nice results is simply to add a Sky Light object to a scene and (if you want the sky to show up behind your scene) to check its <strong>Background</strong> property. The Sky Light roughly simulates light from the sun and sky based on latitude, longitude, date, and time. It doesn’t render clouds or anything that sophisticated, although the turbidity setting produces a kind of haze effect.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does Background also make the sky appear in reflections, as the old Geometry property did? <!-- TODO verify --></p>
+</blockquote>
 <p><img src="/images/DraggedImage-65.jpg" alt=""></p>
 <p><em>The Sky Light’s geometry assumes everything below the horizontal plane is pitch black, which is a bit of a shortcoming since the one thing the ground won’t be is pitch black.</em></p>
-<p>A more significant shortcoming of the sky light object is that it doesn’t let you set the color of the ground plane, which means you need to be careful to place your scene slightly above the origin and put in some low level objects (fences or whatever) to prevent black lines from appearing in ground-level reflections.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>A more significant shortcoming of the sky light object is that it doesn’t let you set the color of the ground plane (its <strong>Albedo</strong> property only sets how reflective the ground is), which means you need to be careful to place your scene slightly above the origin and put in some low level objects (fences or whatever) to prevent black lines from appearing in ground-level reflections.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: with Albedo set, is everything below the horizon still pitch black (see the caption above)? <!-- TODO verify --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Sky Light’s MIS and Shadow softness settings (Falcon only) (manual: Objects › Sky Light), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -227,6 +248,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

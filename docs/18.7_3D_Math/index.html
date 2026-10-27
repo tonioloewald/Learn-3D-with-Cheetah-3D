@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>3D Math — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="In a cartesian coordinate system, the axes are the lines where one coordinate varies and the other coordinates are zero (e.g." />
   <link rel="canonical" href="https://learn3d.loewald.com/18.7_3D_Math/" />
@@ -29,22 +29,22 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"3D Math","description":"In a cartesian coordinate system, the axes are the lines where one coordinate varies and the other coordinates are zero (e.g.","url":"https://learn3d.loewald.com/18.7_3D_Math/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="18.7_3D_Math.md">
 <!--{"parent": "18_Appendices.md", "order": 7}--><h2 id="3d-math">3D Math</h2>
 <h3 id="axes-x-axis-y-axis-z-axis">Axes, X Axis, Y Axis, Z Axis</h3>
 <p>In a cartesian coordinate system, the axes are the lines where one coordinate varies and the other coordinates are zero (e.g. in 3D the x axis is the line on which x varies and y, and z are zero).</p>
 <p>The axes all meet at the origin of the coordinate system (i.e. 0,0,0 in 3D space).</p>
 <h3 id="quaternion">Quaternion</h3>
-<p>You won’t see quaternions mentioned anywhere in Cheetah 3D, but they’re important anyway. Quaternions are an imaginary number system used to represent orientations in 3D space in way that allows smooth interpolation between any two orientations (in particular, it eliminates gimbal lock).</p>
+<p>You won’t see quaternions mentioned anywhere in Cheetah 3D, but they’re important anyway. Quaternions are an imaginary number system used to represent orientations in 3D space in a way that allows smooth interpolation between any two orientations (in particular, it eliminates gimbal lock).</p>
 <p><strong>Aside</strong>: You probably have encountered or will encounter imaginary numbers in high school. This is arithmetic with the addition of i as the square root of -1. Quaternions are based on the supposition that -1 has three different square roots, i, j, and k, and that ijk = -1. Just as imaginary numbers turned out to be incredibly useful, so did quaternions.</p>
-<h3 id="frustrum">Frustrum</h3>
+<h3 id="frustum">Frustum</h3>
 <p><img src="/images/pastedGraphic-646.jpg" alt=""></p>
-<p>A frustrum is a square pyramid with its point chopped off. </p>
-<p>A frustrum also happens to be the <em>exact shape of the volume of space rendered by a 3D camera</em> — the sides of the frustrum determined by the field of view and the top and bottom by the near and far clipping distance of the camera.</p>
+<p>A frustum is a square pyramid with its point chopped off. </p>
+<p>A frustum also happens to be the <em>exact shape of the volume of space rendered by a 3D camera</em> — the sides of the frustum determined by the field of view and the top and bottom by the near and far clipping distance of the camera.</p>
 <h3 id="space-coordinates">Space, Coordinates</h3>
 <p>In the context of 3D graphics, space usually refers to a coordinate space. </p>
 <p>The word coordinates and space are sometimes used interchangeably. Usually the word space will be qualified by the space being referred to.</p>
@@ -60,13 +60,16 @@
 <h3 id="local-space-local-coordinates">Local Space, Local Coordinates</h3>
 <p><img src="/images/pastedGraphic-647.jpg" alt=""></p>
 <p><em>Here you can see the cube’s local coordinate system reflected by the position and orientation of the transform widget. (Note that the tool’s orientation is set to “Object”.)</em></p>
-<p>Every object has its own “local” coordinate system (which is reflected by the orientation of the transform widget when the transform tool’s orientation property is set to “object” (the default settings).</p>
+<p>Every object has its own “local” coordinate system. You can see it in the orientation of the transform widget when the transform tool’s orientation property is set to “object” (the default setting). <!-- TODO review --></p>
 <p>The vertices of an object (and consequently its faces) “live” in this local coordinate system as do any “child” objects (i.e. other objects contained by the object in the Object Browser).</p>
 <p>Working in local coordinates is often very useful. E.g. to bring one object close to another simply make it a child of that object and zero out its position coordinates. (Similarly you can often align two objects by doing the same thing with rotation coordinates.) Having repositioned or aligned objects, they can be returned to their proper positions in the scene hierarchy and their coordinates will be recalculated automatically.</p>
 <h3 id="global-space-global-coordinates">Global Space, Global Coordinates</h3>
 <p>The “root” of a scene is its global coordinate system. The coordinates and orientation of objects with no “parent” are expressed in global coordinates. Often camera objects will “live” in global space, and it’s similarly a good idea for some lights (e.g. Sky Lights) to be in global space to avoid unnecessary confusion.</p>
 <h3 id="normal">Normal</h3>
 <p>In mathematics, normal means “perpendicular”. In 3D this means that the “normal” to a surface is a unit vector pointing straight up from it. If you think about this for a second you’ll realize that a polygon can be seen from both sides so which is the normal? Cheetah 3D uses right-handed normals (make a “thumbs up” gesture with your right hand — if your fingers describe the winding order of a polygon, i.e. anticlockwise, your thumb is pointing in the direction of the normal).</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: which winding order faces outward is unconfirmed (the scripting knowledge base flags it as unverified). <!-- TODO verify --></p>
+</blockquote>
 <p>In real time 3D renderers (including Cheetah 3D’s editor view if you turn on <strong>Backface Culling</strong>) normals are only visible from the side the normal points to.</p>
 <p><img src="/images/pastedGraphic-648.jpg" alt=""></p>
 <p>In Cheetah 3D back faces of polygons are rendered as dark. This makes it pretty easy to see flipped polygons most of the time, but it can be tricky if you have lights in the scene.</p>
@@ -266,6 +269,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

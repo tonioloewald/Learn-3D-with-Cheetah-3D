@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>The Camera Object — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="When selected, a camera appears in the 3D view as a wireframe movie camera with a pyramid coming out of it indicating its field of view." />
   <link rel="canonical" href="https://learn3d.loewald.com/12.1_The_Camera_Object/" />
@@ -29,18 +29,24 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"The Camera Object","description":"When selected, a camera appears in the 3D view as a wireframe movie camera with a pyramid coming out of it indicating its field of view.","url":"https://learn3d.loewald.com/12.1_The_Camera_Object/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.1_The_Camera_Object.md">
 <!--{"parent": "12_Rendering.md", "order": 1}--><h2 id="the-camera-object">The Camera Object</h2>
 <p><img src="/images/pastedGraphic-539.jpg" alt=""></p>
 <p><em>When selected, a camera appears in the 3D view as a wireframe movie camera with a pyramid coming out of it indicating its field of view.</em></p>
 <p><img src="/images/pastedGraphic-540.jpg" alt=""></p>
 <p><em>The camera object has many properties, and they’re all important.</em></p>
+<blockquote>
+<p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
+</blockquote>
 <p>The first thing to notice about a camera object is that like meshes, it has <strong>position</strong> and <strong>rotation</strong> properties, but unlike meshes (and like other non-mesh objects, such as lights) it does not have scale properties.</p>
-<p>Usually the most convenient way to place and orient a camera is by making it the active camera and then modifying your point of view while looking “through it” (i.e. setting your 3D view to “Camera” and altering the view directly.</p>
+<p>Usually the most convenient way to place and orient a camera is by making it the active camera and then modifying your point of view while looking “through it” (i.e. setting your 3D view to “Camera” and altering the view directly.)</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has depth of field and motion blur settings on the camera (<strong>Aperture size</strong>, <strong>Aperture blades</strong>, <strong>Aperture rotation</strong>, <strong>Focal distance</strong>, <strong>Focus object</strong>, <strong>Display DOF-Grid</strong>, <strong>Shutter time</strong>), which work with the renderers’ Depth of field and Motion blur (Falcon) checkboxes; not yet covered here (manual: Objects › Camera, Render › Falcon). <!-- TODO missing --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -226,6 +232,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

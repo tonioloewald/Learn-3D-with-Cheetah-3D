@@ -8,7 +8,11 @@
 
 You’ll see certain terms such as “mesh” and “editable mesh” bandied about a lot in this book and by Cheetah 3D users in general. A mesh is a 3D object that is represented by a bunch of polygons, each defined as an ordered set of vertex (or “point”) references. Everything that Cheetah 3D can render (aside from backdrops) is a mesh or an instance of a mesh.
 
-Some things aren’t meshes: e.g. lights (aside from area lights with “geometry” switched on which synthesize a plane), splines, folders, empty creators, and so on, but if you can see it and render it, it’s a mesh.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Some things aren’t meshes: e.g. lights (aside from area lights with **Visible in camera** switched on, which makes the light’s shape visible to the renderer), splines, folders, empty creators, and so on, but if you can see it and render it, it’s a mesh.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ### Editable Meshes
 
@@ -24,7 +28,7 @@ An **editable mesh** (often, confusingly, referred to as a "raw polygon object" 
 
 #### Making a mesh editable
 
-In general you can convert a mesh into an editable mesh by **double-clicking it** in the Object Browser (or choosing **Object \> Make Editable** from the menus).
+In general you can convert a mesh into an editable mesh by **double-clicking it** in the Object Browser (or choosing **Objects \> Make Editable** from the menus).
 
 If you double-click a mesh with modifiers then it will convert the final modified mesh into the editable mesh (and destroy all child meshes).
 
@@ -36,7 +40,7 @@ E.g. if you create a “box” then it will not be editable, but you can adjust 
 
 Similarly, an editable mesh with a modifier produces a mesh that isn’t (directly) editable. If you have a subdivision modifier on an editable mesh you can adjust the subdivision settings or edit the underlying mesh, but you cannot directly edit the subdivided mesh.
 
-#### Polygon Objects (Primitives): Ball, Box, Cone, Cylinder, Disk, Plane, Polyhedra, Relief, Stair, Torus, Tube
+#### Polygon Objects (Primitives): Ball, Box, Capsule, Cone, Cylinder, Disc, Fractal, Plane, Polyhedra, Relief, Stairs, Torus, Tube
 
 Each of the polygon object tools produces a primitive of the obvious kind and has properties that allow you to adjust the polygonal detail of the object.
 

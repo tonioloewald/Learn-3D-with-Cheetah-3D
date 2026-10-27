@@ -8,7 +8,7 @@
 
 ![](/images/pastedGraphic-533.jpg)
 
-*The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball). The blocks are a collapsed particle mesh system with a dynamic rigidbody tag. The ground plane has a static rigidbody tag. The ball has a dynamic rididbody tag.*
+*The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball). The blocks are a collapsed particle mesh system with a dynamic rigidbody tag. The ground plane has a static rigidbody tag. The ball has a dynamic rigidbody tag.*
 
 Objects which have Dynamics tags assigned to them will take part in dynamic Simulations. Objects which don’t, won’t. Because dynamic simulations can be memory and processor intensive, it’s a good idea not to apply Dynamics tags to things that won’t be moving or struck by other objects.
 
@@ -26,6 +26,8 @@ There are three types of rigid body which serve very different roles:
 
 **Kinematic**. The object is being animated conventionally, but you want it to affect the Dynamics behavior of other objects. You might set an animated character to be kinematic, but the clothing on the character to be a soft body. Similarly, a sailing ship might be conventionally animated, but its sails and flags could be soft bodies, its rigging could be ropes, and stuff on its deck could be dynamic rigidbodies.
 
+> **Note:** Cheetah 3D 8.1.1 also has Rigid Body Activate options (Immediately / Collision / Time), initial Velocity, and Linear/Angular factors, and the tag can be put on a folder to cover its children (Tags/RigidBodyTag), not yet covered here. <!-- TODO missing -->
+
 ### Rope
 
 Rope tags are used to give splines rope-like behavior.
@@ -34,11 +36,13 @@ Generally, you’ll want to use anchor tags to give ropes interesting behavior.
 
 Note that you should set a spline to Bezier Curve, Linear, or NURBS (rather than the default Bezier Spline) setting because dynamic simulations won’t move control handles around, leading to odd results.
 
+> **Note:** requires updating for Cheetah 3D 8.1.1: the Rope tag page (Tags/RopeTag) recommends a spline of Type = Linear and limits ropes to 10,000 control points. <!-- TODO update -->
+
 ### Soft Body
 
 Soft body tags make surfaces behave like cloth, and (with volume preservation) make closed meshes behave like jelly or fluid-filled objects (like balloons).
 
-The soft body tag is limited to objects with 10,000 points or fewer. If you assign a soft body tag to an object with too many tags it won’t do anything.
+The soft body tag is limited to objects with 10,000 points or fewer. If you assign a soft body tag to an object with too many points it won’t do anything.
 
 ### Anchor
 
@@ -47,6 +51,8 @@ Anchor tags do two different things.
 **Fixing the position of vertices**. If you simply select one or more vertices of a mesh or spline, add an anchor tag to it and Set anchors, those vertices will be fixed in position relative to the parent’s coordinate system (or global space).
 
 **Attaching other objects**. If you select one or more vertices and then drag an object to the Attach to Object socket, then instead of the vertices being fixed in position, the attached object will be attached to those vertices.
+
+> **Note:** requires updating for Cheetah 3D 8.1.1: per Tags/AnchorTag, unattached anchors are pinned in the global coordinate system, and the tag pins soft-body or rope points to a rigid body. <!-- TODO update -->
 
 ### Particles
 

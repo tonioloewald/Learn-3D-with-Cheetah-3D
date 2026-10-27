@@ -6,7 +6,11 @@ Cheetah 3D’s particle system is very powerful, but what you can do with it dir
 
 Because Cheetah 3D doesn’t support volumetrics and is a ray tracer, there’s no really good way to render classic volumetric particle effects, such as clouds of billowing smoke, nicely. 
 
-Because the motion of particles is frequently crucial, Cheetah 3D’s lack of vector motion blur imposes further limitations (particles tend to be rendered “frozen” in space, rather than “smeared”, which is often not the look you are after).
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Because the motion of particles is frequently crucial, motion blur matters. The Falcon renderer supports motion blur (turn on **Camera**, **Transformation**, and/or **Deformation** under Motion blur in the renderer settings; the camera’s **Shutter time** controls its strength), but only when rendering animations, not single frames. Without it, particles are rendered “frozen” in space rather than “smeared”, which is often not the look you are after.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 And finally, because Cheetah 3D doesn’t internally support post-processing render passes, you can’t make particles glow.
 
@@ -14,7 +18,11 @@ At this point you might like to review the sections in the Materials chapter on 
 
 ### Workarounds
 
-The lack of motion blur is unfortunate, but the other two issues can be worked around by performing separate render passes and using a compositing program such as Photoshop (for still images) or Premiere / After Effects / Final Cut Pro / Motion for animated sequences.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+The volumetric and glow issues can be worked around by performing separate render passes and using a compositing program such as Photoshop (for still images) or Premiere / After Effects / Final Cut Pro / Motion for animated sequences. Falcon’s **G-Buffer** option helps here: it saves an EXR file with HDR color plus optional Z-buffer, Layer ID, Object ID, and Material ID channels for compositing.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ### Basic Setup: Particle Emitter
 
@@ -56,7 +64,7 @@ There are four fundamental ways to have particles that aren’t all identical.
 
 *This particle emitter has one child, a green plane, but it has a particle tag assigned to it that randomly varies its heading by up to 180°.*
 
-**Note** that for most objects the rotation order is HPV, i.e. YXZ, but for the Particle tag (and some other newer tags) it is XYZ. This is part of an ongoing effort on Martin Wengemeyer’s part to make Cheetah 3D more consistent with other 3D applications (which have the same order for rotations and coordinates).
+**Note** that for most objects the rotation order is HPB, i.e. YXZ, but for the Particle tag (and some other newer tags) it is XYZ. This is part of an ongoing effort on Martin Wengemeyer’s part to make Cheetah 3D more consistent with other 3D applications (which have the same order for rotations and coordinates).
 
 **You can assign a Particle Tag to the child object** and set degrees of variation in different properties (position, rotation, scale).
 
@@ -80,7 +88,9 @@ Now hit rewind and play again. (Be careful that your Wind effector didn’t end 
 
 *Windblown particles.*
 
-The best way to understand effectors is imply to play with them. Try out different effectors and combinations of effectors to see what you can do with them.
+The best way to understand effectors is simply to play with them. Try out different effectors and combinations of effectors to see what you can do with them.
+
+> **Note:** Cheetah 3D 8.1.1 also has the Orientation (state) effector and the forces Attraction, Deflector, Drag, Gravitation, Radial, Turbulence, and Wind (Objects/EffectorObjects/), plus the Particle tag’s Instantiate switch (Tags/ParticleTag), not yet covered here. <!-- TODO missing -->
 
 ### Particle Dynamics
 
@@ -96,8 +106,8 @@ Particles on their own will do some things that are problematic — e.g. they wi
 
 The Particle Mesh, Particle Spline, and Particle Array objects aren’t about generating fountains of sparks or smoke, but about creating instances of objects. (They can be used to create the raw materials for Dynamics effects, but we won’t talk about that here.)
 
-Imagine you’re building a model of the Parthenon. Rather than model each pillar individually, or model one pillar then duplicate it to create all the pillars — and then discover you’ve made a mistake and need to start over, you can use a Particle Mesh, a Pillar Object, and a mesh comprising one point for each pillar you need to create all your pillars as *instances*. 
+Imagine you’re building a model of the Parthenon. You could model each pillar individually, or model one pillar and duplicate it (and then discover you’ve made a mistake and need to start over). Instead, you can use a Particle Mesh, one pillar object, and a mesh with one point for each pillar you need, and create all your pillars as *instances*. <!-- TODO review -->
 
-Using a Particle Mesh (or Particle Array or Particle Spline) lets you have the simplicity of creating one pillar and copying it all over the place with the ease of editing of having one pillar you can fix or refine later.
+Using a Particle Mesh (or Particle Array or Particle Spline) gives you the convenience of copying one pillar all over the place, while keeping a single pillar you can fix or refine later. <!-- TODO review -->
 
 This topic is also discussed under **Managing Complexity** (in the chapter on **Mastering Cheetah 3D’s Interface**).

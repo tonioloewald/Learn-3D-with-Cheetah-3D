@@ -100,7 +100,7 @@ The Unwrap UV tool is the most powerful tool for UV mapping complex objects, suc
 
 ![](/images/pastedGraphic-404.jpg)
 
-*Placing seams in the “obvious places” on a cube mesh (left) and using Unwrap UV leads to the UV mapping on the right (actually the mapping was a little bit off, but very easily fixed by selecting all the polygons and moving and rescaling them slightly.*
+*Placing seams in the “obvious places” on a cube mesh (left) and using Unwrap UV leads to the UV mapping on the right (actually the mapping was a little bit off, but very easily fixed by selecting all the polygons and moving and rescaling them slightly).*
 
 The key to effectively using the Unwrap UV tool is placing seams on your mesh, and the simplest way of thinking about seam placement is to assume you wanted to sew the object out of cloth, and place seams where you’d need to have seams in the fabric.
 
@@ -150,7 +150,7 @@ Automatic seams wraps seams around contiguous sets of polygons facing more-or-le
 
 Automatic seams are great for hairy models where manually adding seams would be horribly time-consuming, but they have a lot of drawbacks.
 
-Using automatic seams will lead to seams being in arbitrary places, and almost always lead to more seams than necessary. E.g. on the shirt we’ve ended up with four seams running along each sleeve and no seam down the middle of the front of the shirt. The problem here is that seams tend to be where you’ll see problems (discontinuities, minor artifacts) in the UV-mapping, so you generally want (a) as few seams as possible, and (b) seams to be where they’re less likely to be seen (which is why shirts have one seam on their sleeves, and it’s on the inner/under side of the sleeve where it won’t usually be seen.
+Using automatic seams will lead to seams being in arbitrary places, and almost always lead to more seams than necessary. E.g. on the shirt we’ve ended up with four seams running along each sleeve and no seam down the middle of the front of the shirt. The problem here is that seams tend to be where you’ll see problems (discontinuities, minor artifacts) in the UV-mapping, so you generally want (a) as few seams as possible, and (b) seams to be where they’re less likely to be seen (which is why shirts have one seam on their sleeves, and it’s on the inner/under side of the sleeve where it won’t usually be seen).
 
 Our automatic seam unwrapping means we’ll have way more seams on the sleeve than we did when we placed the seams manually, they’re more visible, and there’s no seam down the front where we’d actually expect a seam (and a discontinuity in the pattern on a shirt).
 
@@ -168,7 +168,7 @@ If this image texture is driving the diffuse channel of a Material shader you ca
 
 ![](/images/pastedGraphic-414.jpg)
 
-*Here the elephant mesh has bee unwrapped using manually placed seams, and color has been roughly applied using the Paint tool. This can serve as a useful template in a dedicated image editor such as Photoshop, Acorn, Pixelmator, Photoline, or The GIMP.*
+*Here the elephant mesh has been unwrapped using manually placed seams, and color has been roughly applied using the Paint tool. This can serve as a useful template in a dedicated image editor such as Photoshop, Acorn, Pixelmator, Photoline, or The GIMP.*
 
 ![](/images/pastedGraphic-415.jpg)
 

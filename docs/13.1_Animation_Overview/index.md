@@ -4,7 +4,7 @@
 
 ![](/images/pastedGraphic-88.jpg)
 
-*This is the Timeline interface, which appears at the bottom of Cheetah 3D’s document window. If it’s not there you can toggle it on using the toolbar item (it looks like a stopwatch) *
+*This is the Timeline interface, which appears at the bottom of Cheetah 3D’s document window. If it’s not there you can toggle it on using the toolbar item (it looks like a stopwatch)*
 
 The first thing you need to know about animation in Cheetah 3D is how to toggle the **Timeline** interface component. (See above.) Note that switching to the Animation Layout does not make the timeline appear, nor is the state of the timeline component stored as part of a layout.
 
@@ -16,15 +16,15 @@ Note that keyframes only affect some properties and not others (unless you keyfr
 
 In order to keyframe an object’s properties at a given point in time you:
 
-- Move the timeline to the correct point.
+1. Move the timeline to the correct point.
 
-1. Set the property to the value you want to keyframe (e.g. position the object where you want it)
+2. Set the property to the value you want to keyframe (e.g. position the object where you want it)
 
-2. Then click the record button in the Timeline control.
+3. Then click the record button in the Timeline control.
 
 ![](/images/pastedGraphic-89.jpg)
 
-- Note that by default, clicking the record button keyframes the currently selected object’s translation information (position, rotation, and scale). To keyframe other properties, right-click the record button to specify the exact thing you want to keyframe. Almost any property (including those in tags) can be keyframed and thus animated.
+- Note that by default, clicking the record button keyframes the currently selected object’s transform information (position, rotation, and scale). To keyframe other properties, right-click the record button to specify the exact thing you want to keyframe. Almost any property (including those in tags) can be keyframed and thus animated.
 
 ### How Keyframes Work
 
@@ -44,17 +44,19 @@ Once a property is keyframed its value at any given point on the timeline can be
 
 The interpolation (and extrapolation) of values from keyframes is calculated by using bezier curves, and you can edit these curves (thus adjusting the interpolation directly) using the **F-Curve** pane.
 
+> **Note:** needs checking in Cheetah 3D 8.1.1: the manual (Animation/FCurveEditor.txt) says *linear* is the default interpolation, not smooth; interpolation is changed via **Animation \> Tangent** (Constant, Linear, Smooth, Spline), which isn't explained here. <!-- TODO verify -->
+
 ### Character Animation & Joints
 
 If you don’t know anything about Character Animation, it’s not possible to cover the necessary ground in a small amount of space. Assuming you have a rough idea of how 3D character animation works, here’s a quick rundown of how it works in Cheetah 3D.
 
 To rig a character mesh for animation or posing, create a hierarchy of “joints” (a.k.a. “bones”) using the Joint tool (found in the menu bar **Tools \> Character \> Joint**), forming a simplified “skeleton” or “armature” for the character mesh.
 
-Position the bones inside the character mesh, add a **Skeleton tag** to the mesh, drag the **root bone** of your mesh into the Skeleton tag’s listbox, then click **Bind Mesh**. Now if you move or rotate the bones, the mesh should now be deformed by it. Inverse kinematics is implemented by adding **constraint tags** to the bones and controller objects.
+Position the bones inside the character mesh, add a **Skeleton tag** to the mesh, drag the **root bone** of your mesh into the Skeleton tag’s listbox, then click **Bind Mesh**. Now when you move or rotate the bones, the mesh should deform with them. Inverse kinematics is implemented by adding **IK Handle** tags to joints (and, optionally, **IK Constraints** tags to limit their rotation). <!-- TODO review -->
 
 **Note**: adding bones to a skeleton tag's list box can be a wee bit fiddly. To do it reliably you need to select the tag, then *in one motion* click and drag the root bone into the listbox. If you don’t do it in one motion the Skeleton tag becomes deselected and you can’t drag anything to it. (Select the skeleton tag again and start over.)
 
-If all this didn’t make any sense at all, you’ll probably need to look at the more detailed tutorials in the **Animation** section.
+If all this didn’t make any sense at all, you’ll probably need to look at the more detailed tutorials in the [Character Animation](/14_Character_Animation/) section.
 
 ### Animating Tags
 

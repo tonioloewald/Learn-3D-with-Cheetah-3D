@@ -2,9 +2,11 @@
 
 ## Mesh Smoothing
 
+> **Note:** this section is titled Mesh Smoothing but has no smoothing content; it holds the Modifiers and Splines sections. <!-- TODO editorial -->
+
 ## Modifiers
 
-In Photoshop you can non-destructively apply various filters to a one or more image layers at a time. These layers use some kind of mathematical algorithm to produce a visible effect on the images affected, and they do it “non-destructively” — the original image is still there and can be recovered or modified.
+In Photoshop you can apply various effects (such as smart filters and adjustment layers) to one or more image layers at a time. These effects use some kind of mathematical algorithm to change how the affected images look, and they do it “non-destructively” — the original image is still there and can be recovered or modified. <!-- TODO review -->
 
 (Photoshop also has destructive filters which change the image they’re applied to permanently, and Cheetah 3D has these kinds of tools as well.)
 

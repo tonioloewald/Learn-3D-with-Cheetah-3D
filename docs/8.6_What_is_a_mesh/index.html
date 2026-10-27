@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>What is a mesh? — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="The box is a mesh, but it’s not an editable mesh. Double-clicking on the box (or on most other objects) will convert the thing you double-click on into an…" />
   <link rel="canonical" href="https://learn3d.loewald.com/8.6_What_is_a_mesh/" />
@@ -29,16 +29,22 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"What is a mesh?","description":"The box is a mesh, but it’s not an editable mesh. Double-clicking on the box (or on most other objects) will convert the thing you double-click on into an…","url":"https://learn3d.loewald.com/8.6_What_is_a_mesh/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="8.6_What_is_a_mesh.md">
 <!--{"parent": "8_Modeling.md", "order": 6}--><h2 id="what-is-a-mesh">What is a mesh?</h2>
 <p><img src="/images/pastedGraphic-130.jpg" alt=""></p>
 <p><em>The box is a mesh, but it’s not an editable mesh. Double-clicking on the box (or on most other objects) will convert the thing you double-click on into an editable version of what you see. (<strong>Careful</strong>: child meshes will be destroyed!)</em></p>
 <p>You’ll see certain terms such as “mesh” and “editable mesh” bandied about a lot in this book and by Cheetah 3D users in general. A mesh is a 3D object that is represented by a bunch of polygons, each defined as an ordered set of vertex (or “point”) references. Everything that Cheetah 3D can render (aside from backdrops) is a mesh or an instance of a mesh.</p>
-<p>Some things aren’t meshes: e.g. lights (aside from area lights with “geometry” switched on which synthesize a plane), splines, folders, empty creators, and so on, but if you can see it and render it, it’s a mesh.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Some things aren’t meshes: e.g. lights (aside from area lights with <strong>Visible in camera</strong> switched on, which makes the light’s shape visible to the renderer), splines, folders, empty creators, and so on, but if you can see it and render it, it’s a mesh.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
 <h3 id="editable-meshes">Editable Meshes</h3>
 <p>An <strong>editable mesh</strong> (often, confusingly, referred to as a &quot;raw polygon object&quot; in the online help) is a specific kind of mesh that the user can directly manipulate — moving, adding, or deleting points, edges, and faces, and directly edit UV maps.</p>
 <p><img src="/images/pastedGraphic-131.jpg" alt=""></p>
@@ -46,13 +52,13 @@
 <p><img src="/images/pastedGraphic-132.jpg" alt=""></p>
 <p><em>Here is the <strong>Editable Box with Modifiers</strong> in the 3D view. (You can recreate it very easily by creating a box, making it editable, and adding Subdivision and Ring modifiers.) As you can see the box itself is editable, but the final mesh (a ring of balls) cannot be directly edited (although modifying the box itself will affect the final mesh).</em></p>
 <h4 id="making-a-mesh-editable">Making a mesh editable</h4>
-<p>In general you can convert a mesh into an editable mesh by <strong>double-clicking it</strong> in the Object Browser (or choosing <strong>Object &gt; Make Editable</strong> from the menus).</p>
+<p>In general you can convert a mesh into an editable mesh by <strong>double-clicking it</strong> in the Object Browser (or choosing <strong>Objects &gt; Make Editable</strong> from the menus).</p>
 <p>If you double-click a mesh with modifiers then it will convert the final modified mesh into the editable mesh (and destroy all child meshes).</p>
 <h3 id="what-about-other-meshes">What About Other Meshes?</h3>
 <p>All objects which have visible geometry are meshes of some kind, but only <em>editable meshes</em> can be manipulated in this way. You can almost certainly change it — by adjusting the parameters and source objects that are used to produce it, adding or removing modifiers, and so on — but not by <em>directly</em> manipulating its vertices, edges, and faces.</p>
 <p>E.g. if you create a “box” then it will not be editable, but you can adjust its dimensions and how many faces it’s made of by changing its properties. </p>
 <p>Similarly, an editable mesh with a modifier produces a mesh that isn’t (directly) editable. If you have a subdivision modifier on an editable mesh you can adjust the subdivision settings or edit the underlying mesh, but you cannot directly edit the subdivided mesh.</p>
-<h4 id="polygon-objects-primitives-ball-box-cone-cylinder-disk-plane-polyhedra-relief-stair-torus-tube">Polygon Objects (Primitives): Ball, Box, Cone, Cylinder, Disk, Plane, Polyhedra, Relief, Stair, Torus, Tube</h4>
+<h4 id="polygon-objects-primitives-ball-box-capsule-cone-cylinder-disc-fractal-plane-polyhedra-relief-stairs-torus-tube">Polygon Objects (Primitives): Ball, Box, Capsule, Cone, Cylinder, Disc, Fractal, Plane, Polyhedra, Relief, Stairs, Torus, Tube</h4>
 <p>Each of the polygon object tools produces a primitive of the obvious kind and has properties that allow you to adjust the polygonal detail of the object.</p>
 <p>It’s very useful to dial up the detail of objects you wish to apply deformations (modifiers) to. On the other hand, you can use these properties to adjust detail levels downward to save polygons for realtime applications or if you want to keep a scene’s complexity down for some reason.</p>
 
@@ -240,6 +246,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

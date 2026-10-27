@@ -10,7 +10,7 @@ There are powerful free programs, such as Blender, but just as a Mac pays for it
 
 Indeed, in terms of ease-of-use for a 3D package, Cheetah 3D outdoes its more expensive rivals too. You’re probably better off learning 3D concepts in a “simple” program like Cheetah 3D than a more sophisticated (and expensive) package like Modo or Maya or Cinema 4D (a program that Cheetah 3D clearly drew upon heavily for inspiration).
 
-Finally, even if you have access to and know how to use more powerful tools, you may find Cheetah 3D to be a useful program to use “in a pinch”. It’s lightweight and quick to launch. If you’re not doing anything complex, it isn’t resource hungry. It is a _true_ Mac application unlike almost every high-end 3D application (most of which wrap a totally non-Mac-UI in a window). With Cheetah 3D, you can have multiple documents open at once, copy and past between documents. And it doesn’t take over the entire screen. Again, speaking from personal experience, I have found myself using Cheetah 3D more and more, and more expensive and/or powerful alternatives less and less, over time.
+Finally, even if you have access to and know how to use more powerful tools, you may find Cheetah 3D to be a useful program to use “in a pinch”. It’s lightweight and quick to launch. If you’re not doing anything complex, it isn’t resource hungry. It is a _true_ Mac application unlike almost every high-end 3D application (most of which wrap a totally non-Mac-UI in a window). With Cheetah 3D, you can have multiple documents open at once, copy and paste between documents. And it doesn’t take over the entire screen. Again, speaking from personal experience, I have found myself using Cheetah 3D more and more, and more expensive and/or powerful alternatives less and less, over time.
 
 ### Key Features
 
@@ -40,13 +40,23 @@ Cheetah 3D is a remarkably simple and complete 3D package. It’s not complete i
 
 * **Dynamics** — you can use dynamic simulations (or "physics") to both create scenes (e.g. piles of objects) and animations (collisions, gravity, and so forth)
 
-* **FBX, OBJ, 3DS import and export** (and DAE export) — FBX is as close to a industry standard format for 3D models and animation data, and you can both import and export FBX models with near complete support for the features implemented in FBX
+> **Note:** Cheetah 3D 8.1.1 also has soft body/cloth and rope simulation (manual: Tags › Soft Body, Rope, Anchor), not yet covered here. <!-- TODO missing -->
+
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+* **Broad file format support** — Cheetah 3D 8 opens FBX, OBJ, 3DS, Collada (DAE), STL, DXF, Silo (SIA), SceneKit (SCN), and USDZ files, and also knows about glTF/GLB. FBX is as close to an industry standard format for 3D models and animation data as there is, and you can both import and export FBX models with near complete support for the features implemented in FBX
+
+> *End of AI draft.* <!-- /AI draft -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: which of these formats can be exported as well as imported (the app’s Info.plist registers glTF/GLB without an open role, so probably export only). <!-- TODO verify -->
 
 Cheetah 3D may lack certain specific features but it ticks all the big boxes, which is remarkable for such an inexpensive, lightweight, and easy-to-use program. Many far more expensive packages simply do not address one or more of these major points at all.
 
 This also means Cheetah 3D can work as part of a more sophisticated workflow. You can use it for modeling but rig and animate in another package and then come back to C3D for rendering.
 
 ### What’s New in v6?
+
+> **Note:** this “What’s New in v6?” list is two major versions old; delete it or replace it with a summary of Cheetah 3D 8. <!-- TODO editorial -->
 
 The key new features in Cheetah 3D v6 are:
 

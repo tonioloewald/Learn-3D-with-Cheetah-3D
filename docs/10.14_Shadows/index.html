@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Shadows — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Shadows are rendered as a side effect of the ray-tracing algorithm. If shadows are enabled for a given light then it will not illuminate a point where the path…" />
   <link rel="canonical" href="https://learn3d.loewald.com/10.14_Shadows/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Shadows","description":"Shadows are rendered as a side effect of the ray-tracing algorithm. If shadows are enabled for a given light then it will not illuminate a point where the path…","url":"https://learn3d.loewald.com/10.14_Shadows/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.14_Shadows.md">
 <!--{"parent": "10_Materials.md", "order": 14}--><h2 id="shadows">Shadows</h2>
 <p>Shadows are rendered as a side effect of the ray-tracing algorithm. If shadows are enabled for a given light then it will not illuminate a point where the path between that point and the light is obstructed by another object.</p>
@@ -45,6 +45,12 @@
 <p><img src="/images/pastedGraphic-446.jpg" alt=""></p>
 <p><em>Area light (5 samples)</em></p>
 <p>Cheetah 3D renders soft shadows when shadow-casting lights are area or point lights with multiple samples. Image-based lighting and emissive object lighting produce very soft shadows.</p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Shadow softness</strong> property that gives point, spot and distant lights soft shadows in Falcon, a <strong>Shadow color</strong> property, IES light profiles, and area light <strong>Shape</strong> and <strong>Normalize</strong> settings (Objects/SceneObjects/Light), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual documents Samples for area lights only; do point lights still have Samples (see the captions above)? <!-- TODO verify --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -230,6 +236,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

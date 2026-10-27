@@ -10,7 +10,7 @@
 
 * **Falcon renders have “noise”** in much the same way digital photographs do. The more “samples” you render the less noise there will be.
 
-* **Falcon is more realistic than the old “Cheetah” renderer**. Special faux-realistic tricks that the Cheetah renderer uses such as radiosity, ambient occlusion, depth of field, blurred reflection and transparency, are computed automatically and at little or no extra cost (in setup or rendering time). Certain costly material features, such as reflection and transparency blur, likewise  do not impact rendering time.
+* **Falcon is more realistic than the old “Cheetah” renderer**. Special faux-realistic tricks that the Cheetah renderer uses such as radiosity, ambient occlusion, depth of field, blurred reflection and transparency, are computed automatically and at little or no extra cost (in setup or rendering time). Certain costly material features, such as reflection and transparency blur, likewise do not impact rendering time.
 
 * **Falcon just works**. Very little finessing of lighting and rendering setups will be required — e.g. shadow blotches, issues with radiosity and transparent objects, lighting artifacts in corners will not be a problem and don’t require fake lighting setups or render tags. 
 
@@ -20,8 +20,12 @@
 
 The original Cheetah 3D renderer — now referred to as “Cheetah” — was a Ray Tracer, which means that each pixel in the final image is rendered by tracing back from the observer through the pixel into the scene, and then guesstimating how brightly lit each thing you bump into is. 
 
-Falcon is a “unidirectional path tracer”. In simple terms, this means it’s an “unbiased” or “physically-based” renderer that stochastically (i.e. randomly) generates photons along one possible path (e.g. suppose there are ten identical point light sources in a scene, then each new pixel will be emitted randomly from one of the ten lights. If one such photon has a 50% chance of being reflected by a surface then the path tracer will flip a coin and trace one of the two possible paths. The idea is that if you follow enough pixels then everything will even out — which is why the image starts very noisy, and smooths out as the “law of large numbers” evens out the effect of random decisions.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
-The quality of a rendered image is referred to in terms of “samples per pixel”. This is an average — if a rendered image is 1000 x 1000 pixels (one million pixels) then 100 samples per pixel means that 100,000,000 virtual photons contributed to the image. 
+Falcon is a “unidirectional path tracer”. In simple terms, this means it’s an “unbiased” or “physically-based” renderer that works by tracing random paths of light. For each pixel it follows a ray from the camera into the scene, and every time the ray hits something it makes a random (“stochastic”) decision about where the light goes next — e.g. if a surface has a 50% chance of reflecting light, the path tracer flips a coin and follows one of the two possible paths — while checking how much light reaches that point from the lights in the scene. Each such path is one “sample”. A single sample is a terrible guess, but if you average enough of them everything evens out — which is why the image starts very noisy, and smooths out as the “law of large numbers” evens out the effect of random decisions.
 
-A key feature of modern unbiased renderers is that they eliminate irrelevant photons from consideration as quickly as possible. E.g. if a photon is going to fly off to infinity — i.e. is heading out of the view frustum and won’t collide with anything in the scene — then it can immediately be dropped from consideration. Such a photon (or sample) does not contribute to the image and thus isn’t counted towards “samples per pixel”.
+The quality of a rendered image is referred to in terms of “samples per pixel” (Falcon’s **Samples** setting is the number of paths traced per pixel). If a rendered image is 1000 x 1000 pixels (one million pixels) then 100 samples per pixel means that 100,000,000 paths contributed to the image. Set Samples to 0 and Falcon will keep going until you stop the render yourself.
+
+How far each path is followed is limited by Falcon’s **Ray depth (bounces)** settings — Total, Diffuse, Glossy, and Specular bounces, plus Transparency depth. More bounces give a more accurate result, but take longer and need more samples to clean up the noise.
+
+> *End of AI draft.* <!-- /AI draft -->

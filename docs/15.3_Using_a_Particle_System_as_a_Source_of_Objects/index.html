@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Using a Particle System as a Source of Objects — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="If you need to create many objects quickly, use a collapsed particle system." />
   <link rel="canonical" href="https://learn3d.loewald.com/15.3_Using_a_Particle_System_as_a_Source_of_Objects/" />
@@ -29,10 +29,10 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Using a Particle System as a Source of Objects","description":"If you need to create many objects quickly, use a collapsed particle system.","url":"https://learn3d.loewald.com/15.3_Using_a_Particle_System_as_a_Source_of_Objects/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="15.3_Using_a_Particle_System_as_a_Source_of_Objects.md">
 <!--{"parent": "15_Particles.md", "order": 3}--><h2 id="using-a-particle-system-as-a-source-of-objects">Using a Particle System as a Source of Objects</h2>
 <p>If you need to create many objects quickly, use a collapsed particle system.</p>
@@ -47,17 +47,17 @@
 </ol>
 <p><img src="/images/pastedGraphic-530.jpg" alt=""></p>
 <p><em>You should now have 100 small balls floating above a relief object.</em></p>
-<ol>
+<ol start="4">
 <li><p>Now collapse the <strong>Particle Mesh</strong> (double-click on it) and delete the plane (you don’t need it any more).</p>
 </li>
-<li><p>Add a <strong>Rigid Body</strong> tag to the (former) particle mesh. (Note — assign it to the particle former Particle Mesh, not the particle itself.)</p>
+<li><p>Add a <strong>Rigid Body</strong> tag to the (former) particle mesh. (Note — assign it to the former Particle Mesh, not the particle itself.)</p>
 </li>
 <li><p>Add a <strong>Rigid Body</strong> tag to the <strong>Relief</strong> object, set its Type to static and its Shape to concave (since it has dents in it, convex will screw it up).</p>
 </li>
 </ol>
 <p><img src="/images/pastedGraphic-531.jpg" alt=""></p>
 <p><em>Here’s the setup. The object labelled “Particle Mesh” was a Particle Mesh but has been collapsed. The Plane that it used has been deleted. The Particle Mesh has a Rigid Body tag assigned to it, everything is default. The Relief object has a Rigid Body set to be static and concave.</em></p>
-<ol>
+<ol start="7">
 <li><p>Press Play. It kind of works — but some of the balls fall through the terrain.</p>
 </li>
 <li><p>Click on the <strong>Dynamics</strong> toolbar item, and in the Dynamics property panel, change Accuracy to 8x. This should stop the balls falling through the terrain.</p>
@@ -66,7 +66,7 @@
 </li>
 </ol>
 <h3 id="using-effectors-to-influence-dynamics">Using Effectors to Influence Dynamics</h3>
-<p>Force Effectors from the Particle System can act on dynamic objects (they have a property which determines whether or not they are affected by forces — its default setting is on.)</p>
+<p>The particle system’s Force Effectors can also act on dynamic objects. (Rigid Body tags have a <strong>Forces On/Off</strong> property that determines whether the object is affected by forces; it’s on by default.) <!-- TODO review --></p>
 <ol>
 <li><p>You can use another Particle Mesh setup to have some fun with Force Effectors.</p>
 </li>
@@ -76,10 +76,14 @@
 </li>
 <li><p>Add a small Ball (radius 0.03) to the Particle Mesh. You should now have 100 small balls.</p>
 </li>
-<li><p>Collapse the Particle Mesh by double-clicking it, and then add a Rigid Body tag. Set the Rigid Body’s margin to 0.0 (vs. the 0.02 default).</p>
+<li><p>Collapse the Particle Mesh by double-clicking it, and then add a Rigid Body tag. Leave the Rigid Body’s margin at its default (the manual warns that the margin should never be zero).</p>
 </li>
-<li><p>Create another Plane, set its size to 2x2, add a Rigid Body tag to it, and set its Type to static.</p>
-</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: this step originally set the margin to 0.0; confirm the tutorial still behaves as described with the default margin. <!-- TODO verify --></p>
+</blockquote>
+<ol start="6">
+<li>Create another Plane, set its size to 2x2, add a Rigid Body tag to it, and set its Type to static.</li>
 </ol>
 <p>When you press Play, nothing much will happen. But now you can have some fun with Force Effectors. Just drop one or more of them into the scene and press Play to see what happens.</p>
 
@@ -267,6 +271,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>

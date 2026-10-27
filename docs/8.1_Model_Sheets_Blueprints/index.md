@@ -8,7 +8,7 @@
 
 *This model sheet, by David Leroy, was created for the book Character Development in Blender 2.5 (which I recommend). It’s licensed under Creative Commons. Note how the artist has broken out extra drawings of details — such as the inner side of the boots — that are not apparent from side and elevation views.*
 
-Model sheets are the way 2D concept artists communicate their character designs to 3D models. (Typically in professional productions the person who designs a model is a 2D “concept” artist and a different person creates the 3D model.) Model sheets are useful even if you’re a one-man-band because it’s easy to lose details and proportions if you just “model by eye”.
+Model sheets are the way 2D concept artists communicate their character designs to 3D modelers. (Typically in professional productions the person who designs a model is a 2D “concept” artist and a different person creates the 3D model.) Model sheets are useful even if you’re a one-man-band because it’s easy to lose details and proportions if you just “model by eye”.
 
 There are any number of books on the subject of how to draw (although I’m not sure any of them are much good — I don’t know anyone who learned to draw from a book). This is not one of them.
 
@@ -50,7 +50,7 @@ Once you have a model sheet, to use it in C3D’s blueprint object you need to s
 
 ![](/images/pastedGraphic-177.jpg)
 
-*Each piece needs to be placed in its own layer in a square document. The top view needs to point down for purposes of alignment (and then rotated to face left for purposes of importing into Cheetah 3D (yes, this is annoying).*
+*Each piece needs to be placed in its own layer in a square document. The top view needs to point down for purposes of alignment (and then rotated to face left for purposes of importing into Cheetah 3D (yes, this is annoying)).*
 
 ![](/images/pastedGraphic-178.jpg)
 
@@ -81,3 +81,7 @@ Once you have a model sheet, to use it in C3D’s blueprint object you need to s
 - Save out the views as three different images.
 
 - Load the top, side, and front views into the bottom, left-or-right, and bottom views respectively.
+
+> **Note:** this step says “bottom” twice and doesn’t match the caption above (top, side, and front views loaded into the bottom, back, and left sockets); check which sockets are right. <!-- TODO editorial -->
+
+> **Note:** needs checking in Cheetah 3D 8.1.1: the Blueprint object (not documented in the 8.1.1 manual) has Front/Back/Top/Bottom/Left/Right image slots plus Opacity, Offset, Culling and **Flip** properties; Flip may remove the need to rotate the top view by hand. <!-- TODO verify -->

@@ -20,7 +20,7 @@ Filters are a bit like Photoshop filters with a significant practical difference
 
 You might use the state node to use positional information about an object to affect its properties. Similarly, you can use instance node properties to drive particles (e.g. they might change color as they get older).
 
-**Textures**: a software gizmo that generates texture maps somehow or other. The most popular one is the image texture which outputs an infinite plane (by default with the image tiled on it, but this can be switched off in either axis). The other filters are a combination of simple repeating functions (e.g. bricks) and various fractal noise algorithms.
+**Textures**: a software gizmo that generates texture maps somehow or other. The most popular one is the image texture which outputs an infinite plane (by default with the image tiled on it, but this can be switched off in either axis). The other textures are a combination of simple repeating functions (e.g. bricks) and various fractal noise algorithms.
 
 ### Connecting Nodes
 
@@ -36,7 +36,7 @@ Each node has possible **inputs** and **outputs**. Inputs are on the left of a n
 
 #### Visualizing an Output Channel
 
-You can see any output channel of any node displayed visually by clicking on it.** This shows you how that output channel varies across the surface of a sphere if that output channel were to determine its color.
+**You can see any output channel of any node displayed visually by clicking on it.** This shows you how that output channel varies across the surface of a sphere if that output channel were to determine its color.
 
 Perhaps the most intuitive node you can visualize is an Image node.
 
@@ -106,7 +106,11 @@ Vectors can represent positions in 3D space, directions, directions with magnitu
 
 In general, conversion tends to work best when all values are in the range [0,1] (that’s math notation for a number greater than or equal to zero, and less than or equal to one). In general, color values below zero are treated as zero, while those above 1 may be interpreted as clipped to 1 or intensely bright (depending on context).
 
-E.g. if you feed the constant 10.0 into the diffuse channel of the material shader it acts just like white. But if you feed it into the emissive channel (and you attach a radiosity tag to your camera) the difference from 1.0 will be enormous.
+E.g. if you feed the constant 10.0 into the diffuse channel of the material shader it acts just like white. > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+But if you feed it into the emissive channel (and turn on **Radiosity** in the Cheetah renderer’s settings, or render with Falcon, which computes indirect light on its own) the difference from 1.0 will be enormous.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ![](/images/pastedGraphic-322.jpg)
 
@@ -140,4 +144,4 @@ _This shows the value output of an image material compared with the value output
 
 **Number to Vector**: the number gets copied to all three values (so 0.5 becomes 0.5, 0.5, 0.5).
 
-**Number to Color**: the number gets converted into a greyscale value (so the value goes to all three channels, but alpha is made 100% (completely opaque).
+**Number to Color**: the number gets converted into a greyscale value (so the value goes to all three channels, but alpha is made 100% (completely opaque)).

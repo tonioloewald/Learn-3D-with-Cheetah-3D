@@ -6,7 +6,11 @@
 
 Some 3D programs allow you to render different components of an image to separate layers of a document that supports layered images (usually some variation of Photoshop’s PSD file format). E.g. you might want the light emitted by different sets of lights to be separated into their own layers, allowing you to adjust the relative brightness of different sets of lights in post production.
 
-Cheetah 3D does not yet support this functionality, but it can fake it in some cases.
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+Cheetah 3D’s **G-Buffer** covers some of this. Turn on **Save G-Buffer** in the renderer’s settings and Cheetah 3D records, alongside an HDR copy of the image, a **Z-Buffer** (depth) and **Layer ID**, **Object ID** and **Material ID** channels, which you can save as an EXR file from the Render Manager and use for depth effects or masks in a compositing program. For other cases, such as separating sets of lights, you can fake it.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ### Faking Render to Layers
 
@@ -20,13 +24,19 @@ Suppose that you want to perform some kind of post-processing effect on a render
 
 ![](/images/pastedGraphic-615.jpg)
 
-*A scene rendered normally, then rendered a second time with every object assigned a solid black shader, and a fog tag assigned to the camera (set to “linear” and with density and start chosen to make the closest object black and the furthest white).*
+*A scene rendered normally, then rendered a second time with every object assigned a solid black shader, and a Fog object added to the scene (set to “linear” and with density and start chosen to make the closest object black and the furthest white).*
 
 ![](/images/pastedGraphic-616.jpg)
 
 *Now, I can use the second image as a (disabled) layer mask in Photoshop and perform a **Lens Blur** on the image, adjusting the amount of blur and the focus point as I see fit. Cheetah 3D supports depth of field renders, but this produces high quality results very quickly, and I can change the degree of blur in real time.*
 
 **Note**: “Lens Blur” is a Photoshop filter designed specifically for simulating Bokeh (the blurring of out-of-focus elements in Photographs). You can achieve similar results using a combination of masking and Gaussian Blur in programs without this feature, but Lens Blur is a much better option (and easier to use, too).
+
+> **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
+
+**Note**: with **Save G-Buffer** and **Z-Buffer** turned on, Cheetah 3D records a depth pass for you, so you may not need this trick. If you do use it, remember that the Fog object only works with the Cheetah renderer.
+
+> *End of AI draft.* <!-- /AI draft -->
 
 ### Render light sets to layers
 
@@ -42,11 +52,11 @@ Glows are usually a result of one of four phenomena:
 
 - The illumination by a bright object of small particles in the air around it.
 
-- Glare — the overloading of sensory apparatus (e.g. your retina, a camera’s film or sensor) leading to the bright object “bleeding over” of the bright object’s appearance.
+- Glare — a bright object overloads whatever is seeing it (e.g. your retina, or a camera’s film or sensor), so its light “bleeds” over the surrounding image. <!-- TODO review -->
 
 - Internal Reflections — bright objects can emit so much light that internal reflections within the lens of a camera contaminate the rest of the image.
 
-Of these, Cheetah 3D handles the first with aplomb using the Radiosity tag while glare can be simulated using post-processing effects (e.g. “bloom” filters). 
+Of these, Cheetah 3D handles the first with aplomb using radiosity while glare can be simulated using post-processing effects (e.g. “bloom” filters). 
 
 ![](/images/pastedGraphic-618.jpg)
 

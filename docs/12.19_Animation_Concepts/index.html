@@ -14,7 +14,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=12b533835295" data-tosi-doc-system />
   <title>Animation Concepts — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Interpolation means to “find a point between fixed points”. In animation terms, it means determining a value at a point in time between two key values." />
   <link rel="canonical" href="https://learn3d.loewald.com/12.19_Animation_Concepts/" />
@@ -29,16 +29,19 @@
   <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Animation Concepts","description":"Interpolation means to “find a point between fixed points”. In animation terms, it means determining a value at a point in time between two key values.","url":"https://learn3d.loewald.com/12.19_Animation_Concepts/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
   <link rel="icon" href="../favicon.png" />
-<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+<style>img { max-width: 100%; height: auto; }</style><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=b3e46f541d9a" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.19_Animation_Concepts.md">
 <!--{"parent": "12_Rendering.md", "order": 19}--><h2 id="animation-concepts">Animation Concepts</h2>
+<blockquote>
+<p><strong>Note:</strong> this section (like 12.16–12.20) belongs in the Animation chapter (13); it was split off during conversion (image numbering and 12.19&#39;s reference to 13&#39;s train example confirm it). Suggested order: 13.2 Animation Concepts, then Animation Basics, Path Animation, Forward Kinematics, Inverse Kinematics. <!-- TODO editorial --></p>
+</blockquote>
 <h3 id="keyframes-and-interpolation">Keyframes and Interpolation</h3>
 <p>Interpolation means to “find a point between fixed points”. In animation terms, it means determining a value at a point in time between two key values. How values are interpolated is as important as the key values themselves.</p>
-<p>Let’s consider our train animation again. We want to animate a train <em>arriving</em> at a station. It starts short of the station, it ends at the platform. Is this all we need to know?</p>
-<p>If we were to naively interpolate between the two values (this is usually called linear interpolation) we might say that if the train starts at position 0 and time 0, and ends at position 10 and time 10, then at time 1 we’d interpolate its position to be time 1, at time 5 it would be at position 5, and so on.</p>
+<p>Let’s consider our train animation (from <a href="/13_Animation/">Animation</a>) again. We want to animate a train <em>arriving</em> at a station. It starts short of the station, it ends at the platform. Is this all we need to know?</p>
+<p>If we were to naively interpolate between the two values (this is usually called linear interpolation) we might say that if the train starts at position 0 and time 0, and ends at position 10 and time 10, then at time 1 we’d interpolate its position to be position 1, at time 5 it would be at position 5, and so on.</p>
 <p>This would produce a <em>terrible</em> animation. The train would move to the platform at a constant speed and then immediately stop. Trains don’t do this.</p>
 <p>In fact, a <em>real</em> train arriving at a station will be slowing down the entire time — until it stops, when it will lurch backwards slightly. (We’ve all stood on trains and buses as they’ve come to a stop.)</p>
 <p><img src="/images/pastedGraphic-483.jpg" alt=""></p>
@@ -49,14 +52,14 @@
 <p>By default, Cheetah 3D will smoothly interpolate all motions (i.e. it will ease changes in animated properties smoothly over time). </p>
 <p>Sometimes this is what you want, often it isn’t.</p>
 <h3 id="anticipation-and-overshoot">Anticipation and Overshoot</h3>
-<p>One of the principles of animation outlined in <em>Disney Animation: The Illusion of Life</em> — the idea is that any character who is about to perform an action will prepare for it by moving slightly in the opposite direction, and will always slightly overshoot on completion. (Think of a pitcher winding up to throw a ball and then following through after releasing the ball.) </p>
-<p>Again, returning to our train, the bit where it lurches back slightly after coming to a stop is a case of overshoot. The basic principle is that not only do objects not suddenly start moving, but they also tend to anticipate motion (usually be moving slightly in the opposite direction before starting) and overshoot (move past their intended destination and then regain balance).</p>
+<p>Anticipation and overshoot are among the principles of animation outlined in <em>Disney Animation: The Illusion of Life</em>. The idea is that any character who is about to perform an action will prepare for it by moving slightly in the opposite direction, and will always slightly overshoot on completion. (Think of a pitcher winding up to throw a ball and then following through after releasing the ball.) <!-- TODO review --></p>
+<p>Again, returning to our train, the bit where it lurches back slightly after coming to a stop is a case of overshoot. The basic principle is that not only do objects not suddenly start moving, but they also tend to anticipate motion (usually by moving slightly in the opposite direction before starting) and overshoot (move past their intended destination and then regain balance).</p>
 <h3 id="squash-and-stretch">Squash and Stretch</h3>
 <p><img src="/images/pastedGraphic-484.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-485.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-486.jpg" alt=""></p>
 <p><em>Simple animation of a ball “jumping” from point A to point B. <strong>Left</strong>: anticipating the jump the ball is squashed. <strong>Middle</strong>: as it flies through the air it stretches along its axis of motion. <strong>Right</strong>: as it impacts its destination it squashes again.</em></p>
-<p>One of the core principles of animation outlined in <em>Disney Animation: The Illusion of Life</em> — objects prepare for action and react to impact by being squashed, and stretch along the line of motion.</p>
+<p>Squash and stretch is another of the core principles of animation outlined in <em>Disney Animation: The Illusion of Life</em>: objects prepare for action and react to impact by squashing, and stretch along their line of motion as they move. <!-- TODO review --></p>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">
@@ -242,6 +245,6 @@
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=fde998e05e15"></script>
+  <script src="../iife.js?v=12b533835295"></script>
 </body>
 </html>
