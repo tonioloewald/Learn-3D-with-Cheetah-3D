@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=38448989181d" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=487512f34539" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12_Rendering.md">
 <!--{"order": 13}--><h1 id="rendering">Rendering</h1>
 <p><img src="/images/pastedGraphic-537.jpg" alt=""></p>
@@ -43,7 +43,7 @@
 <ul>
 <li><p><strong>Cheetah</strong> is a recursive raytracer (with irradiance caching and photon maps for radiosity and caustics). It has been Cheetah 3D’s renderer for well over a decade, and “ray tracing” is probably the most widely used rendering algorithm for non-realtime rendering.</p>
 </li>
-<li><p><strong>Falcon</strong>, introduced in Cheetah 3D 7, is an unbiased path tracer. It traces many random light paths per pixel, so it handles bounced light, glossy reflections and soft shadows naturally, at the cost of noise that goes away as you add samples. Falcon is where future development is focused.</p>
+<li><p><strong>Falcon</strong>, introduced in Cheetah 3D 7, is an unbiased path tracer. It traces many random light paths per pixel, so it handles bounced light, glossy reflections, and soft shadows naturally, at the cost of noise that goes away as you add samples. Falcon is where future development is focused.</p>
 </li>
 </ul>
 <p>(Cheetah 3D’s 3D views are rendered using realtime techniques, which are much faster than either renderer but much lower in quality.)</p>
@@ -75,7 +75,7 @@
 <p>Cheetah 3D divides rendering jobs into square “buckets” to efficiently divide a rendering task among all the CPUs in your computer. (Some Macs have Intel CPUs that support hyperthreading, which makes each CPU look like two CPUs to the operating system, and Cheetah 3D too — on those Macs you’ll see twice as many rendering buckets as you have CPUs.)</p>
 <p><strong>Note</strong>: when rendering an animation, Cheetah 3D will “lock up” the file used to render the image. If you want to keep working on an animation while it’s being rendered you should save a copy of the file and render the copy. This issue does not occur when rendering single frames.</p>
 <blockquote>
-<p><strong>Note:</strong> sections 12.16–12.20 (Path Animation, Animation Basics, the Robot Arm FK/IK tutorials and Animation Concepts) are animation material that was split off chapter 13 during conversion; they belong in 13 Animation (as 13.2–13.6, with Animation Concepts first). <!-- TODO editorial --></p>
+<p><strong>Note:</strong> sections 12.16–12.20 (Path Animation, Animation Basics, the Robot Arm FK/IK tutorials, and Animation Concepts) are animation material that was split off chapter 13 during conversion; they belong in 13 Animation (as 13.2–13.6, with Animation Concepts first). <!-- TODO editorial --></p>
 </blockquote>
 <!-- toc -->
 <ul>

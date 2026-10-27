@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=38448989181d" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=487512f34539" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.8_How_Raytracing_Works.md">
 <!--{"parent": "12_Rendering.md", "order": 8}--><h2 id="how-raytracing-works">How Raytracing Works</h2>
 <p>You <em>don’t</em> need to know this stuff.  You can skip this <em>entire section</em>.</p>
@@ -57,7 +57,7 @@
 <p>E.g. the way you decide if a point is in shadow is by calculating the ray from that point to a light source and seeing if it hits something before it gets to the light. An area light is treated as a random collection of dimmer lights within an area, so instead of tracing back to one light source you might trace back to 10 light sources and average the result. This is how you get “soft” shadows.</p>
 <p>Similarly blurred reflections are achieved by calculating multiple reflections slightly deviating from the “correct” angle and averaging the result. Blurred transparency does the same thing for transparency. Depth of field is calculated by picking points offset from the camera position to start each ray (and because you start at a random position, rather than splitting later in the process, depth of field is much more expensive than the other effects).</p>
 <blockquote>
-<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Falcon renderer, an unbiased path tracer that follows random light paths (with diffuse, glossy and specular bounces) and refines the image with more samples per pixel; a paragraph on path tracing would round out this section (manual: Render › Falcon). <!-- TODO missing --></p>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Falcon renderer, an unbiased path tracer that follows random light paths (with diffuse, glossy, and specular bounces) and refines the image with more samples per pixel; a paragraph on path tracing would round out this section (manual: Render › Falcon). <!-- TODO missing --></p>
 </blockquote>
 
   </article>

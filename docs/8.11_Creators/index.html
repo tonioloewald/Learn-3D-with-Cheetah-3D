@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=38448989181d" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=487512f34539" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="8.11_Creators.md">
 <!--{"parent": "8_Modeling.md", "order": 11}--><h2 id="creators">Creators</h2>
 <p>A creator is an object that — given the correct number and type of children — will generate a mesh derived from those children. The easiest way to explain creators is to show what they do. Note that while I explain creators in alphabetical order, the Boolean creator is a terrible one to start with — skip it and come back afterwards!</p>
@@ -43,7 +43,7 @@
 <p><img src="/images/booleans-annotated.jpg" alt=""></p>
 <p><em>This shows the different boolean operations. The first three options perform a boolean operation on two “solid” meshes — union (add), difference (subtract), and intersection. The last two “inside” and “outside” options act on any surface in relation to a solid (e.g. if you want to cut a plane with a solid object.)</em></p>
 <blockquote>
-<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the Boolean creator now offers only Addition, Subtract and Intersect (no “inside”/“outside” options), triangulation is an option (<strong>Triangulate</strong>, which the manual says makes the algorithm more robust), and <strong>Multi-Knife</strong> lets it act on more than two children (Objects/CreatorObjects/BooleanObject). <!-- TODO update --></p>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the Boolean creator now offers only Addition, Subtract, and Intersect (no “inside”/“outside” options), triangulation is an option (<strong>Triangulate</strong>, which the manual says makes the algorithm more robust), and <strong>Multi-Knife</strong> lets it act on more than two children (Objects/CreatorObjects/BooleanObject). <!-- TODO update --></p>
 </blockquote>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Boolean modifier</strong> (parent is A, child is B; Objects/ModifierObjects/Boolean) and <strong>Boolean Add/Subtract/Intersect</strong> polygon tools under <strong>Tools &gt; Polygon</strong> (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing --></p>

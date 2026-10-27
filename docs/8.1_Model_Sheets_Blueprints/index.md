@@ -84,4 +84,4 @@ Once you have a model sheet, to use it in C3D’s blueprint object you need to s
 
 > **Note:** this step says “bottom” twice and doesn’t match the caption above (top, side, and front views loaded into the bottom, back, and left sockets); check which sockets are right. <!-- TODO editorial -->
 
-> **Note:** needs checking in Cheetah 3D 8.1.1: the Blueprint object (not documented in the 8.1.1 manual) has Front/Back/Top/Bottom/Left/Right image slots plus Opacity, Offset, Culling and **Flip** properties; Flip may remove the need to rotate the top view by hand. <!-- TODO verify -->
+> **Note:** needs checking in Cheetah 3D 8.1.1: the Blueprint object (not documented in the 8.1.1 manual) has Front/Back/Top/Bottom/Left/Right image slots plus Opacity, Offset, Culling, and **Flip** properties; Flip may remove the need to rotate the top view by hand. <!-- TODO verify -->

@@ -12,7 +12,7 @@ A creator is an object that — given the correct number and type of children �
 
 *This shows the different boolean operations. The first three options perform a boolean operation on two “solid” meshes — union (add), difference (subtract), and intersection. The last two “inside” and “outside” options act on any surface in relation to a solid (e.g. if you want to cut a plane with a solid object.)*
 
-> **Note:** requires updating for Cheetah 3D 8.1.1: the Boolean creator now offers only Addition, Subtract and Intersect (no “inside”/“outside” options), triangulation is an option (**Triangulate**, which the manual says makes the algorithm more robust), and **Multi-Knife** lets it act on more than two children (Objects/CreatorObjects/BooleanObject). <!-- TODO update -->
+> **Note:** requires updating for Cheetah 3D 8.1.1: the Boolean creator now offers only Addition, Subtract, and Intersect (no “inside”/“outside” options), triangulation is an option (**Triangulate**, which the manual says makes the algorithm more robust), and **Multi-Knife** lets it act on more than two children (Objects/CreatorObjects/BooleanObject). <!-- TODO update -->
 
 > **Note:** Cheetah 3D 8.1.1 also has a **Boolean modifier** (parent is A, child is B; Objects/ModifierObjects/Boolean) and **Boolean Add/Subtract/Intersect** polygon tools under **Tools \> Polygon** (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing -->
 

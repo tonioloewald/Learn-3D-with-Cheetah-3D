@@ -58,7 +58,7 @@ If you hit play at this point you’ll see your ball tensing up before the jump.
 
 11. Now go forward two frames — in between the last two keyframes — drag the ball slightly forward and click record.
 
-If you hit play, the ball tenses for the jump, stretches out as it flies through the air, squashes on impact and slides slightly forward before recovering its balance.
+If you hit play, the ball tenses for the jump, stretches out as it flies through the air, squashes on impact, and slides slightly forward before recovering its balance.
 
 What we’d really like is for the ball to go very quickly from squashed (just before the jump) to its slightly stretched “flying through the air” state, and then stay that way until just before impact. <!-- TODO review -->
 

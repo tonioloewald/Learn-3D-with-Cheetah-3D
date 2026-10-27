@@ -2,7 +2,7 @@
 
 ## 3D File Formats
 
-> **Note:** Cheetah 3D 8.1.1 also supports glTF/GLB, USDZ and SceneKit (.scn) files (app bundle file types), not yet covered here. <!-- TODO missing -->
+> **Note:** Cheetah 3D 8.1.1 also supports glTF/GLB, USDZ, and SceneKit (.scn) files (app bundle file types), not yet covered here. <!-- TODO missing -->
 
 Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which supports animation data. The most compatible format is OBJ which almost any 3D app can load or export, and is pretty human readable too (it’s a simple text format). DAE (Collada) is theoretically richer than FBX and promises to be a vendor-neutral alternative to FBX but so far it’s not well or widely supported (it was actually created by Sony and then “opened”). Indeed, C3D’s collada support is provided by Autodesk’s FBX SDK, without which it would probably not support collada at all.
 

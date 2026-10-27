@@ -56,7 +56,7 @@ A light emitted from a rectangular or elliptical surface (but only if you increa
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: does an area light still act like a spot light unless its Samples is above 1? The manual doesn’t say so. <!-- TODO verify -->
 
-> **Note:** Cheetah 3D 8.1.1 also has area light Shape, Normalize and Visible in camera, IES profiles for point and area lights, Clamp attenuation, Shadow color, and Shadow softness (manual: Objects › Light), not yet covered here. <!-- TODO missing -->
+> **Note:** Cheetah 3D 8.1.1 also has area light Shape, Normalize, and Visible in camera settings; IES profiles for point and area lights; Clamp attenuation; Shadow color; and Shadow softness (manual: Objects › Light), not yet covered here. <!-- TODO missing -->
 
 #### Distant light
 

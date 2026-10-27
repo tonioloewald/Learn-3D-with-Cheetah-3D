@@ -102,7 +102,7 @@ These settings affect the quality of the finished image.
 
 **Channels**
 
-This is a set of toggles (**Color**, **Ambient**, **Diffuse**, **Emission**, **Bumps**, **Radiosity** and **Caustics**) that determines what ends up contributing to the baked image. The likely use cases are
+This is a set of toggles (**Color**, **Ambient**, **Diffuse**, **Emission**, **Bumps**, **Radiosity**, and **Caustics**) that determines what ends up contributing to the baked image. The likely use cases are
 
 - Bake everything (which is the default)
 

@@ -248,7 +248,7 @@ In general if you want to subdivide an entire mesh you should use the Subdivisio
 
 > **Note:** Cheetah 3D 8.1.1 also has a **Simplify** tool (**Tools \> Polygon \> Simplify**), which reduces a mesh to a target number of triangles (Tools/Polygon/SimplifyTool), not yet covered here. <!-- TODO missing -->
 
-> **Note:** Cheetah 3D 8.1.1 also has **Boolean Add**, **Boolean Subtract** and **Boolean Intersect** tools under **Tools \> Polygon**, which combine selected polygon objects destructively (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing -->
+> **Note:** Cheetah 3D 8.1.1 also has **Boolean Add**, **Boolean Subtract**, and **Boolean Intersect** tools under **Tools \> Polygon**, which combine selected polygon objects destructively (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing -->
 
 #### Split
 

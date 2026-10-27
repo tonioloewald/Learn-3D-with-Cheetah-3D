@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=38448989181d" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=487512f34539" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.2_Projection_Settings.md">
 <!--{"parent": "12_Rendering.md", "order": 2}--><h2 id="projection-settings">Projection Settings</h2>
 <p>These settings all relate to how the camera looks out into the scene.</p>
@@ -64,7 +64,7 @@
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
 <p>In Cheetah 3D 8, the settings that control render quality belong to the <em>renderer</em>, not the camera. Choose a renderer (<strong>Cheetah</strong> or <strong>Falcon</strong>) with <strong>Render &gt; Renderer</strong>, then click the renderer icon in the toolbar (the cheetah head) to show its settings in the Properties panel. These settings are stored with the scene and apply to whichever camera is active.</p>
-<p>Both renderers’ <strong>General</strong> settings include <strong>Resolution</strong> (the size of the rendered image or movie), <strong>Exposure</strong>, <strong>Gamma</strong> and <strong>Dither</strong>. Falcon adds <strong>Filmic</strong>, a filmic tone mapper (use it with a Gamma of 2.2).</p>
+<p>Both renderers’ <strong>General</strong> settings include <strong>Resolution</strong> (the size of the rendered image or movie), <strong>Exposure</strong>, <strong>Gamma</strong>, and <strong>Dither</strong>. Falcon adds <strong>Filmic</strong>, a filmic tone mapper (use it with a Gamma of 2.2).</p>
 <p>The camera itself keeps <strong>Camera light</strong>, the <strong>Background</strong>, and the depth of field and shutter settings.</p>
 <blockquote>
 <p><em>End of AI draft.</em> <!-- /AI draft --></p>
@@ -113,8 +113,8 @@
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
 <p>There is no longer a separate Render Preferences panel: what used to be there is now part of each renderer’s settings (<strong>Render &gt; Renderer</strong>, or the renderer icon in the toolbar). They are scene settings, not Cheetah 3D preferences.</p>
-<p>In the Cheetah renderer’s <strong>Other</strong> section, <strong>Max. ray depth</strong> determines how many transmissions and reflections a ray will be allowed to calculate before giving up, and <strong>Textures</strong>, <strong>Reflections</strong>, <strong>Transparency</strong> and <strong>Shadows</strong> switch those features off for the whole scene. Falcon replaces Max. ray depth with its <strong>Ray depth (bounces)</strong> settings: <strong>Total bounces</strong>, <strong>Diffuse bounces</strong>, <strong>Glossy bounces</strong>, <strong>Specular bounces</strong> and <strong>Transparency depth</strong>.</p>
-<p>To keep a high dynamic range version of a render (what <strong>Cache HDRI</strong> used to do), turn on <strong>Save G-Buffer</strong> in either renderer. The G-Buffer records HDR color (16- or 32-bit per component) and, optionally, <strong>Z-Buffer</strong> depth, <strong>Layer ID</strong>, <strong>Object ID</strong> and <strong>Material ID</strong> to an EXR file, and the Render Manager will then let you save EXR files.</p>
+<p>In the Cheetah renderer’s <strong>Other</strong> section, <strong>Max. ray depth</strong> determines how many transmissions and reflections a ray will be allowed to calculate before giving up, and <strong>Textures</strong>, <strong>Reflections</strong>, <strong>Transparency</strong>, and <strong>Shadows</strong> switch those features off for the whole scene. Falcon replaces Max. ray depth with its <strong>Ray depth (bounces)</strong> settings: <strong>Total bounces</strong>, <strong>Diffuse bounces</strong>, <strong>Glossy bounces</strong>, <strong>Specular bounces</strong>, and <strong>Transparency depth</strong>.</p>
+<p>To keep a high dynamic range version of a render (what <strong>Cache HDRI</strong> used to do), turn on <strong>Save G-Buffer</strong> in either renderer. The G-Buffer records HDR color (16- or 32-bit per component) and, optionally, <strong>Z-Buffer</strong> depth, <strong>Layer ID</strong>, <strong>Object ID</strong>, and <strong>Material ID</strong> to an EXR file, and the Render Manager will then let you save EXR files.</p>
 <blockquote>
 <p><em>End of AI draft.</em> <!-- /AI draft --></p>
 </blockquote>

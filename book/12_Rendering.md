@@ -10,7 +10,7 @@ Rendering is the process of creating high quality images from 3D scenes. Cheetah
 
 - **Cheetah** is a recursive raytracer (with irradiance caching and photon maps for radiosity and caustics). It has been Cheetah 3D’s renderer for well over a decade, and “ray tracing” is probably the most widely used rendering algorithm for non-realtime rendering.
 
-- **Falcon**, introduced in Cheetah 3D 7, is an unbiased path tracer. It traces many random light paths per pixel, so it handles bounced light, glossy reflections and soft shadows naturally, at the cost of noise that goes away as you add samples. Falcon is where future development is focused.
+- **Falcon**, introduced in Cheetah 3D 7, is an unbiased path tracer. It traces many random light paths per pixel, so it handles bounced light, glossy reflections, and soft shadows naturally, at the cost of noise that goes away as you add samples. Falcon is where future development is focused.
 
 (Cheetah 3D’s 3D views are rendered using realtime techniques, which are much faster than either renderer but much lower in quality.)
 
@@ -42,7 +42,7 @@ Cheetah 3D divides rendering jobs into square “buckets” to efficiently divid
 
 **Note**: when rendering an animation, Cheetah 3D will “lock up” the file used to render the image. If you want to keep working on an animation while it’s being rendered you should save a copy of the file and render the copy. This issue does not occur when rendering single frames.
 
-> **Note:** sections 12.16–12.20 (Path Animation, Animation Basics, the Robot Arm FK/IK tutorials and Animation Concepts) are animation material that was split off chapter 13 during conversion; they belong in 13 Animation (as 13.2–13.6, with Animation Concepts first). <!-- TODO editorial -->
+> **Note:** sections 12.16–12.20 (Path Animation, Animation Basics, the Robot Arm FK/IK tutorials, and Animation Concepts) are animation material that was split off chapter 13 during conversion; they belong in 13 Animation (as 13.2–13.6, with Animation Concepts first). <!-- TODO editorial -->
 
 <!-- toc -->
 - [The Camera Object](/12.1_The_Camera_Object/)

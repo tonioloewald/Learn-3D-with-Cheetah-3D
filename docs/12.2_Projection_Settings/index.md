@@ -56,7 +56,7 @@ This button explicitly makes the camera active (unless this camera or the active
 
 In Cheetah 3D 8, the settings that control render quality belong to the *renderer*, not the camera. Choose a renderer (**Cheetah** or **Falcon**) with **Render \> Renderer**, then click the renderer icon in the toolbar (the cheetah head) to show its settings in the Properties panel. These settings are stored with the scene and apply to whichever camera is active.
 
-Both renderers’ **General** settings include **Resolution** (the size of the rendered image or movie), **Exposure**, **Gamma** and **Dither**. Falcon adds **Filmic**, a filmic tone mapper (use it with a Gamma of 2.2).
+Both renderers’ **General** settings include **Resolution** (the size of the rendered image or movie), **Exposure**, **Gamma**, and **Dither**. Falcon adds **Filmic**, a filmic tone mapper (use it with a Gamma of 2.2).
 
 The camera itself keeps **Camera light**, the **Background**, and the depth of field and shutter settings.
 
@@ -114,9 +114,9 @@ Background settings determine the background color or image. By default, Cheetah
 
 There is no longer a separate Render Preferences panel: what used to be there is now part of each renderer’s settings (**Render \> Renderer**, or the renderer icon in the toolbar). They are scene settings, not Cheetah 3D preferences.
 
-In the Cheetah renderer’s **Other** section, **Max. ray depth** determines how many transmissions and reflections a ray will be allowed to calculate before giving up, and **Textures**, **Reflections**, **Transparency** and **Shadows** switch those features off for the whole scene. Falcon replaces Max. ray depth with its **Ray depth (bounces)** settings: **Total bounces**, **Diffuse bounces**, **Glossy bounces**, **Specular bounces** and **Transparency depth**.
+In the Cheetah renderer’s **Other** section, **Max. ray depth** determines how many transmissions and reflections a ray will be allowed to calculate before giving up, and **Textures**, **Reflections**, **Transparency**, and **Shadows** switch those features off for the whole scene. Falcon replaces Max. ray depth with its **Ray depth (bounces)** settings: **Total bounces**, **Diffuse bounces**, **Glossy bounces**, **Specular bounces**, and **Transparency depth**.
 
-To keep a high dynamic range version of a render (what **Cache HDRI** used to do), turn on **Save G-Buffer** in either renderer. The G-Buffer records HDR color (16- or 32-bit per component) and, optionally, **Z-Buffer** depth, **Layer ID**, **Object ID** and **Material ID** to an EXR file, and the Render Manager will then let you save EXR files.
+To keep a high dynamic range version of a render (what **Cache HDRI** used to do), turn on **Save G-Buffer** in either renderer. The G-Buffer records HDR color (16- or 32-bit per component) and, optionally, **Z-Buffer** depth, **Layer ID**, **Object ID**, and **Material ID** to an EXR file, and the Render Manager will then let you save EXR files.
 
 > *End of AI draft.* <!-- /AI draft -->
 

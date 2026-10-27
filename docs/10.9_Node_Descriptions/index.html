@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=38448989181d" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=487512f34539" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="10.9_Node_Descriptions.md">
 <!--{"parent": "10_Materials.md", "order": 9}--><h2 id="node-descriptions">Node Descriptions</h2>
 <h3 id="shader-nodes">Shader Nodes</h3>
@@ -48,7 +48,7 @@
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
-<p><strong>PBR</strong>: a physically based shader (the default <strong>Material (PBR)</strong> in the Add Material menu). Its inputs are <strong>Base Color</strong>; <strong>Metalness</strong>, <strong>Specular Level</strong>, <strong>Specular Tint</strong>, <strong>Roughness</strong> and <strong>Anisotropy</strong> (all 0 to 1); <strong>Clearcoat</strong> and <strong>Clearcoat Roughness</strong> (a clear coating over the base, like car paint); <strong>Emissive</strong>; and <strong>Ambient Occlusion</strong>. Metalness 0 gives you a plastic or other non-metal; metalness 1 gives you a metal tinted by the base color. Between them, Metalness, Anisotropy and Clearcoat cover most of what the Metal and Car Paint shaders are used for.</p>
+<p><strong>PBR</strong>: a physically based shader (the default <strong>Material (PBR)</strong> in the Add Material menu). Its inputs are <strong>Base Color</strong>; <strong>Metalness</strong>, <strong>Specular Level</strong>, <strong>Specular Tint</strong>, <strong>Roughness</strong>, and <strong>Anisotropy</strong> (all 0 to 1); <strong>Clearcoat</strong> and <strong>Clearcoat Roughness</strong> (a clear coating over the base, like car paint); <strong>Emissive</strong>; and <strong>Ambient Occlusion</strong>. Metalness 0 gives you a plastic or other non-metal; metalness 1 gives you a metal tinted by the base color. Between them, Metalness, Anisotropy, and Clearcoat cover most of what the Metal and Car Paint shaders are used for.</p>
 <p><strong>Bump type</strong>: every shader node (Material, PBR, Metal, Dielectric, Car Paint, Membrane, Velvet) has a <strong>Bump type</strong> setting: height (the classic greyscale bump map) or a normal map, with the green channel pointing either up (Y+) or down (Y−). If a normal map looks “inside out”, try the other Y setting.</p>
 <blockquote>
 <p><em>End of AI draft.</em> <!-- /AI draft --></p>
@@ -126,7 +126,7 @@
 <p><strong>squareroot</strong> calculates square roots. Same as using <strong>power</strong> and setting the exponent to 0.5.</p>
 <p><strong>step</strong> is like pulsetrain but upside down and with only one threshold value.</p>
 <blockquote>
-<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the step node has inputs t, edge and smooth; is it really “pulsetrain upside down”, or 0 below the edge and 1 above it? <!-- TODO verify --></p>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the step node has inputs t, edge, and smooth; is it really “pulsetrain upside down”, or 0 below the edge and 1 above it? <!-- TODO verify --></p>
 </blockquote>
 <p><strong>subtract</strong> subtracts one thing from another.</p>
 

@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=38448989181d" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=487512f34539" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="12.3_The_Render_Tag.md">
 <!--{"parent": "12_Rendering.md", "order": 3}--><h2 id="the-render-tag">The Render Tag</h2>
 <p><img src="/images/pastedGraphic-548.jpg" alt=""></p>
@@ -41,13 +41,13 @@
 <p>Want to render a vampire looking in a mirror? You can prevent an object from appearing in reflections using a render tag.</p>
 <p>Probably the most important settings are <strong>Cast shadows</strong> (e.g. if you want an object to not cast any shadows at all, this is the property to uncheck), <strong>Receive shadows</strong>, <strong>Receive radiosity</strong> (glass often causes problems in radiosity renderings of interiors, adding a render tag to glass panes and setting them to not receive or be <strong>Visible in radiosity</strong> often helps remove artifacts) and <strong>Visible for primary rays</strong> (if unchecked the object still casts shadows and appears in reflections and refractions, but otherwise it disappears — great for building environments around objects being rendered as icons, for example).</p>
 <blockquote>
-<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the render tag’s property names. The manual still lists Cast shadows / Visible in Radiosity / Visible for primary rays, but the app’s strings label them Visible in shadows, Visible in diffuse, Visible in reflections, Visible in refractions and Visible in camera, plus Receive HDRI refl., Receive caustics and Filter textures (manual: Tags › Render Tag; en.lproj/Localizable.strings). <!-- TODO verify --></p>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the render tag’s property names. The manual still lists Cast shadows / Visible in Radiosity / Visible for primary rays, but the app’s strings label them Visible in shadows, Visible in diffuse, Visible in reflections, Visible in refractions, and Visible in camera, plus Receive HDRI refl., Receive caustics and Filter textures (manual: Tags › Render Tag; en.lproj/Localizable.strings). <!-- TODO verify --></p>
 </blockquote>
 <h3 id="the-hdri-light">The HDRI Light</h3>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
-<p>In Cheetah 3D 8, image-based lighting comes from an <strong>HDRI Light</strong> object (<strong>Objects &gt; Scene &gt; HDRI light</strong>, or the toolbar) rather than a tag on the camera. It loads an .hdr or .exr image (Oldtown.hdr by default), and its <strong>Type</strong> must match the image’s mapping (<strong>Probe</strong>, <strong>Cross</strong> or <strong>Panorama</strong>).</p>
+<p>In Cheetah 3D 8, image-based lighting comes from an <strong>HDRI Light</strong> object (<strong>Objects &gt; Scene &gt; HDRI light</strong>, or the toolbar) rather than a tag on the camera. It loads an .hdr or .exr image (Oldtown.hdr by default), and its <strong>Type</strong> must match the image’s mapping (<strong>Probe</strong>, <strong>Cross</strong>, or <strong>Panorama</strong>).</p>
 <p>An HDRI Light lights the scene by itself, shows up in reflections and refractions, and by default draws the <strong>Background</strong> (unless you have a very high resolution image, the background will usually look ugly, so you might want to uncheck <strong>Background</strong>). <strong>Intensity</strong> scales the image’s brightness, <strong>Clamp</strong> tames very bright pixels (like the sun) that cause noise with ambient occlusion or radiosity, and <strong>Samples</strong> trades render time for smoother shadows. <strong>MIS</strong> speeds up convergence, but only in Falcon.</p>
 <p>You can have several HDRI and Sky Lights in a scene, but only the first one is used for rendering.</p>
 <blockquote>
@@ -57,7 +57,7 @@
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
-<p>Radiosity is no longer a tag. In the Cheetah renderer’s settings (<strong>Render &gt; Renderer</strong>), turn on <strong>Radiosity</strong> and pick its <strong>Type</strong>: <strong>Ambient occlusion</strong> or <strong>Radiosity</strong>. These two modes do very different things. Of the two, ambient occlusion is by far the quicker and radiosity tends to produce better results. <strong>Intensity</strong>, <strong>Samples</strong>, <strong>Diffuse bounces</strong>, <strong>Specular bounces</strong>, <strong>Error</strong>, <strong>Rmin</strong>, <strong>Rmax</strong> and <strong>Detail detection</strong> fine-tune the result.</p>
+<p>Radiosity is no longer a tag. In the Cheetah renderer’s settings (<strong>Render &gt; Renderer</strong>), turn on <strong>Radiosity</strong> and pick its <strong>Type</strong>: <strong>Ambient occlusion</strong> or <strong>Radiosity</strong>. These two modes do very different things. Of the two, ambient occlusion is by far the quicker and radiosity tends to produce better results. <strong>Intensity</strong>, <strong>Samples</strong>, <strong>Diffuse bounces</strong>, <strong>Specular bounces</strong>, <strong>Error</strong>, <strong>Rmin</strong>, <strong>Rmax</strong>, and <strong>Detail detection</strong> fine-tune the result.</p>
 <p>Since Type is a single setting, you cannot use both ambient occlusion and radiosity in a single render.</p>
 <p>Falcon doesn’t have these settings: as a path tracer it includes bounced light in every render, and its <strong>Ray depth</strong> settings control how many bounces it follows.</p>
 <blockquote>

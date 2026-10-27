@@ -4,7 +4,7 @@
 
 Tags don’t do anything by themselves, instead they _attach extra information to an object_ that can be used by Cheetah 3D’s internal functions (or scripts). Most tags are only meaningful in specific contexts and can only be attached to certain objects.
 
-> **Note:** requires updating for Cheetah 3D 8.1.1: the tag categories and lists below are stale. The manual's Tags section lists Anchor, Bake Texture, IK Constraints, IK Handle, Material, Metaball, Mode, Morph, Orient Constraint, Parent Constraint, Particle, Point Constraint, Pose, Render, Rigid Body, Rope, Skeleton, Soft Body, Spline IK, Spline Tracking, Target and Vertex Color, and no camera render tags. <!-- TODO update -->
+> **Note:** requires updating for Cheetah 3D 8.1.1: the tag categories and lists below are stale. The manual's Tags section lists Anchor, Bake Texture, IK Constraints, IK Handle, Material, Metaball, Mode, Morph, Orient Constraint, Parent Constraint, Particle, Point Constraint, Pose, Render, Rigid Body, Rope, Skeleton, Soft Body, Spline IK, Spline Tracking, Target, and Vertex Color, and no camera render tags. <!-- TODO update -->
 
 Cheetah 3D groups tags into five categories (six if you include scripted tags). These categories can be thought of as:
 

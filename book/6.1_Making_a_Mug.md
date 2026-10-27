@@ -228,7 +228,7 @@ We’re going to use the bevel tool to adjust the curvature of our mesh when sub
 
 5. **We want to bevel these edges** so that they’ll look good in the base mesh, and also provide finer control when the mesh is used as a subdivision control cage. So pick **Tools \> Polygon \> Bevel**. In the Bevel tool’s settings change the type to Convex and leave the Level at 2 (if it isn’t 2, change it to 2). Now click and drag in the 3d view (make sure not to mis-click — undo if you do) and carefully drag until the degree of beveling looks right, then click on the Transform tool in the toolbar to get out of the Bevel tool and avoid any accidents.
 
-> **Note:** needs checking in Cheetah 3D 8.1.1: does the Bevel tool still show Type (Convex) and Level? The manual (Tools › Polygon › Bevel) lists only Subdivs and Quantize, although the app's strings still include Type, Convex and Level. <!-- TODO verify -->
+> **Note:** needs checking in Cheetah 3D 8.1.1: does the Bevel tool still show Type (Convex) and Level? The manual (Tools › Polygon › Bevel) lists only Subdivs and Quantize, although the app's strings still include Type, Convex, and Level. <!-- TODO verify -->
 
 ![](/images/pastedGraphic-32.jpg)
 

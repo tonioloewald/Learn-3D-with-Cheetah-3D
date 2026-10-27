@@ -32,12 +32,12 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=38448989181d" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=487512f34539" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
   <article class="doc-content" data-doc="14.1_Mini_Tutorial_Run_Cycle.md">
 <!--{"parent": "14_Character_Animation.md", "order": 1}--><h2 id="mini-tutorial-run-cycle">Mini-Tutorial: Run Cycle</h2>
 <p>Run cycles are much more difficult to get right than walk cycles. This is because a run cycle involves much more sudden movements (a runner is essentially jumping from one foot to the other and then back again). A run cycle will generally be shorter than a walk cycle.</p>
 <p>The key underlying insight when animating a run cycle is that running is really a series of alternating one-legged jumps (think of the way the tentacle moves) whereas walking is a series of balance-shifts.</p>
-<p>As a starting point, I’d suggest making a 0.6s take (let’s call it “run cycle”). You’ll want four base keyframes, but they’re not going to be evenly spaced. We’ll call them “Compress”, “Takeoff”, “Passing”, “Touchdown” and try putting them on frames 0, 1, 4, and 7. Then copy frame 0 to frames 9 and 18, and frames 1, 4 and 7 to 10, 13 and 16 respectively. Then you need to “flip” frames 9, 10, 13, and 16.</p>
+<p>As a starting point, I’d suggest making a 0.6s take (let’s call it “run cycle”). You’ll want four base keyframes, but they’re not going to be evenly spaced. We’ll call them “Compress”, “Takeoff”, “Passing”, “Touchdown” and try putting them on frames 0, 1, 4, and 7. Then copy frame 0 to frames 9 and 18, and frames 1, 4, and 7 to 10, 13, and 16 respectively. Then you need to “flip” frames 9, 10, 13, and 16.</p>
 <blockquote>
 <p><strong>Note:</strong> the frame numbers here (and in the walk, idle, and jump tutorials) assume 30 fps, which is never stated; this page also refers to the tentacle before the page that introduces it. <!-- TODO editorial --></p>
 </blockquote>

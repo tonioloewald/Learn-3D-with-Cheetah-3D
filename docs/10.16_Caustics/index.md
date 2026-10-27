@@ -16,7 +16,7 @@ Caustics refer to reflected and refracted light, something which traditional ray
 
 > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
-The way caustics work (at least in the Cheetah renderer) is that you create a “photon” light (a spotlight), give it some **Caustic photons**, and set the **Strength**, **Samples** and **Blur** in the **Caustics** section of the Cheetah renderer’s settings. (Falcon only renders *reflective* caustics, which you turn on with **Reflective caustics** in its settings.)
+The way caustics work (at least in the Cheetah renderer) is that you create a “photon” light (a spotlight), give it some **Caustic photons**, and set the **Strength**, **Samples**, and **Blur** in the **Caustics** section of the Cheetah renderer’s settings. (Falcon only renders *reflective* caustics, which you turn on with **Reflective caustics** in its settings.)
 
 ### Settings
 

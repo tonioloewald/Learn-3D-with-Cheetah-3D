@@ -14,7 +14,7 @@ The top of the panel is a row of tags, which each contain their own properties. 
 
 One object that’s very prone to collecting tags is the camera object (shown here with an HDRI tag, a Radiosity tag, and a Depth of Field tag — a perfectly plausible setup).
 
-> **Note:** requires updating for Cheetah 3D 8.1.1: cameras no longer take HDRI, Radiosity or Depth of Field tags; these are now the HDRI Light object, Cheetah renderer settings, and camera properties (manual: Objects › HDRI Light, Camera; Render › Cheetah). <!-- TODO update -->
+> **Note:** requires updating for Cheetah 3D 8.1.1: cameras no longer take HDRI, Radiosity, or Depth of Field tags; these are now the HDRI Light object, Cheetah renderer settings, and camera properties (manual: Objects › HDRI Light, Camera; Render › Cheetah). <!-- TODO update -->
 
 Most mesh objects will end up with three or more tags — their own property tag (which will vary based on the kind of object they are), a Mode tag (which controls their visibility and whether or not their creator or modifier chains are active), and one or more Material tags (which assign the material to the mesh, or sometimes just parts of an editable mesh, and can also affect how the material is mapped onto that mesh — this topic is covered in more depth in the section on Materials).
 

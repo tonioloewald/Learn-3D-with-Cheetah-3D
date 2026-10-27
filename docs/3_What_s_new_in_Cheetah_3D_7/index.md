@@ -106,7 +106,7 @@ _If you’ve ever fiddled with material transparency or wireframe display modes 
 
 * Only works in vertex mode
 
-> **Note:** requires updating for Cheetah 3D 8.1.1: the Brush tool now works in point, edge, polygon and object mode (manual: Tools › Polygon › Brush). <!-- TODO update -->
+> **Note:** requires updating for Cheetah 3D 8.1.1: the Brush tool now works in point, edge, polygon, and object mode (manual: Tools › Polygon › Brush). <!-- TODO update -->
 
 * Powerful falloff control
 

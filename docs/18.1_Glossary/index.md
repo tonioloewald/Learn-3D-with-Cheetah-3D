@@ -222,4 +222,4 @@ A lathe is a solid formed by revolving a 2D profile around an axis. Cheetah 3Dâ€
 
 An extrusion is a solid formed by pushing a 2D profile through a line (usually perpendicular to the plane of the 2D profile). Cheetah 3Dâ€™s Extrusion creator operates on a spline child object.
 
-> **Note:** Cheetah 3D 8.1.1 also has the Falcon renderer (an unbiased path tracer, manual: Falcon), expression tags (Tag scripts with performExpression), Takes (manual: Take Manager), and glTF/GLB and USDZ file support; glossary entries for Falcon, unbiased/physically based rendering, expression tag, Take, glTF, USDZ and EXR are not yet covered here. <!-- TODO missing -->
+> **Note:** Cheetah 3D 8.1.1 also has the Falcon renderer (an unbiased path tracer, manual: Falcon), expression tags (Tag scripts with performExpression), Takes (manual: Take Manager), and glTF/GLB and USDZ file support; glossary entries for Falcon, unbiased/physically based rendering, expression tag, Take, glTF, USDZ, and EXR are not yet covered here. <!-- TODO missing -->

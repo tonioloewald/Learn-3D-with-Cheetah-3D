@@ -14,7 +14,7 @@ When you’re in object mode, you can only deal with entire objects (including m
 
 > **Note:** this section is a stub: most of the headings below (Objects, Pivots, Mesh Editing Modes, Area Select, Group Select, Converting Selections, reference point) have no content yet. <!-- TODO editorial -->
 
-> **Note:** Cheetah 3D 8.1.1 also has soft selection (the Select tool’s Falloff radius, point mode only; Tools/Common/SelectTool) and Selection menu commands such as Expand/Reduce Selection, Select Triangles/Quads/nGon>4, Convert Selection To Points/Edges/Polygons and Hide Selection/Show All, not yet covered here. <!-- TODO missing -->
+> **Note:** Cheetah 3D 8.1.1 also has soft selection (the Select tool’s Falloff radius, point mode only; Tools/Common/SelectTool) and Selection menu commands such as Expand/Reduce Selection, Select Triangles/Quads/nGon>4, Convert Selection To Points/Edges/Polygons, and Hide Selection/Show All, not yet covered here. <!-- TODO missing -->
 
 ### Objects
 

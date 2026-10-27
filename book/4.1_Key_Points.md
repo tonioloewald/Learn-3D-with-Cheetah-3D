@@ -10,7 +10,7 @@
 
 * **Falcon renders have “noise”** in much the same way digital photographs do. The more “samples” you render the less noise there will be.
 
-* **Falcon is more realistic than the old “Cheetah” renderer**. Special faux-realistic tricks that the Cheetah renderer uses such as radiosity, ambient occlusion, depth of field, blurred reflection and transparency, are computed automatically and at little or no extra cost (in setup or rendering time). Certain costly material features, such as reflection and transparency blur, likewise do not impact rendering time.
+* **Falcon is more realistic than the old “Cheetah” renderer**. Special faux-realistic tricks that the Cheetah renderer uses such as radiosity, ambient occlusion, depth of field, and blurred reflection and transparency, are computed automatically and at little or no extra cost (in setup or rendering time). Certain costly material features, such as reflection and transparency blur, likewise do not impact rendering time.
 
 * **Falcon just works**. Very little finessing of lighting and rendering setups will be required — e.g. shadow blotches, issues with radiosity and transparent objects, lighting artifacts in corners will not be a problem and don’t require fake lighting setups or render tags. 
 

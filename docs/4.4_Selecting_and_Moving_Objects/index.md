@@ -44,7 +44,7 @@ You can double-click the gadget tool to enter (and leave) “gadget mode”. In 
 
 Gadget mode lets you easily rotate selections around a specific edge, or scale a face out from a corner, and so forth. But **note that the gadget’s position and orientation will be lost when the selection changes** (and will not be restored by undo).
 
-> **Note:** Cheetah 3D 8.1.1 also has the Transform tool’s Tweak mode (with nothing selected, hold Shift+Alt and drag a highlighted point, edge or polygon directly), and pressing ESC to return the gadget to its automatic position (manual: Tools › Common › Transform), not yet covered here. <!-- TODO missing -->
+> **Note:** Cheetah 3D 8.1.1 also has the Transform tool’s Tweak mode (with nothing selected, hold Shift+Alt and drag a highlighted point, edge, or polygon directly), and pressing ESC to return the gadget to its automatic position (manual: Tools › Common › Transform), not yet covered here. <!-- TODO missing -->
 
 ### Editable Meshes and the Transform Tool
 

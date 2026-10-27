@@ -44,4 +44,4 @@ E.g. the way you decide if a point is in shadow is by calculating the ray from t
 
 Similarly blurred reflections are achieved by calculating multiple reflections slightly deviating from the “correct” angle and averaging the result. Blurred transparency does the same thing for transparency. Depth of field is calculated by picking points offset from the camera position to start each ray (and because you start at a random position, rather than splitting later in the process, depth of field is much more expensive than the other effects).
 
-> **Note:** Cheetah 3D 8.1.1 also has the Falcon renderer, an unbiased path tracer that follows random light paths (with diffuse, glossy and specular bounces) and refines the image with more samples per pixel; a paragraph on path tracing would round out this section (manual: Render › Falcon). <!-- TODO missing -->
+> **Note:** Cheetah 3D 8.1.1 also has the Falcon renderer, an unbiased path tracer that follows random light paths (with diffuse, glossy, and specular bounces) and refines the image with more samples per pixel; a paragraph on path tracing would round out this section (manual: Render › Falcon). <!-- TODO missing -->

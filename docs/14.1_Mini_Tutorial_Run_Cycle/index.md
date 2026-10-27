@@ -6,6 +6,6 @@ Run cycles are much more difficult to get right than walk cycles. This is becaus
 
 The key underlying insight when animating a run cycle is that running is really a series of alternating one-legged jumps (think of the way the tentacle moves) whereas walking is a series of balance-shifts.
 
-As a starting point, I’d suggest making a 0.6s take (let’s call it “run cycle”). You’ll want four base keyframes, but they’re not going to be evenly spaced. We’ll call them “Compress”, “Takeoff”, “Passing”, “Touchdown” and try putting them on frames 0, 1, 4, and 7. Then copy frame 0 to frames 9 and 18, and frames 1, 4 and 7 to 10, 13 and 16 respectively. Then you need to “flip” frames 9, 10, 13, and 16.
+As a starting point, I’d suggest making a 0.6s take (let’s call it “run cycle”). You’ll want four base keyframes, but they’re not going to be evenly spaced. We’ll call them “Compress”, “Takeoff”, “Passing”, “Touchdown” and try putting them on frames 0, 1, 4, and 7. Then copy frame 0 to frames 9 and 18, and frames 1, 4, and 7 to 10, 13, and 16 respectively. Then you need to “flip” frames 9, 10, 13, and 16.
 
 > **Note:** the frame numbers here (and in the walk, idle, and jump tutorials) assume 30 fps, which is never stated; this page also refers to the tentacle before the page that introduces it. <!-- TODO editorial -->

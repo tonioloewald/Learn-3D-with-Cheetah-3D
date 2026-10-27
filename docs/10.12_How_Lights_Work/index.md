@@ -19,7 +19,7 @@ Cheetah 3D has two render engines, and you switch between them with **Render \> 
 
 Lights work the same way in both renderers, with a few Falcon-only extras:
 
-- **Shadow softness** lets point, spot and distant lights cast soft shadows. For point and spot lights it is the size of a virtual light; for a distant light it is an angle.
+- **Shadow softness** lets point, spot, and distant lights cast soft shadows. For point and spot lights it is the size of a virtual light; for a distant light it is an angle.
 - **MIS** (Multiple Importance Sampling) on the HDRI Light and Sky Light makes renders converge with fewer samples.
 
 > *End of AI draft.* <!-- /AI draft -->
