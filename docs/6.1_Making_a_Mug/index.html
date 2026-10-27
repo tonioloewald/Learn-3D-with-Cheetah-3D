@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <title>Making a Mug — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Note: supporting files for this book, including the tutorials, can be found at loewald.com/c3dbook (under tutorials)." />
+  <link rel="canonical" href="https://learn3d.loewald.com/6.1_Making_a_Mug/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Making a Mug — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Making a Mug — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Note: supporting files for this book, including the tutorials, can be found at loewald.com/c3dbook (under tutorials)." />
+  <meta property="og:url" content="https://learn3d.loewald.com/6.1_Making_a_Mug/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Making a Mug","description":"Note: supporting files for this book, including the tutorials, can be found at loewald.com/c3dbook (under tutorials).","url":"https://learn3d.loewald.com/6.1_Making_a_Mug/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="6.1_Making_a_Mug.md">
+<!--{"parent": "6_Tutorials.md", "order": 1}--><h2 id="making-a-mug">Making a Mug</h2>
+<p><strong>Note</strong>: supporting files for this book, including the tutorials, can be found at <a href="http://loewald.com/c3dbook">loewald.com/c3dbook</a> (under <strong>tutorials</strong>).</p>
+<p>The first thing you probably want to do is make something and render it. In almost any 3D package the steps you go through are something like this:</p>
+<ol>
+<li><p>Decide what you want to make</p>
+</li>
+<li><p>Create a model</p>
+</li>
+<li><p>Texture it</p>
+</li>
+<li><p>Create a scene for it (if necessary; this may entail making more models)</p>
+</li>
+<li><p>Pose or animate it (if necessary)</p>
+</li>
+<li><p>Set up your desired camera view</p>
+</li>
+<li><p>Light it</p>
+</li>
+<li><p>Render it</p>
+</li>
+</ol>
+<p>Often a 3D artist will create a lot of test renders as he/she works. Fortunately, Cheetah 3D’s renderer runs quite fast, even on modest hardware, so producing early test renders is quick and pretty satisfying.</p>
+<p>We’ve come a long way from when I first got into 3D graphics in the late 1980s — there used to be a joke among 3D graphics people: <em>The Law of Constant Rendering Time</em> — no matter how good your hardware gets, it takes <em>seven hours</em> to render an image. But in the last ten years or so, the hardware and software have started to overtake artists’ desire for more realism.</p>
+<p>And it’s quite possible to skip the first step (i.e. just start doing something to see what happens — 3D doodling!) or change your mind as you go.</p>
+<p>So let’s get started.</p>
+<p><img src="/images/pastedGraphic-13.jpg" alt=""></p>
+<p>In this tutorial you’re going to:</p>
+<ol>
+<li><p>make a mug, </p>
+</li>
+<li><p>create a material for it, </p>
+</li>
+<li><p>modify the mug’s UV map to make proper use of the material, </p>
+</li>
+<li><p>and then render the mug.</p>
+</li>
+</ol>
+<p>In the course of this tutorial you will learn to:</p>
+<ul>
+<li><p>manipulate the 3D view and switch between 3D views, </p>
+</li>
+<li><p>basic box modeling techniques, </p>
+</li>
+<li><p>working with modifiers, </p>
+</li>
+<li><p>creating a simple image-based material, </p>
+</li>
+<li><p>the basics of UV mapping, </p>
+</li>
+<li><p>and finally how to quickly light and render a scene.</p>
+</li>
+</ul>
+<p>That’s a lot of ground to cover — but once you’ve finished the tutorial you should know your way around a lot of Cheetah 3D.</p>
+<p>If you’ve used Luxology’s <em>Modo</em> you may notice some similarities between this tutorial and the introductory tutorial for Modo. This is quite intentional — I think the Modo tutorial is very good and shows off some of Modo’s strengths. I think this tutorial covers a greater range of Cheetah 3D’s functionality, and shows how its modifier and creator stacks give it some advantages over the far more expensive <em>Modo</em>.</p>
+<p><strong>Later tutorials assume you have completed this tutorial</strong> and won’t give such blow-by-blow instructions for every little thing.</p>
+<h3 id="creating-the-cup">Creating the Cup</h3>
+<p>We’re going to start by creating the main body of the mug using a cylinder primitive and a modifier. We’ll show how we can modify the properties of primitives and modifiers to get what we want before “collapsing” the hierarchy to create an editable mesh.</p>
+<ol>
+<li>Launch Cheetah 3D (if it’s not already running) and create a new, empty document (if you don’t already have one.</li>
+</ol>
+<blockquote>
+</blockquote>
+<p><img src="/images/pastedGraphic-14.jpg" alt=""></p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><em>By default, a cylinder has 32 longitudinal sections (i.e. it’s a cylinder of a 32-sided approximation of a circle).</em></p>
+</blockquote>
+<ol start="2">
+<li><p>Select <strong>Cylinder</strong> from the <strong>Polygon</strong> toolbar item.</p>
+</li>
+<li><p>Let’s get comfortable with <strong>controlling the 3D view</strong>. </p>
+</li>
+<li><p>Try holding down the <strong>option</strong> (alt) key and then <strong>clicking and dragging</strong> in the 3D view. This is called “orbiting” the view (your point of view stays the same distance from your “focal point” in space). Some views (e.g. “Front”) have a fixed view angle and will not respond to “orbiting”.</p>
+</li>
+<li><p>Now try using the <strong>scroll wheel</strong> (or the equivalent gesture on the trackpad — which is to move two fingers side-by-side up or down) This “zooms” the view (in fact, it moves your point of view towards and away from the focal point).</p>
+</li>
+<li><p>Finally, try holding down the <strong>control</strong> and <strong>option</strong> (alt) keys and then <strong>clicking and dragging</strong> in the 3D view. This “pans” your view around.</p>
+</li>
+</ol>
+<p>If you can’t remember these keyboard shortcuts (chances are the scroll-to-zoom and option-drag to orbit will quickly become second nature) you can also click and drag on the widgets at the top right of the 3D view.</p>
+<p>Now, let’s look at the <strong>Object Browser</strong>. The Object Browser is a schematic representation of your current scene. Right now it should consist of two things: a Camera (the thing you’ve been looking at the scene through, and which is moved around when you alter your view when in the Camera view) and a Cylinder (which you just created).</p>
+<ol start="7">
+<li>Click on the Cylinder to select it (if it’s not already selected) and look at its Properties. The <strong>Properties</strong> panel will display the properties of the thing you’ve most recently selected (either in the 3D view or the Object Browser). Almost all objects will have one or more tags, and these act like extra tabs full of properties for the object they’re attached to.</li>
+</ol>
+<p>E.g. the Cylinder has a blue <strong>Mode</strong> tag which lets you control things like whether a given object will appear in the 3D view or rendered images, how it will be displayed in the 3D view, whether its modifiers will be active, and whether it will create anything if it’s a creator.</p>
+<ol>
+<li>With the Cylinder’s properties visible (click on the Cylinder icon/tab in the Properties panel if necessary, change its Sections longitudinal to 24, and its Sections height to 8. You’ll see that the wireframe displayed in the 3D view will change to match these new settings.</li>
+</ol>
+<p><img src="/images/pastedGraphic-15.jpg" alt=""></p>
+<p><em>The cylinder with 8 height sections and a taper modifier applied to it. (If the cylinder only had one section, the curve of the taper would not show on the cylinder.)</em></p>
+<ol>
+<li><p>Now, we’re going to use a modifier to deform the cylinder to match our mug — we want it to taper towards the bottom. With the Cylinder selected, select <strong>Taper</strong> from the <strong>Modifier</strong> toolbar item. You should see a new icon appear inside (i.e. “as a child of”) the cylinder in the Object Browser, and the cylinder should become tapered, with an inward curve.</p>
+</li>
+<li><p>The <strong>Taper</strong> modifier should now be selected. (If not, select it in the Object Browser.) Since our mug doesn’t have inwardly curved sides we want to change the Taper’s curvature to 0.0. (If we were designing a dainty teacup we might keep it. If we wanted a bulbous mug, we might change it to a positive value. Feel free — as always — to experiment.)</p>
+</li>
+<li><p>The Taper is also the wrong way around. Let’s rotate it 180° around its Z axis. Cheetah 3D refers to rotations either as HPB (heading, pitch, bank) which correspond to rotation around the Y, X, and Z axis, respectively. So change the Taper modifier’s third rotation value to 180. (From now on, I will use the shorthand “set its Rotation to 0,0,180.)</p>
+</li>
+</ol>
+<p><img src="/images/pastedGraphic-16.jpg" alt=""></p>
+<ol>
+<li><p>The Taper is also a bit too extreme. We don’t want the base of the mug to be quite so narrow, so let’s set the Taper modifier’s Strength to 0.7. (Yes, it’s a bit odd that the higher the “Strength” the smaller the effect.)</p>
+</li>
+<li><p>Right now, the Cylinder is a <strong>primitive</strong> with parameters we can change at will; similarly we can go back and change our Taper modifier any time we like. This is nice and gives us a lot of flexibility, but we need to be able to directly edit its polygons, so we’re going to “collapse” our cylinder and its modifier to make an <strong>Editable Mesh</strong>. You can do this by selecting the Cylinder and then either double-clicking on its icon in the Object Browser or selecting <strong>Objects &gt; Make Editable</strong> from the menu.</p>
+</li>
+</ol>
+<p><strong>Note</strong> that making a mesh editable and “collapsing its modifier chain” is what I refer to as a <strong>point of no return</strong> in the modeling process — you can still undo, of course, but you can’t come back a week later and get back to before you made your fateful choice. If I were being careful I might save before this step, or duplicate the uncollapsed object and leave an invisible copy off to the side. (You make something <strong>invisible</strong> by selecting its Mode tag and checking off <strong>Visible in editor</strong> and <strong>Visible in renderer</strong>.)</p>
+<ol>
+<li>If you orbit to look at the top or bottom of our cylinder, you’ll see a whole bunch of triangles. This is horrible to work with so we’re going to delete the top and bottom of our cylinder. From the top-left of the 3D view, switch to the Front view by selecting Front from the popup menu.</li>
+</ol>
+<p><img src="/images/pastedGraphic-17.jpg" alt=""></p>
+<p><em>If you orbit to a nearly edge-on view you can use Area Select to quickly select the cap of the cylinder.</em></p>
+<ol>
+<li><p>Now, we want to marque select the top of the mesh. First we need to be in Polygon mode. Click the Polygon mode item in the toolbar. Pick <strong>Selection &gt; Area Select</strong>, and then drag out a rectangle around the top of your mesh (you want to enclose the top edge of the mesh, and nothing else. You can switch back to the Camera view and orbit to verify you got the right polygons. If you have, press the delete key. (If somehow you delete the entire mug, undo, click on the mesh in the Object Browser, and then repeat this step.)</p>
+</li>
+<li><p>Repeat step 13 for the bottom of the mesh.</p>
+</li>
+</ol>
+<p><strong>Note</strong> that you could do steps 12 and 13 entirely in the camera view if you orbit until the top or bottom is edge on or close to it. An experienced modeler can pretty much “live” in Camera or Perspective views, quickly orbiting to double-check operations.</p>
+<p><img src="/images/pastedGraphic-18.jpg" alt=""></p>
+<p><em>Viewed from below, the bottom cap has been replaced with a single polygon using the Fill Hole tool.</em></p>
+<ol>
+<li>Now we want to replace the bottom of the mesh with a nice polygon. Orbit so you can see the bottom reasonably well, pick <strong>Tools &gt; Polygon &gt; Fill Hole</strong> and click on one of the points around the bottom edge. Done!</li>
+</ol>
+<p><img src="/images/pastedGraphic-19.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-20.jpg" alt=""></p>
+<p><em>Before and after applying a Shell modifier to the mesh. This shows the Shell modifier’s default settings, which are thicker than we want.</em></p>
+<ol>
+<li>Our mug is <em>infinitely thin</em> right now — and in a game it would look really weird (try selecting Backface Culling from the Style menu at the top-left of the 3D view and orbiting it). With the mesh selected, pick <strong>Shell</strong> from the Modifier toolbar item then set the Shell modifier’s <strong>Offset</strong> to 0.05 (the default of 0.1 is a bit too thick). <strong>Make the mesh editable</strong> by double-clicking on its icon in the Object Browser. You might want to double-click on the mesh’s name and change it to “mug” at this point.</li>
+</ol>
+<p><strong>Note</strong> if you’re not using Cheetah 3D 6 then you need to use the Shell tool at this point. Select the mesh if necessary and make sure you’re in Polygon mode, then Select All (<strong>Selection &gt; Select All</strong> or Command-A). Pick <strong>Tools &gt; Polygon &gt; Shell</strong> and then click-and-drag in the 3D view to give your mesh the right amount of thickness (you be the judge). If you make a mistake — undo and do it over. (Do not do it twice — you might want to double-check by undoing and redoing.)</p>
+<h3 id="building-the-handle">Building the Handle</h3>
+<p>We’re going to use a Sweep creator and two splines to create the precise handle shape we want. We’ll be able to adjust the splines until we’re completely happy with the shape of the resulting handle.</p>
+<ol>
+<li><p>Switch the 3D view to <strong>Front</strong>.</p>
+</li>
+<li><p>Click on the <strong>Mode</strong> tag of the mug mesh and set its <strong>Editor shading</strong> to <strong>Wireframe</strong>.</p>
+</li>
+</ol>
+<p><img src="/images/pastedGraphic-21.jpg" alt=""></p>
+<p><em>Here’s the finished spline which will control the shape of the handle. Note how the position of the end points relative to the rows of polygons in the cup.</em></p>
+<ol>
+<li><p>Click in the background or pick Selection &gt; Select None (command-D by default) to deselect the mug mesh. Select <strong>Tools &gt; Spline &gt; Create Spline</strong>. Now click once roughly where we want the handle to start, again at the extreme edge of the handle’s curve, and once more where we want the handle to end. You should now have a really crappy spline. Note that we’re starting in the middle of the second row of polygons in the mug mesh from the top, and ending in the middle of second row from the bottom.</p>
+</li>
+<li><p>Go into <strong>Point</strong> mode. Select the <strong>Transform</strong> tool. Select All. Pick <strong>Tools &gt; Spline &gt; Soft Interpolation</strong>. Your spline now looks slightly less horrible. Move the points and control handles around. <strong>Note</strong>: each control point acts like a 3D point and needs to clicked once to select it and then moved using the transform tool — you can’t just click and drag as in dedicated 2D drawing programs. Move the control points until you’re happy with the curve of your handle.</p>
+</li>
+</ol>
+<p><img src="/images/pastedGraphic-22.jpg" alt=""></p>
+<p><em>Here’s the squashed hexagon that will be the cross-section of the handle.</em></p>
+<ol>
+<li>Now pick <strong>n-Edge</strong> from the Spline toolbar item. By default this will create a hexagon, which is exactly what we want. Set its radius to 0.1. Double-click it to make it editable. Then set its <strong>Type</strong> to <strong>Linear</strong>.</li>
+</ol>
+<p><img src="/images/pastedGraphic-23.jpg" alt=""></p>
+<p><em>The sweep tool creates a 3D mesh by moving the profile (the Sweep creator’s first child) along the control spline (the second child).</em></p>
+<ol>
+<li><p>Select <strong>Sweep</strong> from the Creator toolbar item. Drag the hexagon into it, then drag the spline you created into it, so that the n-Edge (hexagon) is the first child and the Spline is the second child. You should see some geometry appear.</p>
+</li>
+<li><p>Now select the hexagon (named n-Edge) and set its Z rotation to 90°. </p>
+</li>
+<li><p>Click and drag on the red box (scale) widget and scale down the height of the hexagon until the handle is slightly thinner than the polygon row in the mug mesh.</p>
+</li>
+</ol>
+<h3 id="joining-the-handle-to-the-mug">Joining the Handle to the Mug</h3>
+<p>We’re going to use Merge (which replaces Import Children in earlier versions of C3D) to bring the handle into the mug mesh, then we’re going to use the Bridge tool to join the handle to the mug.</p>
+<p><img src="/images/pastedGraphic-24.jpg" alt=""></p>
+<p><em>One of the two edges we need to stretch. The Transform tool is lined up with the edge because its orientation is set to Normal, which allows us to scale the line using the green (y-axis) scaling widget.</em></p>
+<ol>
+<li><strong>Select the mug mesh</strong> and switch to <strong>Edge</strong> mode. Select the edge that the top of the handle is pointing at, and then select the Transform tool. Change the Transform tool’s orientation to normal (so its y-axis lines up perfectly with the edge you’ve selected). Drag the green box to scale the edge so it’s about one and a half times as big. Repeat this for the edge that the bottom of the handle is pointing to and stretch it as well.</li>
+</ol>
+<p><img src="/images/pastedGraphic-25.jpg" alt=""></p>
+<p><em>These are the hexagons we created by stretching the two edges, and which we’re going to delete to make holes so we can join the handle to the cup.</em></p>
+<ol start="2">
+<li>By stretching the two edges <strong>you’ve created hexagons</strong> on the side of the mug mesh which the handle will join to. We’re going to delete these hexagons to leave two hexagonal holes. Switch to <strong>Polygon mode</strong>, and select the four polygons (quads) that make up these two hexagons — click one then shift-click the others — and press delete.</li>
+</ol>
+<p><img src="/images/pastedGraphic-26.jpg" alt=""></p>
+<ol start="3">
+<li><p>Select the mug mesh and then handle (click one, command-click the other) and then select <strong>Tools &gt; Merge</strong>. (If you’re still using an older version of C3D: now drag the handle (the Sweep creator) into the mug mesh (so that it’s a child of the mug mesh) and then click on the mug mesh and pick <strong>Tools &gt; Import Children</strong>. This will copy the handle mesh into the mug but leave the original child untouched. )</p>
+</li>
+<li><p>Select the Sweep creator’s Mode tag and toggle off both of its visible properties. This leaves it around in case we want to rebuild the handle. You could just delete the Sweep creator, but this is an example of how you can avoid having to rebuild stuff from scratch later if you make a mistake.</p>
+</li>
+</ol>
+<p><img src="/images/pastedGraphic-27.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-28.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-29.jpg" alt=""></p>
+<p><em>Before and after we join the two surfaces using the bridge tool — clicking on corresponding points on the edges closed edges we’re going to join.</em></p>
+<ol start="5">
+<li>Now select the mug mesh again and go into <strong>Point mode</strong>. Now pick <strong>Tools &gt; Polygon &gt; Bridge</strong>. Click on one of the points around the upper hole in the side of the mug, then click on the corresponding point on the handle — it should bridge the gap perfectly. (If not, undo and try again.) Repeat for the lower hole and the bottom of the handle.</li>
+</ol>
+<p>The basic mesh is complete. You should orbit it and admire your handiwork.</p>
+<h3 id="refining-the-mesh">Refining the Mesh</h3>
+<p>We’re going to use the bevel tool to adjust the curvature of our mesh when subdivided.</p>
+<ol>
+<li><p>Switch to <strong>Object mode</strong>. Let’s make the mesh look smoother by adding a Subdivision modifier. <strong>Select the mug mesh</strong> and then pick <strong>Subdivision</strong> from the <strong>Modifier menu</strong>. It looks pretty great, but the bottom is so rounded that the mug wouldn’t stand up on a table, and the bottom of the inside probably looks wrong too. The rim of the mug is a bit too rounded as well. </p>
+</li>
+<li><p>Select the mesh’s <strong>Mode tag</strong> and <strong>toggle off Modifier</strong> — this will disable all modifiers (i.e. the subdivision modifier) making it easier to work on the base mesh.</p>
+</li>
+<li><p>Now go back to <strong>Polygon mode</strong>. Orbit the mesh and select (click on) the bottom polygon. Then orbit mesh so you can see the polygon at the bottom of the inner surface of the mug and shift-click to add that to the selection. But we actually want the edges of these polygons, so pick Selection &gt; Convert Selection To &gt; Edges to select the edges of the polygons and automatically switch to Edge mode.</p>
+</li>
+<li><p>We also want the edges of the rim, so pick Selection &gt; Loop Select and then shift-click on one edge on the outside of the rim, and one edge on the inside of the rim. You should now have four edge loops selected.</p>
+</li>
+</ol>
+<p><img src="/images/pastedGraphic-30.jpg" alt=""></p>
+<p><em>These are the edges we want to bevel. We selected the edges of the circular base and bottom of the interior by selecting the polygons then converting the selection to edges, then using the loop selector to select the two edges of the rim.</em></p>
+<p><img src="/images/pastedGraphic-31.jpg" alt=""></p>
+<p><em>After the bevel.</em></p>
+<ol start="5">
+<li><strong>We want to bevel these edges</strong> so that they’ll look good in the base mesh, and also provide finer control when the mesh is used as a subdivision control cage. So pick <strong>Tools &gt; Polygon &gt; Bevel</strong>. If you’re using Cheetah 3D 6, in the Bevel tool’s settings change the type to Convex and leave the Level at 2 (if it isn’t 2, change it to 2). Now click and drag in the 3d view (make sure not to mis-click — undo if you do) and carefully drag until the degree of beveling looks right, then click on the Transform tool in the toolbar to get out of the Bevel tool and avoid any accidents.</li>
+</ol>
+<p><img src="/images/pastedGraphic-32.jpg" alt=""></p>
+<p><em>Subdivision toggled back on.</em></p>
+<ol start="6">
+<li>Now in the mesh’s <strong>Mode tag</strong> properties, <strong>toggle Modifier back on</strong> and admire your handiwork.</li>
+</ol>
+<h3 id="creating-and-applying-a-material-to-the-mug">Creating and Applying a Material to the Mug</h3>
+<p>We’re going to create a simple image-based material and use some brute-force techniques to UV-map it.</p>
+<ol>
+<li><p>Select <strong>Material</strong> from the <strong>Add Material</strong> popup menu towards the bottom-left of your window. A sphere that looks like it’s made of grey plastic should appear with the name “Material”. Double-click the name and change it to “Logo Mug”.</p>
+</li>
+<li><p>With the material selected, you should be able to edit the new material’s properties. Next to the diffuse property is a color swatch and a kind of beveled square. The beveled square lets you add an input node to a property — click on it and select <strong>Textures &gt; Image</strong> from the menu that appears. You should now be looking at the properties of the resulting Image node. Click Load and select mug-diffuse.png. Return to the shader’s properties by clicking the left-pointing arrow at the top of the Properties panel. (This is how you navigate the nodes of a material without looking at the Node view. If you like you can click the Node tab and see the nodes of the simple material you’ve just created.)</p>
+</li>
+<li><p>If you switched to the Node view, go back to the <strong>3D view</strong>. Make sure you’re in <strong>Object mode</strong> and <strong>drag the new material onto your mug</strong>. (The reason we do this in Object mode is that if we’re in Polygon mode we’ll only apply the material to any polygons that happen to be selected, and we want to apply the material to the entire mesh.)</p>
+</li>
+</ol>
+<p><img src="/images/pastedGraphic-33.jpg" alt=""></p>
+<p><em>Using the UV Mapper to place a grid of polygons over the logo. (The little grey square in the bottom-right corner is all the other polygons — so the rest of the mug is the background color.)</em></p>
+<ol start="4">
+<li>Your mug should look pretty terrible. We need to fix the UV mapping. Switch to polygon mode, select the Select tool. In front view, select the the central 4x2 quads you’re looking at by clicking and dragging across them with the mouse (this is called “painting a selection”). Now pick <strong>Selection &gt; Expand Selection</strong> twice (command-shift-X by default). You should now have a “square” of polygons selected.</li>
+</ol>
+<p><strong>Note</strong>: what happens if your mug is somehow the wrong way around and you don&#39;t get a nice &quot;square&quot; of polygons this way? You can select the polygons manually using shift-click to add polygons to your selection and then when you have the polygons you want selected, right-click in the UV editor view and select one of the unwrapping options — it should form the polygons into a nice square for you.</p>
+<ol start="5">
+<li><p>From the <strong>Layout menu</strong> in the toolbar select <strong>UV Editing</strong>. In the Object browser, <strong>click on the Material tag</strong> that attached to the mug. This should show the material tag’s properties in the Properties panel. <strong>Double-click on the material</strong>, which should select the material and put its properties in the Properties panel. Now click on the black-and-white checkerboard to the right of the diffuse property to get at the Image node’s properties. Now click Edit so that the image appears in the UV Editor. (Whew!)</p>
+</li>
+<li><p>Now, select the Transform tool and move and scale the polygons you should still have selected so that they neatly cover the stylized Cheetah logo. Then pick <strong>Selection &gt; Invert Selection</strong> (Command-option-I by default) and <strong>move and scale all the other polygons so they fit in a corner</strong>. Your mug should now display the logo correctly, and the rest of the mug should be blue.</p>
+</li>
+</ol>
+<h3 id="lighting-and-rendering-the-mug">Lighting and Rendering the Mug</h3>
+<p>We’re going to render the mug, adjust the lighting using two different approaches, and tweak the properties of our camera and the Logo Mug material to produce a better-looking render.</p>
+<ol>
+<li><p>Switch back to the <strong>Modeling</strong> layout. Make sure the 3D view is in <strong>Camera</strong> mode and <strong>pick a nice view of your mug</strong> by using the orbit, zoom, and pan controls. Click the <strong>Render</strong> toolbar item: you’ll get a pretty flat looking render. It’s a result of the “Camera light”. We want better lighting in the scene.</p>
+</li>
+<li><p>Pick <strong>Sky Light</strong> from the <strong>Scene Object</strong> menu.  Now try rendering again — big improvement! You might like to experiment with the Sky Light’s properties and render a few more times.</p>
+</li>
+<li><p>The Sky Light is OK but we can do better. <strong>Select and delete the Sky Light</strong>.</p>
+</li>
+<li><p>Most mugs are porcelain, which is reflective. Let’s click on the Logo Mug material and set its Specular color to black. Now set its Reflective color to medium-dark grey. (The preview sphere will tend to overstate reflectivity.) If you render now you’ll get a flat result and no reflections — we need something to reflect!</p>
+</li>
+<li><p>Select the camera and add an HDRI tag and a Radiosity tag from the Tag toolbar item. <strong>Click on the HDRI tag</strong> and load <strong>faux hdri setup.hdr</strong> into it and set its Intensity to 3.0. (Or you can use one of the HDRs included with Cheetah 3D, in which case leave the intensity at 1.0.) Toggle off the Background property. Now <strong>select the Radiosity tag</strong> and set its Type to <strong>Radiosity</strong> (by default, the Radiosity tag is actually an Ambient Occlusion tag — go figure). Now try rendering.</p>
+</li>
+</ol>
+<p><img src="/images/pastedGraphic-34.jpg" alt=""></p>
+<ol start="6">
+<li>In the Object browser (or perhaps the Property panel) <strong>click on the Camera icon</strong> and set its Background Color property to <strong>completely transparent</strong>. Finally, set the Logo Mug material’s Reflection blur to 0.05 so its reflections are mirror sharp. Render. We’re done!</li>
+</ol>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Falcon/">Falcon</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_Key_Points/">Key Points</a></li>
+      <li><a class="doc-link" href="../4.2_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.3_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.4_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.5_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.6_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.7_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.8_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.10_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.11_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.12_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.13_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.15_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.16_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../5.2_User_Interface_Overview/">User Interface Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../6_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link current" href="../6.1_Making_a_Mug/" aria-current="page">Making a Mug</a></li>
+      <li><a class="doc-link" href="../6.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../7.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../8.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../8.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../8.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../8.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../8.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../8.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../8.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../8.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../8.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../9.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../9.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../10.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../10.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../10.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../10.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../10.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../10.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../10.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../10.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../10.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../10.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+      <li><a class="doc-link" href="../10.12_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.13_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.14_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.15_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.16_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.17_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.18_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><a class="doc-link" href="../11_Lighting/">Lighting</a></li>
+    <li><details><summary><a class="doc-link" href="../12_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../12.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../12.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../12.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../12.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../12.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../12.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../12.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../12.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../12.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../12.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../12.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../12.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../12.15_Baking_Materials/">Baking Materials</a></li>
+      <li><a class="doc-link" href="../12.16_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.17_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.18_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.19_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.20_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Animation_Overview/">Animation Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../14.2_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../14.3_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../14.4_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.6_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.7_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../15.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../15.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../15.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../16.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../17.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../17.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../17.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../17.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../17.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../17.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../17.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../18_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../18.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../18.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../18.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../18.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../18.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../18.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../18.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../18.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=fde998e05e15"></script>
+</body>
+</html>

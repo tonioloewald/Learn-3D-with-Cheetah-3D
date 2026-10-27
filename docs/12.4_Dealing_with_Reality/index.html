@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <title>Dealing with Reality — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Aircar on the Quad. This photograph was taken with an iPhone and the aircar added using Cheetah 3D and a combination of Acorn and Photograph." />
+  <link rel="canonical" href="https://learn3d.loewald.com/12.4_Dealing_with_Reality/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Dealing with Reality — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Dealing with Reality — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Aircar on the Quad. This photograph was taken with an iPhone and the aircar added using Cheetah 3D and a combination of Acorn and Photograph." />
+  <meta property="og:url" content="https://learn3d.loewald.com/12.4_Dealing_with_Reality/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Dealing with Reality","description":"Aircar on the Quad. This photograph was taken with an iPhone and the aircar added using Cheetah 3D and a combination of Acorn and Photograph.","url":"https://learn3d.loewald.com/12.4_Dealing_with_Reality/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="12.4_Dealing_with_Reality.md">
+<!--{"parent": "12_Rendering.md", "order": 4}--><h2 id="dealing-with-reality">Dealing with Reality</h2>
+<p><img src="/images/pastedGraphic-565.jpg" alt=""></p>
+<p><strong>Aircar on the Quad</strong>. This photograph was taken with an iPhone and the aircar added using Cheetah 3D and a combination of Acorn and Photograph. </p>
+<ul>
+<li><p>Remember that it’s imperfections that sell — the photo isn’t very sharp, so the added elements were blurred to match it. </p>
+</li>
+<li><p>The reflections in on the aircar were from an HDRI mocked up from the single Photo. </p>
+</li>
+<li><p>Lighting was with a skylight (I set it to the correct longitude, latitude, date and time). </p>
+</li>
+<li><p>The shadow was a simple shadowmat blurred and distorted a bit. It’s not perfect, but the whole process took less than an hour.</p>
+</li>
+</ul>
+<p>There are several basic problems when you want to add a rendered element to a photograph. Note that the same techniques apply to adding animated elements to still photographs and locked off camera shots.</p>
+<ul>
+<li><p>Matching the camera field of view and angle</p>
+</li>
+<li><p>Matching the depth of field</p>
+</li>
+<li><p>Shadows</p>
+</li>
+<li><p>Reflections</p>
+</li>
+<li><p>Lighting</p>
+</li>
+<li><p>Caustics</p>
+</li>
+<li><p>Masking out Foreground Elements</p>
+</li>
+</ul>
+<p><strong>Matching a Still or Static Camera Shot</strong></p>
+<p>Let’s suppose you want to render a building on the site where it’s intended to be constructed.</p>
+<p>Ideally what you will do is either take a photograph of the site, and carefully note all your camera settings (and, ideally, some information about landmarks or reference points in the area, such as their relative positions and sizes) — or be given a photograph along with that information. If you have the time and means, you might even insert reference points (or survey existing ones) yourself.</p>
+<p>Then, you create a scene in Cheetah 3D with placeholder objects for the landmarks placed and sized correctly relative to one another, and then you’ll set up a camera with field of view matching that of the camera used to take the photograph. (There’s a conversion table for common lens focal lengths to Cheetah 3D field of view in the section on the Camera Object in the chapter on Rendering.)</p>
+<p>In practice, all you really tend to need is a single rectangle of known dimensions (ideally a vertical or horizontal rectangle) and the focal length of the lens. Create a matching rectangle in your scene and line it up by trial and error.</p>
+<p>Assuming you have a digital photograph, you can probably get the focal length and other camera settings (time of day) from the photograph’s EXIF metadata.</p>
+<p>You then load the photograph into your camera object as the Background Image and adjust the camera facing and position using the orbit, zoom, and pan controls until your reference point objects line up with their corresponding images in the photograph.</p>
+<p>Now lock your camera down and build out the scene.</p>
+<p><img src="/images/pastedGraphic-566.jpg" alt=""></p>
+<p>Here’s a photograph of a building I had lying around. </p>
+<p><img src="/images/pastedGraphic-567.jpg" alt=""></p>
+<p><em>Here’s some of the EXIF metadata for this image in iPhoto. The time of day is wrong (probably a timezone issue).</em></p>
+<p>So all I really know about it is that it was taken with a 35mm lens using a Nikon D5000 (an FX camera with a crop factor of 1.5). This makes it roughly a 50mm lens (on a 35mm film camera) — a 39.6° field of view for the larger dimension in Cheetah 3D terms. Judging from the light, it was taken in the mid-to-late afternoon — so I’ll set my Sky Light to 15:00.</p>
+<p><img src="/images/pastedGraphic-568.jpg" alt=""></p>
+<p>Above, I’ve created a scene with a box, set the camera’s render width to 300 and its height to 500 (to match the aspect ratio of the photograph) and then set the field of view to 39.6 (close to Cheetah 3D’s default of 40.0) and played with the view controls until I was able to match the side of the cube with the top corner of the building and then I pulled out the bottom of the cube to line up with the point where I’ve got a horizontal line on the same facade and messed around a bit longer to get that lined up.</p>
+<p><img src="/images/pastedGraphic-569.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-570.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-571.jpg" alt=""></p>
+<p><em><strong>Top</strong>: I build out a bit more of the facade, add a flying saucer, roughly match the lighting with a skylight set to the right time of day (simply rotating the skylight until it looks roughly correct). <strong>Middle</strong>: a quick test render. <strong>Bottom</strong>: I put the default Shadowmat material on the facade and render again.</em></p>
+<p><strong>Converting 35mm equivalent apertures to C3D depth of field settings.</strong></p>
+<p>Matching <strong>Depth of Field</strong> tag settings is not as straightforward as matching field of view. I’d recommend simply doing some test renders and eyeballing it. (Perhaps a kind reader will tell me the magic formula, and I will update a later edition of this book!)</p>
+<p>Usually, depth of field won’t be a major issue since either (a) the photograph will be largely in focus, which is usually the case for photographs taken specifically for this kind of purpose, or (b) you’re only compositing isolated elements, and can simply blur them to match the depth of field during the compositing process.</p>
+<p><strong>Matching Motion Footage</strong></p>
+<p>One of the common problems in special effects work is producing cg images in a way that matches a moving camera shot. This is much harder than matching a fixed camera shot, which is why (for example) <em>Star Trek: Next Generation</em> used so many static camera shots.</p>
+<p>E.g. in Jurassic Park 2 there’s a sequence where characters are fleeing from dinosaurs in a jeep; this was achieved by shooting the scene more-or-less conventionally with actors and a jeep on location, then calculating the motion of the camera from the way objects in the shots with known, fixed positions moved in the shots, then rendering the dinosaurs using a virtual camera which moved in the way the original camera was calculated to have moved during filming, and finally compositing the rendered imagery with the film (and removing the various sticks and reflectors used to help calculate the motion from the film at the same time).</p>
+<p>PFHOE Pro is a remarkably good, inexpensive tool for calculating camera motion from high quality video footage on a desktop computer and then exporting it to a wide variety of formats, including FBX, which Cheetah 3D can easily import. So, yes, you can replicate this kind of shot with a few hundred dollars worth of software on a Mac laptop with a lot of work.</p>
+<p>There are other kinds of motion tracking, notably the capture of body and facial motion so that the performances of actors and stunt people can drive the motion of cg characters. Typically, such motion is available or can be converted to BVH or FBX format, with FBX being convenient for Cheetah 3D.</p>
+<p>There are libraries of motion content (some captured, some animated) which can be customized and bought off the shelf from vendors such as Mixamo (mixamo.com) and then used to animate characters in Cheetah 3D. Again, the key is getting the content in FBX format.</p>
+<p><strong>Shadows</strong></p>
+<p>If the rendered element is going to cast shadows into the scene, you may need to build out a Shadow Catcher (an object, usually a plane, with a Shadow Catcher material assigned to it).</p>
+<p>An even better approach, if you have the time, is to render the shadows separately by rendering the object against a shadow catcher with shadows on and off, difference the two renders, and use the result as a mask to paint in a shadow. (A tutorial on this technique is provided elsewhere under <strong>Foolproof Shadow Catchers</strong>.)</p>
+<p><strong>Reflections</strong></p>
+<p>There are two distinct cases where reflection becomes an issue.</p>
+<ul>
+<li><p>Reflections of the scene onto the object</p>
+</li>
+<li><p>Reflections of the object onto the scene</p>
+</li>
+</ul>
+<p>Of course there’s the worst case scenario of, say, inserting a mirror into a scene containing mirrors, which is just going to drive you nuts — good luck with that.</p>
+<p>Reflecting the scene onto the object entails obtaining or faking an HDRI of the scene. The worst case scenario is you just have the Photo itself. The best case is you’re the Special Effects Director and you were present at the shooting and got to do some advance work — i.e. photograph light probes (usually large steel ball bearings) or panoramas, or you took a bunch of photos you can <em>stitch</em> into a panorama.</p>
+<p>Stitching photos into Panoramas is something Photoshop makes easy these days (although to get a true 4π Steradian panorama you need to use an exotic lens). Light probes work very well. (Remember the liquid metal <em>Terminator</em>? Light probes.) You can also buy dedicated Panorama cameras and lenses that, together with specialized software, will allow you to create a full panorama with on shutter press.</p>
+<p><strong>Aside</strong>: never encountered Steradians before? They’re the way solid angles are measured, and they essentially measure the area on the unit sphere (whose total area is 4π) that a spherical projection covers. A good HDRI should cover the entire sphere and thus cover 4π steradians. Typically, 360° panoramas do not cover all of the sky above and the ground below the panorama.</p>
+<p>Let’s assume that you’re on a budget. Take a few photographs in a circle and munge them together to form a fake panorama. Only have one photo? Make three or four copies and place them side to side and hack them into a panorama. Add some fake sky and dirt above — don’t need to make them too perfect.</p>
+<p>Now you’re ready to render fake reflections of the scene.</p>
+<p>Reflecting the object onto objects in the scene is comparatively easy (unless the objects are hideously complex, since you may need to build them). You simply create “reflection catchers” in much the same way as you would create shadow catchers, and then composite them into the scene as is appropriate.</p>
+<p>Again, the <strong>Foolproof Shadow Catchers</strong> technique may be helpful here.</p>
+<p><strong>Lighting &amp; Color Grading</strong></p>
+<p>I mention lighting after reflections because, at this point, you may already have a good HDRI, in which case matching the lighting in the Photograph may simply be a matter of using image-based lighting.</p>
+<p>More likely, especially if the photograph has well-defined shadows, you’ll want to use a Sky Light (for an outdoor scene) or some carefully placed lights to produce shadows to match those in the scene (mismatched shadows often make these kinds of photo manipulation look bad).</p>
+<p>Moreover, you’ll want to match the overall white balance and gamma of the scene. If the lighting has a yellow cast you’ll want to match it with the inserted element. Similarly, you’ll want to match the contrast and tone levels of the scene. (Again, it’s imperfections that sell. If the photograph has exposure problems, you want to match them — not insert a perfectly exposed, neutral white balanced rendered element into an underexposed moody scene.)</p>
+<p>If you don’t have an excellent HDR image to use for lighting, you’re better off rendering with neutral lighting and using your compositing tool (e.g. Photoshop) to adjust the image interactively.</p>
+<p><strong>Caustics</strong></p>
+<p>Caustics are a big enough pain to deal with in pure cg scenes, but the same technique described under <strong>Foolproof Shadow Catchers</strong> can be used to capture caustics from an object. So — for example — you can render a glass of whiskey, capture its caustics, and then composite it onto a photograph of a table.</p>
+<p><strong>Masking Out Foreground Elements</strong></p>
+<p>It’s possible that some elements of in the Photograph will be in front of the rendered elements, in which case they will need to be masked out and you may even need to deal with things like faking shadows and reflections of those objects on rendered elements. This requires Photoshop wizardry that’s beyond the scope of this book.</p>
+<p><strong>Avoid foreground elements where possible</strong> (especially in stills — it’s a lot easier to get away with rough masking for animations).</p>
+<p><strong>Adding Rendered Animation to Video Footage</strong></p>
+<p>There are two typical approaches to adding cg elements to video. </p>
+<p><strong>Locked Off Camera Shots</strong></p>
+<p>Adding rendered animation to a locked camera shot is essentially the same as adding a rendered image to a still photograph. (That’s the beauty of it!)</p>
+<p>The simplest, which used to be the only practical option for low budget production, is to use “locked off” camera shots — in other words, mount the camera on a tripod, lock it down, and the shoot the video with a fixed camera angle. It’s relatively easy to add cg effects by matching the camera angle (“by eye” is often good enough) and then using simple compositing techniques to put the elements together.</p>
+<p><strong>Motion Matching</strong></p>
+<p>The more complex approach, which used to be limited to big budget movies, but is not available even to amateur enthusiasts working on their own, is to use a program like PFHoe (pfhoe.com) to analyze your video footage and generate a motion file from it (in essence, this represents the camera movement relative to the scene, calculated from identifying objects in the scene and figuring out how they moved). PFHoe Pro can export these motion files as FBX, ready for import into Cheetah 3D.</p>
+<p><strong>Historical Aside</strong></p>
+<p>Before motion matching (or “Match Move”) technology existed, there was an <em>even more expensive</em> approach called “motion control” where you could use a computer to control the camera movement, which meant you had a precise knowledge of how the camera had behaved. This technique was developed to allow complex flythroughs of elaborate modeled sets (e.g. the point-of-view approach shots as Luke flies towards the Death Star in the first Star Wars movie) and later the mixing cg and model shots in movies like <em>The Empire Strikes Back</em>.</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Falcon/">Falcon</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_Key_Points/">Key Points</a></li>
+      <li><a class="doc-link" href="../4.2_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.3_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.4_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.5_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.6_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.7_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.8_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.10_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.11_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.12_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.13_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.15_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.16_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../5.2_User_Interface_Overview/">User Interface Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../6.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../7.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../8.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../8.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../8.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../8.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../8.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../8.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../8.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../8.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../8.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../9.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../9.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../10.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../10.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../10.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../10.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../10.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../10.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../10.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../10.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../10.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../10.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+      <li><a class="doc-link" href="../10.12_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.13_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.14_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.15_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.16_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.17_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.18_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><a class="doc-link" href="../11_Lighting/">Lighting</a></li>
+    <li><details open><summary><a class="doc-link" href="../12_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../12.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../12.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link current" href="../12.4_Dealing_with_Reality/" aria-current="page">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../12.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../12.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../12.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../12.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../12.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../12.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../12.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../12.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../12.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../12.15_Baking_Materials/">Baking Materials</a></li>
+      <li><a class="doc-link" href="../12.16_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.17_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.18_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.19_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.20_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Animation_Overview/">Animation Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../14.2_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../14.3_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../14.4_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.6_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.7_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../15.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../15.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../15.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../16.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../17.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../17.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../17.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../17.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../17.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../17.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../17.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../18_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../18.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../18.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../18.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../18.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../18.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../18.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../18.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../18.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=fde998e05e15"></script>
+</body>
+</html>

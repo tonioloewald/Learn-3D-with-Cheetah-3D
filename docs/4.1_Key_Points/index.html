@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <title>Key Points — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="* Quick previews: even complex scenes will be (noisily) rendered in a few seconds, allowing you to quickly notice and correct errors." />
+  <link rel="canonical" href="https://learn3d.loewald.com/4.1_Key_Points/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Key Points — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Key Points — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="* Quick previews: even complex scenes will be (noisily) rendered in a few seconds, allowing you to quickly notice and correct errors." />
+  <meta property="og:url" content="https://learn3d.loewald.com/4.1_Key_Points/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Key Points","description":"* Quick previews: even complex scenes will be (noisily) rendered in a few seconds, allowing you to quickly notice and correct errors.","url":"https://learn3d.loewald.com/4.1_Key_Points/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="4.1_Key_Points.md">
+<!--{"parent": "4_Falcon.md", "order": 1}--><h2 id="key-points">Key Points</h2>
+<ul>
+<li><p><strong>Quick previews</strong>: even complex scenes will be (noisily) rendered in a few seconds, allowing you to quickly notice and correct errors. No more waiting half an hour to discover you had the wrong lighting setup.</p>
+</li>
+<li><p>Typically, <strong>a simple render will take 10x as long</strong> to produce “clean” output with Falcon as with Cheetah.</p>
+</li>
+<li><p><strong>Falcon renders generally look much better</strong> than Cheetah renders. (You thought Cheetah renders looked fine?)</p>
+</li>
+<li><p><strong>Falcon renders have “noise”</strong> in much the same way digital photographs do. The more “samples” you render the less noise there will be.</p>
+</li>
+<li><p><strong>Falcon is more realistic than the old “Cheetah” renderer</strong>. Special faux-realistic tricks that the Cheetah renderer uses such as radiosity, ambient occlusion, depth of field, blurred reflection and transparency, are computed automatically and at little or no extra cost (in setup or rendering time). Certain costly material features, such as reflection and transparency blur, likewise  do not impact rendering time.</p>
+</li>
+<li><p><strong>Falcon just works</strong>. Very little finessing of lighting and rendering setups will be required — e.g. shadow blotches, issues with radiosity and transparent objects, lighting artifacts in corners will not be a problem and don’t require fake lighting setups or render tags. </p>
+</li>
+<li><p><strong>Falcon renders motion blur</strong>. Again, this has little or no impact on rendering time.</p>
+</li>
+</ul>
+<h3 id="falcon-is-a-unidirectional-path-tracer">Falcon is a “Unidirectional Path Tracer”</h3>
+<p>The original Cheetah 3D renderer — now referred to as “Cheetah” — was a Ray Tracer, which means that each pixel in the final image is rendered by tracing back from the observer through the pixel into the scene, and then guesstimating how brightly lit each thing you bump into is. </p>
+<p>Falcon is a “unidirectional path tracer”. In simple terms, this means it’s an “unbiased” or “physically-based” renderer that stochastically (i.e. randomly) generates photons along one possible path (e.g. suppose there are ten identical point light sources in a scene, then each new pixel will be emitted randomly from one of the ten lights. If one such photon has a 50% chance of being reflected by a surface then the path tracer will flip a coin and trace one of the two possible paths. The idea is that if you follow enough pixels then everything will even out — which is why the image starts very noisy, and smooths out as the “law of large numbers” evens out the effect of random decisions.</p>
+<p>The quality of a rendered image is referred to in terms of “samples per pixel”. This is an average — if a rendered image is 1000 x 1000 pixels (one million pixels) then 100 samples per pixel means that 100,000,000 virtual photons contributed to the image. </p>
+<p>A key feature of modern unbiased renderers is that they eliminate irrelevant photons from consideration as quickly as possible. E.g. if a photon is going to fly off to infinity — i.e. is heading out of the view frustum and won’t collide with anything in the scene — then it can immediately be dropped from consideration. Such a photon (or sample) does not contribute to the image and thus isn’t counted towards “samples per pixel”.</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../4_Falcon/">Falcon</a></summary>
+    <ul>
+      <li><a class="doc-link current" href="../4.1_Key_Points/" aria-current="page">Key Points</a></li>
+      <li><a class="doc-link" href="../4.2_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.3_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.4_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.5_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.6_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.7_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.8_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.10_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.11_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.12_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.13_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.15_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.16_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../5.2_User_Interface_Overview/">User Interface Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../6.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../7.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../8.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../8.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../8.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../8.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../8.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../8.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../8.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../8.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../8.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../9.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../9.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../10.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../10.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../10.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../10.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../10.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../10.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../10.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../10.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../10.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../10.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+      <li><a class="doc-link" href="../10.12_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.13_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.14_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.15_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.16_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.17_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.18_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><a class="doc-link" href="../11_Lighting/">Lighting</a></li>
+    <li><details><summary><a class="doc-link" href="../12_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../12.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../12.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../12.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../12.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../12.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../12.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../12.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../12.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../12.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../12.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../12.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../12.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../12.15_Baking_Materials/">Baking Materials</a></li>
+      <li><a class="doc-link" href="../12.16_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.17_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.18_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.19_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.20_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Animation_Overview/">Animation Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../14.2_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../14.3_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../14.4_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.6_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.7_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../15.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../15.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../15.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../16.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../17.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../17.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../17.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../17.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../17.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../17.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../17.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../18_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../18.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../18.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../18.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../18.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../18.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../18.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../18.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../18.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=fde998e05e15"></script>
+</body>
+</html>

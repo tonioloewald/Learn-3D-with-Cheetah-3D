@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <title>Modeling Tricks &amp; Techniques — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Cheetah 3D has an amazingly powerful feature called &quot;gadget mode&quot;. It you&#39;ve ever wished you had something like Blender&#39;s &quot;cursor&quot; only a lot less annoying…" />
+  <link rel="canonical" href="https://learn3d.loewald.com/8.4_Modeling_Tricks_Techniques/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Modeling Tricks &amp; Techniques — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Modeling Tricks &amp; Techniques — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Cheetah 3D has an amazingly powerful feature called &quot;gadget mode&quot;. It you&#39;ve ever wished you had something like Blender&#39;s &quot;cursor&quot; only a lot less annoying…" />
+  <meta property="og:url" content="https://learn3d.loewald.com/8.4_Modeling_Tricks_Techniques/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Modeling Tricks & Techniques","description":"Cheetah 3D has an amazingly powerful feature called \"gadget mode\". It you've ever wished you had something like Blender's \"cursor\" only a lot less annoying…","url":"https://learn3d.loewald.com/8.4_Modeling_Tricks_Techniques/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="8.4_Modeling_Tricks_Techniques.md">
+<!--{"parent": "8_Modeling.md", "order": 4}--><h2 id="modeling-tricks--techniques">Modeling Tricks &amp; Techniques</h2>
+<h3 id="gadget-mode">Gadget Mode</h3>
+<p>Cheetah 3D has an amazingly powerful feature called &quot;gadget mode&quot;. It you&#39;ve ever wished you had something like Blender&#39;s &quot;cursor&quot; only a lot less annoying, you will probably love gadget mode.</p>
+<p>In simple terms, gadget mode lets you <em>temporarily</em> move the <em>pivot</em> of the selection for <em>all</em> purposes. To do this, switch to the transform tool, make your selection (if necessary) and double-click the sphere. It will turn blue, and now you can move it around or snap it to components. When it&#39;s where you want it, you simply double-click it again and use the new pivot. </p>
+<p>Once you change your selection, the pivot reverts. (If you want to permanently change an object&#39;s pivot, see the next section.)</p>
+<h4 id="why-would-you-use-this">Why would you use this?</h4>
+<ul>
+<li><p>Scaling relative to a specific center</p>
+</li>
+<li><p>Rotating around an edge</p>
+</li>
+<li><p>Snapping components together</p>
+</li>
+</ul>
+<h3 id="pivots-coordinate-systems-skew--other-stories">Pivots, Coordinate Systems, Skew, &amp; Other Stories</h3>
+<p>An object&#39;s pivot (which appears when you select it) is a representation of the object&#39;s coordinate system — it is placed where the object&#39;s &quot;origin&quot; is, and (by default) the orientation of the pivot shows the orientation of the coordinate system.</p>
+<h3 id="merging-joining-and-bridging-meshes">Merging, Joining, and Bridging Meshes</h3>
+<p>To <strong>merge</strong> multiple meshes into one mesh, simply select the meshes you want to combine and then select <strong>Tools &gt; Merge</strong>.</p>
+<p>In earlier version of C3D, merging is more difficult: pick one to be the parent, make the other meshes children, then select the parent and choose <strong>Tools &gt; Import Children</strong>. The child meshes will be copied into the parent (you can delete the children or collapse the parent mesh at this point).</p>
+<p>To <strong>join</strong> separate pieces of a mesh you can build polygons to join them one-by-one using the <strong>Create Polygon</strong> tool, you can <strong>bridge</strong> closed loops, or you can weld vertices together using the <strong>Weld</strong> tool.</p>
+<h3 id="splitting-meshes">Splitting Meshes</h3>
+<p>To split meshes apart you need to be in polygon mode. Simply select the polygons you want to split off from the mesh and select <strong>Tools &gt; Polygon &gt; Split</strong>. The selected polygons will now be a separate mesh with the name of the original mesh with “.split” appended.</p>
+<p><img src="/images/pastedGraphic-191.jpg" alt=""></p>
+<p><em>This mesh was created by creating a default box, making it editable, selecting its top polygon, using Tools &gt; Polygon &gt; Disconnect (and clicking OK in the Disconnect tool’s panel) then using edge rotate to rotate the “lid” around its back edge.</em></p>
+<p>To allow a selected set of polygons to be moved without affecting adjacent polygons you can detach them from their neighbors using <strong>Tools &gt; Polygon &gt; Disconnect</strong>.</p>
+<p><strong>Working with Primitives</strong></p>
+<p>Primitives are very useful by themselves. They have the advantage of being controlled by parameters you can change at any time and some are surprisingly flexible.</p>
+<p>In general, the most important properties of primitives are those which control the level of detail.</p>
+<p><img src="/images/pastedGraphic-192.jpg" alt=""></p>
+<p><em>Five cylinder primitives with a 45° Bend modifier, with 20, 10, 5, 3, and 1 vertical sections respectively.</em></p>
+<p><img src="/images/pastedGraphic-193.jpg" alt=""></p>
+<p><em>Some of the primitives are surprisingly versatile. These are all <strong>torus</strong> primitives.</em></p>
+<h3 id="modeling-a-hole-without-booleans">Modeling a Hole (without Booleans)</h3>
+<p>A common problem in box modeling is trying to carve a precisely shaped opening or recess in an arbitrary face. In many cases the best approach is to build a flat surface with the shape of the hole, snap it to the surface in question, merge the meshes, and then bridge the two geometries.</p>
+<p><img src="/images/pastedGraphic-194.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-195.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-196.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-197.jpg" alt=""></p>
+<p><em>We’re carving a star-shaped hole in a square polygon. <strong>Top</strong>: we start by creating the star shaped mesh (star spline in a polyplane creator, collapsed) then merge it into our initial mesh and use snapping to snap it to our face; <strong>Upper-middle</strong>: we then delete the face we’re cutting a hole into and <strong>lower-middle</strong>: bridge the edge of the resulting hole to our star; <strong>Bottom</strong>: little cleanup to fix the non-convex polygons and we can make our precisely star-shaped recess.</em></p>
+<h3 id="solid-modeling">Solid Modeling</h3>
+<p>Here’s the summary. If you want to use your meshes as solids then make sure there are no holes or doubled (superimposed) polygons, and verify that all the normals are correct and consistent. You should also look for and try to eliminate non-convex polygons.</p>
+<p>Cheetah 3D isn’t designed for solid modeling, but it does have some useful features for doing these things.</p>
+<ul>
+<li>If you pick <strong>Backface Culling</strong> from the 3D view’s Style menu polygons will disappear when viewed from “behind”. This makes it much easier to see flipped polygons (i.e. those with normals facing the wrong way) and correct them.</li>
+</ul>
+<p><img src="/images/pastedGraphic-198.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-199.jpg" alt=""></p>
+<p><em>The right face of this box looks weirdly dark. Switching on Backface Culling reveals a hole in my box. Oops!</em></p>
+<ul>
+<li>Incorrectly flipped polygons will often look oddly shaded. If you see polygons in your mesh that just look wrong, try turning on backface culling to double-check.</li>
+</ul>
+<p><img src="/images/pastedGraphic-200.jpg" alt=""></p>
+<p><em>“z-chasing” occurs when coplanar polygons overlap, and is never a good thing (but especially bad if you’re trying to do solid modeling). It’s referred to as z-chasing because realtime 3D rendering uses a “z-buffer” to figure out when something is in front of something else — if two things have identical or near identical z-buffer values they will produce visual artifacts.</em></p>
+<ul>
+<li><p>You should inspect your mesh carefully (look at it from different angles) and look for telltale “z-chasing” (which indicates coincident or overlapping polygons).</p>
+</li>
+<li><p>If you use polygon <strong>Optimize</strong> tool (Tools &gt; Polygon &gt; Optimize) you can eliminate some redundant or pathological polygons.</p>
+</li>
+</ul>
+<p><img src="/images/pastedGraphic-201.jpg" alt=""></p>
+<p><em>Here’s a (very) non-convex polygon that looks just fine in Cheetah 3D, but there’s no way to predict how another package might handle it. Triangulating it in Cheetah 3D and verifying it still looks right will prevent disappointment later.</em></p>
+<ul>
+<li>The simplest way to eliminate all non-convex polygons from a mesh is to triangulate it. If you’re sending a mesh off to a bureau for 3D printing you might want to triangulate it and inspect it for issues.</li>
+</ul>
+<h3 id="normals-and-solid-modeling">Normals and Solid Modeling</h3>
+<p>In order to understand how a solid is inferred from a mesh, it’s important to understand normals. Imagine you are building a complicated mould into which you plan to pour concrete. You want to be able to re-use the mold, so you paint slippery goop that concrete won’t adhere to on the “inside” of the mould. But the stuff is disgusting and expensive so you don’t paint it anywhere else. An experienced concrete pourer can look at a correctly assembled and gooped mould and infer what the final object is going to look like, no matter how complicated it is, because the inside surfaces are consistently lined with this slippery goop and outside surfaces aren’t.</p>
+<p>But if your mould has gaps (holes) in it, then it won’t work because the concrete will leak out. And if you accidentally paint the goop in the wrong places then the concrete pourer might get confused and think the mould is inside out and there’s no telling what will happen.</p>
+<p>So, you need to make sure your mould has no holes in it and that the goop is correctly placed throughout. Replace mould with mesh, holes with “missing polygons”, and goop with “normals” (except the normals should point outwards).</p>
+<p>Oh, and there’s one more complication — doubled polygons are just as dangerous as missing polygons (e.g. imagine you have two identical overlapping polygons). There’s no analog of this in our real world example, because polygons are dimensionless, and moulds aren’t.</p>
+<h4 id="tip-seeing-normals">Tip: Seeing Normals</h4>
+<p>Some 3D programs offer the option of seeing normals but unfortunately Cheetah 3D isn’t one of them. If you want to see the normals on a mesh you can use a Particle Mesh and a Spline. This is so useful it’s worth keeping a Particle Mesh set up for this handy. All you need to do is create a Particle Mesh (rename it “View Normals” or something) and add a Line spline to it. Set its length to 0.2 and its position to 0,0.2,0 and drag it into the Particle Mesh. Now you can assign any mesh to the Particle Mesh’s Mesh property and you’ll be able to view its Point, Edge, and Face normals.</p>
+<p><img src="/images/pastedGraphic-202.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-203.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-204.jpg" alt=""></p>
+<p><em>Displaying the polygon, edge, and point normals of a Polyhedron using a Line Spline and a Particle Mesh.</em></p>
+<h4 id="how-solidity-is-inferred">How solidity is inferred</h4>
+<p>The process by which a person looks at a cup, say, and figures out which part of it is the “inside” and how to pour tea into it is incredibly complicated. Computers are simple minded and can’t do complicated things like that unless we can break it down into very simple steps. The way solidity is inferred in practice is quite simple, and identical conceptually to the way laser printers figure out which parts of a glyph (e.g. a letter or symbol) need to be colored in.</p>
+<p><img src="/images/pastedGraphic-205.jpg" alt=""></p>
+<p>Imagine you are a laser printer and you’re drawing a single row of pixels. Which part of the line should be black and which white? The simplest answer is to count the number of edges you cross. If you’ve crossed an odd number of edges you’re inside a character (so the pixel should be black) and if it’s an even number of edges you’re outside a character (so the pixel should be white). Easy!</p>
+<p>The only problem with this is that it assumes that there are no overlapping, wasted shapes. In practice, many objects are created in a much cruder and more slipshod manner, e.g. I might have built the numeral 1 out of overlapping pieces:</p>
+<p><img src="/images/pastedGraphic-206.jpg" alt=""></p>
+<p>If we simply count the number of edges crossed here, we’ll render the overlaps as holes, which is not what we want. So we need to have a concept of the “inside” of a shape, and this is where “winding order” comes in. We define a shape as a series of control points in a specific order such that they go anticlockwise (to pick a direction) around their interior.</p>
+<p>If we switch to the 3D case, “winding order” becomes the surface normal. We establish the convention that the normal points away from the interior of a mesh, so we know that if we’ve crossed more outward facing edges than inward we are still “inside” something, and so we’re still inside.</p>
+<p>But if a normal is the wrong way out, or a face is doubled or missing, our count can be off and we might never enter or escape the interior of our mesh. And so we can’t infer the interior, and our mesh won’t work.</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Falcon/">Falcon</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_Key_Points/">Key Points</a></li>
+      <li><a class="doc-link" href="../4.2_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.3_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.4_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.5_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.6_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.7_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.8_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.10_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.11_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.12_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.13_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.15_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.16_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../5.2_User_Interface_Overview/">User Interface Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../6.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../7.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../8_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../8.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../8.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link current" href="../8.4_Modeling_Tricks_Techniques/" aria-current="page">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../8.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../8.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../8.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../8.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../8.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../8.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../9.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../9.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../10.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../10.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../10.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../10.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../10.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../10.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../10.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../10.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../10.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../10.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+      <li><a class="doc-link" href="../10.12_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.13_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.14_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.15_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.16_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.17_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.18_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><a class="doc-link" href="../11_Lighting/">Lighting</a></li>
+    <li><details><summary><a class="doc-link" href="../12_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../12.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../12.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../12.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../12.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../12.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../12.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../12.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../12.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../12.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../12.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../12.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../12.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../12.15_Baking_Materials/">Baking Materials</a></li>
+      <li><a class="doc-link" href="../12.16_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.17_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.18_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.19_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.20_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Animation_Overview/">Animation Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../14.2_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../14.3_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../14.4_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.6_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.7_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../15.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../15.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../15.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../16.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../17.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../17.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../17.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../17.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../17.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../17.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../17.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../18_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../18.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../18.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../18.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../18.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../18.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../18.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../18.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../18.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=fde998e05e15"></script>
+</body>
+</html>

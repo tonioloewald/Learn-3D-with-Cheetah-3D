@@ -1,0 +1,267 @@
+# Learn 3D with Cheetah 3D v3.0.0
+
+The Missing Manual for Cheetah 3D — modeling, materials, lighting, rendering and animation.
+
+- Docs: https://learn3d.loewald.com
+- Source: https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D
+- npm: https://www.npmjs.com/package/learn-3d-with-cheetah-3d
+
+## Documentation
+
+Full documentation, with live code examples, is at the links below.
+
+Pages below are also available as plain markdown: append `index.md` to the URL
+(for example `/5.1_A_Quick_Tour_of_Cheetah_3D/index.md`).
+Prefer that if you only need the text. A page marked noindex has no markdown copy.
+
+## Pages
+
+- https://learn3d.loewald.com/18.2_3D_File_Formats/ — 3D File Formats
+  Cheetah 3D supports a lot of useful 3D file formats. The “richest” format it supports is Autodesk’s FBX, which suppor...
+- https://learn3d.loewald.com/2.3_3D_in_a_nutshell/ — 3D in a nutshell
+  We are wired to think in 3D.
+- https://learn3d.loewald.com/18.7_3D_Math/ — 3D Math
+  In a cartesian coordinate system, the axes are the lines where one coordinate varies and the other coordinates are ze...
+- https://learn3d.loewald.com/5.1_A_Quick_Tour_of_Cheetah_3D/ — A Quick Tour of Cheetah 3D
+  The best way to master Cheetah 3D is to play around with it.
+- https://learn3d.loewald.com/10.15_Advanced_Lighting/ — Advanced Lighting
+  Most of the techniques discussed here involve alternatives to using standard lights (or the Sky Light).
+- https://learn3d.loewald.com/18.5_Alpha_Channels_in_Depth/ — Alpha Channels in Depth
+  ![](/images/Screen%20Shot%202013-12-09%20at%2011.23.44%20AM.jpg)
+- https://learn3d.loewald.com/13_Animation/ — Animation
+  ![](/images/pastedGraphic-475.jpg)
+- https://learn3d.loewald.com/12.19_Animation_Concepts/ — Animation Concepts
+  Interpolation means to “find a point between fixed points”. In animation terms, it means determining a value at a poi...
+- https://learn3d.loewald.com/13.1_Animation_Overview/ — Animation Overview
+  ![](/images/pastedGraphic-88.jpg)
+- https://learn3d.loewald.com/18_Appendices/ — Appendices
+- https://learn3d.loewald.com/8.9_Approaches_to_Modeling/ — Approaches to Modeling
+  There’s no one way to do 3D modeling. Some artists simply “doodle in 3D” while others will do elaborate prep work. E....
+- https://learn3d.loewald.com/12.15_Baking_Materials/ — Baking Materials
+  Originally, baking was used to precalculate the lighting of settings for 3D action games (*Quake* pioneered this tech...
+- https://learn3d.loewald.com/15.4_Building_Blocks/ — Building Blocks
+  ![](/images/pastedGraphic-532.jpg)
+- https://learn3d.loewald.com/10.5_Building_Procedural_Materials/ — Building Procedural Materials
+  We’re going to build some materials from scratch in an effort to understand how all this stuff fits together. We’ll s...
+- https://learn3d.loewald.com/4.16_Camera_Objects/ — Camera Objects
+  ![](/images/DraggedImage-69.jpg)
+- https://learn3d.loewald.com/12.11_Cartoon_Looks/ — Cartoon Looks
+  Almost any cg image is either striving for realism or some kind of “cartoony” or hand-drawn look, but exactly what co...
+- https://learn3d.loewald.com/10.16_Caustics/ — Caustics
+  ![](/images/pastedGraphic-448.jpg)
+- https://learn3d.loewald.com/14_Character_Animation/ — Character Animation
+  ![](/images/pastedGraphic-495.jpg)
+- https://learn3d.loewald.com/14.2_Character_Animation_Tutorials/ — Character Animation Tutorials
+  ![](/images/pastedGraphic-496.jpg)
+- https://learn3d.loewald.com/17.6_Cheetah_3D_Under_the_Hood/ — Cheetah 3D Under the Hood
+  ![](/images/pastedGraphic-631.jpg)
+- https://learn3d.loewald.com/17.4_Children/ — Children
+  ![](/images/pastedGraphic-3-1.jpg)
+- https://learn3d.loewald.com/9.2_Collapsing_Creators_Modifiers/ — Collapsing Creators & Modifiers
+  Sometimes — in fact quite often — you’ll want to “collapse” creators or modifiers into editable meshes, in other word...
+- https://learn3d.loewald.com/12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/ — Creating your own HDRIs for Image-Based Lighting
+  ![](/images/pastedGraphic-610.jpg)
+- https://learn3d.loewald.com/4.10_Creators/ — Creators
+  A creator produces a mesh non-destructively from one or more input child objects. Creators are essentially like Modif...
+- https://learn3d.loewald.com/8.11_Creators/ — Creators
+  A creator is an object that — given the correct number and type of children — will generate a mesh derived from those...
+- https://learn3d.loewald.com/9_Creators_Modifiers_Tags/ — Creators, Modifiers, & Tags
+  ![](/images/pastedGraphic-207.jpg)
+- https://learn3d.loewald.com/1_Credits/ — Credits
+  Version 4.0, March 2018
+- https://learn3d.loewald.com/12.4_Dealing_with_Reality/ — Dealing with Reality
+  ![](/images/pastedGraphic-565.jpg)
+- https://learn3d.loewald.com/16_Dynamics/ — Dynamics
+  ![](/images/pastedGraphic-529.jpg)
+- https://learn3d.loewald.com/4.6_Editing_Meshes_Core_Polygon_Tools/ — Editing Meshes: Core Polygon Tools
+  ![](/images/DraggedImage-10.jpg)
+- https://learn3d.loewald.com/12.9_Environments/ — Environments
+  Apart from light sources (such as the sun) **every object owes its appearance to light emitted or reflected by the th...
+- https://learn3d.loewald.com/10.10_Faking_It/ — Faking It
+  ![](/images/pastedGraphic-363.jpg)
+- https://learn3d.loewald.com/18.6_Faking_Motion_Blur/ — Faking Motion Blur
+  ![](/images/pastedGraphic-659.jpg)
+- https://learn3d.loewald.com/4_Falcon/ — Falcon
+  Cheetah’s new renderer is a _unidirectional path tracer_. The key takeaway is that it’s a **physically based renderer...
+- https://learn3d.loewald.com/4.8_Fine_Tuning_Meshes/ — Fine-Tuning Meshes
+- https://learn3d.loewald.com/10.17_Foolproof_Shadow_Catchers/ — Foolproof Shadow Catchers
+  ![](/images/pastedGraphic-467.jpg)
+- https://learn3d.loewald.com/12.18_Forward_Kinematics_Robot_Arm_I/ — Forward Kinematics: Robot Arm I
+  ![](/images/pastedGraphic-491.jpg)
+- https://learn3d.loewald.com/0_Front_Matter/ — Front Matter
+  ![](/images/cover%20design%203rd%20edition.jpg)
+- https://learn3d.loewald.com/15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/ — Getting the most out of Cheetah 3D’s Particle System
+  Cheetah 3D’s particle system is very powerful, but what you can do with it directly is sometimes limited by the rende...
+- https://learn3d.loewald.com/18.1_Glossary/ — Glossary
+  Or, miscellaneous, possibly useful information in no particular order that may be useful if you search for an unfamil...
+- https://learn3d.loewald.com/10.12_How_Lights_Work/ — How Lights Work
+  Because Cheetah 3D is a ray tracer and ray tracing works backwards from the observer to the light source, lights do n...
+- https://learn3d.loewald.com/10.8_How_Materials_Work/ — How Materials Work
+  Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the mater...
+- https://learn3d.loewald.com/12.8_How_Raytracing_Works/ — How Raytracing Works
+  You *don’t* need to know this stuff.  You can skip this *entire section*.
+- https://learn3d.loewald.com/18.3_Image_Formats/ — Image Formats
+  In a nutshell, the most important file formats to know about are PSD, PNG, JPG, and if you need to deal with 16 bpp i...
+- https://learn3d.loewald.com/4.13_Image_Based_Lighting/ — Image-Based Lighting
+  Image-based lighting (often abbreviated to IBL) is a powerful tool for creating very realistic lighting with remarkab...
+- https://learn3d.loewald.com/10.2_Image_based_Materials/ — Image-based Materials
+  If you’re working on real-time applications (e.g. games) then chances are you’re going to be using a lot of image-bas...
+- https://learn3d.loewald.com/15.2_Instances/ — Instances
+  An instance is an object that refers to another object in the scene. It doesn’t own its own data, it merely says “I’m...
+- https://learn3d.loewald.com/ — Introduction
+  This book is intended for anyone who wants to learn how to create 3D graphics, including students, teachers, artists,...
+- https://learn3d.loewald.com/16.1_Introduction_to_Dynamics/ — Introduction to Dynamics
+  Cheetah 3D’s Dynamics system is wonderfully simple to set up and use. The basic idea is very simple.
+- https://learn3d.loewald.com/12.20_Inverse_Kinematics_Robot_Arm_II/ — Inverse Kinematics: Robot Arm II
+  So, we see from our experiment with forward kinematics that getting something as simple as the robot arm to point its...
+- https://learn3d.loewald.com/5_Just_Enough_to_be_Dangerous/ — Just Enough to be Dangerous
+  ![](/images/DraggedImage-71.jpg)
+- https://learn3d.loewald.com/4.1_Key_Points/ — Key Points
+  The original Cheetah 3D renderer — now referred to as “Cheetah” — was a Ray Tracer, which means that each pixel in th...
+- https://learn3d.loewald.com/11_Lighting/ — Lighting
+  ![](/images/pastedGraphic-429.jpg)
+- https://learn3d.loewald.com/4.12_Lights_and_Lighting/ — Lights and Lighting
+  Lighting is another critical component of 3D graphics. Just as lighting can make the difference between a great photo...
+- https://learn3d.loewald.com/6.1_Making_a_Mug/ — Making a Mug
+  The first thing you probably want to do is make something and render it. In almost any 3D package the steps you go th...
+- https://learn3d.loewald.com/17.5_Managing_Complexity/ — Managing Complexity
+  The most obvious use for particles is things like sparks and explosions, but perhaps the best use for particles in Ch...
+- https://learn3d.loewald.com/17_Mastering_Cheetah_3D_s_Interface/ — Mastering Cheetah 3D’s Interface
+  ![](/images/pastedGraphic.jpg)
+- https://learn3d.loewald.com/10_Materials/ — Materials
+  ![](/images/pastedGraphic-238.jpg)
+- https://learn3d.loewald.com/4.11_Materials_Overview/ — Materials Overview
+  There are five critical components to producing an image with a 3D package, and modeling and animation are only two o...
+- https://learn3d.loewald.com/4.9_Mesh_Smoothing/ — Mesh Smoothing
+  In Photoshop you can non-destructively apply various filters to a one or more image layers at a time. These layers us...
+- https://learn3d.loewald.com/4.5_Meshes/ — Meshes
+  Cheetah 3D is all about meshes. If you can see it in a render then, aside from the background color, it’s a mesh.
+- https://learn3d.loewald.com/7.1_Mini_Tutorial_3D_Text/ — Mini-Tutorial: 3D Text
+  ![](/images/pastedGraphic-41.jpg)
+- https://learn3d.loewald.com/14.3_Mini_Tutorial_Idle/ — Mini-Tutorial: Idle
+  ![](/images/pastedGraphic-523.jpg)
+- https://learn3d.loewald.com/14.7_Mini_Tutorial_Jumping/ — Mini-Tutorial: Jumping
+  Most characters in computer games don’t jump — they only land. This is because when a real person jumps they need to ...
+- https://learn3d.loewald.com/14.1_Mini_Tutorial_Run_Cycle/ — Mini-Tutorial: Run Cycle
+  ￼￼￼￼
+- https://learn3d.loewald.com/7_Mini_Tutorials/ — Mini-Tutorials
+- https://learn3d.loewald.com/8.1_Model_Sheets_Blueprints/ — Model Sheets & Blueprints
+  ![](/images/pastedGraphic-171.jpg)
+- https://learn3d.loewald.com/8_Modeling/ — Modeling
+  ![](/images/pastedGraphic-119.jpg)
+- https://learn3d.loewald.com/6.2_Modeling_a_Biplane/ — Modeling a Biplane
+  We’re going to create a biplane with a very low polygon count, suitable for a mobile game. We’re only doing the mesh,...
+- https://learn3d.loewald.com/8.4_Modeling_Tricks_Techniques/ — Modeling Tricks & Techniques
+  Cheetah 3D has an amazingly powerful feature called "gadget mode". It you've ever wished you had something like Blend...
+- https://learn3d.loewald.com/9.1_Modifiers/ — Modifiers
+  Cheetah 3D’s non-destructive modifiers are simply wonderful. Many high end 3D packages have similar functionality, bu...
+- https://learn3d.loewald.com/10.9_Node_Descriptions/ — Node Descriptions
+  The solid shader is very handy for rendering masks for compositing (e.g. if you want to be able to select or mask a s...
+- https://learn3d.loewald.com/10.13_Other_Lighting_Options/ — Other Lighting Options
+  ![](/images/pastedGraphic-438.jpg)
+- https://learn3d.loewald.com/7.2_Package_Mockup/ — Package Mockup
+  ![](/images/pastedGraphic-42.jpg)
+- https://learn3d.loewald.com/17.3_Parents/ — Parents
+  ![](/images/pastedGraphic-2.jpg)
+- https://learn3d.loewald.com/15_Particles/ — Particles
+  ![](/images/pastedGraphic-417.jpg)
+- https://learn3d.loewald.com/12.16_Path_Animation/ — Path Animation
+  ![](/images/pastedGraphic-490.jpg)
+- https://learn3d.loewald.com/8.8_Polygon_Box_Modeling/ — Polygon/Box Modeling
+  So now that you’ve done some box modeling, let’s quickly go over a few fundamentals. A mesh comprises a set of vertic...
+- https://learn3d.loewald.com/4.2_Primitives_Basic_3D_Objects/ — Primitives: Basic 3D Objects
+  The “Polygon” toolbar item, when clicked, reveals a list of 3D primitives you can add to a scene. Simply select one o...
+- https://learn3d.loewald.com/12.2_Projection_Settings/ — Projection Settings
+  These settings all relate to how the camera looks out into the scene.
+- https://learn3d.loewald.com/10.18_Reflected_Lights/ — Reflected Lights
+  There’s a lot more detail in this topic in the chapter on Rendering. The short version is that lights without a geome...
+- https://learn3d.loewald.com/10.6_Reflective_Materials/ — Reflective Materials
+  ![](/images/pastedGraphic-289.jpg)
+- https://learn3d.loewald.com/12.12_Render_Manager/ — Render Manager
+  ![](/images/pastedGraphic-589.jpg)
+- https://learn3d.loewald.com/18.8_Rendering/ — Rendering
+  Because 3D rendering is easily parallelized (i.e. split into multiple independent tasks) an obvious way to accelerate...
+- https://learn3d.loewald.com/12_Rendering/ — Rendering
+  ![](/images/pastedGraphic-537.jpg)
+- https://learn3d.loewald.com/4.15_Rendering/ — Rendering
+  ![](/images/DraggedImage-66.jpg)
+- https://learn3d.loewald.com/12.7_Rendering_a_Sky_Box/ — Rendering a Sky Box
+  To render a skybox from a scene you simply need to:
+- https://learn3d.loewald.com/12.6_Rendering_Panoramas/ — Rendering Panoramas
+  ![](/images/pastedGraphic-608.jpg)
+- https://learn3d.loewald.com/12.10_Rendering_Reflected_Lights/ — Rendering Reflected Lights
+  ![](/images/pastedGraphic-560.jpg)
+- https://learn3d.loewald.com/12.14_Rendering_Tricks/ — Rendering Tricks
+  Some 3D programs allow you to render different components of an image to separate layers of a document that supports ...
+- https://learn3d.loewald.com/17.2_Scene_Graph_Shortcuts/ — Scene Graph Shortcuts
+  Double-clicking on an object’s name allows you to rename it.
+- https://learn3d.loewald.com/17.8_Scripts/ — Scripts
+  ![](/images/pastedGraphic-634.jpg)
+- https://learn3d.loewald.com/4.4_Selecting_and_Moving_Objects/ — Selecting and Moving Objects
+  In general, a huge amount of the work in creating 3D scenes involves using the **Transform** tool to move bits and pi...
+- https://learn3d.loewald.com/4.7_Selecting_Parts_of_Meshes/ — Selecting Parts of Meshes
+- https://learn3d.loewald.com/8.3_Selection_You_can_t_always_get_what_you_want/ — Selection: You can’t always get what you want…
+  But if you try sometime, you just might find, you get what you need! (With apologies to the Rolling Stones.)
+- https://learn3d.loewald.com/10.14_Shadows/ — Shadows
+  Shadows are rendered as a side effect of the ray-tracing algorithm. If shadows are enabled for a given light then it ...
+- https://learn3d.loewald.com/10.1_Simple_Materials_Without_Nodes/ — Simple Materials Without Nodes
+  ![](/images/pastedGraphic-239.jpg)
+- https://learn3d.loewald.com/12.5_Simple_Render_Setups/ — Simple Render Setups
+  If you just want to show off a model (or even if you just want to render it for purposes of fine-tuning it) the simpl...
+- https://learn3d.loewald.com/8.7_Splines/ — Splines
+  Splines are bezier curves (the same curves you may be familiar with in 2D drawing programs such as Illustrator). Chee...
+- https://learn3d.loewald.com/8.5_Subdivision_Surfaces/ — Subdivision Surfaces
+  Subdivision surfaces are a powerful tool for creating smooth meshes. They are useful for both hard surface modeling (...
+- https://learn3d.loewald.com/8.2_Symmetry/ — Symmetry
+  ![](/images/DraggedImage-85.jpg)
+- https://learn3d.loewald.com/9.3_Tags/ — Tags
+  Tags don’t do anything by themselves, instead they _attach extra information to an object_ that can be used by Cheeta...
+- https://learn3d.loewald.com/12.1_The_Camera_Object/ — The Camera Object
+  ![](/images/pastedGraphic-539.jpg)
+- https://learn3d.loewald.com/3.1_The_Falcon_Renderer/ — The Falcon Renderer
+  The new “falcon” renderer is a “uni-directional path tracer”  which allows for long-requested enhancements to C3D’s o...
+- https://learn3d.loewald.com/10.11_The_Math_of_Material_Nodes/ — The Math of Material Nodes
+  I don’t know how old you are, but I can remember back when I was studying trigonometry and I wondered “what the heck ...
+- https://learn3d.loewald.com/17.1_The_Object_Browser/ — The Object Browser
+  ![](/images/pastedGraphic-1.jpg)
+- https://learn3d.loewald.com/4.3_The_Properties_Panel/ — The Properties Panel
+  ![](/images/DraggedImage-2.jpg)
+- https://learn3d.loewald.com/12.3_The_Render_Tag/ — The Render Tag
+  ![](/images/pastedGraphic-548.jpg)
+- https://learn3d.loewald.com/4.14_The_Sky_Light_Object/ — The Sky Light Object
+  ![](/images/DraggedImage-63.jpg)
+- https://learn3d.loewald.com/10.3_Transparent_Materials/ — Transparent Materials
+  In simplistic terms, a transparent material is any material whose transparent color is something other than black in ...
+- https://learn3d.loewald.com/12.17_Tutorial_Animation_Basics/ — Tutorial: Animation Basics
+  When I have taught animation classes the first task I set my students is this. Move a simple shape (usually a cube or...
+- https://learn3d.loewald.com/14.4_Tutorial_Simple_Character_Rig/ — Tutorial: Simple Character Rig
+  ![](/images/pastedGraphic-502.jpg)
+- https://learn3d.loewald.com/14.5_Tutorial_Walk_Cycle/ — Tutorial: Walk Cycle
+  ![](/images/pastedGraphic-514.jpg)
+- https://learn3d.loewald.com/14.6_Tutorial_Walk_Cycle/ — Tutorial: Walk Cycle
+  ![](/images/pastedGraphic-514-1.jpg)
+- https://learn3d.loewald.com/6_Tutorials/ — Tutorials
+- https://learn3d.loewald.com/8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/ — Understanding How Creators, Tags, and Modifiers Interact
+  Creators, modifiers, and tags are the three non-destructive mechanisms Cheetah 3D provides for applying changes to an...
+- https://learn3d.loewald.com/10.4_Understanding_Nodes/ — Understanding Nodes
+  A material can only have one shader.
+- https://learn3d.loewald.com/5.2_User_Interface_Overview/ — User Interface Overview
+  ![](/images/DraggedImage-72.jpg)
+- https://learn3d.loewald.com/15.3_Using_a_Particle_System_as_a_Source_of_Objects/ — Using a Particle System as a Source of Objects
+  If you need to create many objects quickly, use a collapsed particle system.
+- https://learn3d.loewald.com/16.2_Using_Dynamics_to_Model/ — Using Dynamics to Model
+  ![](/images/pastedGraphic-534.jpg)
+- https://learn3d.loewald.com/10.7_UV_Mapping/ — UV Mapping
+  ![](/images/rMTDU.jpg)
+- https://learn3d.loewald.com/18.4_Video_Compression/ — Video Compression
+  The one line version of this section is this: when you save an animation from Cheetah 3D, the best compression option...
+- https://learn3d.loewald.com/8.6_What_is_a_mesh/ — What is a mesh?
+  ![](/images/pastedGraphic-130.jpg)
+- https://learn3d.loewald.com/3_What_s_new_in_Cheetah_3D_7/ — What’s new in Cheetah 3D 7?
+  The headline feature of C3D7 is the new renderer, **Falcon**, but there are many important new user interface refinem...
+- https://learn3d.loewald.com/2.2_Why_Cheetah_3D/ — Why Cheetah 3D?
+  ![](/images/pastedGraphic-3.jpg)
+- https://learn3d.loewald.com/2.1_Why_Learn_3D_Graphics/ — Why Learn 3D Graphics?
+  Thirty years ago, 3D Graphics was something only a tiny number of people knew or cared about. Some people had probabl...
+- https://learn3d.loewald.com/17.7_Workflow/ — Workflow
+  ![](/images/pastedGraphic-633.jpg)

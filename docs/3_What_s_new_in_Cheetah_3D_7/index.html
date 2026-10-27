@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <title>What’s new in Cheetah 3D 7? — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="The headline feature of C3D7 is the new renderer, Falcon, but there are many important new user interface refinements and features under the hood." />
+  <link rel="canonical" href="https://learn3d.loewald.com/3_What_s_new_in_Cheetah_3D_7/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="What’s new in Cheetah 3D 7? — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="What’s new in Cheetah 3D 7? — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="The headline feature of C3D7 is the new renderer, Falcon, but there are many important new user interface refinements and features under the hood." />
+  <meta property="og:url" content="https://learn3d.loewald.com/3_What_s_new_in_Cheetah_3D_7/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"What’s new in Cheetah 3D 7?","description":"The headline feature of C3D7 is the new renderer, Falcon, but there are many important new user interface refinements and features under the hood.","url":"https://learn3d.loewald.com/3_What_s_new_in_Cheetah_3D_7/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="3_What_s_new_in_Cheetah_3D_7.md">
+<!--{"order": 4}--><h1 id="whats-new-in-cheetah-3d-7">What’s new in Cheetah 3D 7?</h1>
+<p>The headline feature of C3D7 is the new renderer, <strong>Falcon</strong>, but there are many important new user interface refinements and features under the hood.</p>
+<h3 id="user-interface-changes">User Interface Changes</h3>
+<ul>
+<li><p>New look for Yosemite (e.g. “flat” icons)</p>
+</li>
+<li><p>Support for “dark mode” in High Sierra and Mojave.</p>
+</li>
+<li><p>Uses default system font</p>
+</li>
+<li><p>Smaller download size (about 27MB!)</p>
+</li>
+<li><p><strong>Vastly improved multi-object selection behavior</strong></p>
+</li>
+<li><p>Edit properties of multiple objects (e.g. lights) at once</p>
+</li>
+<li><p>Assign materials to multiple objects at once</p>
+</li>
+<li><p>Support for drag and drop of colors to/from properties</p>
+</li>
+<li><p>Shortcuts (in preferences) divided into categories and much easier to find</p>
+</li>
+<li><p>Many new shortcuts added</p>
+</li>
+<li><p>Improved Object Browser</p>
+</li>
+<li><p>Objects can be renamed inline (using return key)</p>
+</li>
+<li><p><strong>Object <em>display</em>, <em>render</em>, and other properties can be displayed and toggled directly</strong></p>
+</li>
+<li><p>Layer Manager</p>
+</li>
+<li><p>Layer property added to mode tag</p>
+</li>
+<li><p>Layers can be displayed/edited directly in object manager</p>
+</li>
+<li><p>Improved Properties Editor</p>
+</li>
+<li><p>Too many tags problem solved</p>
+</li>
+<li><p>Context menu added to tag selector (allows you to copy/paste/delete tags)</p>
+</li>
+<li><p>Double-clicking a texture property with an image selected opens it in the default editor for documents of that type</p>
+</li>
+<li><p>Improved Take Manager</p>
+</li>
+<li><p><strong>Takes can be duplicated, merged, split, reversed</strong></p>
+</li>
+<li><p>Reorder takes via drag and drop</p>
+</li>
+<li><p>All operations support undo/redo</p>
+</li>
+<li><p>Improved Render Manager</p>
+</li>
+<li><p>More information provided for each render</p>
+</li>
+<li><p>Context menu allows you to find scene that produced render</p>
+</li>
+</ul>
+<h3 id="editor-view">Editor View</h3>
+<ul>
+<li><p>Reorganized and extended context menus</p>
+</li>
+<li><p>Context menus work in all editing modes</p>
+</li>
+<li><p>Integrated camera picker and view controls into 3D view</p>
+</li>
+</ul>
+<p><img src="/images/Screen%20Shot%202016-07-09%20at%204.38.51%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-07-09%20at%204.40.45%20PM.jpg" alt=""></p>
+<p><em>If you’ve ever fiddled with material transparency or wireframe display modes so you could see one mesh while working on another, you will love the new “Ghosted” display option.</em></p>
+<ul>
+<li><p>New “ghosted” display mode for objects</p>
+</li>
+<li><p>Display Filters</p>
+</li>
+<li><p>Support for multi-touch gestures</p>
+</li>
+<li><p>Create Polygon has new <strong>intersect scene</strong> setting</p>
+</li>
+</ul>
+<p><img src="/images/Screen%20Shot%202016-06-04%20at%208.31.44%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-06-04%20at%208.31.48%20PM.jpg" alt=""></p>
+<ul>
+<li><p><strong>Vertex Soft Selection Support</strong></p>
+</li>
+<li><p>Works with all selection modes</p>
+</li>
+<li><p>Falloff is displayed graphically</p>
+</li>
+<li><p>Alt+scroll wheel adjusts falloff radius</p>
+</li>
+<li><p>Polygon Brush</p>
+</li>
+<li><p>Only works in vertex mode</p>
+</li>
+<li><p>Powerful falloff control</p>
+</li>
+<li><p>Allows <strong>basic sculpting</strong></p>
+</li>
+<li><p>Can <strong>paint vertex colors</strong></p>
+</li>
+</ul>
+<h3 id="uv-editor-view">UV Editor View</h3>
+<ul>
+<li><p>New view controls (consistent with 3D view controls)</p>
+</li>
+<li><p>Support for multi-touch gestures</p>
+</li>
+</ul>
+<h3 id="rendering">Rendering</h3>
+<ul>
+<li><p><strong>New “Falcon” rendering engine</strong> — Physical “uni-directional path tracer” (think: more realistic, requires less tweaking)</p>
+</li>
+<li><p><strong>Exposure control for renderer allows rapid global lighting changes</strong>.</p>
+</li>
+<li><p>Falcon supports <strong>motion blur</strong>.</p>
+</li>
+<li><p>Max render resolution increased to 8k.</p>
+</li>
+<li><p>Max baking resolution increased.</p>
+</li>
+<li><p><strong>G-Buffer support</strong> in both renderers.</p>
+</li>
+</ul>
+<h3 id="reorganization-of-render-controls">Reorganization of Render Controls</h3>
+<ul>
+<li><p>HDR, Fog are now objects</p>
+</li>
+<li><p>Radiosity, Caustics, DOF, and some camera properties are now renderer settings</p>
+</li>
+</ul>
+<h3 id="improved-booleans">Improved Booleans</h3>
+<ul>
+<li><p>New boolean polygon tool</p>
+</li>
+<li><p>New boolean modifier</p>
+</li>
+<li><p><strong>Booleans support ngons</strong> (outputs aren’t triangulated)</p>
+</li>
+<li><p><strong>Boolean tool maintains material assignments</strong></p>
+</li>
+</ul>
+<h3 id="new-merge-tool">New Merge Tool</h3>
+<ul>
+<li><p>Replaces import children</p>
+</li>
+<li><p>Supports multi-object selections, hierarchy merging, parametric objects, folders,</p>
+</li>
+<li><p>Retains material assignments</p>
+</li>
+</ul>
+<h3 id="misc-new-features">Misc. New Features</h3>
+<ul>
+<li><p><strong>Vertex color support</strong>.</p>
+</li>
+<li><p>Simplify tool integrates polygon reduction of overly complex (e.g. scanned) meshes.</p>
+</li>
+<li><p>Improved EXR support.</p>
+</li>
+<li><p>Import/Export of G-Buffers.</p>
+</li>
+<li><p>Improved Collada (.dae) support.</p>
+</li>
+<li><p><strong>Movie texture support</strong>.</p>
+</li>
+<li><p>JPEG2000 texture support.</p>
+</li>
+<li><p>Texture filtering property in Image node.</p>
+</li>
+<li><p>Two new fractal types (Tetrahedron and Octahedron).</p>
+</li>
+<li><p>“Developer mode” (in preferences) provides shortcuts helpful for users writing scripts.</p>
+</li>
+<li><p>Many new Javascript APIs</p>
+</li>
+</ul>
+<h3 id="under-the-hood">Under the Hood</h3>
+<ul>
+<li><p>Support for multiple renderers.</p>
+</li>
+<li><p>Falcon uses a new “BRDF” material system.</p>
+</li>
+<li><p>No more support for 32-bit (e.g. first generation Intel Macs).</p>
+</li>
+<li><p>Greater memory efficiency.</p>
+</li>
+<li><p>Performance enhancements throughout.</p>
+</li>
+</ul>
+<!-- toc -->
+<ul>
+<li><a href="/3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+</ul>
+<!-- /toc -->
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link current" href="../3_What_s_new_in_Cheetah_3D_7/" aria-current="page">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Falcon/">Falcon</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_Key_Points/">Key Points</a></li>
+      <li><a class="doc-link" href="../4.2_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.3_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.4_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.5_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.6_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.7_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.8_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.10_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.11_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.12_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.13_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.15_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.16_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../5.2_User_Interface_Overview/">User Interface Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../6.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../7.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../8.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../8.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../8.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../8.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../8.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../8.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../8.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../8.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../8.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../9.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../9.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../10.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../10.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../10.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../10.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../10.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../10.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../10.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../10.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../10.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../10.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+      <li><a class="doc-link" href="../10.12_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.13_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.14_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.15_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.16_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.17_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.18_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><a class="doc-link" href="../11_Lighting/">Lighting</a></li>
+    <li><details><summary><a class="doc-link" href="../12_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../12.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../12.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../12.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../12.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../12.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../12.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../12.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../12.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../12.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../12.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../12.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../12.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../12.15_Baking_Materials/">Baking Materials</a></li>
+      <li><a class="doc-link" href="../12.16_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.17_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.18_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.19_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.20_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Animation_Overview/">Animation Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../14.2_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../14.3_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../14.4_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.6_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.7_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../15.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../15.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../15.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../16.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../17.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../17.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../17.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../17.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../17.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../17.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../17.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../18_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../18.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../18.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../18.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../18.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../18.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../18.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../18.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../18.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=fde998e05e15"></script>
+</body>
+</html>

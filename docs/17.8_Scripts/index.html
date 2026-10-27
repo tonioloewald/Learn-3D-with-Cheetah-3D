@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <title>Scripts — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself)." />
+  <link rel="canonical" href="https://learn3d.loewald.com/17.8_Scripts/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Scripts — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Scripts — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself)." />
+  <meta property="og:url" content="https://learn3d.loewald.com/17.8_Scripts/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Scripts","description":"For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself).","url":"https://learn3d.loewald.com/17.8_Scripts/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="17.8_Scripts.md">
+<!--{"parent": "17_Mastering_Cheetah_3D_s_Interface.md", "order": 8}--><h2 id="scripts">Scripts</h2>
+<p><img src="/images/pastedGraphic-634.jpg" alt=""></p>
+<h3 id="some-very-useful-scripts">Some Very Useful Scripts</h3>
+<p>For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself). This list is posted on the forums here: <strong><a href="http://www.cheetah3D.com/forum/showthread.php?p=42637">http://www.cheetah3D.com/forum/showthread.php?p=42637</a></strong> but I’ve included the current list as of writing below.</p>
+<h4 id="basic-interface-enhancements">Basic Interface Enhancements</h4>
+<ul>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=4108">Expand Selection</a> conditionally expand a selection</p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=7106">Toggle Visibility / Make Solo</a> make everything except the selection disappear or go wireframe</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=4085">OBJ Importer</a> improved OBJ import</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=4991">Object Chunker</a> break large meshes into smaller meshes to meet polygon budget (e.g. for Unity which won’t accept meshes with more than 65535 triangles).</p>
+</li>
+<li><p><a href="http://www.tres-graficos.jp/blog/files/category.php?k=Script">set changer</a></p>
+</li>
+</ul>
+<h4 id="modeling">Modeling</h4>
+<ul>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=5130">Bent Arrow</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=1686">Billboard</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=3537">Center Bounds</a> set center of object to the center of its bounding box</p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=8033">Curls</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=3792">Dissolve</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=8024">Edge N Splitter</a> a more versatile ring cutting tool</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=2574">Edge Utilities</a> macros for working with creases and seams</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=4810">Center of Gravity</a> set center of object to the center of &quot;gravity&quot; of a selected set of faces.</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=970">Point Array</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=1405">Flatten Polygon</a> make selected polygons properly coplanar</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=1294">Hair</a> algorithmic generation of hair geometry with UVs</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showpost.php?p=8076&amp;postcount=1">Loft</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=5865">Mandlebulb</a> julia set modeler</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=1448">Mirror Copy</a> (also useful for animation) mirror geometry and poses</p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=8025">Particle Connector</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=5292">Path Array</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?p=67193&amp;posted=1">Pivot Setter</a> (and a derived script for setting the pivot to a selected point)</p>
+</li>
+<li><p><a href="http://www.tres-graficos.jp/blog/files/category.php?k=Script">Polygon Reduction</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?p=57851">Surface Utilities</a> powerful tools for changing smoothing settings and fixing normals.</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=4029">Taper Sweep</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6381">Toggle Shading</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6373">Toggle Visibility</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6776">Polygon Splitter</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6801">Extruded Text Maker</a> — has more options than standard text spline</p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6607">Elliptical Splines</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6698">Rounded Rectangle Spline</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=1298&amp;highlight=helix">Pathed Helix</a></p>
+</li>
+</ul>
+<h4 id="animation">Animation</h4>
+<ul>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=3880">Guided Spline</a></p>
+</li>
+<li><p><a href="http://www.tres-graficos.jp/blog/files/category.php?k=Script">morph</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=1210">Moving Textures</a></p>
+</li>
+<li><p>Particles while you wait for 5.4</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=970">Point Array</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=5358">Pose Utilities</a> mirror and flip poses quickly and efficiently</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=2110">Sequential OBJs</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6557">Automatic Lip Sync from WAV File</a></p>
+</li>
+</ul>
+<h4 id="texturing-and-uv-mapping">Texturing and UV-Mapping</h4>
+<ul>
+<li><p><a href="http://cheetah3d.de/forum/showpost.php?p=2689&amp;postcount=12">Polygon UV Editor</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=8019">Text Tool</a></p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?t=2280">UV Stepper</a></p>
+</li>
+</ul>
+<h4 id="rendering">Rendering</h4>
+<ul>
+<li><a href="http://www.cheetah3d.de/forum/showthread.php?t=4374">LuxCheetah</a> exports C3D scenes to the free physically-based renderer <a href="http://luxrender.net/">LuxRender</a></li>
+</ul>
+<h4 id="particles">Particles</h4>
+<ul>
+<li><p><a href="http://www.cheetah3d.com/forum/showthread.php?t=6905">Iterative Relative Particles</a> for Groboto-style procedural objects</p>
+</li>
+<li><p><a href="http://www.cheetah3d.de/forum/showthread.php?p=43391#post43391">Particle City</a> custom particle system for procedurally generating &quot;cities&quot;</p>
+</li>
+</ul>
+<h3 id="using-scripts">Using Scripts</h3>
+<p>The first thing you need to know about scripts is where to “install” them. This is especially tricky as of Lion because Apple has hidden user Library folders.</p>
+<p>The simplest option is to use <strong>Go &gt; Go To Folder</strong> in Finder to go to this folder: </p>
+<p><strong>~/Library/Application Support/Cheetah3D/</strong></p>
+<h4 id="which-subfolder-does-a-script-go-in">Which subfolder does a script go in?</h4>
+<p>For some reason Cheetah 3d requires scripts to be put in specific sub-folders despite the fact that (a) human beings cannot easily tell what kind of script a given script file is and (b) Cheetah 3d probably can. Go figure. If it&#39;s not obvious from the script&#39;s documentation or internal comments what kind of script it is, here&#39;s how you can <em>probably</em> tell by looking through it:</p>
+<ul>
+<li><p>If the script contains <strong>function</strong> <strong>main</strong> function, it&#39;s a <strong>Macro</strong> script.</p>
+</li>
+<li><p>If the script contains <strong>function buildObject</strong> and calls <strong>addParticle</strong>, it&#39;s a <strong>Particle</strong> script.</p>
+</li>
+<li><p>If the script contains <strong>function buildObject</strong> and calls **spline… (e.g. spline.move() or spline.curve()), it&#39;s a Spline script.</p>
+</li>
+<li><p>If the script contains function buildObject, but no calls to spline, addParticle it&#39;s a Polygonobj script.</p>
+</li>
+<li><p>If the script only contains function buildUI (and maybe some declarations) it&#39;s a Tag script.</p>
+</li>
+<li><p>Finally, if the script contains function buildUI, <em>at least one other function</em>, but no buildObject function, it&#39;s a Tool script.</p>
+</li>
+</ul>
+<p>This is not completely foolproof. It&#39;s possible to create a Particle script that never calls addParticle, for example, but it would be kind of weird. In most cases, where a script is supposed to do should be documented.</p>
+<h4 id="when-must-you-relaunch-cheetah-3d">When must you relaunch Cheetah 3D?</h4>
+<p>If you’re working on a script you do not need to relaunch Cheetah 3D for it to see changes to the script (but you may need to select the script anew from the Tool menu). Cheetah 3D will only find <em>additional</em> scripts when launched, so if you want Cheetah 3D to recognize a newly added script you will need to quit and relaunch it.</p>
+<p>Be careful when coding scripts. It is quite possible for a script to seize up Cheetah 3D and require a force quit. (Command-option escape to force quit, in case you didn’t know. You can also click and hold on an application’s icon in the dock.)</p>
+<h4 id="assigning-hotkeys-to-scripts">Assigning Hotkeys to Scripts</h4>
+<p>Once you’ve loaded a script, you can assign a hotkey to it (just as you would anything else). This is extremely useful for some of the more frequently needed scripts. E.g. when doing character animation, you might want to hotkey Pose Utilities.</p>
+<h3 id="writing-scripts">Writing Scripts</h3>
+<p>To create a new script simply fire up your favorite text editor and create a new JavaScript (.js) document in the appropriate folder. </p>
+<p>The best way to do it is probably to open up your Cheetah 3D folder inside Application Support — ~/Library/Application Support/Cheetah3D/ — and duplicate a script of the type you want to write, name it what you want, and then launch/relaunch Cheetah 3D. (TextEdit in plain text mode works fine, but it’s very basic — if you don’t have a serious programmer’s text editor, I recommend TextWrangler from barebones.com — it’s free and very powerful.)</p>
+<p>To write Cheetah 3D scripts requires that you know some JavaScript. Teaching JavaScript is beyond the scope of this book, but there are many good resources for learning JavaScript (many would recommend Douglas Crockford’s <em>JavaScript: The Good Parts</em> and his videos at <a href="http://yuiblog.com/crockford">http://yuiblog.com/crockford</a>). If you’ve done any programming you can probably follow along without knowing much about JavaScript specifically.</p>
+<h4 id="basics">Basics</h4>
+<p>The simplest kind of script in Cheetah 3D is a Macro script. A Macro script looks like this:</p>
+<p>function main(doc){</p>
+<p>// do stuff here</p>
+<p>}</p>
+<p>A comment in JavaScript is anything between /* and */ or anything following // until the end of that line. So “// do stuff here” is a comment.</p>
+<p>When someone selects a macro script from the Tools &gt; Script &gt; Macro Script menu Cheetah 3D loads the script and calls its main function, passing it the variable doc, which contains a representation of your Cheetah 3D document.</p>
+<p>If we look through the online help for documentation on the Document object (which is what doc is going to be) we can see it has some useful looking properties and methods. A nice simple method is render(). Let’s try that.</p>
+<p>function main(doc){</p>
+<p>doc.render();</p>
+<p>}</p>
+<p>If you try running this script it will do exactly what you expect. Well, <em>kind</em> of. Unlike clicking the Render icon in the toolbar you get no visual feedback until the render is complete.</p>
+<p>Still, it’s not like this is a terribly useful script. Let’s try something a little more advanced.</p>
+<p>function main(doc){</p>
+<p>doc.addObject( BOX );</p>
+<p>}</p>
+<p>This, again, does what you’d expect. The documentation also stipulates that addObject returns an object — the thing you added. Let’s do something with it.</p>
+<p>function main(doc){</p>
+<p>var box = doc.addObject( BOX );</p>
+<p>box.setParameter( &quot;position&quot;, new Vec3D( 0, 0.5, 0 ) );</p>
+<p>}</p>
+<p>This macro creates a new box and then moves it up 0.5 units. (Ever frustrated by how the default box is centered on the origin rather than sitting neatly on the XZ plane? This script is your answer!)</p>
+<h3 id="debugging-scripts--the-console">Debugging Scripts — The Console</h3>
+<p>If you right-click on the header of any panel in a Cheetah 3D window you’ll discover that one of the options is for a console panel. I recommend adding a console panel somewhere to one of your layouts if you want to do any scripting.</p>
+<p><img src="/images/pastedGraphic-635.jpg" alt=""></p>
+<p>My default layout has a console tab tucked in with the object browser — ready whenever I need it.</p>
+<p>If you want your script to say something to you (“Hey, I got this far without crashing”) then Cheetah 3D provides a print() function.</p>
+<p>function main(doc){</p>
+<p>print( &quot;hello world&quot;);</p>
+<p>}</p>
+<p>Hmm, maybe I should have started with this!</p>
+<p>You can also generate alerts using the OS.messageBox() function.</p>
+<p>function main(doc){</p>
+<p>OS.messageBox(&quot;Title&quot;,&quot;Here is my message!&quot;);</p>
+<p>}</p>
+<p><img src="/images/pastedGraphic-636.jpg" alt=""></p>
+<h3 id="feeling-your-way-around">Feeling Your Way Around</h3>
+<p>Cheetah 3D’s documentation is sometimes lacking, especially with respect to scripting, but it does offer some introspection tools to allow you to figure things out for yourself. One of the sample Macro scripts — Material Info.js — gives you a rough idea of how to do this, and forum scripting expert tg_jp has improved on it with this more general version:</p>
+<p>function main(doc) {</p>
+<p>var obj = doc.selectedObject();</p>
+<p>print(&#39;---- Object Info ---&#39;);</p>
+<p>if ( obj ) {</p>
+<p>print(&#39;-- object type:&#39;+obj.type());</p>
+<p>var info = obj.parameterInfo();</p>
+<p>for(var j=0;j&lt;info.length;j++) {</p>
+<p>print(info[j][0] +&quot; [&quot; + info[j][1] + &quot;]:&quot;+obj.getParameter(info[j][0]));</p>
+<p>}</p>
+<p>var tcount = obj.tagCount();</p>
+<p>for (var i = 0;i &lt; tcount;++i) {</p>
+<p>var tag = obj.tagAtIndex(i);</p>
+<p>info = tag.parameterInfo();</p>
+<p>print(&#39;-- tag &#39;+i+&#39; type:&#39;+tag.type());</p>
+<p>for(var j=0;j&lt;info.length;j++){</p>
+<p>print(info[j][0] + &quot; [&quot; + info[j][1] + &quot;]:&quot;+tag.getParameter(info[j][0]));</p>
+<p>}</p>
+<p>if (tag.type() == 102) { // material tag.</p>
+<p>var material = doc.materialAtIndex(tag.linkedToMaterial());</p>
+<p>print(&#39;-- linked Material --&#39;);</p>
+<p>info = material.parameterInfo();</p>
+<p>for(var j=0;j&lt;info.length;j++){</p>
+<p>print(info[j][0] + &quot; [&quot; + info[j][1] + &quot;]:&quot;+material.getParameter(info[j][0]));</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>This script, when saved as a Macro Script, will document all the properties of any selected object. </p>
+<p>If you wrap the core functionality of this script in a utility function, I’ll call it describe(), then you get something like this:</p>
+<p>function describe( obj ){</p>
+<p>if ( obj ) {</p>
+<p>print(&#39;-- object type:&#39;+obj.type());</p>
+<p>var info = obj.parameterInfo();</p>
+<p>for(var j=0;j&lt;info.length;j++) {</p>
+<p>print(info[j][0] +&quot; [&quot; + info[j][1] + &quot;]:&quot;+obj.getParameter(info[j][0]));</p>
+<p>}</p>
+<p>var tcount = obj.tagCount();</p>
+<p>for (var i = 0;i &lt; tcount;++i) {</p>
+<p>var tag = obj.tagAtIndex(i);</p>
+<p>info = tag.parameterInfo();</p>
+<p>print(&#39;-- tag &#39;+i+&#39; type:&#39;+tag.type());</p>
+<p>for(var j=0;j&lt;info.length;j++){</p>
+<p>print(info[j][0] + &quot; [&quot; + info[j][1] + &quot;]:&quot;+tag.getParameter(info[j][0]));</p>
+<p>}</p>
+<p>if (tag.type() == 102) { // material tag.</p>
+<p>var material = doc.materialAtIndex(tag.linkedToMaterial());</p>
+<p>print(&#39;-- linked Material --&#39;);</p>
+<p>info = material.parameterInfo();</p>
+<p>for(var j=0;j&lt;info.length;j++){</p>
+<p>print(info[j][0] + &quot; [&quot; + info[j][1] + &quot;]:&quot;+material.getParameter(info[j][0]));</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>Now if I’m trying to figure out what properties a given object has, I can simply describe() it and its properties will be listed in the console.</p>
+<p>This function has saved my bacon many times — e.g. when trying to script a Particle System the Random Seed property isn’t documented — how do you get at it? Using getParameter(“Random Seed”) doesn’t work. If you open the .jas file you’ll discover it’s called “particlesSeed” in the XML. But “particlesSeed” doesn’t work either (nor does “Particle Seed”). Finally, selecting a particle system and using this script reveals a property called “seed” of type “Int”. Eureka!</p>
+<p>---- Object Info ---</p>
+<p>-- object type:81</p>
+<p>scriptName [String]:Scripts/Particle/Particle City.js</p>
+<p>locked [Bool]:0</p>
+<p>...</p>
+<p>rotorder [Int]:6</p>
+<p>name [String]:Procedural City</p>
+<p>order [Int]:1</p>
+<p>seed [Int]:12345</p>
+<p>displayType [Int]:3</p>
+<p>...</p>
+<p>editorActive [Bool]:1</p>
+<p>renderActive [Bool]:1</p>
+<p>editorShading [Int]:0</p>
+<h3 id="some-useful-techniques">Some Useful Techniques</h3>
+<p>Well, you’re pretty much on your own now. The best way to create new scripts is to look at the example scripts provided with Cheetah 3D, as well as those on the forums, and use them as a starting point. Before I send you off to swim with the sharks, here are a few useful techniques I’ve picked up.</p>
+<h4 id="iterating-across-the-scene-graph">Iterating Across the Scene Graph</h4>
+<p>This simple tool illustrates probably the single most useful pattern for writing macros and tool scripts.</p>
+<p>First of all, it shows how to build a tool user interface.</p>
+<p>The set_smooth function is called by the user interface button (the name of the function the button will call is passed as a parameter when creating the button).</p>
+<p>The set_smooth function uses the target utility function to figure out if it’s going to act on the scene root or the selection (based on UI settings).</p>
+<p>It then defines a simple function fn that does what it wants to do for a given object and calls the iterate_on_objects utility function to apply this simple function to the object returned by the target function and — if the user has opted for recursing children — everything below it in the scene graph (i.e. the Object Browser).</p>
+<p>// build the tool UI</p>
+<p>function buildUI(tool){</p>
+<p>tool.addParameterBool(&quot;Selection Only&quot;, true, false, true, false, false);</p>
+<p>tool.addParameterBool(&quot;Recurse Children&quot;, true, false, true, false, false);</p>
+<p>tool.addParameterSeparator(&quot;Smoothing&quot;);</p>
+<p>tool.addParameterFloat(&quot;Angle&quot;,15.0,0.0,90.0,true,true);</p>
+<p>tool.addParameterButton(&quot;Set Smooth Angle&quot;,&quot;OK&quot;,&quot;set_smooth&quot;);</p>
+<p>}</p>
+<p>function set_smooth(tool){</p>
+<p>var angle = tool.getParameter(&quot;Angle&quot;);</p>
+<p>var fn = function( obj ){</p>
+<p>if( obj.type() == POLYGONOBJ ){</p>
+<p>obj.setParameter(&quot;normalAngle&quot;, angle);</p>
+<p>}</p>
+<p>}</p>
+<p>iterate_on_objects( tool, target(tool), fn );</p>
+<p>tool.document().redrawAll();</p>
+<p>}</p>
+<p>function target(tool){</p>
+<p>var doc = tool.document();</p>
+<p>if( tool.getParameter(&quot;Selection Only&quot;) ){</p>
+<p>return doc.selectedObject();</p>
+<p>} else {</p>
+<p>return doc.root();</p>
+<p>}</p>
+<p>}</p>
+<p>// applies a function to an object and then, if user has selected recurse,</p>
+<p>// recursively iterates across that object&#39;s children</p>
+<p>function iterate_on_objects( tool, obj, fn ){</p>
+<p>fn( obj );</p>
+<p>if( tool.getParameter(&quot;Recurse Children&quot;) ){</p>
+<p>for( var i=0; i&lt;obj.childCount(); i++ ){</p>
+<p>iterate_on_objects( tool, obj.childAtIndex(i), fn );</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<h4 id="iterating-across-the-parts-of-an-editable-mesh">Iterating across the parts of an editable mesh</h4>
+<p>Using the same framework from the previous example, here’s a tool for flipping normals. You can flip every normal in your entire scene with a single button press using this handy script!</p>
+<p>But the flip_normals function shows how to iterate across components of an editable mesh (a.k.a. POLYGONOBJ). Also note how it uses some tricks to force Cheetah 3D to recalculate normals and then forces the scene to be redrawn when it’s done.</p>
+<p>// build the tool UI</p>
+<p>function buildUI(tool){</p>
+<p>tool.addParameterBool(&quot;Selection Only&quot;, true, false, true, false, false);</p>
+<p>tool.addParameterBool(&quot;Recurse Children&quot;, true, false, true, false, false);</p>
+<p>tool.addParameterSeparator(&quot;Normals&quot;);</p>
+<p>tool.addParameterButton(&quot;Flip Normals&quot;,&quot;OK&quot;,&quot;flip_normals&quot;);</p>
+<p>} </p>
+<p>function flip_normals(tool){</p>
+<p>var fn = function( obj ){</p>
+<p>if( obj.type() == POLYGONOBJ ){</p>
+<p>var c = obj.core();</p>
+<p>for( var i=0; i&lt;c.polygonCount(); i++ ){</p>
+<p>c.flipWinding( i );</p>
+<p>}</p>
+<p>// Force recalculation of normals</p>
+<p>obj.setParameter(&quot;normalAngle&quot;, obj.getParameter(&quot;normalAngle&quot;));</p>
+<p>}</p>
+<p>}</p>
+<p>iterate_on_objects( tool, target(tool), fn );</p>
+<p>tool.document().redrawAll();</p>
+<p>}</p>
+<p>function target(tool){</p>
+<p>var doc = tool.document();</p>
+<p>if( tool.getParameter(&quot;Selection Only&quot;) ){</p>
+<p>return doc.selectedObject();</p>
+<p>} else {</p>
+<p>return doc.root();</p>
+<p>}</p>
+<p>}</p>
+<p>// applies a function to an object and then, if user has selected recurse,</p>
+<p>// recursively iterates across that object&#39;s children</p>
+<p>function iterate_on_objects( tool, obj, fn ){</p>
+<p>fn( obj );</p>
+<p>if( tool.getParameter(&quot;Recurse Children&quot;) ){</p>
+<p>for( var i=0; i&lt;obj.childCount(); i++ ){</p>
+<p>iterate_on_objects( tool, obj.childAtIndex(i), fn );</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<h4 id="pseudo-random-numbers">Pseudo-Random Numbers</h4>
+<p>One of the useful features of Cheetah 3D’s Particle System objects is that they are driven by a pseudo-random number generator for which you <em>explicitly</em> provide a seed value (which defaults to 12345). This means that a particle system will <em>deterministically</em> produce results based on that seed value. The effects <em>seem</em> random, but they’re completely predictable and reproducible. This means that if you’ve tweaked your particle settings to produce a pleasing result it won’t suddenly do something different when you render it (or the next time you load the file).</p>
+<p>But what if you’re writing your own Particle System? Cheetah 3D doesn’t provide access to the pseudo-random number generator it uses internally. Here’s the current version of my Particle City script, a Particle System specifically designed to lay out buildings on a street grid. Note the Pseudo-random number generator! Also note how I obtain the seed value that Cheetah 3D automatically provides as part of any Particle System interface (so I don’t even need to create my own).</p>
+<p>If you want to create procedural meshes (e.g. like the Relief object) you can make sure they will produce deterministic results based on a seed value using this pseudo-random number generator, or another like it.</p>
+<p>//</p>
+<p>// Particle City</p>
+<p>// ©2010-12 Tonio Loewald</p>
+<p>//</p>
+<p>function buildUI(obj){</p>
+<p>obj.setParameter(&quot;name&quot;,&quot;Procedural City&quot;);</p>
+<p>obj.addParameterFloat( &quot;Grid Spacing&quot;, 1,0.001,100,true, true);</p>
+<p>obj.addParameterInt(&quot;Width&quot;,10,3,100,true,true);</p>
+<p>obj.addParameterInt(&quot;Depth&quot;,10,3,100,true,true);</p>
+<p>obj.addParameterInt(&quot;Block Size&quot;,2,1,5,true,true);</p>
+<p>obj.addParameterFloat(&quot;Street Width&quot;,0.3,0.01,1,true,true);</p>
+<p>obj.addParameterFloat(&quot;Floor Height&quot;,0.05,0.001,1,true,true);</p>
+<p>obj.addParameterInt(&quot;Max Floor Reduction&quot;,3,0,100,true,true);</p>
+<p>obj.addParameterFloat(&quot;Density&quot;,0.7,0,1,true,true);</p>
+<p>}</p>
+<p>function buildObject(obj){</p>
+<p>var core = obj.core();</p>
+<p>var gridSpacing = obj.getParameter(&quot;Grid Spacing&quot;);</p>
+<p>var width = obj.getParameter(&quot;Width&quot;);</p>
+<p>var depth = obj.getParameter(&quot;Depth&quot;);</p>
+<p>var blockSize = obj.getParameter(&quot;Block Size&quot;);</p>
+<p>var streetWidth = obj.getParameter(&quot;Street Width&quot;);</p>
+<p>var maxFloors = obj.getParameter(&quot;Max Floor Reduction&quot;);</p>
+<p>var floorHeight = obj.getParameter(&quot;Floor Height&quot;);</p>
+<p>var density = obj.getParameter(&quot;Density&quot;);</p>
+<p>// Pseudo-random number generator</p>
+<p>var pseudoRandom = {</p>
+<p>seed : obj.getParameter(&quot;seed&quot;),</p>
+<p>value : function(){</p>
+<p>this.seed = ( this.seed * 9301 + 49297) % 233280;</p>
+<p>return this.seed / 233280;</p>
+<p>},</p>
+<p>range : function( min, max ){</p>
+<p>return Math.floor( this.value() * (max - min + 1) + min );</p>
+<p>}</p>
+<p>}</p>
+<p>var w = (width - 1) * gridSpacing + Math.floor( width / blockSize ) * streetWidth;</p>
+<p>var d = (depth - 1) * gridSpacing + Math.floor( depth / blockSize ) * streetWidth;</p>
+<p>for( var x = 0; x &lt; width; x++ ){</p>
+<p>for( var z = 0; z &lt; depth; z++ ){</p>
+<p>if( pseudoRandom.value() &lt; density ){</p>
+<p>var bx = x * gridSpacing - w * 0.5 + Math.floor( x / blockSize ) * streetWidth;</p>
+<p>var bz = z * gridSpacing - d * 0.5 + Math.floor( z / blockSize ) * streetWidth;</p>
+<p>var  p = core.addParticle();</p>
+<p>// drop each building by a number of floors</p>
+<p>var h = pseudoRandom.range( 0, maxFloors ) * floorHeight;</p>
+<p>p.setPosition( new Vec3D(bx, -h, bz) );</p>
+<p>// rotate each building by a multiple of 90°</p>
+<p>var r = pseudoRandom.range( 0, 3 ) * 90;</p>
+<p>p.setRotation( new Vec3D( 0, r, 0 ) );</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Falcon/">Falcon</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_Key_Points/">Key Points</a></li>
+      <li><a class="doc-link" href="../4.2_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.3_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.4_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.5_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.6_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.7_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.8_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.10_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.11_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.12_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.13_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.15_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.16_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../5.2_User_Interface_Overview/">User Interface Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../6.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../7.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../8.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../8.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../8.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../8.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../8.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../8.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../8.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../8.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../8.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../9.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../9.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../10.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../10.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../10.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../10.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../10.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../10.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../10.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../10.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../10.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../10.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+      <li><a class="doc-link" href="../10.12_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.13_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.14_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.15_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.16_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.17_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.18_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><a class="doc-link" href="../11_Lighting/">Lighting</a></li>
+    <li><details><summary><a class="doc-link" href="../12_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../12.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../12.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../12.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../12.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../12.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../12.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../12.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../12.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../12.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../12.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../12.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../12.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../12.15_Baking_Materials/">Baking Materials</a></li>
+      <li><a class="doc-link" href="../12.16_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.17_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.18_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.19_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.20_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Animation_Overview/">Animation Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../14.2_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../14.3_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../14.4_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.6_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.7_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../15.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../15.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../15.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../16.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../17_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../17.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../17.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../17.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../17.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../17.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../17.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link current" href="../17.8_Scripts/" aria-current="page">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../18_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../18.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../18.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../18.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../18.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../18.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../18.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../18.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../18.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=fde998e05e15"></script>
+</body>
+</html>

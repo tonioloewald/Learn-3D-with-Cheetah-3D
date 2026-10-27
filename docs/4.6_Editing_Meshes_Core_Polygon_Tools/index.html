@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=fde998e05e15" data-tosi-doc-system />
+  <title>Editing Meshes: Core Polygon Tools — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Upshot: you _generally_ want to use cover, not extrude." />
+  <link rel="canonical" href="https://learn3d.loewald.com/4.6_Editing_Meshes_Core_Polygon_Tools/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Editing Meshes: Core Polygon Tools — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Editing Meshes: Core Polygon Tools — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Upshot: you _generally_ want to use cover, not extrude." />
+  <meta property="og:url" content="https://learn3d.loewald.com/4.6_Editing_Meshes_Core_Polygon_Tools/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Editing Meshes: Core Polygon Tools","description":"Upshot: you _generally_ want to use cover, not extrude.","url":"https://learn3d.loewald.com/4.6_Editing_Meshes_Core_Polygon_Tools/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=cffafbc218bb" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="4.6_Editing_Meshes_Core_Polygon_Tools.md">
+<!--{"parent": "4_Falcon.md", "order": 6}--><h2 id="editing-meshes-core-polygon-tools">Editing Meshes: Core Polygon Tools</h2>
+<h3 id="duck-i-mean-extrude-and-cover">Duck… I mean Extrude and Cover</h3>
+<p><strong>Upshot</strong>: you <em>generally</em> want to use cover, not extrude.</p>
+<p><img src="/images/DraggedImage-10.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-11.jpg" alt=""></p>
+<p><em>Using <strong>cover</strong>. I have the transform tool selected and select two faces, then select cover (Tools &gt; Polygon &gt; Cover), then simply move the selected faces — new geometry has been created “covering” the boundary of my selection. Note that you’ll find cover the single most useful tool for polygon modeling — I map it to the C key, so in fact I simply selected some polygons, pressed C, and dragged out the new geometry.</em></p>
+<p><img src="/images/DraggedImage-12.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-13.jpg" alt=""></p>
+<p><em>Unlike extrude, cover works just fine for <strong>edges</strong>. When in edge mode you’re defining the boundary that get’s “covered”.</em></p>
+<p>Extrude and cover both kind of do the same thing — if you select one or more polygons extrude and cover will both let you pull more geometry out of those polygons (i.e. extrude those faces). In general, most experienced Cheetah 3D users will simply use Cover all the time and forget about Extrude for two reasons:</p>
+<ul>
+<li><p>Cover instantly creates the new geometry without switching tools. This usually means you can just “live” in the Transform tool. </p>
+</li>
+<li><p>Cover lets you do something with the new geometry other than push it out along the face normals.</p>
+</li>
+</ul>
+<p>Picking Extrude, in contrast, activates the Extrude Tool which is a bit weird — while the extrude tool is active you can’t click without creating more geometry, and clicking and dragging pushes the new faces in a direction normal to faces being extruded. I also find that it’s easier to accidentally create geometry I didn’t intend to with stray clicks when the Extrude tool is active, and discover this much later when my mesh does something weird.</p>
+<ul>
+<li>Cover works on edges. You can cover a series of edges to extend a surface. Extrude simply isn’t available in edge mode.</li>
+</ul>
+<p><strong>Inner Extrude</strong> is a really interesting tool. The obvious use for it is creating inset faces.</p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.32.01%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.32.12%20PM.jpg" alt=""></p>
+<p><em>In this example I’ve selected three contiguous quads (that go around corners) and used inner-extrude to create an inset collection of faces. This can be really useful (e.g. if modeling windows), and you can’t do this kind of thing (easily) with any other tool.</em></p>
+<p>Inner extrude also works on edges, essentially building out geometry from the selected edges. It’s easier to show than explain, and once again it can be very useful.</p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.34.29%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.34.38%20PM.jpg" alt=""></p>
+<p><em>Here I’ve selected a series of edges and then used inner extrude to create a “ring” of geometry around them. This technique can be used (much like beveling) to control the curvature of subdivision surfaces, and also to create new “edge loops” when modeling characters.</em></p>
+<p>Finally, <strong>inner extrude works on vertices</strong>. This is particularly useful for punching holes in things.</p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.43.44%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg" alt=""></p>
+<p><em>Here I’ve picked a vertex on a corner (because I can!) and used inner extrude to create a loop of geometry around it, which I could easily turn into a hole by deleting the original vertex.</em></p>
+<h3 id="create-polygon">Create Polygon</h3>
+<p>Create polygon simply lets you add a new polygon to a mesh by clicking on (or creating) a series of vertices. You click on the vertices (in anti-clockwise order viewed from the side you want to be seen) ending where you started. You need to click four times to create a triangle (unfortunately).</p>
+<p>It’s easy to sometimes click on the wrong vertex if your mesh has overlapping vertices (usually rotating your view slightly will solve the problem).</p>
+<p><img src="/images/DraggedImage-14.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-15.jpg" alt=""></p>
+<p>It’s also easy to miss a vertex and create a new vertex somewhere off in space. After creating a polygon or two, it’s wise to take a look at your model to make sure you haven’t created something unintended. In this exaggerated example, I missed the bottom-right vertex of my quad, but quickly spinning my view around I can easily see how I messed up.</p>
+<h3 id="bridge">Bridge</h3>
+<p>The bridge tool joins two parts of a mesh. It works best when joining two polygons with the same number of sides, but it does a pretty good job even if the polygons differ in number of sides.</p>
+<p><img src="/images/DraggedImage-16.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-17.jpg" alt=""></p>
+<p>Bridge before (in object mode so you can see edges more clearly) and after. To use the tool you select Tools &gt; Polygon &gt; Bridge and then click a point on the first “hole” and then click the point you want to bridge to on the second “hole”.</p>
+<p>The bridge tool requires you to click a vertex on the starting polygon and another on the ending polygon. Note that the vertices must lie on a well-defined “ring” of edges, and it’s important for the normals to match.</p>
+<p>There are lots of ways bridges can go horribly wrong, and I try to explain them in depth in the detailed section on Troubleshooting the Bridge Tool.</p>
+<h3 id="fill-hole">Fill Hole</h3>
+<p>Fill hole is simple and useful. If you have a hole in a mesh surface you can use fill hole to make it into a new polygon. Generally this works best if the new “polygon” is reasonably flat (i.e. the edges and vertices used to form it are roughly coplanar).</p>
+<p><img src="/images/DraggedImage-18.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-19.jpg" alt=""></p>
+<p><em>Fill Hole before and after. I selected Tools &gt; Polygon &gt; Fill Hole and then clicked a point on the edge of the hole. Note that the hole gets filled by a single polygon (and that polygon is neither convex nor a quad in this case, which can definitely spell trouble if not corrected).</em></p>
+<p>If it doesn’t work, chances are there’s a flaw in your mesh you didn’t see, or the edges form too weird a surface.</p>
+<h3 id="scalpel">Scalpel</h3>
+<p>The scalpel tool lets you cut up edges and polygons in a very precise way. The scalpel has some important restrictions:</p>
+<ul>
+<li><p>Start on an existing edge or vertex</p>
+</li>
+<li><p>Each subsequent click should create an edge within one polygon, so to cross to a new polygon you must first click on an edge between the polygon you’re in and the polygon you’re going to.</p>
+</li>
+<li><p>You need to end on an existing edge or vertex.</p>
+</li>
+</ul>
+<p>The most common applications of the scalpel are:</p>
+<p><img src="/images/DraggedImage-20.jpg" alt=""></p>
+<p>Look ma, I made a hole!</p>
+<ul>
+<li>Cutting a hole in a polygon. If you want to cut a hole in a polygon, first use the scalpel to cut the polygon into two (or more) pieces. Then using the edges now running through your polygon, build out the edges of the hole.</li>
+</ul>
+<p>￼</p>
+<p><img src="/images/DraggedImage-21.jpg" alt=""></p>
+<p>This is an artificial example, but on the top the selected polygon (which is vaguely C-shaped) is being triangulated very badly. On the bottom, breaking up the problem polygon into convex quads with a few cuts using the scalpel tool completely eliminates the problem. (It could definitely be done more tidily, this is simply demonstrating a point.)</p>
+<ul>
+<li>Fixing problem polygons. Sometimes a polygon doesn’t get rendered correctly, especially if it isn’t convex. You can use the scalpel tool to chop complex polygons into simpler polygons that won’t confuse the triangulation algorithm.</li>
+</ul>
+<p>￼</p>
+<p><img src="/images/DraggedImage-22.jpg" alt=""></p>
+<p>Compare the bottom-right quad across these three (symmetric) meshes. The middle mesh is a result of triangulating the mesh, and shows the triangulation that is being used by Cheetah 3D to render the initial mesh. On the right I’ve used the scalpel tool to force a different triangulation for that polygon.</p>
+<ul>
+<li>Forcing a specific triangulation. Sometimes a quad will simply get triangulated in just the wrong way. You can split the quad into two triangles using the scalpel to override this behavior.</li>
+</ul>
+<p>￼</p>
+<p><img src="/images/DraggedImage-23.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-24.jpg" alt=""></p>
+<p><em>Here I’m building out the base topology for a head, and I’ve created an edge-loop around what will be the character’s mouth. On the left, the non-quads I’ve created have been selected and are highlighted. On the right, using the scalpel tool I cut two new edges and then used point-slide to make the quads less distorted, resulting in all of the resulting faces becoming quads. This is a very common operation in character animation — creating edge loops and cleaning up the resulting non-quads using the scalpel.</em></p>
+<ul>
+<li>Refining Topology. Probably the most common scalpel operation is cleaning up mesh topology, which usually means eliminating non-quads. At other times you simply need to add more detail in a particular spot, and here the scalpel is your friend, allowing you to add vertices and edges exactly where you need them.</li>
+</ul>
+<h3 id="ring-cut">Ring Cut</h3>
+<p><img src="/images/DraggedImage-25.jpg" alt=""></p>
+<p>The ring cut tool splits a ring of edges and selects the newly created geometry. You select the tool and then move the mouse pointer over an edge of the mesh and click to create a cut your mesh.</p>
+<p>The next paragraph is probably not going to make sense to you right away, but I’ll say it now anyway because at some point you’ll have an “aha!” moment and it will all make sense.</p>
+<p>When using box modeling techniques, it’s a good idea to create as simple a mesh as possible, only adding more detail to your mesh when you absolutely have to. Usually this means keeping your mesh very simple until you’ve blocked out the form you want, making the topology as clean as possible, and then using ring cut as sparingly as possible to add detail to the mesh where it’s needed.</p>
+<p>The ring cut tool is invaluable for adding more detail to a subdivision “cage” mesh (i.e. a mesh you’re applying subdivision to). This allows you to refine the behavior of subdivision exactly where you need it.</p>
+<h3 id="jigsaw">Jigsaw</h3>
+<p><img src="/images/DraggedImage-26.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-27.jpg" alt=""></p>
+<p>Jigsaw is essentially a controlled ring cut. First, you select a series of quads (note how it can “turn a corner” and then you click on one of the edges that will be cut. The cut is terminated at the mesh edge or a terminal polygon.</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../4_Falcon/">Falcon</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_Key_Points/">Key Points</a></li>
+      <li><a class="doc-link" href="../4.2_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.3_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.4_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.5_Meshes/">Meshes</a></li>
+      <li><a class="doc-link current" href="../4.6_Editing_Meshes_Core_Polygon_Tools/" aria-current="page">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.7_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.8_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.10_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.11_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.12_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.13_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.15_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.16_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../5.2_User_Interface_Overview/">User Interface Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../6.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../7.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../8.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../8.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../8.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../8.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../8.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../8.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../8.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../8.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../8.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../8.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../9.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../9.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../10.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../10.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../10.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../10.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../10.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../10.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../10.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../10.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../10.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../10.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+      <li><a class="doc-link" href="../10.12_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.13_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.14_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.15_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.16_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.17_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.18_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><a class="doc-link" href="../11_Lighting/">Lighting</a></li>
+    <li><details><summary><a class="doc-link" href="../12_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../12.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../12.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../12.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../12.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../12.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../12.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../12.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../12.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../12.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../12.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../12.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../12.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../12.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../12.15_Baking_Materials/">Baking Materials</a></li>
+      <li><a class="doc-link" href="../12.16_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.17_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.18_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.19_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.20_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Animation_Overview/">Animation Overview</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../14.2_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../14.3_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../14.4_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../14.5_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.6_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../14.7_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../15.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../15.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../15.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../16.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../17.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../17.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../17.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../17.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../17.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../17.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../17.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../18_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../18.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../18.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../18.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../18.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../18.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../18.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../18.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../18.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=fde998e05e15"></script>
+</body>
+</html>
