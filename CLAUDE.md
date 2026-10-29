@@ -14,10 +14,11 @@ The ecosystem's shared practices live in `~/tosijs-coding-practices` (start at i
 bun install
 bun run tls     # once: mkcert certificate in tls/ for the HTTPS dev server
 bun start       # dev server at https://localhost:8830, rebuilds on change
-bun run build   # writes the site + ePub to docs/
+bun run build   # writes the site + ePub to docs/, then runs the axe audit (~75s)
+bun run tunnel  # the running dev server at https://learn3d.edit.dev.tosijs.net (needs PREVIEW_HOST from ~/local-secrets/tosijs-preview.env)
 ```
 
-There are no tests. `bun run build` is the check: it reports broken wikilinks, in-page anchors and similar problems.
+There are no tests. `bun run build` is the check: it reports broken wikilinks, in-page anchors and similar problems. With `accessibility: 'wcag22-aa'` it also lists images with no alt text or caption, skipped heading levels and "here" links by file and line, and axe failures in the built pages. A build while `bun start` is running is delegated to the dev server and skips the axe audit.
 
 ## Layout
 
