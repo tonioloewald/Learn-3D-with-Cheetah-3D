@@ -7,6 +7,9 @@ export default defineSiteConfig({
     'The Missing Manual for Cheetah 3D — modeling, materials, lighting, rendering and animation.',
   baseUrl: 'https://learn3d.loewald.com',
   host: 'github-pages',
+  // `bun run tunnel` exposes the live dev server on the shared preview host. The SSH host
+  // is never committed: it comes from PREVIEW_HOST (~/local-secrets/tosijs-preview.env).
+  preview: { tunnel: { url: 'https://learn3d.edit.dev.tosijs.net' } } as any,
   // Fixed per project so it can run beside other ecosystem dev servers.
   port: 8830,
 
@@ -19,6 +22,10 @@ export default defineSiteConfig({
   staticDirs: ['static'],
   // A prose book: code blocks (e.g. Cheetah 3D scripts) are illustrations, never run.
   liveExamples: 'opt-in',
+
+  // Builds to WCAG 2.2 AA as far as a build can, and reports (by file and line)
+  // what it can't decide, such as images with no alt text or caption.
+  accessibility: 'wcag22-aa',
 
   // The darker of the favicon's two oranges (#ffbc00 / #5c4400); the doc system
   // derives most of the palette from it.

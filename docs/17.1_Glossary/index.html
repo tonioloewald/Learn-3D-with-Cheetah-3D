@@ -4,6 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
+    document.documentElement.classList.add('tosi-js')
+    document.addEventListener('click', function (e) {
+      if (customElements.get('tosi-doc-system')) return
+      var b = e.target.closest && e.target.closest('.doc-nav .nav-toggle')
+      if (!b) return
+      var open = b.closest('.nav-branch').classList.toggle('-open')
+      b.setAttribute('aria-expanded', String(open))
+    })
     try {
       var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
       var t = p.theme || 'system'
@@ -14,7 +22,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=a3fe77efa05e" data-tosi-doc-system />
   <title>Glossary — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Or, miscellaneous, possibly useful information in no particular order that may be useful if you search for an unfamiliar term." />
   <link rel="canonical" href="https://learn3d.loewald.com/17.1_Glossary/" />
@@ -32,122 +40,111 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="17.1_Glossary.md">
-<!--{"parent": "17_Appendices.md", "order": 1}--><h2 id="glossary">Glossary</h2>
+<!--{"parent": "17_Appendices.md", "order": 1}--><h1 id="glossary">Glossary</h1>
 <p>Or, miscellaneous, possibly useful information in no particular order that may be useful if you search for an unfamiliar term.</p>
 <p>Note that most of the terms discussed here have excellent and detailed definitions online in places like Wikipedia. Many are also discussed &quot;inline&quot; in relevant chapters. If you want more information on any of this stuff, Google is your friend. (Or Bing. Nothing against Bing.) I am not going to try to replace online reference sources by providing detailed formal definitions of these terms, and instead will focus on communicating the core concepts and why they’re important in as beginner-friendly a manner as possible.</p>
-<h3 id="copyright-intellectual-property">Copyright, Intellectual Property</h3>
+<h2 id="copyright-intellectual-property">Copyright, Intellectual Property</h2>
 <p>I am not a lawyer.</p>
 <p>Copyright and intellectual property essentially come down to two questions: What can I use? What can I show publicly / give away / sell? </p>
 <p>The answer to the first question — <strong>what can one use?</strong> (legally) — is, pretty much, anything you like as long as it’s for your own personal use. To give you a concrete example — movie directors frequently create rough cuts of work in progress using music copied from their collections, shots copied from other movies, and so on. This is <em>professional work</em> done by movie industry insiders, and it’s just fine — as long as they don’t distribute or sell the rough cut.</p>
 <p>The second question — what can one display, give away, or sell? — is the important one, and comes down to whether you own or have the rights to make specific use of something. And it doesn’t really matter whether you’re showing something publicly (e.g. uploading it to YouTube), giving it away, delivering it as work-for-hire, or selling it — the penalties and pitfalls of making the wrong call are pretty much the same.</p>
 <p>Read your license agreements carefully! If in doubt, get legal advice.</p>
-<h3 id="forward-kinematics-inverse-kinematics">Forward Kinematics, Inverse Kinematics</h3>
+<h2 id="forward-kinematics-inverse-kinematics">Forward Kinematics, Inverse Kinematics</h2>
 <p>Forward kinematics (also referred to as hierarchical animation) is the 3D animation system you get by having children contained inside their parent’s coordinate system. Thus when you move an object, the motion is carried “forward” to its children.</p>
 <p>Inverse kinematics evolved from the difficulty 3D animators had in animating characters and other complex “rigs” using forward kinematics. </p>
-<p><img src="/images/pastedGraphic-637.jpg" alt=""></p>
-<p><em>A simple animation task such as moving a character’s hand to a cup can be enormously difficult using forward kinematics. Inverse kinematics addresses this problem by allowing the animator to pick the desired result and calculate the pose necessary to achieve it.</em></p>
+<figure><img src="/images/pastedGraphic-637.jpg" alt=""><figcaption>A simple animation task such as moving a character’s hand to a cup can be enormously difficult using forward kinematics. Inverse kinematics addresses this problem by allowing the animator to pick the desired result and calculate the pose necessary to achieve it.</figcaption></figure>
 <p>Consider a simple arm made using a hierarchy of bones — the upper back bone contains the collar bone contains the upper arm contains the lower arm contains the hand. Typically an animator wants to do something like “move the hand to pick up the cup”, but to do this requires moving the upper arm, which has unpredictable effects on the lower arm and hand, then the lower arm, which affects the hand, and so on. Getting the cup to the hand involves many iterations and is an iffy proposition at best. You might end up with the hand on the cup but the arm in a very unnatural pose.</p>
 <p>Inverse kinematics (or IK) approaches this class of problem by allowing the animator to choose the desired result — the hand is poised to pick up the cup — and then solving the highly complicated problem of how the hierarchy above the hand must be moved to obtain the result based on <em>constraints</em>. To produce reasonable results, an IK system relies on constraints which restrict the movement of joints to reasonable values (e.g. we cannot bend our elbows in any direction). </p>
 <p>Modern IK systems, including Cheetah 3D, make good use of the initial state of a skeletal hierarchy and produce quite good behavior without painstakingly setting constraints, but often produce better results with constraints.</p>
-<h3 id="interpolation">Interpolation</h3>
+<h2 id="interpolation">Interpolation</h2>
 <p>Interpolation simply means trying to figure out the value of a variable at some point between known values of the variable. E.g. animation involves interpolating the position of an object between keyframes produced by the animator. The animator tells the program that the object will be at point A at time X and point B at time Y, the program determines where the object will be between X and Y by interpolating (between A and B).</p>
 <p>Interpolation is used everywhere in 3D graphics. Animation is all about interpolation and so is rendering (the way lighting is calculated involves interpolating between normals).</p>
 <p>By default, when animating Cheetah 3D will smoothly interpolate your state changes. This is often, but not always, what you want. To fine-tune interpolation in Cheetah 3D you should use the f-curve display.</p>
-<h3 id="f-curve">F-Curve</h3>
+<h2 id="f-curve">F-Curve</h2>
 <p>F-Curves are adjustable representations of how Cheetah 3D is interpolating values in an animation. In determining how an object gets from A to B (where A and B might be positions or anything else — e.g. rotations, scales, or even colors) any number of interpolation methods may be used. Linear interpolation is the most obvious algorithm (the state changes at the same rate as time) but animators almost never want linear interpolation.</p>
 <p>The most common interpolation method used in animation is called easing. Ease-in means you start moving slowly and then accelerate, while ease-out means you start to slow down as you approach your goal.</p>
 <p>In <em>Disney Animation: The Illusion of Life</em> the authors suggest that the best way to interpolate a motion involves “point-to-point” (spend most of your time at the start and destination, and very little time in between — effectively ease-in and ease-out), anticipation, and overshoot. You can achieve all of these effects quite simply using the f-curve editor.</p>
-<h3 id="keyframe">Keyframe</h3>
+<h2 id="keyframe">Keyframe</h2>
 <p>In 3D animation, a key frame is a point on the time line at which at least one animated parameter is “keyed” (i.e. has a set “key” value).</p>
-<p><img src="/images/pastedGraphic-638.jpg" alt=""></p>
-<p><em>This shows two keyframes (with position, rotation, and scale keys) on the timeline. This is taken from the bottom-left of the default Animation layout with the animation timeline controls visible.</em></p>
+<figure><img src="/images/pastedGraphic-638.jpg" alt=""><figcaption>This shows two keyframes (with position, rotation, and scale keys) on the timeline. This is taken from the bottom-left of the default Animation layout with the animation timeline controls visible.</figcaption></figure>
 <p>Cheetah 3D will show you where there are keys for the currently selected object on the timeline. (Annoyingly it won’t show you keys for child or parent objects.)</p>
 <blockquote>
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: whether the timeline can now show keys for child objects (it has a “record also all child objects” toggle; manual: Timeline). <!-- TODO verify --></p>
 </blockquote>
 <p>In traditional animation, a *key *frame was a drawing created by a lead animator. Because lead animators were the principal bottleneck in animated film production (in <em>Disney Animation: The Illusion of Life</em>, the authors contended that there were only ten artists good enough to work as lead animators for Disney features <em>in the world</em>), the idea was to minimize the work they had to do, so they drew key frames and less precious artists (“in-betweeners”) drew the intervening frames (or “tweens”).</p>
-<h3 id="instrumenting-rigs">Instrumenting Rigs</h3>
-<p><img src="/images/Screen%20Shot%202013-12-03%20at%203.32.59%20PM.jpg" alt=""></p>
-<p><em>Filip C <a href="https://www.cheetah3d.com/forum/index.php?threads/8534/">posted a simple &quot;blockman&quot; rig demonstrating</a> how you can create quite sophisticated rigs in Cheetah 3D (using splines, which don&#39;t render or create polygon meshes on their own) as instrumentation. If you search the forums you will find quite a lot of rigs, some very sophisticated.</em></p>
+<h2 id="instrumenting-rigs">Instrumenting Rigs</h2>
+<figure><img src="/images/Screen%20Shot%202013-12-03%20at%203.32.59%20PM.jpg" alt=""><figcaption>Filip C <a href="https://www.cheetah3d.com/forum/index.php?threads/8534/">posted a simple &quot;blockman&quot; rig demonstrating</a> how you can create quite sophisticated rigs in Cheetah 3D (using splines, which don&#39;t render or create polygon meshes on their own) as instrumentation. If you search the forums you will find quite a lot of rigs, some very sophisticated.</figcaption></figure>
 <p>Rigged characters can be very complicated objects, and most serious animators will “instrument” their rigs to make them easier to work with. Many 3D programs provide some kind of support for instrumenting rigs (e.g. they allow you to build virtual controls that float near the character and allow you to quickly select IK targets, or control settings or poses).</p>
-<h3 id="morphing-morph-target">Morphing, Morph Target</h3>
+<h2 id="morphing-morph-target">Morphing, Morph Target</h2>
 <p>Morphing simply means “changing form”. Cheetah 3D supports “morph target” animation which allows you to move the points of a mesh around and store different states of its vertices as morph targets which can then be interpolated.</p>
 <p>Morph target animation is a common technique for animating the faces of characters (e.g. you might edit a character’s head into various facial expressions and vowel forms, making each into a morph target, and then you can animate the figure simply by blending the different forms at different points in time).</p>
 <p>Today, morph target animation is falling out of favor and fully boned facial rigs with skin/bone/muscle deformers are being used instead.</p>
 <blockquote>
 <p><strong>Note:</strong> needs checking: morph targets (“blend shapes”) are still widely used for facial animation, so this claim may be dated. <!-- TODO verify --></p>
 </blockquote>
-<h3 id="non-destructive-creatormodifier-chain">Non-destructive Creator/Modifier Chain</h3>
+<h2 id="non-destructive-creatormodifier-chain">Non-destructive Creator/Modifier Chain</h2>
 <p>Cheetah 3D, like many other powerful 3D programs, allows you to progressively modify a mesh using one or more non-destructive modifiers. Because more than one modifier can be applied (and these modifiers are applied in fixed order) this is often referred to as a chain. The term “non-destructive” refers to the original mesh not being affected by the modifiers.</p>
-<h3 id="creator">Creator</h3>
+<h2 id="creator">Creator</h2>
 <p>In Cheetah 3D a Creator is an object that generates a mesh by applying rules to one or more children. Creators differ from Modifiers in that some operate on more than one input object (modifiers always apply to a single object, their parent) and they can operate on objects other than meshes.</p>
-<h3 id="modifier">Modifier</h3>
+<h2 id="modifier">Modifier</h2>
 <p>In Cheetah 3D a Modifier is an object that modifies its parent mesh. If a parent mesh has more than one modifier, the modifiers are applied in order (top to bottom). Modifiers differ from creators in that they operate on their parent (rather than their children) and thus can only affect one object, and they only operate on meshes. (It’s theoretically possible to write a Modifier plugin that can operate on non-meshes.)</p>
-<h3 id="node-based-shader-material">Node-Based, Shader, Material</h3>
+<h2 id="node-based-shader-material">Node-Based, Shader, Material</h2>
 <p>In Cheetah 3D a material is something you can apply to a mesh (or part of a mesh) to change its surface appearance.</p>
 <p>E.g. a material might be “rusted steel” and if assigned to a box would make it look like it was made of rusted steel.</p>
 <p>In Cheetah 3D, and in 3D software generally, a shader is an algorithm for rendering surfaces which, along with textures and data, determines the appearance of surfaces it is applied to.</p>
 <p>E.g. a shader might be called “car paint” and if used in a material will make objects assigned that material look like they’re covered in car paint, but exactly what color or pattern of car paint would be determined by information fed into the car paint shader.</p>
 <p>“Node-based” simply means that the object is defined graphically using a flowchart comprised of nodes and lines joining them. Cheetah 3D has a node-based material system.</p>
 <p>(In other programs, the words “material” and “shader” may be used slightly differently, but these definitions are pretty typical.)</p>
-<h3 id="normal-map-bump-map">Normal Map, Bump Map</h3>
+<h2 id="normal-map-bump-map">Normal Map, Bump Map</h2>
 <p>Normal Maps and Bump Maps represent two complementary approaches to representing three-dimensional surface detail on two-dimensional surfaces by manipulating the rendering algorithm.</p>
 <p>In essence, a bump map treats greyscale data as a “height field” where the whiter a pixel is the more the renderer treats it as being “pushed out” from the surface. The way this is done is by changing the <strong>surface normal</strong> which in turn changes the outputs of all the lighting calculations (including reflection and refraction).</p>
 <p>A normal map simplifies this process by encoding a precalculated normal as an r,g,b value. Normal maps are thus colored and not greyscale, and <em>may</em> include much more precise information about the angle of the implied surface, but no information about its height. Normal maps are preferred for game engines because they save calculation steps.</p>
 <p>There is a third approach: sub-polygon <strong>displacement</strong>, which takes a bump map and uses it to deform the underlying geometry. This produces wonderful results. Cheetah 3D provides some support for displacement, which is discussed in <a href="/8.1_Modifiers/">Modifiers</a>.</p>
-<h3 id="procedural-texture">Procedural Texture</h3>
+<h2 id="procedural-texture">Procedural Texture</h2>
 <p>A procedural texture is an algorithm — usually a chaotic function — that generates imagery based purely on spatial coordinates.</p>
-<h3 id="convex-polygon">Convex Polygon</h3>
-<p><img src="/images/pastedGraphic-639.jpg" alt=""></p>
-<p><em>A convex polygon (left) and a concave polygon (right). The red line shows how you can draw a line between two points in the concave polygon that passes outside it.</em></p>
+<h2 id="convex-polygon">Convex Polygon</h2>
+<figure><img src="/images/pastedGraphic-639.jpg" alt=""><figcaption>A convex polygon (left) and a concave polygon (right). The red line shows how you can draw a line between two points in the concave polygon that passes outside it.</figcaption></figure>
 <p>A convex shape in mathematics is defined as one where if you join any two points in that object with a line, the line will be entirely contained within the shape. In general, you don’t want non-convex polygons in your meshes if you can help it, especially if you plan to export those meshes to another program.</p>
 <p><strong>Aside</strong>: You’ve probably heard of a “convex lens” (such as a typical magnifying glass lens). In simple terms, convex has protrusions, while concave has dents. You don’t need to know this, but “convex” is completely general in mathematics, and applies to things that have any number of dimensions, and things embedded in spaces that are non-Euclidean and so on (where “line” is a concept derived from a “distance” or “norm” function).</p>
 <p>(Why? One reason is that the way different 3D programs triangulate meshes varies, and you cannot predict whether a non-convex mesh that looks OK in Cheetah 3D will still look OK when a different triangulation of the mesh occurs.)</p>
-<h3 id="quad">Quad</h3>
+<h2 id="quad">Quad</h2>
 <p>A quad is a four-sided polygon. Ideally, meshes should be composed entirely of quads and those quads should be convex and, ideally, “squarish”. (Why? Quads subdivide nicely, which means anything built of quads can be subdivided and deformed with generally good results. Texture-mapping that relies on UVs tends to work best — i.e. distort textures least — with squarish quads.)</p>
 <p>Cheetah 3D has tools for selecting any polygons in a mesh that aren’t quads, which is very helpful for cleaning up meshes. These tools are <strong>Selection &gt; Select Triangles</strong>, <strong>Selection &gt; Select Quads</strong>, and <strong>Selection &gt; Select nGon&gt;4</strong>.</p>
-<h3 id="triangulation-tessellation">Triangulation, Tessellation</h3>
-<p><img src="/images/Screen%20Shot%202013-12-03%20at%203.40.42%20PM.jpg" alt=""></p>
-<p><em>A cube (left) and a triangulated cube (right).</em></p>
+<h2 id="triangulation-tessellation">Triangulation, Tessellation</h2>
+<figure><img src="/images/Screen%20Shot%202013-12-03%20at%203.40.42%20PM.jpg" alt=""><figcaption>A cube (left) and a triangulated cube (right).</figcaption></figure>
 <p>Triangulation (sometimes called tessellation) is the process of converting a mesh made of polygons with any number of sides (n-gons) into a mesh made entirely of triangles. <!-- TODO review --></p>
 <p>Note that the word tessellation sounds fancier but is actually less accurate.</p>
-<h3 id="spline">Spline</h3>
+<h2 id="spline">Spline</h2>
 <p><img src="/images/pastedGraphic-640.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-641.jpg" alt=""></p>
-<p><em><strong>Top</strong>: this spline object (which happens to be a letter Q) is formed out of two separate splines. The inner spline is interpreted as a “hole” in the outer spline. <strong>Bottom</strong>: the same spline object dragged into a Polyplane creator showing how Cheetah 3D interprets the spline object.</em></p>
+<figure><img src="/images/pastedGraphic-641.jpg" alt=""><figcaption><strong>Top</strong>: this spline object (which happens to be a letter Q) is formed out of two separate splines. The inner spline is interpreted as a “hole” in the outer spline. <strong>Bottom</strong>: the same spline object dragged into a Polyplane creator showing how Cheetah 3D interprets the spline object.</figcaption></figure>
 <p>A spline is a bezier curve. A single spline object can create multiple separate spline curves.</p>
-<h3 id="displacement-map">Displacement Map</h3>
-<p><img src="/images/displacement.jpg" alt=""></p>
-<p><em>Displacement Map</em></p>
-<p><img src="/images/displacement-render.jpg" alt=""></p>
-<p><em>100x100 Plane with displacement map applied (using Displacement modifier with -0.1 offset)</em></p>
+<h2 id="displacement-map">Displacement Map</h2>
+<figure><img src="/images/displacement.jpg" alt=""><figcaption>Displacement Map</figcaption></figure>
+<figure><img src="/images/displacement-render.jpg" alt=""><figcaption>100x100 Plane with displacement map applied (using Displacement modifier with -0.1 offset)</figcaption></figure>
 <p>The general idea of displacement is that you define a “base mesh” and then subdivide it (linear subdivision) and displace the polygons from their original positions based on a displacement map (which is treated as a bump map or height field).</p>
 <p>Cheetah 3D supports displacement in two ways. There’s the <strong>Relief object</strong>, which is essentially a plane with a displacement modifier and a fractal displacement map built in, and there’s the <strong>Displacement modifier</strong> which applies displacement using a supplied displacement map and the parent mesh’s UV map.</p>
-<h3 id="mesh-weight-mesh-topology-retopologize">Mesh Weight, Mesh Topology, Retopologize</h3>
+<h2 id="mesh-weight-mesh-topology-retopologize">Mesh Weight, Mesh Topology, Retopologize</h2>
 <p>Mesh weight simply refers to how computationally expensive a mesh is to work with. At first approximation, mesh weight is determined by the number of points and triangles in the mesh. A mesh can sometimes have many more UV points than geometric points, and this will add to its “weight”.</p>
 <p>Mesh topology refers to the “niceness” of the mesh’s geometry. It’s hard to explain good mesh topology — it’s something you get an eye for with experience.</p>
 <p>To “retopologize” a mesh is to take a mesh that has the right shape but “bad topology” and rebuild it with a nicer topology (usually reducing the complexity and weight of the mesh in the process). 3D scanning and sculpting frequently produce “heavy” meshes with bad topology that need to be retopologized.</p>
-<h3 id="box-modeling">Box Modeling</h3>
+<h2 id="box-modeling">Box Modeling</h2>
 <p>This is the process of building 3D models by directly creating and modifying mesh elements, often used in concert with subdivision surfaces.</p>
-<h3 id="solid-modeling">Solid Modeling</h3>
+<h2 id="solid-modeling">Solid Modeling</h2>
 <p>Some 3D modeling programs treat virtual 3D objects as solid volumes rather than collections of points and polygons. This is very useful for engineering work. Cheetah 3D is not a solid modeler, but it can export to STL (a file format commonly used for 3D printing).</p>
-<h3 id="nurbs">NURBS</h3>
+<h2 id="nurbs">NURBS</h2>
 <p>Non-Uniform Rational B-Splines are the 3D cousin of bezier curves, and allow artists and engineers to precisely model curved surfaces. Cheetah 3D allows you to work with splines to achieve many NURBS-like effects, but not true NURBS. You can, of course, import meshes created with NURBS modelers into Cheetah 3D.</p>
 <p>You may find my <strong>Surface Utilities</strong> script useful for cleaning up the smoothing of imported NURBS meshes.</p>
-<h3 id="sweep">Sweep</h3>
+<h2 id="sweep">Sweep</h2>
 <p><img src="/images/pastedGraphic-642.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-643.jpg" alt=""></p>
-<p><em>An object produced by sweeping a circle <strong>profile</strong> along a helix <strong>path</strong>.</em></p>
+<figure><img src="/images/pastedGraphic-643.jpg" alt=""><figcaption>An object produced by sweeping a circle <strong>profile</strong> along a helix <strong>path</strong>.</figcaption></figure>
 <p>A sweep is a solid formed by moving a 2D <em>profile</em> through space along a path. Cheetah 3D’s Sweep creator operates on two spline objects, treating the first child as the profile and the second as the path.</p>
-<h3 id="lathe">Lathe</h3>
-<p><img src="/images/pastedGraphic-644.jpg" alt=""></p>
-<p><em>The wineglass on the left was created by lathing the profile on the right.</em></p>
+<h2 id="lathe">Lathe</h2>
+<figure><img src="/images/pastedGraphic-644.jpg" alt=""><figcaption>The wineglass on the left was created by lathing the profile on the right.</figcaption></figure>
 <p>A lathe is a solid formed by revolving a 2D profile around an axis. Cheetah 3D’s Lathe creator operates on a spline child object.</p>
-<h3 id="extrusion">Extrusion</h3>
-<p><img src="/images/pastedGraphic-645.jpg" alt=""></p>
-<p><em>If you create a text object and drop it into an Extrude creator, this is what you get.</em></p>
+<h2 id="extrusion">Extrusion</h2>
+<figure><img src="/images/pastedGraphic-645.jpg" alt=""><figcaption>If you create a text object and drop it into an Extrude creator, this is what you get.</figcaption></figure>
 <p>An extrusion is a solid formed by pushing a 2D profile through a line (usually perpendicular to the plane of the 2D profile). Cheetah 3D’s Extrusion creator operates on a spline child object.</p>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the Falcon renderer (an unbiased path tracer, manual: Falcon), expression tags (Tag scripts with performExpression), Takes (manual: Take Manager), and glTF/GLB and USDZ file support; glossary entries for Falcon, unbiased/physically based rendering, expression tag, Take, glTF, USDZ, and EXR are not yet covered here. <!-- TODO missing --></p>
@@ -158,21 +155,19 @@
   <ul>
     <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
     <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
-    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
-    <ul>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-home" aria-label="Introduction"></button><a class="doc-link" href="../">Introduction</a></div>
+    <ul id="tosi-nav-home">
       <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
       <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
       <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-3_What_s_new_in_Cheetah_3D_7" aria-label="What’s new in Cheetah 3D 7?"></button><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></div>
+    <ul id="tosi-nav-3_What_s_new_in_Cheetah_3D_7">
       <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
       <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-4_Just_Enough_to_be_Dangerous" aria-label="Just Enough to be Dangerous"></button><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></div>
+    <ul id="tosi-nav-4_Just_Enough_to_be_Dangerous">
       <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
       <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
       <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
@@ -190,22 +185,19 @@
       <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
       <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
       <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-5_Tutorials" aria-label="Tutorials"></button><a class="doc-link" href="../5_Tutorials/">Tutorials</a></div>
+    <ul id="tosi-nav-5_Tutorials">
       <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
       <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-6_Mini_Tutorials" aria-label="Mini-Tutorials"></button><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></div>
+    <ul id="tosi-nav-6_Mini_Tutorials">
       <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
       <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-7_Modeling" aria-label="Modeling"></button><a class="doc-link" href="../7_Modeling/">Modeling</a></div>
+    <ul id="tosi-nav-7_Modeling">
       <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
       <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
       <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
@@ -217,17 +209,15 @@
       <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
       <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
       <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-8_Creators_Modifiers_Tags" aria-label="Creators, Modifiers, &amp; Tags"></button><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></div>
+    <ul id="tosi-nav-8_Creators_Modifiers_Tags">
       <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
       <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
       <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-9_Materials" aria-label="Materials"></button><a class="doc-link" href="../9_Materials/">Materials</a></div>
+    <ul id="tosi-nav-9_Materials">
       <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
       <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
       <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
@@ -239,10 +229,9 @@
       <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
       <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
       <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-10_Lighting" aria-label="Lighting"></button><a class="doc-link" href="../10_Lighting/">Lighting</a></div>
+    <ul id="tosi-nav-10_Lighting">
       <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
       <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
       <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
@@ -250,10 +239,9 @@
       <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
       <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
       <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-11_Rendering" aria-label="Rendering"></button><a class="doc-link" href="../11_Rendering/">Rendering</a></div>
+    <ul id="tosi-nav-11_Rendering">
       <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
       <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
       <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
@@ -269,44 +257,39 @@
       <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
       <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
       <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-12_Animation" aria-label="Animation"></button><a class="doc-link" href="../12_Animation/">Animation</a></div>
+    <ul id="tosi-nav-12_Animation">
       <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
       <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
       <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
       <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
       <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
       <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-13_Character_Animation" aria-label="Character Animation"></button><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></div>
+    <ul id="tosi-nav-13_Character_Animation">
       <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
       <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
       <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
       <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
       <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
       <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-14_Particles" aria-label="Particles"></button><a class="doc-link" href="../14_Particles/">Particles</a></div>
+    <ul id="tosi-nav-14_Particles">
       <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
       <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
       <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
       <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-15_Dynamics" aria-label="Dynamics"></button><a class="doc-link" href="../15_Dynamics/">Dynamics</a></div>
+    <ul id="tosi-nav-15_Dynamics">
       <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
       <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-16_Mastering_Cheetah_3D_s_Interface" aria-label="Mastering Cheetah 3D’s Interface"></button><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></div>
+    <ul id="tosi-nav-16_Mastering_Cheetah_3D_s_Interface">
       <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
       <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
       <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
@@ -315,10 +298,9 @@
       <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
       <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
       <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
-    </ul>
-    </details></li>
-    <li><details open><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch -open"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="true" aria-controls="tosi-nav-17_Appendices" aria-label="Appendices"></button><a class="doc-link" href="../17_Appendices/">Appendices</a></div>
+    <ul id="tosi-nav-17_Appendices">
       <li><a class="doc-link current" href="../17.1_Glossary/" aria-current="page">Glossary</a></li>
       <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
       <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
@@ -327,14 +309,13 @@
       <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
       <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
       <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
-    </ul>
-    </details></li>
+    </ul></li>
   </ul>
   </nav>
   <ul class="doc-navbar">
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=0a27943cf23b"></script>
+  <script src="../iife.js?v=a3fe77efa05e"></script>
 </body>
 </html>

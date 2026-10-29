@@ -4,6 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
+    document.documentElement.classList.add('tosi-js')
+    document.addEventListener('click', function (e) {
+      if (customElements.get('tosi-doc-system')) return
+      var b = e.target.closest && e.target.closest('.doc-nav .nav-toggle')
+      if (!b) return
+      var open = b.closest('.nav-branch').classList.toggle('-open')
+      b.setAttribute('aria-expanded', String(open))
+    })
     try {
       var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
       var t = p.theme || 'system'
@@ -14,7 +22,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=a3fe77efa05e" data-tosi-doc-system />
   <title>Image-based Materials — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="If you’re working on real-time applications (e.g. games) then chances are you’re going to be using a lot of image-based materials." />
   <link rel="canonical" href="https://learn3d.loewald.com/9.2_Image_based_Materials/" />
@@ -32,9 +40,9 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.2_Image_based_Materials.md">
-<!--{"parent": "9_Materials.md", "order": 2}--><h2 id="image-based-materials">Image-based Materials</h2>
+<!--{"parent": "9_Materials.md", "order": 2}--><h1 id="image-based-materials">Image-based Materials</h1>
 <p>If you’re working on real-time applications (e.g. games) then chances are you’re going to be using a lot of image-based materials. An image based material is a material that uses bitmap image textures to drive shader properties. Typical examples include:</p>
 <ul>
 <li><p>Using an image texture to drive the diffuse channel. This is very common for mobile games and other highly memory/gpu/power constrained cases.</p>
@@ -49,46 +57,31 @@
 <p>In general, Cheetah 3D provides good support for image-based materials (and it previews materials which use images to drive the diffuse channel), but it almost certainly won’t look exactly like what you’ll get in your game engine. (Some high end 3D packages provide very good support for previewing game engine shaders.)</p>
 <p>But, Cheetah 3D does have very good round-trip support for <strong>Unity</strong>, so you can save your Cheetah 3D scene (along with any necessary images) straight into your Unity assets folder and see the model live in Unity. You can customize the shader inside Unity and then make edits in Cheetah 3D without affecting your shaders.</p>
 <p>In any event, one very important thing all image based materials have in common is that they rely heavily on UV mapping.</p>
-<h3 id="quick-introduction-to-uv-mapping">Quick Introduction to UV Mapping</h3>
+<h2 id="quick-introduction-to-uv-mapping">Quick Introduction to UV Mapping</h2>
 <p>One of the problems with explaining a lot of 3D concepts is that you need to understand A to understand B, but you need to understand B to understand A. Materials and UV Maps are inter-related in just this way. So before we go any further let’s take a quick look at the wonderful world of UV mapping.</p>
 <p>A UV map is a method of deciding how a texture gets mapped (or “wrapped”) onto a surface. UVs are 2D coordinates (U and V are essentially x,y coordinates in texture space) that are assigned to vertices on a mesh, interpolated across polygons to obtain values at a specific point, and then that point is looked up in the texture space.</p>
-<h4 id="uv-vs-spatial-mapping">UV vs. Spatial Mapping</h4>
+<h3 id="uv-vs-spatial-mapping">UV vs. Spatial Mapping</h3>
 <p><img src="/images/pastedGraphic-273.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-274.jpg" alt=""></p>
-<p><em><strong>Top</strong>: procedural checkerboard using UV-mapping. <strong>Bottom</strong>: procedural checkerboard using 3D (spatial) mapping (the default setting for procedural textures).</em></p>
+<figure><img src="/images/pastedGraphic-274.jpg" alt=""><figcaption><strong>Top</strong>: procedural checkerboard using UV-mapping. <strong>Bottom</strong>: procedural checkerboard using 3D (spatial) mapping (the default setting for procedural textures).</figcaption></figure>
 <p>Image-based materials are driven by UV-coordinates, but procedural materials are driven by 3D spatial coordinates by default (some offer the option of using UV coordinates). The fact that procedural materials work without needing UVs is often an advantage, but not always. Fabric, for example, tends to follow the flow of the surface and not act like a solid procedural material.</p>
-<h4 id="default-uv-maps">Default UV Maps</h4>
+<h3 id="default-uv-maps">Default UV Maps</h3>
 <p>All Cheetah 3D’s primitives (except for the polyhedra) have a default UV mapping which produces reasonable results. Objects created using the lathe, sweep, and extrude creators also get default UV maps.</p>
 <p>Here are examples of the default UV-mappings for all the primitives and examples of the sweep, extrude, and lathe creators.</p>
-<p><img src="/images/pastedGraphic-275.jpg" alt=""></p>
-<p><em>Box</em></p>
-<p><img src="/images/pastedGraphic-276.jpg" alt=""></p>
-<p><em>Ball</em></p>
-<p><img src="/images/pastedGraphic-277.jpg" alt=""></p>
-<p><em>Capsule</em></p>
-<p><img src="/images/pastedGraphic-278.jpg" alt=""></p>
-<p><em>Cone</em></p>
-<p><img src="/images/pastedGraphic-279.jpg" alt=""></p>
-<p><em>Disk</em></p>
-<p><img src="/images/pastedGraphic-280.jpg" alt=""></p>
-<p><em>Fractal</em></p>
-<p><img src="/images/pastedGraphic-281.jpg" alt=""></p>
-<p><em>Plane</em></p>
-<p><img src="/images/pastedGraphic-282.jpg" alt=""></p>
-<p><em>Relief</em></p>
-<p><img src="/images/pastedGraphic-283.jpg" alt=""></p>
-<p><em>Stair</em></p>
-<p><img src="/images/pastedGraphic-284.jpg" alt=""></p>
-<p><em>Torus</em></p>
-<p><img src="/images/pastedGraphic-285.jpg" alt=""></p>
-<p><em>Tube</em></p>
-<p><img src="/images/pastedGraphic-286.jpg" alt=""></p>
-<p><em>Sweep</em></p>
-<p><img src="/images/pastedGraphic-287.jpg" alt=""></p>
-<p><em>Extrude</em></p>
-<p><img src="/images/pastedGraphic-288.jpg" alt=""></p>
-<p><em>Lathe</em></p>
-<h4 id="quick-and-dirty-bumpmaps">Quick and Dirty Bumpmaps</h4>
+<figure><img src="/images/pastedGraphic-275.jpg" alt=""><figcaption>Box</figcaption></figure>
+<figure><img src="/images/pastedGraphic-276.jpg" alt=""><figcaption>Ball</figcaption></figure>
+<figure><img src="/images/pastedGraphic-277.jpg" alt=""><figcaption>Capsule</figcaption></figure>
+<figure><img src="/images/pastedGraphic-278.jpg" alt=""><figcaption>Cone</figcaption></figure>
+<figure><img src="/images/pastedGraphic-279.jpg" alt=""><figcaption>Disk</figcaption></figure>
+<figure><img src="/images/pastedGraphic-280.jpg" alt=""><figcaption>Fractal</figcaption></figure>
+<figure><img src="/images/pastedGraphic-281.jpg" alt=""><figcaption>Plane</figcaption></figure>
+<figure><img src="/images/pastedGraphic-282.jpg" alt=""><figcaption>Relief</figcaption></figure>
+<figure><img src="/images/pastedGraphic-283.jpg" alt=""><figcaption>Stair</figcaption></figure>
+<figure><img src="/images/pastedGraphic-284.jpg" alt=""><figcaption>Torus</figcaption></figure>
+<figure><img src="/images/pastedGraphic-285.jpg" alt=""><figcaption>Tube</figcaption></figure>
+<figure><img src="/images/pastedGraphic-286.jpg" alt=""><figcaption>Sweep</figcaption></figure>
+<figure><img src="/images/pastedGraphic-287.jpg" alt=""><figcaption>Extrude</figcaption></figure>
+<figure><img src="/images/pastedGraphic-288.jpg" alt=""><figcaption>Lathe</figcaption></figure>
+<h3 id="quick-and-dirty-bumpmaps">Quick and Dirty Bumpmaps</h3>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has normal-map support: every shader node’s <strong>Bump type</strong> can be set to height, normal map Y+, or normal map Y− (see the shader node definitions in the app bundle), not yet covered here. <!-- TODO missing --></p>
 </blockquote>
@@ -99,21 +92,19 @@
   <ul>
     <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
     <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
-    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
-    <ul>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-home" aria-label="Introduction"></button><a class="doc-link" href="../">Introduction</a></div>
+    <ul id="tosi-nav-home">
       <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
       <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
       <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-3_What_s_new_in_Cheetah_3D_7" aria-label="What’s new in Cheetah 3D 7?"></button><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></div>
+    <ul id="tosi-nav-3_What_s_new_in_Cheetah_3D_7">
       <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
       <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-4_Just_Enough_to_be_Dangerous" aria-label="Just Enough to be Dangerous"></button><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></div>
+    <ul id="tosi-nav-4_Just_Enough_to_be_Dangerous">
       <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
       <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
       <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
@@ -131,22 +122,19 @@
       <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
       <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
       <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-5_Tutorials" aria-label="Tutorials"></button><a class="doc-link" href="../5_Tutorials/">Tutorials</a></div>
+    <ul id="tosi-nav-5_Tutorials">
       <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
       <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-6_Mini_Tutorials" aria-label="Mini-Tutorials"></button><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></div>
+    <ul id="tosi-nav-6_Mini_Tutorials">
       <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
       <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-7_Modeling" aria-label="Modeling"></button><a class="doc-link" href="../7_Modeling/">Modeling</a></div>
+    <ul id="tosi-nav-7_Modeling">
       <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
       <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
       <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
@@ -158,17 +146,15 @@
       <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
       <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
       <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-8_Creators_Modifiers_Tags" aria-label="Creators, Modifiers, &amp; Tags"></button><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></div>
+    <ul id="tosi-nav-8_Creators_Modifiers_Tags">
       <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
       <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
       <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
-    </ul>
-    </details></li>
-    <li><details open><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch -open"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="true" aria-controls="tosi-nav-9_Materials" aria-label="Materials"></button><a class="doc-link" href="../9_Materials/">Materials</a></div>
+    <ul id="tosi-nav-9_Materials">
       <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
       <li><a class="doc-link current" href="../9.2_Image_based_Materials/" aria-current="page">Image-based Materials</a></li>
       <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
@@ -180,10 +166,9 @@
       <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
       <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
       <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-10_Lighting" aria-label="Lighting"></button><a class="doc-link" href="../10_Lighting/">Lighting</a></div>
+    <ul id="tosi-nav-10_Lighting">
       <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
       <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
       <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
@@ -191,10 +176,9 @@
       <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
       <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
       <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-11_Rendering" aria-label="Rendering"></button><a class="doc-link" href="../11_Rendering/">Rendering</a></div>
+    <ul id="tosi-nav-11_Rendering">
       <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
       <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
       <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
@@ -210,44 +194,39 @@
       <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
       <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
       <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-12_Animation" aria-label="Animation"></button><a class="doc-link" href="../12_Animation/">Animation</a></div>
+    <ul id="tosi-nav-12_Animation">
       <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
       <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
       <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
       <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
       <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
       <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-13_Character_Animation" aria-label="Character Animation"></button><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></div>
+    <ul id="tosi-nav-13_Character_Animation">
       <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
       <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
       <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
       <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
       <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
       <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-14_Particles" aria-label="Particles"></button><a class="doc-link" href="../14_Particles/">Particles</a></div>
+    <ul id="tosi-nav-14_Particles">
       <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
       <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
       <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
       <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-15_Dynamics" aria-label="Dynamics"></button><a class="doc-link" href="../15_Dynamics/">Dynamics</a></div>
+    <ul id="tosi-nav-15_Dynamics">
       <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
       <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-16_Mastering_Cheetah_3D_s_Interface" aria-label="Mastering Cheetah 3D’s Interface"></button><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></div>
+    <ul id="tosi-nav-16_Mastering_Cheetah_3D_s_Interface">
       <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
       <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
       <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
@@ -256,10 +235,9 @@
       <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
       <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
       <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-17_Appendices" aria-label="Appendices"></button><a class="doc-link" href="../17_Appendices/">Appendices</a></div>
+    <ul id="tosi-nav-17_Appendices">
       <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
       <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
       <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
@@ -268,14 +246,13 @@
       <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
       <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
       <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
-    </ul>
-    </details></li>
+    </ul></li>
   </ul>
   </nav>
   <ul class="doc-navbar">
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=0a27943cf23b"></script>
+  <script src="../iife.js?v=a3fe77efa05e"></script>
 </body>
 </html>

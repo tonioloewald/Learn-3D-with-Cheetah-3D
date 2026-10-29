@@ -4,6 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
+    document.documentElement.classList.add('tosi-js')
+    document.addEventListener('click', function (e) {
+      if (customElements.get('tosi-doc-system')) return
+      var b = e.target.closest && e.target.closest('.doc-nav .nav-toggle')
+      if (!b) return
+      var open = b.closest('.nav-branch').classList.toggle('-open')
+      b.setAttribute('aria-expanded', String(open))
+    })
     try {
       var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
       var t = p.theme || 'system'
@@ -14,7 +22,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=a3fe77efa05e" data-tosi-doc-system />
   <title>Workflow — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="A photo of an early maquette of Buzz Lightyear (on display at Disney California Adventure in Los Angeles)." />
   <link rel="canonical" href="https://learn3d.loewald.com/16.7_Workflow/" />
@@ -32,9 +40,9 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="16.7_Workflow.md">
-<!--{"parent": "16_Mastering_Cheetah_3D_s_Interface.md", "order": 7}--><h2 id="workflow">Workflow</h2>
+<!--{"parent": "16_Mastering_Cheetah_3D_s_Interface.md", "order": 7}--><h1 id="workflow">Workflow</h1>
 <p><img src="/images/pastedGraphic-633.jpg" alt=""></p>
 <p>*A photo of an early maquette of Buzz Lightyear (on display at Disney California Adventure in Los Angeles). The workflow for sculpting (in the real world) is horrible — make a mistake and you start over (especially if you’re working in marble) but it’s clearly an incredibly powerful creative tool. *</p>
 <p><em><strong>Note</strong>: I found this image on karlb’s photo stream on Flickr. The maquette and images of it presumably belong to Disney (of which Pixar is now a subsidiary), and the photo to karlb, so I hope this is fair use! I apologize and will remove the image if anyone complains.</em></p>
@@ -42,31 +50,31 @@
 <p>This perfect world doesn’t exist. In practice, roles are muddled, tasks get performed out-of-order, mistakes get made, people change their minds, and inspiration strikes at the wrong time. Not only that, but the finished product is almost always better because this process isn’t perfect. </p>
 <p>In his <a href="http://redlettermedia.com">long, hilarious, and insightful reviews of the Star Wars prequels</a>, Mike Stoklasa (narrating as “Mr. Plinkett”) argues that one of the major reasons the original Star Wars movies were great and that the prequels are awful is that making a big special effects movie in 1976 was <em>really difficult</em>, and the difficulty led to improvisation and inspiration that improved the final result. The prequels, by contrast, were filmed on green screen sets, George Lucas never had to get out of his armchair or do without a cappuccino, and the result was garbage.</p>
 <p>Workflow problems can make your life horrible, and they can also end up leading to serendipitous inspiration, but that doesn’t mean you shouldn’t try to avoid them, and that’s what this section is about.</p>
-<h3 id="points-of-no-return">Points of No Return</h3>
+<h2 id="points-of-no-return">Points of No Return</h2>
 <p>There are a number of operations in 3D graphics which tend to be points of no return, in other words points where if a mistake was made beforehand then there’s no good way to fix it later.</p>
-<h4 id="converting-objects-to-editable-meshes">Converting Objects to Editable Meshes</h4>
+<h3 id="converting-objects-to-editable-meshes">Converting Objects to Editable Meshes</h3>
 <p>A simple, trivial example is when you double-click on an object to convert it into an editable mesh. That object might be an assemblage of complex parameters (e.g. a primitive with certain settings, a bunch of modifiers with certain settings, and so forth). Once you double-click the object all that stuff is “collapsed” into a single editable mesh, and you can’t go back and tweak the parameters.</p>
 <p>This particular example is pretty easy to <strong>recognize</strong> and <strong>avoid</strong>. You can save a copy of the file (or it might be automatically backed up by <strong>Time Machine</strong> or a third-party alternative) or duplicate the object itself and make the copy invisible <em>just in case</em>.</p>
 <p>But there are much, much worse cases that are far harder to avoid, and minimizing their impact can require careful planning. As a general rule, a lot of these issues involve the interaction of modeling, UV-mapping, and animation.</p>
-<h4 id="collapsing-symmetry">Collapsing Symmetry</h4>
+<h3 id="collapsing-symmetry">Collapsing Symmetry</h3>
 <p>As “points of no return” go, collapsing a symmetry modifier is not a big deal. It’s easy enough to delete half of the mesh and put a symmetry modifier back into it.</p>
 <p>The main reasons for collapsing symmetry modifiers are rigging (you can’t rig a mesh with a symmetry modifier because the mirrored geometry can’t be rigged) and UV-mapping (where you want the textures to be asymmetrical even if the geometry is symmetric). </p>
 <p>The workflow issue that arises here is not the collapsing of the symmetry modifier, but the actions taken afterwards, since this work will be lost if you need to tweak the mesh using a symmetry modifier later.</p>
-<h4 id="rigging--animation">Rigging &amp; Animation</h4>
+<h3 id="rigging--animation">Rigging &amp; Animation</h3>
 <p>“Skinning a mesh” (i.e. attaching a Skeleton tag to a mesh, dragging a bunch of joints into the Skeleton tag, and then binding the mesh to those joints) is a point of no return. You cannot edit a mesh once it’s skinned without having horrible things happen to it.</p>
 <p>In a perfect world, no-one would skin meshes that aren’t perfect. But in the real world, the usual way one finds problems in a mesh is by skinning it and discovering that it does weird things when you deform it <em>just so</em>.</p>
 <p>Fortunately, the default binding method that Cheetah 3D uses is excellent, and it’s usually good enough to quickly test a mesh for obvious problems. What you should do is create your joint hierarchy, and then create a test animation that goes through the most extreme poses you expect your character (or whatever it is) to go through. Then when you first skin your mesh you should play this animation while examining it carefully from all angles for problems — if you find any then you should remove the Skeleton tag and fix the problems immediately.</p>
 <p>Another thing that this test animation will be useful for is manually painting vertex weights should this be required.  You can scrub your test animation to a point where a deformation occurs and then paint vertex weights with the mesh in its problem pose until the problem is fixed.</p>
 <p>In any event, the one thing you stand to lose at this point is the binding. You can recover your mesh, and you can recover your joint hierarchy. But if you need to edit your mesh you need to throw away the binding between the two.</p>
-<h4 id="morphing">Morphing</h4>
+<h3 id="morphing">Morphing</h3>
 <p>As with skinning, morphing is a “point of no return”. The Morph tag stores vertex positions, and if you mess with the vertices in your mesh you’re going to screw up the Morph tag.</p>
-<h4 id="combining-meshes-with-different-materials">Combining Meshes with Different Materials</h4>
+<h3 id="combining-meshes-with-different-materials">Combining Meshes with Different Materials</h3>
 <p>One of the biggest headaches in Cheetah 3D is merging meshes which have multiple materials. (And if you do a lot of texture baking it’s particularly problematic because you can only bake single meshes.)</p>
 <p>Right now there’s no good workaround for this except possibly to write a script. Even making sure that all the meshes you’re working with have the same materials assigned to them in the same order does not guarantee success.</p>
-<h4 id="uv-mapping-across-multiple-meshes">UV Mapping Across Multiple Meshes</h4>
+<h3 id="uv-mapping-across-multiple-meshes">UV Mapping Across Multiple Meshes</h3>
 <p>Another common problem is trying to work on a UV map for a material shared between multiple meshes. The easiest workaround is to merge the meshes, do the UV mapping, and then split the meshes again.</p>
 <p>This can clearly be a problem if more than one material is assigned to one or more of the meshes involved. (See the previous issue.)</p>
-<h4 id="baking">Baking</h4>
+<h3 id="baking">Baking</h3>
 <p>Baking often involves multiple points of no return. To begin with you may need to write out or overwrite a UV map. Next, you might want to bake multiple meshes into one texture but have them split back into individual meshes for animation purposes (e.g. a spinning propellor or an opening door). Merging meshes loses pivot points, etc., which you’ll need to figure out how to restore or preserve.</p>
 <p><strong>Helpful Hint</strong>: if you want to preserve an object’s pivot you can create a folder, make it a child of that object, and zero out its position and orientation, then pull out of its parent. Now you can do horrible things to the mesh and, when the time comes you can drag it into that folder you created and use <strong>Tools &gt; Coord System</strong> and then <strong>Burn Transform</strong> to restore its original pivot.</p>
 <p>Usually you can write/overwrite UV Map 2, so it’s not a big deal since UV Map 2 is seldom used for anything else, but to run really lean you might want to avoid having two UV maps (they take up memory, etc.) or you may be using an engine that doesn’t support multiple UV maps at all.</p>
@@ -74,10 +82,10 @@
 <p>Create your mesh with its UV maps. Save it.</p>
 <p>Duplicate the file, add a Bake Material tag to the mesh, do other baking related setup (e.g. merging meshes). Save a copy of this. Use the Bake Material tag to create UV2, bake to UV2. Save this as a new file. Save the baked image.</p>
 <p>Duplicate the second file (before UV2 was written to) and use its Bake Material tag to overwrite UV1 (which should end up exactly like UV2 in the third file). Remove the existing materials, and create a new material that uses the baked image in its diffuse channel. Save this for use in your game engine (it only uses one set of UVs).</p>
-<h3 id="playing-well-with-others">Playing Well With Others</h3>
-<h4 id="importing-stuff">Importing Stuff</h4>
+<h2 id="playing-well-with-others">Playing Well With Others</h2>
+<h3 id="importing-stuff">Importing Stuff</h3>
 <p>In general, importing stuff into Cheetah 3D is a lossless process! The one exception to this is certain FBX files may have data in them that Cheetah does not support. For example, some Maya/3Ds Max deformers are supported in FBX that Cheetah 3D simply can’t understand and will ignore on import (or worse).</p>
-<h4 id="exporting-stuff">Exporting Stuff</h4>
+<h3 id="exporting-stuff">Exporting Stuff</h3>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 app bundle (its registered file types and export options); not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
@@ -88,12 +96,12 @@
 <blockquote>
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: whether Collada support is still “rudimentary”, which of glTF/GLB, USDZ and .scn can be both imported and exported, and how well glTF carries materials and animation. <!-- TODO verify --></p>
 </blockquote>
-<h4 id="working-with-an-external-image-editor">Working with an external image editor</h4>
+<h3 id="working-with-an-external-image-editor">Working with an external image editor</h3>
 <p>Cheetah 3D generally plays well with external image editors. It usually detects when an image has been changed and updates itself automatically (worst case, you can always load the image again).</p>
 <p>Cheetah 3D also supports PSD files directly, so you don’t need to flatten and export them.</p>
-<h4 id="working-with-other-3d-modelers">Working with other 3D modelers</h4>
+<h3 id="working-with-other-3d-modelers">Working with other 3D modelers</h3>
 <p>The best way to get data in and out of Cheetah 3D (aside from its own files) is via FBX. If you only want to import or export geometry, OBJ works well too.</p>
-<h4 id="working-with-unity-3d">Working with Unity 3D</h4>
+<h3 id="working-with-unity-3d">Working with Unity 3D</h3>
 <p>Working with Unity 3D is almost completely seamless. Simply move Cheetah 3D .jas files directly into Unity projects and they will come right through. </p>
 <p>Ideally, images used in materials in a scene should be in the same folder as the .jas file or in a subfolder. (Sometimes you may need to hook up materials with textures in Unity.)</p>
 <blockquote>
@@ -107,21 +115,19 @@
   <ul>
     <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
     <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
-    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
-    <ul>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-home" aria-label="Introduction"></button><a class="doc-link" href="../">Introduction</a></div>
+    <ul id="tosi-nav-home">
       <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
       <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
       <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-3_What_s_new_in_Cheetah_3D_7" aria-label="What’s new in Cheetah 3D 7?"></button><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></div>
+    <ul id="tosi-nav-3_What_s_new_in_Cheetah_3D_7">
       <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
       <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-4_Just_Enough_to_be_Dangerous" aria-label="Just Enough to be Dangerous"></button><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></div>
+    <ul id="tosi-nav-4_Just_Enough_to_be_Dangerous">
       <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
       <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
       <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
@@ -139,22 +145,19 @@
       <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
       <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
       <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-5_Tutorials" aria-label="Tutorials"></button><a class="doc-link" href="../5_Tutorials/">Tutorials</a></div>
+    <ul id="tosi-nav-5_Tutorials">
       <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
       <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-6_Mini_Tutorials" aria-label="Mini-Tutorials"></button><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></div>
+    <ul id="tosi-nav-6_Mini_Tutorials">
       <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
       <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-7_Modeling" aria-label="Modeling"></button><a class="doc-link" href="../7_Modeling/">Modeling</a></div>
+    <ul id="tosi-nav-7_Modeling">
       <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
       <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
       <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
@@ -166,17 +169,15 @@
       <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
       <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
       <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-8_Creators_Modifiers_Tags" aria-label="Creators, Modifiers, &amp; Tags"></button><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></div>
+    <ul id="tosi-nav-8_Creators_Modifiers_Tags">
       <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
       <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
       <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-9_Materials" aria-label="Materials"></button><a class="doc-link" href="../9_Materials/">Materials</a></div>
+    <ul id="tosi-nav-9_Materials">
       <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
       <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
       <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
@@ -188,10 +189,9 @@
       <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
       <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
       <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-10_Lighting" aria-label="Lighting"></button><a class="doc-link" href="../10_Lighting/">Lighting</a></div>
+    <ul id="tosi-nav-10_Lighting">
       <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
       <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
       <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
@@ -199,10 +199,9 @@
       <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
       <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
       <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-11_Rendering" aria-label="Rendering"></button><a class="doc-link" href="../11_Rendering/">Rendering</a></div>
+    <ul id="tosi-nav-11_Rendering">
       <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
       <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
       <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
@@ -218,44 +217,39 @@
       <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
       <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
       <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-12_Animation" aria-label="Animation"></button><a class="doc-link" href="../12_Animation/">Animation</a></div>
+    <ul id="tosi-nav-12_Animation">
       <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
       <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
       <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
       <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
       <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
       <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-13_Character_Animation" aria-label="Character Animation"></button><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></div>
+    <ul id="tosi-nav-13_Character_Animation">
       <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
       <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
       <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
       <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
       <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
       <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-14_Particles" aria-label="Particles"></button><a class="doc-link" href="../14_Particles/">Particles</a></div>
+    <ul id="tosi-nav-14_Particles">
       <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
       <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
       <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
       <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-15_Dynamics" aria-label="Dynamics"></button><a class="doc-link" href="../15_Dynamics/">Dynamics</a></div>
+    <ul id="tosi-nav-15_Dynamics">
       <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
       <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
-    </ul>
-    </details></li>
-    <li><details open><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch -open"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="true" aria-controls="tosi-nav-16_Mastering_Cheetah_3D_s_Interface" aria-label="Mastering Cheetah 3D’s Interface"></button><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></div>
+    <ul id="tosi-nav-16_Mastering_Cheetah_3D_s_Interface">
       <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
       <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
       <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
@@ -264,10 +258,9 @@
       <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
       <li><a class="doc-link current" href="../16.7_Workflow/" aria-current="page">Workflow</a></li>
       <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-17_Appendices" aria-label="Appendices"></button><a class="doc-link" href="../17_Appendices/">Appendices</a></div>
+    <ul id="tosi-nav-17_Appendices">
       <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
       <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
       <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
@@ -276,14 +269,13 @@
       <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
       <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
       <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
-    </ul>
-    </details></li>
+    </ul></li>
   </ul>
   </nav>
   <ul class="doc-navbar">
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=0a27943cf23b"></script>
+  <script src="../iife.js?v=a3fe77efa05e"></script>
 </body>
 </html>

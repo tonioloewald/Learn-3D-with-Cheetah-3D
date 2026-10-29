@@ -4,6 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
+    document.documentElement.classList.add('tosi-js')
+    document.addEventListener('click', function (e) {
+      if (customElements.get('tosi-doc-system')) return
+      var b = e.target.closest && e.target.closest('.doc-nav .nav-toggle')
+      if (!b) return
+      var open = b.closest('.nav-branch').classList.toggle('-open')
+      b.setAttribute('aria-expanded', String(open))
+    })
     try {
       var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
       var t = p.theme || 'system'
@@ -14,7 +22,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=a3fe77efa05e" data-tosi-doc-system />
   <title>Editing Meshes: Core Polygon Tools — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="Upshot: you _generally_ want to use cover, not extrude." />
   <link rel="canonical" href="https://learn3d.loewald.com/4.7_Editing_Meshes_Core_Polygon_Tools/" />
@@ -32,17 +40,15 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="4.7_Editing_Meshes_Core_Polygon_Tools.md">
-<!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 7}--><h2 id="editing-meshes-core-polygon-tools">Editing Meshes: Core Polygon Tools</h2>
-<h3 id="duck-i-mean-extrude-and-cover">Duck… I mean Extrude and Cover</h3>
+<!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 7}--><h1 id="editing-meshes-core-polygon-tools">Editing Meshes: Core Polygon Tools</h1>
+<h2 id="duck-i-mean-extrude-and-cover">Duck… I mean Extrude and Cover</h2>
 <p><strong>Upshot</strong>: you <em>generally</em> want to use cover, not extrude.</p>
 <p><img src="/images/DraggedImage-10.jpg" alt=""></p>
-<p><img src="/images/DraggedImage-11.jpg" alt=""></p>
-<p><em>Using <strong>cover</strong>. I have the transform tool selected and select two faces, then select cover (Tools &gt; Polygon &gt; Cover), then simply move the selected faces — new geometry has been created “covering” the boundary of my selection. Note that you’ll find cover the single most useful tool for polygon modeling — I map it to the C key, so in fact I simply selected some polygons, pressed C, and dragged out the new geometry.</em></p>
+<figure><img src="/images/DraggedImage-11.jpg" alt=""><figcaption>Using <strong>cover</strong>. I have the transform tool selected and select two faces, then select cover (Tools &gt; Polygon &gt; Cover), then simply move the selected faces — new geometry has been created “covering” the boundary of my selection. Note that you’ll find cover the single most useful tool for polygon modeling — I map it to the C key, so in fact I simply selected some polygons, pressed C, and dragged out the new geometry.</figcaption></figure>
 <p><img src="/images/DraggedImage-12.jpg" alt=""></p>
-<p><img src="/images/DraggedImage-13.jpg" alt=""></p>
-<p><em>Unlike extrude, cover works just fine for <strong>edges</strong>. When in edge mode you’re defining the boundary that gets “covered”.</em></p>
+<figure><img src="/images/DraggedImage-13.jpg" alt=""><figcaption>Unlike extrude, cover works just fine for <strong>edges</strong>. When in edge mode you’re defining the boundary that gets “covered”.</figcaption></figure>
 <p>Extrude and cover both kind of do the same thing — if you select one or more polygons extrude and cover will both let you pull more geometry out of those polygons (i.e. extrude those faces). In general, most experienced Cheetah 3D users will simply use Cover all the time and forget about Extrude for two reasons:</p>
 <ul>
 <li><p>Cover instantly creates the new geometry without switching tools. This usually means you can just “live” in the Transform tool. </p>
@@ -56,17 +62,14 @@
 </ul>
 <p><strong>Inner Extrude</strong> is a really interesting tool. The obvious use for it is creating inset faces.</p>
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%204.32.01%20PM.jpg" alt=""></p>
-<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.32.12%20PM.jpg" alt=""></p>
-<p><em>In this example I’ve selected three contiguous quads (that go around corners) and used inner-extrude to create an inset collection of faces. This can be really useful (e.g. if modeling windows), and you can’t do this kind of thing (easily) with any other tool.</em></p>
+<figure><img src="/images/Screen%20Shot%202014-07-06%20at%204.32.12%20PM.jpg" alt=""><figcaption>In this example I’ve selected three contiguous quads (that go around corners) and used inner-extrude to create an inset collection of faces. This can be really useful (e.g. if modeling windows), and you can’t do this kind of thing (easily) with any other tool.</figcaption></figure>
 <p>Inner extrude also works on edges, essentially building out geometry from the selected edges. It’s easier to show than explain, and once again it can be very useful.</p>
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%204.34.29%20PM.jpg" alt=""></p>
-<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.34.38%20PM.jpg" alt=""></p>
-<p><em>Here I’ve selected a series of edges and then used inner extrude to create a “ring” of geometry around them. This technique can be used (much like beveling) to control the curvature of subdivision surfaces, and also to create new “edge loops” when modeling characters.</em></p>
+<figure><img src="/images/Screen%20Shot%202014-07-06%20at%204.34.38%20PM.jpg" alt=""><figcaption>Here I’ve selected a series of edges and then used inner extrude to create a “ring” of geometry around them. This technique can be used (much like beveling) to control the curvature of subdivision surfaces, and also to create new “edge loops” when modeling characters.</figcaption></figure>
 <p>Finally, <strong>inner extrude works on vertices</strong>. This is particularly useful for punching holes in things.</p>
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%204.43.44%20PM.jpg" alt=""></p>
-<p><img src="/images/Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg" alt=""></p>
-<p><em>Here I’ve picked a vertex on a corner (because I can!) and used inner extrude to create a loop of geometry around it, which I could easily turn into a hole by deleting the original vertex.</em></p>
-<h3 id="create-polygon">Create Polygon</h3>
+<figure><img src="/images/Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg" alt=""><figcaption>Here I’ve picked a vertex on a corner (because I can!) and used inner extrude to create a loop of geometry around it, which I could easily turn into a hole by deleting the original vertex.</figcaption></figure>
+<h2 id="create-polygon">Create Polygon</h2>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
@@ -78,20 +81,19 @@
 <p><img src="/images/DraggedImage-14.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-15.jpg" alt=""></p>
 <p>It’s also easy to miss a vertex and create a new vertex somewhere off in space. After creating a polygon or two, it’s wise to take a look at your model to make sure you haven’t created something unintended. In this exaggerated example, I missed the bottom-right vertex of my quad, but quickly spinning my view around I can easily see how I messed up.</p>
-<h3 id="bridge">Bridge</h3>
+<h2 id="bridge">Bridge</h2>
 <p>The bridge tool joins two parts of a mesh. It works best when joining two polygons with the same number of sides, but it does a pretty good job even if the polygons differ in number of sides.</p>
 <p><img src="/images/DraggedImage-16.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-17.jpg" alt=""></p>
 <p>Bridge before (in object mode so you can see edges more clearly) and after. To use the tool you select Tools &gt; Polygon &gt; Bridge and then click a point on the first “hole” and then click the point you want to bridge to on the second “hole”.</p>
 <p>The bridge tool requires you to click a vertex on the starting polygon and another on the ending polygon. Note that the vertices must lie on a well-defined “ring” of edges, and it’s important for the normals to match.</p>
 <p>There are lots of ways bridges can go horribly wrong, and I try to explain them in depth in the detailed section on <a href="/7.8_Polygon_Box_Modeling/">Troubleshooting the Bridge Tool</a>.</p>
-<h3 id="fill-hole">Fill Hole</h3>
+<h2 id="fill-hole">Fill Hole</h2>
 <p>Fill hole is simple and useful. If you have a hole in a mesh surface you can use fill hole to make it into a new polygon. Generally this works best if the new “polygon” is reasonably flat (i.e. the edges and vertices used to form it are roughly coplanar).</p>
 <p><img src="/images/DraggedImage-18.jpg" alt=""></p>
-<p><img src="/images/DraggedImage-19.jpg" alt=""></p>
-<p><em>Fill Hole before and after. I selected Tools &gt; Polygon &gt; Fill Hole and then clicked a point on the edge of the hole. Note that the hole gets filled by a single polygon (and that polygon is neither convex nor a quad in this case, which can definitely spell trouble if not corrected).</em></p>
+<figure><img src="/images/DraggedImage-19.jpg" alt=""><figcaption>Fill Hole before and after. I selected Tools &gt; Polygon &gt; Fill Hole and then clicked a point on the edge of the hole. Note that the hole gets filled by a single polygon (and that polygon is neither convex nor a quad in this case, which can definitely spell trouble if not corrected).</figcaption></figure>
 <p>If it doesn’t work, chances are there’s a flaw in your mesh you didn’t see, or the edges form too weird a surface.</p>
-<h3 id="scalpel">Scalpel</h3>
+<h2 id="scalpel">Scalpel</h2>
 <p>The scalpel tool lets you cut up edges and polygons in a very precise way. The scalpel has some important restrictions:</p>
 <ul>
 <li><p>Start on an existing edge or vertex</p>
@@ -118,12 +120,11 @@
 <li>Forcing a specific triangulation. Sometimes a quad will simply get triangulated in just the wrong way. You can split the quad into two triangles using the scalpel to override this behavior.</li>
 </ul>
 <p><img src="/images/DraggedImage-23.jpg" alt=""></p>
-<p><img src="/images/DraggedImage-24.jpg" alt=""></p>
-<p><em>Here I’m building out the base topology for a head, and I’ve created an edge-loop around what will be the character’s mouth. On the left, the non-quads I’ve created have been selected and are highlighted. On the right, using the scalpel tool I cut two new edges and then used point-slide to make the quads less distorted, resulting in all of the resulting faces becoming quads. This is a very common operation in character animation — creating edge loops and cleaning up the resulting non-quads using the scalpel.</em></p>
+<figure><img src="/images/DraggedImage-24.jpg" alt=""><figcaption>Here I’m building out the base topology for a head, and I’ve created an edge-loop around what will be the character’s mouth. On the left, the non-quads I’ve created have been selected and are highlighted. On the right, using the scalpel tool I cut two new edges and then used point-slide to make the quads less distorted, resulting in all of the resulting faces becoming quads. This is a very common operation in character animation — creating edge loops and cleaning up the resulting non-quads using the scalpel.</figcaption></figure>
 <ul>
 <li>Refining Topology. Probably the most common scalpel operation is cleaning up mesh topology, which usually means eliminating non-quads. At other times you simply need to add more detail in a particular spot, and here the scalpel is your friend, allowing you to add vertices and edges exactly where you need them.</li>
 </ul>
-<h3 id="ring-cut">Ring Cut</h3>
+<h2 id="ring-cut">Ring Cut</h2>
 <p><img src="/images/DraggedImage-25.jpg" alt=""></p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
@@ -135,7 +136,7 @@
 <p>The next paragraph is probably not going to make sense to you right away, but I’ll say it now anyway because at some point you’ll have an “aha!” moment and it will all make sense.</p>
 <p>When using box modeling techniques, it’s a good idea to create as simple a mesh as possible, only adding more detail to your mesh when you absolutely have to. Usually this means keeping your mesh very simple until you’ve blocked out the form you want, making the topology as clean as possible, and then using ring cut as sparingly as possible to add detail to the mesh where it’s needed.</p>
 <p>The ring cut tool is invaluable for adding more detail to a subdivision “cage” mesh (i.e. a mesh you’re applying subdivision to). This allows you to refine the behavior of subdivision exactly where you need it.</p>
-<h3 id="jigsaw">Jigsaw</h3>
+<h2 id="jigsaw">Jigsaw</h2>
 <p><img src="/images/DraggedImage-26.jpg" alt=""></p>
 <p><img src="/images/DraggedImage-27.jpg" alt=""></p>
 <p>Jigsaw is essentially a controlled ring cut. First, you select a series of quads (note how it can “turn a corner”) and then you click on one of the edges that will be cut. The cut is terminated at the mesh edge or a terminal polygon.</p>
@@ -145,21 +146,19 @@
   <ul>
     <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
     <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
-    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
-    <ul>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-home" aria-label="Introduction"></button><a class="doc-link" href="../">Introduction</a></div>
+    <ul id="tosi-nav-home">
       <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
       <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
       <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-3_What_s_new_in_Cheetah_3D_7" aria-label="What’s new in Cheetah 3D 7?"></button><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></div>
+    <ul id="tosi-nav-3_What_s_new_in_Cheetah_3D_7">
       <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
       <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
-    </ul>
-    </details></li>
-    <li><details open><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch -open"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="true" aria-controls="tosi-nav-4_Just_Enough_to_be_Dangerous" aria-label="Just Enough to be Dangerous"></button><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></div>
+    <ul id="tosi-nav-4_Just_Enough_to_be_Dangerous">
       <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
       <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
       <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
@@ -177,22 +176,19 @@
       <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
       <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
       <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-5_Tutorials" aria-label="Tutorials"></button><a class="doc-link" href="../5_Tutorials/">Tutorials</a></div>
+    <ul id="tosi-nav-5_Tutorials">
       <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
       <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-6_Mini_Tutorials" aria-label="Mini-Tutorials"></button><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></div>
+    <ul id="tosi-nav-6_Mini_Tutorials">
       <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
       <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-7_Modeling" aria-label="Modeling"></button><a class="doc-link" href="../7_Modeling/">Modeling</a></div>
+    <ul id="tosi-nav-7_Modeling">
       <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
       <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
       <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
@@ -204,17 +200,15 @@
       <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
       <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
       <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-8_Creators_Modifiers_Tags" aria-label="Creators, Modifiers, &amp; Tags"></button><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></div>
+    <ul id="tosi-nav-8_Creators_Modifiers_Tags">
       <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
       <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
       <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-9_Materials" aria-label="Materials"></button><a class="doc-link" href="../9_Materials/">Materials</a></div>
+    <ul id="tosi-nav-9_Materials">
       <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
       <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
       <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
@@ -226,10 +220,9 @@
       <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
       <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
       <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-10_Lighting" aria-label="Lighting"></button><a class="doc-link" href="../10_Lighting/">Lighting</a></div>
+    <ul id="tosi-nav-10_Lighting">
       <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
       <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
       <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
@@ -237,10 +230,9 @@
       <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
       <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
       <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-11_Rendering" aria-label="Rendering"></button><a class="doc-link" href="../11_Rendering/">Rendering</a></div>
+    <ul id="tosi-nav-11_Rendering">
       <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
       <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
       <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
@@ -256,44 +248,39 @@
       <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
       <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
       <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-12_Animation" aria-label="Animation"></button><a class="doc-link" href="../12_Animation/">Animation</a></div>
+    <ul id="tosi-nav-12_Animation">
       <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
       <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
       <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
       <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
       <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
       <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-13_Character_Animation" aria-label="Character Animation"></button><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></div>
+    <ul id="tosi-nav-13_Character_Animation">
       <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
       <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
       <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
       <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
       <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
       <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-14_Particles" aria-label="Particles"></button><a class="doc-link" href="../14_Particles/">Particles</a></div>
+    <ul id="tosi-nav-14_Particles">
       <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
       <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
       <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
       <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-15_Dynamics" aria-label="Dynamics"></button><a class="doc-link" href="../15_Dynamics/">Dynamics</a></div>
+    <ul id="tosi-nav-15_Dynamics">
       <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
       <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-16_Mastering_Cheetah_3D_s_Interface" aria-label="Mastering Cheetah 3D’s Interface"></button><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></div>
+    <ul id="tosi-nav-16_Mastering_Cheetah_3D_s_Interface">
       <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
       <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
       <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
@@ -302,10 +289,9 @@
       <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
       <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
       <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-17_Appendices" aria-label="Appendices"></button><a class="doc-link" href="../17_Appendices/">Appendices</a></div>
+    <ul id="tosi-nav-17_Appendices">
       <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
       <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
       <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
@@ -314,14 +300,13 @@
       <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
       <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
       <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
-    </ul>
-    </details></li>
+    </ul></li>
   </ul>
   </nav>
   <ul class="doc-navbar">
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=0a27943cf23b"></script>
+  <script src="../iife.js?v=a3fe77efa05e"></script>
 </body>
 </html>

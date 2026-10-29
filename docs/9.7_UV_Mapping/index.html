@@ -4,6 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
+    document.documentElement.classList.add('tosi-js')
+    document.addEventListener('click', function (e) {
+      if (customElements.get('tosi-doc-system')) return
+      var b = e.target.closest && e.target.closest('.doc-nav .nav-toggle')
+      if (!b) return
+      var open = b.closest('.nav-branch').classList.toggle('-open')
+      b.setAttribute('aria-expanded', String(open))
+    })
     try {
       var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
       var t = p.theme || 'system'
@@ -14,7 +22,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=a3fe77efa05e" data-tosi-doc-system />
   <title>UV Mapping — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="UV mapping simply involves giving the vertices of polygons in a mesh coordinates in UV (i.e. texture) space." />
   <link rel="canonical" href="https://learn3d.loewald.com/9.7_UV_Mapping/" />
@@ -32,96 +40,80 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.7_UV_Mapping.md">
-<!--{"parent": "9_Materials.md", "order": 7}--><h2 id="uv-mapping">UV Mapping</h2>
+<!--{"parent": "9_Materials.md", "order": 7}--><h1 id="uv-mapping">UV Mapping</h1>
 <p><img src="/images/rMTDU.jpg" alt=""></p>
 <p><img src="/images/GGMmw.jpg" alt=""></p>
-<p><img src="/images/X0trw.jpg" alt=""></p>
-<p><em>UV mapping simply involves giving the vertices of polygons in a mesh coordinates in UV (i.e. texture) space. This affects the way the image is “mapped” onto the polygons. In the three examples above (all show Cheetah 3D’s UV Editing layout) I’ve clicked the “Edit” button of the image in question (so it shows up in the UV Editor) and you can see a simple quad (four sided polygon) displayed in UV space and the 3D view. At the <strong>top</strong> you see the default mapping of a texture to a plane. <strong>Middle</strong>, I’ve simply scaled the UV representation of the polygon down and moved it so that a feature is centered. In the <strong>bottom</strong> image, the rotated quad is “squashed” because the image isn’t square, and so it’s being rotated in non-uniformly scaled space.</em></p>
+<figure><img src="/images/X0trw.jpg" alt=""><figcaption>UV mapping simply involves giving the vertices of polygons in a mesh coordinates in UV (i.e. texture) space. This affects the way the image is “mapped” onto the polygons. In the three examples above (all show Cheetah 3D’s UV Editing layout) I’ve clicked the “Edit” button of the image in question (so it shows up in the UV Editor) and you can see a simple quad (four sided polygon) displayed in UV space and the 3D view. At the <strong>top</strong> you see the default mapping of a texture to a plane. <strong>Middle</strong>, I’ve simply scaled the UV representation of the polygon down and moved it so that a feature is centered. In the <strong>bottom</strong> image, the rotated quad is “squashed” because the image isn’t square, and so it’s being rotated in non-uniformly scaled space.</figcaption></figure>
 <p>The basic idea of UV-mapping is to place 2D images onto 3D surfaces. The 2D images are treated as having their own coordinate space (where u and v replace the traditional x and y) and then every polygon in a 3D mesh is assumed to have a representation in uv space as well as 3D space.</p>
 <p>To this end, a mesh has uv points (or vertices) with uv coordinates in addition to its 3D points, and each polygon is represented as an ordered set of UV points.</p>
 <p>If you consider the default plane, it’s a quad with four 3D vertices: -0.5,0,-0.5, -0.5,0,0.5, 0.5,0,-0.5, and 0.5,0,0.5. The quad is defined in terms of those coordinates, but also in terms of four UV coordinates: 0,0, 0,1, 1,0, and 1,1.</p>
 <p>UV-mapping consists of editing the UV-representation of a mesh (in 2D) just as you edit the 3D representation of the mesh to alter its 3D geometry.</p>
-<p><img src="/images/pastedGraphic-396.jpg" alt=""></p>
-<p><em>Cheetah 3D’s UV Editing view is designed to allow you to directly edit the UV layout of a mesh and see the results interactively — as you move things around in the UV editor, the displayed model changes live.</em></p>
+<figure><img src="/images/pastedGraphic-396.jpg" alt=""><figcaption>Cheetah 3D’s UV Editing view is designed to allow you to directly edit the UV layout of a mesh and see the results interactively — as you move things around in the UV editor, the displayed model changes live.</figcaption></figure>
 <p>Cheetah 3D provides a UV editing view which shows a mesh’s UV representation and lets you edit it using the standard transformation tools (restricted to 2D). By default, Cheetah 3D provides a <strong>UV Editing</strong> layout (available from the Layout menu in the toolbar) which provides a large pane for the UV Editor and a smaller 3D view so you can see the results of your handiwork. If you select an Image texture node you can click Edit to see it under your mesh in the UV Editor (which is very helpful). </p>
 <p>Cheetah 3D also provides some rudimentary texture painting tools which work in both the UV Editor and in the 3D view.</p>
 <p>Setting up the UV map of an object — especially a complex object — simply by pushing points and polygons around in the UV Editor tends to be tedious and error-prone — usually there are better options. </p>
 <p>Cheetah 3D has two tools to help you with UV mapping, and they’re the <strong>UV Mapper</strong> (<strong>Tools &gt; UV &gt; UV Mapper</strong>) and <strong>Unwrap UV</strong> (<strong>Tools &gt; UV &gt; Unwrap UV</strong>).</p>
 <p>Not all materials use or rely on UV coordinates. Most materials vary one or more of their attributes as you move across an object’s surface or through space. In general such materials fall into two categories: <strong>procedural</strong> materials, which are often driven by <strong>spatial coordinates</strong>, and <strong>image-based</strong> materials, which are almost always driven by <strong>UV coordinates</strong>.</p>
-<h3 id="uv-coordinates">UV Coordinates</h3>
+<h2 id="uv-coordinates">UV Coordinates</h2>
 <p>In any mesh, each polygon is constructed both out of points in 3D space (which show where that polygon is) and points in UV space (which determine how UV-mapped materials will vary across it).</p>
 <p>Primitive objects have default UV mappings. E.g. a cube has a UV map such that each square face will be mapped to a square in UV space formed by (0,0), (1,0), (1,1), and (0,1).</p>
 <p>If you consider a polygon with UV coordinates for each vertex then you can draw that polygon in UV space (and it may look very different in UV space than it does in 3D space). Image textures are assumed to occupy a square in UV space formed by (0,0), (1,0), (1,1), (0,1), so if you look at the polygon drawn in UV space superimposed on the image, that’s how UV mapping works.</p>
 <p>You can see exactly how this works by selecting <strong>UV Editing</strong> from Cheetah 3D’s Layout menu (in the toolbar). Click on any object to see how its polygons appear in UV space.</p>
-<p><img src="/images/pastedGraphic-310.jpg" alt=""></p>
-<p><em>Here’s a plane (with 10x10 sections) with my test material assigned to it in UV Editing layout. I’ve clicked Edit on the Image node so you can see the image in the UV editor pane. Here, the UV mapping of the plane exactly corresponds to the entire plane.</em></p>
-<p><img src="/images/pastedGraphic-311.jpg" alt=""></p>
-<p><em>Here I’ve done the exact same thing but with a sphere. Note how the triangles near the poles are mapped into UV space such that parts of the image aren’t covered. This can be a big problem with UV-mapped polar spheres.</em></p>
-<p><img src="/images/pastedGraphic-312.jpg" alt=""></p>
-<p><em>Here’s how a cube is mapped by default. Each square face covers the texture in UV space, so each face of the cube has its own copy of the texture mapped to it.</em></p>
+<figure><img src="/images/pastedGraphic-310.jpg" alt=""><figcaption>Here’s a plane (with 10x10 sections) with my test material assigned to it in UV Editing layout. I’ve clicked Edit on the Image node so you can see the image in the UV editor pane. Here, the UV mapping of the plane exactly corresponds to the entire plane.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-311.jpg" alt=""><figcaption>Here I’ve done the exact same thing but with a sphere. Note how the triangles near the poles are mapped into UV space such that parts of the image aren’t covered. This can be a big problem with UV-mapped polar spheres.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-312.jpg" alt=""><figcaption>Here’s how a cube is mapped by default. Each square face covers the texture in UV space, so each face of the cube has its own copy of the texture mapped to it.</figcaption></figure>
 <p>Primitives have fixed UV maps. You can change how they’re interpreted (in essence you can scale and rotate them) but you can’t change them arbitrarily. Editable meshes can have their UV maps changed to anything you like.</p>
-<p><img src="/images/pastedGraphic-313.jpg" alt=""></p>
-<p><em>Here I made the cube editable, then selected the top polygon and then — in the UV editor — scaled it down and moved it roughly over the top-left quarter of the image in UV space. As you can see, the top face now has the A on it.</em></p>
+<figure><img src="/images/pastedGraphic-313.jpg" alt=""><figcaption>Here I made the cube editable, then selected the top polygon and then — in the UV editor — scaled it down and moved it roughly over the top-left quarter of the image in UV space. As you can see, the top face now has the A on it.</figcaption></figure>
 <p>As an added wrinkle, by default UV coordinates “wrap around”. In other words, a UV coordinate need not be inside the square — it might be (57.3, -102.6) — but it wraps around to its fractional value — 57.3 wraps around to 0.3, and -102.6 wraps around to 0.4. (The “Tile U” and “Tile V” properties of an Image node — both checked on by default — determine whether the U and V coordinates, respectively, wrap around.)</p>
-<p><img src="/images/pastedGraphic-314.jpg" alt=""></p>
-<p><em>Here I’ve made the plane editable by double-clicking on it and then selected all its polygons and — in the UV editor — scaled and rotated everything. As you can see, the image is now tiled and rotated across the plane.</em></p>
-<h3 id="coordinate-spaces">Coordinate Spaces</h3>
+<figure><img src="/images/pastedGraphic-314.jpg" alt=""><figcaption>Here I’ve made the plane editable by double-clicking on it and then selected all its polygons and — in the UV editor — scaled and rotated everything. As you can see, the image is now tiled and rotated across the plane.</figcaption></figure>
+<h2 id="coordinate-spaces">Coordinate Spaces</h2>
 <p>Because every point on a polygon’s surface has a spatial coordinate, it’s possible to map materials onto it simply by using those spatial coordinates. Because the coordinates are 3D coordinates, trying to use those coordinates as UV coordinates tends to produce poor results, but it works very well for multidimensional chaotic functions, which is what most of the procedural texture maps are.</p>
 <p><strong>Aside</strong>: a chaotic function is one that produces highly unpredictable results from seemingly simple input values.</p>
-<h3 id="uv-mapper-tool">UV Mapper Tool</h3>
+<h2 id="uv-mapper-tool">UV Mapper Tool</h2>
 <p><img src="/images/pastedGraphic-397.jpg" alt=""></p>
 <p>The UV Mapper tool applies a simple UV projection onto your mesh. This can work beautifully for simple cases. The UV Mapper offers five mapping options: cubic, spherical, flat, cylindrical, and frontal.</p>
 <p><img src="/images/pastedGraphic-398.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-399.jpg" alt=""></p>
 <p><img src="/images/pastedGraphic-400.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-401.jpg" alt=""></p>
-<p><em>UV Mapper applied to a sphere using cubic, spherical, planar, and cylindrical mapping type (respectively).</em></p>
-<p><img src="/images/pastedGraphic-402.jpg" alt=""></p>
-<p><em>The frontal mapping projects the material straight onto the object (imagine a projector whose beam stays a constant size).</em></p>
-<h3 id="unwrap-uv-tool">Unwrap UV Tool</h3>
+<figure><img src="/images/pastedGraphic-401.jpg" alt=""><figcaption>UV Mapper applied to a sphere using cubic, spherical, planar, and cylindrical mapping type (respectively).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-402.jpg" alt=""><figcaption>The frontal mapping projects the material straight onto the object (imagine a projector whose beam stays a constant size).</figcaption></figure>
+<h2 id="unwrap-uv-tool">Unwrap UV Tool</h2>
 <p>The Unwrap UV tool is the most powerful tool for UV mapping complex objects, such as almost any character. It can also be very useful for dealing with quite simple objects.</p>
 <p><img src="/images/pastedGraphic-403.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-404.jpg" alt=""></p>
-<p><em>Placing seams in the “obvious places” on a cube mesh (left) and using Unwrap UV leads to the UV mapping on the right (actually the mapping was a little bit off, but very easily fixed by selecting all the polygons and moving and rescaling them slightly).</em></p>
+<figure><img src="/images/pastedGraphic-404.jpg" alt=""><figcaption>Placing seams in the “obvious places” on a cube mesh (left) and using Unwrap UV leads to the UV mapping on the right (actually the mapping was a little bit off, but very easily fixed by selecting all the polygons and moving and rescaling them slightly).</figcaption></figure>
 <p>The key to effectively using the Unwrap UV tool is placing seams on your mesh, and the simplest way of thinking about seam placement is to assume you wanted to sew the object out of cloth, and place seams where you’d need to have seams in the fabric.</p>
-<h4 id="manual-seams">Manual Seams</h4>
+<h3 id="manual-seams">Manual Seams</h3>
 <p>As stated above, the best way to think about texture seams is to place them as though you were sewing the mesh out of pieces of fabric. So, what better example to discuss than a shirt?</p>
-<p><img src="/images/pastedGraphic-405.jpg" alt=""></p>
-<p><em>Here’s a drawing of a shirt. It’s fairly obvious where the major seams are. (This image is from a free pattern found on the Etsy Blog — etsy.com.)</em></p>
+<figure><img src="/images/pastedGraphic-405.jpg" alt=""><figcaption>Here’s a drawing of a shirt. It’s fairly obvious where the major seams are. (This image is from a free pattern found on the Etsy Blog — etsy.com.)</figcaption></figure>
 <p><img src="/images/pastedGraphic-406.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-407.jpg" alt=""></p>
-<p><em>Here’s a simple shirt mesh. I’ve placed seams in it exactly where the major seams would go in a fabric shirt (by default, Cheetah 3D shows seams in green in edge mode).</em></p>
+<figure><img src="/images/pastedGraphic-407.jpg" alt=""><figcaption>Here’s a simple shirt mesh. I’ve placed seams in it exactly where the major seams would go in a fabric shirt (by default, Cheetah 3D shows seams in green in edge mode).</figcaption></figure>
 <p><img src="/images/pastedGraphic-408.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-409.jpg" alt=""></p>
-<p><em>Simply selecting Unwrap UV results in the UV mapping on the left. Using Group select it’s easy enough to rearrange the pieces to fit inside the UV square.</em></p>
+<figure><img src="/images/pastedGraphic-409.jpg" alt=""><figcaption>Simply selecting Unwrap UV results in the UV mapping on the left. Using Group select it’s easy enough to rearrange the pieces to fit inside the UV square.</figcaption></figure>
 <p>As of v6.2, Cheetah 3D offers two different unwrapping options — ABF and LSCM. LSCM was the old algorithm, ABF is new and generally reduces stretching and overlap compared with LSCM. It&#39;s easy enough to try both and use whichever works better. In general, for organic forms, like the shirt, ABF works better.</p>
 <p><img src="/images/0d6e6d62-def8-4a3e-8643-1d9373eaabbe-Screen%20Shot%202013-04-27%20at%208.43.14%20PM.jpg" alt=""></p>
 <p>This is how the shirt turns out using ABF. The results don&#39;t look much different from LSCM but it turns out to cause significantly less distortion around the collarbones. A little bit of tidying up produces this map:</p>
 <p><img src="/images/Screen%20Shot%202013-04-27%20at%208.50.07%20PM.jpg" alt=""></p>
 <p>By moving the groups around while looking at the viewport, it&#39;s possible to line up the seams remarkably well with very little effort.</p>
 <p><img src="/images/shirt%20render.jpg" alt=""></p>
-<h4 id="automatic-seams">Automatic Seams</h4>
+<h3 id="automatic-seams">Automatic Seams</h3>
 <p>Automatic Seams does exactly what you’d expect it to do — it automatically places seams on a model, and it does a pretty good job.</p>
 <p><img src="/images/pastedGraphic-410.jpg" alt=""></p>
 <p>Automatic seams wraps seams around contiguous sets of polygons facing more-or-less in the same direction. In the above example I’ve applied Automatic Seams to the same shirt model as before.</p>
 <p><img src="/images/pastedGraphic-411.jpg" alt=""></p>
-<h5 id="why-not-just-use-automatic-seams">Why not just use automatic seams?</h5>
+<h4 id="why-not-just-use-automatic-seams">Why not just use automatic seams?</h4>
 <p>Automatic seams are great for hairy models where manually adding seams would be horribly time-consuming, but they have a lot of drawbacks.</p>
 <p>Using automatic seams will lead to seams being in arbitrary places, and almost always lead to more seams than necessary. E.g. on the shirt we’ve ended up with four seams running along each sleeve and no seam down the middle of the front of the shirt. The problem here is that seams tend to be where you’ll see problems (discontinuities, minor artifacts) in the UV-mapping, so you generally want (a) as few seams as possible, and (b) seams to be where they’re less likely to be seen (which is why shirts have one seam on their sleeves, and it’s on the inner/under side of the sleeve where it won’t usually be seen).</p>
 <p>Our automatic seam unwrapping means we’ll have way more seams on the sleeve than we did when we placed the seams manually, they’re more visible, and there’s no seam down the front where we’d actually expect a seam (and a discontinuity in the pattern on a shirt).</p>
-<h3 id="texture-painting">Texture Painting</h3>
+<h2 id="texture-painting">Texture Painting</h2>
 <p><img src="/images/pastedGraphic-412.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-413.jpg" alt=""></p>
-<p><em><strong>Top</strong>: Cheetah 3D in the UV Editing layout with a simple material (<strong>bottom</strong>) assigned to a plane, the image texture node from that material is being edited, and the <strong>Tools &gt; UV &gt; Paint tool</strong> is active. This incredible texture map was created entirely using the Paint tool.</em></p>
+<figure><img src="/images/pastedGraphic-413.jpg" alt=""><figcaption><strong>Top</strong>: Cheetah 3D in the UV Editing layout with a simple material (<strong>bottom</strong>) assigned to a plane, the image texture node from that material is being edited, and the <strong>Tools &gt; UV &gt; Paint tool</strong> is active. This incredible texture map was created entirely using the Paint tool.</figcaption></figure>
 <p>Cheetah 3D offers some basic texture painting functionality. If you use an Image texture node to create a new texture (by clicking the New Texture button) or edit an existing texture (by clicking the edit button) the image will appear in the UV Editor. </p>
 <p>If this image texture is driving the diffuse channel of a Material shader you can assign the texture to objects in your scene and paint the texture either in the UV editor or directly in the 3D view.</p>
-<p><img src="/images/pastedGraphic-414.jpg" alt=""></p>
-<p><em>Here the elephant mesh has been unwrapped using manually placed seams, and color has been roughly applied using the Paint tool. This can serve as a useful template in a dedicated image editor such as Photoshop, Acorn, Pixelmator, Photoline, or The GIMP.</em></p>
+<figure><img src="/images/pastedGraphic-414.jpg" alt=""><figcaption>Here the elephant mesh has been unwrapped using manually placed seams, and color has been roughly applied using the Paint tool. This can serve as a useful template in a dedicated image editor such as Photoshop, Acorn, Pixelmator, Photoline, or The GIMP.</figcaption></figure>
 <p><img src="/images/pastedGraphic-415.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-416.jpg" alt=""></p>
-<p><em><strong>Top</strong>: Cheetah 3D can also export a UV layout as a PDF (using <strong>Tools &gt; UV &gt; Save UV’s to PDF</strong>). You can then convert the PDF to a bitmap image, e.g. a PNG or TIFF, using Preview or some other app, and bring it back into Cheetah 3D and use the editor to mark it up with some indicative colors, or — <strong>bottom</strong> — add it as a guide layer in a dedicated image editor.</em></p>
+<figure><img src="/images/pastedGraphic-416.jpg" alt=""><figcaption><strong>Top</strong>: Cheetah 3D can also export a UV layout as a PDF (using <strong>Tools &gt; UV &gt; Save UV’s to PDF</strong>). You can then convert the PDF to a bitmap image, e.g. a PNG or TIFF, using Preview or some other app, and bring it back into Cheetah 3D and use the editor to mark it up with some indicative colors, or — <strong>bottom</strong> — add it as a guide layer in a dedicated image editor.</figcaption></figure>
 <p>Although the Paint tool allows you to load bitmaps for use as brushes, in general it’s really best used for simple touch ups (e.g. cleaning up minor errors in bakes) and marking color swatches on a UV line render.</p>
 
   </article>
@@ -129,21 +121,19 @@
   <ul>
     <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
     <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
-    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
-    <ul>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-home" aria-label="Introduction"></button><a class="doc-link" href="../">Introduction</a></div>
+    <ul id="tosi-nav-home">
       <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
       <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
       <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-3_What_s_new_in_Cheetah_3D_7" aria-label="What’s new in Cheetah 3D 7?"></button><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></div>
+    <ul id="tosi-nav-3_What_s_new_in_Cheetah_3D_7">
       <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
       <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-4_Just_Enough_to_be_Dangerous" aria-label="Just Enough to be Dangerous"></button><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></div>
+    <ul id="tosi-nav-4_Just_Enough_to_be_Dangerous">
       <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
       <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
       <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
@@ -161,22 +151,19 @@
       <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
       <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
       <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-5_Tutorials" aria-label="Tutorials"></button><a class="doc-link" href="../5_Tutorials/">Tutorials</a></div>
+    <ul id="tosi-nav-5_Tutorials">
       <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
       <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-6_Mini_Tutorials" aria-label="Mini-Tutorials"></button><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></div>
+    <ul id="tosi-nav-6_Mini_Tutorials">
       <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
       <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-7_Modeling" aria-label="Modeling"></button><a class="doc-link" href="../7_Modeling/">Modeling</a></div>
+    <ul id="tosi-nav-7_Modeling">
       <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
       <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
       <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
@@ -188,17 +175,15 @@
       <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
       <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
       <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-8_Creators_Modifiers_Tags" aria-label="Creators, Modifiers, &amp; Tags"></button><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></div>
+    <ul id="tosi-nav-8_Creators_Modifiers_Tags">
       <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
       <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
       <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
-    </ul>
-    </details></li>
-    <li><details open><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch -open"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="true" aria-controls="tosi-nav-9_Materials" aria-label="Materials"></button><a class="doc-link" href="../9_Materials/">Materials</a></div>
+    <ul id="tosi-nav-9_Materials">
       <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
       <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
       <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
@@ -210,10 +195,9 @@
       <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
       <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
       <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-10_Lighting" aria-label="Lighting"></button><a class="doc-link" href="../10_Lighting/">Lighting</a></div>
+    <ul id="tosi-nav-10_Lighting">
       <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
       <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
       <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
@@ -221,10 +205,9 @@
       <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
       <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
       <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-11_Rendering" aria-label="Rendering"></button><a class="doc-link" href="../11_Rendering/">Rendering</a></div>
+    <ul id="tosi-nav-11_Rendering">
       <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
       <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
       <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
@@ -240,44 +223,39 @@
       <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
       <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
       <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-12_Animation" aria-label="Animation"></button><a class="doc-link" href="../12_Animation/">Animation</a></div>
+    <ul id="tosi-nav-12_Animation">
       <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
       <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
       <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
       <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
       <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
       <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-13_Character_Animation" aria-label="Character Animation"></button><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></div>
+    <ul id="tosi-nav-13_Character_Animation">
       <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
       <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
       <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
       <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
       <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
       <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-14_Particles" aria-label="Particles"></button><a class="doc-link" href="../14_Particles/">Particles</a></div>
+    <ul id="tosi-nav-14_Particles">
       <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
       <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
       <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
       <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-15_Dynamics" aria-label="Dynamics"></button><a class="doc-link" href="../15_Dynamics/">Dynamics</a></div>
+    <ul id="tosi-nav-15_Dynamics">
       <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
       <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-16_Mastering_Cheetah_3D_s_Interface" aria-label="Mastering Cheetah 3D’s Interface"></button><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></div>
+    <ul id="tosi-nav-16_Mastering_Cheetah_3D_s_Interface">
       <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
       <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
       <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
@@ -286,10 +264,9 @@
       <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
       <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
       <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-17_Appendices" aria-label="Appendices"></button><a class="doc-link" href="../17_Appendices/">Appendices</a></div>
+    <ul id="tosi-nav-17_Appendices">
       <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
       <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
       <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
@@ -298,14 +275,13 @@
       <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
       <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
       <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
-    </ul>
-    </details></li>
+    </ul></li>
   </ul>
   </nav>
   <ul class="doc-navbar">
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=0a27943cf23b"></script>
+  <script src="../iife.js?v=a3fe77efa05e"></script>
 </body>
 </html>

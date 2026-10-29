@@ -4,6 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
+    document.documentElement.classList.add('tosi-js')
+    document.addEventListener('click', function (e) {
+      if (customElements.get('tosi-doc-system')) return
+      var b = e.target.closest && e.target.closest('.doc-nav .nav-toggle')
+      if (!b) return
+      var open = b.closest('.nav-branch').classList.toggle('-open')
+      b.setAttribute('aria-expanded', String(open))
+    })
     try {
       var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
       var t = p.theme || 'system'
@@ -14,7 +22,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <link rel="stylesheet" href="../doc-system.css?v=a3fe77efa05e" data-tosi-doc-system />
   <title>The Math of Material Nodes — Learn 3D with Cheetah 3D</title>
   <meta name="description" content="OMG! You didn’t tell me there’d be math!" />
   <link rel="canonical" href="https://learn3d.loewald.com/9.11_The_Math_of_Material_Nodes/" />
@@ -32,44 +40,42 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.11_The_Math_of_Material_Nodes.md">
-<!--{"parent": "9_Materials.md", "order": 11}--><h2 id="the-math-of-material-nodes">The Math of Material Nodes</h2>
+<!--{"parent": "9_Materials.md", "order": 11}--><h1 id="the-math-of-material-nodes">The Math of Material Nodes</h1>
 <p><strong>OMG! You didn’t tell me there’d be math!</strong></p>
 <p>I don’t know how old you are, but I can remember back when I was studying trigonometry and I wondered “what the heck use will this ever be in real life?” Well, one very good answer is anything to do with graphics or design.</p>
 <p>The goal of this section isn’t to teach you complex vector math, but simply to give you a feel for how these things work — the idea is to give you an intuitive grasp of what the different concepts mean and do, rather than teach you how to calculate the normal of a plane. You don’t need to do that rubbish — Cheetah 3D does it for you. Millions and millions of times.</p>
-<h3 id="points">Points</h3>
+<h2 id="points">Points</h2>
 <p><img src="/images/pastedGraphic-379.jpg" alt=""></p>
 <p>A point is a position in 3D space represented by three floating point values for x, y, and z. </p>
 <p>Usually points are described in their local coordinate system. E.g. a child object’s position is given in terms of its parent object’s coordinate system, not the global coordinate system (unless the object has no parent, in which case the two are the same). <!-- TODO review --></p>
 <p>The points of a mesh are treated as children of that object (i.e. they are described as children of the object).</p>
-<h3 id="planes">Planes</h3>
+<h2 id="planes">Planes</h2>
 <p>A plane is a flat surface.</p>
 <p>Any three points will lie in a plane (and thus can form a triangle). In general, any larger number of points cannot be relied on to be <em>coplanar</em> (i.e. they may not lie in a plane). For this reason, 3D programs tend to reduce any polygon with more than three sides to triangles (which will always lie in a plane).</p>
-<h3 id="planarity-coplanarity">Planarity, Coplanarity</h3>
+<h2 id="planarity-coplanarity">Planarity, Coplanarity</h2>
 <p>Objects are said to be coplanar if they lie within a plane. Figuring out if a given point lies (to some approximation) in a plane is very useful for doing things like merging and splitting adjacent polygons. It&#39;s less likely to be useful for materials than for <em>scripts</em>.</p>
 <p><img src="/images/DraggedImage.png" alt=""></p>
 <p>If you have a point <strong>p</strong> on a plane and the normal of the plane <strong>n</strong>, you can tell that another point <strong>q</strong> lies on the plane by looking at the vector <strong>q-p</strong> and projecting it onto <strong>n</strong> (i.e. the dot product <strong>(q-p).n</strong>). The magnitude of this product is how far the point q is from the plane.</p>
-<h3 id="vector">Vector</h3>
+<h2 id="vector">Vector</h2>
 <p><img src="/images/pastedGraphic-380.jpg" alt=""></p>
 <p>A vector is a direction and a magnitude. Vectors, like points, are described by three values (x, y, and z), but instead of thinking of those values as describing a position, you should think of them as describing a velocity (or perhaps as an arrow formed by drawing a line from 0,0,0 to the point described by x,y,z).</p>
 <p>Usually in 3D we’re interested in unit vectors — i.e. vectors whose magnitude (length) is exactly 1. In general, when I describe 3D math I will simplify it by assuming we’re talking about unit vectors.</p>
-<h3 id="normal">Normal</h3>
+<h2 id="normal">Normal</h2>
 <p><img src="/images/pastedGraphic-381.jpg" alt=""></p>
 <p>A normal vector is a unit vector pointing straight out from — i.e. perpendicular to — a plane. In 3D programs, polygons are generally considered “one-sided” with the normal pointing in the direction the polygon “faces”. </p>
 <p>Viewed from the “front” a polygon has an “anticlockwise” winding order, i.e. it is defined as a series of points running anticlockwise. Normal vectors are extremely useful for calculating the behavior of light.</p>
 <p><img src="/images/pastedGraphic-382.jpg" alt=""></p>
 <p>E.g. you may recall that with reflected light, the “angle of incidence is equal to the angle of reflection”. In terms of vectors, the angle of incidence is the angle between the vector representing the direction of the incoming light and the normal of the reflecting surface, while the angle of reflection is the angle between the reflected light and the same normal.</p>
-<h3 id="dot-product">Dot Product</h3>
+<h2 id="dot-product">Dot Product</h2>
 <p><img src="/images/pastedGraphic-383.jpg" alt=""></p>
 <p>The dot product of two vectors is the product of their magnitudes (lengths) and the cosine of the angle between them. </p>
 <p>We’re mostly interested in unit vectors, so the product of the magnitudes will be 1. It follows that the dot product of two unit vectors is the cosine of the angle between them.</p>
 <p>In intuitive terms dot product is a measure of how similar two unit vectors are in direction where 1.0 means “exactly the same direction”, 0.0 means “perpendicular”, and -1.0 means “exactly the opposite direction”.</p>
-<p><img src="/images/pastedGraphic-384.jpg" alt=""></p>
-<p><em>Visualizing dot product. The unit vector pointing straight up is (0,1,0) which, considered as a color is green (red = 0, green = 1, blue = 0). The normal vectors of our sphere vary continuously over its surface — the parts pointing straight at us are close to (0,0,1) and look blue while those pointing right look red (1,0,0) and those pointing up look green. The dot product of these values gives you values close to 1 at the top of the sphere, and this goes to 0 (black) at the equator and -1 (still black) in the lower hemisphere.</em></p>
-<h3 id="cross-product">Cross Product</h3>
-<p><img src="/images/pastedGraphic-385.jpg" alt=""></p>
-<p><em>Here the two vectors being cross multiplied aren’t very perpendicular so the sine of the angle between them will be considerably smaller than 1, thus the magnitude of the cross product is small.</em></p>
+<figure><img src="/images/pastedGraphic-384.jpg" alt=""><figcaption>Visualizing dot product. The unit vector pointing straight up is (0,1,0) which, considered as a color is green (red = 0, green = 1, blue = 0). The normal vectors of our sphere vary continuously over its surface — the parts pointing straight at us are close to (0,0,1) and look blue while those pointing right look red (1,0,0) and those pointing up look green. The dot product of these values gives you values close to 1 at the top of the sphere, and this goes to 0 (black) at the equator and -1 (still black) in the lower hemisphere.</figcaption></figure>
+<h2 id="cross-product">Cross Product</h2>
+<figure><img src="/images/pastedGraphic-385.jpg" alt=""><figcaption>Here the two vectors being cross multiplied aren’t very perpendicular so the sine of the angle between them will be considerably smaller than 1, thus the magnitude of the cross product is small.</figcaption></figure>
 <p>The cross product of two vectors is a <strong>vector</strong> perpendicular to <em>both</em> of them whose magnitude is the product of their magnitudes multiplied by the sine of the angle between them.</p>
 <p>Note that for vectors that point in exactly the same or exactly opposite directions cross product is zero (which is handy, since this is also the point at which uniquely determining a vector perpendicular to the two input vectors is impossible).</p>
 <p>Again, we’re mostly interested in unit vectors, so product of their magnitudes will be 1. It follows that the <em>magnitude</em> of the cross product of two unit vectors will be the sine of the angle between them.</p>
@@ -80,8 +86,7 @@
 <p>You don’t need to calculate diffuse illumination yourself but it’s interesting to know how it works. The diffuse color of a surface whose diffuse color is D, illuminated by a light of intensity L, is equal to the product of the colors D and L and the <strong>dot product</strong> of the surface normal and the unit vector pointing to the light.</p>
 <p><strong>Fresnel Effects</strong></p>
 <p><img src="/images/pastedGraphic-386.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-387.jpg" alt=""></p>
-<p><em>Simple glass material with fresnel checked off and on, respectively. (The non-fresnel version is much more reflective in general, but less reflective at the edges — the blue you see is a reflection of the background color.)</em></p>
+<figure><img src="/images/pastedGraphic-387.jpg" alt=""><figcaption>Simple glass material with fresnel checked off and on, respectively. (The non-fresnel version is much more reflective in general, but less reflective at the edges — the blue you see is a reflection of the background color.)</figcaption></figure>
 <p>If you look at a pane of glass from an oblique angle then it behaves much like a mirror — not much light passes through it, but it reflects quite well. On the other hand if you look at a pane of glass straight on, light passes through it very well while relatively little is reflected.</p>
 <p>This is called the Fresnel effect or Fresnel reflectance.</p>
 <p>You can simulate this in Cheetah 3D by feeding I•N from a State node into a Material shader’s transparency input. I•N is the <strong>dot product</strong> of the viewing angle (the direction from the point being rendered to the camera) and the surface normal at that point. Since the dot product effectively measures how similar these vectors are, it will be one if you’re looking at the surface straight on, and close to zero if you’re viewing it obliquely.</p>
@@ -92,21 +97,19 @@
   <ul>
     <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
     <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
-    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
-    <ul>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-home" aria-label="Introduction"></button><a class="doc-link" href="../">Introduction</a></div>
+    <ul id="tosi-nav-home">
       <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
       <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
       <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-3_What_s_new_in_Cheetah_3D_7" aria-label="What’s new in Cheetah 3D 7?"></button><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></div>
+    <ul id="tosi-nav-3_What_s_new_in_Cheetah_3D_7">
       <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
       <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-4_Just_Enough_to_be_Dangerous" aria-label="Just Enough to be Dangerous"></button><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></div>
+    <ul id="tosi-nav-4_Just_Enough_to_be_Dangerous">
       <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
       <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
       <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
@@ -124,22 +127,19 @@
       <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
       <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
       <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-5_Tutorials" aria-label="Tutorials"></button><a class="doc-link" href="../5_Tutorials/">Tutorials</a></div>
+    <ul id="tosi-nav-5_Tutorials">
       <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
       <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-6_Mini_Tutorials" aria-label="Mini-Tutorials"></button><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></div>
+    <ul id="tosi-nav-6_Mini_Tutorials">
       <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
       <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-7_Modeling" aria-label="Modeling"></button><a class="doc-link" href="../7_Modeling/">Modeling</a></div>
+    <ul id="tosi-nav-7_Modeling">
       <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
       <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
       <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
@@ -151,17 +151,15 @@
       <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
       <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
       <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-8_Creators_Modifiers_Tags" aria-label="Creators, Modifiers, &amp; Tags"></button><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></div>
+    <ul id="tosi-nav-8_Creators_Modifiers_Tags">
       <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
       <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
       <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
-    </ul>
-    </details></li>
-    <li><details open><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch -open"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="true" aria-controls="tosi-nav-9_Materials" aria-label="Materials"></button><a class="doc-link" href="../9_Materials/">Materials</a></div>
+    <ul id="tosi-nav-9_Materials">
       <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
       <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
       <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
@@ -173,10 +171,9 @@
       <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
       <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
       <li><a class="doc-link current" href="../9.11_The_Math_of_Material_Nodes/" aria-current="page">The Math of Material Nodes</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-10_Lighting" aria-label="Lighting"></button><a class="doc-link" href="../10_Lighting/">Lighting</a></div>
+    <ul id="tosi-nav-10_Lighting">
       <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
       <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
       <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
@@ -184,10 +181,9 @@
       <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
       <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
       <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-11_Rendering" aria-label="Rendering"></button><a class="doc-link" href="../11_Rendering/">Rendering</a></div>
+    <ul id="tosi-nav-11_Rendering">
       <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
       <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
       <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
@@ -203,44 +199,39 @@
       <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
       <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
       <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-12_Animation" aria-label="Animation"></button><a class="doc-link" href="../12_Animation/">Animation</a></div>
+    <ul id="tosi-nav-12_Animation">
       <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
       <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
       <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
       <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
       <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
       <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-13_Character_Animation" aria-label="Character Animation"></button><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></div>
+    <ul id="tosi-nav-13_Character_Animation">
       <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
       <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
       <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
       <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
       <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
       <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-14_Particles" aria-label="Particles"></button><a class="doc-link" href="../14_Particles/">Particles</a></div>
+    <ul id="tosi-nav-14_Particles">
       <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
       <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
       <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
       <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-15_Dynamics" aria-label="Dynamics"></button><a class="doc-link" href="../15_Dynamics/">Dynamics</a></div>
+    <ul id="tosi-nav-15_Dynamics">
       <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
       <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-16_Mastering_Cheetah_3D_s_Interface" aria-label="Mastering Cheetah 3D’s Interface"></button><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></div>
+    <ul id="tosi-nav-16_Mastering_Cheetah_3D_s_Interface">
       <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
       <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
       <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
@@ -249,10 +240,9 @@
       <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
       <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
       <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
-    </ul>
-    </details></li>
-    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
-    <ul>
+    </ul></li>
+    <li class="nav-branch"><div class="nav-branch-head"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="tosi-nav-17_Appendices" aria-label="Appendices"></button><a class="doc-link" href="../17_Appendices/">Appendices</a></div>
+    <ul id="tosi-nav-17_Appendices">
       <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
       <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
       <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
@@ -261,14 +251,13 @@
       <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
       <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
       <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
-    </ul>
-    </details></li>
+    </ul></li>
   </ul>
   </nav>
   <ul class="doc-navbar">
     <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
   </ul>
   </tosi-doc-system>
-  <script src="../iife.js?v=0a27943cf23b"></script>
+  <script src="../iife.js?v=a3fe77efa05e"></script>
 </body>
 </html>
