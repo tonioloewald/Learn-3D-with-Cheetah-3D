@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <title>Understanding Nodes — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Shader: the heart of a material. Literally the software gizmo that decides what color to make a pixel (or subpixel) based on the information available (lights…" />
+  <link rel="canonical" href="https://learn3d.loewald.com/9.4_Understanding_Nodes/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Understanding Nodes — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Understanding Nodes — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Shader: the heart of a material. Literally the software gizmo that decides what color to make a pixel (or subpixel) based on the information available (lights…" />
+  <meta property="og:url" content="https://learn3d.loewald.com/9.4_Understanding_Nodes/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Understanding Nodes","description":"Shader: the heart of a material. Literally the software gizmo that decides what color to make a pixel (or subpixel) based on the information available (lights…","url":"https://learn3d.loewald.com/9.4_Understanding_Nodes/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="9.4_Understanding_Nodes.md">
+<!--{"parent": "9_Materials.md", "order": 4}--><h2 id="understanding-nodes">Understanding Nodes</h2>
+<h3 id="node-types">Node Types</h3>
+<p><strong>Shader</strong>: the heart of a material. Literally the software gizmo that decides what color to make a pixel (or subpixel) based on the information available (lights, texture mappings, local and global coordinates, orientation of the surface, etc. etc.).</p>
+<p>A material can only have one shader.</p>
+<p><strong>Constant</strong>: a convenience object for holding a fixed value you want to pipe to other places. This can save the trouble of having to edit multiple objects to achieve a specific effect (e.g. if you change the scale of one thing you may need to change the scale of another to match it -- use a constant value and pipe it to both). It’s also a good way of making critical controlling values for a material easier to find.</p>
+<p><strong>Filter</strong>: a mathematical function that has an obvious visual description (vs. those which don&#39;t, which are referred to as &quot;Math&quot;). </p>
+<p>Filters are a bit like Photoshop filters with a significant practical difference — a lot of Photoshop filters involve calculating the value of a filtered pixel from the values of an arbitrary collection of <em>neighboring</em> source pixels (e.g. “gaussian blur” is calculated by replacing a given pixel with a weighted average of the original pixel and nearby pixels). Filter nodes cannot act on anything other than the value of the current point (both for performance and because the input is considered to be resolution-independent). This makes area-based filter effects — like blurring and sharpening — very difficult to do.</p>
+<p><strong>Math</strong>: a mathematical function that takes one or more inputs, performs math on them, and produces an output (e.g. addition, average, dot product, and so forth).</p>
+<p><strong>Other</strong>: this is where you find the &quot;state&quot; and “instance” nodes which gives you access to information about the thing being rendered and the scene it resides in for use as input into other shaders. </p>
+<p>You might use the state node to use positional information about an object to affect its properties. Similarly, you can use instance node properties to drive particles (e.g. they might change color as they get older).</p>
+<p><strong>Textures</strong>: a software gizmo that generates texture maps somehow or other. The most popular one is the image texture which outputs an infinite plane (by default with the image tiled on it, but this can be switched off in either axis). The other textures are a combination of simple repeating functions (e.g. bricks) and various fractal noise algorithms.</p>
+<h3 id="connecting-nodes">Connecting Nodes</h3>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%205.22.09%20PM.jpg" alt=""></p>
+<p>It’s perfectly possible to create some useful materials without using anything other than a shader node, but more complex materials will involve connecting nodes to one another.</p>
+<p>Each node has possible <strong>inputs</strong> and <strong>outputs</strong>. Inputs are on the left of a node, outputs on the right. <strong>You connect an output of one node to an input of another by dragging a line between the two.</strong></p>
+<ul>
+<li><p>You cannot connect a node to itself.</p>
+</li>
+<li><p>Even though inputs and outputs can have different types, Cheetah 3D can always figure out how to convert one type of output into the appropriate type of input — <em>but it may not produce the result you expect</em>.</p>
+</li>
+</ul>
+<h4 id="visualizing-an-output-channel">Visualizing an Output Channel</h4>
+<p><strong>You can see any output channel of any node displayed visually by clicking on it.</strong> This shows you how that output channel varies across the surface of a sphere if that output channel were to determine its color.</p>
+<p>Perhaps the most intuitive node you can visualize is an Image node.</p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%205.25.48%20PM.jpg" alt=""></p>
+<p><em>Here’s the same image node, but with the color vs. value outputs selected. The value output shows grayscale output (note that it isn’t just the red channel).</em></p>
+<p><img src="/images/pastedGraphic-315.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-316.jpg" alt=""></p>
+<p><em>Here’s a test material comprising a test grid image that feeds its color output into the Material shader node’s diffuse input. Currently you’re seeing the image itself being visualized as mapped onto the test sphere, and it produces a fairly straightforward result.</em></p>
+<p><img src="/images/pastedGraphic-317.jpg" alt=""></p>
+<p>Here is a <strong>State</strong> node (it’s not hooked up to anything else) with its <strong>Normal</strong> output channel visualized. If you can understand what you’re looking at here, you’re well on your way to grasping 3D vector math and the material system, so I’ll try to explain it.</p>
+<p>First of all, think of a Normal as a little arrow of length 1.0 pointing straight out from every point on the surface of an object. So, for a sphere, it’s like imagining the entire surface of the sphere covered in hairs sticking straight out.</p>
+<p>Now, this sphere we’re looking at is living in a 3D space, and we’re looking at the front of the sphere. You may recall from our initial discussion of 3D math that when you look at the “front” of a scene you’re looking <strong>down the z axis at it</strong>. So the little arrows in the middle of the sphere are pointing straight at us up the z axis. Expressed as an x,y,z vector, the center of the sphere is 0,0,1. </p>
+<p>But we’re visualizing this point 0,0,1 as a <strong>color</strong>, so it’s blue (r = 0, g = 0, b = 1). Neighboring arrows will be nearly pointing at us, so they’ll be ~0, ~0, ~1, so the central area of the sphere is blue.</p>
+<p>Now let’s consider the top of the sphere. The arrow here will be pointing straight up, which is up the y axis. So it will be 0,1,0. Treated as a color, that’s green.</p>
+<p>If that all made sense, now you understand what you’re looking at. And this is how you can turn something as seemingly dry as “normal vectors” into something beautiful!</p>
+<p><strong>Exercise</strong>. Now, if you click on the Position output channel of the State node it looks exactly the same as the Normal channel. What’s going on here? I’ll give you a hint — consider these two materials:</p>
+<p><img src="/images/pastedGraphic-318.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-319.jpg" alt=""></p>
+<p>These might seem identical here, but they will look very different when applied to a unit cube:</p>
+<p><img src="/images/pastedGraphic-320.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-321.jpg" alt=""></p>
+<p>The reason for the difference is that a normal is a little arrow pointing out from the surface, whereas position is, well, position. As you move across the face of a cube the normal stays constant (so the faces of the cube colored with normals are flat colors) whereas your position is changing (so the position colored faces are gradients).</p>
+<p>The surface of a unit sphere coincidentally happens to have normals whose values exactly equal the positions on its surface. (If you consider the arrow pointing out from a point on the unit sphere, it’s identical in length and direction to the arrow from the center of the sphere to that point, which is the position.)</p>
+<h3 id="channel-types">Channel Types</h3>
+<p>Each node channel has a <strong>type</strong>. There are three types: color, vector, and number. You can connect an output of one type to an input of a different type and the necessary conversion will take place automatically. (See <strong>Converting Between Types</strong>, below.)</p>
+<p>Properties can have many names, but there are only three fundamental types of property (in other words, the kind of information that goes down one of the curvy lines from one node to another is always going to be one of three things).</p>
+<p><strong>Color</strong>: a color is a vector (red, green, blue, alpha) with each value ranging from 0 to 1. Colors also have an <em>intensity</em> (this essentially supports dynamic range beyond “white”) so that a color with intensity greater than 1 will be brighter than bright. (This is particularly useful when creating objects for radiosity and/or reflections.)</p>
+<p>Mathematically speaking, a color is a vector with an alpha channel (the intensity handles colors with a magnitude of more than one).</p>
+<p>Note that support for the alpha component of a color is inconsistent. Some nodes will take a color input but ignore the alpha component. The key case where the alpha component is supported is the Material shader node.</p>
+<p><strong>Number</strong>: a number is a scalar floating point value. If used as a color, 0.0 or less becomes black and 1.0 becomes white. Numbers larger than 1.0 become <em>more intense</em> white (see color, above).</p>
+<p><img src="/images/DraggedImage-96.jpg" alt=""></p>
+<p><em>The brushed metal sphere is illuminated by two small squares, one “lit” with the number 1.0, and the other by the number 10.0.</em></p>
+<p><strong>Vector</strong>: a vector is simply a triple value (x,y,z) where each value is a floating point number.</p>
+<p>Vectors can represent positions in 3D space, directions, directions with magnitude (think &quot;velocity&quot;), and even colors and orientations (x, y, z rotation). In C3D they&#39;re usually used to represent positions or directions, but occasionally it&#39;s useful to think of colors as being vectors too.</p>
+<h3 id="converting-between-types">Converting Between Types</h3>
+<p>In general, conversion tends to work best when all values are in the range [0,1] (that’s math notation for a number greater than or equal to zero, and less than or equal to one). In general, color values below zero are treated as zero, while those above 1 may be interpreted as clipped to 1 or intensely bright (depending on context).</p>
+<p>E.g. if you feed the constant 10.0 into the diffuse channel of the material shader it acts just like white.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>But if you feed it into the emissive channel (and turn on <strong>Radiosity</strong> in the Cheetah renderer’s settings, or render with Falcon, which computes indirect light on its own) the difference from 1.0 will be enormous.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p><img src="/images/pastedGraphic-322.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-323.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-324.jpg" alt=""></p>
+<p><em><strong>Top</strong>: a cube with constant 1.0 or 10.0 fed into material’s diffuse channel looks the same. <strong>Middle and bottom</strong> are the same cube with 1.0 and 10.0 (respectively) fed into the material’s emission channel.</em></p>
+<p>When you send information of one type to a property of another type it will automatically be converted into the correct type. The way this works is usually pretty straightforward:</p>
+<p><strong>Color to Vector</strong>: alpha channel gets dropped.</p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%205.31.46%20PM.jpg" alt=""></p>
+<p>There is a wrinkle though:</p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%205.32.45%20PM.jpg" alt=""></p>
+<p><em>The alpha channel of a color is an “invisible fourth channel” that only seems to work with the diffuse input of a material shader when <strong>Use Alpha Channel</strong> is checked.</em></p>
+<p><strong>Vector to Color</strong>: x, y, z become r, g, b; alpha channel is assumed to be 100% (completely opaque).</p>
+<p><strong>Vector or Color to Number</strong>: the first value (x or r) is used.</p>
+<p>There’s a special case to consider, which is <strong>monochrome colors</strong>, such as the Val channel of an Image texture node. When Cheetah 3D converts a color to a greyscale color, it appears to do so “as expected” (which, I believe, is to average r, g, and b) rather than simply using the r value.</p>
+<p><img src="/images/Screen%20Shot%202014-07-06%20at%205.28.52%20PM.jpg" alt=""></p>
+<p><em>This shows the value output of an image material compared with the value output of a multiplication node that’s multiplying the color input by (1,1,1).</em></p>
+<p><strong>Number to Vector</strong>: the number gets copied to all three values (so 0.5 becomes 0.5, 0.5, 0.5).</p>
+<p><strong>Number to Color</strong>: the number gets converted into a greyscale value (so the value goes to all three channels, but alpha is made 100% (completely opaque)).</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+      <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
+      <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.4_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.5_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.6_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.7_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.8_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.10_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.11_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.12_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.13_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../7.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../7.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../7.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../7.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../7.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link current" href="../9.4_Understanding_Nodes/" aria-current="page">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../9.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../9.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../9.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../9.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.4_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../11.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../11.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../11.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../11.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../11.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../11.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../11.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../11.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../11.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
+      <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../16.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../16.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../17.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../17.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=0a27943cf23b"></script>
+</body>
+</html>

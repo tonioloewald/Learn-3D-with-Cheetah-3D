@@ -1,7 +1,0 @@
-<!--{"parent": "4_Falcon.md", "order": 7}-->
-
-## Selecting Parts of Meshes
-
-> **Note:** this section is a stub (two headings, no text). <!-- TODO editorial -->
-
-## Combining Meshes

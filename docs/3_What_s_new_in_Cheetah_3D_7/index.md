@@ -198,4 +198,5 @@ _If you’ve ever fiddled with material transparency or wireframe display modes 
 
 <!-- toc -->
 - [The Falcon Renderer](/3.1_The_Falcon_Renderer/)
+- [Falcon: Key Points](/3.2_Key_Points/)
 <!-- /toc -->

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <title>Scripts — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself)." />
+  <link rel="canonical" href="https://learn3d.loewald.com/16.8_Scripts/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Scripts — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Scripts — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself)." />
+  <meta property="og:url" content="https://learn3d.loewald.com/16.8_Scripts/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Scripts","description":"For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself).","url":"https://learn3d.loewald.com/16.8_Scripts/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="16.8_Scripts.md">
+<!--{"parent": "16_Mastering_Cheetah_3D_s_Interface.md", "order": 8}--><h2 id="scripts">Scripts</h2>
+<p><img src="/images/pastedGraphic-634.jpg" alt=""></p>
+<h3 id="some-very-useful-scripts">Some Very Useful Scripts</h3>
+<p>For the last couple of years I’ve tried to maintain a “master list” of useful scripts for Cheetah 3D (I’ve even contributed a couple myself). This list is posted on the forums here: <a href="https://www.cheetah3d.com/forum/index.php?threads/5752/">https://www.cheetah3d.com/forum/index.php?threads/5752/</a> but I’ve included the current list as of writing below.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: none of these scripts has a forum report from 8.x, and most date from Cheetah 3D 5–6. The <a href="https://github.com/tonioloewald/c3d-scripting-kb/blob/main/catalog/CATALOG.md">Cheetah 3D scripting knowledge base catalog</a> lists what forum users reported for each one. <!-- TODO verify --></p>
+</blockquote>
+<h4 id="basic-interface-enhancements">Basic Interface Enhancements</h4>
+<ul>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/4108/">Expand Selection</a> conditionally expand a selection</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: Cheetah 3D now has a built-in <strong>Selection &gt; Expand Selection</strong> command (not conditional, unlike this script). <!-- TODO update --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/7106/">Toggle Visibility / Make Solo</a> make everything except the selection disappear or go wireframe</p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/4085/">OBJ Importer</a> improved OBJ import</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: superseded; Cheetah 3D has imported OBJ files natively since version 6 (KB catalog, thread 4085). <!-- TODO update --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/4991/">Object Chunker</a> break large meshes into smaller meshes to meet polygon budget (e.g. for Unity which won’t accept meshes with more than 65535 triangles).</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the Unity limit was 65535 vertices (16-bit indices), not triangles, and current Unity supports 32-bit indices. <!-- TODO verify --></p>
+</blockquote>
+</li>
+<li><p><a href="http://www.tres-graficos.jp/blog/files/category.php?k=Script">set changer</a></p>
+</li>
+</ul>
+<h4 id="modeling">Modeling</h4>
+<ul>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/5130/">Bent Arrow</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/1686/">Billboard</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/3537/">Center Bounds</a> set center of object to the center of its bounding box</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: largely superseded by <strong>Tools &gt; Coord System</strong>, whose “center pivot point” button moves the pivot to the geometric center (manual: Coord System Tool). <!-- TODO update --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/8033/">Curls</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/3792/">Dissolve</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/8024/">Edge N Splitter</a> a more versatile ring cutting tool</p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/2574/">Edge Utilities</a> macros for working with creases and seams</p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/4810/">Center of Gravity</a> set center of object to the center of &quot;gravity&quot; of a selected set of faces.</p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/970/">Point Array</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/1405/">Flatten Polygon</a> make selected polygons properly coplanar</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the original Flatten.js link is dead and was reported broken in 5.8; the thread has a later flattened4U.js version (KB catalog, thread 1405). <!-- TODO verify --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/1294/">Hair</a> algorithmic generation of hair geometry with UVs</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: Hair.js gave errors in 6.2.1 while cHair.js worked (KB catalog, thread 1294). <!-- TODO verify --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/1284/">Loft</a></p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: probably superseded by the built-in Loft creator object (manual: Loft Object). <!-- TODO update --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/5865/">Mandelbulb</a> julia set modeler</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: its helper binary was built for OS X 10.6 and one user never got it working (KB catalog, thread 5865). <!-- TODO verify --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/1448/">Mirror Copy</a> (also useful for animation) mirror geometry and poses</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: reports are mixed; a 2020 report says it does nothing in 7.4.2 (KB catalog, thread 1448). <!-- TODO verify --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/8025/">Particle Connector</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/5292/">Path Array</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/7938/">Pivot Setter</a> (and a derived script for setting the pivot to a selected point)</p>
+</li>
+<li><p><a href="http://www.tres-graficos.jp/blog/files/category.php?k=Script">Polygon Reduction</a></p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: superseded by the built-in <strong>Tools &gt; Polygon &gt; Simplify</strong> tool (manual: Simplify Tool). <!-- TODO update --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/7079/">Surface Utilities</a> powerful tools for changing smoothing settings and fixing normals.</p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/4029/">Taper Sweep</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6381/">Toggle Shading</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6373/">Toggle Visibility</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6776/">Polygon Splitter</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6801/">Extruded Text Maker</a> — has more options than standard text spline</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: users reported crashes in 5.7 and the last fix was never confirmed (KB catalog, thread 6801). <!-- TODO verify --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6607/">Elliptical Splines</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6698/">Rounded Rectangle Spline</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/1298/">Pathed Helix</a></p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: use the 2010 version from post #11; the original file throws an error in later versions (KB catalog, thread 1298). <!-- TODO verify --></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="animation">Animation</h4>
+<ul>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/3880/">Guided Spline</a></p>
+</li>
+<li><p><a href="http://www.tres-graficos.jp/blog/files/category.php?k=Script">morph</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/1210/">Moving Textures</a></p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: superseded; Cheetah 3D has supported movie textures natively since version 7 (KB catalog, thread 1210). <!-- TODO update --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/5358/">Pose Utilities</a> mirror and flip poses quickly and efficiently</p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/2110/">Sequential OBJs</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6557/">Automatic Lip Sync from WAV File</a></p>
+</li>
+</ul>
+<h4 id="texturing-and-uv-mapping">Texturing and UV-Mapping</h4>
+<ul>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6079/">Polygon UV Editor</a></p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the original post (p=2689) is not in the KB archive; this link goes to Targos’s 2010 repost of Neil Carter’s script. <!-- TODO verify --></p>
+</blockquote>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/8019/">Text Tool</a></p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/2280/">UV Stepper</a></p>
+</li>
+</ul>
+<h4 id="rendering">Rendering</h4>
+<ul>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/4374/">LuxCheetah</a> exports C3D scenes to the free physically-based renderer <a href="http://luxrender.net/">LuxRender</a></p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: last confirmed for 5.5, LuxRender has been succeeded by LuxCoreRender, and Cheetah 3D now includes its own unbiased path tracer, Falcon (manual: Falcon). <!-- TODO update --></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="particles">Particles</h4>
+<ul>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/6905/">Iterative Relative Particles</a> for Groboto-style procedural objects</p>
+</li>
+<li><p><a href="https://www.cheetah3d.com/forum/index.php?threads/5834/post-43391">Particle City</a> custom particle system for procedurally generating &quot;cities&quot;</p>
+</li>
+</ul>
+<h3 id="using-scripts">Using Scripts</h3>
+<p>The first thing you need to know about scripts is where to “install” them. This is especially tricky as of Lion because Apple has hidden user Library folders.</p>
+<p>The simplest option is to use <strong>Go &gt; Go To Folder</strong> in Finder to go to this folder: </p>
+<p><strong>~/Library/Application Support/Cheetah3D/</strong></p>
+<h4 id="which-subfolder-does-a-script-go-in">Which subfolder does a script go in?</h4>
+<p>For some reason Cheetah 3D requires scripts to be put in specific sub-folders despite the fact that (a) human beings cannot easily tell what kind of script a given script file is and (b) Cheetah 3D probably can. Go figure. If it&#39;s not obvious from the script&#39;s documentation or internal comments what kind of script it is, here&#39;s how you can <em>probably</em> tell by looking through it:</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual and the Cheetah 3D scripting knowledge base; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>The subfolders are <strong>Macro</strong>, <strong>Tool</strong>, <strong>Tag</strong>, <strong>Polygonobj</strong>, <strong>Splineobj</strong>, and <strong>Particle</strong>, and the folder decides the script type: a script in the wrong folder fails silently, throws misleading errors, or crashes Cheetah 3D.</p>
+<ul>
+<li><p>If the script contains <strong>function main</strong>, it&#39;s a <strong>Macro</strong> script.</p>
+</li>
+<li><p>If the script contains <strong>function buildObject</strong> and calls <strong>addParticle</strong>, it&#39;s a <strong>Particle</strong> script.</p>
+</li>
+<li><p>If the script contains <strong>function buildObject</strong> and calls the spline core&#39;s <strong>move()</strong>, <strong>line()</strong>, or <strong>curve()</strong>, it&#39;s a <strong>Splineobj</strong> script.</p>
+</li>
+<li><p>If the script contains function buildObject, but no spline calls and no addParticle, it&#39;s a <strong>Polygonobj</strong> script.</p>
+</li>
+<li><p>If the script contains function <strong>performExpression</strong> (usually alongside buildUI), it&#39;s a <strong>Tag</strong> script. Since Cheetah 3D 7, Tag scripts are <em>expression tags</em>: Cheetah 3D calls performExpression to drive the tag&#39;s owner as the scene updates (see the bundled CircleExpression.js). A script with only buildUI and declarations is probably a Tag script too.</p>
+</li>
+<li><p>Finally, if the script contains function buildUI, <em>at least one other function</em> (called by a button), but no buildObject or performExpression function, it&#39;s a <strong>Tool</strong> script.</p>
+</li>
+</ul>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p>This is not completely foolproof. It&#39;s possible to create a Particle script that never calls addParticle, for example, but it would be kind of weird. In most cases, what a script is supposed to do should be documented. <!-- TODO review --></p>
+<h4 id="when-must-you-relaunch-cheetah-3d">When must you relaunch Cheetah 3D?</h4>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 app and the Cheetah 3D scripting knowledge base; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>If you’re working on a script you do not need to relaunch Cheetah 3D for it to see changes to the script (but you may need to select the script anew from the Script menu). To make Cheetah 3D pick up a <em>newly added</em> script, choose <strong>Update Menu</strong> at the bottom of the <strong>Tools &gt; Script</strong> menu, or quit and relaunch Cheetah 3D.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual (Executing a Script) still says to restart, but the app has an “Update Menu” item; confirm it finds new scripts. <!-- TODO verify --></p>
+</blockquote>
+<p>Be careful when coding scripts. It is quite possible for a script to seize up Cheetah 3D and require a force quit. (Command-option escape to force quit, in case you didn’t know. You can also click and hold on an application’s icon in the dock.)</p>
+<h4 id="assigning-hotkeys-to-scripts">Assigning Hotkeys to Scripts</h4>
+<p>Once you’ve loaded a script, you can assign a hotkey to it (just as you would anything else). This is extremely useful for some of the more frequently needed scripts. E.g. when doing character animation, you might want to hotkey Pose Utilities.</p>
+<h3 id="writing-scripts">Writing Scripts</h3>
+<p>To create a new script simply fire up your favorite text editor and create a new JavaScript (.js) document in the appropriate folder. </p>
+<p>The best way to do it is probably to open up your Cheetah 3D folder inside Application Support — ~/Library/Application Support/Cheetah3D/ — and duplicate a script of the type you want to write, name it what you want, and then launch/relaunch Cheetah 3D. (TextEdit in plain text mode works fine, but it’s very basic — if you don’t have a serious programmer’s text editor, I recommend TextWrangler from barebones.com — it’s free and very powerful.)</p>
+<p>To write Cheetah 3D scripts requires that you know some JavaScript. Teaching JavaScript is beyond the scope of this book, but there are many good resources for learning JavaScript (many would recommend Douglas Crockford’s <em>JavaScript: The Good Parts</em> and his videos at <a href="http://yuiblog.com/crockford">http://yuiblog.com/crockford</a>). If you’ve done any programming you can probably follow along without knowing much about JavaScript specifically.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D scripting knowledge base README; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<h4 id="getting-an-ai-assistant-to-write-scripts-for-you">Getting an AI Assistant to Write Scripts for You</h4>
+<p>These days you don&#39;t have to be a programmer to get a useful script. AI chat assistants (ChatGPT, Claude, Gemini, and so on) are good at JavaScript but know very little about Cheetah 3D, so on their own they write scripts that look right but don&#39;t work. The <a href="https://github.com/tonioloewald/c3d-scripting-kb">Cheetah 3D scripting knowledge base</a> fixes this: it collects the Cheetah 3D 8.1.1 scripting API, the example scripts that ship with the app, and about twenty years of lessons from the forum into one file you hand to the AI.</p>
+<p>Start a new chat and begin your message with:</p>
+<pre><code class="language-text" data-highlighted>Read https://raw.githubusercontent.com/tonioloewald/c3d-scripting-kb/main/dist/c3d-context-short.md and follow it.
+</code></pre>
+<p>Then, in the same message, describe what you want in Cheetah 3D terms: what it acts on (the selection, the whole scene, or a new object), what it should do, which settings you want to control, and your Cheetah 3D version. The AI will tell you the script type and which folder to put it in. Save the script as a plain-text <strong>.js</strong> file, install it, and <strong>test it on a copy of your scene</strong>. If something goes wrong, paste the Console output back into the chat.</p>
+<p>The same approach works for fixing an old forum script that has stopped working, or adding a feature to one. The knowledge base also has a <a href="https://github.com/tonioloewald/c3d-scripting-kb/blob/main/catalog/CATALOG.md">catalog</a> of the scripts posted on the forum, with what users reported about whether they work.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<h4 id="basics">Basics</h4>
+<p>The simplest kind of script in Cheetah 3D is a Macro script. A Macro script looks like this:</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">doc</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token comment">// do stuff here</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>A comment in JavaScript is anything between /* and */ or anything following // until the end of that line. So “// do stuff here” is a comment.</p>
+<p>When someone selects a macro script from the Tools &gt; Script &gt; Macro Script menu Cheetah 3D loads the script and calls its main function, passing it the variable doc, which contains a representation of your Cheetah 3D document.</p>
+<p>If we look through the online help for documentation on the Document object (which is what doc is going to be) we can see it has some useful looking properties and methods. A nice simple method is render(). Let’s try that.</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">doc</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+doc<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>If you try running this script it will do exactly what you expect. Well, <em>kind</em> of. Unlike clicking the Render icon in the toolbar you get no visual feedback until the render is complete.</p>
+<p>Still, it’s not like this is a terribly useful script. Let’s try something a little more advanced.</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">doc</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+doc<span class="token punctuation">.</span><span class="token function">addObject</span><span class="token punctuation">(</span> <span class="token constant">BOX</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This, again, does what you’d expect. The documentation also stipulates that addObject returns an object — the thing you added. Let’s do something with it.</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">doc</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> box <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">addObject</span><span class="token punctuation">(</span> <span class="token constant">BOX</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+box<span class="token punctuation">.</span><span class="token function">setParameter</span><span class="token punctuation">(</span> <span class="token string">"position"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Vec3D</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This macro creates a new box and then moves it up 0.5 units. (Ever frustrated by how the default box is centered on the origin rather than sitting neatly on the XZ plane? This script is your answer!)</p>
+<h3 id="debugging-scripts--the-console">Debugging Scripts — The Console</h3>
+<p>If you right-click on the header of any panel in a Cheetah 3D window you’ll discover that one of the options is for a console panel. I recommend adding a console panel somewhere to one of your layouts if you want to do any scripting.</p>
+<p><img src="/images/pastedGraphic-635.jpg" alt=""></p>
+<p>My default layout has a console tab tucked in with the object browser — ready whenever I need it.</p>
+<p>If you want your script to say something to you (“Hey, I got this far without crashing”) then Cheetah 3D provides a print() function.</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">doc</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span> <span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Hmm, maybe I should have started with this!</p>
+<p>You can also generate alerts using the OS.messageBox() function.</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">doc</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token constant">OS</span><span class="token punctuation">.</span><span class="token function">messageBox</span><span class="token punctuation">(</span><span class="token string">"Title"</span><span class="token punctuation">,</span><span class="token string">"Here is my message!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="/images/pastedGraphic-636.jpg" alt=""></p>
+<h3 id="feeling-your-way-around">Feeling Your Way Around</h3>
+<p>Cheetah 3D’s documentation is sometimes lacking, especially with respect to scripting, but it does offer some introspection tools to allow you to figure things out for yourself. One of the sample Macro scripts — Parameter Info.js — gives you a rough idea of how to do this, and forum scripting expert tg_jp has improved on it with this more general version:</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token parameter">doc</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">selectedObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'---- Object Info ---'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> obj <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'-- object type:'</span><span class="token operator">+</span>obj<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> info <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">parameterInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>info<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token string">" ["</span> <span class="token operator">+</span> info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"]:"</span><span class="token operator">+</span>obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> tcount <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">tagCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> tcount<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> tag <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">tagAtIndex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+info <span class="token operator">=</span> tag<span class="token punctuation">.</span><span class="token function">parameterInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'-- tag '</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">' type:'</span><span class="token operator">+</span>tag<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>info<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" ["</span> <span class="token operator">+</span> info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"]:"</span><span class="token operator">+</span>tag<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>tag<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">102</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// material tag.</span>
+<span class="token keyword">var</span> material <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">materialAtIndex</span><span class="token punctuation">(</span>tag<span class="token punctuation">.</span><span class="token function">linkedToMaterial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'-- linked Material --'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+info <span class="token operator">=</span> material<span class="token punctuation">.</span><span class="token function">parameterInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>info<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" ["</span> <span class="token operator">+</span> info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"]:"</span><span class="token operator">+</span>material<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This script, when saved as a Macro Script, will document all the properties of any selected object. </p>
+<p>If you wrap the core functionality of this script in a utility function, I’ll call it describe(), then you get something like this:</p>
+<pre><code class="language-js" data-highlighted><span class="token keyword">function</span> <span class="token function">describe</span><span class="token punctuation">(</span> <span class="token parameter">obj</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> obj <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'-- object type:'</span><span class="token operator">+</span>obj<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> info <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">parameterInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>info<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token string">" ["</span> <span class="token operator">+</span> info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"]:"</span><span class="token operator">+</span>obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> tcount <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">tagCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> tcount<span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> tag <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">tagAtIndex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+info <span class="token operator">=</span> tag<span class="token punctuation">.</span><span class="token function">parameterInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'-- tag '</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">' type:'</span><span class="token operator">+</span>tag<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>info<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" ["</span> <span class="token operator">+</span> info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"]:"</span><span class="token operator">+</span>tag<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>tag<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">102</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// material tag.</span>
+<span class="token keyword">var</span> material <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">materialAtIndex</span><span class="token punctuation">(</span>tag<span class="token punctuation">.</span><span class="token function">linkedToMaterial</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'-- linked Material --'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+info <span class="token operator">=</span> material<span class="token punctuation">.</span><span class="token function">parameterInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>info<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">print</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">" ["</span> <span class="token operator">+</span> info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"]:"</span><span class="token operator">+</span>material<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span>info<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now if I’m trying to figure out what properties a given object has, I can simply describe() it and its properties will be listed in the console.</p>
+<p>This function has saved my bacon many times — e.g. when trying to script a Particle System the Random Seed property isn’t documented — how do you get at it? Using getParameter(“Random Seed”) doesn’t work. If you open the .jas file you’ll discover it’s called “particlesSeed” in the XML. But “particlesSeed” doesn’t work either (nor does “Particle Seed”). Finally, selecting a particle system and using this script reveals a property called “seed” of type “Int”. Eureka!</p>
+<pre><code class="language-text" data-highlighted>---- Object Info ---
+-- object type:81
+scriptName [String]:Scripts/Particle/Particle City.js
+locked [Bool]:0
+...
+rotorder [Int]:6
+name [String]:Procedural City
+order [Int]:1
+seed [Int]:12345
+displayType [Int]:3
+...
+editorActive [Bool]:1
+renderActive [Bool]:1
+editorShading [Int]:0
+</code></pre>
+<h3 id="some-useful-techniques">Some Useful Techniques</h3>
+<p>Well, you’re pretty much on your own now. The best way to create new scripts is to look at the example scripts provided with Cheetah 3D, as well as those on the forums, and use them as a starting point. Before I send you off to swim with the sharks, here are a few useful techniques I’ve picked up.</p>
+<h4 id="iterating-across-the-scene-graph">Iterating Across the Scene Graph</h4>
+<p>This simple tool illustrates probably the single most useful pattern for writing macros and tool scripts.</p>
+<p>First of all, it shows how to build a tool user interface.</p>
+<p>The set_smooth function is called by the user interface button (the name of the function the button will call is passed as a parameter when creating the button).</p>
+<p>The set_smooth function uses the target utility function to figure out if it’s going to act on the scene root or the selection (based on UI settings).</p>
+<p>It then defines a simple function fn that does what it wants to do for a given object and calls the iterate_on_objects utility function to apply this simple function to the object returned by the target function and — if the user has opted for recursing children — everything below it in the scene graph (i.e. the Object Browser).</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: <code>doc.selectedObject()</code> returns the hidden scene root (not null) when nothing is selected, so “Selection Only” then acts on the whole scene; 8.1.1 also has <code>doc.selectedObjects()</code> for multiple selections (KB skill/SKILL.md rule 5; API: Document). Tool scripts should also call <code>recordParametersForUndo()</code> before changing objects, or the changes bypass Undo (KB knowledge/gotchas.md). <!-- TODO update --></p>
+</blockquote>
+<pre><code class="language-js" data-highlighted><span class="token comment">// build the tool UI</span>
+<span class="token keyword">function</span> <span class="token function">buildUI</span><span class="token punctuation">(</span><span class="token parameter">tool</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterBool</span><span class="token punctuation">(</span><span class="token string">"Selection Only"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterBool</span><span class="token punctuation">(</span><span class="token string">"Recurse Children"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterSeparator</span><span class="token punctuation">(</span><span class="token string">"Smoothing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterFloat</span><span class="token punctuation">(</span><span class="token string">"Angle"</span><span class="token punctuation">,</span><span class="token number">15.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">90.0</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterButton</span><span class="token punctuation">(</span><span class="token string">"Set Smooth Angle"</span><span class="token punctuation">,</span><span class="token string">"OK"</span><span class="token punctuation">,</span><span class="token string">"set_smooth"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">set_smooth</span><span class="token punctuation">(</span><span class="token parameter">tool</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> angle <span class="token operator">=</span> tool<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Angle"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">obj</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> obj<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">POLYGONOBJ</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+obj<span class="token punctuation">.</span><span class="token function">setParameter</span><span class="token punctuation">(</span><span class="token string">"normalAngle"</span><span class="token punctuation">,</span> angle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">iterate_on_objects</span><span class="token punctuation">(</span> tool<span class="token punctuation">,</span> <span class="token function">target</span><span class="token punctuation">(</span>tool<span class="token punctuation">)</span><span class="token punctuation">,</span> fn <span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">document</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">redrawAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">target</span><span class="token punctuation">(</span><span class="token parameter">tool</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> doc <span class="token operator">=</span> tool<span class="token punctuation">.</span><span class="token function">document</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> tool<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Selection Only"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">return</span> doc<span class="token punctuation">.</span><span class="token function">selectedObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> doc<span class="token punctuation">.</span><span class="token function">root</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// applies a function to an object and then, if user has selected recurse,</span>
+<span class="token comment">// recursively iterates across that object's children</span>
+<span class="token keyword">function</span> <span class="token function">iterate_on_objects</span><span class="token punctuation">(</span> <span class="token parameter">tool<span class="token punctuation">,</span> obj<span class="token punctuation">,</span> fn</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">fn</span><span class="token punctuation">(</span> obj <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> tool<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Recurse Children"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>obj<span class="token punctuation">.</span><span class="token function">childCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">iterate_on_objects</span><span class="token punctuation">(</span> tool<span class="token punctuation">,</span> obj<span class="token punctuation">.</span><span class="token function">childAtIndex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> fn <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="iterating-across-the-parts-of-an-editable-mesh">Iterating across the parts of an editable mesh</h4>
+<p>Using the same framework from the previous example, here’s a tool for flipping normals. You can flip every normal in your entire scene with a single button press using this handy script!</p>
+<p>But the flip_normals function shows how to iterate across components of an editable mesh (a.k.a. POLYGONOBJ). Also note how it uses some tricks to force Cheetah 3D to recalculate normals and then forces the scene to be redrawn when it’s done.</p>
+<pre><code class="language-js" data-highlighted><span class="token comment">// build the tool UI</span>
+<span class="token keyword">function</span> <span class="token function">buildUI</span><span class="token punctuation">(</span><span class="token parameter">tool</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterBool</span><span class="token punctuation">(</span><span class="token string">"Selection Only"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterBool</span><span class="token punctuation">(</span><span class="token string">"Recurse Children"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterSeparator</span><span class="token punctuation">(</span><span class="token string">"Normals"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">addParameterButton</span><span class="token punctuation">(</span><span class="token string">"Flip Normals"</span><span class="token punctuation">,</span><span class="token string">"OK"</span><span class="token punctuation">,</span><span class="token string">"flip_normals"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">function</span> <span class="token function">flip_normals</span><span class="token punctuation">(</span><span class="token parameter">tool</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">obj</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> obj<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">POLYGONOBJ</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">core</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>c<span class="token punctuation">.</span><span class="token function">polygonCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+c<span class="token punctuation">.</span><span class="token function">flipWinding</span><span class="token punctuation">(</span> i <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Force recalculation of normals</span>
+obj<span class="token punctuation">.</span><span class="token function">setParameter</span><span class="token punctuation">(</span><span class="token string">"normalAngle"</span><span class="token punctuation">,</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"normalAngle"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">iterate_on_objects</span><span class="token punctuation">(</span> tool<span class="token punctuation">,</span> <span class="token function">target</span><span class="token punctuation">(</span>tool<span class="token punctuation">)</span><span class="token punctuation">,</span> fn <span class="token punctuation">)</span><span class="token punctuation">;</span>
+tool<span class="token punctuation">.</span><span class="token function">document</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">redrawAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">target</span><span class="token punctuation">(</span><span class="token parameter">tool</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> doc <span class="token operator">=</span> tool<span class="token punctuation">.</span><span class="token function">document</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> tool<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Selection Only"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">return</span> doc<span class="token punctuation">.</span><span class="token function">selectedObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> doc<span class="token punctuation">.</span><span class="token function">root</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// applies a function to an object and then, if user has selected recurse,</span>
+<span class="token comment">// recursively iterates across that object's children</span>
+<span class="token keyword">function</span> <span class="token function">iterate_on_objects</span><span class="token punctuation">(</span> <span class="token parameter">tool<span class="token punctuation">,</span> obj<span class="token punctuation">,</span> fn</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">fn</span><span class="token punctuation">(</span> obj <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> tool<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Recurse Children"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>obj<span class="token punctuation">.</span><span class="token function">childCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">iterate_on_objects</span><span class="token punctuation">(</span> tool<span class="token punctuation">,</span> obj<span class="token punctuation">.</span><span class="token function">childAtIndex</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> fn <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="pseudo-random-numbers">Pseudo-Random Numbers</h4>
+<p>One of the useful features of Cheetah 3D’s Particle System objects is that they are driven by a pseudo-random number generator for which you <em>explicitly</em> provide a seed value (which defaults to 12345). This means that a particle system will <em>deterministically</em> produce results based on that seed value. The effects <em>seem</em> random, but they’re completely predictable and reproducible. This means that if you’ve tweaked your particle settings to produce a pleasing result it won’t suddenly do something different when you render it (or the next time you load the file).</p>
+<p>But what if you’re writing your own Particle System? Cheetah 3D doesn’t provide access to the pseudo-random number generator it uses internally. Here’s the current version of my Particle City script, a Particle System specifically designed to lay out buildings on a street grid. Note the Pseudo-random number generator! Also note how I obtain the seed value that Cheetah 3D automatically provides as part of any Particle System interface (so I don’t even need to create my own).</p>
+<p>If you want to create procedural meshes (e.g. like the Relief object) you can make sure they will produce deterministic results based on a seed value using this pseudo-random number generator, or another like it.</p>
+<pre><code class="language-js" data-highlighted><span class="token comment">//</span>
+<span class="token comment">// Particle City</span>
+<span class="token comment">// ©2010-12 Tonio Loewald</span>
+<span class="token comment">//</span>
+<span class="token keyword">function</span> <span class="token function">buildUI</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+obj<span class="token punctuation">.</span><span class="token function">setParameter</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"Procedural City"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterFloat</span><span class="token punctuation">(</span> <span class="token string">"Grid Spacing"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0.001</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterInt</span><span class="token punctuation">(</span><span class="token string">"Width"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterInt</span><span class="token punctuation">(</span><span class="token string">"Depth"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterInt</span><span class="token punctuation">(</span><span class="token string">"Block Size"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterFloat</span><span class="token punctuation">(</span><span class="token string">"Street Width"</span><span class="token punctuation">,</span><span class="token number">0.3</span><span class="token punctuation">,</span><span class="token number">0.01</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterFloat</span><span class="token punctuation">(</span><span class="token string">"Floor Height"</span><span class="token punctuation">,</span><span class="token number">0.05</span><span class="token punctuation">,</span><span class="token number">0.001</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterInt</span><span class="token punctuation">(</span><span class="token string">"Max Floor Reduction"</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">addParameterFloat</span><span class="token punctuation">(</span><span class="token string">"Density"</span><span class="token punctuation">,</span><span class="token number">0.7</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">buildObject</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> core <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">core</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> gridSpacing <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Grid Spacing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> width <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Width"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> depth <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Depth"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> blockSize <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Block Size"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> streetWidth <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Street Width"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> maxFloors <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Max Floor Reduction"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> floorHeight <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Floor Height"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> density <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"Density"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Pseudo-random number generator</span>
+<span class="token keyword">var</span> pseudoRandom <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token literal-property property">seed</span> <span class="token operator">:</span> obj<span class="token punctuation">.</span><span class="token function">getParameter</span><span class="token punctuation">(</span><span class="token string">"seed"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token function-variable function">value</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>seed <span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>seed <span class="token operator">*</span> <span class="token number">9301</span> <span class="token operator">+</span> <span class="token number">49297</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">233280</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>seed <span class="token operator">/</span> <span class="token number">233280</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function-variable function">range</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">min<span class="token punctuation">,</span> max</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> min <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> w <span class="token operator">=</span> <span class="token punctuation">(</span>width <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> gridSpacing <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> width <span class="token operator">/</span> blockSize <span class="token punctuation">)</span> <span class="token operator">*</span> streetWidth<span class="token punctuation">;</span>
+<span class="token keyword">var</span> d <span class="token operator">=</span> <span class="token punctuation">(</span>depth <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> gridSpacing <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> depth <span class="token operator">/</span> blockSize <span class="token punctuation">)</span> <span class="token operator">*</span> streetWidth<span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> width<span class="token punctuation">;</span> x<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> z <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> z <span class="token operator">&lt;</span> depth<span class="token punctuation">;</span> z<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span> pseudoRandom<span class="token punctuation">.</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> density <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">var</span> bx <span class="token operator">=</span> x <span class="token operator">*</span> gridSpacing <span class="token operator">-</span> w <span class="token operator">*</span> <span class="token number">0.5</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> x <span class="token operator">/</span> blockSize <span class="token punctuation">)</span> <span class="token operator">*</span> streetWidth<span class="token punctuation">;</span>
+<span class="token keyword">var</span> bz <span class="token operator">=</span> z <span class="token operator">*</span> gridSpacing <span class="token operator">-</span> d <span class="token operator">*</span> <span class="token number">0.5</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span> z <span class="token operator">/</span> blockSize <span class="token punctuation">)</span> <span class="token operator">*</span> streetWidth<span class="token punctuation">;</span>
+<span class="token keyword">var</span>  p <span class="token operator">=</span> core<span class="token punctuation">.</span><span class="token function">addParticle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// drop each building by a number of floors</span>
+<span class="token keyword">var</span> h <span class="token operator">=</span> pseudoRandom<span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> maxFloors <span class="token punctuation">)</span> <span class="token operator">*</span> floorHeight<span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">setPosition</span><span class="token punctuation">(</span> <span class="token keyword">new</span> <span class="token class-name">Vec3D</span><span class="token punctuation">(</span>bx<span class="token punctuation">,</span> <span class="token operator">-</span>h<span class="token punctuation">,</span> bz<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// rotate each building by a multiple of 90°</span>
+<span class="token keyword">var</span> r <span class="token operator">=</span> pseudoRandom<span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">90</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">setRotation</span><span class="token punctuation">(</span> <span class="token keyword">new</span> <span class="token class-name">Vec3D</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+      <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
+      <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.4_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.5_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.6_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.7_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.8_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.10_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.11_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.12_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.13_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../7.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../7.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../7.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../7.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../7.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../9.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../9.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../9.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../9.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../9.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.4_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../11.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../11.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../11.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../11.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../11.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../11.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../11.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../11.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../11.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
+      <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../16.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../16.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link current" href="../16.8_Scripts/" aria-current="page">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../17.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../17.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=0a27943cf23b"></script>
+</body>
+</html>

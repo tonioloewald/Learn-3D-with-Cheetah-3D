@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <title>How Materials Work — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the material system actually works." />
+  <link rel="canonical" href="https://learn3d.loewald.com/9.8_How_Materials_Work/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="How Materials Work — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="How Materials Work — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the material system actually works." />
+  <meta property="og:url" content="https://learn3d.loewald.com/9.8_How_Materials_Work/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"How Materials Work","description":"Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the material system actually works.","url":"https://learn3d.loewald.com/9.8_How_Materials_Work/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="9.8_How_Materials_Work.md">
+<!--{"parent": "9_Materials.md", "order": 8}--><h2 id="how-materials-work">How Materials Work</h2>
+<p>Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the material system actually works.</p>
+<p><strong>A material is a system for deciding what color a given point on a given object is.</strong></p>
+<p>Materials do this by taking information about a ray that has been projected onto a surface, along with information about the scene (mostly lighting information), and feeding it into a shader. It may also recursively generate new rays which need to be resolved the same way (and on and on, subject to the limits you set in the Renderer Settings).</p>
+<p>Cheetah 3D’s renderer renders images by sending virtual rays from a view point, through a view port (i.e. the pixel or subpixel being rendered), and into a scene until it hits something (in fact, a triangle). That triangle has a material, and the material has to tell the renderer what color the exact point on the triangle that the ray struck is.</p>
+<p>The simplest material in Cheetah 3D simply consists of a single node — a Solid shader node. When the renderer asks what color something which has this material is, its answer is always the same.</p>
+<p>The default material (the material things that haven’t been given a material have) is a bit more complex. Unless you’ve changed Cheetah 3D’s preferences it will be light grey, and have specular highlights. This means that to answer the “what color is this point” question it needs to know how much light, in total, is falling on it, and then multiply that by its light grey color, but the default material must also figure out how much light is being reflected from each light in the scene right at the viewpoint, multiply this by its specular color (which is white by default) and add this to the previous result. That’s its answer to “what color is this point”.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the bundled default Material (Materials/Default/Material.c3dmat) has its specular color set to black, not white. <!-- TODO verify --></p>
+</blockquote>
+<p><strong>Note</strong>: in the previous paragraph, “right at” depends on the “hardness” of the material. Cheetah 3D calls this “specular size” which — confusingly — creates <em>smaller</em> highlights the <em>larger</em> its value. Hardness (or better yet smoothness or shininess) would make more sense. <em>Harder</em> surfaces produce <em>sharper</em> reflections. Specular highlights are essentially faux reflections of lights. In the real world, specular highlights do not exist!</p>
+<h3 id="complex-materials">Complex Materials</h3>
+<p>The most complex materials in Cheetah 3D are built around the <strong>Material</strong> shader node. In order to answer the same question the material shader needs to know all kinds of things — how much light is shining on that point, and from what direction, and it may need to fire off one or more new rays (recursively) and get more answers from other materials before it can answer.</p>
+<p>If you’re interested in this topic, you may find the section on <a href="/11.8_How_Raytracing_Works/">How Raytracing Works</a> interesting.</p>
+<h4 id="aside-color-arithmetic">Aside: Color Arithmetic</h4>
+<p><strong>Multiplication</strong> — Cheetah 3D treats colors as RGB vectors. If a light of color A bounces off a surface of color B then the resulting color will be the product of those two colors (in some sense). In this case the product is produced by multiplying the components separately, so a red light bouncing off a blue surface will produce black.</p>
+<p><strong>Aside</strong>: to be more precise, Cheetah 3D treats colors as RGB vectors with an additional A (alpha, or transparency) component. The RGB components can go above 1 (brighter than white), but the A value can’t, so these aren’t quite ordinary RGBA colors. Also note that alpha can be read two ways: as transparency (1.0 means completely transparent) or as opacity (1.0 means completely opaque). Consistent with macOS, Cheetah 3D treats 1.0 as totally opaque. <!-- TODO review --></p>
+<p>It’s worth knowing that this is a crude approximation of nature which, nonetheless, works quite well. In fact the behavior of light is much more complicated. E.g. you can mix red, green, and blue light to produce something we perceive as “white” light, but it’s very different from actual sun light which is a mess of different wavelengths of light (all the colors of a rainbow, in fact) and the way light is reflected from surfaces is highly variable. E.g. a “pure red” light bouncing off an “orange” object in a 3D program will produce red, but in nature it might produce black or brown, depending on how the object actually reflects light.</p>
+<p><strong>Addition and Subtraction</strong> — In case you’re wondering, it also makes sense to add colors (indeed, the color of a point on a triangle is created by <em>adding</em> the diffuse, transparent, reflective, and specular components) and calculate weighted averages (blending). Alpha compositing is performed by adding the alpha value multiplied by one color and (1 – the alpha value) multiplied by a second — if you consider “1” to be white, and the alpha value to be a shade of gray, this is all color arithmetic.</p>
+<p>Indeed, all the kinds of things Photoshop does to images are, at their heart, essentially color arithmetic along these lines.</p>
+<h3 id="specular-vs-reflected-highlights">Specular vs. Reflected Highlights</h3>
+<p>You’ve probably seen ray-traced images with mirrored balls all over the place (at least if you’re old enough to have seen stuff rendered in the late 80s) but reflection is more than just a cheesy rendering gimmick. It turns out that the light that reaches your eye from a scene can be thought of as either being “emitted”, “diffuse” or “reflected” (where “diffuse” essentially means “randomly reflected”).</p>
+<p>Early 3D rendering algorithms handle diffuse light using Lambert’s cosine law and add reflected light sources using the specular term of Bui Tuong <strong>Phong</strong>’s reflection model. (Henri <strong>Gouraud</strong> and Phong also gave their names to two ways of smoothing lighting across polygons.) Cheetah 3D refers to Phong’s highlight as “Specular”, but it’s the same thing.</p>
+<p>When ray-tracing came to the fore, it was seen as too expensive (in terms of computational requirements) to use for trivial stuff like reflecting light sources, and “building out” light sources suitable for reflection was another issue, so the raytracing algorithm and specular highlighting continued to be used side-by-side, but it’s important to understand that specular highlighting is simply a cheat for producing fake reflections of light sources.</p>
+<p>In general, the best way to produce nice looking “shiny stuff” is to make the shiny stuff reflective, and make the reflections blurry for stuff like hard rubber and plastic, but it involves taking more care to set up your scene. Specular highlights are “cheap” both in terms of rendering time and effort.</p>
+<p><img src="/images/pastedGraphic-305.jpg" alt=""></p>
+<p><em>Here’s a brushed metal ball illuminated by a point light source with geometry toggled off (the default setting). We can see the ball is being lit, but we can’t see the light.</em></p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the light “Geometry” option is now <strong>Visible in camera</strong>, and only area lights have it (Objects/SceneObjects/Light); these two captions describe a point light. <!-- TODO update --></p>
+</blockquote>
+<p><img src="/images/pastedGraphic-306.jpg" alt=""></p>
+<p><em>The same metal ball illuminated by a point light with geometry toggled on. Now you can see the light source reflected on the ball.</em></p>
+<p>So, if you want to produce very realistic looking renders you should set the specular color of your materials to black (in essence, turn off specular highlights), and “build out” light sources. &gt; <strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+<p>Or you can simply turn on <strong>Visible in camera</strong> for area lights in Cheetah 3D to have them appear in reflections, but this is often not satisfactory (most light sources don’t look like white disks or rectangles).</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p>On the other hand you can simply use specular settings to produce reasonably decent looking “reflected lights” on objects, and not worry about it too much. But there’s a problem here — some shaders don’t support specular! In this particular example we’ve been using the Metal shader which supports anisotropic blurred reflections (in other words “reflections blurred more in one direction than another” which is what brushed metal looks like) and the Metal shader doesn’t support specular. So if you want nice looking brushed metal, you need to build out light sources or use image-based (HDRI) lighting.</p>
+<h4 id="planet-shaders">Planet Shaders</h4>
+<p>If you’re trying to render nice planets as seen from space (e.g. for a science fiction space scene) then it’s exactly like creating a terrain shader that’s driven by a texture instead of the y component of position (in essence the texture represents altitude).</p>
+<p><img src="/images/pastedGraphic-352.jpg" alt=""></p>
+<p><em>Here I replace the state node’s y position with a filtered fractal. The gradient lets me pick the way the texture gets interpreted as altitude while the scale settings of the Fractal node let me determine the detail level of the planet (I set the UVW scales to 3.0).</em></p>
+<p><img src="/images/pastedGraphic-353.jpg" alt=""></p>
+<p><em>Here’s the resulting planet. For extra points I’ll feed the same filtered “altitude” as a bump map.</em></p>
+<p><img src="/images/pastedGraphic-354.jpg" alt=""></p>
+<p>One of the problems with the gradient filter is that it’s a pain to edit it precisely. So here’s a trick for replacing the gradient filter with an arbitrarily large image node which you can edit in a dedicated image editor (such as Photoshop).</p>
+<p><img src="/images/pastedGraphic-355.jpg" alt=""></p>
+<p>I take a screen grab of my gradient node’s settings and open it in a good image editor (in this case Acorn).</p>
+<p><img src="/images/pastedGraphic-356.jpg" alt=""></p>
+<p><em>Then I crop to just the gradient part of the image. Now I can create a similar gradient at arbitrary precision using my image editor of choice.</em></p>
+<p><img src="/images/pastedGraphic-357.jpg" alt=""></p>
+<p><em>Rather than try to create a gradient, I directly modify the gradient using blurs and scales to tweak it.</em></p>
+<p><img src="/images/pastedGraphic-358.jpg" alt=""></p>
+<p><em>Now I’ve loaded the gradient image into an image node, and I’m creating a UV coordinate by taking the “altitude” value and converting it into a vector (so that altitude becomes X (which is to say U) and picks a color from left-to-right from my image).</em></p>
+<p><em>Note that there’s a slight caveat to this trick. The position input isn’t used as the UV coordinate, but as a UV offset (I don’t know why), so I rescale the UVs to 0.001 so that they have virtually no effect (I actually type in 0, but C3D changes it to 0.001). In essence, I’m telling Cheetah 3D to take the UV coordinate, multiply it by 1/1000 (effectively zero it out) and then offset it by my fake UV coordinate.</em></p>
+<p><img src="/images/pastedGraphic-359.jpg" alt=""></p>
+<p><em>Here’s the new shader using an image as a gradient instead of an actual gradient. The image is 1000px wide so it can be very easily fine-tuned.</em></p>
+<p><img src="/images/pastedGraphic-360.jpg" alt=""></p>
+<p><em>The fact that the gradient image has finite resolution doesn’t hurt it, because interpolation smooths out any transitions between pixels, and everything else is procedural so the material holds up even under huge magnifications.</em></p>
+<p><img src="/images/pastedGraphic-361.jpg" alt=""></p>
+<p><em>Finally for extra realism I’ve added a slightly larger sphere with procedural clouds. Here I’ve multiplied two differently scaled procedural textures to create patches of cloud.</em></p>
+<p><img src="/images/pastedGraphic-362.jpg" alt=""></p>
+<p><em>The lower Fractal node (with low scale values) drives overall cloudiness and is multiplied by the upper Turbulence node (with high scale values) which produces the individual clouds. I then pass the result through two different gradients (actually the same gradient with black and white swapped) to drive transparency and bump.</em></p>
+<h3 id="material-assignment-tags">Material Assignment Tags</h3>
+<p><img src="/images/pastedGraphic-388.jpg" alt=""></p>
+<p><em>When you assign a material to an object, Cheetah 3D represents this by adding a tag to the object.</em></p>
+<p>Material assignment tags control how a material is applied to an object. The tag has two sets of properties: the properties listed under Shading Space affect 3D spatially mapped textures while those under UV coords affect UV-mapped textures.</p>
+<p><img src="/images/pastedGraphic-389.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-390.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-391.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-392.jpg" alt=""></p>
+<p><em>Procedural, 3D spatially-mapped checkerboard. <strong>Top</strong>: default material tag settings. <strong>Upper-middle</strong>: offset by 0.1,0.1,0.1. <strong>Lower-middle</strong>: rotation by 45°,0,0. <strong>Bottom</strong>: scale by 0.25,0.25,0.25.</em></p>
+<p><img src="/images/pastedGraphic-393.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-394.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-395.jpg" alt=""></p>
+<p><em><strong>Top</strong>: UV scale set to 2,2,2; <strong>Middle</strong>: UV offset set to 0.25,0.25; <strong>Bottom</strong>: UV rotation set to 45°</em></p>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has Material tag properties <strong>Shading selection</strong> (up to 16 materials per mesh, each limited to a polygon selection) and <strong>Tangent space</strong> (Tags/MaterialTag), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+      <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
+      <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.4_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.5_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.6_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.7_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.8_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.10_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.11_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.12_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.13_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../7.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../7.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../7.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../7.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../7.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../9.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../9.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../9.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../9.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link current" href="../9.8_How_Materials_Work/" aria-current="page">How Materials Work</a></li>
+      <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.4_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../11.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../11.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../11.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../11.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../11.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../11.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../11.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../11.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../11.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
+      <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../16.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../16.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../17.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../17.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=0a27943cf23b"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <title>Tags — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Tags don’t do anything by themselves, instead they _attach extra information to an object_ that can be used by Cheetah 3D’s internal functions (or scripts)." />
+  <link rel="canonical" href="https://learn3d.loewald.com/8.3_Tags/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="Tags — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="Tags — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Tags don’t do anything by themselves, instead they _attach extra information to an object_ that can be used by Cheetah 3D’s internal functions (or scripts)." />
+  <meta property="og:url" content="https://learn3d.loewald.com/8.3_Tags/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Tags","description":"Tags don’t do anything by themselves, instead they _attach extra information to an object_ that can be used by Cheetah 3D’s internal functions (or scripts).","url":"https://learn3d.loewald.com/8.3_Tags/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="8.3_Tags.md">
+<!--{"parent": "8_Creators_Modifiers_Tags.md", "order": 3}--><h2 id="tags">Tags</h2>
+<p>Tags don’t do anything by themselves, instead they <em>attach extra information to an object</em> that can be used by Cheetah 3D’s internal functions (or scripts). Most tags are only meaningful in specific contexts and can only be attached to certain objects.</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the tag categories and lists below are stale. The manual&#39;s Tags section lists Anchor, Bake Texture, IK Constraints, IK Handle, Material, Metaball, Mode, Morph, Orient Constraint, Parent Constraint, Particle, Point Constraint, Pose, Render, Rigid Body, Rope, Skeleton, Soft Body, Spline IK, Spline Tracking, Target, and Vertex Color, and no camera render tags. <!-- TODO update --></p>
+</blockquote>
+<p>Cheetah 3D groups tags into five categories (six if you include scripted tags). These categories can be thought of as:</p>
+<ul>
+<li><p>Rendering</p>
+</li>
+<li><p>Inverse Kinematics</p>
+</li>
+<li><p>Animation</p>
+</li>
+<li><p>System Properties (i.e. extra information for particle and metaball systems)</p>
+</li>
+<li><p>Dynamics</p>
+</li>
+</ul>
+<h3 id="rendering-tags">Rendering Tags</h3>
+<p><img src="/images/pastedGraphic-233.jpg" alt=""></p>
+<blockquote>
+<p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
+</blockquote>
+<p>Most of these tags are further discussed in more detail elsewhere.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>In Cheetah 3D 8.1.1 only two rendering tags are left, <strong>Bake Texture</strong> and <strong>Render</strong>, and both go on polygon objects. The effects that used to be camera tags have moved:</p>
+<ul>
+<li><strong>Caustics</strong>, <strong>Radiosity</strong>, and <strong>Depth of field</strong> are sections of the Cheetah renderer&#39;s settings (<strong>Render &gt; Renderer</strong>, or the render settings icon in the toolbar).</li>
+<li>The depth of field parameters themselves (aperture, focal distance) are now properties of the <strong>Camera</strong>.</li>
+<li><strong>HDRI</strong> and <strong>Fog</strong> are now scene objects: the <strong>HDRI Light</strong> and the <strong>Fog</strong> object (<strong>Objects &gt; Scene</strong>).</li>
+</ul>
+<p>I&#39;ve kept them all here because this is where you&#39;d look for them.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<h4 id="bake-texture">Bake Texture</h4>
+<p>You assign this tag to a mesh you’re planning to bake, and it controls and facilitates the baking process. (Oddly enough, the Bake toolbar button has two different effects. If your current selection is a mesh and has a Bake Texture tag assigned to it, it bakes the mesh. If your current selection is a mesh without a Bake Texture tag, it adds a Bake Texture tag to it.)</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does the bake toolbar button still add a Bake Texture tag when the selected mesh has none? The manual only says it &quot;starts a baking rendering job&quot; (also <strong>Render &gt; Bake Texture</strong>). <!-- TODO verify --></p>
+</blockquote>
+<h4 id="caustics">Caustics</h4>
+<p><img src="/images/DraggedImage-86.jpg" alt=""></p>
+<p><em>A glass cube with a spotlight (set to ray-traced shadows).</em></p>
+<p><img src="/images/DraggedImage-87.jpg" alt=""></p>
+<p><em>Ray-tracing with transparency creates very implausible results.</em></p>
+<p><img src="/images/DraggedImage-88.jpg" alt=""></p>
+<p><em>Adding caustics results in more realistic scattered light appearing in shadows, although tweaking the settings to get good results requires both judgment and effort. (1,000,000 photons, 0.1 strength, 1000 samples.)</em></p>
+<p>Caustics are visual effects caused by light being refracted or reflected, especially into the shadows of objects (where they are most noticeable). Objects tend to cast shadows, but if they&#39;re transparent the light <em>goes</em> somewhere, and that&#39;s what caustics simulate.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>In Cheetah 3D 8.1.1 caustics are a section of the Cheetah renderer&#39;s settings (<strong>Render &gt; Renderer</strong>) rather than a tag. They work together with each light&#39;s <strong>Caustic photons</strong> property: the light shoots that many photons into the scene, they&#39;re stored where they hit (the &quot;photon map&quot;), and the renderer then gathers nearby photons to work out how bright each caustic is. The renderer&#39;s <strong>Strength</strong> sets the intensity of the caustics, <strong>Samples</strong> sets how many photons are used for each estimate (too few gives blotchy caustics), and <strong>Blur</strong> sets the radius they&#39;re gathered from (higher is smoother).</p>
+<p>Caustics are implemented using a good deal of fakery behind the scenes, and in particular spotlights are the best source of caustic &quot;photons&quot; because you can concentrate them on the specific part of the scene you want the caustic to show up in (a point light sprays its photons in every direction). A light&#39;s <strong>Pure photon light</strong> option turns it into a fake light that only shoots photons and doesn&#39;t light the scene directly. If you just want caustics to appear correctly and organically everywhere (e.g. in giant architecture renderings) you should probably use an unbiased (or physically-based) renderer.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: what caustics can Falcon (Cheetah 3D&#39;s unbiased renderer) render now? The book said it couldn&#39;t; the app&#39;s Falcon settings include a &quot;Disable caustics&quot; option, but the manual&#39;s Falcon page doesn&#39;t mention caustics. <!-- TODO verify --></p>
+</blockquote>
+<h4 id="depth-of-field">Depth of Field</h4>
+<p><img src="/images/DraggedImage-89.jpg" alt=""></p>
+<p>No depth of field.</p>
+<p><img src="/images/DraggedImage-90.jpg" alt=""></p>
+<p>Depth of field (the point of the central cone is in near-perfect focus).</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Depth of field will cause Cheetah 3D&#39;s usual &quot;perfect&quot; camera to suffer from depth of field effects somewhat like a real camera. In Cheetah 3D 8.1.1 it&#39;s set up on the <strong>Camera</strong> rather than with a tag:</p>
+<ul>
+<li><strong>Aperture size</strong>: the bigger the aperture, the stronger the effect.</li>
+<li><strong>Focal distance</strong>: objects near this distance stay sharp. Alternatively, pick a <strong>Focus object</strong> and the camera will keep that object in focus automatically, which is especially handy in animations.</li>
+<li><strong>Aperture blades</strong> and <strong>Aperture rotation</strong>: these shape the bokeh (0 blades gives a circular aperture).</li>
+</ul>
+<p>With the Cheetah renderer you also need to turn on <strong>Depth of field</strong> in the renderer settings. Its <strong>Camera samples</strong> property sets the quality: more samples, less noise.</p>
+<p><img src="/images/Screenshot%202014-02-13%2009.41.56.jpg" alt=""></p>
+<blockquote>
+<p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
+</blockquote>
+<p>Turn on the camera&#39;s <strong>Display DOF-Grid</strong> to see the plane of focus in the viewport (an awesome feature).</p>
+<p><strong>Hint</strong>: you can use the DOF grid to judge the distance from the camera to objects in the scene, for setting similar properties such as the Fog object&#39;s <strong>Start</strong> distance.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does Falcon render depth of field from the camera settings alone, or does it also need a checkbox? The manual documents the Depth of field checkbox only for the Cheetah renderer. <!-- TODO verify --></p>
+</blockquote>
+<p>A real camera will only be perfectly focused on a plane (or sometimes a curved surface) in space. Everything that is closer to, or further from the camera than that surface will be out of focus to some extent. The distance away from the surface within which a subject remains acceptably sharp is referred to as the <strong>depth of field</strong>. The &quot;longer&quot; the camera&#39;s lens (i.e. the narrower its angle of view) and the &quot;wider&quot; its aperture (i.e. the larger the hole light passes through) the smaller the depth of field will be, and the blurrier objects outside the depth of field will become.</p>
+<p>The depth of field effect is achieved <em>stochastically</em> (i.e. by randomly sampling multiple rays) so it&#39;s computationally expensive and will tend to increase render times by a factor proportional to the number of samples.</p>
+<h4 id="fog">Fog</h4>
+<p><img src="/images/DraggedImage-91.jpg" alt=""></p>
+<p><em>Cones in the fog</em></p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Fog is now a <strong>Fog object</strong> (<strong>Objects &gt; Scene &gt; Fog</strong>) rather than a camera tag, and it works only with the Cheetah renderer. Adding fog to a scene will cause the scene to &quot;disappear into fog&quot; of a chosen <strong>Color</strong>. <strong>Type</strong> (Linear, Exp, or Exp^2) sets how quickly the fog thickens, <strong>Density</strong> sets how foggy it gets, and <strong>Start</strong> sets the distance from the camera where the fog begins. It&#39;s a very simple effect. In particular, fog doesn&#39;t cause any blurring, so it may be helpful to use a subtle depth of field in concert with fog if you want mist effects. Black fog is handy for darkening the back of a night scene, and blue fog for underwater scenes.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p><em>One important side-effect of fog is that it effectively becomes the background color, including in reflections</em>. This makes subtle use of fog very helpful for quickly putting together simple, good-looking renders (such as product shots). It also prevents you from using fog if you want a transparent background.</p>
+<h4 id="hdri">HDRI</h4>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>HDRI is now a scene object, the <strong>HDRI Light</strong> (<strong>Objects &gt; Scene &gt; HDRI Light</strong>), rather than a camera tag. It assigns an HDR image (.hdr or .exr) to the whole scene, and that image is then used for image-based lighting, reflections, and (if <strong>Background</strong> is on) the background. <strong>Type</strong> sets the image&#39;s mapping (Probe, Cross, or Panorama), <strong>Intensity</strong> scales its brightness, and <strong>Clamp</strong> tames very bright pixels (like the sun) that would otherwise cause noise in radiosity or ambient occlusion renders. With the Cheetah renderer you should also turn on <strong>Radiosity</strong> in the renderer settings if you want image-based lighting. You can have several HDRI and Sky Lights in a scene, but only the first one is used for rendering.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<h4 id="radiosity">Radiosity</h4>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Turning on <strong>Radiosity</strong> in the Cheetah renderer&#39;s settings (<strong>Render &gt; Renderer</strong>) means that it will render using either the ambient occlusion or radiosity algorithms rather than simple ray-tracing.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<p>Both ambient occlusion and radiosity are techniques designed to account for the shortcomings of simple rendering models which don&#39;t account for <em>scattered light</em>.</p>
+<p><strong>Ambient occlusion</strong> applies a simple heuristic to scenes where surfaces receive more light if they are far from a sharp corner and receive less light if they are close to a sharp corner.</p>
+<p>In practice, ambient occlusion produces very bright renders, but darkens nooks and crannies.</p>
+<p><strong>Radiosity</strong> applies a more computationally expensive approach and assumes surfaces will be lit (in part) by light scattered from other surfaces. (If you&#39;re into theory — it&#39;s the ray-tracing approach to the problem that unbiased rendering solves in a more realistic way.) </p>
+<p>In practice, radiosity adds a good deal of realism to renders. It causes bright surfaces to diffusely illuminate nearby surfaces, and — similarly — colored surfaces to bleed into nearby objects.</p>
+<blockquote>
+<p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
+</blockquote>
+<p>Radiosity also treats an image-based lighting source (the HDRI Light) as input data for its algorithm.</p>
+<p><strong>Important Note</strong>: radiosity is off until you tick the <strong>Radiosity</strong> checkbox, and its <strong>Type</strong> can be either <strong>Ambient occlusion</strong> or <strong>Radiosity</strong>. In most cases you probably want to choose <strong>Radiosity</strong> and turn on <strong>Detail detection</strong>. Falcon, Cheetah 3D&#39;s unbiased path tracer, doesn&#39;t use these settings.</p>
+<blockquote>
+<p><em>End of AI draft.</em> <!-- /AI draft --></p>
+</blockquote>
+<h4 id="render">Render</h4>
+<p>The Render tag is assigned to mesh objects and controls how they are rendered. E.g. if a particular object is creating a problematic shadow, you can make its shadow disappear.</p>
+<h3 id="inverse-kinematics-tags">Inverse Kinematics Tags</h3>
+<p><img src="/images/pastedGraphic-234.jpg" alt=""></p>
+<p>The Inverse Kinematics tags control the behavior of objects in the IK system.</p>
+<h3 id="animation-tags">Animation Tags</h3>
+<p><img src="/images/pastedGraphic-235.jpg" alt=""></p>
+<h4 id="morph">Morph</h4>
+<p>The Morph tag allows you to store and interpolate between morph states of a mesh. The usual application for this is animating facial expressions and mouth shapes for a character.</p>
+<h4 id="skeleton">Skeleton</h4>
+<p>The Skeleton tag allows you to store and edit an animation “rig”. In terms of other 3D packages, it is used to “skin” meshes.</p>
+<h4 id="pose">Pose</h4>
+<p>The Pose tag allows you to store and re-apply the keyed settings of the object to which it is attached and that object’s descendants.</p>
+<h3 id="system-properties-tags">System Properties Tags</h3>
+<p><img src="/images/pastedGraphic-236.jpg" alt=""></p>
+<p>The Particle and Metaball tags affect the behavior of individual meshes within a Particle System or Isosurface Creator.</p>
+<blockquote>
+<p><strong>Note:</strong> &quot;Dynamics Tags&quot; and &quot;Material Tags&quot; are <code>####</code> headings filed under System Properties Tags; they should probably be <code>###</code>. <!-- TODO editorial --></p>
+</blockquote>
+<h4 id="dynamics-tags">Dynamics Tags</h4>
+<p><img src="/images/pastedGraphic-237.jpg" alt=""></p>
+<p>The Dynamics tags assign dynamic behavior to meshes. They are described in greater detail in the chapter on <a href="/15_Dynamics/">Dynamics</a>.</p>
+<h4 id="material-tags">Material Tags</h4>
+<p>In addition to the Mode tag every object (except a camera) automatically receives, when a material is assigned to an object it is represented by a Material tag, which is covered in more detail in the section on <a href="/9_Materials/">Materials</a>.</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+      <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link" href="../4.2_User_Interface_Overview/">User Interface Overview</a></li>
+      <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.4_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.5_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.6_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.7_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.8_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.10_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.11_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.12_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.13_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../7.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../7.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../7.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../7.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../7.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link current" href="../8.3_Tags/" aria-current="page">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../9.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../9.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../9.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../9.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../9.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.4_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../11.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../11.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../11.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../11.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../11.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../11.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../11.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../11.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../11.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
+      <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../16.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../16.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../17.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../17.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=0a27943cf23b"></script>
+</body>
+</html>

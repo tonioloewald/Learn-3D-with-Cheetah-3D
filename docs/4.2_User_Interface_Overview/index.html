@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    try {
+      var p = JSON.parse(localStorage.getItem('tosi-doc-system-prefs') || '{}')
+      var t = p.theme || 'system'
+      if (t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches))
+        document.documentElement.classList.add('darkmode')
+      if (p.highContrast) document.documentElement.classList.add('high-contrast')
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../doc-system.css?v=0a27943cf23b" data-tosi-doc-system />
+  <title>User Interface Overview — Learn 3D with Cheetah 3D</title>
+  <meta name="description" content="Here’s the default Cheetah 3D layout (with Modeling selected from the Layout menu and the toolbar set to display small icons only)." />
+  <link rel="canonical" href="https://learn3d.loewald.com/4.2_User_Interface_Overview/" />
+  <link rel="alternate" type="text/markdown" href="index.md" title="User Interface Overview — Learn 3D with Cheetah 3D (markdown)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Learn 3D with Cheetah 3D" />
+  <meta property="og:title" content="User Interface Overview — Learn 3D with Cheetah 3D" />
+  <meta property="og:description" content="Here’s the default Cheetah 3D layout (with Modeling selected from the Layout menu and the toolbar set to display small icons only)." />
+  <meta property="og:url" content="https://learn3d.loewald.com/4.2_User_Interface_Overview/" />
+  <meta property="og:image" content="https://learn3d.loewald.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://learn3d.loewald.com/logo.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"User Interface Overview","description":"Here’s the default Cheetah 3D layout (with Modeling selected from the Layout menu and the toolbar set to display small icons only).","url":"https://learn3d.loewald.com/4.2_User_Interface_Overview/","inLanguage":"en","image":"https://learn3d.loewald.com/logo.png","isPartOf":{"@type":"WebSite","name":"Learn 3D with Cheetah 3D","url":"https://learn3d.loewald.com"}}</script>
+  <link rel="icon" href="../favicon.png" />
+<link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
+</head>
+<body>
+  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}]}">
+  <article class="doc-content" data-doc="4.2_User_Interface_Overview.md">
+<!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 2}--><h2 id="user-interface-overview">User Interface Overview</h2>
+<p><img src="/images/DraggedImage-72.jpg" alt=""></p>
+<p>Here’s the default Cheetah 3D layout (with Modeling selected from the Layout menu and the toolbar set to display small icons only).  Note that your initial layout may not exactly match the screenshot (e.g. the animation controls on the bottom are not visible by default, and Cheetah 3d lets you use multiple customizable layouts).</p>
+<h3 id="the-cheetah-3d-toolbar">The Cheetah 3D Toolbar</h3>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.11.20%20AM.jpg" alt=""></p>
+<p><strong>Toolbar</strong> is where Cheetah 3D’s tools are located. Not shown above is the search field (by default on the right) which filters the content of the <em>Object Browser</em>. Not everything in the toolbar is what Cheetah 3D considers a “tool”, as per the above diagram.</p>
+<ul>
+<li><p><strong>Layout</strong> is a menu that lets you pick one of several customizable layouts for the window.</p>
+</li>
+<li><p><strong>Tools</strong> are in fact tools (select, transform, and the ruler respectively).</p>
+</li>
+<li><p><strong>Modes</strong> determine what can be selected and worked on (points, edges, polygons, objects, and pivots respectively). What’s a “pivot”? It’s the center of a given object’s coordinate system (think of it as living in a universe of its own, the pivot is the center of the universe and its orientation represents its axes.)</p>
+</li>
+<li><p><strong>Things</strong> are objects you can add to the scene or to objects in the scene. (Objects in a loose sense — some are actual geometric objects, while others are things that affect objects in some way.)</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a choice of two renderers, Cheetah and Falcon, picked with <strong>Render &gt; Renderer</strong> or by holding down the render settings toolbar icon. It also has separate toolbar buttons for rendering a still, an animation, or a bake (manual: Rendering › Renderer). None of this is covered here yet. <!-- TODO missing --></p>
+</blockquote>
+<p>The toolbar is a standard Mac OS X toolbar, so you can customize it the usual way…</p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.10.28%20AM.jpg" alt=""></p>
+<p><strong>3D View</strong> is where Cheetah 3D shows visual representation of your scene  (although if objects are hidden, you won’t see them here).</p>
+<p>The 3D View can be in one of several modes: by default it will be in Camera mode which means that what you see is what the <em>active</em> camera is looking at, and adjusting the view will actually change the camera’s settings and/or position. Other modes include “perspective” mode (which is like camera mode but doesn’t affect any cameras).</p>
+<p>The easiest way to understand views is to play with them — see <em>Navigating the 3D View,</em> below.</p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.18.29%20AM.jpg" alt=""></p>
+<p>(And yes, since you can have more than one camera in a scene, the active camera is the one whose icon is highlighted in the object browser. It&#39;s the camera you see through, and move, in 3D views set to camera mode. Did I say views? You can customize layouts to have more than one view, and you can also switch a view into a 4-pane view which can have more than one pane in camera mode.) <!-- TODO review --></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.01.27%20AM.jpg" alt=""></p>
+<p><strong>Properties Pane</strong> is where you can see and adjust the properties of selected objects. (Note that the behavior of this pane when multiple objects are selected is quirky.) The properties pane will have multiple tabs (or “tags”) which contain different stuff depending on the selection.</p>
+<p>Note that the rotation angles are not rotations around the X, Y, and Z axes but the Y, X, and Z axes (or Heading/Yaw, Pitch, and Roll/Bank in aeronautical terms).</p>
+<p><img src="/images/Screen%20Shot%202016-12-01%20at%2010.22.26%20AM.jpg" alt=""></p>
+<p><strong>Tool Pane</strong> is where the settings for your currently selected tool are displayed and can be adjusted. <em>Note that you always have a currently selected tool</em>. <em>Initially, the transform tool is selected.</em></p>
+<p><em>Not all of the things in the toolbar are tools</em>.</p>
+<p><strong>Object Browser</strong> shows a hierarchical representation of your scene (which you can filter by name using the <em>search field</em> in the toolbar). This display is extremely useful, especially in complex scenes where selecting the exact thing you want by clicking in the 3d view gets tough…</p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.24.28%20AM.jpg" alt=""></p>
+<p>The Object Browser is also highly customizable…</p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.19.52%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.28.35%20AM.jpg" alt=""></p>
+<p><strong>Materials</strong> is where any materials in the scene will be found. You can select materials (and thus see their properties) here, and you can apply materials to things in the scene by:</p>
+<ul>
+<li><p>Dragging a material onto something (in the 3d view or object browser).</p>
+</li>
+<li><p>Selecting polygons in polygon mode and then dragging the material onto them (the material is applied only to the selected polygons). <!-- TODO review --></p>
+</li>
+</ul>
+<p><strong>Animation Timeline</strong> is where you control time within a scene. Think of your scene as a kind of videotape where you can decide where in time you want to be and see (and change) how the scene looked at that time. By default, nothing will happen because objects’ properties remain constant for all time by default.</p>
+<p>Animation simply means changing the properties of things over time — to animate things you simply go to different points in time and <em>keyframe</em> their properties. (Keyframe? A keyframe is a state at a particular time; usually when you mess with an object’s properties you are changing them for all time. An animated object can have keyframed properties.) </p>
+<p><em>You can keyframe one or more properties</em> by selecting the thing whose property you want to keyframe, adjusting the property, and then clicking “record” (the red circle). By default position, scale, and rotation are recorded. To record other properties, right-click the record button and choose the value you want to record. To record everything, toggle on the P setting. If you toggle the key icon you’ll keyframe everything you change automatically. The little graph lets you restrict keyframing to parameters that change.</p>
+<blockquote>
+<p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the manual&#39;s Timeline page lists the recording-mask toggles as position, scale, rotation, all parameters, autokeying, record child objects, and record only changed parameters. There&#39;s no &quot;P&quot;, and the child-object toggle isn&#39;t mentioned here. <!-- TODO update --></p>
+</blockquote>
+<h3 id="other-views">Other Views</h3>
+<blockquote>
+<p><strong>Note:</strong> Cheetah 3D 8.1.1 also has Takes, Layers, Poses, Images, Console, and Script views (the take manager is in the manual under Animation › Take Manager), not yet covered here. <!-- TODO missing --></p>
+</blockquote>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.47.29%20AM.jpg" alt=""></p>
+<p><strong>UV editor</strong> is where you can adjust the way textures are mapped onto your meshes.</p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.46.51%20AM.jpg" alt=""></p>
+<p><strong>Node editor</strong> is where you can see and adjust the characteristics of materials.</p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM-1.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.48.44%20AM.jpg" alt=""></p>
+<p><strong>Key Editor</strong> is where you can see and manipulate individual keyframed properties.</p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.48.36%20AM.jpg" alt=""></p>
+<p><strong>F-Curves</strong> is where you can see and adjust keyframe transitions (i.e. what happens to values between keyframes). </p>
+<h3 id="other-stuff-that-isnt-obvious">Other stuff that isn’t obvious</h3>
+<p>And finally, <strong>the most important things to know that aren’t immediately obvious</strong> is that:</p>
+<ul>
+<li><p>When you select something in the 3D view, it also gets selected in the Object Browser (and vice versa)</p>
+</li>
+<li><p>The last thing you selected has its properties shown in the Properties Pane.</p>
+</li>
+</ul>
+<p><img src="/images/DraggedImage-73.jpg" alt=""></p>
+<ul>
+<li><p>The Animation Timeline Controller isn’t part of the view layout (and whether or not it’s visible is also not part of the view layout) — it’s toggled on and off using a toolbar icon (that you need to add to your toolbar).</p>
+</li>
+<li><p>The 3D view can be toggled between single pane and 4-pane “split view” using the tiny widget at the top-right. Cheetah 3D gives you several window layouts to use for different purposes, each of which is completely customizable.</p>
+</li>
+</ul>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.50.21%20PM.jpg" alt=""></p>
+<p><strong>You can customize views</strong> by right-clicking on the title/tab bar at the top of them (which lets you add tabs, change the view’s role, split views, and so on). </p>
+<p>You can save a view layout using Window &gt; Layout &gt; Save Layout (or the Save Layout option from the View Layout menu in the toolbar). </p>
+<p><strong>Caution</strong>: saving your layout will overwrite your current layout. There’s no way to save your layout over a different layout option except hacking your preference file.</p>
+<h3 id="a-new-cheetah-3d-document-is-empty-except-for-a-camera">A new Cheetah 3D document is empty except for a camera</h3>
+<p>When you create a new document in Cheetah 3D you are faced with an “empty scene” (not quite empty: it contains a camera, and you’re looking at an otherwise empty scene through that camera). The blue line you see is the “z axis” and the red line is the “x axis” (the “y axis” is invisible, but would run straight up through the intersection, which is the “origin” — 0,0,0).</p>
+<p><img src="/images/e51b8d01-6288-4706-95b5-320042bb9685-page11image400.jpg" alt=""></p>
+<p>If you create a new object (e.g. by selecting a Box from the Polygon toolbar item) it will appear at the origin (the center of the scene) with zero rotation and scale of 1.0 in all dimensions.</p>
+<p>At this point you have created a virtual cube in a virtual space, and you are looking at it through a virtual camera.</p>
+<p>You can change your point of view by option dragging in the view (to “orbit” the current center of your view, which is the origin by default), zoom in and out using the scroll button or gesture on your pointing device, and pan the view by option-control dragging.</p>
+<p>Note how I said you were looking at a virtual cube through a virtual camera.</p>
+<p>Changing your view (by orbiting, zooming, and so forth) moves the camera (i.e. you are changing the view by changing the camera’s position). (If you use the view menu to change to perspective view, you can change your view without moving the camera.)</p>
+<p>You can select your cube (it’s probably selected already) by clicking on it. You can then transform it by using the Transform tool — which is selected by default. A “transformation” is a movement, rotation, and/or rescaling in 3D space.</p>
+<h3 id="navigating-the-3d-view">Navigating the 3D view</h3>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%2010.00.24%20PM.jpg" alt=""></p>
+<p>There’s a small row of icons at the top-right of the 3D view. These allow you to navigate the 3D view <em>without remembering the keyboard shortcuts</em>.</p>
+<p><img src="/images/DraggedImage-74.jpg" alt=""></p>
+<p>From left to right, the icons are: focus camera, pan, “zoom”, orbit, pivot, toggle 4-way view, and finally the gear controls other settings. Note that focus camera also sets the point around which you will orbit.</p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual&#39;s 3D View page lists the icons as camera projection, style, focus, move, zoom, rotate around the selected object, turn camera, and quad view. It mentions no gear, and it says orbiting rotates around the selected object. <!-- TODO verify --></p>
+</blockquote>
+<p>There are also shortcuts for view navigation: holding down the option (alt) key allows you to “orbit” by dragging the mouse/trackpad; scrolling (gesture, mousewheel, etc.) or option-command dragging allows you to “zoom”; and control-option allows you to pan by dragging.</p>
+<p><strong>Note</strong>: in 3D parlance “orbit” means “move the viewpoint around a fixed point while keeping the distance to that point constant”.</p>
+<p>Once you get used to these conventions — which are similar to those in many other 3D programs — they become second nature. (Indeed, speaking from experience, it’s difficult to stop oneself from using them constantly when trying to make video tutorials.)</p>
+<p>Also note that the “zoom” operation in fact moves the camera in and out (&quot;dollies&quot; the camera forward or backward) rather than changing the camera’s field of view (i.e. its “focal length”). Thus the magnifying glass is intuitive, but slightly misleading.</p>
+<p>And, finally, note that 3D animators often use the same terminology as real-world film makers when describing camera moves. “Dolly” means moving the camera around on a wheeled platform. When you use the scroll gesture you are in fact &quot;dollying&quot; the camera and not “zooming” which would involve changing the camera’s field of view (or “focal length”) while staying fixed in position (and it would change the scene’s perspective dramatically). You may have heard of a trick attributed to Hitchcock (used in Vertigo) called the “reverse zoom” where you dolly in, or out, and zoom in the opposite direction to keep the subject fixed in size while the world around them changes. It’s a neat trick and totally doable in a 3D package like Cheetah 3D.</p>
+<p><img src="/images/DraggedImage-75.jpg" alt=""></p>
+<p><em>The menu at the top-left of the 3D view allows you to select views. The camera and perspective views are (usually) freely navigable. The front, back, left, right, top, and bottom views are orthographic (no perspective) views that cannot be rotated, so orbit and pivot don’t work in those views.</em></p>
+<p><img src="/images/DraggedImage-76.jpg" alt=""></p>
+<p><em>It’s important to remember that when you’re in a camera view, changing the view moves the camera around (and undo won’t move it back). This is a bit annoying, and you may want to try to remember to work in perspective views unless you want to move the camera. You can also lock the camera by right-clicking its icon in the Properties Panel and selecting “Lock Parameter” to avoid accidentally messing up a camera.</em></p>
+<blockquote>
+<p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does a “Lock Parameter” command still exist? Neither the manual nor the app&#39;s strings mention one. <!-- TODO verify --></p>
+</blockquote>
+<p><img src="/images/DraggedImage-77.jpg" alt=""></p>
+<p><em>Another trick suggested on the forums is to add a Pose tag to a camera and save a pose whenever you want to be able to restore a specific camera view. Once you get into this habit you have the best of both worlds — you can quickly move the camera around and make test renders, but you don’t lose views you want to keep.</em></p>
+<h3 id="modes">Modes</h3>
+<p><img src="/images/DraggedImage-78.jpg" alt=""></p>
+<p>Cheetah 3D’s default toolbar provides five items for selecting modes and displaying the mode you’re in. You start in Object mode by default.</p>
+<p>Cheetah 3D is always in one of five modes. The first two modes apply to any kind of object, while the other three apply only to editable meshes (and, in the case of Point mode, splines).</p>
+<p><strong>Object mode</strong> (this is where you start by default). You are living in a world of objects (as in “things in the Object Browser”) and can select one or more at a time and do stuff to objects.</p>
+<p><strong>Pivot mode</strong> allows you to manipulate an object’s coordinate system for purposes of transforming it. Most objects, by default, will have their pivot point in the middle of the object (sometimes the “middle of the base of the object”). But you might want to rotate the object around a different point (e.g. if you wanted to open a door it would rotate around the door’s hinges, which are near its edge). </p>
+<p>Note that the pivot of an object affects how it is transformed, but doesn’t change the object’s position or orientation in space (in other words, moving the pivot moves the object’s coordinate system, not its geometry). <!-- TODO review --></p>
+<h3 id="meshspline-editing-modes">Mesh/Spline Editing Modes</h3>
+<p>Three of the modes only work for editable meshes (Point mode also works on splines). Any other object will behave as though you are in Object mode. </p>
+<p>Note that if you are in one of these modes and you have an editable mesh selected, you cannot select a different object in the 3D view without switching back to object mode. (You can select a different object in the Object Browser and remain in one of these modes.)</p>
+<ul>
+<li><p><strong>Point mode</strong> allows you to operate on the vertices (or points) of an editable mesh directly. You can select one or more vertices and perform various operations on vertices.</p>
+</li>
+<li><p><strong>Edge mode</strong> allows you to operate on edges (sides of polygons, sub-paths of spline) of an editable mesh. When you manipulate an edge you’re really just manipulating the vertices that the edge joins and the polygons that contain that edge.</p>
+</li>
+<li><p><strong>Polygon mode</strong> allows you to operate on the polygons of an editable mesh.</p>
+</li>
+</ul>
+<p>When you are in one of the mesh editing modes you will also have a powerful context menu available via the right mouse button (or equivalent gesture). This provides convenient access to Cheetah 3D’s selection and polygon tools.</p>
+<h3 id="select-vs-transform">Select vs. Transform</h3>
+<p><img src="/images/DraggedImage-79.jpg" alt=""></p>
+<p>Cheetah 3D offers a select tool which allows you to select objects (and edges, points, and polygons, depending on mode) without the risk of accidentally moving something, and a transform tool which lets you select and manipulate objects. Because Cheetah 3D has excellent undo support, it’s easy enough to “live in the Transform tool” all the time, and undo any accidental nudges, but sometimes you need to be sure, and that’s what the Select tool is for.</p>
+<h3 id="the-transform-tool">The Transform tool</h3>
+<p>The most commonly used tool in Cheetah 3D is the transform tool. This tool allows you to select things, and move, rotate, and scale whatever you have selected.</p>
+<p><img src="/images/DraggedImage-80.jpg" alt=""></p>
+<p><em>The transform tool allows you to move, rotate, and scale your selection. Clicking and dragging on the arrows allows you to move (or “translate”) the selection in the x, y, or z direction; the boxes allow scaling along an axis; and the colored circles rotate around the corresponding axis.</em></p>
+<p>The transform tool itself has <strong>four different incarnations</strong> and <strong>two modes</strong>. Its four incarnations are universal (the only incarnation I use), translate, rotate, and scale. The two modes are its usual mode (where it transforms things) and <strong>gadget mode</strong>, which allows you to <strong>set its pivot point</strong> temporarily.</p>
+<h3 id="center-manipulator-modes">Center Manipulator Modes</h3>
+<p>The transform tool also has a central manipulator which is modal. In essence, when you click an arrow, the central manipulator goes into translate mode and you can click and drag on it to translate the selection parallel to the view. </p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%2010.03.38%20PM.jpg" alt=""></p>
+<p>Similarly, if you click a scale box it enters scale mode, and now clicking and dragging on it will scale the object uniformly. Finally, if you click a rotation manipulator the center manipulator goes into rotation mode and allows you to “freely” rotate. Of these three modes, scale mode is by far the most useful.</p>
+<p>You can double-click the central manipulator to switch to gadget mode. Gadget mode is a bit like pivot mode (and indeed existed before pivot mode). I suggest you use pivot mode and ignore gadget mode altogether.</p>
+<h3 id="two-axis-scaling">Two Axis Scaling</h3>
+<p>The transform tool’s scale functions also have a clever shortcut. If you hold down the shift key and drag on a box, it will uniformly scale the object on the other two axes, (so if you shift-drag on the red box, it will scale the object uniformly in y and z) — very useful indeed.</p>
+<h3 id="working-with-selections">Working with Selections</h3>
+<p>Anyone who knows Photoshop well will tell you that much of Photoshop’s power (and complexity) comes from its ability to make and modify selections. Before Photoshop, making and refining selections was treated almost as an afterthought by most graphics programs; Photoshop introduced the idea of the selection as a “first class citizen” of the user interface. You could perform operations on selections, save them in different ways, undo changes to them, and so on.</p>
+<p>Cheetah 3D, like Photoshop, treats selections very seriously. </p>
+<p>You can <strong>add to selections</strong> by shift-clicking a suitable item (e.g. if you’re in polygon mode, you can add a polygon to the current selection by shift-clicking it). You can also use Area Select and add to a selection by shift-dragging.</p>
+<p>You can <strong>subtract from selections</strong> by command-clicking a selected item. As with selection, you can use Area Select and command-drag to remove a bunch of stuff from a selection.</p>
+<p>You can <strong>undo and redo changes to selections</strong>. When you make a selection or change a selection, Cheetah 3D treats this as an operation that you can undo and redo.</p>
+<p>Selections are treated as part of an object’s state. Cheetah 3D also considers selections to be an important part of the state of an object: e.g. when you select some vertices in Point mode and then switch to a different mode and/or select some other object and do stuff, when you return to Point mode, your selection of vertices will be there. In fact, your selections will be saved as part of the file! The same holds true for Edge and Polygon mode.</p>
+<p>You can <strong>invert, expand, or contract selections</strong>. Expand selection adds polygons adjacent to selected polygons to a selection while Reduce selection removes border polygons from selected polygons.</p>
+<p><strong>Loop</strong> and <strong>Ring</strong> allow you to select polygons (and corresponding edges and vertices depending on mode) that form a continuous loop or ring.</p>
+<p><strong>Area Select</strong> allows you to drag a rectangle around a bunch of things (depending on mode) to select them.</p>
+<p>There are other tools for selecting all triangles or all polygons with more than four sides. These tools are designed to help clean up meshes. For many purposes, especially character animation, a good mesh should try to use quads — four-sided polygons — as much as possible, both to improve the way subdivision works, and to reduce the distortion of materials by UV mapping. These tools let you quickly identify any non-quads in a mesh and deal with them if necessary.</p>
+<p>And in Polygon mode there are tools for hiding selections (and revealing everything you’ve hidden) to get stuff “out of the way” when editing a mesh.</p>
+<h3 id="the-object-browser">The Object Browser</h3>
+<p>While being able to navigate a 3D view is very useful, sometimes you want a more schematic view of what’s going on in your scene. The object browser allows you to see (and select) everything in your scene, including invisible objects.</p>
+<p><img src="/images/DraggedImage-81.jpg" alt=""></p>
+<p><em>The object browser lets you see and select everything in your scene, including abstract things like modifiers, and things that aren’t visible (or aren’t in view).</em></p>
+<p>It also shows the scene hierarchy, i.e. which objects “are parented to” or “belong” to other objects. The concept of hierarchies is very powerful in 3D graphics. They’re a bit like “grouping” in a vector drawing program but far more useful and flexible.</p>
+<p><img src="/images/DraggedImage-82.jpg" alt=""></p>
+<p><em>Consider a table with a bowl on top of it. If you want to move the table, you probably want the bowl to come along with it. But if you want to rotate the bowl you probably don’t want to rotate the table. If you make the bowl a child of the table, this is exactly how things work.</em></p>
+<p>Typically if B is connected to or resting on A then it’s usually a good idea to arrange them in a hierarchy with the basic idea that if “moving thing A would generally result in thing B moving in the same way, then A should contain B” (or A should be B’s parent, or B should be A’s child — all of these concepts are equivalent).</p>
+<p>If you find something in the object browser and want to see it in the 3D view (or “viewport”), you can use the Focus Camera icon. Focus camera is so useful, I recommend giving it an easily remembered keyboard shortcut (I use “F”).</p>
+<h3 id="adding-items-from-the-object-browser-to-the-properties-panel">Adding items from the object browser to the Properties Panel</h3>
+<p>Sometimes Cheetah 3D expects you to drag one or more items from the Object Browser to a list or “socket” in the Properties Panel. E.g. if you create a Particle Mesh object you need to tell it which mesh to use as its basis.</p>
+<p><img src="/images/DraggedImage-83.jpg" alt=""></p>
+<p><em>The Particle Mesh object’s Properties panel includes a “socket” which you need to drag a mesh object into.</em></p>
+<p>This is a bit of a paradox, because if you click on an object in the Object Browser then the Properties panel you need to drag to disappears!</p>
+<p>The trick is to click and then drag the object to the “socket” or list box in one operation (i.e. <em>don’t release the mouse button until you’ve completed the operation</em>). This sometimes requires some finesse (e.g. you might need to scroll the Object Browser view to get the desired object in view before you start).</p>
+<p>Perhaps the most common example of this is the Skeleton tag which needs to have all associated bones dragged into its list box. Fortunately you can drag a root object and all its descendants will go into the list box (and you can delete any objects you didn’t really want from the list box afterwards).</p>
+
+  </article>
+  <nav class="doc-nav" aria-label="Documentation">
+  <ul>
+    <li><a class="doc-link" href="../0_Front_Matter/">Front Matter</a></li>
+    <li><a class="doc-link" href="../1_Credits/">Credits</a></li>
+    <li><details><summary><a class="doc-link" href="../">Introduction</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../2.1_Why_Learn_3D_Graphics/">Why Learn 3D Graphics?</a></li>
+      <li><a class="doc-link" href="../2.2_Why_Cheetah_3D/">Why Cheetah 3D?</a></li>
+      <li><a class="doc-link" href="../2.3_3D_in_a_nutshell/">3D in a nutshell</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../3_What_s_new_in_Cheetah_3D_7/">What’s new in Cheetah 3D 7?</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../3.1_The_Falcon_Renderer/">The Falcon Renderer</a></li>
+      <li><a class="doc-link" href="../3.2_Key_Points/">Falcon: Key Points</a></li>
+    </ul>
+    </details></li>
+    <li><details open><summary><a class="doc-link" href="../4_Just_Enough_to_be_Dangerous/">Just Enough to be Dangerous</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../4.1_A_Quick_Tour_of_Cheetah_3D/">A Quick Tour of Cheetah 3D</a></li>
+      <li><a class="doc-link current" href="../4.2_User_Interface_Overview/" aria-current="page">User Interface Overview</a></li>
+      <li><a class="doc-link" href="../4.3_Primitives_Basic_3D_Objects/">Primitives: Basic 3D Objects</a></li>
+      <li><a class="doc-link" href="../4.4_The_Properties_Panel/">The Properties Panel</a></li>
+      <li><a class="doc-link" href="../4.5_Selecting_and_Moving_Objects/">Selecting and Moving Objects</a></li>
+      <li><a class="doc-link" href="../4.6_Meshes/">Meshes</a></li>
+      <li><a class="doc-link" href="../4.7_Editing_Meshes_Core_Polygon_Tools/">Editing Meshes: Core Polygon Tools</a></li>
+      <li><a class="doc-link" href="../4.8_Selecting_Parts_of_Meshes/">Selecting Parts of Meshes</a></li>
+      <li><a class="doc-link" href="../4.9_Fine_Tuning_Meshes/">Fine-Tuning Meshes</a></li>
+      <li><a class="doc-link" href="../4.10_Mesh_Smoothing/">Mesh Smoothing</a></li>
+      <li><a class="doc-link" href="../4.11_Creators/">Creators</a></li>
+      <li><a class="doc-link" href="../4.12_Materials_Overview/">Materials Overview</a></li>
+      <li><a class="doc-link" href="../4.13_Lights_and_Lighting/">Lights and Lighting</a></li>
+      <li><a class="doc-link" href="../4.14_Image_Based_Lighting/">Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../4.15_The_Sky_Light_Object/">The Sky Light Object</a></li>
+      <li><a class="doc-link" href="../4.16_Rendering/">Rendering</a></li>
+      <li><a class="doc-link" href="../4.17_Camera_Objects/">Camera Objects</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../5_Tutorials/">Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../5.1_Making_a_Mug/">Making a Mug</a></li>
+      <li><a class="doc-link" href="../5.2_Modeling_a_Biplane/">Modeling a Biplane</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../6_Mini_Tutorials/">Mini-Tutorials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../6.1_Mini_Tutorial_3D_Text/">Mini-Tutorial: 3D Text</a></li>
+      <li><a class="doc-link" href="../6.2_Package_Mockup/">Package Mockup</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../7_Modeling/">Modeling</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../7.1_Model_Sheets_Blueprints/">Model Sheets &amp; Blueprints</a></li>
+      <li><a class="doc-link" href="../7.2_Symmetry/">Symmetry</a></li>
+      <li><a class="doc-link" href="../7.3_Selection_You_can_t_always_get_what_you_want/">Selection: You can’t always get what you want…</a></li>
+      <li><a class="doc-link" href="../7.4_Modeling_Tricks_Techniques/">Modeling Tricks &amp; Techniques</a></li>
+      <li><a class="doc-link" href="../7.5_Subdivision_Surfaces/">Subdivision Surfaces</a></li>
+      <li><a class="doc-link" href="../7.6_What_is_a_mesh/">What is a mesh?</a></li>
+      <li><a class="doc-link" href="../7.7_Splines/">Splines</a></li>
+      <li><a class="doc-link" href="../7.8_Polygon_Box_Modeling/">Polygon/Box Modeling</a></li>
+      <li><a class="doc-link" href="../7.9_Approaches_to_Modeling/">Approaches to Modeling</a></li>
+      <li><a class="doc-link" href="../7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/">Understanding How Creators, Tags, and Modifiers Interact</a></li>
+      <li><a class="doc-link" href="../7.11_Creators/">Creators</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../8_Creators_Modifiers_Tags/">Creators, Modifiers, &amp; Tags</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../8.1_Modifiers/">Modifiers</a></li>
+      <li><a class="doc-link" href="../8.2_Collapsing_Creators_Modifiers/">Collapsing Creators &amp; Modifiers</a></li>
+      <li><a class="doc-link" href="../8.3_Tags/">Tags</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../9_Materials/">Materials</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../9.1_Simple_Materials_Without_Nodes/">Simple Materials Without Nodes</a></li>
+      <li><a class="doc-link" href="../9.2_Image_based_Materials/">Image-based Materials</a></li>
+      <li><a class="doc-link" href="../9.3_Transparent_Materials/">Transparent Materials</a></li>
+      <li><a class="doc-link" href="../9.4_Understanding_Nodes/">Understanding Nodes</a></li>
+      <li><a class="doc-link" href="../9.5_Building_Procedural_Materials/">Building Procedural Materials</a></li>
+      <li><a class="doc-link" href="../9.6_Reflective_Materials/">Reflective Materials</a></li>
+      <li><a class="doc-link" href="../9.7_UV_Mapping/">UV Mapping</a></li>
+      <li><a class="doc-link" href="../9.8_How_Materials_Work/">How Materials Work</a></li>
+      <li><a class="doc-link" href="../9.9_Node_Descriptions/">Node Descriptions</a></li>
+      <li><a class="doc-link" href="../9.10_Faking_It/">Faking It</a></li>
+      <li><a class="doc-link" href="../9.11_The_Math_of_Material_Nodes/">The Math of Material Nodes</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../10_Lighting/">Lighting</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../10.1_How_Lights_Work/">How Lights Work</a></li>
+      <li><a class="doc-link" href="../10.2_Other_Lighting_Options/">Other Lighting Options</a></li>
+      <li><a class="doc-link" href="../10.3_Shadows/">Shadows</a></li>
+      <li><a class="doc-link" href="../10.4_Advanced_Lighting/">Advanced Lighting</a></li>
+      <li><a class="doc-link" href="../10.5_Caustics/">Caustics</a></li>
+      <li><a class="doc-link" href="../10.6_Foolproof_Shadow_Catchers/">Foolproof Shadow Catchers</a></li>
+      <li><a class="doc-link" href="../10.7_Reflected_Lights/">Reflected Lights</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../11_Rendering/">Rendering</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../11.1_The_Camera_Object/">The Camera Object</a></li>
+      <li><a class="doc-link" href="../11.2_Projection_Settings/">Projection Settings</a></li>
+      <li><a class="doc-link" href="../11.3_The_Render_Tag/">The Render Tag</a></li>
+      <li><a class="doc-link" href="../11.4_Dealing_with_Reality/">Dealing with Reality</a></li>
+      <li><a class="doc-link" href="../11.5_Simple_Render_Setups/">Simple Render Setups</a></li>
+      <li><a class="doc-link" href="../11.6_Rendering_Panoramas/">Rendering Panoramas</a></li>
+      <li><a class="doc-link" href="../11.7_Rendering_a_Sky_Box/">Rendering a Sky Box</a></li>
+      <li><a class="doc-link" href="../11.8_How_Raytracing_Works/">How Raytracing Works</a></li>
+      <li><a class="doc-link" href="../11.9_Environments/">Environments</a></li>
+      <li><a class="doc-link" href="../11.10_Rendering_Reflected_Lights/">Rendering Reflected Lights</a></li>
+      <li><a class="doc-link" href="../11.11_Cartoon_Looks/">Cartoon Looks</a></li>
+      <li><a class="doc-link" href="../11.12_Render_Manager/">Render Manager</a></li>
+      <li><a class="doc-link" href="../11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/">Creating your own HDRIs for Image-Based Lighting</a></li>
+      <li><a class="doc-link" href="../11.14_Rendering_Tricks/">Rendering Tricks</a></li>
+      <li><a class="doc-link" href="../11.15_Baking_Materials/">Baking Materials</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../12_Animation/">Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../12.1_Animation_Overview/">Animation Overview</a></li>
+      <li><a class="doc-link" href="../12.2_Animation_Concepts/">Animation Concepts</a></li>
+      <li><a class="doc-link" href="../12.3_Tutorial_Animation_Basics/">Tutorial: Animation Basics</a></li>
+      <li><a class="doc-link" href="../12.4_Path_Animation/">Path Animation</a></li>
+      <li><a class="doc-link" href="../12.5_Forward_Kinematics_Robot_Arm_I/">Forward Kinematics: Robot Arm I</a></li>
+      <li><a class="doc-link" href="../12.6_Inverse_Kinematics_Robot_Arm_II/">Inverse Kinematics: Robot Arm II</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../13_Character_Animation/">Character Animation</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../13.1_Character_Animation_Tutorials/">Character Animation Tutorials</a></li>
+      <li><a class="doc-link" href="../13.2_Tutorial_Simple_Character_Rig/">Tutorial: Simple Character Rig</a></li>
+      <li><a class="doc-link" href="../13.3_Tutorial_Walk_Cycle/">Tutorial: Walk Cycle</a></li>
+      <li><a class="doc-link" href="../13.4_Mini_Tutorial_Run_Cycle/">Mini-Tutorial: Run Cycle</a></li>
+      <li><a class="doc-link" href="../13.5_Mini_Tutorial_Idle/">Mini-Tutorial: Idle</a></li>
+      <li><a class="doc-link" href="../13.6_Mini_Tutorial_Jumping/">Mini-Tutorial: Jumping</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../14_Particles/">Particles</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/">Getting the most out of Cheetah 3D’s Particle System</a></li>
+      <li><a class="doc-link" href="../14.2_Instances/">Instances</a></li>
+      <li><a class="doc-link" href="../14.3_Using_a_Particle_System_as_a_Source_of_Objects/">Using a Particle System as a Source of Objects</a></li>
+      <li><a class="doc-link" href="../14.4_Building_Blocks/">Building Blocks</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../15_Dynamics/">Dynamics</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../15.1_Introduction_to_Dynamics/">Introduction to Dynamics</a></li>
+      <li><a class="doc-link" href="../15.2_Using_Dynamics_to_Model/">Using Dynamics to Model</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../16_Mastering_Cheetah_3D_s_Interface/">Mastering Cheetah 3D’s Interface</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../16.1_The_Object_Browser/">The Object Browser</a></li>
+      <li><a class="doc-link" href="../16.2_Scene_Graph_Shortcuts/">Scene Graph Shortcuts</a></li>
+      <li><a class="doc-link" href="../16.3_Parents/">Parents</a></li>
+      <li><a class="doc-link" href="../16.4_Children/">Children</a></li>
+      <li><a class="doc-link" href="../16.5_Managing_Complexity/">Managing Complexity</a></li>
+      <li><a class="doc-link" href="../16.6_Cheetah_3D_Under_the_Hood/">Cheetah 3D Under the Hood</a></li>
+      <li><a class="doc-link" href="../16.7_Workflow/">Workflow</a></li>
+      <li><a class="doc-link" href="../16.8_Scripts/">Scripts</a></li>
+    </ul>
+    </details></li>
+    <li><details><summary><a class="doc-link" href="../17_Appendices/">Appendices</a></summary>
+    <ul>
+      <li><a class="doc-link" href="../17.1_Glossary/">Glossary</a></li>
+      <li><a class="doc-link" href="../17.2_3D_File_Formats/">3D File Formats</a></li>
+      <li><a class="doc-link" href="../17.3_Image_Formats/">Image Formats</a></li>
+      <li><a class="doc-link" href="../17.4_Video_Compression/">Video Compression</a></li>
+      <li><a class="doc-link" href="../17.5_Alpha_Channels_in_Depth/">Alpha Channels in Depth</a></li>
+      <li><a class="doc-link" href="../17.6_Faking_Motion_Blur/">Faking Motion Blur</a></li>
+      <li><a class="doc-link" href="../17.7_3D_Math/">3D Math</a></li>
+      <li><a class="doc-link" href="../17.8_Rendering/">Rendering</a></li>
+    </ul>
+    </details></li>
+  </ul>
+  </nav>
+  <ul class="doc-navbar">
+    <li><a href="https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D" data-icon="github">github</a></li>
+  </ul>
+  </tosi-doc-system>
+  <script src="../iife.js?v=0a27943cf23b"></script>
+</body>
+</html>
