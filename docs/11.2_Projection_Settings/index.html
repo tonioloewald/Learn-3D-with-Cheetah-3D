@@ -40,13 +40,13 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.2_Projection_Settings.md">
 <!--{"parent": "11_Rendering.md", "order": 2}--><h1 id="projection-settings">Projection Settings</h1>
 <p>These settings all relate to how the camera looks out into the scene.</p>
 <h2 id="projection">Projection</h2>
 <p>By default, cameras render a perspective projection. There are two other options: orthographic (no perspective) and panorama.</p>
-<p><img src="/images/pastedGraphic-541.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-541.jpg" alt="Perspective render of a city of skyscrapers seen from above, the towers leaning away from the center"></p>
 <figure><img src="/images/pastedGraphic-542.jpg" alt=""><figcaption><strong>Top</strong>: cityscape rendered through a camera with perspective. <strong>Bottom</strong>: cityscape rendered through an orthographic camera.</figcaption></figure>
 <p><strong>Orthographic</strong> rendering is useful for engineering and architecture applications, and for rendering components for isometric “faux 3D” games.</p>
 <figure><img src="/images/pastedGraphic-543.jpg" alt=""><figcaption>Panorama rendered with a level camera — the ground plane is horizontal and runs through the center of the image.</figcaption></figure>
@@ -55,7 +55,7 @@
 <h2 id="field-of-view">Field of View</h2>
 <p>For perspective cameras, field of view determines the kind of “lens” your camera uses. Normally when you “zoom in” or “zoom out” using the camera controls you’re moving the active camera forward and backward (i.e. along its own z-axis). If you want to zoom in and out the way a camera lens does, you need to change the field of view — a wide field of view (e.g. 100°) would be equivalent to a very wide angle lens (approximately a 15mm lens on 35mm camera or 24x36mm “full frame” DSLR) while 5° is roughly the equivalent of a 400mm lens.</p>
 <p>The following values are from Wikipedia’s article on Angle of View. I’ve used their horizontal field of view values, because Cheetah 3D’s field of view is the angle across a square, and the final image is cropped from that square. <!-- TODO review --></p>
-<p><img src="/images/pastedGraphic-545.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-545.jpg" alt="Table of field of view against 35mm focal length, from 108 degrees at 13mm to 5.15 degrees at 400mm"></p>
 <h2 id="zoom">Zoom</h2>
 <p>For orthographic cameras, zoom determines how large the scene is rendered in the camera view (since field of view is meaningless in an orthographic view).</p>
 <h2 id="clip-near-clip-far">Clip Near, Clip Far</h2>
@@ -109,7 +109,7 @@
 <h3 id="background">Background</h3>
 <p>Background settings determine the background color or image. By default, Cheetah 3D renders a black background. Probably the best background option is 100% transparent since this allows you to composite your rendered images if so desired.</p>
 <h3 id="renderer-settings">Renderer Settings</h3>
-<p><img src="/images/pastedGraphic-547.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-547.jpg" alt="Render Settings in the Properties panel: Textures, Reflections, Transparency, Max. ray depth 6, Gamma 1.8, Sampler QMC, and Filter Mitchell"></p>
 <blockquote>
 <p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
 </blockquote>

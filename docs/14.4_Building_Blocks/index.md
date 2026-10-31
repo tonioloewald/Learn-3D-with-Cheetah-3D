@@ -4,7 +4,7 @@
 
 ### Dynamics Tags
 
-![](/images/pastedGraphic-532.jpg)
+![Ball hanging from a rope spline knocking over stacks of blocks on a green ground plane](/images/pastedGraphic-532.jpg)
 
 ![](/images/pastedGraphic-533.jpg)
 

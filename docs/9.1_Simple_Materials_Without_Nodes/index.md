@@ -4,7 +4,7 @@
 
 ### Material Shader Properties
 
-![](/images/pastedGraphic-239.jpg)
+![Properties panel for a new material: diffuse, specular, reflection, transparency, emissive, and bump mapping settings](/images/pastedGraphic-239.jpg)
 
 ![](/images/pastedGraphic-240.jpg)
 
@@ -20,7 +20,7 @@ To create various simple materials, here’s a quick guide to how to adjust thes
 
 #### Flat Colors
 
-![](/images/pastedGraphic-241.jpg)
+![Material Properties panel with diffuse set to red and specular set to black](/images/pastedGraphic-241.jpg)
 
 ![](/images/pastedGraphic-242.jpg)
 
@@ -32,7 +32,7 @@ To create various simple materials, here’s a quick guide to how to adjust thes
 
 #### Shiny Plastic
 
-![](/images/pastedGraphic-243.jpg)
+![Test render of the elephant in glossy red plastic with a soft highlight](/images/pastedGraphic-243.jpg)
 
 - Set diffuse to the color of the plastic
 
@@ -44,7 +44,7 @@ To create various simple materials, here’s a quick guide to how to adjust thes
 
 #### Hard Rubber
 
-![](/images/pastedGraphic-244.jpg)
+![Test render of the elephant in dull, nearly black hard rubber](/images/pastedGraphic-244.jpg)
 
 - Set diffuse to very dark grey.
 
@@ -56,7 +56,7 @@ To create various simple materials, here’s a quick guide to how to adjust thes
 
 #### Metal
 
-![](/images/pastedGraphic-245.jpg)
+![Test render of the elephant in mirror-like metal reflecting the checkered room](/images/pastedGraphic-245.jpg)
 
 - Set diffuse to black
 
@@ -76,7 +76,7 @@ Note that this is *not* the best way to make a simple metal material, but the be
 
 #### Brushed Metal
 
-![](/images/pastedGraphic-246.jpg)
+![Test render of the elephant in brushed metal with softly blurred reflections](/images/pastedGraphic-246.jpg)
 
 - As for metal, but set reflection blur to something greater than zero (0.2 is a good starting point) and set specular size to a lower value (e.g. 30).
 
@@ -84,7 +84,7 @@ Again, a better way of doing brushed metal is to use the Metal Shader (it also a
 
 #### Glass
 
-![](/images/pastedGraphic-247.jpg)
+![Test render of a clear glass elephant refracting the checkered room](/images/pastedGraphic-247.jpg)
 
 - Set transparent to a very light grey (but not white)
 
@@ -96,7 +96,7 @@ Again, a better way of doing brushed metal is to use the Metal Shader (it also a
 
 #### Water
 
-![](/images/pastedGraphic-248.jpg)
+![Test render of a pale blue water elephant, clear and refractive](/images/pastedGraphic-248.jpg)
 
 - Set transparent to a very light blue (very low saturation, very high brightness)
 
@@ -108,7 +108,7 @@ Again, a better way of doing brushed metal is to use the Metal Shader (it also a
 
 #### Procedural Marble
 
-![](/images/pastedGraphic-249.jpg)
+![Test render of the elephant in white marble with dark grey veins](/images/pastedGraphic-249.jpg)
 
 - Click on the box to the right of the diffuse color. (This is an alternate route to the node system.) A menu will appear — select **Textures \> Marble**.
 
@@ -122,7 +122,7 @@ Again, a better way of doing brushed metal is to use the Metal Shader (it also a
 
 #### Procedural Concrete (“Cement” for Americans)
 
-![](/images/pastedGraphic-250.jpg)
+![Test render of the elephant in pale grey, finely grained concrete](/images/pastedGraphic-250.jpg)
 
 - Click on the box to the right of the diffuse color. A menu will appear — select **Textures \> Fractal**.
 
@@ -140,7 +140,7 @@ The Fractal texture causes variation in the color of the material, while the Vor
 
 #### Procedural Wood
 
-![](/images/pastedGraphic-251.jpg)
+![Test render of the elephant in pale wood with bold grain rings](/images/pastedGraphic-251.jpg)
 
 - Click on the box to the right of the diffuse color. A menu will appear — select **Textures \> Wood**.
 
@@ -182,7 +182,7 @@ As you may recall, I have described a shader as a software gizmo that answers th
 
 To answer this question, the shader needs a bunch of additional information, some of which is represented by the input nodes (the labeled sockets on the left of the shader node). If nothing comes into one of these channels, then the shader uses its own internal (constant) values for that channel.
 
-![](/images/pastedGraphic-254.jpg)
+![Elephant with a bright red diffuse color](/images/pastedGraphic-254.jpg)
 
 ![](/images/pastedGraphic-255.jpg)
 
@@ -190,7 +190,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Diffuse** is what you’d normally think of as the color of the object.
 
-![](/images/pastedGraphic-256.jpg)
+![Grey elephant with the default white specular, showing a bright highlight](/images/pastedGraphic-256.jpg)
 
 ![](/images/pastedGraphic-257.jpg)
 
@@ -200,7 +200,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: the bundled default Material (Materials/Default/Material.c3dmat) has its specular color set to black, not white, so new materials may no longer have highlights by default (also affects the caption above and [How Materials Work](/9.8_How_Materials_Work/)). <!-- TODO verify -->
 
-![](/images/pastedGraphic-258.jpg)
+![Dark elephant with small, sharp specular highlights at size 80](/images/pastedGraphic-258.jpg)
 
 ![](/images/pastedGraphic-259.jpg)
 
@@ -208,7 +208,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Specular Size** (number) is the smoothness of the object, but only for purposes of using specular. Higher specular size produces smaller, sharper specular highlights.
 
-![](/images/pastedGraphic-260.jpg)
+![Elephant with light grey reflection, mirroring the checkered room](/images/pastedGraphic-260.jpg)
 
 ![](/images/pastedGraphic-261.jpg)
 
@@ -216,7 +216,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Reflection** is the reflectiveness of the object, a better (but more CPU-intensive) method for handling reflections.
 
-![](/images/pastedGraphic-262.jpg)
+![Mirror-like elephant with sharp reflections at reflection blur 0.0](/images/pastedGraphic-262.jpg)
 
 ![](/images/pastedGraphic-263.jpg)
 
@@ -226,9 +226,9 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Transparency** is what it sounds like.
 
-![](/images/pastedGraphic-264.jpg)
+![Glass elephant at index of refraction 1.0, almost invisible against the room](/images/pastedGraphic-264.jpg)
 
-![](/images/pastedGraphic-265.jpg)
+![Glass elephant at index of refraction 1.1, with gentle distortion](/images/pastedGraphic-265.jpg)
 
 ![](/images/pastedGraphic-266.jpg)
 
@@ -236,7 +236,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Index of Refraction** (number) is the degree to which light passing through the material is deflected. 1.0 is the value for a vacuum or air (unless you’re rendering planets, in which case it should be slightly higher), while 1.5 is typical for glass.
 
-![](/images/pastedGraphic-267.jpg)
+![Glass elephant with crisp, unblurred refraction at transparency blur 0.0](/images/pastedGraphic-267.jpg)
 
 ![](/images/pastedGraphic-268.jpg)
 
@@ -244,7 +244,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Trans. Blur** is the degree to which light passing through the material is blurred (think of frosted glass).
 
-![](/images/pastedGraphic-269.jpg)
+![Elephant glowing a light pinkish red from its red emissive color](/images/pastedGraphic-269.jpg)
 
 ![](/images/pastedGraphic-270.jpg)
 
@@ -252,7 +252,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 - **Emissive** (color with intensity) is the color of light with which the object “glows”. Emissive accepts color values beyond (1,1,1), allowing objects to glow very brightly (this impacts how bright the objects appear in reflections and how much illumination they provide when using radiosity).
 
-![](/images/pastedGraphic-271.jpg)
+![Voronoi node's Color output wired to the bumpmap input of a Material node](/images/pastedGraphic-271.jpg)
 
 ![](/images/pastedGraphic-272.jpg)
 

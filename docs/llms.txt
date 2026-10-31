@@ -27,9 +27,9 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/10.4_Advanced_Lighting/ — Advanced Lighting
   Most of the techniques discussed here involve alternatives to using standard lights (or the Sky Light).
 - https://learn3d.loewald.com/17.5_Alpha_Channels_in_Depth/ — Alpha Channels in Depth
-  ![](/images/Screen%20Shot%202013-12-09%20at%2011.23.44%20AM.jpg)
+  ![Diagram: striped image, star alpha, and output; white as transparent cuts a star hole, white as opaque keeps the st...
 - https://learn3d.loewald.com/12_Animation/ — Animation
-  ![](/images/pastedGraphic-475.jpg)
+  ![Render of an empty, lit elevated train platform beside the track](/images/pastedGraphic-475.jpg)
 - https://learn3d.loewald.com/12.2_Animation_Concepts/ — Animation Concepts
   Interpolation means to “find a point between fixed points”. In animation terms, it means determining a value at a poi...
 - https://learn3d.loewald.com/12.1_Animation_Overview/ — Animation Overview
@@ -40,27 +40,27 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/11.15_Baking_Materials/ — Baking Materials
   Originally, baking was used to precalculate the lighting of settings for 3D action games (*Quake* pioneered this tech...
 - https://learn3d.loewald.com/14.4_Building_Blocks/ — Building Blocks
-  ![](/images/pastedGraphic-532.jpg)
+  ![Ball hanging from a rope spline knocking over stacks of blocks on a green ground plane](/images/pastedGraphic-532.jpg)
 - https://learn3d.loewald.com/9.5_Building_Procedural_Materials/ — Building Procedural Materials
   We’re going to build some materials from scratch in an effort to understand how all this stuff fits together. We’ll s...
 - https://learn3d.loewald.com/4.17_Camera_Objects/ — Camera Objects
-  ![](/images/DraggedImage-69.jpg)
+  ![Object Browser listing Camera and Camera.1, the active Camera's icon on a dark background](/images/DraggedImage-69....
 - https://learn3d.loewald.com/11.11_Cartoon_Looks/ — Cartoon Looks
   Almost any cg image is either striving for realism or some kind of “cartoony” or hand-drawn look, but exactly what co...
 - https://learn3d.loewald.com/10.5_Caustics/ — Caustics
   ![](/images/pastedGraphic-448.jpg)
 - https://learn3d.loewald.com/13_Character_Animation/ — Character Animation
-  ![](/images/pastedGraphic-495.jpg)
+  ![Four renders of a green tentacle with suckers, curled into different poses](/images/pastedGraphic-495.jpg)
 - https://learn3d.loewald.com/13.1_Character_Animation_Tutorials/ — Character Animation Tutorials
-  ![](/images/pastedGraphic-496.jpg)
+  ![Render of a straight green tentacle with tan suckers](/images/pastedGraphic-496.jpg)
 - https://learn3d.loewald.com/16.6_Cheetah_3D_Under_the_Hood/ — Cheetah 3D Under the Hood
-  ![](/images/pastedGraphic-631.jpg)
+  ![Finder window of the Cheetah3D folder with Brushes, Materials, Render History, Samples, and Scripts folders](/image...
 - https://learn3d.loewald.com/16.4_Children/ — Children
-  ![](/images/pastedGraphic-3-1.jpg)
+  ![Object Browser hierarchy with B and E nested under A, and C and D nested under B](/images/pastedGraphic-3-1.jpg)
 - https://learn3d.loewald.com/8.2_Collapsing_Creators_Modifiers/ — Collapsing Creators & Modifiers
   Sometimes — in fact quite often — you’ll want to “collapse” creators or modifiers into editable meshes, in other word...
 - https://learn3d.loewald.com/11.13_Creating_your_own_HDRIs_for_Image_Based_Lighting/ — Creating your own HDRIs for Image-Based Lighting
-  ![](/images/pastedGraphic-610.jpg)
+  ![Render Settings properties with Cache HDRI checked under Special File Export, circled](/images/pastedGraphic-610.jpg)
 - https://learn3d.loewald.com/4.11_Creators/ — Creators
   A creator produces a mesh non-destructively from one or more input child objects. Creators are essentially like Modif...
 - https://learn3d.loewald.com/7.11_Creators/ — Creators
@@ -70,26 +70,26 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/1_Credits/ — Credits
   Fourth Edition
 - https://learn3d.loewald.com/11.4_Dealing_with_Reality/ — Dealing with Reality
-  ![](/images/pastedGraphic-565.jpg)
+  ![Photo of a campus quad with a rendered yellow and silver aircar hovering over the path](/images/pastedGraphic-565.jpg)
 - https://learn3d.loewald.com/15_Dynamics/ — Dynamics
-  ![](/images/pastedGraphic-529.jpg)
+  ![Rendered brass cartridge with a dark metal bullet](/images/pastedGraphic-529.jpg)
 - https://learn3d.loewald.com/4.7_Editing_Meshes_Core_Polygon_Tools/ — Editing Meshes: Core Polygon Tools
-  ![](/images/DraggedImage-10.jpg)
+  ![Subdivided box with two faces selected in red, before using cover](/images/DraggedImage-10.jpg)
 - https://learn3d.loewald.com/11.9_Environments/ — Environments
   Apart from light sources (such as the sun) **every object owes its appearance to light emitted or reflected by the th...
 - https://learn3d.loewald.com/9.10_Faking_It/ — Faking It
-  ![](/images/pastedGraphic-363.jpg)
+  ![Render of a hovering craft over a floating platform at sea, with a dark column of faked smoke rising on the right](...
 - https://learn3d.loewald.com/17.6_Faking_Motion_Blur/ — Faking Motion Blur
-  ![](/images/pastedGraphic-659.jpg)
+  ![Rendered walking character holding a pistol, its legs and arm blurred by motion](/images/pastedGraphic-659.jpg)
 - https://learn3d.loewald.com/3.2_Key_Points/ — Falcon: Key Points
   Cheetah’s new renderer is a _unidirectional path tracer_. The key takeaway is that it’s a **physically based renderer...
 - https://learn3d.loewald.com/4.9_Fine_Tuning_Meshes/ — Fine-Tuning Meshes
 - https://learn3d.loewald.com/10.6_Foolproof_Shadow_Catchers/ — Foolproof Shadow Catchers
-  ![](/images/pastedGraphic-467.jpg)
+  ![Clusters of gray cubes on a large plane, rendered normally with soft shadows](/images/pastedGraphic-467.jpg)
 - https://learn3d.loewald.com/12.5_Forward_Kinematics_Robot_Arm_I/ — Forward Kinematics: Robot Arm I
-  ![](/images/pastedGraphic-491.jpg)
+  ![Object Browser hierarchy: Cylinder, then Arm1, Arm2, and Tool nested inside it](/images/pastedGraphic-491.jpg)
 - https://learn3d.loewald.com/0_Front_Matter/ — Front Matter
-  ![](/images/cover-4th-edition.jpg)
+  ![Cover of Learn 3D with Cheetah 3D 8, fourth edition, by Tonio Loewald: an orange spaceship over a rendered city](/i...
 - https://learn3d.loewald.com/14.1_Getting_the_most_out_of_Cheetah_3D_s_Particle_System/ — Getting the most out of Cheetah 3D’s Particle System
   Cheetah 3D’s particle system is very powerful, but what you can do with it directly is sometimes limited by the rende...
 - https://learn3d.loewald.com/17.1_Glossary/ — Glossary
@@ -115,9 +115,9 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/12.6_Inverse_Kinematics_Robot_Arm_II/ — Inverse Kinematics: Robot Arm II
   So, we see from our experiment with forward kinematics that getting something as simple as the robot arm to point its...
 - https://learn3d.loewald.com/4_Just_Enough_to_be_Dangerous/ — Just Enough to be Dangerous
-  ![](/images/DraggedImage-71.jpg)
+  ![Simple rendered figure aiming a pistol with both hands](/images/DraggedImage-71.jpg)
 - https://learn3d.loewald.com/10_Lighting/ — Lighting
-  ![](/images/pastedGraphic-429.jpg)
+  ![Gray elevated train station and monorail lit by a single distant light, with hard black shadows](/images/pastedGrap...
 - https://learn3d.loewald.com/4.13_Lights_and_Lighting/ — Lights and Lighting
   Lighting is another critical component of 3D graphics. Just as lighting can make the difference between a great photo...
 - https://learn3d.loewald.com/5.1_Making_a_Mug/ — Making a Mug
@@ -127,7 +127,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/16_Mastering_Cheetah_3D_s_Interface/ — Mastering Cheetah 3D’s Interface
   ![](/images/pastedGraphic.jpg)
 - https://learn3d.loewald.com/9_Materials/ — Materials
-  ![](/images/pastedGraphic-238.jpg)
+  ![Node editor with Gradient, Turbulence, Add, Multiply, Float2Vec, and Image nodes wired into a planet Material](/ima...
 - https://learn3d.loewald.com/4.12_Materials_Overview/ — Materials Overview
   There are five critical components to producing an image with a 3D package, and modeling and animation are only two o...
 - https://learn3d.loewald.com/4.10_Mesh_Smoothing/ — Mesh Smoothing
@@ -135,9 +135,9 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/4.6_Meshes/ — Meshes
   Cheetah 3D is all about meshes. If you can see it in a render then, aside from the background color, it’s a mesh.
 - https://learn3d.loewald.com/6.1_Mini_Tutorial_3D_Text/ — Mini-Tutorial: 3D Text
-  ![](/images/pastedGraphic-41.jpg)
+  ![Rendered chrome 3D text reading Your Name in Lights, receding in perspective](/images/pastedGraphic-41.jpg)
 - https://learn3d.loewald.com/13.5_Mini_Tutorial_Idle/ — Mini-Tutorial: Idle
-  ![](/images/pastedGraphic-523.jpg)
+  ![Wireframe character in the relaxed idle pose at keyframe 0, knees and back slightly bent](/images/pastedGraphic-523...
 - https://learn3d.loewald.com/13.6_Mini_Tutorial_Jumping/ — Mini-Tutorial: Jumping
   Most characters in computer games don’t jump — they only land. This is because when a real person jumps they need to ...
 - https://learn3d.loewald.com/13.4_Mini_Tutorial_Run_Cycle/ — Mini-Tutorial: Run Cycle
@@ -146,7 +146,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/7.1_Model_Sheets_Blueprints/ — Model Sheets & Blueprints
   ![](/images/pastedGraphic-171.jpg)
 - https://learn3d.loewald.com/7_Modeling/ — Modeling
-  ![](/images/pastedGraphic-119.jpg)
+  ![Low-poly Sopwith Dolphin biplane model standing among its front, side, and top blueprints](/images/pastedGraphic-11...
 - https://learn3d.loewald.com/5.2_Modeling_a_Biplane/ — Modeling a Biplane
   We’re going to create a biplane with a very low polygon count, suitable for a mobile game. We’re only doing the mesh,...
 - https://learn3d.loewald.com/7.4_Modeling_Tricks_Techniques/ — Modeling Tricks & Techniques
@@ -158,9 +158,9 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/10.2_Other_Lighting_Options/ — Other Lighting Options
   ![](/images/pastedGraphic-438.jpg)
 - https://learn3d.loewald.com/6.2_Package_Mockup/ — Package Mockup
-  ![](/images/pastedGraphic-42.jpg)
+  ![Rendered cereal box mockup labeled Imperial Cereal, with a figure holding a pencil on the front](/images/pastedGrap...
 - https://learn3d.loewald.com/16.3_Parents/ — Parents
-  ![](/images/pastedGraphic-2.jpg)
+  ![Object Browser hierarchy with A at the top level, B and E under A, and C and D under B](/images/pastedGraphic-2.jpg)
 - https://learn3d.loewald.com/14_Particles/ — Particles
   ![](/images/pastedGraphic-417.jpg)
 - https://learn3d.loewald.com/12.4_Path_Animation/ — Path Animation
@@ -176,25 +176,25 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/9.6_Reflective_Materials/ — Reflective Materials
   ![](/images/pastedGraphic-289.jpg)
 - https://learn3d.loewald.com/11.12_Render_Manager/ — Render Manager
-  ![](/images/pastedGraphic-589.jpg)
+  ![Render Manager window showing a rendered elephant and a list of past render jobs with time and resolution](/images/...
 - https://learn3d.loewald.com/17.8_Rendering/ — Rendering
   Cheetah 3D is currently limited to rendering 5000x5000 pixel images.
 - https://learn3d.loewald.com/11_Rendering/ — Rendering
-  ![](/images/pastedGraphic-537.jpg)
+  ![Diagram of raytracing: a ray from the camera passes through a pixel grid to a teapot lit by a bulb](/images/pastedG...
 - https://learn3d.loewald.com/4.16_Rendering/ — Rendering
-  ![](/images/DraggedImage-66.jpg)
+  ![Render and Animation toolbar items](/images/DraggedImage-66.jpg)
 - https://learn3d.loewald.com/11.7_Rendering_a_Sky_Box/ — Rendering a Sky Box
   To render a skybox from a scene you simply need to:
 - https://learn3d.loewald.com/11.6_Rendering_Panoramas/ — Rendering Panoramas
   ![](/images/pastedGraphic-608.jpg)
 - https://learn3d.loewald.com/11.10_Rendering_Reflected_Lights/ — Rendering Reflected Lights
-  ![](/images/pastedGraphic-560.jpg)
+  ![Viewport: hemispherical reflector wireframe with a point light at its center](/images/pastedGraphic-560.jpg)
 - https://learn3d.loewald.com/11.14_Rendering_Tricks/ — Rendering Tricks
   Some 3D programs allow you to render different components of an image to separate layers of a document that supports ...
 - https://learn3d.loewald.com/16.2_Scene_Graph_Shortcuts/ — Scene Graph Shortcuts
   Double-clicking on an object’s name allows you to rename it.
 - https://learn3d.loewald.com/16.8_Scripts/ — Scripts
-  ![](/images/pastedGraphic-634.jpg)
+  ![Text editor window showing the Particle City.js script, with parameter setup and buildObject function](/images/past...
 - https://learn3d.loewald.com/4.5_Selecting_and_Moving_Objects/ — Selecting and Moving Objects
   In general, a huge amount of the work in creating 3D scenes involves using the **Transform** tool to move bits and pi...
 - https://learn3d.loewald.com/4.8_Selecting_Parts_of_Meshes/ — Selecting Parts of Meshes
@@ -203,7 +203,7 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/10.3_Shadows/ — Shadows
   Shadows are rendered as a side effect of the ray-tracing algorithm. If shadows are enabled for a given light then it ...
 - https://learn3d.loewald.com/9.1_Simple_Materials_Without_Nodes/ — Simple Materials Without Nodes
-  ![](/images/pastedGraphic-239.jpg)
+  ![Properties panel for a new material: diffuse, specular, reflection, transparency, emissive, and bump mapping settin...
 - https://learn3d.loewald.com/11.5_Simple_Render_Setups/ — Simple Render Setups
   If you just want to show off a model (or even if you just want to render it for purposes of fine-tuning it) the simpl...
 - https://learn3d.loewald.com/7.7_Splines/ — Splines
@@ -221,34 +221,34 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/9.11_The_Math_of_Material_Nodes/ — The Math of Material Nodes
   I don’t know how old you are, but I can remember back when I was studying trigonometry and I wondered “what the heck ...
 - https://learn3d.loewald.com/16.1_The_Object_Browser/ — The Object Browser
-  ![](/images/pastedGraphic-1.jpg)
+  ![Object Browser listing Camera and objects A to E, with B and E indented under A, and C and D under B](/images/paste...
 - https://learn3d.loewald.com/4.4_The_Properties_Panel/ — The Properties Panel
-  ![](/images/DraggedImage-2.jpg)
+  ![Properties panel for a camera with HDRI, Radiosity, and DOF tags, showing the Radiosity tag settings](/images/Dragg...
 - https://learn3d.loewald.com/11.3_The_Render_Tag/ — The Render Tag
   ![](/images/pastedGraphic-548.jpg)
 - https://learn3d.loewald.com/4.15_The_Sky_Light_Object/ — The Sky Light Object
-  ![](/images/DraggedImage-63.jpg)
+  ![Dusk render of a hexagonal sea platform with a smoking fire and a delta-wing aircraft overhead](/images/DraggedImag...
 - https://learn3d.loewald.com/9.3_Transparent_Materials/ — Transparent Materials
   In simplistic terms, a transparent material is any material whose transparent color is something other than black in ...
 - https://learn3d.loewald.com/12.3_Tutorial_Animation_Basics/ — Tutorial: Animation Basics
   When I have taught animation classes the first task I set my students is this. Move a simple shape (usually a cube or...
 - https://learn3d.loewald.com/13.2_Tutorial_Simple_Character_Rig/ — Tutorial: Simple Character Rig
-  ![](/images/pastedGraphic-502.jpg)
+  ![Subdivision humanoid figure in a fighting pose](/images/pastedGraphic-502.jpg)
 - https://learn3d.loewald.com/13.3_Tutorial_Walk_Cycle/ — Tutorial: Walk Cycle
-  ![](/images/pastedGraphic-514.jpg)
+  ![Wireframe character in the passing pose, one foot planted and the other knee raised](/images/pastedGraphic-514.jpg)
 - https://learn3d.loewald.com/5_Tutorials/ — Tutorials
 - https://learn3d.loewald.com/7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact/ — Understanding How Creators, Tags, and Modifiers Interact
   Creators, modifiers, and tags are the three non-destructive mechanisms Cheetah 3D provides for applying changes to an...
 - https://learn3d.loewald.com/9.4_Understanding_Nodes/ — Understanding Nodes
   A material can only have one shader.
 - https://learn3d.loewald.com/4.2_User_Interface_Overview/ — User Interface Overview
-  ![](/images/DraggedImage-72.jpg)
+  ![Default Cheetah 3D window with labels on the Toolbar, 3D view, Properties Pane, Tool Pane, Object Browser, Material...
 - https://learn3d.loewald.com/14.3_Using_a_Particle_System_as_a_Source_of_Objects/ — Using a Particle System as a Source of Objects
   If you need to create many objects quickly, use a collapsed particle system.
 - https://learn3d.loewald.com/15.2_Using_Dynamics_to_Model/ — Using Dynamics to Model
   ![](/images/pastedGraphic-534.jpg)
 - https://learn3d.loewald.com/9.7_UV_Mapping/ — UV Mapping
-  ![](/images/rMTDU.jpg)
+  ![UV Editing layout: the whole labeled grid texture, corners 0,0 to 1,1, mapped to a plane in the UV editor and 3D vi...
 - https://learn3d.loewald.com/17.4_Video_Compression/ — Video Compression
   The one line version of this section is this: when you save an animation from Cheetah 3D, the best compression option...
 - https://learn3d.loewald.com/7.6_What_is_a_mesh/ — What is a mesh?
@@ -256,8 +256,8 @@ Prefer that if you only need the text. A page marked noindex has no markdown cop
 - https://learn3d.loewald.com/3_What_s_new_in_Cheetah_3D_7/ — What’s new in Cheetah 3D 7?
   The headline feature of C3D7 is the new renderer, **Falcon**, but there are many important new user interface refinem...
 - https://learn3d.loewald.com/2.2_Why_Cheetah_3D/ — Why Cheetah 3D?
-  ![](/images/pastedGraphic-3.jpg)
+  ![Cheetah 3D app icon: a yellow cheetah face on a black rounded square](/images/pastedGraphic-3.jpg)
 - https://learn3d.loewald.com/2.1_Why_Learn_3D_Graphics/ — Why Learn 3D Graphics?
   Thirty years ago, 3D Graphics was something only a tiny number of people knew or cared about. Some people had probabl...
 - https://learn3d.loewald.com/16.7_Workflow/ — Workflow
-  ![](/images/pastedGraphic-633.jpg)
+  ![Grey clay maquette of Buzz Lightyear in a clear dome helmet](/images/pastedGraphic-633.jpg)

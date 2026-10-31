@@ -58,11 +58,11 @@ In general, the most important properties of primitives are those which control 
 
 A common problem in box modeling is trying to carve a precisely shaped opening or recess in an arbitrary face. In many cases the best approach is to build a flat surface with the shape of the hole, snap it to the surface in question, merge the meshes, and then bridge the two geometries.
 
-![](/images/pastedGraphic-194.jpg)
+![Star-shaped polygon, selected, snapped onto the top face of a flat box](/images/pastedGraphic-194.jpg)
 
-![](/images/pastedGraphic-195.jpg)
+![Box with its top face deleted, leaving the star floating in the opening](/images/pastedGraphic-195.jpg)
 
-![](/images/pastedGraphic-196.jpg)
+![Box top rebuilt by bridging the hole edge to the star, leaving long thin triangles](/images/pastedGraphic-196.jpg)
 
 ![](/images/pastedGraphic-197.jpg)
 
@@ -76,7 +76,7 @@ Cheetah 3D isn’t designed for solid modeling, but it does have some useful fea
 
 - If you pick **Backface Culling** from the 3D view’s Style menu polygons will disappear when viewed from “behind”. This makes it much easier to see flipped polygons (i.e. those with normals facing the wrong way) and correct them.
 
-![](/images/pastedGraphic-198.jpg)
+![Box whose right face is shaded unusually dark, before Backface Culling is turned on](/images/pastedGraphic-198.jpg)
 
 ![](/images/pastedGraphic-199.jpg)
 
@@ -112,9 +112,9 @@ Oh, and there’s one more complication — doubled polygons are just as dangero
 
 Some 3D programs offer the option of seeing normals but unfortunately Cheetah 3D isn’t one of them. If you want to see the normals on a mesh you can use a Particle Mesh and a Spline. This is so useful it’s worth keeping a Particle Mesh set up for this handy. All you need to do is create a Particle Mesh (rename it “View Normals” or something) and add a Line spline to it. Set its length to 0.2 and its position to 0,0.2,0 and drag it into the Particle Mesh. Now you can assign any mesh to the Particle Mesh’s Mesh property and you’ll be able to view its Point, Edge, and Face normals.
 
-![](/images/pastedGraphic-202.jpg)
+![Polyhedron with short green lines sticking out of each face center, showing polygon normals](/images/pastedGraphic-202.jpg)
 
-![](/images/pastedGraphic-203.jpg)
+![The same polyhedron with many more green lines along the edges, showing edge normals](/images/pastedGraphic-203.jpg)
 
 ![](/images/pastedGraphic-204.jpg)
 
@@ -124,13 +124,13 @@ Some 3D programs offer the option of seeing normals but unfortunately Cheetah 3D
 
 The process by which a person looks at a cup, say, and figures out which part of it is the “inside” and how to pour tea into it is incredibly complicated. Computers are simple minded and can’t do complicated things like that unless we can break it down into very simple steps. The way solidity is inferred in practice is quite simple, and identical conceptually to the way laser printers figure out which parts of a glyph (e.g. a letter or symbol) need to be colored in.
 
-![](/images/pastedGraphic-205.jpg)
+![Outline of an ampersand with two scan lines from the left ending at a red point and a green point](/images/pastedGraphic-205.jpg)
 
 Imagine you are a laser printer and you’re drawing a single row of pixels. Which part of the line should be black and which white? The simplest answer is to count the number of edges you cross. If you’ve crossed an odd number of edges you’re inside a character (so the pixel should be black) and if it’s an even number of edges you’re outside a character (so the pixel should be white). Easy!
 
 The only problem with this is that it assumes that there are no overlapping, wasted shapes. In practice, many objects are created in a much cruder and more slipshod manner, e.g. I might have built the numeral 1 out of overlapping pieces:
 
-![](/images/pastedGraphic-206.jpg)
+![Outline of the numeral 1 built from three overlapping shapes: a flag, a stem, and a base](/images/pastedGraphic-206.jpg)
 
 If we simply count the number of edges crossed here, we’ll render the overlaps as holes, which is not what we want. So we need to have a concept of the “inside” of a shape, and this is where “winding order” comes in. We define a shape as a series of control points in a specific order such that they go anticlockwise (to pick a direction) around their interior.
 

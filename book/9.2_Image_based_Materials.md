@@ -26,7 +26,7 @@ A UV map is a method of deciding how a texture gets mapped (or “wrapped”) on
 
 #### UV vs. Spatial Mapping
 
-![](/images/pastedGraphic-273.jpg)
+![Elephant with a grey checkerboard that follows its UV map, so squares stretch over its surface](/images/pastedGraphic-273.jpg)
 
 ![](/images/pastedGraphic-274.jpg)
 

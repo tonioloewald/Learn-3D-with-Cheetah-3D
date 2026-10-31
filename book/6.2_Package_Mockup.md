@@ -2,7 +2,7 @@
 
 ## Package Mockup
 
-![](/images/pastedGraphic-42.jpg)
+![Rendered cereal box mockup labeled Imperial Cereal, with a figure holding a pencil on the front](/images/pastedGraphic-42.jpg)
 
 Let’s suppose you’re designing the packaging for a new breakfast cereal and you want to mock up some 3D packages based on your designs.
 

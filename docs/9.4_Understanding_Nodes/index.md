@@ -24,7 +24,7 @@ You might use the state node to use positional information about an object to af
 
 ### Connecting Nodes
 
-![](/images/Screen%20Shot%202014-07-06%20at%205.22.09%20PM.jpg)
+![Image node's Color output connected by a yellow line to the Diffuse input of a Material shader node](/images/Screen%20Shot%202014-07-06%20at%205.22.09%20PM.jpg)
 
 It’s perfectly possible to create some useful materials without using anything other than a shader node, but more complex materials will involve connecting nodes to one another.
 
@@ -44,13 +44,13 @@ Perhaps the most intuitive node you can visualize is an Image node.
 
 _Here’s the same image node, but with the color vs. value outputs selected. The value output shows grayscale output (note that it isn’t just the red channel)._
 
-![](/images/pastedGraphic-315.jpg)
+![Close-up of the Image node with its Color output selected, previewing a colored test grid on a sphere](/images/pastedGraphic-315.jpg)
 
 ![](/images/pastedGraphic-316.jpg)
 
 _Here’s a test material comprising a test grid image that feeds its color output into the Material shader node’s diffuse input. Currently you’re seeing the image itself being visualized as mapped onto the test sphere, and it produces a fairly straightforward result._
 
-![](/images/pastedGraphic-317.jpg)
+![State node with its Normal output selected, previewing a sphere shaded blue in the center, green at the top, and magenta at the right](/images/pastedGraphic-317.jpg)
 
 Here is a **State** node (it’s not hooked up to anything else) with its **Normal** output channel visualized. If you can understand what you’re looking at here, you’re well on your way to grasping 3D vector math and the material system, so I’ll try to explain it.
 
@@ -66,15 +66,15 @@ If that all made sense, now you understand what you’re looking at. And this is
 
 **Exercise**. Now, if you click on the Position output channel of the State node it looks exactly the same as the Normal channel. What’s going on here? I’ll give you a hint — consider these two materials:
 
-![](/images/pastedGraphic-318.jpg)
+![State node's Position output wired to the Material node's diffuse input](/images/pastedGraphic-318.jpg)
 
-![](/images/pastedGraphic-319.jpg)
+![State node's Normal output wired to the Material node's diffuse input, giving the same blue-green-magenta sphere](/images/pastedGraphic-319.jpg)
 
 These might seem identical here, but they will look very different when applied to a unit cube:
 
-![](/images/pastedGraphic-320.jpg)
+![Cube rendered with the Position material, each face a smooth color gradient](/images/pastedGraphic-320.jpg)
 
-![](/images/pastedGraphic-321.jpg)
+![Cube rendered with the Normal material, each face a flat color: blue front, green top](/images/pastedGraphic-321.jpg)
 
 The reason for the difference is that a normal is a little arrow pointing out from the surface, whereas position is, well, position. As you move across the face of a cube the normal stays constant (so the faces of the cube colored with normals are flat colors) whereas your position is changing (so the position colored faces are gradients).
 
@@ -114,9 +114,9 @@ But if you feed it into the emissive channel (and turn on **Radiosity** in the C
 
 > *End of AI draft.* <!-- /AI draft -->
 
-![](/images/pastedGraphic-322.jpg)
+![White cube on a plane, constant fed into the diffuse channel, casting a dark shadow](/images/pastedGraphic-322.jpg)
 
-![](/images/pastedGraphic-323.jpg)
+![Cube with 1.0 fed into the emission channel, glowing and softly lighting the plane](/images/pastedGraphic-323.jpg)
 
 ![](/images/pastedGraphic-324.jpg)
 
@@ -126,7 +126,7 @@ When you send information of one type to a property of another type it will auto
 
 **Color to Vector**: alpha channel gets dropped.
 
-![](/images/Screen%20Shot%202014-07-06%20at%205.31.46%20PM.jpg)
+![Vector node set to 0.0, 1.0, 0.0 in the Properties panel, wired to the Material's Diffuse input, giving a green sphere](/images/Screen%20Shot%202014-07-06%20at%205.31.46%20PM.jpg)
 
 There is a wrinkle though:
 

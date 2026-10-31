@@ -152,7 +152,7 @@ Note that the word tessellation sounds fancier but is actually less accurate.
 
 ### Spline
 
-![](/images/pastedGraphic-640.jpg)
+![Letter Q drawn as two bezier splines, an outer outline and an inner hole, with control handles](/images/pastedGraphic-640.jpg)
 
 ![](/images/pastedGraphic-641.jpg)
 
@@ -198,7 +198,7 @@ You may find my **Surface Utilities** script useful for cleaning up the smoothin
 
 ### Sweep
 
-![](/images/pastedGraphic-642.jpg)
+![Orange tube swept along a helix spiral, shown in wireframe](/images/pastedGraphic-642.jpg)
 
 ![](/images/pastedGraphic-643.jpg)
 

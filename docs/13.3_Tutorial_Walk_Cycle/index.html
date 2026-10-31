@@ -40,12 +40,12 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="13.3_Tutorial_Walk_Cycle.md">
 <!--{"parent": "13_Character_Animation.md", "order": 3}--><h1 id="tutorial-walk-cycle">Tutorial: Walk Cycle</h1>
-<p><img src="/images/pastedGraphic-514.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-515.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-516.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-514.jpg" alt="Wireframe character in the passing pose, one foot planted and the other knee raised"></p>
+<p><img src="/images/pastedGraphic-515.jpg" alt="Wireframe character in the landing pose, front heel striking the ground and rear leg extended"></p>
+<p><img src="/images/pastedGraphic-516.jpg" alt="Wireframe character in the mirrored passing pose, the opposite knee raised"></p>
 <figure><img src="/images/pastedGraphic-517.jpg" alt=""><figcaption>The simplest walk cycle comprises four keyframes, two of which are mirrors of the others.</figcaption></figure>
 <p>The first thing a game developer generally needs a character to do is walk around. A walk cycle is a looping animation that makes a character walk (usually on the spot). Other commonly needed cycles are the breath cycle (so characters who aren’t doing anything don’t stand rigidly still), run cycle, and sneak cycle.</p>
 <p>To animate a walk cycle the absolute simplest approach is to create two poses — “passing” (where one foot is firmly planted, and the other is raised and passing it) and the “landing” (where one leg is in front and its foot has just hit the ground and the other behind), and then flip these two poses and space them out on the timeline, e.g. left foot passing right foot, left foot landing, right foot passing left foot, right foot grounded.</p>

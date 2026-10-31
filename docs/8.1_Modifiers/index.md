@@ -24,7 +24,7 @@ Subdivision is probably the single most important modifier in Cheetah 3D. First 
 
 *Catmull-Clark can be controlled by selecting edges and marking them as **creased** (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)*
 
-![](/images/pastedGraphic-217.jpg)
+![Subdivided box whose cage mesh has three beveled edges, giving a rounded shape with crisper corners](/images/pastedGraphic-217.jpg)
 
 *Catmull-Clark subdivision can be controlled more subtly by fine-tuning the “cage mesh”. In this case three edges have been beveled to better define those edges (rather than simply make them hard).* <!-- TODO review -->
 
@@ -44,7 +44,7 @@ Replicators produce multiple copies of the base geometry in a variety of differe
 
 #### Array
 
-![](/images/pastedGraphic-219.jpg)
+![Array modifier on a box object, making a line of 5 copies along X](/images/pastedGraphic-219.jpg)
 
 The Array modifier turns your mesh into an evenly spaced line of copies of itself.
 
@@ -62,7 +62,7 @@ The Build modifier randomly hides a proportion of the faces of a mesh. If its �
 
 #### Ring
 
-![](/images/pastedGraphic-221.jpg)
+![Ring modifier on a box object, arranging 5 copies in a full 360-degree ring around Y](/images/pastedGraphic-221.jpg)
 
 The Ring modifier turns your mesh into an evenly spaced ring (or partial ring) of copies of itself.
 
@@ -72,13 +72,13 @@ The Ring modifier turns your mesh into an evenly spaced ring (or partial ring) o
 
 #### Bend
 
-![](/images/pastedGraphic-222.jpg)
+![Bend modifier curving a box object 43 degrees inside its blue cage](/images/pastedGraphic-222.jpg)
 
 The bend modifier bends things. Like Bender, but not as funny or evil.
 
 #### Bulge
 
-![](/images/pastedGraphic-223.jpg)
+![Bulge modifier with strength -0.25 pinching the sides of a box object inward](/images/pastedGraphic-223.jpg)
 
 Bulge produces inward or outward bulges in your mesh. (It’s very similar to, but less flexible than, the taper modifier. It’s essentially taper with the tapering switched off.)
 
@@ -96,7 +96,7 @@ Displacement pushes vertices in the direction normal to the surface they belong 
 
 #### Shear
 
-![](/images/pastedGraphic-225.jpg)
+![Shear modifier skewing a box object sideways inside its cage](/images/pastedGraphic-225.jpg)
 
 Shear skews a mesh in its XY plane.  
 

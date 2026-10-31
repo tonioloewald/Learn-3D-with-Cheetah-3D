@@ -2,7 +2,7 @@
 
 ## The Object Browser
 
-![](/images/pastedGraphic-1.jpg)
+![Object Browser listing Camera and objects A to E, with B and E indented under A, and C and D under B](/images/pastedGraphic-1.jpg)
 
 A **scene graph** is a schematic representation of the content of a 3D scene. In Cheetah 3D the “scene graph” is called the Object Browser.
 

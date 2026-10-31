@@ -2,7 +2,7 @@
 
 ## The Sky Light Object
 
-![](/images/DraggedImage-63.jpg)
+![Dusk render of a hexagonal sea platform with a smoking fire and a delta-wing aircraft overhead](/images/DraggedImage-63.jpg)
 
 ![](/images/DraggedImage-64.jpg)
 

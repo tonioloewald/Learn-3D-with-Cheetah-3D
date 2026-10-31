@@ -40,13 +40,13 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.8_How_Raytracing_Works.md">
 <!--{"parent": "11_Rendering.md", "order": 8}--><h1 id="how-raytracing-works">How Raytracing Works</h1>
 <p>You <em>don’t</em> need to know this stuff.  You can skip this <em>entire section</em>.</p>
 <p>But…</p>
 <p>It’s very useful to have a solid grasp of how raytracing works when trying to render things in 3D. For that matter, most of the principles of raytracing apply to real-time 3D rendering, so it’s useful to understand this stuff even if all you’re interested in is real-time 3D (e.g. game development).</p>
-<p><img src="/images/pastedGraphic-552.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-552.jpg" alt="Viewport with a sphere on a plane and a camera whose view frustum is drawn as white lines"></p>
 <h2 id="ray-tracing-is-what-it-sounds-like">Ray tracing is what it sounds like</h2>
 <p>You trace a ray from the camera’s position in your virtual 3D space to each point you’d like to render on your viewport and keep going until you bump into some object in your scene.</p>
 <p>If you don’t bump into anything then you render the background (which could be a bitmap, transparency, or almost anything — e.g. a gradient or an algorithmic rendering of the sky).</p>

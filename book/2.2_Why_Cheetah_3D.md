@@ -2,7 +2,7 @@
 
 ## Why Cheetah 3D?
 
-![](/images/pastedGraphic-3.jpg)
+![Cheetah 3D app icon: a yellow cheetah face on a black rounded square](/images/pastedGraphic-3.jpg)
 
 ### Cheetah 3D represents the best deal in 3D software today
 

@@ -2,7 +2,7 @@
 
 ## Cheetah 3D Under the Hood
 
-![](/images/pastedGraphic-631.jpg)
+![Finder window of the Cheetah3D folder with Brushes, Materials, Render History, Samples, and Scripts folders](/images/pastedGraphic-631.jpg)
 
 ### Cheetah 3D’s Application Support Folder
 

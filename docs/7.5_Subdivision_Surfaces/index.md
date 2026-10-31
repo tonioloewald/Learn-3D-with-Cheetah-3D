@@ -12,9 +12,9 @@ The base mesh to which subdivision is applied is often referred to as its “con
 
 ### Controlling Curves
 
-![](/images/pastedGraphic-185.jpg)
+![Smooth subdivided elephant body inside its coarse red cage mesh](/images/pastedGraphic-185.jpg)
 
-![](/images/pastedGraphic-186.jpg)
+![Subdivided elephant with ears added, showing the denser cage edges where more detail is needed](/images/pastedGraphic-186.jpg)
 
 The general principle for controlling the curvature of a subdivision surface is that the more detail you need in the curve, the more detail you need in the cage mesh.
 
@@ -30,7 +30,7 @@ You can crease/uncrease edges using **Selection \> Toggle Crease**. Creased edge
 
 *Here, I took the same mesh as before, used Selection \> Select All Creases and toggled the creases off, then beveled the previously creased edges.*
 
-![](/images/pastedGraphic-189.jpg)
+![Rendered close-up of the creased mesh, with a sharp edge along the slab's rim](/images/pastedGraphic-189.jpg)
 
 ![](/images/pastedGraphic-190.jpg)
 

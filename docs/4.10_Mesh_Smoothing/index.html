@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="4.10_Mesh_Smoothing.md">
 <!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 10}--><h1 id="mesh-smoothing">Mesh Smoothing</h1>
 <blockquote>
@@ -52,10 +52,10 @@
 <p>In Cheetah 3D, a modifier is an object (i.e. it has an icon that appears in the Object Browser) that modifies the geometry of a mesh object it is parented to (i.e. that it is the child of).</p>
 <h3 id="stacking-modifiers">Stacking Modifiers</h3>
 <p>A mesh object with more than one modifier will have those modifiers applied from top to bottom, and this is almost always significant (in mathematical terms, very seldom are modifiers commutative).</p>
-<p><img src="/images/DraggedImage-28.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-28.jpg" alt="Cheetah 3D window with two balls: Crumple then Subdivision gives a smooth lump, Subdivision then Crumple a spiky one"></p>
 <p>On the left is a ball which has crumple followed by subdivision modifiers. The ball on the right has the same modifiers applied in the opposite order — producing very different results.</p>
 <h3 id="toggling-modifiers">Toggling Modifiers</h3>
-<p><img src="/images/DraggedImage-29.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-29.jpg" alt="Object Browser with a Subdivision modifier&#39;s Mode tag selected, and its Mode properties including the Modifier checkbox"></p>
 <p>You can turn modifiers on and off individually via their Mode tag, and you can also switch all of a given mesh object’s modifiers on and off via its Mode tag. (If a given modifier’s Mode tag or its parent object’s Mode tag has Modifiers toggled off, then the Modifier is off.)</p>
 <h3 id="splines">Splines</h3>
 <p>Splines are three dimensional bezier curves (bezier curves are completely agnostic about the dimensionality of the space they occupy). Cheetah 3D’s bezier creation and editing tools are a bit awkward, so the best way to get a precise curve into Cheetah 3D is usually to draw it in a dedicated drawing program, such as Illustrator or Inkscape.</p>

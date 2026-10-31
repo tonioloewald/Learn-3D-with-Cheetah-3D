@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.15_Baking_Materials.md">
 <!--{"parent": "11_Rendering.md", "order": 15}--><h1 id="baking-materials">Baking Materials</h1>
 <p>Originally, baking was used to precalculate the lighting of settings for 3D action games (<em>Quake</em> pioneered this technique). Back in the late-90s, calculating shadows on-the-fly was simply impractical for inexpensive computer hardware, so id Software decided to “bake” lightmaps for their scenes. This allowed a game engine to render settings with elaborate lighting almost as quickly as a “flat” 3D scene.</p>
@@ -49,7 +49,7 @@
 <p>In addition to baking lighting, baking is also useful for turning procedural materials (which can be prohibitively expensive to calculate in “real time”) into image textures. This also allows you to use procedural materials for realtime applications.</p>
 <h2 id="tutorial-baking-in-five-minutes">Tutorial: Baking in Five Minutes</h2>
 <p><strong>Note</strong>: baking works on one <em>editable</em> mesh at a time, but the mesh is rendered in situ using the current camera’s settings, so other objects will cast shadows onto the mesh you’re baking and if you have Radiosity turned on in the renderer’s settings, radiosity will be baked.</p>
-<p><img src="/images/pastedGraphic-576.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-576.jpg" alt="Viewport view of a simple castle mesh with brown walls and red conical roofs"></p>
 <ol>
 <li><p>Start with a textured <strong>editable</strong> mesh you want to bake.</p>
 </li>
@@ -77,26 +77,26 @@
 <ol start="3">
 <li>Add an image texture for the new material’s diffuse channel (ideally we’d use a Solid shader here, but Solid shaders do not preview correctly) and load the rendered image into it. Your mesh will probably look like crap right now!</li>
 </ol>
-<p><img src="/images/pastedGraphic-579.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-580.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-581.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-579.jpg" alt="Castle polygon object properties with UV set changed to UV2, circled"></p>
+<p><img src="/images/pastedGraphic-580.jpg" alt="Castle in the viewport with the baked texture applied via UV2, front view"></p>
+<p><img src="/images/pastedGraphic-581.jpg" alt="Castle in the viewport with the baked texture, seen from another angle with baked shadows"></p>
 <figure><img src="/images/pastedGraphic-582.jpg" alt=""><figcaption>Once you set the mesh to use UV2 it should look amazing, from any angle! This is how the model looks in the Cheetah 3D viewport.</figcaption></figure>
 <ol start="4">
 <li>Click on the mesh’s icon (either in the property panel or the Object Browser) so you can see its properties, and change its UV Set to 2. It should look amazing now (try orbiting around it). For an even better result, you can turn off all the lights in your scene, and add a single ambient light.</li>
 </ol>
 <p><strong>Baking Procedural Materials</strong></p>
-<p><img src="/images/pastedGraphic-583.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-584.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-583.jpg" alt="Render of the castle with procedural cobbles, terracotta walls, and shingled roofs"></p>
+<p><img src="/images/pastedGraphic-584.jpg" alt="Viewport preview of the castle using the baked 2048x2048 texture"></p>
 <figure><img src="/images/pastedGraphic-585.jpg" alt=""><figcaption><strong>Top</strong>: the same castle, but now it’s been textured with procedural materials, including procedural cobbles on the ground, procedural terracotta on the walls, and procedural shingles on the roofs. <strong>Middle</strong>: the same castle after baking a 2048x2048 texture and previewing it. <strong>Bottom</strong>: zoomed in showing how detailed the final texture is.</figcaption></figure>
 <p><strong>Baking Tiling Textures from Procedural Textures</strong></p>
 <p>You can use the preceding technique to create a tiling image from a procedural texture using a torus. A torus has the wonderful property of having a perfectly tiling UV map. This allows a torus to create a perfect tiling pattern from any solid procedural texture.</p>
 <p>There is a downside to this — in order to prevent distortion of the resulting material you need to make the Radius Ring significantly larger than Radius tube, but this means the baked material will tile perfectly well but will be vertically stretched.</p>
-<p><img src="/images/pastedGraphic-586.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-586.jpg" alt="Square grayscale Voronoi texture baked from a torus, cells bunched toward the middle"></p>
 <p>This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius Tube 0.5. It gets kind of bunched up in the middle relative to the top and bottom (which map to the inner surface of the torus).</p>
-<p><img src="/images/pastedGraphic-587.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-587.jpg" alt="Wide 2:1 grayscale Voronoi texture with fairly even cells"></p>
 <p>This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius Tube 0.25, and then scaled vertically by 50%. There’s little apparent distortion and it still tiles well. It’s just not a square texture.</p>
 <p><strong>The Bake Texture Tag</strong></p>
-<p><img src="/images/pastedGraphic-588.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-588.jpg" alt="Bake Texture tag properties: Bake to UV2, Texture size 1024x1024, Baking UV coords button, and channel checkboxes"></p>
 <blockquote>
 <p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
 </blockquote>

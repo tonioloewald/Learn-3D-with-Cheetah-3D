@@ -40,14 +40,14 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.11_The_Math_of_Material_Nodes.md">
 <!--{"parent": "9_Materials.md", "order": 11}--><h1 id="the-math-of-material-nodes">The Math of Material Nodes</h1>
 <p><strong>OMG! You didn’t tell me there’d be math!</strong></p>
 <p>I don’t know how old you are, but I can remember back when I was studying trigonometry and I wondered “what the heck use will this ever be in real life?” Well, one very good answer is anything to do with graphics or design.</p>
 <p>The goal of this section isn’t to teach you complex vector math, but simply to give you a feel for how these things work — the idea is to give you an intuitive grasp of what the different concepts mean and do, rather than teach you how to calculate the normal of a plane. You don’t need to do that rubbish — Cheetah 3D does it for you. Millions and millions of times.</p>
 <h2 id="points">Points</h2>
-<p><img src="/images/pastedGraphic-379.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-379.jpg" alt="Diagram of x and y axes with a single point labeled The Point (1,2)"></p>
 <p>A point is a position in 3D space represented by three floating point values for x, y, and z. </p>
 <p>Usually points are described in their local coordinate system. E.g. a child object’s position is given in terms of its parent object’s coordinate system, not the global coordinate system (unless the object has no parent, in which case the two are the same). <!-- TODO review --></p>
 <p>The points of a mesh are treated as children of that object (i.e. they are described as children of the object).</p>
@@ -56,20 +56,20 @@
 <p>Any three points will lie in a plane (and thus can form a triangle). In general, any larger number of points cannot be relied on to be <em>coplanar</em> (i.e. they may not lie in a plane). For this reason, 3D programs tend to reduce any polygon with more than three sides to triangles (which will always lie in a plane).</p>
 <h2 id="planarity-coplanarity">Planarity, Coplanarity</h2>
 <p>Objects are said to be coplanar if they lie within a plane. Figuring out if a given point lies (to some approximation) in a plane is very useful for doing things like merging and splitting adjacent polygons. It&#39;s less likely to be useful for materials than for <em>scripts</em>.</p>
-<p><img src="/images/DraggedImage.png" alt=""></p>
+<p><img src="/images/DraggedImage.png" alt="Diagram of a plane with normal n at point p, vector q-p to point q, and its projection (q-p).n onto n"></p>
 <p>If you have a point <strong>p</strong> on a plane and the normal of the plane <strong>n</strong>, you can tell that another point <strong>q</strong> lies on the plane by looking at the vector <strong>q-p</strong> and projecting it onto <strong>n</strong> (i.e. the dot product <strong>(q-p).n</strong>). The magnitude of this product is how far the point q is from the plane.</p>
 <h2 id="vector">Vector</h2>
-<p><img src="/images/pastedGraphic-380.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-380.jpg" alt="Side-by-side diagrams contrasting The Point (1,2) with The Vector (1,2), an arrow from the origin"></p>
 <p>A vector is a direction and a magnitude. Vectors, like points, are described by three values (x, y, and z), but instead of thinking of those values as describing a position, you should think of them as describing a velocity (or perhaps as an arrow formed by drawing a line from 0,0,0 to the point described by x,y,z).</p>
 <p>Usually in 3D we’re interested in unit vectors — i.e. vectors whose magnitude (length) is exactly 1. In general, when I describe 3D math I will simplify it by assuming we’re talking about unit vectors.</p>
 <h2 id="normal">Normal</h2>
-<p><img src="/images/pastedGraphic-381.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-381.jpg" alt="Diagram of a quad with anticlockwise winding order and its normal pointing straight up"></p>
 <p>A normal vector is a unit vector pointing straight out from — i.e. perpendicular to — a plane. In 3D programs, polygons are generally considered “one-sided” with the normal pointing in the direction the polygon “faces”. </p>
 <p>Viewed from the “front” a polygon has an “anticlockwise” winding order, i.e. it is defined as a series of points running anticlockwise. Normal vectors are extremely useful for calculating the behavior of light.</p>
-<p><img src="/images/pastedGraphic-382.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-382.jpg" alt="Diagram of incoming and reflected light making equal angles I and R with the surface normal"></p>
 <p>E.g. you may recall that with reflected light, the “angle of incidence is equal to the angle of reflection”. In terms of vectors, the angle of incidence is the angle between the vector representing the direction of the incoming light and the normal of the reflecting surface, while the angle of reflection is the angle between the reflected light and the same normal.</p>
 <h2 id="dot-product">Dot Product</h2>
-<p><img src="/images/pastedGraphic-383.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-383.jpg" alt="Diagram of two vectors with the angle A between them"></p>
 <p>The dot product of two vectors is the product of their magnitudes (lengths) and the cosine of the angle between them. </p>
 <p>We’re mostly interested in unit vectors, so the product of the magnitudes will be 1. It follows that the dot product of two unit vectors is the cosine of the angle between them.</p>
 <p>In intuitive terms dot product is a measure of how similar two unit vectors are in direction where 1.0 means “exactly the same direction”, 0.0 means “perpendicular”, and -1.0 means “exactly the opposite direction”.</p>
@@ -85,7 +85,7 @@
 <p><strong>Diffuse Illumination</strong></p>
 <p>You don’t need to calculate diffuse illumination yourself but it’s interesting to know how it works. The diffuse color of a surface whose diffuse color is D, illuminated by a light of intensity L, is equal to the product of the colors D and L and the <strong>dot product</strong> of the surface normal and the unit vector pointing to the light.</p>
 <p><strong>Fresnel Effects</strong></p>
-<p><img src="/images/pastedGraphic-386.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-386.jpg" alt="Glass elephant rendered without fresnel, strongly reflective all over, in a checkered room"></p>
 <figure><img src="/images/pastedGraphic-387.jpg" alt=""><figcaption>Simple glass material with fresnel checked off and on, respectively. (The non-fresnel version is much more reflective in general, but less reflective at the edges — the blue you see is a reflection of the background color.)</figcaption></figure>
 <p>If you look at a pane of glass from an oblique angle then it behaves much like a mirror — not much light passes through it, but it reflects quite well. On the other hand if you look at a pane of glass straight on, light passes through it very well while relatively little is reflected.</p>
 <p>This is called the Fresnel effect or Fresnel reflectance.</p>

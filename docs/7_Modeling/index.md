@@ -2,7 +2,7 @@
 
 # Modeling
 
-![](/images/pastedGraphic-119.jpg)
+![Low-poly Sopwith Dolphin biplane model standing among its front, side, and top blueprints](/images/pastedGraphic-119.jpg)
 
 Modeling is the process of seeing or imagining a three-dimensional object and then creating its geometry in virtual space. It’s often compared to sculpting (and some 3D software tries to simulate the process of sculpting clay) or building things out of cardboard or matchsticks or lego.
 
@@ -36,7 +36,7 @@ E.g. I once tried to model a forklift from memory (hey, I knew what a forklift l
 
 Picking a level of detail and sticking to it is crucial. It saves you time, high polygon counts, and wasted work. Consider the humble screw. At first approximation it’s a simple object: a short squat cylinder on top of a tall thin cylinder. But the closer you look the more complicated it becomes. If you’re modeling a battleship you don’t need to model the rivets in detail, but if you’re modeling a rivet you do.
 
-![](/images/bolts.jpg)
+![Rendered pair of chrome machine screws with threads, one Phillips head and one hex socket](/images/bolts.jpg)
 
 When determining level of detail consider how much time you have and how important the object will be to your current (and expected future) projects. If the answers are not much and not very then keep it simple or even avoid it altogether (a lot of detail objects can be omitted or made part of a material).
 
@@ -104,7 +104,7 @@ So when should you use splines and when should you box model? The short answer i
 
 ##### Tutorial: Making a Wineglass with a Spline and the Lathe Creator
 
-![](/images/pastedGraphic-122.jpg)
+![Cheetah 3D window with a wineglass made by a Lathe object whose child is the profile spline](/images/pastedGraphic-122.jpg)
 
 The Lathe creator is a very effective tool for creating rotationally symmetric objects (in other words, the kinds of things you make with a lathe). A wineglass is a classic example of a rotationally symmetric object, so it’s a cinch to create a nice profile of the wineglass and then “lathe it” into a solid object.
 
@@ -112,7 +112,7 @@ The Lathe creator is a very effective tool for creating rotationally symmetric o
 
 ##### Tutorial: Making a Wineglass using Box Modeling and Subdivision
 
-![](/images/pastedGraphic-123.jpg)
+![Cheetah 3D window with a subdivided cylinder shaped into a wineglass beside a wineglass photo blueprint](/images/pastedGraphic-123.jpg)
 
 Even though using box modeling and subdivision to get the same result might seem like a much more roundabout way of achieving the same result, it’s surprisingly easy to do, doesn’t require using a dedicated vector drawing program (or struggling with Cheetah 3D’s somewhat limited spline drawing tools), and produces a very elegant result that is also more versatile.
 
@@ -186,7 +186,7 @@ Finally, you can really only use point mode to work on splines. You can’t sele
 
 Ideally, you should create your splines in another program and import them. If you must create a 3D spline, try making parts of it in another program and doing as little as possible in Cheetah 3D.
 
-![](/images/pastedGraphic-128.jpg)
+![Zigzag bezier spline drawn over a wireframe plane grid, roughed out before snapping](/images/pastedGraphic-128.jpg)
 
 ![](/images/pastedGraphic-129.jpg)
 

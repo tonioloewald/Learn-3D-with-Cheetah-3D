@@ -2,7 +2,7 @@
 
 ## Alpha Channels in Depth
 
-![](/images/Screen%20Shot%202013-12-09%20at%2011.23.44%20AM.jpg)
+![Diagram: striped image, star alpha, and output; white as transparent cuts a star hole, white as opaque keeps the star](/images/Screen%20Shot%202013-12-09%20at%2011.23.44%20AM.jpg)
 
 Alpha channels turn out to be a surprisingly complicated topic. To begin with, alpha channels can vary _interpretation_ (is it a _transparency_ map or an _opacity_ map?) and _depth_ (in other words, the precision with which transparency can be represented). Typically, alpha channels are 8-bits deep, allowing 256 levels of transparency ranging from completely transparent to completely opaque. Another example you may be familiar with is GIF files, which allow a specific color to be treated as "transparent" — in effect, a 1-bit alpha channel.
 
@@ -10,7 +10,7 @@ Alpha channels turn out to be a surprisingly complicated topic. To begin with, a
 
 The Cheetah 3D Material Shader has a checkbox labelled “Use Alpha” which simply uses the alpha channel of the image being used for the material’s diffuse channel as its transparency channel.
 
-![](/images/pastedGraphic-656.jpg)
+![Node Editor: Image Color into Vec2Float, W into Subtract B, and Subtract Val into Material diffuse](/images/pastedGraphic-656.jpg)
 
 If you simply want to use an image’s alpha channel for some arbitrary purpose in the Node Editor you can feed its color output into a Vec2Float node and pull out the W component and then subtract it from 1 to invert it (for some reason if you pull out the alpha channel this way it comes out flipped).
 
@@ -22,9 +22,9 @@ The important thing to remember in Cheetah 3D is that Cheetah 3D considers 1.0 t
 
 ### Premultiplied?
 
-![](/images/pastedGraphic-657.jpg)
+![Red image magnified to 1600 percent, edge pixels fading to transparent over a checkerboard](/images/pastedGraphic-657.jpg)
 
-![](/images/pastedGraphic-658.jpg)
+![Same red image magnified, edge pixels blended with white as if premultiplied onto a white background](/images/pastedGraphic-658.jpg)
 
 The final complication with alpha channels is how they interact with color values. The “obvious and correct” way to handle this would be for the color values to produce red, while the alpha channel determines transparency, but in many cases this is not how alpha channeled images are stored.
 

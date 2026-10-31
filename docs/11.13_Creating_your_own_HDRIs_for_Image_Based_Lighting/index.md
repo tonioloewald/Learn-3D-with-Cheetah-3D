@@ -2,7 +2,7 @@
 
 ## Creating your own HDRIs for Image-Based Lighting
 
-![](/images/pastedGraphic-610.jpg)
+![Render Settings properties with Cache HDRI checked under Special File Export, circled](/images/pastedGraphic-610.jpg)
 
 > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 

@@ -40,11 +40,11 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.7_UV_Mapping.md">
 <!--{"parent": "9_Materials.md", "order": 7}--><h1 id="uv-mapping">UV Mapping</h1>
-<p><img src="/images/rMTDU.jpg" alt=""></p>
-<p><img src="/images/GGMmw.jpg" alt=""></p>
+<p><img src="/images/rMTDU.jpg" alt="UV Editing layout: the whole labeled grid texture, corners 0,0 to 1,1, mapped to a plane in the UV editor and 3D view"></p>
+<p><img src="/images/GGMmw.jpg" alt="UV Editing layout with the quad shrunk around the 1,0 corner in the UV editor, so the plane shows an enlarged 1,0"></p>
 <figure><img src="/images/X0trw.jpg" alt=""><figcaption>UV mapping simply involves giving the vertices of polygons in a mesh coordinates in UV (i.e. texture) space. This affects the way the image is “mapped” onto the polygons. In the three examples above (all show Cheetah 3D’s UV Editing layout) I’ve clicked the “Edit” button of the image in question (so it shows up in the UV Editor) and you can see a simple quad (four sided polygon) displayed in UV space and the 3D view. At the <strong>top</strong> you see the default mapping of a texture to a plane. <strong>Middle</strong>, I’ve simply scaled the UV representation of the polygon down and moved it so that a feature is centered. In the <strong>bottom</strong> image, the rotated quad is “squashed” because the image isn’t square, and so it’s being rotated in non-uniformly scaled space.</figcaption></figure>
 <p>The basic idea of UV-mapping is to place 2D images onto 3D surfaces. The 2D images are treated as having their own coordinate space (where u and v replace the traditional x and y) and then every polygon in a 3D mesh is assumed to have a representation in uv space as well as 3D space.</p>
 <p>To this end, a mesh has uv points (or vertices) with uv coordinates in addition to its 3D points, and each polygon is represented as an ordered set of UV points.</p>
@@ -72,47 +72,47 @@
 <p>Because every point on a polygon’s surface has a spatial coordinate, it’s possible to map materials onto it simply by using those spatial coordinates. Because the coordinates are 3D coordinates, trying to use those coordinates as UV coordinates tends to produce poor results, but it works very well for multidimensional chaotic functions, which is what most of the procedural texture maps are.</p>
 <p><strong>Aside</strong>: a chaotic function is one that produces highly unpredictable results from seemingly simple input values.</p>
 <h2 id="uv-mapper-tool">UV Mapper Tool</h2>
-<p><img src="/images/pastedGraphic-397.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-397.jpg" alt="UV Mapper tool settings: Mapping type Spherical, Mapping Geometry Transformation, UV Transformation, and Commands"></p>
 <p>The UV Mapper tool applies a simple UV projection onto your mesh. This can work beautifully for simple cases. The UV Mapper offers five mapping options: cubic, spherical, flat, cylindrical, and frontal.</p>
-<p><img src="/images/pastedGraphic-398.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-399.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-400.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-398.jpg" alt="Sphere with cubic mapping, the ampersand texture repeated in patches"></p>
+<p><img src="/images/pastedGraphic-399.jpg" alt="Sphere with spherical mapping, the texture stretched into bands pinched at the pole"></p>
+<p><img src="/images/pastedGraphic-400.jpg" alt="Sphere with planar mapping, the ampersand projected across the front"></p>
 <figure><img src="/images/pastedGraphic-401.jpg" alt=""><figcaption>UV Mapper applied to a sphere using cubic, spherical, planar, and cylindrical mapping type (respectively).</figcaption></figure>
 <figure><img src="/images/pastedGraphic-402.jpg" alt=""><figcaption>The frontal mapping projects the material straight onto the object (imagine a projector whose beam stays a constant size).</figcaption></figure>
 <h2 id="unwrap-uv-tool">Unwrap UV Tool</h2>
 <p>The Unwrap UV tool is the most powerful tool for UV mapping complex objects, such as almost any character. It can also be very useful for dealing with quite simple objects.</p>
-<p><img src="/images/pastedGraphic-403.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-403.jpg" alt="Cube in edge mode with seams marked in green along the obvious edges"></p>
 <figure><img src="/images/pastedGraphic-404.jpg" alt=""><figcaption>Placing seams in the “obvious places” on a cube mesh (left) and using Unwrap UV leads to the UV mapping on the right (actually the mapping was a little bit off, but very easily fixed by selecting all the polygons and moving and rescaling them slightly).</figcaption></figure>
 <p>The key to effectively using the Unwrap UV tool is placing seams on your mesh, and the simplest way of thinking about seam placement is to assume you wanted to sew the object out of cloth, and place seams where you’d need to have seams in the fabric.</p>
 <h3 id="manual-seams">Manual Seams</h3>
 <p>As stated above, the best way to think about texture seams is to place them as though you were sewing the mesh out of pieces of fabric. So, what better example to discuss than a shirt?</p>
 <figure><img src="/images/pastedGraphic-405.jpg" alt=""><figcaption>Here’s a drawing of a shirt. It’s fairly obvious where the major seams are. (This image is from a free pattern found on the Etsy Blog — etsy.com.)</figcaption></figure>
-<p><img src="/images/pastedGraphic-406.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-406.jpg" alt="Shirt mesh in edge mode with green seams at the shoulders, side, and sleeves"></p>
 <figure><img src="/images/pastedGraphic-407.jpg" alt=""><figcaption>Here’s a simple shirt mesh. I’ve placed seams in it exactly where the major seams would go in a fabric shirt (by default, Cheetah 3D shows seams in green in edge mode).</figcaption></figure>
-<p><img src="/images/pastedGraphic-408.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-408.jpg" alt="Shirt pieces after Unwrap UV, some spilling outside the UV square"></p>
 <figure><img src="/images/pastedGraphic-409.jpg" alt=""><figcaption>Simply selecting Unwrap UV results in the UV mapping on the left. Using Group select it’s easy enough to rearrange the pieces to fit inside the UV square.</figcaption></figure>
 <p>As of v6.2, Cheetah 3D offers two different unwrapping options — ABF and LSCM. LSCM was the old algorithm, ABF is new and generally reduces stretching and overlap compared with LSCM. It&#39;s easy enough to try both and use whichever works better. In general, for organic forms, like the shirt, ABF works better.</p>
-<p><img src="/images/0d6e6d62-def8-4a3e-8643-1d9373eaabbe-Screen%20Shot%202013-04-27%20at%208.43.14%20PM.jpg" alt=""></p>
+<p><img src="/images/0d6e6d62-def8-4a3e-8643-1d9373eaabbe-Screen%20Shot%202013-04-27%20at%208.43.14%20PM.jpg" alt="Shirt pieces unwrapped with ABF in the UV editor, still overlapping the square&#39;s edge"></p>
 <p>This is how the shirt turns out using ABF. The results don&#39;t look much different from LSCM but it turns out to cause significantly less distortion around the collarbones. A little bit of tidying up produces this map:</p>
-<p><img src="/images/Screen%20Shot%202013-04-27%20at%208.50.07%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202013-04-27%20at%208.50.07%20PM.jpg" alt="Tidied ABF map with front, back, and sleeve pieces arranged inside the UV square"></p>
 <p>By moving the groups around while looking at the viewport, it&#39;s possible to line up the seams remarkably well with very little effort.</p>
-<p><img src="/images/shirt%20render.jpg" alt=""></p>
+<p><img src="/images/shirt%20render.jpg" alt="Shirt rendered with a blue and white checkerboard texture lining up across the seams"></p>
 <h3 id="automatic-seams">Automatic Seams</h3>
 <p>Automatic Seams does exactly what you’d expect it to do — it automatically places seams on a model, and it does a pretty good job.</p>
-<p><img src="/images/pastedGraphic-410.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-410.jpg" alt="Shirt mesh with Automatic Seams applied, green seams outlining many polygon groups"></p>
 <p>Automatic seams wraps seams around contiguous sets of polygons facing more-or-less in the same direction. In the above example I’ve applied Automatic Seams to the same shirt model as before.</p>
-<p><img src="/images/pastedGraphic-411.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-411.jpg" alt="UV map from automatic seams: front and back with sleeves attached, plus many separate sleeve strips outside the square"></p>
 <h4 id="why-not-just-use-automatic-seams">Why not just use automatic seams?</h4>
 <p>Automatic seams are great for hairy models where manually adding seams would be horribly time-consuming, but they have a lot of drawbacks.</p>
 <p>Using automatic seams will lead to seams being in arbitrary places, and almost always lead to more seams than necessary. E.g. on the shirt we’ve ended up with four seams running along each sleeve and no seam down the middle of the front of the shirt. The problem here is that seams tend to be where you’ll see problems (discontinuities, minor artifacts) in the UV-mapping, so you generally want (a) as few seams as possible, and (b) seams to be where they’re less likely to be seen (which is why shirts have one seam on their sleeves, and it’s on the inner/under side of the sleeve where it won’t usually be seen).</p>
 <p>Our automatic seam unwrapping means we’ll have way more seams on the sleeve than we did when we placed the seams manually, they’re more visible, and there’s no seam down the front where we’d actually expect a seam (and a discontinuity in the pattern on a shirt).</p>
 <h2 id="texture-painting">Texture Painting</h2>
-<p><img src="/images/pastedGraphic-412.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-412.jpg" alt="UV Editing layout with a smiley face painted on a plane in the UV editor and 3D view, Paint tool settings open"></p>
 <figure><img src="/images/pastedGraphic-413.jpg" alt=""><figcaption><strong>Top</strong>: Cheetah 3D in the UV Editing layout with a simple material (<strong>bottom</strong>) assigned to a plane, the image texture node from that material is being edited, and the <strong>Tools &gt; UV &gt; Paint tool</strong> is active. This incredible texture map was created entirely using the Paint tool.</figcaption></figure>
 <p>Cheetah 3D offers some basic texture painting functionality. If you use an Image texture node to create a new texture (by clicking the New Texture button) or edit an existing texture (by clicking the edit button) the image will appear in the UV Editor. </p>
 <p>If this image texture is driving the diffuse channel of a Material shader you can assign the texture to objects in your scene and paint the texture either in the UV editor or directly in the 3D view.</p>
 <figure><img src="/images/pastedGraphic-414.jpg" alt=""><figcaption>Here the elephant mesh has been unwrapped using manually placed seams, and color has been roughly applied using the Paint tool. This can serve as a useful template in a dedicated image editor such as Photoshop, Acorn, Pixelmator, Photoline, or The GIMP.</figcaption></figure>
-<p><img src="/images/pastedGraphic-415.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-415.jpg" alt="Elephant&#39;s UV layout exported as black wireframe outlines on white"></p>
 <figure><img src="/images/pastedGraphic-416.jpg" alt=""><figcaption><strong>Top</strong>: Cheetah 3D can also export a UV layout as a PDF (using <strong>Tools &gt; UV &gt; Save UV’s to PDF</strong>). You can then convert the PDF to a bitmap image, e.g. a PNG or TIFF, using Preview or some other app, and bring it back into Cheetah 3D and use the editor to mark it up with some indicative colors, or — <strong>bottom</strong> — add it as a guide layer in a dedicated image editor.</figcaption></figure>
 <p>Although the Paint tool allows you to load bitmaps for use as brushes, in general it’s really best used for simple touch ups (e.g. cleaning up minor errors in bakes) and marking color swatches on a UV line render.</p>
 

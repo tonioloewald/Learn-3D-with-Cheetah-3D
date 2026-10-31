@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.2_Image_based_Materials.md">
 <!--{"parent": "9_Materials.md", "order": 2}--><h1 id="image-based-materials">Image-based Materials</h1>
 <p>If you’re working on real-time applications (e.g. games) then chances are you’re going to be using a lot of image-based materials. An image based material is a material that uses bitmap image textures to drive shader properties. Typical examples include:</p>
@@ -61,7 +61,7 @@
 <p>One of the problems with explaining a lot of 3D concepts is that you need to understand A to understand B, but you need to understand B to understand A. Materials and UV Maps are inter-related in just this way. So before we go any further let’s take a quick look at the wonderful world of UV mapping.</p>
 <p>A UV map is a method of deciding how a texture gets mapped (or “wrapped”) onto a surface. UVs are 2D coordinates (U and V are essentially x,y coordinates in texture space) that are assigned to vertices on a mesh, interpolated across polygons to obtain values at a specific point, and then that point is looked up in the texture space.</p>
 <h3 id="uv-vs-spatial-mapping">UV vs. Spatial Mapping</h3>
-<p><img src="/images/pastedGraphic-273.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-273.jpg" alt="Elephant with a grey checkerboard that follows its UV map, so squares stretch over its surface"></p>
 <figure><img src="/images/pastedGraphic-274.jpg" alt=""><figcaption><strong>Top</strong>: procedural checkerboard using UV-mapping. <strong>Bottom</strong>: procedural checkerboard using 3D (spatial) mapping (the default setting for procedural textures).</figcaption></figure>
 <p>Image-based materials are driven by UV-coordinates, but procedural materials are driven by 3D spatial coordinates by default (some offer the option of using UV coordinates). The fact that procedural materials work without needing UVs is often an advantage, but not always. Fabric, for example, tends to follow the flow of the surface and not act like a solid procedural material.</p>
 <h3 id="default-uv-maps">Default UV Maps</h3>

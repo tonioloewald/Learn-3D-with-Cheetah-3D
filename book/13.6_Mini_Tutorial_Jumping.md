@@ -20,11 +20,11 @@ You’re done bar the tweaking.
 
 ### Landing
 
-![](/images/pastedGraphic-526.jpg)
+![Wireframe character mid-stride with one knee raised, the first landing frame from the run cycle](/images/pastedGraphic-526.jpg)
 
-![](/images/pastedGraphic-527.jpg)
+![Wireframe character with the front foot touching down, arms still swinging](/images/pastedGraphic-527.jpg)
 
-![](/images/pastedGraphic-528.jpg)
+![Wireframe character crouched on landing, knees bent and arms forward](/images/pastedGraphic-528.jpg)
 
 Once again, you’ve got a landing sequence already — frames 7 and 9 of the run cycle.
 

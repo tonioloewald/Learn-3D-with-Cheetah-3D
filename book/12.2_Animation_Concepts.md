@@ -36,9 +36,9 @@ Again, returning to our train, the bit where it lurches back slightly after comi
 
 ### Squash and Stretch
 
-![](/images/pastedGraphic-484.jpg)
+![Ball squashed flat on a plane before the jump](/images/pastedGraphic-484.jpg)
 
-![](/images/pastedGraphic-485.jpg)
+![Ball stretched into an oval in midair along its path](/images/pastedGraphic-485.jpg)
 
 ![](/images/pastedGraphic-486.jpg)
 

@@ -2,7 +2,7 @@
 
 ## Rendering
 
-![](/images/DraggedImage-66.jpg)
+![Render and Animation toolbar items](/images/DraggedImage-66.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 
@@ -24,7 +24,7 @@ Cheetah 3D has two renderers: **Cheetah**, a recursive **ray tracer**, and **Fal
 
 If you want to preview an animation in real time you can simply press the Play button in the animation control panel. For complex scenes, "real time" playback may become slow and jerky.
 
-![](/images/DraggedImage-68.jpg)
+![Old Render Settings panel with Max. ray depth 6, Sampler QMC, and Filter Mitchell](/images/DraggedImage-68.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 

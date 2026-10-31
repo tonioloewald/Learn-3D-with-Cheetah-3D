@@ -40,10 +40,10 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="16.4_Children.md">
 <!--{"parent": "16_Mastering_Cheetah_3D_s_Interface.md", "order": 4}--><h1 id="children">Children</h1>
-<p><img src="/images/pastedGraphic-3-1.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-3-1.jpg" alt="Object Browser hierarchy with B and E nested under A, and C and D nested under B"></p>
 <p>In this simple scene, A has two children: B and E. B has two children: C and D. C, D, and E have no children.</p>
 <p>Everything in a Cheetah 3D scene is represented in the scene graph as an icon in the Object Browser as part of a hierarchy. Any object may have one or more (or “contain”) children, and some objects may have (or “be inside”) a parent.</p>
 <p>A child object “lives in its parent’s coordinate system”, which means that if the parent is moved, rotated, or scaled, so is the child. Similarly, a child’s positional information (position, rotation, and so forth) is relative to its parent. E.g. if A is at 1,0,0 and B is at 0,1,0, then B is in fact at 1,1,0 in “global” space (we’re assuming A’s scale is 1,1,1 and A’s rotation is 0,0,0).</p>

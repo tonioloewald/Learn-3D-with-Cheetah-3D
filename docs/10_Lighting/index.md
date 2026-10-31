@@ -2,9 +2,9 @@
 
 # Lighting
 
-![](/images/pastedGraphic-429.jpg)
+![Gray elevated train station and monorail lit by a single distant light, with hard black shadows](/images/pastedGraphic-429.jpg)
 
-![](/images/pastedGraphic-430.jpg)
+![The same train station lit by a Sky Light, with soft, pale shading and gentle shadows](/images/pastedGraphic-430.jpg)
 
 ![](/images/pastedGraphic-431.jpg)
 

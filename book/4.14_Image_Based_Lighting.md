@@ -6,7 +6,7 @@ Image-based lighting (often abbreviated to IBL) is a powerful tool for creating 
 
 ### Setting up image-based lighting
 
-![](/images/Screen%20Shot%202016-12-01%20at%2010.30.54%20AM.jpg)
+![Scene toolbar menu listing Camera, HDRI Light, Light, and Sky Light](/images/Screen%20Shot%202016-12-01%20at%2010.30.54%20AM.jpg)
 
 Add an **HDRI Light** to the scene. You may want to customize its properties (e.g. **uncheck the Background option** if you don’t want the HDRI rendered in the background, load your own HDRI image, and/or set shadows to support transparency):
 
@@ -14,11 +14,11 @@ Add an **HDRI Light** to the scene. You may want to customize its properties (e.
 
 > **Note:** Cheetah 3D 8.1.1 also has the HDRI Light’s Type (Probe, Cross, Panorama), Clamp, and MIS settings, and the fact that only the first HDRI or Sky light in a scene is used (manual: Objects › HDRI Light), not yet covered here. <!-- TODO missing -->
 
-![](/images/Screen%20Shot%202016-12-01%20at%2010.35.49%20AM.jpg)
+![HDRI Light properties: Default.hdr panorama, Intensity, Clamp, Samples, MIS, Background checked, and Shadow type Raytrace+transparency](/images/Screen%20Shot%202016-12-01%20at%2010.35.49%20AM.jpg)
 
 If you’re using the new Falcon renderer, you are done. If you’re using the old Cheetah renderer, you may (optionally) want to **enable the relevant renderer settings** (notably radiosity):
 
-![](/images/Screen%20Shot%202016-12-01%20at%2010.32.16%20AM.jpg)
+![Cheetah renderer settings with the Radiosity Type menu set to Radiosity rather than Ambient occlusion](/images/Screen%20Shot%202016-12-01%20at%2010.32.16%20AM.jpg)
 
 You’re ready to render!
 
@@ -26,11 +26,11 @@ You’re ready to render!
 
 > **Note:** the HDRI and Radiosity tags described in this section no longer exist; consider cutting it or shrinking it to a short historical note. <!-- TODO editorial -->
 
-![](/images/DraggedImage-51.jpg)
+![Tag menu with HDRI highlighted, among Bake Texture, Caustics, Depth of field, Fog, Radiosity, and Render](/images/DraggedImage-51.jpg)
 
 **Add an HDRI tag to the camera you're rendering the scene with**. (The HDRI tag actually serves several purposes — it allows image-based lighting, reflection-mapping, and panoramic backgrounds.)
 
-![](/images/DraggedImage-52.jpg)
+![HDRI tag properties with an empty .hdr image slot, Type Panorama, Power 1.0, and Background checked](/images/DraggedImage-52.jpg)
 
 Next you'll need to **load a suitable image** into the HDR image slot. (I've provided a panorama-type HDR image on the support site — http://loewald.com/c3dbook/00_Tutorials/faux%20hdri%20setup.hdr.zip .) 
 
@@ -38,11 +38,11 @@ Note that images for image-based lighting fall into three main types — panoram
 
 Any suitable image — not necessarily HDR — can work, although HDR images work much better. Unless you want the image rendered as the background, you'll want to uncheck the background setting. If you're using a non-HDR image or the render is too dim for some other reason you may want to boost the Power to more than 1.0. (A power setting of 4 works well with the linked HDR file.) <!-- TODO review -->
 
-![](/images/DraggedImage-53.jpg)
+![Tag menu with Radiosity highlighted](/images/DraggedImage-53.jpg)
 
 Now **add a Radiosity tag to the same camera**. You need both a radiosity tag and an HDRI tag for image-based lighting. Without radiosity, an HDRI tag only creates reflection and background, without an HDRI tag a radiosity tag simply enhances other light sources in a scene.
 
-![](/images/DraggedImage-54.jpg)
+![Radiosity tag properties with the Type menu open, switching from Ambient occlusion to Radiosity](/images/DraggedImage-54.jpg)
 
 By default, radiosity tags are set to Ambient Occlusion. Ambient occlusion is a far less sophisticated algorithm than radiosity (ambient occlusion simply attempts to make "nooks and crannies" darker). You'll want to **set your Radiosity tag to radiosity mode**, and you almost always want to check the detail detection setting.
 

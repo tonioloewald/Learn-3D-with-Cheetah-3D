@@ -2,7 +2,7 @@
 
 # Just Enough to be Dangerous
 
-![](/images/DraggedImage-71.jpg)
+![Simple rendered figure aiming a pistol with both hands](/images/DraggedImage-71.jpg)
 
 <!-- toc -->
 - [A Quick Tour of Cheetah 3D](/4.1_A_Quick_Tour_of_Cheetah_3D/)

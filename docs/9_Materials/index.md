@@ -2,7 +2,7 @@
 
 # Materials
 
-![](/images/pastedGraphic-238.jpg)
+![Node editor with Gradient, Turbulence, Add, Multiply, Float2Vec, and Image nodes wired into a planet Material](/images/pastedGraphic-238.jpg)
 
 ### Creating Materials
 

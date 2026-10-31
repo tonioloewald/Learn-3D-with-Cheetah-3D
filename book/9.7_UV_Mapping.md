@@ -2,9 +2,9 @@
 
 ## UV Mapping
 
-![](/images/rMTDU.jpg)
+![UV Editing layout: the whole labeled grid texture, corners 0,0 to 1,1, mapped to a plane in the UV editor and 3D view](/images/rMTDU.jpg)
 
-![](/images/GGMmw.jpg)
+![UV Editing layout with the quad shrunk around the 1,0 corner in the UV editor, so the plane shows an enlarged 1,0](/images/GGMmw.jpg)
 
 ![](/images/X0trw.jpg)
 
@@ -74,15 +74,15 @@ Because every point on a polygon’s surface has a spatial coordinate, it’s po
 
 ### UV Mapper Tool
 
-![](/images/pastedGraphic-397.jpg)
+![UV Mapper tool settings: Mapping type Spherical, Mapping Geometry Transformation, UV Transformation, and Commands](/images/pastedGraphic-397.jpg)
 
 The UV Mapper tool applies a simple UV projection onto your mesh. This can work beautifully for simple cases. The UV Mapper offers five mapping options: cubic, spherical, flat, cylindrical, and frontal.
 
-![](/images/pastedGraphic-398.jpg)
+![Sphere with cubic mapping, the ampersand texture repeated in patches](/images/pastedGraphic-398.jpg)
 
-![](/images/pastedGraphic-399.jpg)
+![Sphere with spherical mapping, the texture stretched into bands pinched at the pole](/images/pastedGraphic-399.jpg)
 
-![](/images/pastedGraphic-400.jpg)
+![Sphere with planar mapping, the ampersand projected across the front](/images/pastedGraphic-400.jpg)
 
 ![](/images/pastedGraphic-401.jpg)
 
@@ -96,7 +96,7 @@ The UV Mapper tool applies a simple UV projection onto your mesh. This can work 
 
 The Unwrap UV tool is the most powerful tool for UV mapping complex objects, such as almost any character. It can also be very useful for dealing with quite simple objects.
 
-![](/images/pastedGraphic-403.jpg)
+![Cube in edge mode with seams marked in green along the obvious edges](/images/pastedGraphic-403.jpg)
 
 ![](/images/pastedGraphic-404.jpg)
 
@@ -112,13 +112,13 @@ As stated above, the best way to think about texture seams is to place them as t
 
 *Here’s a drawing of a shirt. It’s fairly obvious where the major seams are. (This image is from a free pattern found on the Etsy Blog — etsy.com.)*
 
-![](/images/pastedGraphic-406.jpg)
+![Shirt mesh in edge mode with green seams at the shoulders, side, and sleeves](/images/pastedGraphic-406.jpg)
 
 ![](/images/pastedGraphic-407.jpg)
 
 *Here’s a simple shirt mesh. I’ve placed seams in it exactly where the major seams would go in a fabric shirt (by default, Cheetah 3D shows seams in green in edge mode).*
 
-![](/images/pastedGraphic-408.jpg)
+![Shirt pieces after Unwrap UV, some spilling outside the UV square](/images/pastedGraphic-408.jpg)
 
 ![](/images/pastedGraphic-409.jpg)
 
@@ -126,25 +126,25 @@ As stated above, the best way to think about texture seams is to place them as t
 
 As of v6.2, Cheetah 3D offers two different unwrapping options — ABF and LSCM. LSCM was the old algorithm, ABF is new and generally reduces stretching and overlap compared with LSCM. It's easy enough to try both and use whichever works better. In general, for organic forms, like the shirt, ABF works better.
 
-![](/images/0d6e6d62-def8-4a3e-8643-1d9373eaabbe-Screen%20Shot%202013-04-27%20at%208.43.14%20PM.jpg)
+![Shirt pieces unwrapped with ABF in the UV editor, still overlapping the square's edge](/images/0d6e6d62-def8-4a3e-8643-1d9373eaabbe-Screen%20Shot%202013-04-27%20at%208.43.14%20PM.jpg)
 
 This is how the shirt turns out using ABF. The results don't look much different from LSCM but it turns out to cause significantly less distortion around the collarbones. A little bit of tidying up produces this map:
 
-![](/images/Screen%20Shot%202013-04-27%20at%208.50.07%20PM.jpg)
+![Tidied ABF map with front, back, and sleeve pieces arranged inside the UV square](/images/Screen%20Shot%202013-04-27%20at%208.50.07%20PM.jpg)
 
 By moving the groups around while looking at the viewport, it's possible to line up the seams remarkably well with very little effort.
 
-![](/images/shirt%20render.jpg)
+![Shirt rendered with a blue and white checkerboard texture lining up across the seams](/images/shirt%20render.jpg)
 
 #### Automatic Seams
 
 Automatic Seams does exactly what you’d expect it to do — it automatically places seams on a model, and it does a pretty good job.
 
-![](/images/pastedGraphic-410.jpg)
+![Shirt mesh with Automatic Seams applied, green seams outlining many polygon groups](/images/pastedGraphic-410.jpg)
 
 Automatic seams wraps seams around contiguous sets of polygons facing more-or-less in the same direction. In the above example I’ve applied Automatic Seams to the same shirt model as before.
 
-![](/images/pastedGraphic-411.jpg)
+![UV map from automatic seams: front and back with sleeves attached, plus many separate sleeve strips outside the square](/images/pastedGraphic-411.jpg)
 
 ##### Why not just use automatic seams?
 
@@ -156,7 +156,7 @@ Our automatic seam unwrapping means we’ll have way more seams on the sleeve th
 
 ### Texture Painting
 
-![](/images/pastedGraphic-412.jpg)
+![UV Editing layout with a smiley face painted on a plane in the UV editor and 3D view, Paint tool settings open](/images/pastedGraphic-412.jpg)
 
 ![](/images/pastedGraphic-413.jpg)
 
@@ -170,7 +170,7 @@ If this image texture is driving the diffuse channel of a Material shader you ca
 
 *Here the elephant mesh has been unwrapped using manually placed seams, and color has been roughly applied using the Paint tool. This can serve as a useful template in a dedicated image editor such as Photoshop, Acorn, Pixelmator, Photoline, or The GIMP.*
 
-![](/images/pastedGraphic-415.jpg)
+![Elephant's UV layout exported as black wireframe outlines on white](/images/pastedGraphic-415.jpg)
 
 ![](/images/pastedGraphic-416.jpg)
 

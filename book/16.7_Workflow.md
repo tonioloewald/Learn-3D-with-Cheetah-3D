@@ -2,7 +2,7 @@
 
 ## Workflow
 
-![](/images/pastedGraphic-633.jpg)
+![Grey clay maquette of Buzz Lightyear in a clear dome helmet](/images/pastedGraphic-633.jpg)
 
 *A photo of an early maquette of Buzz Lightyear (on display at Disney California Adventure in Los Angeles). The workflow for sculpting (in the real world) is horrible — make a mistake and you start over (especially if you’re working in marble) but it’s clearly an incredibly powerful creative tool. *
 

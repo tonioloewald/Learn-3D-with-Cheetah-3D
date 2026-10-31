@@ -40,10 +40,10 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="7_Modeling.md">
 <!--{"order": 8}--><h1 id="modeling">Modeling</h1>
-<p><img src="/images/pastedGraphic-119.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-119.jpg" alt="Low-poly Sopwith Dolphin biplane model standing among its front, side, and top blueprints"></p>
 <p>Modeling is the process of seeing or imagining a three-dimensional object and then creating its geometry in virtual space. It’s often compared to sculpting (and some 3D software tries to simulate the process of sculpting clay) or building things out of cardboard or matchsticks or lego.</p>
 <p>In general, modeling consists of:</p>
 <ol>
@@ -65,7 +65,7 @@
 <h2 id="level-of-detail">Level of Detail</h2>
 <figure><img src="/images/pastedGraphic-120.jpg" alt=""><figcaption>A simple hex nut modeled at three different levels of detail (and note that we could go much further, e.g. there’s no screw thread even on the most detailed version.)</figcaption></figure>
 <p>Picking a level of detail and sticking to it is crucial. It saves you time, high polygon counts, and wasted work. Consider the humble screw. At first approximation it’s a simple object: a short squat cylinder on top of a tall thin cylinder. But the closer you look the more complicated it becomes. If you’re modeling a battleship you don’t need to model the rivets in detail, but if you’re modeling a rivet you do.</p>
-<p><img src="/images/bolts.jpg" alt=""></p>
+<p><img src="/images/bolts.jpg" alt="Rendered pair of chrome machine screws with threads, one Phillips head and one hex socket"></p>
 <p>When determining level of detail consider how much time you have and how important the object will be to your current (and expected future) projects. If the answers are not much and not very then keep it simple or even avoid it altogether (a lot of detail objects can be omitted or made part of a material).</p>
 <p>Rand and Ryan Miller, the brothers who created <em>Myst</em> on 25MHz Macintosh computers, had a great one-liner: <strong>under model and over texture</strong>. There are circumstances where this isn’t the right approach, but it’s worth remembering: you can put a lot of polygons into a crate and not produce anything vaguely decent looking, or you can slap a few bitmap materials on a cube and get very good results in five minutes. </p>
 <figure><img src="/images/DraggedImage-84.jpg" alt=""><figcaption>A cube with a bitmap slapped on it.</figcaption></figure>
@@ -97,11 +97,11 @@
 <figure><img src="/images/pastedGraphic-121.jpg" alt=""><figcaption>A Riedel wineglass.</figcaption></figure>
 <p>So when should you use splines and when should you box model? The short answer is do whatever gets the job done quickest. The long answer is, of course, more complicated and best illustrated with some simple examples.</p>
 <h4 id="tutorial-making-a-wineglass-with-a-spline-and-the-lathe-creator">Tutorial: Making a Wineglass with a Spline and the Lathe Creator</h4>
-<p><img src="/images/pastedGraphic-122.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-122.jpg" alt="Cheetah 3D window with a wineglass made by a Lathe object whose child is the profile spline"></p>
 <p>The Lathe creator is a very effective tool for creating rotationally symmetric objects (in other words, the kinds of things you make with a lathe). A wineglass is a classic example of a rotationally symmetric object, so it’s a cinch to create a nice profile of the wineglass and then “lathe it” into a solid object.</p>
 <p>(Actually, it’s a cinch to create the profile using a good drawing program like Illustrator or Inkscape. It’s possible, but not nearly as easy, to do it in Cheetah 3D.)</p>
 <h4 id="tutorial-making-a-wineglass-using-box-modeling-and-subdivision">Tutorial: Making a Wineglass using Box Modeling and Subdivision</h4>
-<p><img src="/images/pastedGraphic-123.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-123.jpg" alt="Cheetah 3D window with a subdivided cylinder shaped into a wineglass beside a wineglass photo blueprint"></p>
 <p>Even though using box modeling and subdivision to get the same result might seem like a much more roundabout way of achieving the same result, it’s surprisingly easy to do, doesn’t require using a dedicated vector drawing program (or struggling with Cheetah 3D’s somewhat limited spline drawing tools), and produces a very elegant result that is also more versatile.</p>
 <p>There is one significant disadvantage to this approach though — subdivision creates more polygons to produce a smoother result, but the way the polygons are added is indiscriminate — areas that do not need more detail gain polygons just as quickly as those that do. Subdivided meshes can be “heavier” than lathed meshes.</p>
 <figure><img src="/images/pastedGraphic-124.jpg" alt=""><figcaption>The finished (box modeled) wineglass</figcaption></figure>
@@ -142,7 +142,7 @@
 <p>Finally, you can really only use point mode to work on splines. You can’t select edges and work on them.</p>
 <h3 id="building-splines-with-snapping">Building Splines with Snapping</h3>
 <p>Ideally, you should create your splines in another program and import them. If you must create a 3D spline, try making parts of it in another program and doing as little as possible in Cheetah 3D.</p>
-<p><img src="/images/pastedGraphic-128.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-128.jpg" alt="Zigzag bezier spline drawn over a wireframe plane grid, roughed out before snapping"></p>
 <figure><img src="/images/pastedGraphic-129.jpg" alt=""><figcaption>Having created a grid using a plane (which is set to wireframe — or ghosted — display) I rough out my bezier by clicking out the points, then I snap the points and control handles onto the grid (note that even this doesn’t work quite right).</figcaption></figure>
 <p>But if you must, you must. And here, your best option is to use as much snapping as possible. Build a mesh with points where you want your spline points and control handles to be, rough out the spline, then use component snapping to snap the spline points and control handles into position. It’s tedious, but it works.</p>
 <h2 id="solid-modeling">Solid Modeling</h2>

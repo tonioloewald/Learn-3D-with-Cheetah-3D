@@ -4,9 +4,9 @@
 
 **By default, Cheetah 3D’s lights are invisible objects**. If you point a camera at them, you get nothing. Crucially: they don’t appear in reflections. (If you consider what a flashlight or a car’s headlight looks like in photographs or when you look at it, what you’re seeing is *reflections of a glowing object*.)
 
-![](/images/pastedGraphic-560.jpg)
+![Viewport: hemispherical reflector wireframe with a point light at its center](/images/pastedGraphic-560.jpg)
 
-![](/images/pastedGraphic-561.jpg)
+![Dark render with a lit floor and only faint reflections in the headlight reflector](/images/pastedGraphic-561.jpg)
 
 ![](/images/pastedGraphic-562.jpg)
 

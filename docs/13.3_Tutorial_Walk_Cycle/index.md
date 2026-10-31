@@ -2,11 +2,11 @@
 
 ## Tutorial: Walk Cycle
 
-![](/images/pastedGraphic-514.jpg)
+![Wireframe character in the passing pose, one foot planted and the other knee raised](/images/pastedGraphic-514.jpg)
 
-![](/images/pastedGraphic-515.jpg)
+![Wireframe character in the landing pose, front heel striking the ground and rear leg extended](/images/pastedGraphic-515.jpg)
 
-![](/images/pastedGraphic-516.jpg)
+![Wireframe character in the mirrored passing pose, the opposite knee raised](/images/pastedGraphic-516.jpg)
 
 ![](/images/pastedGraphic-517.jpg)
 

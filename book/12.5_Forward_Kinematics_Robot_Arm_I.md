@@ -2,9 +2,9 @@
 
 ## Forward Kinematics: Robot Arm I
 
-![](/images/pastedGraphic-491.jpg)
+![Object Browser hierarchy: Cylinder, then Arm1, Arm2, and Tool nested inside it](/images/pastedGraphic-491.jpg)
 
-![](/images/pastedGraphic-492.jpg)
+![Posed orange robot arm in the viewport, with a rotate manipulator on its base](/images/pastedGraphic-492.jpg)
 
 Imagine we’ve built a robot arm out of a hierarchy of parts. The hierarchy might look like what you see in the first image above, while the robot arm might look like the model in the second image (when posed).
 

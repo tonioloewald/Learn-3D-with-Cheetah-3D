@@ -6,19 +6,19 @@ A creator produces a mesh non-destructively from one or more input child objects
 
 ### Sweeps
 
-![](/images/DraggedImage-30.jpg)
+![Two nearly identical wineglasses, one from a Lathe and one from a Sweep with a tiny Circle, with Flip normals checked](/images/DraggedImage-30.jpg)
 
 Yet another way to create a wineglass — demonstrating that a lathe is just a special case of a sweep. In this case you can see a wineglass created by lathing a profile, and a nearly identical wineglass created by sweeping the same profile around a tiny, tiny circle (and flipping the normals).
 
 The sweep, lathe, and extrude creators are all variations of the sweep operation. A sweep operation derives a solid from two curves by “pushing” one curve (the “profile”) through space along the other curve (the “control curve”).
 
-![](/images/DraggedImage-31.jpg)
+![Sweep creator properties with Rotate sweep set to -69.0 and Scale sweep at 1.0](/images/DraggedImage-31.jpg)
 
 The Sweep creator has two especially useful properties: Rotate sweep and Scale sweep. Rotate sweep lets you fine tune the rotation of the profile as it is “pushed” along the control curve. Scale has the obvious effect.
 
-![](/images/DraggedImage-32.jpg)
+![Square swept along a helix, its end visibly twisted out of line](/images/DraggedImage-32.jpg)
 
-![](/images/DraggedImage-33.jpg)
+![The same helix sweep with Rotate sweep corrected, the square end squared up](/images/DraggedImage-33.jpg)
 
 On the top is what you get when you sweep a small square along a helix, note how the square ends up rotated a bit at the end. On the bottom, you can adjust the rotation to correct for this (I set the Sweep rotation property to -69°).
 

@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="4.13_Lights_and_Lighting.md">
 <!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 13}--><h1 id="lights-and-lighting">Lights and Lighting</h1>
 <p>Lighting is another critical component of 3D graphics. Just as lighting can make the difference between a great photograph and a lousy snapshot, the same is true for rendering.</p>
@@ -51,15 +51,15 @@
 <p>Cheetah 3D offers several different ways to light a scene. These are:</p>
 <h2 id="the-light-object">The Light Object</h2>
 <p>These are “lights” in the “ray tracing sense” — things that emit light of a specific color in a very well-defined (not necessarily realistic) way.</p>
-<p><img src="/images/DraggedImage-42.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-42.jpg" alt="Scene toolbar menu open with Light highlighted, among Camera, Folder, Smart Folder, Blueprint, Sky Light, and Joint"></p>
 <p>To light a scene with light objects simply add one or more light objects to your scene by selecting Light from the Scene toolbar item. By default a light will be a Point source (its “Light type” will be “point”). </p>
 <p>The following <strong>types</strong> of light are supported:</p>
 <h3 id="spot-light">Spot light</h3>
-<p><img src="/images/DraggedImage-43.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-43.jpg" alt="Spot light render: a cone of light on a cube in a corner, with soft-edged pool and dark surroundings"></p>
 <p>(Angle changed to 40° and Smooth cut off changed to 10°)</p>
 <p>A light from a point but restricted to a cone, kind of like a spotlight. Obviously Spot lights are good for simulating spotlights, flashlights, and headlights.</p>
 <h3 id="point-light">Point light</h3>
-<p><img src="/images/DraggedImage-44.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-44.jpg" alt="Point light render: the room corner lit all round, the cube casting a hard shadow on the floor"></p>
 <p>(Samples set to 5)</p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
@@ -69,10 +69,10 @@
 <p><em>End of AI draft.</em> <!-- /AI draft --></p>
 </blockquote>
 <h3 id="ambient-light">Ambient light</h3>
-<p><img src="/images/DraggedImage-45.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-45.jpg" alt="Ambient light render: a flat, evenly gray box with no shading or shadows"></p>
 <p>Light emitted from all directions. An ambient light is a “cheap” way of faking the kind of all-round light you get from, say, the sky on a sunny day. Ambient light should be subtle — the stronger it is, the flatter your image will look (and the less realistic: there is no ambient light in the Real World).</p>
 <h3 id="area-light">Area light</h3>
-<p><img src="/images/DraggedImage-46.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-46.jpg" alt="Area light render: the cube over the floor casting a soft, blurry shadow"></p>
 <p>(Samples set to 5.)</p>
 <p>A light emitted from a rectangular or elliptical surface (but only if you increase its Shadow samples to more than 1 — otherwise it just acts like a spot light). Area lights are useful for producing soft light, as you’d get from a window, and also for simulating diffuse light sources such as fluorescent tubes.</p>
 <blockquote>
@@ -82,10 +82,10 @@
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has area light Shape, Normalize, and Visible in camera settings; IES profiles for point and area lights; Clamp attenuation; Shadow color; and Shadow softness (manual: Objects › Light), not yet covered here. <!-- TODO missing --></p>
 </blockquote>
 <h3 id="distant-light">Distant light</h3>
-<p><img src="/images/DraggedImage-47.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-47.jpg" alt="Distant light render: lit floor and cube top with a crisp shadow, black walls"></p>
 <p>A light shining in a fixed direction from infinitely far away. If you’re modeling a typical scene, the sun might be treated as a distant light source.</p>
 <h2 id="other-light-properties">Other Light Properties</h2>
-<p><img src="/images/DraggedImage-48.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-48.jpg" alt="Light Properties panel: Light type Spot, Intensity, Attenuation 1/(r^2), Shadow, Cut off, and Caustics settings"></p>
 <p>Lights have a lot of properties! It’s important to understand them if you want to produce good-looking images.</p>
 <p>The <strong>color</strong> and <strong>intensity</strong> of a light should be straightforward. Intensity is important because if you use realistic Attenuation (a.k.a. “falloff”) then lights lose their power fast (the “inverse square law”). E.g. a white light of intensity 4 will have an effective brightness of 1 at a distance of 2 units. This is why a dim light bulb is still blindingly bright to look at directly.</p>
 <p><strong>Attenuation</strong> is how quickly the light’s brightness drops off. In general, you want to use 1/r^2 (inverse square law) brightness for anything other than distant lights (and distant lights have no attenuation).</p>
@@ -96,8 +96,8 @@
 <p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the light’s Caustic photons and Pure photon light settings only apply to the Cheetah renderer; Falcon’s reflective caustics are a renderer setting (manual: Render › Cheetah, Render › Falcon). <!-- TODO update --></p>
 </blockquote>
 <h2 id="hint-improving-editor-light-previews">Hint: Improving Editor Light Previews</h2>
-<p><img src="/images/DraggedImage-49.jpg" alt=""></p>
-<p><img src="/images/DraggedImage-50.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-49.jpg" alt="Editor view of a spot light over a default plane, which stays black"></p>
+<p><img src="/images/DraggedImage-50.jpg" alt="The same spot light over a 50 by 50 section plane, showing a lit pool in the editor"></p>
 <p>If you want Cheetah 3D’s editor view to be more helpful for lighting, you might want to add more detail to your objects, especially ground planes. On the top, a spot light shining on a default plane. On the bottom, the same plane with 50 sections vertical and horizontal.</p>
 
   </article>

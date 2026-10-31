@@ -40,17 +40,17 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.5_Simple_Render_Setups.md">
 <!--{"parent": "11_Rendering.md", "order": 5}--><h1 id="simple-render-setups">Simple Render Setups</h1>
 <h2 id="showing-off-geometry">Showing Off Geometry</h2>
 <p>If you just want to show off a model (or even if you just want to render it for purposes of fine-tuning it) the simplest option is to render it using a matte shader. You’ll want reasonably neutral lighting (harsh shadows will hide your model’s geometry) — here I’m using standard “three point” lighting (which should be plain from the shadows) using three point “area” lights.</p>
-<p><img src="/images/pastedGraphic-591.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-591.jpg" alt="Viewport with the elephant model inside a box-shaped room, three point lights near the top, and a small camera"></p>
 <figure><img src="/images/pastedGraphic-592.jpg" alt=""><figcaption>At <strong>top</strong>, the test scene showing the three-sided room set, three point lights, the model, and the camera. At <strong>bottom</strong>, the resulting rendered image.</figcaption></figure>
 <h3 id="wireframe-shaders">Wireframe Shaders</h3>
 <p>Another popular option is to use a wireframe shader to show off its underlying geometry. A quick way to set up a wireframe shader is to use a wireframe texture node as an input to the emission channel of the material shader.</p>
 <figure><img src="/images/pastedGraphic-593.jpg" alt=""><figcaption>A simple wireframe shader. Note that I’ve dialed up the Wireframe texture node’s Line width property for emphasis, but generally you’ll want to make it quite a bit lower (0.003 seems to work well for objects a few units across).</figcaption></figure>
-<p><img src="/images/pastedGraphic-594.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-594.jpg" alt="Elephant rendered with a cyan wireframe shader in Edge mode, showing a dense polygon grid"></p>
 <figure><img src="/images/pastedGraphic-595.jpg" alt=""><figcaption>Here’s the elephant rendered with a shader that uses the wireframe texture to send a dark cyan color to the emission channel. On <strong>top</strong>, the wireframe shader is set to Edge mode, on the <strong>bottom</strong> it’s set to Iso mode (which only generates lines for the edges of a subdivided surface’s control cage.)</figcaption></figure>
 <h2 id="product-shots">Product Shots</h2>
 <p>Product shots typically involve showing off a product with as little distracting detail as possible. Generally, you want the setup for a product shot to provide good lighting and produce attractive reflections.</p>
@@ -69,8 +69,8 @@
 <blockquote>
 <p><em>End of AI draft.</em> <!-- /AI draft --></p>
 </blockquote>
-<p><img src="/images/pastedGraphic-599.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-600.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-599.jpg" alt="Product shot of a black and silver camera body with a separate lens cap, lit by an HDRI with radiosity"></p>
+<p><img src="/images/pastedGraphic-600.jpg" alt="The same camera body and lens cap from a higher angle, with soft shadows"></p>
 <p><strong>Note on fine-tuning Radiosity settings</strong>: when rendering this image I had problems with blotchy shadows under the camera lens. It turned out that the critical value to alter here is Rmin, which I set to 0.1. This appears to determine how deep into “nooks and crannies” the Radiosity algorithm goes.</p>
 <h2 id="natural-environments">Natural Environments</h2>
 <p>Cheetah 3D’s Sky Light does a good first approximation lighting setup for outdoor scenes. A Sky Light simulates all-around light from the sky along with intense directional light from the sun. Often, a Sky Light will be all that you need. </p>
@@ -105,8 +105,8 @@
 <blockquote>
 <p><strong>Note:</strong> this technique is now optional, since point and area lights accept IES profiles directly (manual: Objects › Light). <!-- TODO editorial --></p>
 </blockquote>
-<p><img src="/images/pastedGraphic-606.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-607.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-606.jpg" alt="Transparency map of soft concentric white rings on black"></p>
+<p><img src="/images/pastedGraphic-607.jpg" alt="Render of the resulting light: a bright cone with ringed falloff spreading down from a point light"></p>
 <p>You can get similar results to IES lights (see image on right) by using a transparent material (transparency map shown at left) wrapped around a point light.</p>
 
   </article>

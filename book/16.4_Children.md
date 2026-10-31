@@ -2,7 +2,7 @@
 
 ## Children
 
-![](/images/pastedGraphic-3-1.jpg)
+![Object Browser hierarchy with B and E nested under A, and C and D nested under B](/images/pastedGraphic-3-1.jpg)
 
 In this simple scene, A has two children: B and E. B has two children: C and D. C, D, and E have no children.
 

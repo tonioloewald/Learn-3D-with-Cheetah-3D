@@ -10,7 +10,7 @@ The goal of this section isn’t to teach you complex vector math, but simply to
 
 ### Points
 
-![](/images/pastedGraphic-379.jpg)
+![Diagram of x and y axes with a single point labeled The Point (1,2)](/images/pastedGraphic-379.jpg)
 
 A point is a position in 3D space represented by three floating point values for x, y, and z. 
 
@@ -28,13 +28,13 @@ Any three points will lie in a plane (and thus can form a triangle). In general,
 
 Objects are said to be coplanar if they lie within a plane. Figuring out if a given point lies (to some approximation) in a plane is very useful for doing things like merging and splitting adjacent polygons. It's less likely to be useful for materials than for _scripts_.
 
-![](/images/DraggedImage.png)
+![Diagram of a plane with normal n at point p, vector q-p to point q, and its projection (q-p).n onto n](/images/DraggedImage.png)
 
 If you have a point **p** on a plane and the normal of the plane **n**, you can tell that another point **q** lies on the plane by looking at the vector **q-p** and projecting it onto **n** (i.e. the dot product **(q-p).n**). The magnitude of this product is how far the point q is from the plane.
 
 ### Vector
 
-![](/images/pastedGraphic-380.jpg)
+![Side-by-side diagrams contrasting The Point (1,2) with The Vector (1,2), an arrow from the origin](/images/pastedGraphic-380.jpg)
 
 A vector is a direction and a magnitude. Vectors, like points, are described by three values (x, y, and z), but instead of thinking of those values as describing a position, you should think of them as describing a velocity (or perhaps as an arrow formed by drawing a line from 0,0,0 to the point described by x,y,z).
 
@@ -42,19 +42,19 @@ Usually in 3D we’re interested in unit vectors — i.e. vectors whose magnitud
 
 ### Normal
 
-![](/images/pastedGraphic-381.jpg)
+![Diagram of a quad with anticlockwise winding order and its normal pointing straight up](/images/pastedGraphic-381.jpg)
 
 A normal vector is a unit vector pointing straight out from — i.e. perpendicular to — a plane. In 3D programs, polygons are generally considered “one-sided” with the normal pointing in the direction the polygon “faces”. 
 
 Viewed from the “front” a polygon has an “anticlockwise” winding order, i.e. it is defined as a series of points running anticlockwise. Normal vectors are extremely useful for calculating the behavior of light.
 
-![](/images/pastedGraphic-382.jpg)
+![Diagram of incoming and reflected light making equal angles I and R with the surface normal](/images/pastedGraphic-382.jpg)
 
 E.g. you may recall that with reflected light, the “angle of incidence is equal to the angle of reflection”. In terms of vectors, the angle of incidence is the angle between the vector representing the direction of the incoming light and the normal of the reflecting surface, while the angle of reflection is the angle between the reflected light and the same normal.
 
 ### Dot Product
 
-![](/images/pastedGraphic-383.jpg)
+![Diagram of two vectors with the angle A between them](/images/pastedGraphic-383.jpg)
 
 The dot product of two vectors is the product of their magnitudes (lengths) and the cosine of the angle between them. 
 
@@ -90,7 +90,7 @@ You don’t need to calculate diffuse illumination yourself but it’s interesti
 
 **Fresnel Effects**
 
-![](/images/pastedGraphic-386.jpg)
+![Glass elephant rendered without fresnel, strongly reflective all over, in a checkered room](/images/pastedGraphic-386.jpg)
 
 ![](/images/pastedGraphic-387.jpg)
 

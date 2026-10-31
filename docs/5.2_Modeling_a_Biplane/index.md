@@ -106,7 +106,7 @@ Right now, I’d say that the most glaring issues are that the wings and especia
 
 6. **Selection \> Show All** to bring back the fuselage and check your progress.
 
-![](/images/pastedGraphic-39.jpg)
+![Biplane wings, tail, and fuselage selected in a perspective view, with the blueprints behind](/images/pastedGraphic-39.jpg)
 
 #### Cockpit
 

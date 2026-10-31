@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.5_Building_Procedural_Materials.md">
 <!--{"parent": "9_Materials.md", "order": 5}--><h1 id="building-procedural-materials">Building Procedural Materials</h1>
 <p>We’re going to build some materials from scratch in an effort to understand how all this stuff fits together. We’ll start simple and then build up to some pretty complex concepts.</p>
@@ -54,7 +54,7 @@
 <p>If you look at the various procedural textures, voronoi has some very promising looking options.</p>
 <figure><img src="/images/pastedGraphic-327.jpg" alt=""><figcaption>Two Voronoi texture nodes side-by-side. The one on the left has everything set to default values. It kind of looks like greyish cobbles with black mortar already. On the right is a Voronoi with type set to F1, which looks nice for creating some kind of blobby organic cellular thing.</figcaption></figure>
 <p>The first thing we want is to make the division between cobble and mortar sharper, and the best way to do this is to use a gradient node.</p>
-<p><img src="/images/pastedGraphic-328.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-328.jpg" alt="Voronoi node feeding a Gradient node, with the gradient&#39;s black-to-white stops close together in the Properties panel, turning cobbles white and mortar black"></p>
 <p>I’ve tweaked the gradient node so that the cobbles tend to be solid white and the mortar tends to be solid black. Now I can use this as a “selector” to pick between two different inputs.</p>
 <figure><img src="/images/pastedGraphic-329.jpg" alt=""><figcaption>The Mix node uses a value between 0 and 1 to select between two inputs. In this case we’re using flat colors and passing the result to the diffuse channel of our shader.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-330.jpg" alt=""><figcaption>Now I use a slightly different gradient node to produce a nice bump map.</figcaption></figure>
@@ -71,11 +71,11 @@
 <p><em>You can see on the “normal ball” that the normals look green at the top of the sphere (where the vectors start getting close to (0,1,0)) and blue on the “front” on the sphere where the vectors start getting close to (0,0,1).</em></p>
 <p><em>But the real news is the dot product, which looks kind of like a bit of snow on a black ball. Neat huh?</em></p>
 <figure><img src="/images/pastedGraphic-333.jpg" alt=""><figcaption>So now we refine our dot product using a gradient to sharpen the cutoff from snow to no snow. A quick test render shows we need to change the cutoff a bit, but the real problem is that our shader puts “snow” in the valleys as well as on the peaks.</figcaption></figure>
-<p><img src="/images/pastedGraphic-334.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-334.jpg" alt="Terrain and hemisphere rendered with the snow material, almost entirely white"></p>
 <figure><img src="/images/pastedGraphic-335.jpg" alt=""><figcaption>Changing the gradient can determine how horizontal a surface needs to be to be covered in snow, and how sharp the cut-off is.</figcaption></figure>
 <p><em>A more sophisticated version of this material might — if being used for terrain — take absolute altitude into account (e.g. the driving value for snow vs. no snow might be a combination of the dotproduct we just calculated and altitude (the y coordinate of position)).</em></p>
 <p><strong>Viewing angle</strong> often drives optical properties such as reflection and transmission — the “fresnel” property of the material shader gives you an all-or-nothing implementation of the behavior of many real-world materials, but you might want a more subtle effect, or you might be producing a composite material (e.g. stained glass window) where some parts of the material have fresnel behavior and some don’t.</p>
-<p><img src="/images/pastedGraphic-336.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-336.jpg" alt="State node&#39;s I-N output wired to the Material node&#39;s transparency input"></p>
 <p>The state node gives you an interesting output channel called I•N — the dot product of the viewing angle (I) and the normal of the surface you’re rendering (N). In short, a value that will be 1 (or white) for a surface pointing straight at the camera, 0 (or black) for a surface pointing off to the side, and –1 (or even blacker) for a surface pointing directly away from the camera.</p>
 <p>If I feed I•N straight into the transparency input of my shader node, I get a pretty weird kind of material. (I’ve also set its refractive index to 1.0.)</p>
 <figure><img src="/images/pastedGraphic-337.jpg" alt=""><figcaption>Here’s a rendering of some test objects with this weird material.</figcaption></figure>
@@ -97,7 +97,7 @@
 <figure><img src="/images/pastedGraphic-347.jpg" alt=""><figcaption>Here’s our simple test terrain (carefully scaled so the top of the highest mountains lie at y=1 in its local coordinate space) with this material applied. It doesn’t look too bad for such a simple material… until you see it side-on.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-348.jpg" alt=""><figcaption>Not quite side-on and it already looks way too regular. So what we want to do is make the way the terrain changes with altitude a little random, so we’re going to offset the y coordinate we’re using with a little noise.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-349.jpg" alt=""><figcaption>So I simply add a turbulence texture node, multiply its output by 0.1, and then add that to the y value before filtering it through the gradient. Here’s the result.</figcaption></figure>
-<p><img src="/images/pastedGraphic-350.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-350.jpg" alt="Side view of the terrain with noise added: green lowlands, orange slopes, and white peaks"></p>
 <figure><img src="/images/pastedGraphic-351.jpg" alt=""><figcaption>As you can see we now have nice fractal jiggles in the transitions between the different terrain colors.</figcaption></figure>
 <h3 id="terrain-shaders">Terrain Shaders</h3>
 <p>Terrain shaders can be built by mashing up the techniques described above. The simple spatially-mapped shader described above can be beefed up by using mix selectors to vary things like the bump maps and shininess of the different terrain strata (you could make the green look like vegetation, the brown look like rock, and the white like snow and ice). </p>

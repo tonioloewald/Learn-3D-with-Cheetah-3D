@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="7.2_Symmetry.md">
 <!--{"parent": "7_Modeling.md", "order": 2}--><h1 id="symmetry">Symmetry</h1>
 <figure><img src="/images/DraggedImage-85.jpg" alt=""><figcaption>Many objects, including most animals and vehicles, are (at least roughly) symmetric. The symmetric creator and modifier allow you to infer half of your model from the other half, making creating (and tweaking) your model much easier.</figcaption></figure>
@@ -63,7 +63,7 @@
 <h2 id="symmetry-and-workflow">Symmetry and Workflow</h2>
 <p>Perhaps more than any other modifier, Symmetry has profound implications for workflow. This is because (a) Symmetry is extremely useful and (b) it causes significant issues for UV-mapping and rigging.</p>
 <h3 id="symmetry-and-modifier-chains">Symmetry and Modifier Chains</h3>
-<p><img src="/images/pastedGraphic-181.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-181.jpg" alt="Smooth, rounded subdivided shape inside its cube cage, with Weld Points on"></p>
 <figure><img src="/images/pastedGraphic-182.jpg" alt=""><figcaption>The same mesh with Symmetry and Subdivision modifiers applied, on the left <strong>Weld Points</strong> is toggled on (the default) while on the right it is toggled off.</figcaption></figure>
 <p>The Symmetry modifier has a very useful feature — weld points. This causes points in the mesh that are sufficiently close to the symmetry plane to be welded with their mirrored counterpart. Weld Points has a dramatic effect on Subdivision modifiers that are below the Symmetry modifier in the hierarchy, and it also reduces the complexity of the final mesh.</p>
 <figure><img src="/images/pastedGraphic-183.jpg" alt=""><figcaption>Because the Ring modifier wasn’t intended for symmetry modeling, it lacks the Weld Points feature. This means it doesn’t play very nicely with Symmetry, and you’ll need to simply have faith as you model your “cage” mesh.</figcaption></figure>

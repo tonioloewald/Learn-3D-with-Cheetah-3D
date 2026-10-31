@@ -42,7 +42,7 @@ Also note that whether you use the Val or Color output channel of the lower Imag
 
 If you’re using Cheetah 3D for game development, you can probably stop here. This is all you need to know to “texture” stuff for games and handle UV-mapping. Cheetah 3D can create much more sophisticated materials than this, but there’s no easy way to convert them into game engine shaders (this is where some of the high end 3D packages excel — they are able to replicate game engine shaders in their editing environments).
 
-![](/images/DraggedImage-36.jpg)
+![Cube textured with a lettered checkerboard test pattern in the 3D view, with the material's properties alongside](/images/DraggedImage-36.jpg)
 
 Image-based materials like this are very common, and have the advantage that Cheetah 3D will do a good job of previewing them in the editor view. While the image in question is a “test pattern” it’s amazing how convincing a simple photo-based texture can be (or how stylish a nicely painted texture can be).
 
@@ -84,7 +84,7 @@ As with reflection, to make a material transparent, simply set its transparency 
 
 When I say “kind of”, the problem is that transparent objects are usually refractive to some extent, and the way Cheetah 3D handles shadows for transparent objects doesn’t (cough) reflect this. Simulating the way transparent objects transmit light is discussed under [Caustics](/10.5_Caustics/).
 
-![](/images/DraggedImage-39.jpg)
+![Render of the chain-link fence over a lettered floor, the floor seen through it bent by refraction](/images/DraggedImage-39.jpg)
 
 ![](/images/DraggedImage-40.jpg)
 
@@ -92,7 +92,7 @@ _Two versions of the chainlink material. The one on the left has a refractive in
 
 Just take a look at this example from the forums:
 
-![](/images/DraggedImage-41.jpg)
+![Forum render of fern-like leaves around a sphere, labeled Frontside has problems and Backside is worse](/images/DraggedImage-41.jpg)
 
 Again, the problem is the refractive index not being set to 1.0.
 

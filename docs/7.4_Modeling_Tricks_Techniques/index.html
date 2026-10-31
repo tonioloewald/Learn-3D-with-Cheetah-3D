@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="7.4_Modeling_Tricks_Techniques.md">
 <!--{"parent": "7_Modeling.md", "order": 4}--><h1 id="modeling-tricks--techniques">Modeling Tricks &amp; Techniques</h1>
 <h2 id="gadget-mode">Gadget Mode</h2>
@@ -75,9 +75,9 @@
 <figure><img src="/images/pastedGraphic-193.jpg" alt=""><figcaption>Some of the primitives are surprisingly versatile. These are all <strong>torus</strong> primitives.</figcaption></figure>
 <h2 id="modeling-a-hole-without-booleans">Modeling a Hole (without Booleans)</h2>
 <p>A common problem in box modeling is trying to carve a precisely shaped opening or recess in an arbitrary face. In many cases the best approach is to build a flat surface with the shape of the hole, snap it to the surface in question, merge the meshes, and then bridge the two geometries.</p>
-<p><img src="/images/pastedGraphic-194.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-195.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-196.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-194.jpg" alt="Star-shaped polygon, selected, snapped onto the top face of a flat box"></p>
+<p><img src="/images/pastedGraphic-195.jpg" alt="Box with its top face deleted, leaving the star floating in the opening"></p>
+<p><img src="/images/pastedGraphic-196.jpg" alt="Box top rebuilt by bridging the hole edge to the star, leaving long thin triangles"></p>
 <figure><img src="/images/pastedGraphic-197.jpg" alt=""><figcaption>We’re carving a star-shaped hole in a square polygon. <strong>Top</strong>: we start by creating the star shaped mesh (star spline in a polyplane creator, collapsed) then merge it into our initial mesh and use snapping to snap it to our face; <strong>Upper-middle</strong>: we then delete the face we’re cutting a hole into and <strong>lower-middle</strong>: bridge the edge of the resulting hole to our star; <strong>Bottom</strong>: little cleanup to fix the non-convex polygons and we can make our precisely star-shaped recess.</figcaption></figure>
 <h2 id="solid-modeling">Solid Modeling</h2>
 <p>Here’s the summary. If you want to use your meshes as solids then make sure there are no holes or doubled (superimposed) polygons, and verify that all the normals are correct and consistent. You should also look for and try to eliminate non-convex polygons.</p>
@@ -85,7 +85,7 @@
 <ul>
 <li>If you pick <strong>Backface Culling</strong> from the 3D view’s Style menu polygons will disappear when viewed from “behind”. This makes it much easier to see flipped polygons (i.e. those with normals facing the wrong way) and correct them.</li>
 </ul>
-<p><img src="/images/pastedGraphic-198.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-198.jpg" alt="Box whose right face is shaded unusually dark, before Backface Culling is turned on"></p>
 <figure><img src="/images/pastedGraphic-199.jpg" alt=""><figcaption>The right face of this box looks weirdly dark. Switching on Backface Culling reveals a hole in my box. Oops!</figcaption></figure>
 <ul>
 <li>Incorrectly flipped polygons will often look oddly shaded. If you see polygons in your mesh that just look wrong, try turning on backface culling to double-check.</li>
@@ -108,15 +108,15 @@
 <p>Oh, and there’s one more complication — doubled polygons are just as dangerous as missing polygons (e.g. imagine you have two identical overlapping polygons). There’s no analog of this in our real world example, because polygons are dimensionless, and moulds aren’t.</p>
 <h3 id="tip-seeing-normals">Tip: Seeing Normals</h3>
 <p>Some 3D programs offer the option of seeing normals but unfortunately Cheetah 3D isn’t one of them. If you want to see the normals on a mesh you can use a Particle Mesh and a Spline. This is so useful it’s worth keeping a Particle Mesh set up for this handy. All you need to do is create a Particle Mesh (rename it “View Normals” or something) and add a Line spline to it. Set its length to 0.2 and its position to 0,0.2,0 and drag it into the Particle Mesh. Now you can assign any mesh to the Particle Mesh’s Mesh property and you’ll be able to view its Point, Edge, and Face normals.</p>
-<p><img src="/images/pastedGraphic-202.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-203.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-202.jpg" alt="Polyhedron with short green lines sticking out of each face center, showing polygon normals"></p>
+<p><img src="/images/pastedGraphic-203.jpg" alt="The same polyhedron with many more green lines along the edges, showing edge normals"></p>
 <figure><img src="/images/pastedGraphic-204.jpg" alt=""><figcaption>Displaying the polygon, edge, and point normals of a Polyhedron using a Line Spline and a Particle Mesh.</figcaption></figure>
 <h3 id="how-solidity-is-inferred">How solidity is inferred</h3>
 <p>The process by which a person looks at a cup, say, and figures out which part of it is the “inside” and how to pour tea into it is incredibly complicated. Computers are simple minded and can’t do complicated things like that unless we can break it down into very simple steps. The way solidity is inferred in practice is quite simple, and identical conceptually to the way laser printers figure out which parts of a glyph (e.g. a letter or symbol) need to be colored in.</p>
-<p><img src="/images/pastedGraphic-205.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-205.jpg" alt="Outline of an ampersand with two scan lines from the left ending at a red point and a green point"></p>
 <p>Imagine you are a laser printer and you’re drawing a single row of pixels. Which part of the line should be black and which white? The simplest answer is to count the number of edges you cross. If you’ve crossed an odd number of edges you’re inside a character (so the pixel should be black) and if it’s an even number of edges you’re outside a character (so the pixel should be white). Easy!</p>
 <p>The only problem with this is that it assumes that there are no overlapping, wasted shapes. In practice, many objects are created in a much cruder and more slipshod manner, e.g. I might have built the numeral 1 out of overlapping pieces:</p>
-<p><img src="/images/pastedGraphic-206.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-206.jpg" alt="Outline of the numeral 1 built from three overlapping shapes: a flag, a stem, and a base"></p>
 <p>If we simply count the number of edges crossed here, we’ll render the overlaps as holes, which is not what we want. So we need to have a concept of the “inside” of a shape, and this is where “winding order” comes in. We define a shape as a series of control points in a specific order such that they go anticlockwise (to pick a direction) around their interior.</p>
 <p>If we switch to the 3D case, “winding order” becomes the surface normal. We establish the convention that normals point away from the interior of a mesh. So as we travel along a line through the scene, each time we pass through a face whose normal points back toward us we’re going <em>in</em>, and each time we pass through a face whose normal points away from us we’re coming <em>out</em>. If we’ve gone in more times than we’ve come out, we’re inside something. <!-- TODO review --></p>
 <blockquote>

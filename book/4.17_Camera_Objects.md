@@ -2,17 +2,17 @@
 
 ## Camera Objects
 
-![](/images/DraggedImage-69.jpg)
+![Object Browser listing Camera and Camera.1, the active Camera's icon on a dark background](/images/DraggedImage-69.jpg)
 
 The camera currently being used to render (and whose view is shown in the 3D camera view) is the one with the dark background.
 
 The camera object has radically different properties in Cheetah 3D 7 than it did in Cheetah 3D 6, and it also changes based on which renderer you’re using:
 
-![](/images/Screen%20Shot%202016-12-01%20at%2011.14.03%20AM.jpg)
+![Renderer (Cheetah) properties: Resolution, Sampling, Radiosity, Caustics, Depth of field, G-Buffer, and Other](/images/Screen%20Shot%202016-12-01%20at%2011.14.03%20AM.jpg)
 
 _Camera in Cheetah 3D 7 using **Cheetah** renderer_ The changes here reflect a lot of camera “tags” being integrated into the camera itself.
 
-![](/images/Screen%20Shot%202016-12-01%20at%2011.14.12%20AM.jpg)
+![Renderer (Falcon) properties: Resolution, Samples, Ray depth bounces, Depth of field, Motion blur, and G-Buffer](/images/Screen%20Shot%202016-12-01%20at%2011.14.12%20AM.jpg)
 
 _Camera in Cheetah 3D 7 using **Falcon** renderer_ The Falcon camera is a much simpler beast than the Cheetah camera, in large part because a lot of the hacky features of the Cheetah renderer “just work” via the new unbiased rendering model.
 

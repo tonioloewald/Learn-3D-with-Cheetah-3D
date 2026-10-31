@@ -2,7 +2,7 @@
 
 ## The Properties Panel
 
-![](/images/DraggedImage-2.jpg)
+![Properties panel for a camera with HDRI, Radiosity, and DOF tags, showing the Radiosity tag settings](/images/DraggedImage-2.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 
@@ -20,13 +20,13 @@ Most mesh objects will end up with three or more tags — their own property tag
 
 ### Common Tags
 
-![](/images/DraggedImage-3.jpg)
+![Properties panel for a torus with its base tag and Mode tag, showing Sections, Radius, N1, and N2 settings](/images/DraggedImage-3.jpg)
 
 A typical object starts with two tags, its base tag (representing its own properties) and its Mode tag. Here we see a torus’s properties. Click on the tag icons to display the corresponding properties.
 
 #### The Mode Tag
 
-![](/images/DraggedImage-4.jpg)
+![Mode tag settings: Visible in editor, Visible in renderer, Editor shading, Create, and Modifier](/images/DraggedImage-4.jpg)
 
 Most objects will have a Mode tag (cameras do not). 
 
@@ -36,7 +36,7 @@ The Create toggle of a Mode tag only affects creator objects. It appears to do n
 
 #### The Material Tag
 
-![](/images/DraggedImage-5.jpg)
+![Material tag assigning Brushed Metal, with Shading space and UV coords settings](/images/DraggedImage-5.jpg)
 
 The Material tag assigns a material to a mesh (it may assign the material to all, or just a subset, of an editable mesh’s polygons). The settings within the Material tag affect the way the material is mapped onto the object.
 

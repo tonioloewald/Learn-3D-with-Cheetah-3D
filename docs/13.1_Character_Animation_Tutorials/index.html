@@ -40,21 +40,21 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="13.1_Character_Animation_Tutorials.md">
 <!--{"parent": "13_Character_Animation.md", "order": 1}--><h1 id="character-animation-tutorials">Character Animation Tutorials</h1>
 <h2 id="rigging-a-simple-flexible-object">Rigging a simple flexible object</h2>
-<p><img src="/images/pastedGraphic-496.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-496.jpg" alt="Render of a straight green tentacle with tan suckers"></p>
 <p>To rig a mesh you start by creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create.</p>
-<p><img src="/images/pastedGraphic-497.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-497.jpg" alt="Joint Tool properties: Display mode Diamond, Color pink"></p>
 <ol>
 <li>Switch to the Left view and select the Joint Tool (Tools &gt; Character &gt; Joint). Set the joint tool’s color to whatever you like and switch to diamond display mode. We want to click in the places in the order shown below:</li>
 </ol>
-<p><img src="/images/pastedGraphic-498.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-498.jpg" alt="Left view of the tentacle with joints numbered 1 to 6, from the root on the ground up to the tip"></p>
 <ol start="2">
 <li>With the Joint Tool active, clicking those points in order will create a hierarchy of joints that looks like this in the object browser:</li>
 </ol>
-<p><img src="/images/pastedGraphic-499.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-499.jpg" alt="Object Browser with Joint nested down through Joint.1 to Joint.5, below Tentacle"></p>
 <p>If you were rigging a more complex figure, e.g. a human being, you can either select a joint before creating different limbs to make sure a given joint is in the right place in the hierarchy, or simply move joints around in the Object Browser to correct problems in the hierarchy.</p>
 <p>If you select the various joints in the hierarchy you should see that their axes are all lined up with the global axis, and that in particular the red x-axis is lined up so that it’s the axis we’re going to want to mainly rotate that joint around. This is convenient — you generally want to ensure this for any joint hierarchy before you bind it to your mesh. For a more complex rig, you’ll probably need to rotate some joints along their y axes to line up the x axes properly.</p>
 <p>You can try rotating some joints at this point (undo afterwards!). The joints rotate as you’d expect, and each rotates its children, but aside from that they don’t do anything yet.</p>
@@ -63,7 +63,7 @@
 <li>Select the mesh (named “Tentacle” in this case), add a Skeleton tag to it, and then with the Skeleton tag still selected click the root Joint (named Joint) and drag it to the list box in the Skeleton tag’s properties. If you mess up the Skeleton tag will get deselected and you’ll need to select it and start over. (This is the case whenever you need to drag an object into a tag property.)</li>
 </ol>
 <p>You should end up with the entire hierarchy of joints in the Skeleton tag’s list box, like this:</p>
-<p><img src="/images/pastedGraphic-500.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-500.jpg" alt="Skeleton tag properties listing Joint to Joint.5, with Binding method set to Heat"></p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
@@ -79,7 +79,7 @@
 <ol start="5">
 <li>Now one-by-one select joints 2, 3, and 4 and rotate each slightly on its x-axis to curl the tentacle inward. You should get something like this:</li>
 </ol>
-<p><img src="/images/pastedGraphic-501.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-501.jpg" alt="Left view of the bound tentacle curling inward, with a rotated joint selected"></p>
 <p>The reason we do this is to give the IK system a hint as to our preferred rotation for each joint. This will make the IK setup incredibly simple. </p>
 <ol start="6">
 <li><p>Add an IK Handle tag to joint 4 and set its length to 3. </p>

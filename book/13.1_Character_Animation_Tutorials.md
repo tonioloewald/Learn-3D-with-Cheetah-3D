@@ -4,19 +4,19 @@
 
 ### Rigging a simple flexible object
 
-![](/images/pastedGraphic-496.jpg)
+![Render of a straight green tentacle with tan suckers](/images/pastedGraphic-496.jpg)
 
 To rig a mesh you start by creating a hierarchy of joints. You can’t get much simpler than a tentacle, so that’s what we’ll create.
 
-![](/images/pastedGraphic-497.jpg)
+![Joint Tool properties: Display mode Diamond, Color pink](/images/pastedGraphic-497.jpg)
 
 1. Switch to the Left view and select the Joint Tool (Tools \> Character \> Joint). Set the joint tool’s color to whatever you like and switch to diamond display mode. We want to click in the places in the order shown below: 
 
-![](/images/pastedGraphic-498.jpg)
+![Left view of the tentacle with joints numbered 1 to 6, from the root on the ground up to the tip](/images/pastedGraphic-498.jpg)
 
 2. With the Joint Tool active, clicking those points in order will create a hierarchy of joints that looks like this in the object browser: 
 
-![](/images/pastedGraphic-499.jpg)
+![Object Browser with Joint nested down through Joint.1 to Joint.5, below Tentacle](/images/pastedGraphic-499.jpg)
 
 If you were rigging a more complex figure, e.g. a human being, you can either select a joint before creating different limbs to make sure a given joint is in the right place in the hierarchy, or simply move joints around in the Object Browser to correct problems in the hierarchy.
 
@@ -30,7 +30,7 @@ Having created our joints, we need to attach them to our mesh.
 
 You should end up with the entire hierarchy of joints in the Skeleton tag’s list box, like this:
 
-![](/images/pastedGraphic-500.jpg)
+![Skeleton tag properties listing Joint to Joint.5, with Binding method set to Heat](/images/pastedGraphic-500.jpg)
 
 > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
@@ -42,7 +42,7 @@ You should end up with the entire hierarchy of joints in the Skeleton tag’s li
 
 5. Now one-by-one select joints 2, 3, and 4 and rotate each slightly on its x-axis to curl the tentacle inward. You should get something like this:
 
-![](/images/pastedGraphic-501.jpg)
+![Left view of the bound tentacle curling inward, with a rotated joint selected](/images/pastedGraphic-501.jpg)
 
 The reason we do this is to give the IK system a hint as to our preferred rotation for each joint. This will make the IK setup incredibly simple. 
 

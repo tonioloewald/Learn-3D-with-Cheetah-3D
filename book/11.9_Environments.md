@@ -4,19 +4,19 @@
 
 Apart from light sources (such as the sun) **every object owes its appearance to light emitted or reflected by the things around it**. At first approximation this means light emitted from light sources, but when you take reflective and refractive objects into account you need to look at light being reflected off other objects in a scene. Even “dull” objects are greatly affected by reflected light.
 
-![](/images/pastedGraphic-553.jpg)
+![White elephant in a red room, tinted red by light bounced off the walls](/images/pastedGraphic-553.jpg)
 
 **Radiosity** simulates the effects of light reflected off dull surfaces. In the image above, the elephant is light grey but reflected light, especially where the elephant is in shadow, colors the elephant.
 
-![](/images/pastedGraphic-554.jpg)
+![Glass of yellow liquid on a gray plane with soft caustic light inside its shadow](/images/pastedGraphic-554.jpg)
 
 **Caustics** simulate the effects of light reflected off or refracted through objects. While the caustics in the shadow of the glass don’t dominate the scene, the shadows would look completely fake were they not being used.
 
 **I made a metal object and it’s black — Metal and Reflections**
 
-![](/images/pastedGraphic-555.jpg)
+![Completely black render: the steel ball has nothing to reflect](/images/pastedGraphic-555.jpg)
 
-![](/images/pastedGraphic-556.jpg)
+![Parquet cube on black; the steel ball above it is visible only as the cube reflected in its underside](/images/pastedGraphic-556.jpg)
 
 ![](/images/pastedGraphic-557.jpg)
 
@@ -52,7 +52,7 @@ So, there are two more options:
 
 - You can use solid white and black shaders to produce an image mask.
 
-![](/images/pastedGraphic-558.jpg)
+![Steel ball reflecting the city on a parquet block, with the city hidden from the camera and a sky gradient behind](/images/pastedGraphic-558.jpg)
 
 ![](/images/pastedGraphic-559.jpg)
 

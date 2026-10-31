@@ -40,18 +40,18 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="4.11_Creators.md">
 <!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 11}--><h1 id="creators">Creators</h1>
 <p>A creator produces a mesh non-destructively from one or more input child objects. Creators are essentially like Modifiers except they can operate on more than one object and they work on their children rather than their parents (which is necessary in order for the hierarchy to communicate to them what their inputs are). There are two important types of creator:</p>
 <h2 id="sweeps">Sweeps</h2>
-<p><img src="/images/DraggedImage-30.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-30.jpg" alt="Two nearly identical wineglasses, one from a Lathe and one from a Sweep with a tiny Circle, with Flip normals checked"></p>
 <p>Yet another way to create a wineglass — demonstrating that a lathe is just a special case of a sweep. In this case you can see a wineglass created by lathing a profile, and a nearly identical wineglass created by sweeping the same profile around a tiny, tiny circle (and flipping the normals).</p>
 <p>The sweep, lathe, and extrude creators are all variations of the sweep operation. A sweep operation derives a solid from two curves by “pushing” one curve (the “profile”) through space along the other curve (the “control curve”).</p>
-<p><img src="/images/DraggedImage-31.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-31.jpg" alt="Sweep creator properties with Rotate sweep set to -69.0 and Scale sweep at 1.0"></p>
 <p>The Sweep creator has two especially useful properties: Rotate sweep and Scale sweep. Rotate sweep lets you fine tune the rotation of the profile as it is “pushed” along the control curve. Scale has the obvious effect.</p>
-<p><img src="/images/DraggedImage-32.jpg" alt=""></p>
-<p><img src="/images/DraggedImage-33.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-32.jpg" alt="Square swept along a helix, its end visibly twisted out of line"></p>
+<p><img src="/images/DraggedImage-33.jpg" alt="The same helix sweep with Rotate sweep corrected, the square end squared up"></p>
 <p>On the top is what you get when you sweep a small square along a helix, note how the square ends up rotated a bit at the end. On the bottom, you can adjust the rotation to correct for this (I set the Sweep rotation property to -69°).</p>
 <p>An Extrude creator sweeps a profile along a straight line. An Extrude creator operates on one spline which acts as the profile (the Extrude implicitly generates the control line). The Extrude creator can do a few things that a Sweep can’t, in particular adding bevels and controlling the end-caps.</p>
 <p>A Lathe creator sweeps a profile along a circular arc. A Lathe creator operates on one spline which acts as the profile (the Lathe implicitly generates the control arc).</p>

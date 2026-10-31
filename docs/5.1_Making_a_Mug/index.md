@@ -30,7 +30,7 @@ And it’s quite possible to skip the first step (i.e. just start doing somethin
 
 So let’s get started.
 
-![](/images/pastedGraphic-13.jpg)
+![Finished render of the tapered purple mug with the orange Cheetah 3D logo](/images/pastedGraphic-13.jpg)
 
 In this tutorial you’re going to:
 
@@ -68,7 +68,7 @@ We’re going to start by creating the main body of the mug using a cylinder pri
 
 1. Launch Cheetah 3D (if it’s not already running) and create a new, empty document (if you don’t already have one).
 
-![](/images/pastedGraphic-14.jpg)
+![Selected cylinder primitive in the 3D view, outlined in orange with its 32 sections and the Transform tool handles](/images/pastedGraphic-14.jpg)
 
 > *By default, a cylinder has 32 longitudinal sections (i.e. it’s a cylinder of a 32-sided approximation of a circle).*
 
@@ -102,7 +102,7 @@ E.g. the Cylinder has a blue **Mode** tag which lets you control things like whe
 
 11. The Taper is also the wrong way around. Let’s rotate it 180° around its Z axis. Cheetah 3D refers to rotations either as HPB (heading, pitch, bank) which correspond to rotation around the Y, X, and Z axis, respectively. So change the Taper modifier’s third rotation value to 180. (From now on, I will use the shorthand “set its Rotation to 0,0,180”.)
 
-![](/images/pastedGraphic-16.jpg)
+![Cylinder narrowing toward its base after the Taper modifier is rotated 180 degrees, inside the taper's bounding box](/images/pastedGraphic-16.jpg)
 
 12. The Taper is also a bit too extreme. We don’t want the base of the mug to be quite so narrow, so let’s set the Taper modifier’s Strength to 0.7. (Yes, it’s a bit odd that the higher the “Strength” the smaller the effect.)
 
@@ -128,7 +128,7 @@ E.g. the Cylinder has a blue **Mode** tag which lets you control things like whe
 
 17. Now we want to replace the bottom of the mesh with a nice polygon. Orbit so you can see the bottom reasonably well, pick **Tools \> Polygon \> Fill Hole** and click on one of the points around the bottom edge. Done!
 
-![](/images/pastedGraphic-19.jpg)
+![Before: the open-topped mug mesh with single-sided walls and no thickness](/images/pastedGraphic-19.jpg)
 
 ![](/images/pastedGraphic-20.jpg)
 
@@ -186,7 +186,7 @@ We’re going to use Merge to bring the handle into the mug mesh, then we’re g
 
 2. By stretching the two edges **you’ve created hexagons** on the side of the mug mesh which the handle will join to. We’re going to delete these hexagons to leave two hexagonal holes. Switch to **Polygon mode**, and select the four polygons (quads) that make up these two hexagons — click one then shift-click the others — and press delete.
 
-![](/images/pastedGraphic-26.jpg)
+![Object Browser showing the Cylinder, with the Sweep creator and its n-Edge and Spline inputs nested below](/images/pastedGraphic-26.jpg)
 
 3. Select the mug mesh and then handle (click one, command-click the other) and then select **Tools \> Merge**.
 
@@ -194,9 +194,9 @@ We’re going to use Merge to bring the handle into the mug mesh, then we’re g
 
 4. Select the Sweep creator’s Mode tag and toggle off both of its visible properties. This leaves it around in case we want to rebuild the handle. You could just delete the Sweep creator, but this is an example of how you can avoid having to rebuild stuff from scratch later if you make a mistake.
 
-![](/images/pastedGraphic-27.jpg)
+![Close-up of the handle end beside the hexagonal hole in the mug wall, not yet bridged](/images/pastedGraphic-27.jpg)
 
-![](/images/pastedGraphic-28.jpg)
+![The handle end bridged to the hexagonal hole, joined smoothly into the mug wall](/images/pastedGraphic-28.jpg)
 
 ![](/images/pastedGraphic-29.jpg)
 
@@ -280,7 +280,7 @@ We’re going to render the mug, adjust the lighting using two different approac
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: run this step with the Cheetah renderer selected (**Render \> Renderer**). Confirm that the radiosity settings appear as described and that Intensity 3.0 still suits faux hdri setup.hdr. <!-- TODO verify -->
 
-![](/images/pastedGraphic-34.jpg)
+![Final render of the purple logo mug on a transparent background](/images/pastedGraphic-34.jpg)
 
 6. In the Object browser (or perhaps the Property panel) **click on the Camera icon** and set its Background Color property to **completely transparent**. Finally, set the Logo Mug material’s Reflection blur to 0.05 so its reflections are mirror sharp. Render. We’re done!
 

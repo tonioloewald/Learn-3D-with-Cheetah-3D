@@ -2,7 +2,7 @@
 
 # Rendering
 
-![](/images/pastedGraphic-537.jpg)
+![Diagram of raytracing: a ray from the camera passes through a pixel grid to a teapot lit by a bulb](/images/pastedGraphic-537.jpg)
 
 > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
@@ -24,7 +24,7 @@ In order to render an image in Cheetah 3D you must already have:
 
 3. ideally you should have lit the scene, placed materials on the models, and so on, but these aren’t compulsory
 
-![](/images/pastedGraphic-538.jpg)
+![Render and Animation toolbar buttons, with the Bake button partly visible](/images/pastedGraphic-538.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 

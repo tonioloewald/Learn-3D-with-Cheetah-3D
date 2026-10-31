@@ -2,7 +2,7 @@
 
 ## Scripts
 
-![](/images/pastedGraphic-634.jpg)
+![Text editor window showing the Particle City.js script, with parameter setup and buildObject function](/images/pastedGraphic-634.jpg)
 
 ### Some Very Useful Scripts
 
@@ -261,7 +261,7 @@ This macro creates a new box and then moves it up 0.5 units. (Ever frustrated by
 
 If you right-click on the header of any panel in a Cheetah 3D window you’ll discover that one of the options is for a console panel. I recommend adding a console panel somewhere to one of your layouts if you want to do any scripting.
 
-![](/images/pastedGraphic-635.jpg)
+![Console tab beside Object browser and Takes, listing tag properties such as position, scale, and tagOn](/images/pastedGraphic-635.jpg)
 
 My default layout has a console tab tucked in with the object browser — ready whenever I need it.
 
@@ -283,7 +283,7 @@ OS.messageBox("Title","Here is my message!");
 }
 ```
 
-![](/images/pastedGraphic-636.jpg)
+![Alert dialog with the Cheetah 3D icon, Title, the text Here is my message, and Cancel and OK buttons](/images/pastedGraphic-636.jpg)
 
 ### Feeling Your Way Around
 

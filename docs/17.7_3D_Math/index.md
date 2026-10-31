@@ -16,7 +16,7 @@ You won’t see quaternions mentioned anywhere in Cheetah 3D, but they’re impo
 
 ### Frustum
 
-![](/images/pastedGraphic-646.jpg)
+![Camera with its viewing volume drawn as a frustum between Near and Far clipping planes](/images/pastedGraphic-646.jpg)
 
 A frustum is a square pyramid with its point chopped off. 
 
@@ -70,28 +70,28 @@ In mathematics, normal means “perpendicular”. In 3D this means that the “n
 
 In real time 3D renderers (including Cheetah 3D’s editor view if you turn on **Backface Culling**) normals are only visible from the side the normal points to.
 
-![](/images/pastedGraphic-648.jpg)
+![Subdivided cube with a strip of flipped polygons shown dark across its top and side](/images/pastedGraphic-648.jpg)
 
 In Cheetah 3D back faces of polygons are rendered as dark. This makes it pretty easy to see flipped polygons most of the time, but it can be tricky if you have lights in the scene.
 
-![](/images/pastedGraphic-649.jpg)
+![Selected cube with the flipped polygons shown solid black](/images/pastedGraphic-649.jpg)
 
 Here’s the same mesh after I added a skylight to the scene. Now it’s impossible to tell that some of the polygons are flipped.
 
-![](/images/pastedGraphic-650.jpg)
+![3D view Style menu open with Backface Culling highlighted above Wireframe, Light Both Sides, and Grid](/images/pastedGraphic-650.jpg)
 
-![](/images/pastedGraphic-651.jpg)
+![Same cube with Backface Culling on; the flipped polygons have vanished, leaving holes](/images/pastedGraphic-651.jpg)
 
 Turning on **Backface Culling** is very helpful for revealing flipped polygons (and also seeing how your model will look in a 3D game engine, where back faces are usually invisible). Once Backface Culling is switched on, the errant polygons disappear. Sadly, while this is effective, you now can’t easily select the problem polygons!
 
-![](/images/pastedGraphic-652.jpg)
+![Mode tag properties for the modeling light, with Visible in renderer unchecked](/images/pastedGraphic-652.jpg)
 
-![](/images/pastedGraphic-653.jpg)
+![Cube lit by a lavender modeling light, flipped polygons visible as darker purple faces](/images/pastedGraphic-653.jpg)
 
 Another, possibly better, solution is to add a “modeling light” to your scene. This is an ambient light that is dim and a slightly unusual hue (e.g. cyan). In its mode tag uncheck **Visible in Renderer** (so it only appears in the editor view). This makes it possible to see detail even in completely unlit portions of your scene, and makes the back faces visible even in shadow. (It would work better if backfaces were rendered as black, but they seem to pick up some ambient light in the editor view.)
 
-![](/images/pastedGraphic-654.jpg)
+![Low-poly sphere with a green line sticking out of each polygon to show its normal](/images/pastedGraphic-654.jpg)
 
-![](/images/pastedGraphic-655.jpg)
+![Object Browser with Camera, Ball, and Particle Mesh containing a Spline](/images/pastedGraphic-655.jpg)
 
 Some 3D programs (unfortunately Cheetah 3D is not one of them) will allow you to display the normals of each polygon as a colored line (here the normals are green). You can achieve this effect in Cheetah 3D using a simple straight spline and a Particle Mesh in Polygon mode (which is how I created this screen shot). This makes spotting flipped polygons much easier. (This image should also give you a good idea of what a normal is.)

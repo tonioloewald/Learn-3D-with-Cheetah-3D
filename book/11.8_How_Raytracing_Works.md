@@ -8,7 +8,7 @@ But…
 
 It’s very useful to have a solid grasp of how raytracing works when trying to render things in 3D. For that matter, most of the principles of raytracing apply to real-time 3D rendering, so it’s useful to understand this stuff even if all you’re interested in is real-time 3D (e.g. game development).
 
-![](/images/pastedGraphic-552.jpg)
+![Viewport with a sphere on a plane and a camera whose view frustum is drawn as white lines](/images/pastedGraphic-552.jpg)
 
 ### Ray tracing is what it sounds like
 

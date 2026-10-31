@@ -14,7 +14,7 @@ Probably the simplest way to achieve a cartoony look is through the way you crea
 
 **Cartoony Materials**
 
-![](/images/pastedGraphic-573.jpg)
+![Toon-shaded bee on a beehive with hard-edged, posterized shading and flat colors](/images/pastedGraphic-573.jpg)
 
 ![](/images/pastedGraphic-574.jpg)
 

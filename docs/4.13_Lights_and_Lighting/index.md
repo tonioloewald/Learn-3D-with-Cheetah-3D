@@ -14,7 +14,7 @@ Cheetah 3D offers several different ways to light a scene. These are:
 
 These are “lights” in the “ray tracing sense” — things that emit light of a specific color in a very well-defined (not necessarily realistic) way.
 
-![](/images/DraggedImage-42.jpg)
+![Scene toolbar menu open with Light highlighted, among Camera, Folder, Smart Folder, Blueprint, Sky Light, and Joint](/images/DraggedImage-42.jpg)
 
 To light a scene with light objects simply add one or more light objects to your scene by selecting Light from the Scene toolbar item. By default a light will be a Point source (its “Light type” will be “point”). 
 
@@ -22,7 +22,7 @@ The following **types** of light are supported:
 
 #### Spot light
 
-![](/images/DraggedImage-43.jpg)
+![Spot light render: a cone of light on a cube in a corner, with soft-edged pool and dark surroundings](/images/DraggedImage-43.jpg)
 
 (Angle changed to 40° and Smooth cut off changed to 10°)
 
@@ -30,7 +30,7 @@ A light from a point but restricted to a cone, kind of like a spotlight. Obvious
 
 #### Point light
 
-![](/images/DraggedImage-44.jpg)
+![Point light render: the room corner lit all round, the cube casting a hard shadow on the floor](/images/DraggedImage-44.jpg)
 
 (Samples set to 5)
 
@@ -42,13 +42,13 @@ A light that shines in all directions. If you’re modeling a solar system, the 
 
 #### Ambient light
 
-![](/images/DraggedImage-45.jpg)
+![Ambient light render: a flat, evenly gray box with no shading or shadows](/images/DraggedImage-45.jpg)
 
 Light emitted from all directions. An ambient light is a “cheap” way of faking the kind of all-round light you get from, say, the sky on a sunny day. Ambient light should be subtle — the stronger it is, the flatter your image will look (and the less realistic: there is no ambient light in the Real World).
 
 #### Area light
 
-![](/images/DraggedImage-46.jpg)
+![Area light render: the cube over the floor casting a soft, blurry shadow](/images/DraggedImage-46.jpg)
 
 (Samples set to 5.)
 
@@ -60,13 +60,13 @@ A light emitted from a rectangular or elliptical surface (but only if you increa
 
 #### Distant light
 
-![](/images/DraggedImage-47.jpg)
+![Distant light render: lit floor and cube top with a crisp shadow, black walls](/images/DraggedImage-47.jpg)
 
 A light shining in a fixed direction from infinitely far away. If you’re modeling a typical scene, the sun might be treated as a distant light source.
 
 ### Other Light Properties
 
-![](/images/DraggedImage-48.jpg)
+![Light Properties panel: Light type Spot, Intensity, Attenuation 1/(r^2), Shadow, Cut off, and Caustics settings](/images/DraggedImage-48.jpg)
 
 Lights have a lot of properties! It’s important to understand them if you want to produce good-looking images.
 
@@ -84,8 +84,8 @@ The **color** and **intensity** of a light should be straightforward. Intensity 
 
 ### Hint: Improving Editor Light Previews
 
-![](/images/DraggedImage-49.jpg)
+![Editor view of a spot light over a default plane, which stays black](/images/DraggedImage-49.jpg)
 
-![](/images/DraggedImage-50.jpg)
+![The same spot light over a 50 by 50 section plane, showing a lit pool in the editor](/images/DraggedImage-50.jpg)
 
 If you want Cheetah 3D’s editor view to be more helpful for lighting, you might want to add more detail to your objects, especially ground planes. On the top, a spot light shining on a default plane. On the bottom, the same plane with 50 sections vertical and horizontal.

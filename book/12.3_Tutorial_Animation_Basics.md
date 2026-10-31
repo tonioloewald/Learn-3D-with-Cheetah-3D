@@ -66,9 +66,9 @@ What we’d really like is for the ball to go very quickly from squashed (just b
 
 What we’re really doing here is fine-tuning the interpolation of the values between key frames. We could achieve similar results using the f-curve editor and in some cases this is a better way to do it.
 
-![](/images/pastedGraphic-487.jpg)
+![F-curve editor: scale curves swinging smoothly above and below 1.0 between keyframes](/images/pastedGraphic-487.jpg)
 
-![](/images/pastedGraphic-488.jpg)
+![F-curve editor: scale curves held flat through the flight, with sharp changes at takeoff and impact](/images/pastedGraphic-488.jpg)
 
 ![](/images/pastedGraphic-489.jpg)
 

@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.8_How_Materials_Work.md">
 <!--{"parent": "9_Materials.md", "order": 8}--><h1 id="how-materials-work">How Materials Work</h1>
 <p>Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the material system actually works.</p>
@@ -82,9 +82,9 @@
 <p>If you’re trying to render nice planets as seen from space (e.g. for a science fiction space scene) then it’s exactly like creating a terrain shader that’s driven by a texture instead of the y component of position (in essence the texture represents altitude).</p>
 <figure><img src="/images/pastedGraphic-352.jpg" alt=""><figcaption>Here I replace the state node’s y position with a filtered fractal. The gradient lets me pick the way the texture gets interpreted as altitude while the scale settings of the Fractal node let me determine the detail level of the planet (I set the UVW scales to 3.0).</figcaption></figure>
 <figure><img src="/images/pastedGraphic-353.jpg" alt=""><figcaption>Here’s the resulting planet. For extra points I’ll feed the same filtered “altitude” as a bump map.</figcaption></figure>
-<p><img src="/images/pastedGraphic-354.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-354.jpg" alt="Rendered planet with blue oceans and green-fringed brown continents, lit from the left"></p>
 <p>One of the problems with the gradient filter is that it’s a pain to edit it precisely. So here’s a trick for replacing the gradient filter with an arbitrarily large image node which you can edit in a dedicated image editor (such as Photoshop).</p>
-<p><img src="/images/pastedGraphic-355.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-355.jpg" alt="Screen grab of the gradient node&#39;s Properties open in Acorn, a blue, yellow, green, brown, gray, and white gradient"></p>
 <p>I take a screen grab of my gradient node’s settings and open it in a good image editor (in this case Acorn).</p>
 <figure><img src="/images/pastedGraphic-356.jpg" alt=""><figcaption>Then I crop to just the gradient part of the image. Now I can create a similar gradient at arbitrary precision using my image editor of choice.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-357.jpg" alt=""><figcaption>Rather than try to create a gradient, I directly modify the gradient using blurs and scales to tweak it.</figcaption></figure>
@@ -97,12 +97,12 @@
 <h2 id="material-assignment-tags">Material Assignment Tags</h2>
 <figure><img src="/images/pastedGraphic-388.jpg" alt=""><figcaption>When you assign a material to an object, Cheetah 3D represents this by adding a tag to the object.</figcaption></figure>
 <p>Material assignment tags control how a material is applied to an object. The tag has two sets of properties: the properties listed under Shading Space affect 3D spatially mapped textures while those under UV coords affect UV-mapped textures.</p>
-<p><img src="/images/pastedGraphic-389.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-390.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-391.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-389.jpg" alt="Plane with large gray and black procedural checkerboard at default tag settings"></p>
+<p><img src="/images/pastedGraphic-390.jpg" alt="Same checkerboard shifted so squares are cut off at the plane&#39;s edges"></p>
+<p><img src="/images/pastedGraphic-391.jpg" alt="Same checkerboard rotated into a diamond pattern"></p>
 <figure><img src="/images/pastedGraphic-392.jpg" alt=""><figcaption>Procedural, 3D spatially-mapped checkerboard. <strong>Top</strong>: default material tag settings. <strong>Upper-middle</strong>: offset by 0.1,0.1,0.1. <strong>Lower-middle</strong>: rotation by 45°,0,0. <strong>Bottom</strong>: scale by 0.25,0.25,0.25.</figcaption></figure>
-<p><img src="/images/pastedGraphic-393.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-394.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-393.jpg" alt="Plane with a numbered UV test texture tiled two by two"></p>
+<p><img src="/images/pastedGraphic-394.jpg" alt="Same UV texture offset by a quarter, so the 4 tile sits in the center"></p>
 <figure><img src="/images/pastedGraphic-395.jpg" alt=""><figcaption><strong>Top</strong>: UV scale set to 2,2,2; <strong>Middle</strong>: UV offset set to 0.25,0.25; <strong>Bottom</strong>: UV rotation set to 45°</figcaption></figure>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has Material tag properties <strong>Shading selection</strong> (up to 16 materials per mesh, each limited to a polygon selection) and <strong>Tangent space</strong> (Tags/MaterialTag), not yet covered here. <!-- TODO missing --></p>

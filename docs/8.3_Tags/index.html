@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="8.3_Tags.md">
 <!--{"parent": "8_Creators_Modifiers_Tags.md", "order": 3}--><h1 id="tags">Tags</h1>
 <p>Tags don’t do anything by themselves, instead they <em>attach extra information to an object</em> that can be used by Cheetah 3D’s internal functions (or scripts). Most tags are only meaningful in specific contexts and can only be attached to certain objects.</p>
@@ -61,7 +61,7 @@
 </li>
 </ul>
 <h2 id="rendering-tags">Rendering Tags</h2>
-<p><img src="/images/pastedGraphic-233.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-233.jpg" alt="Rendering tags menu: Bake Texture, Caustics, Depth of field, Fog, HDRI, Radiosity, and Render"></p>
 <blockquote>
 <p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
 </blockquote>
@@ -101,9 +101,9 @@
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: what caustics can Falcon (Cheetah 3D&#39;s unbiased renderer) render now? The book said it couldn&#39;t; the app&#39;s Falcon settings include a &quot;Disable caustics&quot; option, but the manual&#39;s Falcon page doesn&#39;t mention caustics. <!-- TODO verify --></p>
 </blockquote>
 <h3 id="depth-of-field">Depth of Field</h3>
-<p><img src="/images/DraggedImage-89.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-89.jpg" alt="Render of a field of grey cones on a plane, all in sharp focus"></p>
 <p>No depth of field.</p>
-<p><img src="/images/DraggedImage-90.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-90.jpg" alt="The same field of cones rendered with depth of field, blurring near and far cones"></p>
 <p>Depth of field (the point of the central cone is in near-perfect focus).</p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
@@ -115,7 +115,7 @@
 <li><strong>Aperture blades</strong> and <strong>Aperture rotation</strong>: these shape the bokeh (0 blades gives a circular aperture).</li>
 </ul>
 <p>With the Cheetah renderer you also need to turn on <strong>Depth of field</strong> in the renderer settings. Its <strong>Camera samples</strong> property sets the quality: more samples, less noise.</p>
-<p><img src="/images/Screenshot%202014-02-13%2009.41.56.jpg" alt=""></p>
+<p><img src="/images/Screenshot%202014-02-13%2009.41.56.jpg" alt="Viewport showing the camera&#39;s blue DOF grid marking the plane of focus among the cones"></p>
 <blockquote>
 <p><strong>Note:</strong> this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot --></p>
 </blockquote>
@@ -171,10 +171,10 @@
 <h3 id="render">Render</h3>
 <p>The Render tag is assigned to mesh objects and controls how they are rendered. E.g. if a particular object is creating a problematic shadow, you can make its shadow disappear.</p>
 <h2 id="inverse-kinematics-tags">Inverse Kinematics Tags</h2>
-<p><img src="/images/pastedGraphic-234.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-234.jpg" alt="Inverse Kinematics tags menu: IK Constraints, IK Handle, Parent Constraint, Point Constraint, Spline tracking, Target, and Orient Constraint"></p>
 <p>The Inverse Kinematics tags control the behavior of objects in the IK system.</p>
 <h2 id="animation-tags">Animation Tags</h2>
-<p><img src="/images/pastedGraphic-235.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-235.jpg" alt="Animation tags menu: Morph, Skeleton, and Pose"></p>
 <h3 id="morph">Morph</h3>
 <p>The Morph tag allows you to store and interpolate between morph states of a mesh. The usual application for this is animating facial expressions and mouth shapes for a character.</p>
 <h3 id="skeleton">Skeleton</h3>
@@ -182,13 +182,13 @@
 <h3 id="pose">Pose</h3>
 <p>The Pose tag allows you to store and re-apply the keyed settings of the object to which it is attached and that object’s descendants.</p>
 <h2 id="system-properties-tags">System Properties Tags</h2>
-<p><img src="/images/pastedGraphic-236.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-236.jpg" alt="System Properties tags menu: Particle and Metaball"></p>
 <p>The Particle and Metaball tags affect the behavior of individual meshes within a Particle System or Isosurface Creator.</p>
 <blockquote>
 <p><strong>Note:</strong> &quot;Dynamics Tags&quot; and &quot;Material Tags&quot; are <code>####</code> headings filed under System Properties Tags; they should probably be <code>###</code>. <!-- TODO editorial --></p>
 </blockquote>
 <h3 id="dynamics-tags">Dynamics Tags</h3>
-<p><img src="/images/pastedGraphic-237.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-237.jpg" alt="Dynamics tags menu: Rigid Body, Rope, Soft Body, and Anchor"></p>
 <p>The Dynamics tags assign dynamic behavior to meshes. They are described in greater detail in the chapter on <a href="/15_Dynamics/">Dynamics</a>.</p>
 <h3 id="material-tags">Material Tags</h3>
 <p>In addition to the Mode tag every object (except a camera) automatically receives, when a material is assigned to an object it is represented by a Material tag, which is covered in more detail in the section on <a href="/9_Materials/">Materials</a>.</p>

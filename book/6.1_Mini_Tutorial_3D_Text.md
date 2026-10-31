@@ -2,7 +2,7 @@
 
 ## Mini-Tutorial: 3D Text
 
-![](/images/pastedGraphic-41.jpg)
+![Rendered chrome 3D text reading Your Name in Lights, receding in perspective](/images/pastedGraphic-41.jpg)
 
 Here we’re going to build 3D text suitable for use as a big heading on a poster, or a page layout.
 

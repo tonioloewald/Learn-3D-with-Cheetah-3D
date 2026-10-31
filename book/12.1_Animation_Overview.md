@@ -22,7 +22,7 @@ In order to keyframe an object’s properties at a given point in time you:
 
 3. Then click the record button in the Timeline control.
 
-![](/images/pastedGraphic-89.jpg)
+![Timeline controls: transport buttons with the red record button between rewind and play](/images/pastedGraphic-89.jpg)
 
 - Note that by default, clicking the record button keyframes the currently selected object’s transform information (position, rotation, and scale). To keyframe other properties, right-click the record button to specify the exact thing you want to keyframe. Almost any property (including those in tags) can be keyframed and thus animated.
 

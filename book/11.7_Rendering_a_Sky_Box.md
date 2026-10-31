@@ -16,7 +16,7 @@ Now simply render the entire sequence to create a skybox from whatever scene the
 
 **Skybox Utility**
 
-![](/images/pastedGraphic-613.jpg)
+![Sky Box Utility window, Tiling tab, showing a purple space skybox unfolded into a cross of six faces](/images/pastedGraphic-613.jpg)
 
 Skybox Utility will take an animation rendered using the preceding process and turn it into a skybox, ready for import into Unity 3D. You can obtain a copy of this free program from **http://loewald.com/waterboy**.
 

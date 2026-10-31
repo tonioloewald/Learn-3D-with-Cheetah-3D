@@ -40,16 +40,16 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.10_Faking_It.md">
 <!--{"parent": "9_Materials.md", "order": 10}--><h1 id="faking-it">Faking It</h1>
 <h2 id="volumetrics">Volumetrics</h2>
-<p><img src="/images/pastedGraphic-363.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-363.jpg" alt="Render of a hovering craft over a floating platform at sea, with a dark column of faked smoke rising on the right"></p>
 <p>It’s possible to fake some kinds of volumetrics using the material system. It’s possible to do reasonable smoke and clouds using carefully designed materials.</p>
-<p><img src="/images/pastedGraphic-364.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-364.jpg" alt="Smoke material node graph: State node&#39;s Position and I-N outputs through Gradient, Turbulence, and Subtract nodes into transparency"></p>
 <p>Here’s the smoke material (which produces the column of smoke in the preceding render). The basic idea is that it gets more opaque as it gets more front-on, but this opacity is partially modulated by procedural turbulence.</p>
-<p><img src="/images/pastedGraphic-365.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-366.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-365.jpg" alt="Sphere with the flame material, a fuzzy orange ball glowing yellow at the center"></p>
+<p><img src="/images/pastedGraphic-366.jpg" alt="Sphere with the cloud material, a soft gray puff fading at the edges"></p>
 <figure><img src="/images/pastedGraphic-367.jpg" alt=""><figcaption>The faux volumetric flame, cloud, and smoke materials (top to bottom) used in this scene applied to a sphere.</figcaption></figure>
 <p>The basic concept I use for faking volumetrics to produce puffs of smoke and cloud is to use the I•N output of the State node to control transparency or emission, and apply the materials to rounded objects.</p>
 <h2 id="sub-surface-scattering">Sub-Surface Scattering</h2>
@@ -58,11 +58,11 @@
 </blockquote>
 <p>Sub-surface scattering (SSS) refers to one of a set of related techniques for approximating the light that diffuses through slightly translucent substances such as marble, milk, mud, vegetation, and skin. (Mostly transparent substances, such as airborne dust and mist are handled via volumetrics.)</p>
 <p>Cheetah 3D does not currently support SSS — making this perhaps the only chapter of the book devoted to a <em>missing</em> feature — but I’ve made a number of varyingly successful attempts to simulate it using node-based shaders.</p>
-<p><img src="/images/pastedGraphic-368.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-369.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-368.jpg" alt="Gray elephant in the checkered room, an early faked SSS attempt with faint edge emission"></p>
+<p><img src="/images/pastedGraphic-369.jpg" alt="Gray elephant with a slightly different edge emission setting, nearly identical to the previous attempt"></p>
 <figure><img src="/images/pastedGraphic-370.jpg" alt=""><figcaption>Here is a series of attempts to “fake” SSS by using the I•N output of the State node to drive subtle emission around the edges of a model.</figcaption></figure>
-<p><img src="/images/pastedGraphic-371.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-372.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-371.jpg" alt="Elephant with procedural marble material, gray veins on white"></p>
+<p><img src="/images/pastedGraphic-372.jpg" alt="Marble elephant with edge lightening, slightly brighter around the outlines"></p>
 <figure><img src="/images/pastedGraphic-373.jpg" alt=""><figcaption>This approach was then toned down and combined with lightening the diffuse channel towards the edges to improve the simple procedural marble material.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-374.jpg" alt=""><figcaption>Here’s the final shader showing how the gradient node is set up.</figcaption></figure>
 <h3 id="a-completely-different-approach-using-blurred-transparency">A completely different approach using blurred transparency</h3>

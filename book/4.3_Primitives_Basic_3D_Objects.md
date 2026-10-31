@@ -10,11 +10,11 @@ Check out the **Torus** primitive. It has some pretty funky properties.
 
 > **Note:** Cheetah 3D 8.1.1 also has the Capsule, Fractal, Polyhedra, and Relief primitives (manual: Objects › Polygon Objects), not yet covered here. <!-- TODO missing -->
 
-![](/images/Screen%20Shot%202014-07-01%20at%209.32.53%20AM.jpg)
+![Torus primitive with settings that bend it into a rounded triangle](/images/Screen%20Shot%202014-07-01%20at%209.32.53%20AM.jpg)
 
-![](/images/Screen%20Shot%202014-07-01%20at%209.32.40%20AM.jpg)
+![Torus primitive with settings that give it a wide, flattened ring shape](/images/Screen%20Shot%202014-07-01%20at%209.32.40%20AM.jpg)
 
-![](/images/Screen%20Shot%202014-07-01%20at%209.32.30%20AM.jpg)
+![Torus primitive with settings that pinch it into a square with concave sides](/images/Screen%20Shot%202014-07-01%20at%209.32.30%20AM.jpg)
 
 The easiest way to learn how all these properties work is to create some primitives and mess around with their properties. Some of the primitives (e.g. the torus) are surprisingly versatile.
 

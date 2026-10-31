@@ -4,17 +4,17 @@
 
 ### Volumetrics
 
-![](/images/pastedGraphic-363.jpg)
+![Render of a hovering craft over a floating platform at sea, with a dark column of faked smoke rising on the right](/images/pastedGraphic-363.jpg)
 
 It’s possible to fake some kinds of volumetrics using the material system. It’s possible to do reasonable smoke and clouds using carefully designed materials.
 
-![](/images/pastedGraphic-364.jpg)
+![Smoke material node graph: State node's Position and I-N outputs through Gradient, Turbulence, and Subtract nodes into transparency](/images/pastedGraphic-364.jpg)
 
 Here’s the smoke material (which produces the column of smoke in the preceding render). The basic idea is that it gets more opaque as it gets more front-on, but this opacity is partially modulated by procedural turbulence.
 
-![](/images/pastedGraphic-365.jpg)
+![Sphere with the flame material, a fuzzy orange ball glowing yellow at the center](/images/pastedGraphic-365.jpg)
 
-![](/images/pastedGraphic-366.jpg)
+![Sphere with the cloud material, a soft gray puff fading at the edges](/images/pastedGraphic-366.jpg)
 
 ![](/images/pastedGraphic-367.jpg)
 
@@ -30,17 +30,17 @@ Sub-surface scattering (SSS) refers to one of a set of related techniques for ap
 
 Cheetah 3D does not currently support SSS — making this perhaps the only chapter of the book devoted to a *missing* feature — but I’ve made a number of varyingly successful attempts to simulate it using node-based shaders.
 
-![](/images/pastedGraphic-368.jpg)
+![Gray elephant in the checkered room, an early faked SSS attempt with faint edge emission](/images/pastedGraphic-368.jpg)
 
-![](/images/pastedGraphic-369.jpg)
+![Gray elephant with a slightly different edge emission setting, nearly identical to the previous attempt](/images/pastedGraphic-369.jpg)
 
 ![](/images/pastedGraphic-370.jpg)
 
 *Here is a series of attempts to “fake” SSS by using the I•N output of the State node to drive subtle emission around the edges of a model.*
 
-![](/images/pastedGraphic-371.jpg)
+![Elephant with procedural marble material, gray veins on white](/images/pastedGraphic-371.jpg)
 
-![](/images/pastedGraphic-372.jpg)
+![Marble elephant with edge lightening, slightly brighter around the outlines](/images/pastedGraphic-372.jpg)
 
 ![](/images/pastedGraphic-373.jpg)
 

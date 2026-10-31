@@ -40,32 +40,32 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="13.2_Tutorial_Simple_Character_Rig.md">
 <!--{"parent": "13_Character_Animation.md", "order": 2}--><h1 id="tutorial-simple-character-rig">Tutorial: Simple Character Rig</h1>
-<p><img src="/images/pastedGraphic-502.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-502.jpg" alt="Subdivision humanoid figure in a fighting pose"></p>
 <p>Rigging a humanoid figure involves the same techniques used to rig the tentacle. The major differences are that you’ll need a more complex hierarchy, and that symmetry is involved (you generally want the left leg rigged as a mirror image of the right leg, and so forth), which Cheetah 3D’s symmetry tools can’t do for bones. <!-- TODO review --></p>
 <ol>
 <li></li>
 </ol>
-<p><img src="/images/pastedGraphic-503.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-503.jpg" alt="Left view of the figure with spine joints numbered 1 to 6, the root on the ground behind it"></p>
 <p>Start in the Left view. Use the Joint tool to click out the hierarchy per the above diagram. The first bone is our root (it’s on the ground and away from the mesh for convenience).</p>
 <ol start="2">
 <li><p>Rename the joints (from top to bottom) “root”, “back”, “chest”, “neck”, “head”, and “face”. </p>
 </li>
 <li></li>
 </ol>
-<p><img src="/images/pastedGraphic-504.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-504.jpg" alt="Left view with leg joints numbered 1 to 5, from the hip down to the toe"></p>
 <p>Click the “back” joint in the Object Browser, select the Joint tool, and click out the hierarchy above. Name these new joints “left-thigh”, “left-knee”, “left-ankle”, “left foot”, and “left toe”. <!-- TODO review --></p>
 <ol start="4">
 <li></li>
 </ol>
-<p><img src="/images/pastedGraphic-505.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-505.jpg" alt="Front view of the figure with the leg joints moved into its left leg"></p>
 <p>Switch to front view and move the new joints sideways so they are centered in the figure’s left leg.</p>
 <ol start="5">
 <li></li>
 </ol>
-<p><img src="/images/pastedGraphic-506.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-506.jpg" alt="Arm joints running from the chest out along the figure&#39;s outstretched left arm"></p>
 <p>Now click on the chest bone in the Object Browser, select the Joint tool, and click out the left arm hierarchy (you can figure out the order).</p>
 <ol start="6">
 <li><p>Then go to the Top view and center the joints in the figure’s left arm. (You might want to somewhat reposition the joints too — e.g. the wrist is a bit out of position in my screenshot.)</p>
@@ -73,11 +73,11 @@
 <li><p>Click on the left wrist in the Object Browser, select the Joint tool, and click out two bones for the thumb. Name them “left thumb” and “left thumb tip”, then switch to the Front view and fix the centering. <!-- TODO review --></p>
 </li>
 </ol>
-<p><img src="/images/pastedGraphic-507.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-507.jpg" alt="Perspective view of the half-rigged figure, joints in the spine, left arm, and left leg"></p>
 <p>You might like to orbit your model in Camera or Perspective view and do a quick check on your skeleton’s positioning. It should be good.</p>
-<p><img src="/images/pastedGraphic-508.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-509.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-510.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-508.jpg" alt="Shoulder joint selected, its rotation gizmo axes skewed relative to the arm"></p>
+<p><img src="/images/pastedGraphic-509.jpg" alt="Elbow joint selected, its rotation axes misaligned with the forearm"></p>
+<p><img src="/images/pastedGraphic-510.jpg" alt="Wrist joint selected, its rotation axes misaligned with the hand"></p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>
@@ -94,7 +94,7 @@
 <ol start="9">
 <li></li>
 </ol>
-<p><img src="/images/pastedGraphic-511.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-511.jpg" alt="Figure with the arm and leg joints mirrored to both sides"></p>
 <p>Now we need to mirror the left arm and leg hierarchies. We could just do everything over again (possibly typing in the positions of joints to make it exact). Or we can install tg_jp’s excellent <strong>Mirror Copy.js</strong> script, select the left shoulder, click Copy (under Object Copy), and then do the same for the left thigh. All that’s left is to fix the axes of the right arm (you don’t need to be exact). <!-- TODO review --></p>
 <p><strong>Note</strong>: you can also do this quite efficiently using my Pose Utilities.js script, but tg_jp’s Mirror Copy is quicker and simpler. With Pose Utilities, you duplicate the two limbs, and flip and rename them.</p>
 <ol start="10">
@@ -102,12 +102,12 @@
 </li>
 <li></li>
 </ol>
-<p><img src="/images/pastedGraphic-512.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-512.jpg" alt="Bound figure with knees, elbows, and wrists slightly bent as IK hints"></p>
 <p>Before we add IK handles, we need to rotate the joints slightly to give it hints as to how you want the IK solver to work. Rotate each joint slightly in its usual direction — so the thigh rotates forward, the knee backwards. Each rotation should be around the joint’s x-axis thanks to the tweaking earlier. When you’re done, your mesh should look like the image above. You can save time here by just doing the left side then using my <strong>Pose Utilities.js</strong>, select the root bone, and then copy left-to-right. The figure should look something like the above image when you’re done.</p>
 <ol start="12">
 <li>Now add an IK handle to each ankle and each wrist. Their default settings will be fine (even length!).</li>
 </ol>
-<p><img src="/images/pastedGraphic-513.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-513.jpg" alt="Fully rigged figure in a T-pose with a manipulator below the hips"></p>
 <p>Play around by dragging the wrists and ankles around. By and large, the legs will work a bit better than the arms, but the arm IK is still quite useful. In general, you will pose figures using a combination of forward and inverse kinematics. You can always go back to the skeleton tag and reset to the bind pose.</p>
 
   </article>

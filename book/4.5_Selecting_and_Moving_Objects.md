@@ -6,7 +6,7 @@ In general, a huge amount of the work in creating 3D scenes involves using the *
 
 There are four variants of the transform tool (although by default only the most useful one, “Transform” is visible in the toolbar).
 
-![](/images/Screen%20Shot%202014-07-06%20at%206.05.24%20PM.jpg)
+![Toolbar buttons for the Move, Scale, Rotate, and Transform tools](/images/Screen%20Shot%202014-07-06%20at%206.05.24%20PM.jpg)
 
 These let you transform a selection by translation (moving), rotation, scaling, or (in the case of the Transform tool itself) any of the above.
 
@@ -22,7 +22,7 @@ Note that Cheetah 3D also has a **selection tool** which is useful for selecting
 
 ### Moving, Rotating, and Scaling
 
-![](/images/DraggedImage-6.jpg)
+![Transform tool on a cube, labeled to show the X-axis ring rotates, the cube scales, and the cone moves](/images/DraggedImage-6.jpg)
 
 The transform tool has three kinds of widgets associated with it. For each axis there’s a **cone** (to **move** the selection along that axis), a **cube** (to **scale** the selection along that axis), and a **ring** (to **rotate** the selection around that axis).
 
@@ -50,7 +50,7 @@ Gadget mode lets you easily rotate selections around a specific edge, or scale a
 
 The Transform tool has some very helpful capabilities for editing meshes. To begin with, you can move, rotate, and scale any selected collection of vertices, edges, or polygons when in the appropriate mode.
 
-![](/images/DraggedImage-8.jpg)
+![Tool pane for the Transform tool, with Orientation set to Object and Snapping set to None](/images/DraggedImage-8.jpg)
 
 **Orientation** has three possible settings: Object (the default) where the transform tool is aligned to the object’s internal coordinate system, Global where it’s aligned to the world, and Normal which aligns the tool to the normal of the selection (which may or may not make much sense based on what you have selected, but works properly when the selection has a normal that makes sense).
 

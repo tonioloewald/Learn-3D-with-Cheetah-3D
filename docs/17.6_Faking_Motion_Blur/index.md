@@ -2,7 +2,7 @@
 
 ## Faking Motion Blur
 
-![](/images/pastedGraphic-659.jpg)
+![Rendered walking character holding a pistol, its legs and arm blurred by motion](/images/pastedGraphic-659.jpg)
 
 > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 

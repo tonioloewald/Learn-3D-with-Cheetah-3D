@@ -48,7 +48,7 @@ export default defineSiteConfig({
     // `css` replaces the book stylesheet, so extend the default rather than lose it.
     css: DEFAULT_BOOK_CSS + '\n' + readFileSync('static/headings.css', 'utf8'),
     // A literal, not a clock, so the committed ePub only changes with the book.
-    modified: '2026-10-30T00:00:00Z',
+    modified: '2026-10-31T00:00:00Z',
   },
 
   projectLinks: {

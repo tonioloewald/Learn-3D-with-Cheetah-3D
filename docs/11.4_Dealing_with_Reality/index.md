@@ -2,7 +2,7 @@
 
 ## Dealing with Reality
 
-![](/images/pastedGraphic-565.jpg)
+![Photo of a campus quad with a rendered yellow and silver aircar hovering over the path](/images/pastedGraphic-565.jpg)
 
 **Aircar on the Quad**. This photograph was taken with an iPhone and the aircar added using Cheetah 3D and a combination of Acorn and Photograph. 
 
@@ -46,7 +46,7 @@ You then load the photograph into your camera object as the Background Image and
 
 Now lock your camera down and build out the scene.
 
-![](/images/pastedGraphic-566.jpg)
+![Photo of an old yellow brick building against a blue sky, viewed from below at an angle](/images/pastedGraphic-566.jpg)
 
 Here’s a photograph of a building I had lying around. 
 
@@ -56,13 +56,13 @@ Here’s a photograph of a building I had lying around.
 
 So all I really know about it is that it was taken with a 35mm lens using a Nikon D5000 (a DX camera with a crop factor of 1.5). This makes it roughly a 50mm lens (on a 35mm film camera) — a 39.6° field of view for the larger dimension in Cheetah 3D terms. Judging from the light, it was taken in the mid-to-late afternoon — so I’ll set my Sky Light to 15:00.
 
-![](/images/pastedGraphic-568.jpg)
+![Viewport with the building photo as camera background and a box lined up with its corner and edges](/images/pastedGraphic-568.jpg)
 
 Above, I’ve created a scene with a box, set the renderer’s **Resolution** to 300 by 500 (to match the aspect ratio of the photograph) and then set the field of view to 39.6 (close to Cheetah 3D’s default of 40.0) and played with the view controls until I was able to match the side of the cube with the top corner of the building and then I pulled out the bottom of the cube to line up with the point where I’ve got a horizontal line on the same facade and messed around a bit longer to get that lined up.
 
-![](/images/pastedGraphic-569.jpg)
+![Viewport with the extended facade and a selected flying saucer casting a shadow on the ground](/images/pastedGraphic-569.jpg)
 
-![](/images/pastedGraphic-570.jpg)
+![Test render: gray facade and flying saucer over the photo background, the saucer casting a shadow on the facade](/images/pastedGraphic-570.jpg)
 
 ![](/images/pastedGraphic-571.jpg)
 

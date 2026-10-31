@@ -32,7 +32,7 @@ Setting up a particle system requires a minimum of two steps.
 
 2. **Add a child** such as a box or a ball to the emitter.
 
-![](/images/pastedGraphic-418.jpg)
+![Selected Particle Emitter crowded with large overlapping default ball particles](/images/pastedGraphic-418.jpg)
 
 ![](/images/pastedGraphic-419.jpg)
 
@@ -44,7 +44,7 @@ Press **Play** (on the Animation Timeline Controller) to see your shiny new Part
 
 There are four fundamental ways to have particles that aren’t all identical.
 
-![](/images/pastedGraphic-420.jpg)
+![Blue box particles leaving the emitter small and growing larger with distance](/images/pastedGraphic-420.jpg)
 
 ![](/images/pastedGraphic-421.jpg)
 
@@ -58,7 +58,7 @@ There are four fundamental ways to have particles that aren’t all identical.
 
 **You can put any number of child objects into your Particle Emitter** and it will create instances of them at random.
 
-![](/images/pastedGraphic-423.jpg)
+![Cloud of green plane particles at many different headings around the emitter](/images/pastedGraphic-423.jpg)
 
 ![](/images/pastedGraphic-424.jpg)
 
@@ -98,7 +98,7 @@ Particles on their own will do some things that are problematic — e.g. they wi
 
 ### Basic Setup: Particle Mesh
 
-![](/images/pastedGraphic-427.jpg)
+![Single thin pillar at the origin surrounded by a scattered grid of loose points](/images/pastedGraphic-427.jpg)
 
 ![](/images/pastedGraphic-428.jpg)
 

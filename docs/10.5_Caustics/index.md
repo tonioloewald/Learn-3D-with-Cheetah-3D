@@ -8,7 +8,7 @@
 
 Caustics refer to reflected and refracted light, something which traditional ray-tracing simply doesn’t capture. (Consider how you can reflect light onto a wall using a mirror: this simply doesn’t work in the standard ray-tracing model.)
 
-![](/images/pastedGraphic-449.jpg)
+![Glass of yellow liquid on a gray plane, rendered without caustics, casting a solid dark shadow](/images/pastedGraphic-449.jpg)
 
 ![](/images/pastedGraphic-450.jpg)
 
@@ -42,33 +42,33 @@ I would recommend starting around strength 1.0 and blur 20 pixels for a better l
 
 I should add that for this (simple) scene, the settings had almost no impact on rendering time until I went up to 5M photons, i.e. it was almost as fast to render with 500K photons and 1000 samples as with 5k and 10!
 
-![](/images/pastedGraphic-451.jpg)
+![Caustics test render at 5000 photons and 10 samples, with scattered bright speckles around the glass](/images/pastedGraphic-451.jpg)
 
-![](/images/pastedGraphic-452.jpg)
+![Caustics test render at 5000 photons and 100 samples, still sparse and speckled](/images/pastedGraphic-452.jpg)
 
 ![](/images/pastedGraphic-453.jpg)
 
 *5000 Photons: 10, 100, 1000 Samples*
 
-![](/images/pastedGraphic-454.jpg)
+![Caustics test render at 50,000 photons and 10 samples, with fine grainy speckles](/images/pastedGraphic-454.jpg)
 
-![](/images/pastedGraphic-455.jpg)
+![Caustics test render at 50,000 photons and 100 samples, with softer, blotchier light](/images/pastedGraphic-455.jpg)
 
 ![](/images/pastedGraphic-456.jpg)
 
 *50,000 Photons: 10, 100, 1000 Samples*
 
-![](/images/pastedGraphic-457.jpg)
+![Caustics test render at 500,000 photons and 10 samples, with a fine grain of light](/images/pastedGraphic-457.jpg)
 
-![](/images/pastedGraphic-458.jpg)
+![Caustics test render at 500,000 photons and 100 samples, smoother transmitted light in the shadow](/images/pastedGraphic-458.jpg)
 
 ![](/images/pastedGraphic-459.jpg)
 
 *500,000 Photons: 10, 100, 1000 Samples*
 
-![](/images/pastedGraphic-460.jpg)
+![Caustics test render at 5,000,000 photons and 10 samples, with dense fine grain](/images/pastedGraphic-460.jpg)
 
-![](/images/pastedGraphic-461.jpg)
+![Caustics test render at 5,000,000 photons and 100 samples, with a few bright reflected spots](/images/pastedGraphic-461.jpg)
 
 ![](/images/pastedGraphic-462.jpg)
 
@@ -82,9 +82,9 @@ To really handle the reflected light well, you might be better off rendering the
 
 *Here’s the same test scene, rendered with 5M photons, 1000 samples, and the caustics settings set to a more reasonable strength (1.0) and blur (20.0). Because glass isn’t very reflective, there’s essentially nothing we can do to really get the reflected light right. (If you look closely, it’s very splotchy.)*
 
-![](/images/pastedGraphic-464.jpg)
+![First pass with 500K photons and normal glass, with smooth transmitted light in the shadow](/images/pastedGraphic-464.jpg)
 
-![](/images/pastedGraphic-465.jpg)
+![Second pass with mirrored glass, rendering only the reflected light](/images/pastedGraphic-465.jpg)
 
 ![](/images/pastedGraphic-466.jpg)
 

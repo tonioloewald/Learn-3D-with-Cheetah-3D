@@ -2,7 +2,7 @@
 
 ## Parents
 
-![](/images/pastedGraphic-2.jpg)
+![Object Browser hierarchy with A at the top level, B and E under A, and C and D under B](/images/pastedGraphic-2.jpg)
 
 In this simple scene, A is the parent of B and E. B is the parent of C and D. A has no parent — it might be referred to as being a “root” object.
 

@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="5.1_Making_a_Mug.md">
 <!--{"parent": "5_Tutorials.md", "order": 1}--><h1 id="making-a-mug">Making a Mug</h1>
 <p><strong>Note</strong>: supporting files for this book, including the tutorials, can be found at <a href="http://loewald.com/c3dbook">loewald.com/c3dbook</a> (under <strong>tutorials</strong>).</p>
@@ -67,7 +67,7 @@
 <p>We’ve come a long way from when I first got into 3D graphics in the late 1980s — there used to be a joke among 3D graphics people: <em>The Law of Constant Rendering Time</em> — no matter how good your hardware gets, it takes <em>seven hours</em> to render an image. But in the last ten years or so, the hardware and software have started to overtake artists’ desire for more realism.</p>
 <p>And it’s quite possible to skip the first step (i.e. just start doing something to see what happens — 3D doodling!) or change your mind as you go.</p>
 <p>So let’s get started.</p>
-<p><img src="/images/pastedGraphic-13.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-13.jpg" alt="Finished render of the tapered purple mug with the orange Cheetah 3D logo"></p>
 <p>In this tutorial you’re going to:</p>
 <ol>
 <li><p>make a mug, </p>
@@ -102,7 +102,7 @@
 <ol>
 <li>Launch Cheetah 3D (if it’s not already running) and create a new, empty document (if you don’t already have one).</li>
 </ol>
-<p><img src="/images/pastedGraphic-14.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-14.jpg" alt="Selected cylinder primitive in the 3D view, outlined in orange with its 32 sections and the Transform tool handles"></p>
 <blockquote>
 <p><em>By default, a cylinder has 32 longitudinal sections (i.e. it’s a cylinder of a 32-sided approximation of a circle).</em></p>
 </blockquote>
@@ -136,7 +136,7 @@
 <li><p>The Taper is also the wrong way around. Let’s rotate it 180° around its Z axis. Cheetah 3D refers to rotations either as HPB (heading, pitch, bank) which correspond to rotation around the Y, X, and Z axis, respectively. So change the Taper modifier’s third rotation value to 180. (From now on, I will use the shorthand “set its Rotation to 0,0,180”.)</p>
 </li>
 </ol>
-<p><img src="/images/pastedGraphic-16.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-16.jpg" alt="Cylinder narrowing toward its base after the Taper modifier is rotated 180 degrees, inside the taper&#39;s bounding box"></p>
 <ol start="12">
 <li><p>The Taper is also a bit too extreme. We don’t want the base of the mug to be quite so narrow, so let’s set the Taper modifier’s Strength to 0.7. (Yes, it’s a bit odd that the higher the “Strength” the smaller the effect.)</p>
 </li>
@@ -159,7 +159,7 @@
 <ol start="17">
 <li>Now we want to replace the bottom of the mesh with a nice polygon. Orbit so you can see the bottom reasonably well, pick <strong>Tools &gt; Polygon &gt; Fill Hole</strong> and click on one of the points around the bottom edge. Done!</li>
 </ol>
-<p><img src="/images/pastedGraphic-19.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-19.jpg" alt="Before: the open-topped mug mesh with single-sided walls and no thickness"></p>
 <figure><img src="/images/pastedGraphic-20.jpg" alt=""><figcaption>Before and after applying a Shell modifier to the mesh. This shows the Shell modifier’s default settings, which are thicker than we want.</figcaption></figure>
 <ol start="18">
 <li>Our mug is <em>infinitely thin</em> right now — and in a game it would look really weird (try selecting Backface Culling from the Style menu at the top-left of the 3D view and orbiting it). With the mesh selected, pick <strong>Shell</strong> from the Modifier toolbar item then set the Shell modifier’s <strong>Offset</strong> to 0.05 (the default of 0.1 is a bit too thick). <strong>Make the mesh editable</strong> by double-clicking on its icon in the Object Browser. You might want to double-click on the mesh’s name and change it to “mug” at this point.</li>
@@ -203,7 +203,7 @@
 <ol start="2">
 <li>By stretching the two edges <strong>you’ve created hexagons</strong> on the side of the mug mesh which the handle will join to. We’re going to delete these hexagons to leave two hexagonal holes. Switch to <strong>Polygon mode</strong>, and select the four polygons (quads) that make up these two hexagons — click one then shift-click the others — and press delete.</li>
 </ol>
-<p><img src="/images/pastedGraphic-26.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-26.jpg" alt="Object Browser showing the Cylinder, with the Sweep creator and its n-Edge and Spline inputs nested below"></p>
 <ol start="3">
 <li>Select the mug mesh and then handle (click one, command-click the other) and then select <strong>Tools &gt; Merge</strong>.</li>
 </ol>
@@ -213,8 +213,8 @@
 <ol start="4">
 <li>Select the Sweep creator’s Mode tag and toggle off both of its visible properties. This leaves it around in case we want to rebuild the handle. You could just delete the Sweep creator, but this is an example of how you can avoid having to rebuild stuff from scratch later if you make a mistake.</li>
 </ol>
-<p><img src="/images/pastedGraphic-27.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-28.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-27.jpg" alt="Close-up of the handle end beside the hexagonal hole in the mug wall, not yet bridged"></p>
+<p><img src="/images/pastedGraphic-28.jpg" alt="The handle end bridged to the hexagonal hole, joined smoothly into the mug wall"></p>
 <figure><img src="/images/pastedGraphic-29.jpg" alt=""><figcaption>Before and after we join the two surfaces using the bridge tool — clicking on corresponding points on the closed edges we’re going to join.</figcaption></figure>
 <ol start="5">
 <li>Now select the mug mesh again and go into <strong>Point mode</strong>. Now pick <strong>Tools &gt; Polygon &gt; Bridge</strong>. Click on one of the points around the upper hole in the side of the mug, then click on the corresponding point on the handle — it should bridge the gap perfectly. (If not, undo and try again.) Repeat for the lower hole and the bottom of the handle.</li>
@@ -293,7 +293,7 @@
 <blockquote>
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: run this step with the Cheetah renderer selected (<strong>Render &gt; Renderer</strong>). Confirm that the radiosity settings appear as described and that Intensity 3.0 still suits faux hdri setup.hdr. <!-- TODO verify --></p>
 </blockquote>
-<p><img src="/images/pastedGraphic-34.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-34.jpg" alt="Final render of the purple logo mug on a transparent background"></p>
 <ol start="6">
 <li>In the Object browser (or perhaps the Property panel) <strong>click on the Camera icon</strong> and set its Background Color property to <strong>completely transparent</strong>. Finally, set the Logo Mug material’s Reflection blur to 0.05 so its reflections are mirror sharp. Render. We’re done!</li>
 </ol>

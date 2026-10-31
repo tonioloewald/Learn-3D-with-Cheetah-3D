@@ -8,7 +8,7 @@
 
 ### The Metal Shader
 
-![](/images/pastedGraphic-290.jpg)
+![Elephant with the Metal shader at roughness 0.0, sharply reflecting the checkered room](/images/pastedGraphic-290.jpg)
 
 ![](/images/pastedGraphic-291.jpg)
 
@@ -20,7 +20,7 @@ The Metal shader offers one key feature that the Material Shader does not, and t
 
 ### The Car Paint Shader
 
-![](/images/pastedGraphic-292.jpg)
+![Glossy orange elephant rendered with the Car Paint shader in a checkered room](/images/pastedGraphic-292.jpg)
 
 ![](/images/pastedGraphic-293.jpg)
 

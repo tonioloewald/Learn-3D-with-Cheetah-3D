@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="7.5_Subdivision_Surfaces.md">
 <!--{"parent": "7_Modeling.md", "order": 5}--><h1 id="subdivision-surfaces">Subdivision Surfaces</h1>
 <p>Subdivision surfaces are a powerful tool for creating smooth meshes. They are useful for both hard surface modeling (industrial design and similar kinds of modeling) and character modeling.</p>
@@ -52,14 +52,14 @@
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has the “Modifier On/Off” hotkey (or the Mode tag’s modifier checkbox) for reaching cage points hidden by the subdivided surface, and the Mode tag’s isoparameter editor shading for highlighting the cage edges (Objects/ModifierObjects/SubDiv), not yet covered here. <!-- TODO missing --></p>
 </blockquote>
 <h2 id="controlling-curves">Controlling Curves</h2>
-<p><img src="/images/pastedGraphic-185.jpg" alt=""></p>
-<p><img src="/images/pastedGraphic-186.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-185.jpg" alt="Smooth subdivided elephant body inside its coarse red cage mesh"></p>
+<p><img src="/images/pastedGraphic-186.jpg" alt="Subdivided elephant with ears added, showing the denser cage edges where more detail is needed"></p>
 <p>The general principle for controlling the curvature of a subdivision surface is that the more detail you need in the curve, the more detail you need in the cage mesh.</p>
 <h2 id="creasing-edges">Creasing Edges</h2>
 <figure><img src="/images/pastedGraphic-187.jpg" alt=""><figcaption>In this mesh you can see the effect of marking edges as creased (the blue edges are creased).</figcaption></figure>
 <p>You can crease/uncrease edges using <strong>Selection &gt; Toggle Crease</strong>. Creased edges will be sharply defined, but it’s a bit all-or-nothing. For finer control, adding extra detail to the cage mesh allows subtler definition.</p>
 <figure><img src="/images/pastedGraphic-188.jpg" alt=""><figcaption>Here, I took the same mesh as before, used Selection &gt; Select All Creases and toggled the creases off, then beveled the previously creased edges.</figcaption></figure>
-<p><img src="/images/pastedGraphic-189.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-189.jpg" alt="Rendered close-up of the creased mesh, with a sharp edge along the slab&#39;s rim"></p>
 <figure><img src="/images/pastedGraphic-190.jpg" alt=""><figcaption>Here are the two meshes rendered. As you can see, creasing (<strong>top</strong>) produces a sharp corner while beveling (<strong>bottom</strong>) allows a defined but still rounded corner. Each option has its uses.</figcaption></figure>
 
   </article>

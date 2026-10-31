@@ -2,9 +2,9 @@
 
 # Animation
 
-![](/images/pastedGraphic-475.jpg)
+![Render of an empty, lit elevated train platform beside the track](/images/pastedGraphic-475.jpg)
 
-![](/images/pastedGraphic-476.jpg)
+![The same platform with a train pulling in along the track](/images/pastedGraphic-476.jpg)
 
 To animate objects in 3D you start by saving “key” values for various object properties at various points in time. The 3D animation program then calculates intermediate values for those properties on other frames by interpolating between (or extrapolating from) the key values.
 

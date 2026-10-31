@@ -20,7 +20,7 @@ Cheetah 3D groups tags into five categories (six if you include scripted tags). 
 
 ### Rendering Tags
 
-![](/images/pastedGraphic-233.jpg)
+![Rendering tags menu: Bake Texture, Caustics, Depth of field, Fog, HDRI, Radiosity, and Render](/images/pastedGraphic-233.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 
@@ -72,11 +72,11 @@ Caustics are implemented using a good deal of fakery behind the scenes, and in p
 
 #### Depth of Field
 
-![](/images/DraggedImage-89.jpg)
+![Render of a field of grey cones on a plane, all in sharp focus](/images/DraggedImage-89.jpg)
 
 No depth of field.
 
-![](/images/DraggedImage-90.jpg)
+![The same field of cones rendered with depth of field, blurring near and far cones](/images/DraggedImage-90.jpg)
 
 Depth of field (the point of the central cone is in near-perfect focus).
 
@@ -90,7 +90,7 @@ Depth of field will cause Cheetah 3D's usual "perfect" camera to suffer from dep
 
 With the Cheetah renderer you also need to turn on **Depth of field** in the renderer settings. Its **Camera samples** property sets the quality: more samples, less noise.
 
-![](/images/Screenshot%202014-02-13%2009.41.56.jpg)
+![Viewport showing the camera's blue DOF grid marking the plane of focus among the cones](/images/Screenshot%202014-02-13%2009.41.56.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 
@@ -160,13 +160,13 @@ The Render tag is assigned to mesh objects and controls how they are rendered. E
 
 ### Inverse Kinematics Tags
 
-![](/images/pastedGraphic-234.jpg)
+![Inverse Kinematics tags menu: IK Constraints, IK Handle, Parent Constraint, Point Constraint, Spline tracking, Target, and Orient Constraint](/images/pastedGraphic-234.jpg)
 
 The Inverse Kinematics tags control the behavior of objects in the IK system.
 
 ### Animation Tags
 
-![](/images/pastedGraphic-235.jpg)
+![Animation tags menu: Morph, Skeleton, and Pose](/images/pastedGraphic-235.jpg)
 
 #### Morph
 
@@ -182,7 +182,7 @@ The Pose tag allows you to store and re-apply the keyed settings of the object t
 
 ### System Properties Tags
 
-![](/images/pastedGraphic-236.jpg)
+![System Properties tags menu: Particle and Metaball](/images/pastedGraphic-236.jpg)
 
 The Particle and Metaball tags affect the behavior of individual meshes within a Particle System or Isosurface Creator.
 
@@ -190,7 +190,7 @@ The Particle and Metaball tags affect the behavior of individual meshes within a
 
 #### Dynamics Tags
 
-![](/images/pastedGraphic-237.jpg)
+![Dynamics tags menu: Rigid Body, Rope, Soft Body, and Anchor](/images/pastedGraphic-237.jpg)
 
 The Dynamics tags assign dynamic behavior to meshes. They are described in greater detail in the chapter on [Dynamics](/15_Dynamics/).
 

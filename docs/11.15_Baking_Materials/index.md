@@ -14,7 +14,7 @@ In addition to baking lighting, baking is also useful for turning procedural mat
 
 **Note**: baking works on one *editable* mesh at a time, but the mesh is rendered in situ using the current camera’s settings, so other objects will cast shadows onto the mesh you’re baking and if you have Radiosity turned on in the renderer’s settings, radiosity will be baked.
 
-![](/images/pastedGraphic-576.jpg)
+![Viewport view of a simple castle mesh with brown walls and red conical roofs](/images/pastedGraphic-576.jpg)
 
 1. Start with a textured **editable** mesh you want to bake.
 
@@ -44,11 +44,11 @@ To see the baked texture in action:
 
 3. Add an image texture for the new material’s diffuse channel (ideally we’d use a Solid shader here, but Solid shaders do not preview correctly) and load the rendered image into it. Your mesh will probably look like crap right now!
 
-![](/images/pastedGraphic-579.jpg)
+![Castle polygon object properties with UV set changed to UV2, circled](/images/pastedGraphic-579.jpg)
 
-![](/images/pastedGraphic-580.jpg)
+![Castle in the viewport with the baked texture applied via UV2, front view](/images/pastedGraphic-580.jpg)
 
-![](/images/pastedGraphic-581.jpg)
+![Castle in the viewport with the baked texture, seen from another angle with baked shadows](/images/pastedGraphic-581.jpg)
 
 ![](/images/pastedGraphic-582.jpg)
 
@@ -58,9 +58,9 @@ To see the baked texture in action:
 
 **Baking Procedural Materials**
 
-![](/images/pastedGraphic-583.jpg)
+![Render of the castle with procedural cobbles, terracotta walls, and shingled roofs](/images/pastedGraphic-583.jpg)
 
-![](/images/pastedGraphic-584.jpg)
+![Viewport preview of the castle using the baked 2048x2048 texture](/images/pastedGraphic-584.jpg)
 
 ![](/images/pastedGraphic-585.jpg)
 
@@ -72,17 +72,17 @@ You can use the preceding technique to create a tiling image from a procedural t
 
 There is a downside to this — in order to prevent distortion of the resulting material you need to make the Radius Ring significantly larger than Radius tube, but this means the baked material will tile perfectly well but will be vertically stretched.
 
-![](/images/pastedGraphic-586.jpg)
+![Square grayscale Voronoi texture baked from a torus, cells bunched toward the middle](/images/pastedGraphic-586.jpg)
 
 This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius Tube 0.5. It gets kind of bunched up in the middle relative to the top and bottom (which map to the inner surface of the torus).
 
-![](/images/pastedGraphic-587.jpg)
+![Wide 2:1 grayscale Voronoi texture with fairly even cells](/images/pastedGraphic-587.jpg)
 
 This is the Voronoi texture baked onto a torus with Radius Ring 1.0 and Radius Tube 0.25, and then scaled vertically by 50%. There’s little apparent distortion and it still tiles well. It’s just not a square texture.
 
 **The Bake Texture Tag**
 
-![](/images/pastedGraphic-588.jpg)
+![Bake Texture tag properties: Bake to UV2, Texture size 1024x1024, Baking UV coords button, and channel checkboxes](/images/pastedGraphic-588.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 

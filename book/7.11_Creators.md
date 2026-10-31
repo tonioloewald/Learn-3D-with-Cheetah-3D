@@ -18,7 +18,7 @@ A creator is an object that — given the correct number and type of children �
 
 The boolean is a very useful, very powerful, and potentially dangerous creator. You should use it sparingly and only when no reasonable alternative exists because it produces meshes that are difficult to work with.
 
-![](/images/boolean-mesh.jpg)
+![Wireframe of a sphere and cube joined by a Boolean union, its mesh a mass of irregular triangles](/images/boolean-mesh.jpg)
 
 The union mesh from the previous example is a complete mess (i.e. it has "awful topology") and is completely triangulated. Doing polygon work on such a mesh is pretty much impossible, so if you must boolean meshes together, try to do it as late in your workflow as possible, and only commit (make the boolean editable) if you absolutely have to.
 
@@ -36,13 +36,13 @@ The union mesh from the previous example is a complete mess (i.e. it has "awful 
 
 ### Chain
 
-![](/images/pastedGraphic-209.jpg)
+![Chain creator with Chain Link and Circle children, making a closed ring of chain links in the 3D view](/images/pastedGraphic-209.jpg)
 
 The chain creator produces multiple copies of an object along a spline. (That’s why it’s called “chain” — the obvious thing to do with it is make chains without modeling each link individually.)
 
 ### Extrude
 
-![](/images/pastedGraphic-210.jpg)
+![Extrude creator turning a Star spline into a beveled 3D star, with its Extrude properties](/images/pastedGraphic-210.jpg)
 
 The extrude creator creates a 3D object from a spline by extending it along an axis. The extrude tool also allows you to bevel the resulting object with straight, curved, or stepped bevels.
 
@@ -50,7 +50,7 @@ Note that the extrude tool will not allow you to extrude a 2D mesh object. There
 
 ### Lathe
 
-![](/images/pastedGraphic-211.jpg)
+![Lathe creator spinning a spline into a flared vase shape, with its Lathe properties](/images/pastedGraphic-211.jpg)
 
 The lathe creator creates a 3D object from a spline by rotating it around an axis. It’s called “lathe” because by default it creates objects similar to those you would produce by turning a piece of wood or metal on a lathe.
 
@@ -74,7 +74,7 @@ The polyplane creator creates a 2D mesh surface from a spline. (Splines aren’t
 
 ### Isosurfaces (Metaballs)
 
-![](/images/pastedGraphic-214.jpg)
+![Render of two glassy isosurface blobs merging like drops of liquid](/images/pastedGraphic-214.jpg)
 
 Isosurfaces produce behavior that resembles surface tension in liquids, and are thus able to produce the kinds of shapes characteristic of liquids. In combination with particles, isosurfaces can be used for fluid simulations.
 

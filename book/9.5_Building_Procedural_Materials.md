@@ -26,7 +26,7 @@ If you look at the various procedural textures, voronoi has some very promising 
 
 The first thing we want is to make the division between cobble and mortar sharper, and the best way to do this is to use a gradient node.
 
-![](/images/pastedGraphic-328.jpg)
+![Voronoi node feeding a Gradient node, with the gradient's black-to-white stops close together in the Properties panel, turning cobbles white and mortar black](/images/pastedGraphic-328.jpg)
 
 I’ve tweaked the gradient node so that the cobbles tend to be solid white and the mortar tends to be solid black. Now I can use this as a “selector” to pick between two different inputs.
 
@@ -70,7 +70,7 @@ An orientation is represented by a normal. You can measure how similar a surface
 
 *So now we refine our dot product using a gradient to sharpen the cutoff from snow to no snow. A quick test render shows we need to change the cutoff a bit, but the real problem is that our shader puts “snow” in the valleys as well as on the peaks.*
 
-![](/images/pastedGraphic-334.jpg)
+![Terrain and hemisphere rendered with the snow material, almost entirely white](/images/pastedGraphic-334.jpg)
 
 ![](/images/pastedGraphic-335.jpg)
 
@@ -80,7 +80,7 @@ An orientation is represented by a normal. You can measure how similar a surface
 
 **Viewing angle** often drives optical properties such as reflection and transmission — the “fresnel” property of the material shader gives you an all-or-nothing implementation of the behavior of many real-world materials, but you might want a more subtle effect, or you might be producing a composite material (e.g. stained glass window) where some parts of the material have fresnel behavior and some don’t.
 
-![](/images/pastedGraphic-336.jpg)
+![State node's I-N output wired to the Material node's transparency input](/images/pastedGraphic-336.jpg)
 
 The state node gives you an interesting output channel called I•N — the dot product of the viewing angle (I) and the normal of the surface you’re rendering (N). In short, a value that will be 1 (or white) for a surface pointing straight at the camera, 0 (or black) for a surface pointing off to the side, and –1 (or even blacker) for a surface pointing directly away from the camera.
 
@@ -150,7 +150,7 @@ So let’s suppose we’re creating a simple-minded terrain shader based on alti
 
 *So I simply add a turbulence texture node, multiply its output by 0.1, and then add that to the y value before filtering it through the gradient. Here’s the result.*
 
-![](/images/pastedGraphic-350.jpg)
+![Side view of the terrain with noise added: green lowlands, orange slopes, and white peaks](/images/pastedGraphic-350.jpg)
 
 ![](/images/pastedGraphic-351.jpg)
 

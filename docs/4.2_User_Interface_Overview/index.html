@@ -40,13 +40,13 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="4.2_User_Interface_Overview.md">
 <!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 2}--><h1 id="user-interface-overview">User Interface Overview</h1>
-<p><img src="/images/DraggedImage-72.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-72.jpg" alt="Default Cheetah 3D window with labels on the Toolbar, 3D view, Properties Pane, Tool Pane, Object Browser, Materials, and Animation Timeline Controller"></p>
 <p>Here’s the default Cheetah 3D layout (with Modeling selected from the Layout menu and the toolbar set to display small icons only).  Note that your initial layout may not exactly match the screenshot (e.g. the animation controls on the bottom are not visible by default, and Cheetah 3d lets you use multiple customizable layouts).</p>
 <h2 id="the-cheetah-3d-toolbar">The Cheetah 3D Toolbar</h2>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.11.20%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.11.20%20AM.jpg" alt="Cheetah 3D toolbar with icon groups labeled Layout, Tools, Modes, Things, and Actions"></p>
 <p><strong>Toolbar</strong> is where Cheetah 3D’s tools are located. Not shown above is the search field (by default on the right) which filters the content of the <em>Object Browser</em>. Not everything in the toolbar is what Cheetah 3D considers a “tool”, as per the above diagram.</p>
 <ul>
 <li><p><strong>Layout</strong> is a menu that lets you pick one of several customizable layouts for the window.</p>
@@ -62,23 +62,23 @@
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a choice of two renderers, Cheetah and Falcon, picked with <strong>Render &gt; Renderer</strong> or by holding down the render settings toolbar icon. It also has separate toolbar buttons for rendering a still, an animation, or a bake (manual: Rendering › Renderer). None of this is covered here yet. <!-- TODO missing --></p>
 </blockquote>
 <p>The toolbar is a standard Mac OS X toolbar, so you can customize it the usual way…</p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.10.28%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.10.28%20AM.jpg" alt="Customize Toolbar sheet listing every available toolbar item, with the default set below and Show set to Icon Only"></p>
 <p><strong>3D View</strong> is where Cheetah 3D shows visual representation of your scene  (although if objects are hidden, you won’t see them here).</p>
 <p>The 3D View can be in one of several modes: by default it will be in Camera mode which means that what you see is what the <em>active</em> camera is looking at, and adjusting the view will actually change the camera’s settings and/or position. Other modes include “perspective” mode (which is like camera mode but doesn’t affect any cameras).</p>
 <p>The easiest way to understand views is to play with them — see <em>Navigating the 3D View,</em> below.</p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.18.29%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.18.29%20AM.jpg" alt="Object Browser with two cameras and a Box; the highlighted camera icon marks the active camera"></p>
 <p>(And yes, since you can have more than one camera in a scene, the active camera is the one whose icon is highlighted in the object browser. It&#39;s the camera you see through, and move, in 3D views set to camera mode. Did I say views? You can customize layouts to have more than one view, and you can also switch a view into a 4-pane view which can have more than one pane in camera mode.) <!-- TODO review --></p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.01.27%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.01.27%20AM.jpg" alt="Properties pane for a Box, with an arrow pointing to the tabs, or tags, above its Position, Rotation, Scale, and size settings"></p>
 <p><strong>Properties Pane</strong> is where you can see and adjust the properties of selected objects. (Note that the behavior of this pane when multiple objects are selected is quirky.) The properties pane will have multiple tabs (or “tags”) which contain different stuff depending on the selection.</p>
 <p>Note that the rotation angles are not rotations around the X, Y, and Z axes but the Y, X, and Z axes (or Heading/Yaw, Pitch, and Roll/Bank in aeronautical terms).</p>
-<p><img src="/images/Screen%20Shot%202016-12-01%20at%2010.22.26%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-12-01%20at%2010.22.26%20AM.jpg" alt="Tool pane for the Transform tool, with Position, Orientation, Snapping, and Rotation step size settings"></p>
 <p><strong>Tool Pane</strong> is where the settings for your currently selected tool are displayed and can be adjusted. <em>Note that you always have a currently selected tool</em>. <em>Initially, the transform tool is selected.</em></p>
 <p><em>Not all of the things in the toolbar are tools</em>.</p>
 <p><strong>Object Browser</strong> shows a hierarchical representation of your scene (which you can filter by name using the <em>search field</em> in the toolbar). This display is extremely useful, especially in complex scenes where selecting the exact thing you want by clicking in the 3d view gets tough…</p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.24.28%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.24.28%20AM.jpg" alt="Object Browser for a character scene, showing a bone hierarchy from BASE and Hip down through the arms, hands, and head"></p>
 <p>The Object Browser is also highly customizable…</p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.19.52%20AM.jpg" alt=""></p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.28.35%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.19.52%20AM.jpg" alt="Object Browser context menu for a Box, with its Display submenu of columns to show: Layer, Visible in editor, Visible in renderer, Modifier, Create, and Tag"></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.28.35%20AM.jpg" alt="Materials pane filled with preview spheres for many materials, such as marble, wood, metal, glass, and Car Paint"></p>
 <p><strong>Materials</strong> is where any materials in the scene will be found. You can select materials (and thus see their properties) here, and you can apply materials to things in the scene by:</p>
 <ul>
 <li><p>Dragging a material onto something (in the 3d view or object browser).</p>
@@ -96,15 +96,15 @@
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has Takes, Layers, Poses, Images, Console, and Script views (the take manager is in the manual under Animation › Take Manager), not yet covered here. <!-- TODO missing --></p>
 </blockquote>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM.jpg" alt=""></p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.47.29%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM.jpg" alt="Window layout with the UV editor beside the 3D view of a textured elephant, plus the Materials and Properties panes"></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.47.29%20AM.jpg" alt="UV editor showing the elephant mesh&#39;s UVs laid out in pieces over its painted texture"></p>
 <p><strong>UV editor</strong> is where you can adjust the way textures are mapped onto your meshes.</p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.46.51%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.46.51%20AM.jpg" alt="Node editor with State, Vec2Float, Turbulence, Multiply, Add, and Gradient nodes wired into a Material&#39;s Diffuse input"></p>
 <p><strong>Node editor</strong> is where you can see and adjust the characteristics of materials.</p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM-1.jpg" alt=""></p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.48.44%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM-1.jpg" alt="Window layout with the UV editor beside the 3D view of a textured elephant, plus the Materials and Properties panes"></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.48.44%20AM.jpg" alt="Key editor showing rows of position and rotation keyframes for a selected bone, beside the Object Browser"></p>
 <p><strong>Key Editor</strong> is where you can see and manipulate individual keyframed properties.</p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.48.36%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.48.36%20AM.jpg" alt="F-Curves view with colored curves for position and rotation values passing through keyframe points"></p>
 <p><strong>F-Curves</strong> is where you can see and adjust keyframe transitions (i.e. what happens to values between keyframes). </p>
 <h2 id="other-stuff-that-isnt-obvious">Other stuff that isn’t obvious</h2>
 <p>And finally, <strong>the most important things to know that aren’t immediately obvious</strong> is that:</p>
@@ -114,20 +114,20 @@
 <li><p>The last thing you selected has its properties shown in the Properties Pane.</p>
 </li>
 </ul>
-<p><img src="/images/DraggedImage-73.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-73.jpg" alt="Timeline toolbar item circled in the Customize Toolbar sheet"></p>
 <ul>
 <li><p>The Animation Timeline Controller isn’t part of the view layout (and whether or not it’s visible is also not part of the view layout) — it’s toggled on and off using a toolbar icon (that you need to add to your toolbar).</p>
 </li>
 <li><p>The 3D view can be toggled between single pane and 4-pane “split view” using the tiny widget at the top-right. Cheetah 3D gives you several window layouts to use for different purposes, each of which is completely customizable.</p>
 </li>
 </ul>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.50.21%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%209.50.21%20PM.jpg" alt="3D view in 4-pane split view, Camera, Front, Left, and Top, with the toggle 4-way view icon circled in each pane"></p>
 <p><strong>You can customize views</strong> by right-clicking on the title/tab bar at the top of them (which lets you add tabs, change the view’s role, split views, and so on). </p>
 <p>You can save a view layout using Window &gt; Layout &gt; Save Layout (or the Save Layout option from the View Layout menu in the toolbar). </p>
 <p><strong>Caution</strong>: saving your layout will overwrite your current layout. There’s no way to save your layout over a different layout option except hacking your preference file.</p>
 <h2 id="a-new-cheetah-3d-document-is-empty-except-for-a-camera">A new Cheetah 3D document is empty except for a camera</h2>
 <p>When you create a new document in Cheetah 3D you are faced with an “empty scene” (not quite empty: it contains a camera, and you’re looking at an otherwise empty scene through that camera). The blue line you see is the “z axis” and the red line is the “x axis” (the “y axis” is invisible, but would run straight up through the intersection, which is the “origin” — 0,0,0).</p>
-<p><img src="/images/e51b8d01-6288-4706-95b5-320042bb9685-page11image400.jpg" alt=""></p>
+<p><img src="/images/e51b8d01-6288-4706-95b5-320042bb9685-page11image400.jpg" alt="New Cheetah 3D document with a box at the origin where the red x axis and blue z axis cross"></p>
 <p>If you create a new object (e.g. by selecting a Box from the Polygon toolbar item) it will appear at the origin (the center of the scene) with zero rotation and scale of 1.0 in all dimensions.</p>
 <p>At this point you have created a virtual cube in a virtual space, and you are looking at it through a virtual camera.</p>
 <p>You can change your point of view by option dragging in the view (to “orbit” the current center of your view, which is the origin by default), zoom in and out using the scroll button or gesture on your pointing device, and pan the view by option-control dragging.</p>
@@ -135,9 +135,9 @@
 <p>Changing your view (by orbiting, zooming, and so forth) moves the camera (i.e. you are changing the view by changing the camera’s position). (If you use the view menu to change to perspective view, you can change your view without moving the camera.)</p>
 <p>You can select your cube (it’s probably selected already) by clicking on it. You can then transform it by using the Transform tool — which is selected by default. A “transformation” is a movement, rotation, and/or rescaling in 3D space.</p>
 <h2 id="navigating-the-3d-view">Navigating the 3D view</h2>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%2010.00.24%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%2010.00.24%20PM.jpg" alt="Navigation icons at the top right of the 3D view, ending in the 4-way view toggle and the gear"></p>
 <p>There’s a small row of icons at the top-right of the 3D view. These allow you to navigate the 3D view <em>without remembering the keyboard shortcuts</em>.</p>
-<p><img src="/images/DraggedImage-74.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-74.jpg" alt="Close-up of the 3D view navigation icons"></p>
 <p>From left to right, the icons are: focus camera, pan, “zoom”, orbit, pivot, toggle 4-way view, and finally the gear controls other settings. Note that focus camera also sets the point around which you will orbit.</p>
 <blockquote>
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual&#39;s 3D View page lists the icons as camera projection, style, focus, move, zoom, rotate around the selected object, turn camera, and quad view. It mentions no gear, and it says orbiting rotates around the selected object. <!-- TODO verify --></p>
@@ -154,7 +154,7 @@
 </blockquote>
 <figure><img src="/images/DraggedImage-77.jpg" alt=""><figcaption>Another trick suggested on the forums is to add a Pose tag to a camera and save a pose whenever you want to be able to restore a specific camera view. Once you get into this habit you have the best of both worlds — you can quickly move the camera around and make test renders, but you don’t lose views you want to keep.</figcaption></figure>
 <h2 id="modes">Modes</h2>
-<p><img src="/images/DraggedImage-78.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-78.jpg" alt="Toolbar mode buttons: Point mode, Edge mode, Polygon mode, Object mode, and Pivot mode"></p>
 <p>Cheetah 3D’s default toolbar provides five items for selecting modes and displaying the mode you’re in. You start in Object mode by default.</p>
 <p>Cheetah 3D is always in one of five modes. The first two modes apply to any kind of object, while the other three apply only to editable meshes (and, in the case of Point mode, splines).</p>
 <p><strong>Object mode</strong> (this is where you start by default). You are living in a world of objects (as in “things in the Object Browser”) and can select one or more at a time and do stuff to objects.</p>
@@ -173,7 +173,7 @@
 </ul>
 <p>When you are in one of the mesh editing modes you will also have a powerful context menu available via the right mouse button (or equivalent gesture). This provides convenient access to Cheetah 3D’s selection and polygon tools.</p>
 <h2 id="select-vs-transform">Select vs. Transform</h2>
-<p><img src="/images/DraggedImage-79.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-79.jpg" alt="Select and Transform tool buttons in the toolbar"></p>
 <p>Cheetah 3D offers a select tool which allows you to select objects (and edges, points, and polygons, depending on mode) without the risk of accidentally moving something, and a transform tool which lets you select and manipulate objects. Because Cheetah 3D has excellent undo support, it’s easy enough to “live in the Transform tool” all the time, and undo any accidental nudges, but sometimes you need to be sure, and that’s what the Select tool is for.</p>
 <h2 id="the-transform-tool">The Transform tool</h2>
 <p>The most commonly used tool in Cheetah 3D is the transform tool. This tool allows you to select things, and move, rotate, and scale whatever you have selected.</p>
@@ -181,7 +181,7 @@
 <p>The transform tool itself has <strong>four different incarnations</strong> and <strong>two modes</strong>. Its four incarnations are universal (the only incarnation I use), translate, rotate, and scale. The two modes are its usual mode (where it transforms things) and <strong>gadget mode</strong>, which allows you to <strong>set its pivot point</strong> temporarily.</p>
 <h2 id="center-manipulator-modes">Center Manipulator Modes</h2>
 <p>The transform tool also has a central manipulator which is modal. In essence, when you click an arrow, the central manipulator goes into translate mode and you can click and drag on it to translate the selection parallel to the view. </p>
-<p><img src="/images/Screen%20Shot%202016-11-28%20at%2010.03.38%20PM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-11-28%20at%2010.03.38%20PM.jpg" alt="Transform tool on a cube, with the three axis scale boxes and the central manipulator circled"></p>
 <p>Similarly, if you click a scale box it enters scale mode, and now clicking and dragging on it will scale the object uniformly. Finally, if you click a rotation manipulator the center manipulator goes into rotation mode and allows you to “freely” rotate. Of these three modes, scale mode is by far the most useful.</p>
 <p>You can double-click the central manipulator to switch to gadget mode. Gadget mode is a bit like pivot mode (and indeed existed before pivot mode). I suggest you use pivot mode and ignore gadget mode altogether.</p>
 <h2 id="two-axis-scaling">Two Axis Scaling</h2>

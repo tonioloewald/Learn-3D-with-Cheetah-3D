@@ -30,7 +30,7 @@ Blueprints are, in essence, a specialized example of modeling sheets. If anythin
 
 In the case of the Sopwith Dolphin I doubt you’d guess what the wheels on the landing gear looked like without visual references.
 
-![](/images/pastedGraphic-174.jpg)
+![Archival photo of a Sopwith Dolphin biplane on the ground, showing its landing gear wheels](/images/pastedGraphic-174.jpg)
 
 ![](/images/pastedGraphic-175.jpg)
 

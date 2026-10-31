@@ -4,23 +4,23 @@
 
 **Helpful Hint**: if you really want to grab an object’s shadow there’s a more foolproof option. Render it three times, once with no backdrop, once with a matte white plane to catch the shadow, and once with a matte white plane with shadows turned off. In Photoshop (or similar) use **difference** to get the shadow from the latter two renders, and drop this below the first render. This method will capture shadows perfectly but is obviously more labor-intensive than using a shadow catcher material.
 
-![](/images/pastedGraphic-467.jpg)
+![Clusters of gray cubes on a large plane, rendered normally with soft shadows](/images/pastedGraphic-467.jpg)
 
 ![](/images/pastedGraphic-468.jpg)
 
 *A simple scene with a plane under it. When I assign a shadowmat to the plane to turn it into a shadow catcher, two problems immediately become evident. First, the shadows aren’t cleanly captured but worse, because the geometry didn’t neatly end at the “ground plane” the shadow mat shows stuff that was hidden.*
 
-![](/images/pastedGraphic-469.jpg)
+![Cube clusters on a white ground plane that catches their shadows](/images/pastedGraphic-469.jpg)
 
-![](/images/pastedGraphic-470.jpg)
+![Cube clusters on a white ground plane with shadows turned off](/images/pastedGraphic-470.jpg)
 
-![](/images/pastedGraphic-471.jpg)
+![Cube clusters rendered solid black on a plain white background](/images/pastedGraphic-471.jpg)
 
 Above, I’ve made three renders. **Top**: white ground plane with shadows. **Middle**: white ground plane without shadows. **Bottom**: stuff I want opaque solid black, other stuff solid white.
 
-![](/images/pastedGraphic-472.jpg)
+![Shadow layer from the difference of the first two renders: gray shadows on white](/images/pastedGraphic-472.jpg)
 
-![](/images/pastedGraphic-473.jpg)
+![Cube clusters cut out by the mask, isolated on a white background](/images/pastedGraphic-473.jpg)
 
 ![](/images/pastedGraphic-474.jpg)
 

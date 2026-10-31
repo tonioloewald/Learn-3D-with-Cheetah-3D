@@ -40,15 +40,15 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="4.17_Camera_Objects.md">
 <!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 17}--><h1 id="camera-objects">Camera Objects</h1>
-<p><img src="/images/DraggedImage-69.jpg" alt=""></p>
+<p><img src="/images/DraggedImage-69.jpg" alt="Object Browser listing Camera and Camera.1, the active Camera&#39;s icon on a dark background"></p>
 <p>The camera currently being used to render (and whose view is shown in the 3D camera view) is the one with the dark background.</p>
 <p>The camera object has radically different properties in Cheetah 3D 7 than it did in Cheetah 3D 6, and it also changes based on which renderer you’re using:</p>
-<p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.14.03%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.14.03%20AM.jpg" alt="Renderer (Cheetah) properties: Resolution, Sampling, Radiosity, Caustics, Depth of field, G-Buffer, and Other"></p>
 <p><em>Camera in Cheetah 3D 7 using <strong>Cheetah</strong> renderer</em> The changes here reflect a lot of camera “tags” being integrated into the camera itself.</p>
-<p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.14.12%20AM.jpg" alt=""></p>
+<p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.14.12%20AM.jpg" alt="Renderer (Falcon) properties: Resolution, Samples, Ray depth bounces, Depth of field, Motion blur, and G-Buffer"></p>
 <p><em>Camera in Cheetah 3D 7 using <strong>Falcon</strong> renderer</em> The Falcon camera is a much simpler beast than the Cheetah camera, in large part because a lot of the hacky features of the Cheetah renderer “just work” via the new unbiased rendering model.</p>
 <figure><img src="/images/DraggedImage-70.jpg" alt=""><figcaption>Camera in Cheetah 3D 6</figcaption></figure>
 <blockquote>

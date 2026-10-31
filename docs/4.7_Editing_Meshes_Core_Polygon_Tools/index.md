@@ -6,13 +6,13 @@
 
 **Upshot**: you _generally_ want to use cover, not extrude.
 
-![](/images/DraggedImage-10.jpg)
+![Subdivided box with two faces selected in red, before using cover](/images/DraggedImage-10.jpg)
 
 ![](/images/DraggedImage-11.jpg)
 
 _Using **cover**. I have the transform tool selected and select two faces, then select cover (Tools \> Polygon \> Cover), then simply move the selected faces — new geometry has been created “covering” the boundary of my selection. Note that you’ll find cover the single most useful tool for polygon modeling — I map it to the C key, so in fact I simply selected some polygons, pressed C, and dragged out the new geometry._
 
-![](/images/DraggedImage-12.jpg)
+![Subdivided box with new faces covered out from a selection of edges](/images/DraggedImage-12.jpg)
 
 ![](/images/DraggedImage-13.jpg)
 
@@ -30,7 +30,7 @@ Picking Extrude, in contrast, activates the Extrude Tool which is a bit weird �
 
 **Inner Extrude** is a really interesting tool. The obvious use for it is creating inset faces.
 
-![](/images/Screen%20Shot%202014-07-06%20at%204.32.01%20PM.jpg)
+![Three contiguous quads wrapping a corner, selected in red, before inner extrude](/images/Screen%20Shot%202014-07-06%20at%204.32.01%20PM.jpg)
 
 ![](/images/Screen%20Shot%202014-07-06%20at%204.32.12%20PM.jpg)
 
@@ -38,7 +38,7 @@ _In this example I’ve selected three contiguous quads (that go around corners)
 
 Inner extrude also works on edges, essentially building out geometry from the selected edges. It’s easier to show than explain, and once again it can be very useful.
 
-![](/images/Screen%20Shot%202014-07-06%20at%204.34.29%20PM.jpg)
+![Series of edges selected in red on a box, before inner extrude](/images/Screen%20Shot%202014-07-06%20at%204.34.29%20PM.jpg)
 
 ![](/images/Screen%20Shot%202014-07-06%20at%204.34.38%20PM.jpg)
 
@@ -46,7 +46,7 @@ _Here I’ve selected a series of edges and then used inner extrude to create a 
 
 Finally, **inner extrude works on vertices**. This is particularly useful for punching holes in things.
 
-![](/images/Screen%20Shot%202014-07-06%20at%204.43.44%20PM.jpg)
+![Single corner vertex selected in red on a box, before inner extrude](/images/Screen%20Shot%202014-07-06%20at%204.43.44%20PM.jpg)
 
 ![](/images/Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg)
 
@@ -62,9 +62,9 @@ Create polygon simply lets you add a new polygon to a mesh by clicking on (or cr
 
 It’s easy to sometimes click on the wrong vertex if your mesh has overlapping vertices (usually rotating your view slightly will solve the problem).
 
-![](/images/DraggedImage-14.jpg)
+![Box with a new polygon added on top, apparently in the right place](/images/DraggedImage-14.jpg)
 
-![](/images/DraggedImage-15.jpg)
+![Same box from another angle, showing the new polygon slanting off into space](/images/DraggedImage-15.jpg)
 
 It’s also easy to miss a vertex and create a new vertex somewhere off in space. After creating a polygon or two, it’s wise to take a look at your model to make sure you haven’t created something unintended. In this exaggerated example, I missed the bottom-right vertex of my quad, but quickly spinning my view around I can easily see how I messed up.
 
@@ -72,9 +72,9 @@ It’s also easy to miss a vertex and create a new vertex somewhere off in space
 
 The bridge tool joins two parts of a mesh. It works best when joining two polygons with the same number of sides, but it does a pretty good job even if the polygons differ in number of sides.
 
-![](/images/DraggedImage-16.jpg)
+![Two meshes with facing holes, in object mode, before bridging](/images/DraggedImage-16.jpg)
 
-![](/images/DraggedImage-17.jpg)
+![Same meshes after Bridge joins the two holes with new faces](/images/DraggedImage-17.jpg)
 
 Bridge before (in object mode so you can see edges more clearly) and after. To use the tool you select Tools \> Polygon \> Bridge and then click a point on the first “hole” and then click the point you want to bridge to on the second “hole”.
 
@@ -86,7 +86,7 @@ There are lots of ways bridges can go horribly wrong, and I try to explain them 
 
 Fill hole is simple and useful. If you have a hole in a mesh surface you can use fill hole to make it into a new polygon. Generally this works best if the new “polygon” is reasonably flat (i.e. the edges and vertices used to form it are roughly coplanar).
 
-![](/images/DraggedImage-18.jpg)
+![Subdivided box with an irregular hole cut into one face, before Fill Hole](/images/DraggedImage-18.jpg)
 
 ![](/images/DraggedImage-19.jpg)
 
@@ -106,25 +106,25 @@ The scalpel tool lets you cut up edges and polygons in a very precise way. The s
 
 The most common applications of the scalpel are:
 
-![](/images/DraggedImage-20.jpg)
+![Box face divided with the scalpel, with a hole cut in it](/images/DraggedImage-20.jpg)
 
 Look ma, I made a hole!
 
 * Cutting a hole in a polygon. If you want to cut a hole in a polygon, first use the scalpel to cut the polygon into two (or more) pieces. Then using the edges now running through your polygon, build out the edges of the hole.
 
-![](/images/DraggedImage-21.jpg)
+![Box with a selected purple face around a cross-shaped hole, showing a stray long triangle](/images/DraggedImage-21.jpg)
 
 This is an artificial example, but on the top the selected polygon (which is vaguely C-shaped) is being triangulated very badly. On the bottom, breaking up the problem polygon into convex quads with a few cuts using the scalpel tool completely eliminates the problem. (It could definitely be done more tidily, this is simply demonstrating a point.)
 
 * Fixing problem polygons. Sometimes a polygon doesn’t get rendered correctly, especially if it isn’t convex. You can use the scalpel tool to chop complex polygons into simpler polygons that won’t confuse the triangulation algorithm.
 
-![](/images/DraggedImage-22.jpg)
+![Three meshes, labeled to compare default triangulation with explicit triangulation via scalpel](/images/DraggedImage-22.jpg)
 
 Compare the bottom-right quad across these three (symmetric) meshes. The middle mesh is a result of triangulating the mesh, and shows the triangulation that is being used by Cheetah 3D to render the initial mesh. On the right I’ve used the scalpel tool to force a different triangulation for that polygon.
 
 * Forcing a specific triangulation. Sometimes a quad will simply get triangulated in just the wrong way. You can split the quad into two triangles using the scalpel to override this behavior.
 
-![](/images/DraggedImage-23.jpg)
+![Head base mesh with non-quads around the mouth edge loop selected in red](/images/DraggedImage-23.jpg)
 
 ![](/images/DraggedImage-24.jpg)
 
@@ -134,7 +134,7 @@ _Here I’m building out the base topology for a head, and I’ve created an edg
 
 ### Ring Cut
 
-![](/images/DraggedImage-25.jpg)
+![Box with a ring cut around its sides, shown in red](/images/DraggedImage-25.jpg)
 
 > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
@@ -150,8 +150,8 @@ The ring cut tool is invaluable for adding more detail to a subdivision “cage�
 
 ### Jigsaw
 
-![](/images/DraggedImage-26.jpg)
+![Plane mesh with an L-shaped run of quads selected for Jigsaw](/images/DraggedImage-26.jpg)
 
-![](/images/DraggedImage-27.jpg)
+![Jigsaw cut through the selected quads, labeled where it stops: Edge of Mesh and Terminal Polygon](/images/DraggedImage-27.jpg)
 
 Jigsaw is essentially a controlled ring cut. First, you select a series of quads (note how it can “turn a corner”) and then you click on one of the edges that will be cut. The cut is terminated at the mesh edge or a terminal polygon.

@@ -76,7 +76,7 @@ The headline feature of C3D7 is the new renderer, **Falcon**, but there are many
 
 * Integrated camera picker and view controls into 3D view
 
-![](/images/Screen%20Shot%202016-07-09%20at%204.38.51%20PM.jpg)
+![Selected spaceship shown as an orange wireframe, with the mouse pilot visible through a ghosted canopy](/images/Screen%20Shot%202016-07-09%20at%204.38.51%20PM.jpg)
 
 ![](/images/Screen%20Shot%202016-07-09%20at%204.40.45%20PM.jpg)
 
@@ -90,9 +90,9 @@ _If you’ve ever fiddled with material transparency or wireframe display modes 
 
 * Create Polygon has new **intersect scene** setting
 
-![](/images/Screen%20Shot%202016-06-04%20at%208.31.44%20PM.jpg)
+![Plane mesh with soft selection, vertices shading from bright red at the center to dark red at the edge](/images/Screen%20Shot%202016-06-04%20at%208.31.44%20PM.jpg)
 
-![](/images/Screen%20Shot%202016-06-04%20at%208.31.48%20PM.jpg)
+![Select tool settings: Visible checked, Radius 65.0, and Soft selection Falloff radius 0.58](/images/Screen%20Shot%202016-06-04%20at%208.31.48%20PM.jpg)
 
 * **Vertex Soft Selection Support**
 

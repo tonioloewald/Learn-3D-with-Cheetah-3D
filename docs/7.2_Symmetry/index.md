@@ -42,7 +42,7 @@ Perhaps more than any other modifier, Symmetry has profound implications for wor
 
 #### Symmetry and Modifier Chains
 
-![](/images/pastedGraphic-181.jpg)
+![Smooth, rounded subdivided shape inside its cube cage, with Weld Points on](/images/pastedGraphic-181.jpg)
 
 ![](/images/pastedGraphic-182.jpg)
 

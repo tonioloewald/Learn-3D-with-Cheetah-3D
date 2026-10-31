@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="7.11_Creators.md">
 <!--{"parent": "7_Modeling.md", "order": 11}--><h1 id="creators">Creators</h1>
 <p>A creator is an object that — given the correct number and type of children — will generate a mesh derived from those children. The easiest way to explain creators is to show what they do. Note that while I explain creators in alphabetical order, the Boolean creator is a terrible one to start with — skip it and come back afterwards!</p>
@@ -56,7 +56,7 @@
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Boolean modifier</strong> (parent is A, child is B; Objects/ModifierObjects/Boolean) and <strong>Boolean Add/Subtract/Intersect</strong> polygon tools under <strong>Tools &gt; Polygon</strong> (Tools/Polygon/BooleanTool), not yet covered here. <!-- TODO missing --></p>
 </blockquote>
 <p>The boolean is a very useful, very powerful, and potentially dangerous creator. You should use it sparingly and only when no reasonable alternative exists because it produces meshes that are difficult to work with.</p>
-<p><img src="/images/boolean-mesh.jpg" alt=""></p>
+<p><img src="/images/boolean-mesh.jpg" alt="Wireframe of a sphere and cube joined by a Boolean union, its mesh a mass of irregular triangles"></p>
 <p>The union mesh from the previous example is a complete mess (i.e. it has &quot;awful topology&quot;) and is completely triangulated. Doing polygon work on such a mesh is pretty much impossible, so if you must boolean meshes together, try to do it as late in your workflow as possible, and only commit (make the boolean editable) if you absolutely have to.</p>
 <figure><img src="/images/pastedGraphic-208.jpg" alt=""><figcaption>This complex form was created using a series of booleans. First, a round cylinder was “subtracted” from a six-sided cylinder, then the corners were created by intersecting the result with a ball, and finally the beveling around the hole was achieved by subtracting a downward pointing cone. Note that the bottom of the hole has not been beveled.</figcaption></figure>
 <p><em>In practice, this is a bad way to get this result (and, as already stated, the bottom of the hole still isn’t beveled and we haven’t even tried to model the screw-thread). Even if we were to use booleans, we’d be better off trying to reduce the number of booleans being used because each successive boolean creates a more degraded (“uglier”) mesh.</em></p>
@@ -64,14 +64,14 @@
 <p><strong>When to use booleans</strong>: use booleans if you simply can’t think of another option, such as when one or both of the objects concerned is complex and the difference or intersection cannot easily be modeled any other way. (The only reason to ever use a union is if you need a single, solid mesh. It never helps with rendering.)</p>
 <p><strong>Working around bugs in booleans</strong>: the boolean algorithm used in Cheetah 3D is far from perfect and is particularly likely to produce bad output if one of the two meshes has vertices that are coplanar with the other mesh’s faces. If the input meshes are “heavy” (i.e. have lots of vertices) it follows that bad output is virtually assured.</p>
 <h2 id="chain">Chain</h2>
-<p><img src="/images/pastedGraphic-209.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-209.jpg" alt="Chain creator with Chain Link and Circle children, making a closed ring of chain links in the 3D view"></p>
 <p>The chain creator produces multiple copies of an object along a spline. (That’s why it’s called “chain” — the obvious thing to do with it is make chains without modeling each link individually.)</p>
 <h2 id="extrude">Extrude</h2>
-<p><img src="/images/pastedGraphic-210.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-210.jpg" alt="Extrude creator turning a Star spline into a beveled 3D star, with its Extrude properties"></p>
 <p>The extrude creator creates a 3D object from a spline by extending it along an axis. The extrude tool also allows you to bevel the resulting object with straight, curved, or stepped bevels.</p>
 <p>Note that the extrude tool will not allow you to extrude a 2D mesh object. There’s a polygon tool for doing that.</p>
 <h2 id="lathe">Lathe</h2>
-<p><img src="/images/pastedGraphic-211.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-211.jpg" alt="Lathe creator spinning a spline into a flared vase shape, with its Lathe properties"></p>
 <p>The lathe creator creates a 3D object from a spline by rotating it around an axis. It’s called “lathe” because by default it creates objects similar to those you would produce by turning a piece of wood or metal on a lathe.</p>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Loft</strong> creator, which builds a smooth surface through two or more spline profiles (Sections U/V, Loop, Linear, Cover; Objects/CreatorObjects/LoftObject), not yet covered here. <!-- TODO missing --></p>
@@ -83,7 +83,7 @@
 <figure><img src="/images/pastedGraphic-213.jpg" alt=""><figcaption>Here we’ve turned a star spline into a star-shaped polygon (that the renderer can see).</figcaption></figure>
 <p>The polyplane creator creates a 2D mesh surface from a spline. (Splines aren’t rendered, so this essentially makes splines “visible” to the rendering engine.)</p>
 <h2 id="isosurfaces-metaballs">Isosurfaces (Metaballs)</h2>
-<p><img src="/images/pastedGraphic-214.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-214.jpg" alt="Render of two glassy isosurface blobs merging like drops of liquid"></p>
 <p>Isosurfaces produce behavior that resembles surface tension in liquids, and are thus able to produce the kinds of shapes characteristic of liquids. In combination with particles, isosurfaces can be used for fluid simulations.</p>
 <h2 id="symmetry">Symmetry</h2>
 <p>The symmetry <em>creator</em> mirrors an object relative to a specified plane (corresponding to the plane formed by any two of the x, y, and z axes). It’s more usual to use the symmetry <em>modifier</em> over the creator. (The symmetry creator could be useful if it allowed you to mirror more than one child object, but it doesn’t, and like all creators it hides extra child meshes from the renderer.)</p>

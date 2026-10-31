@@ -8,7 +8,7 @@ These settings all relate to how the camera looks out into the scene.
 
 By default, cameras render a perspective projection. There are two other options: orthographic (no perspective) and panorama.
 
-![](/images/pastedGraphic-541.jpg)
+![Perspective render of a city of skyscrapers seen from above, the towers leaning away from the center](/images/pastedGraphic-541.jpg)
 
 ![](/images/pastedGraphic-542.jpg)
 
@@ -32,7 +32,7 @@ For perspective cameras, field of view determines the kind of “lens” your ca
 
 The following values are from Wikipedia’s article on Angle of View. I’ve used their horizontal field of view values, because Cheetah 3D’s field of view is the angle across a square, and the final image is cropped from that square. <!-- TODO review -->
 
-![](/images/pastedGraphic-545.jpg)
+![Table of field of view against 35mm focal length, from 108 degrees at 13mm to 5.15 degrees at 400mm](/images/pastedGraphic-545.jpg)
 
 ### Zoom
 
@@ -106,7 +106,7 @@ Background settings determine the background color or image. By default, Cheetah
 
 #### Renderer Settings
 
-![](/images/pastedGraphic-547.jpg)
+![Render Settings in the Properties panel: Textures, Reflections, Transparency, Max. ray depth 6, Gamma 1.8, Sampler QMC, and Filter Mitchell](/images/pastedGraphic-547.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 

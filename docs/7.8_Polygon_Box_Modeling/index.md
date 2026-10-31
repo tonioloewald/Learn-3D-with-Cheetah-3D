@@ -74,9 +74,9 @@ Cover is instant. Extrude is modal. This makes Cover much more pleasant to use t
 
 **One important use for Extrude**
 
-![](/images/pastedGraphic-135.jpg)
+![Half of a symmetric box with its top polygon, on the symmetry plane, selected](/images/pastedGraphic-135.jpg)
 
-![](/images/pastedGraphic-136.jpg)
+![Same box after Cover and scaling the polygon down, leaving a gap at the symmetry plane](/images/pastedGraphic-136.jpg)
 
 ![](/images/pastedGraphic-137.jpg)
 
@@ -86,9 +86,9 @@ Extrude always leaves the edges of the extruded polygons intact, cover does not 
 
 #### Shell
 
-![](/images/pastedGraphic-138.jpg)
+![Single-sided bowl mesh before Shell, with the inside dark and no thickness at the rim](/images/pastedGraphic-138.jpg)
 
-![](/images/pastedGraphic-139.jpg)
+![The bowl after Shell, now a solid with a thick rim and inner and outer surfaces](/images/pastedGraphic-139.jpg)
 
 The Shell tool allows you to turn single-sided surfaces into two-sided solids (as per the before and after meshes shown above). Note that Cheetah 3D also has a Shell modifier which is both non-destructive and allows you to finely control the thickness of the output mesh. In most cases you’ll want to use the modifier rather than the tool.
 
@@ -116,7 +116,7 @@ When you select the ring cut tool **clicking on an edge**:
 
 3. and passing through the point you clicked.
 
-![](/images/pastedGraphic-142.jpg)
+![Plane with a winding path of selected polygons for the Jigsaw tool to follow](/images/pastedGraphic-142.jpg)
 
 ![](/images/pastedGraphic-143.jpg)
 
@@ -132,7 +132,7 @@ The tools do the same thing as the Transform tool with Orientation set to Normal
 
 #### Edge Rotate
 
-![](/images/pastedGraphic-144.jpg)
+![Plane with a block of faces selected, before rotating them around an edge](/images/pastedGraphic-144.jpg)
 
 ![](/images/pastedGraphic-145.jpg)
 
@@ -142,7 +142,7 @@ The edge rotate tool allows you to rotate the current selection around any edge 
 
 #### Point Slide
 
-![](/images/pastedGraphic-146.jpg)
+![Cube with a top corner point slid partway along an edge, tilting the top face](/images/pastedGraphic-146.jpg)
 
 Point slide is a useful tool for tweaking a point by moving it along one of the edges connected to it.
 
@@ -160,7 +160,7 @@ There is no convenient tool for “collapsing” edges, but welding the points a
 
 #### Optimize
 
-![](/images/pastedGraphic-147.jpg)
+![Optimize tool panel: Remove unused vertices, Weld close vertices, Weld radius 0.001, and Optimize polygons](/images/pastedGraphic-147.jpg)
 
 Optimize is a very useful tool for cleaning up meshes. Usually the only thing you might want to change from the default setting is to change the weld radius.
 
@@ -172,7 +172,7 @@ I’m not sure what **Optimize polygons** does (and the online help is no use he
 
 #### Array, Clone
 
-![](/images/pastedGraphic-148.jpg)
+![Cube with its top face selected, before applying Array](/images/pastedGraphic-148.jpg)
 
 ![](/images/pastedGraphic-149.jpg)
 
@@ -184,9 +184,9 @@ Clone is like Array but only produces a “single row” of copies.
 
 #### Disconnect
 
-![](/images/pastedGraphic-150.jpg)
+![Sphere with its top cap of polygons selected](/images/pastedGraphic-150.jpg)
 
-![](/images/pastedGraphic-151.jpg)
+![Selected cap moved up without Disconnect, stretching the polygons below into a capsule shape](/images/pastedGraphic-151.jpg)
 
 ![](/images/pastedGraphic-152.jpg)
 
@@ -206,7 +206,7 @@ Crumple randomly displaces the points in your mesh (based on the tool settings).
 
 #### Flip Normal
 
-![](/images/pastedGraphic-154.jpg)
+![Cube with three faces deleted, the remaining inner faces dark because they face away](/images/pastedGraphic-154.jpg)
 
 ![](/images/pastedGraphic-155.jpg)
 
@@ -224,7 +224,7 @@ The ruler allows you to see the precise position of points in global or local sp
 
 #### Triangulate
 
-![](/images/pastedGraphic-157.jpg)
+![Dodecahedron with pentagonal faces before triangulation](/images/pastedGraphic-157.jpg)
 
 ![](/images/pastedGraphic-158.jpg)
 
@@ -236,7 +236,7 @@ Generally you do not want to triangulate meshes, but there may be cases (e.g. Sy
 
 #### Catmull-Clark Subdivide, Linear Subdivide
 
-![](/images/pastedGraphic-159.jpg)
+![Subdivided cube with one top face selected, before Catmull-Clark Subdivide](/images/pastedGraphic-159.jpg)
 
 ![](/images/pastedGraphic-160.jpg)
 
@@ -260,9 +260,9 @@ Split breaks off your current selection into a new (separate) mesh. If your orig
 
 #### Bevel, Inner Extrude
 
-![](/images/pastedGraphic-161.jpg)
+![Cube with three edges meeting at one corner selected in red](/images/pastedGraphic-161.jpg)
 
-![](/images/pastedGraphic-162.jpg)
+![The cube after a linear bevel, with flat chamfers along the three edges](/images/pastedGraphic-162.jpg)
 
 ![](/images/pastedGraphic-163.jpg)
 
@@ -270,15 +270,15 @@ Split breaks off your current selection into a new (separate) mesh. If your orig
 
 Bevel is used to refine corners where two polygons meet by introducing new geometry. Since almost no real world objects have perfectly sharp corners, beveling is very useful for making models a little bit more realistic. It’s also very useful for refining subdivision cages.
 
-![](/images/pastedGraphic-164.jpg)
+![Subdivided box shown as a sphere inside its cage, with one cage edge selected](/images/pastedGraphic-164.jpg)
 
 ![](/images/pastedGraphic-165.jpg)
 
 *Here we have a simple box with subdivision applied. By beveling the selected edges the curvature of the subdivided surface can be given more definition in a highly controlled way.*
 
-![](/images/pastedGraphic-166.jpg)
+![Cube with three edges meeting at one corner selected, before Inner Extrude](/images/pastedGraphic-166.jpg)
 
-![](/images/pastedGraphic-167.jpg)
+![The cube after Inner Extrude, with new edges running alongside each selected edge](/images/pastedGraphic-167.jpg)
 
 **Inner Extrude** is an odd tool. It creates more geometry around selected edges. Among other things, inner extrude is useful for refining subdivision cages.
 
@@ -290,14 +290,14 @@ The Bridge tool joins two parts of a mesh. You pick two vertices on two differen
 
 Sometimes the bridge tool simply refuses to work. This is usually because either one or more of the faces bordering on one of the polygons is flipped, which means that the polygon isn’t well-formed.
 
-![](/images/pastedGraphic-168.jpg)
+![Two boxes joined by a twisted, broken bridge, the upper box dark from flipped normals](/images/pastedGraphic-168.jpg)
 
 In this example I’ve flipped the normals of the top portion of the mesh, which confuses the bridge tool (because it reverses the order of the polygon it’s joining up) and completely messes up the resulting bridge.
 
-![](/images/pastedGraphic-169.jpg)
+![Two boxes joined by a bridge twisted into an hourglass by mismatched vertices](/images/pastedGraphic-169.jpg)
 
 You should also pick the vertexes you click on with the understanding that the first vertex will be joined to the second, and everything else will follow from that. So if you pick the mismatched vertices, the bridge will be twisted. (This “twisting” effect can actually be used to your advantage in some cases.)
 
-![](/images/pastedGraphic-170.jpg)
+![Two boxes joined by a malformed bridge caused by a hidden flaw in the upper mesh](/images/pastedGraphic-170.jpg)
 
 Finally in this example there’s an exaggerated hidden flaw in my geometry which means that one of the polygons isn’t the polygon I thought it was and the resulting bridge is, again, a mess.

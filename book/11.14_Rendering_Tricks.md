@@ -20,7 +20,7 @@ Each of these techniques involves performing multiple renders of a scene with di
 
 Suppose that you want to perform some kind of post-processing effect on a rendered image based on depth. You can create a “depth” render by using a combination of flat black (or white) textures and judiciously configured white (or black) fog.
 
-![](/images/pastedGraphic-614.jpg)
+![Normal render of a row of five spheres receding on a plane](/images/pastedGraphic-614.jpg)
 
 ![](/images/pastedGraphic-615.jpg)
 
@@ -44,7 +44,7 @@ Another simple example is to render your scene multiple times with different set
 
 **Glows**
 
-![](/images/pastedGraphic-617.jpg)
+![Render of a red neon sign spelling NEON on a dark wall, with a faint glow](/images/pastedGraphic-617.jpg)
 
 Glows are usually a result of one of four phenomena:
 
@@ -64,7 +64,7 @@ Of these, Cheetah 3D handles the first with aplomb using radiosity while glare c
 
 The second item is the most problematic, since it requires volumetrics or post-processing fakery.
 
-![](/images/pastedGraphic-619.jpg)
+![Mask render: the NEON sign in solid white on a solid black background](/images/pastedGraphic-619.jpg)
 
 ![](/images/pastedGraphic-620.jpg)
 

@@ -16,13 +16,13 @@ In Cheetah 3D, a modifier is an object (i.e. it has an icon that appears in the 
 
 A mesh object with more than one modifier will have those modifiers applied from top to bottom, and this is almost always significant (in mathematical terms, very seldom are modifiers commutative).
 
-![](/images/DraggedImage-28.jpg)
+![Cheetah 3D window with two balls: Crumple then Subdivision gives a smooth lump, Subdivision then Crumple a spiky one](/images/DraggedImage-28.jpg)
 
 On the left is a ball which has crumple followed by subdivision modifiers. The ball on the right has the same modifiers applied in the opposite order — producing very different results.
 
 ### Toggling Modifiers
 
-![](/images/DraggedImage-29.jpg)
+![Object Browser with a Subdivision modifier's Mode tag selected, and its Mode properties including the Modifier checkbox](/images/DraggedImage-29.jpg)
 
 You can turn modifiers on and off individually via their Mode tag, and you can also switch all of a given mesh object’s modifiers on and off via its Mode tag. (If a given modifier’s Mode tag or its parent object’s Mode tag has Modifiers toggled off, then the Modifier is off.)
 

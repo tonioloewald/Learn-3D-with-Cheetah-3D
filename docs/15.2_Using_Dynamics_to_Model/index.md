@@ -24,7 +24,7 @@ Getting cloth to drape nicely using Soft Body simulations requires a bit of fidd
 
 > **Note:** this “tutorial” is a stub with no steps (the jelly-bean tutorial above is also prose only); relevant 8.1.1 Soft Body settings are Two sided, Self collision, Solver iterations, Margin, and Bending constraints (Tags/SoftBodyTag). <!-- TODO editorial -->
 
-![](/images/pastedGraphic-535.jpg)
+![Wireframe Soft Body cloth draped over a flat box, hanging in folds at the corners](/images/pastedGraphic-535.jpg)
 
 ![](/images/pastedGraphic-536.jpg)
 

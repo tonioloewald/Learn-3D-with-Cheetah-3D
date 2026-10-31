@@ -10,7 +10,7 @@ The key to this trick is the **Particle Mesh**.
 
 A Particle Mesh produces instances of its children on a specified mesh using one of a number of different rules:
 
-![](/images/pastedGraphic-4-1.jpg)
+![Rendered plane with a regular six-by-six grid of identical low-poly trees](/images/pastedGraphic-4-1.jpg)
 
 ![](/images/pastedGraphic-5.jpg)
 
@@ -30,7 +30,7 @@ Note that this mesh may consist only of vertices (i.e. have no visible polygons)
 
 #### Instant forest — just add particles!
 
-![](/images/pastedGraphic-6.jpg)
+![Close render of a dense forest of low-poly trees with irregular clearings](/images/pastedGraphic-6.jpg)
 
 Particle Meshes also have the advantage of allowing very flexible complex scenes. E.g. you can create an arbitrarily shaped surface and distribute trees over it to create a forest. You can later change the density of the trees, or the variation in height, and so on.
 
@@ -52,7 +52,7 @@ Takes allow you to split up animations into manageable components. The most comm
 
 The simplest thing you can do to make Cheetah 3D more streamlined is set up your own hotkeys. Because Cheetah 3D isn’t a text-oriented program, you can set unmodified keystrokes (e.g. “F”) to trigger functions (and even run scripts), which allows you to work with one hand on the mouse, and another on the keyboard.
 
-![](/images/pastedGraphic-7.jpg)
+![Keyboard preferences window with Command and Key columns, listing Point mode, Save, and other commands](/images/pastedGraphic-7.jpg)
 
 To edit Cheetah 3D’s hotkeys, simply open up its Preference window and click on the Keyboard icon. You may find it helpful to click on the Command heading to sort the commands into alphabetical order.
 
@@ -62,7 +62,7 @@ Another powerful customization feature is the ability to completely customize Ch
 
 All you need to know is that you can resize panels by dragging on the boundaries between adjacent panels, and you can repurpose a panel by right-clicking on its name (this includes adding and removing tabs, and changing the purpose of a tab).
 
-![](/images/pastedGraphic-8.jpg)
+![Layout menu button in the toolbar](/images/pastedGraphic-8.jpg)
 
 You can save your layout by selecting Save Layout from the layout menu in the toolbar. **Warning**: you can’t choose which layout you’re saving, so by choosing Save Layout you are changing the layout you’re currently using.
 

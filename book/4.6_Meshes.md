@@ -6,7 +6,7 @@ Cheetah 3D is all about meshes. If you can see it in a render then, aside from t
 
 Note: there are a couple of special case exceptions in the form of the Sky Light object and the HDRI Light which affect the background, but this is pretty close to an absolute truth. The other quasi exception is particles, which are “instances” of meshes rather than meshes, but we can ignore that distinction for now — the only way it impacts anything is that instances take less memory and when you export a scene to another file format, you lose the instances.
 
-![](/images/DraggedImage-9.jpg)
+![Cheetah 3D window with a selected Box named Metal Box, its Brushed Metal material, and Box properties](/images/DraggedImage-9.jpg)
 
 The Box primitive is a (non-editable) mesh. Here’s a Box primitive (renamed “Metal Box”) which has a brushed metal material tag assigned to it.
 

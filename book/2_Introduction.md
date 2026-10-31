@@ -26,7 +26,7 @@ You _can_ use this book with an *earlier* version of Cheetah 3D — especially 7
 
 ### Cheetah 3D’s Best Feature: The Community
 
-![](/images/pastedGraphic-4.jpg)
+![Front page of the old Cheetah3D forum, with the General discussion board listed](/images/pastedGraphic-4.jpg)
 
 > **Note:** this screenshot shows the old Cheetah 3D forum; the website has changed significantly since, so it needs a fresh capture. <!-- TODO screenshot -->
 

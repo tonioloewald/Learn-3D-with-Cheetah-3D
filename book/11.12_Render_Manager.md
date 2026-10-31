@@ -2,7 +2,7 @@
 
 ## Render Manager
 
-![](/images/pastedGraphic-589.jpg)
+![Render Manager window showing a rendered elephant and a list of past render jobs with time and resolution](/images/pastedGraphic-589.jpg)
 
 > **Note:** this screenshot shows an older version of Cheetah 3D. <!-- TODO screenshot -->
 

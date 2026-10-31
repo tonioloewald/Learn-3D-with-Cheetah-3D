@@ -2,9 +2,9 @@
 
 ## Mini-Tutorial: Idle
 
-![](/images/pastedGraphic-523.jpg)
+![Wireframe character in the relaxed idle pose at keyframe 0, knees and back slightly bent](/images/pastedGraphic-523.jpg)
 
-![](/images/pastedGraphic-524.jpg)
+![Wireframe character at keyframe 12, nearly the same idle pose with a subtle shift](/images/pastedGraphic-524.jpg)
 
 ![](/images/pastedGraphic-525.jpg)
 

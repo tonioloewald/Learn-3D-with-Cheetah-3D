@@ -20,7 +20,7 @@ If you try the same thing again, you’ll see that it still doesn’t work prope
 
 Now you’ll see that the Robot Arm works perfectly. 
 
-![](/images/pastedGraphic-493.jpg)
+![Robot arm with its tool end selected and a purple line running down to the base](/images/pastedGraphic-493.jpg)
 
 ![](/images/pastedGraphic-494.jpg)
 

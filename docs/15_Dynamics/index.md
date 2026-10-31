@@ -2,7 +2,7 @@
 
 # Dynamics
 
-![](/images/pastedGraphic-529.jpg)
+![Rendered brass cartridge with a dark metal bullet](/images/pastedGraphic-529.jpg)
 
 **Note**: this chapter was previously called "Physics".
 

@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=41472d21f134" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="7.10_Understanding_How_Creators_Tags_and_Modifiers_Interact.md">
 <!--{"parent": "7_Modeling.md", "order": 10}--><h1 id="understanding-how-creators-tags-and-modifiers-interact">Understanding How Creators, Tags, and Modifiers Interact</h1>
 <p>Creators, modifiers, and tags are the three non-destructive mechanisms Cheetah 3D provides for applying changes to an object without destroying it. In other words, they allow you to change the way the renderer (or output file) “perceives” the underlying object while allowing you to go back and make changes to it (or recover it unchanged).</p>
@@ -50,7 +50,7 @@
 <p><strong>But there’s more</strong>: <em>creators hide any extra child meshes they may have from the renderer</em>. If a creator operates on its first two children and its third child is a mesh, then that extra child <em>simply will not be rendered</em> but will be visible in the editor interface.</p>
 <p><strong>Tags are attached to objects and act on that object alone</strong>. (Why have tags and modifiers? Modifiers act on an object’s geometry, whereas tags can act on arbitrary qualities of an object, e.g. directly modifying the way the object is rendered or interacts with the animation system.)</p>
 <p>How all these things interact can be quite hard to understand. The general rule is that <strong>the properties of a child override the properties of a parent</strong>. E.g. if an object has a render tag that turns its shadows off, a child of that object with a render tag that turns its shadows on will still cast shadows.</p>
-<p><img src="/images/pastedGraphic-232.jpg" alt=""></p>
+<p><img src="/images/pastedGraphic-232.jpg" alt="Object browser: Boolean.2 containing Boolean and Boolean.1, each with Box and Box.1, then Array"></p>
 <p>Again, the big exception to this is creators, which work inside-out. In essence, you need to think of the children used by a creator as not being part of the “downward” hierarchy. E.g. in the above example the top boolean (Boolean.2) is acting on its first two children (Boolean and Boolean.1). The array modifier is acting on Boolean.2 and ignores Boolean.2’s first two children.</p>
 
   </article>

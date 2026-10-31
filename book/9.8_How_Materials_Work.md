@@ -76,11 +76,11 @@ If you’re trying to render nice planets as seen from space (e.g. for a science
 
 *Here’s the resulting planet. For extra points I’ll feed the same filtered “altitude” as a bump map.*
 
-![](/images/pastedGraphic-354.jpg)
+![Rendered planet with blue oceans and green-fringed brown continents, lit from the left](/images/pastedGraphic-354.jpg)
 
 One of the problems with the gradient filter is that it’s a pain to edit it precisely. So here’s a trick for replacing the gradient filter with an arbitrarily large image node which you can edit in a dedicated image editor (such as Photoshop).
 
-![](/images/pastedGraphic-355.jpg)
+![Screen grab of the gradient node's Properties open in Acorn, a blue, yellow, green, brown, gray, and white gradient](/images/pastedGraphic-355.jpg)
 
 I take a screen grab of my gradient node’s settings and open it in a good image editor (in this case Acorn).
 
@@ -122,19 +122,19 @@ I take a screen grab of my gradient node’s settings and open it in a good imag
 
 Material assignment tags control how a material is applied to an object. The tag has two sets of properties: the properties listed under Shading Space affect 3D spatially mapped textures while those under UV coords affect UV-mapped textures.
 
-![](/images/pastedGraphic-389.jpg)
+![Plane with large gray and black procedural checkerboard at default tag settings](/images/pastedGraphic-389.jpg)
 
-![](/images/pastedGraphic-390.jpg)
+![Same checkerboard shifted so squares are cut off at the plane's edges](/images/pastedGraphic-390.jpg)
 
-![](/images/pastedGraphic-391.jpg)
+![Same checkerboard rotated into a diamond pattern](/images/pastedGraphic-391.jpg)
 
 ![](/images/pastedGraphic-392.jpg)
 
 *Procedural, 3D spatially-mapped checkerboard. **Top**: default material tag settings. **Upper-middle**: offset by 0.1,0.1,0.1. **Lower-middle**: rotation by 45°,0,0. **Bottom**: scale by 0.25,0.25,0.25.*
 
-![](/images/pastedGraphic-393.jpg)
+![Plane with a numbered UV test texture tiled two by two](/images/pastedGraphic-393.jpg)
 
-![](/images/pastedGraphic-394.jpg)
+![Same UV texture offset by a quarter, so the 4 tile sits in the center](/images/pastedGraphic-394.jpg)
 
 ![](/images/pastedGraphic-395.jpg)
 
