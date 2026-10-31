@@ -88,6 +88,8 @@ _You can keyframe one or more properties_ by selecting the thing whose property 
 
 ![Window layout with the UV editor beside the 3D view of a textured elephant, plus the Materials and Properties panes](/images/Screen%20Shot%202016-11-28%20at%209.53.06%20AM-1.jpg)
 
+> **Note:** this figure is the same window layout as the one above, and sits just before the Key Editor paragraph; it may be a misplaced duplicate (a Key Editor screenshot?). <!-- TODO editorial -->
+
 ![Key editor showing rows of position and rotation keyframes for a selected bone, beside the Object Browser](/images/Screen%20Shot%202016-11-28%20at%209.48.44%20AM.jpg)
 
 **Key Editor** is where you can see and manipulate individual keyframed properties.

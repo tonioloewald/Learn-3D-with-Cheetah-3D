@@ -150,6 +150,8 @@ So let’s suppose we’re creating a simple-minded terrain shader based on alti
 
 *So I simply add a turbulence texture node, multiply its output by 0.1, and then add that to the y value before filtering it through the gradient. Here’s the result.*
 
+> **Note:** the caption ends “Here’s the result”, but this figure is the node graph; the render is the next figure. <!-- TODO editorial -->
+
 ![Side view of the terrain with noise added: green lowlands, orange slopes, and white peaks](/images/pastedGraphic-350.jpg)
 
 ![Terrain from above with noise added, irregular edges between green, orange, and white](/images/pastedGraphic-351.jpg)

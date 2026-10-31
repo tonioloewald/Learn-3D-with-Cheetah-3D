@@ -29,3 +29,5 @@ Getting cloth to drape nicely using Soft Body simulations requires a bit of fidd
 ![Render of white cloth draped over a square shape, hanging in folds at the corners](/images/pastedGraphic-536.jpg)
 
 *This screenshot shows a Soft Body cloth draped over a box. I’ve left the box visible to show that the simulation is hardly perfect, but it’s easy to see how you can finesse the size of the mesh used as the collider to produce a good result for a slightly smaller table.*
+
+> **Note:** the caption says the box was left visible, but only the wireframe above shows it; this render has no box. <!-- TODO editorial -->

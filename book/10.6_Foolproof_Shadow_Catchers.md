@@ -22,6 +22,8 @@ Above, I’ve made three renders. **Top**: white ground plane with shadows. **Mi
 
 ![Cube clusters cut out by the mask, isolated on a white background](/images/pastedGraphic-473.jpg)
 
+> **Note:** the caption calls this a perfect mask, but the image shows the cubes cut out on white rather than a black-and-white mask. <!-- TODO screenshot -->
+
 ![The cube clusters and their shadows composited onto a bright orange background](/images/pastedGraphic-474.jpg)
 
 ***Top**: using the difference between the first two renders, you can create a perfect shadow layer. **Middle**: using the third render, you can create a perfect mask for the content. **Bottom**: and with these two, you can composite your object and its shadows.*

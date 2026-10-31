@@ -92,6 +92,8 @@ I take a screen grab of my gradient node’s settings and open it in a good imag
 
 *Rather than try to create a gradient, I directly modify the gradient using blurs and scales to tweak it.*
 
+> **Note:** this figure (pastedGraphic-357) is the same file as the one above (pastedGraphic-356), though the caption says the gradient was then tweaked; the “after” image seems to be missing. <!-- TODO screenshot -->
+
 ![Node graph: Add node's Val feeding Float2Vec X, whose Vec drives the Image node's Position, beside the old Gradient node](/images/pastedGraphic-358.jpg)
 
 *Now I’ve loaded the gradient image into an image node, and I’m creating a UV coordinate by taking the “altitude” value and converting it into a vector (so that altitude becomes X (which is to say U) and picks a color from left-to-right from my image).*
@@ -131,6 +133,8 @@ Material assignment tags control how a material is applied to an object. The tag
 ![Same checkerboard scaled down, with many more, smaller squares](/images/pastedGraphic-392.jpg)
 
 *Procedural, 3D spatially-mapped checkerboard. **Top**: default material tag settings. **Upper-middle**: offset by 0.1,0.1,0.1. **Lower-middle**: rotation by 45°,0,0. **Bottom**: scale by 0.25,0.25,0.25.*
+
+> **Note:** the caption says the rotation is 45°,0,0, but the checkerboard looks rotated about the vertical axis; check the values. <!-- TODO verify -->
 
 ![Plane with a numbered UV test texture tiled two by two](/images/pastedGraphic-393.jpg)
 

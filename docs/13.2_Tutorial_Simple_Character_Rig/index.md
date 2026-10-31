@@ -76,4 +76,6 @@ Before we add IK handles, we need to rotate the joints slightly to give it hints
 
 ![Fully rigged figure in a T-pose with a manipulator below the hips](/images/pastedGraphic-513.jpg)
 
+> **Note:** the text is about posing by dragging the wrists and ankles with IK, but this figure shows the rig still in its T-pose. <!-- TODO screenshot -->
+
 Play around by dragging the wrists and ankles around. By and large, the legs will work a bit better than the arms, but the arm IK is still quite useful. In general, you will pose figures using a combination of forward and inverse kinematics. You can always go back to the skeleton tag and reset to the bind pose.

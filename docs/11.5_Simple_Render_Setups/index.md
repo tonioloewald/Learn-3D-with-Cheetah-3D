@@ -124,4 +124,6 @@ The key is building out lights carefully, using emissive materials for shades an
 
 ![Render of the resulting light: a bright cone with ringed falloff spreading down from a point light](/images/pastedGraphic-607.jpg)
 
+> **Note:** the text says “at left” and “on right”, but these figures are stacked; say “above” and “below” or set them side by side. <!-- TODO editorial -->
+
 You can get similar results to IES lights (see image on right) by using a transparent material (transparency map shown at left) wrapped around a point light.

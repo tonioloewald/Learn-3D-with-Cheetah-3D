@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=d6ccd0795269" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="17.5_Alpha_Channels_in_Depth.md">
 <!--{"parent": "17_Appendices.md", "order": 5}--><h1 id="alpha-channels-in-depth">Alpha Channels in Depth</h1>
 <p><img src="/images/Screen%20Shot%202013-12-09%20at%2011.23.44%20AM.jpg" alt="Diagram: striped image, star alpha, and output; white as transparent cuts a star hole, white as opaque keeps the star"></p>
@@ -55,6 +55,9 @@
 <h2 id="premultiplied">Premultiplied?</h2>
 <p><img src="/images/pastedGraphic-657.jpg" alt="Red image magnified to 1600 percent, edge pixels fading to transparent over a checkerboard"></p>
 <p><img src="/images/pastedGraphic-658.jpg" alt="Same red image magnified, edge pixels blended with white as if premultiplied onto a white background"></p>
+<blockquote>
+<p><strong>Note:</strong> the text says “the image on the right”, but these two figures are stacked; say “below” or set them side by side. <!-- TODO editorial --></p>
+</blockquote>
 <p>The final complication with alpha channels is how they interact with color values. The “obvious and correct” way to handle this would be for the color values to produce red, while the alpha channel determines transparency, but in many cases this is not how alpha channeled images are stored.</p>
 <p>If you consider the image on the right, the edge pixels are mixtures of red and white (the background color) where the more transparent the pixel, the more white got mixed in. In many cases, alpha-channeled images will be stored as if the image had been overlaid on a flat background (usually black or white) — this probably dates back to the time when compositing an image on a background was considered to be computationally intensive. </p>
 <p>Such an image is said to be “premultiplied”. If you want to composite a premultiplied image then you need to know what the background color that the image has been premultiplied onto was so as to be able to compensate for it when calculating the actual color of the edge pixel.</p>

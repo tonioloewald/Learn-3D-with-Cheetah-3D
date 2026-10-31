@@ -188,6 +188,8 @@ We’re going to use Merge to bring the handle into the mug mesh, then we’re g
 
 ![Object Browser showing the Cylinder, with the Sweep creator and its n-Edge and Spline inputs nested below](/images/pastedGraphic-26.jpg)
 
+> **Note:** this figure shows only the Object Browser (Cylinder above the Sweep creator), and illustrates neither the delete step before it nor the Merge step after it. <!-- TODO editorial -->
+
 3. Select the mug mesh and then handle (click one, command-click the other) and then select **Tools \> Merge**.
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: does command-click add a second object to the selection in the Object Browser? ([User Interface Overview](/4.2_User_Interface_Overview/) says command-click removes items from a selection; the manual's Object Browser page only describes primary and secondary selections.) <!-- TODO verify -->

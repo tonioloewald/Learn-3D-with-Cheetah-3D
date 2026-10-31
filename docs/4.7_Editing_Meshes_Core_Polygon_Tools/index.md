@@ -12,6 +12,8 @@
 
 _Using **cover**. I have the transform tool selected and select two faces, then select cover (Tools \> Polygon \> Cover), then simply move the selected faces — new geometry has been created “covering” the boundary of my selection. Note that you’ll find cover the single most useful tool for polygon modeling — I map it to the C key, so in fact I simply selected some polygons, pressed C, and dragged out the new geometry._
 
+> **Note:** the caption says to select two faces, but only one face is visibly pulled out. <!-- TODO screenshot -->
+
 ![Subdivided box with new faces covered out from a selection of edges](/images/DraggedImage-12.jpg)
 
 ![After cover on edges: a new open strip of faces pulled out from the box’s edge selection](/images/DraggedImage-13.jpg)
@@ -114,6 +116,8 @@ Look ma, I made a hole!
 
 ![Box with a selected purple face around a cross-shaped hole, showing a stray long triangle](/images/DraggedImage-21.jpg)
 
+> **Note:** the text describes a top (bad triangulation) and a bottom (fixed with the scalpel), but this is a single image of one cube; the pair seems to be missing. <!-- TODO screenshot -->
+
 This is an artificial example, but on the top the selected polygon (which is vaguely C-shaped) is being triangulated very badly. On the bottom, breaking up the problem polygon into convex quads with a few cuts using the scalpel tool completely eliminates the problem. (It could definitely be done more tidily, this is simply demonstrating a point.)
 
 * Fixing problem polygons. Sometimes a polygon doesn’t get rendered correctly, especially if it isn’t convex. You can use the scalpel tool to chop complex polygons into simpler polygons that won’t confuse the triangulation algorithm.
@@ -129,6 +133,8 @@ Compare the bottom-right quad across these three (symmetric) meshes. The middle 
 ![Head base mesh after the scalpel cuts, new edges around the mouth loop turning its non-quads into quads](/images/DraggedImage-24.jpg)
 
 _Here I’m building out the base topology for a head, and I’ve created an edge-loop around what will be the character’s mouth. On the left, the non-quads I’ve created have been selected and are highlighted. On the right, using the scalpel tool I cut two new edges and then used point-slide to make the quads less distorted, resulting in all of the resulting faces becoming quads. This is a very common operation in character animation — creating edge loops and cleaning up the resulting non-quads using the scalpel._
+
+> **Note:** the caption says “on the left” and “on the right”, but these are two stacked images; say “above” and “below” or set them side by side. <!-- TODO editorial -->
 
 * Refining Topology. Probably the most common scalpel operation is cleaning up mesh topology, which usually means eliminating non-quads. At other times you simply need to add more detail in a particular spot, and here the scalpel is your friend, allowing you to add vertices and edges exactly where you need them.
 

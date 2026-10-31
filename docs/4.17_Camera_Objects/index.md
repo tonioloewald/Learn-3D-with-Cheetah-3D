@@ -16,6 +16,8 @@ _Camera in Cheetah 3D 7 using **Cheetah** renderer_ The changes here reflect a l
 
 _Camera in Cheetah 3D 7 using **Falcon** renderer_ The Falcon camera is a much simpler beast than the Cheetah camera, in large part because a lot of the hacky features of the Cheetah renderer “just work” via the new unbiased rendering model.
 
+> **Note:** the caption calls these the camera’s properties, but both screenshots show the renderer settings (“Renderer (Cheetah)” and “Renderer (Falcon)”); replace the screenshots or fix the caption. <!-- TODO screenshot -->
+
 ![Cheetah 3D 6 camera properties: Projection, Render, Output resolution 640 by 480, and Background](/images/DraggedImage-70.jpg)
 
 _Camera in Cheetah 3D 6_
@@ -33,6 +35,8 @@ _You can see that the camera’s field of view is represented as a subtle outlin
 ![Field of view raised to 63.0: the biplane small in the camera view, the frustum wider](/images/Screen%20Shot%202016-12-01%20at%2011.12.31%20AM.jpg)
 
 _Here the field of view has been increased, which is exactly like **zooming** with a camera lens (except that Cheetah 3D has perfect optics, whereas real lenses have distortion, falloff, field curvature, chromatic aberration, and so forth)._
+
+> **Note:** the screenshots show the field of view going from 20 to 63, which zooms *out*; “exactly like zooming” may mislead. <!-- TODO editorial -->
 
 ![Camera moved closer, Field of view 20.0: the biplane fills the camera view](/images/Screen%20Shot%202016-12-01%20at%2011.13.00%20AM.jpg)
 

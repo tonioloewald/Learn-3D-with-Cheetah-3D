@@ -98,6 +98,8 @@ Displacement pushes vertices in the direction normal to the surface they belong 
 
 ![Shear modifier skewing a box object sideways inside its cage](/images/pastedGraphic-225.jpg)
 
+> **Note:** the Properties panel in this screenshot shows material settings, not the Shear modifier’s. <!-- TODO screenshot -->
+
 Shear skews a mesh in its XY plane.  
 
 #### Spherify
@@ -149,3 +151,5 @@ Well, it allows you to reposition (or rotate or scale) an object without actuall
 ![Box object with a modifier named WrapMod, type Cylinder, curving the mesh into a partial cylinder](/images/pastedGraphic-231.jpg)
 
 *The Warp modifier is perhaps the most temperamental modifier around. The UI gadget kind of shows you what it’s going to do, but it’s often a matter of trial and error to get the desired result out of it.*
+
+> **Note:** the screenshot shows a **Wrap** modifier (WrapMod, type Cylinder), but the heading and caption say Warp; check the modifier’s name in 8.1.1. <!-- TODO verify -->

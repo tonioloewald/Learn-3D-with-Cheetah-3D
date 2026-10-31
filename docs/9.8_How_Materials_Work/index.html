@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=d6ccd0795269" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.8_How_Materials_Work.md">
 <!--{"parent": "9_Materials.md", "order": 8}--><h1 id="how-materials-work">How Materials Work</h1>
 <p>Now that you’ve learned your way around the material system, it’s probably not a bad idea to understand how the material system actually works.</p>
@@ -88,6 +88,9 @@
 <p>I take a screen grab of my gradient node’s settings and open it in a good image editor (in this case Acorn).</p>
 <figure><img src="/images/pastedGraphic-356.jpg" alt="Acorn window showing the cropped gradient strip: dark blue, light blue, yellow, green, brown, gray, and white"><figcaption>Then I crop to just the gradient part of the image. Now I can create a similar gradient at arbitrary precision using my image editor of choice.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-357.jpg" alt="Acorn window showing the cropped gradient strip: dark blue, light blue, yellow, green, brown, gray, and white"><figcaption>Rather than try to create a gradient, I directly modify the gradient using blurs and scales to tweak it.</figcaption></figure>
+<blockquote>
+<p><strong>Note:</strong> this figure (pastedGraphic-357) is the same file as the one above (pastedGraphic-356), though the caption says the gradient was then tweaked; the “after” image seems to be missing. <!-- TODO screenshot --></p>
+</blockquote>
 <figure><img src="/images/pastedGraphic-358.jpg" alt="Node graph: Add node&#39;s Val feeding Float2Vec X, whose Vec drives the Image node&#39;s Position, beside the old Gradient node"><figcaption>Now I’ve loaded the gradient image into an image node, and I’m creating a UV coordinate by taking the “altitude” value and converting it into a vector (so that altitude becomes X (which is to say U) and picks a color from left-to-right from my image).</figcaption></figure>
 <p><em>Note that there’s a slight caveat to this trick. The position input isn’t used as the UV coordinate, but as a UV offset (I don’t know why), so I rescale the UVs to 0.001 so that they have virtually no effect (I actually type in 0, but C3D changes it to 0.001). In essence, I’m telling Cheetah 3D to take the UV coordinate, multiply it by 1/1000 (effectively zero it out) and then offset it by my fake UV coordinate.</em></p>
 <figure><img src="/images/pastedGraphic-359.jpg" alt="Full planet shader graph: Fractal, Turbulence, Gradients, Add, Multiply, Float2Vec, and Image nodes feeding a Material"><figcaption>Here’s the new shader using an image as a gradient instead of an actual gradient. The image is 1000px wide so it can be very easily fine-tuned.</figcaption></figure>
@@ -101,6 +104,9 @@
 <p><img src="/images/pastedGraphic-390.jpg" alt="Same checkerboard shifted so squares are cut off at the plane&#39;s edges"></p>
 <p><img src="/images/pastedGraphic-391.jpg" alt="Same checkerboard rotated into a diamond pattern"></p>
 <figure><img src="/images/pastedGraphic-392.jpg" alt="Same checkerboard scaled down, with many more, smaller squares"><figcaption>Procedural, 3D spatially-mapped checkerboard. <strong>Top</strong>: default material tag settings. <strong>Upper-middle</strong>: offset by 0.1,0.1,0.1. <strong>Lower-middle</strong>: rotation by 45°,0,0. <strong>Bottom</strong>: scale by 0.25,0.25,0.25.</figcaption></figure>
+<blockquote>
+<p><strong>Note:</strong> the caption says the rotation is 45°,0,0, but the checkerboard looks rotated about the vertical axis; check the values. <!-- TODO verify --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-393.jpg" alt="Plane with a numbered UV test texture tiled two by two"></p>
 <p><img src="/images/pastedGraphic-394.jpg" alt="Same UV texture offset by a quarter, so the 4 tile sits in the center"></p>
 <figure><img src="/images/pastedGraphic-395.jpg" alt="Same numbered UV texture rotated 45 degrees, its squares running diagonally across the plane"><figcaption><strong>Top</strong>: UV scale set to 2,2,2; <strong>Middle</strong>: UV offset set to 0.25,0.25; <strong>Bottom</strong>: UV rotation set to 45°</figcaption></figure>

@@ -4,6 +4,8 @@
 
 ![Render Settings properties with Cache HDRI checked under Special File Export, circled](/images/pastedGraphic-610.jpg)
 
+> **Note:** this screenshot circles **Cache HDRI** under Special File Export, but the text below describes **Save G-Buffer**. <!-- TODO screenshot -->
+
 > **AI draft:** generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft -->
 
 If you want to use a panoramic render for image-based lighting, the first thing to do is turn on **Save G-Buffer** in the renderer’s settings (with **Color depth** set to 16- or 32-bit). Then, after you render a panorama, the Render Manager will let you save the result as an EXR file, which an **HDRI Light** can load for image-based lighting.

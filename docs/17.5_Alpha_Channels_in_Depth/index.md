@@ -26,6 +26,8 @@ The important thing to remember in Cheetah 3D is that Cheetah 3D considers 1.0 t
 
 ![Same red image magnified, edge pixels blended with white as if premultiplied onto a white background](/images/pastedGraphic-658.jpg)
 
+> **Note:** the text says “the image on the right”, but these two figures are stacked; say “below” or set them side by side. <!-- TODO editorial -->
+
 The final complication with alpha channels is how they interact with color values. The “obvious and correct” way to handle this would be for the color values to produce red, while the alpha channel determines transparency, but in many cases this is not how alpha channeled images are stored.
 
 If you consider the image on the right, the edge pixels are mixtures of red and white (the background color) where the more transparent the pixel, the more white got mixed in. In many cases, alpha-channeled images will be stored as if the image had been overlaid on a flat background (usually black or white) — this probably dates back to the time when compositing an image on a background was considered to be computationally intensive. 

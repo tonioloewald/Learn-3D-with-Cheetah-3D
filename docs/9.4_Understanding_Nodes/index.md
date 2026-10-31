@@ -44,6 +44,8 @@ Perhaps the most intuitive node you can visualize is an Image node.
 
 _Here’s the same image node, but with the color vs. value outputs selected. The value output shows grayscale output (note that it isn’t just the red channel)._
 
+> **Note:** the caption says “the same image node”, but this is the first Image node figure on the page; the close-up below may belong before it. <!-- TODO editorial -->
+
 ![Close-up of the Image node with its Color output selected, previewing a colored test grid on a sphere](/images/pastedGraphic-315.jpg)
 
 ![Image node's Color output wired to the Material node's diffuse input, Properties panel showing test grid.jpg](/images/pastedGraphic-316.jpg)
@@ -128,11 +130,15 @@ When you send information of one type to a property of another type it will auto
 
 ![Vector node set to 0.0, 1.0, 0.0 in the Properties panel, wired to the Material's Diffuse input, giving a green sphere](/images/Screen%20Shot%202014-07-06%20at%205.31.46%20PM.jpg)
 
+> **Note:** this sits under “Color to Vector”, but it shows a Vector node feeding the Material’s Diffuse input (vector to color). <!-- TODO screenshot -->
+
 There is a wrinkle though:
 
 ![Color node set to red wired to the Material node's Diffuse input, giving a red sphere](/images/Screen%20Shot%202014-07-06%20at%205.32.45%20PM.jpg)
 
 _The alpha channel of a color is an “invisible fourth channel” that only seems to work with the diffuse input of a material shader when **Use Alpha Channel** is checked._
+
+> **Note:** the caption is about the alpha channel and **Use Alpha Channel**, but the screenshot shows only a Color node wired to Diffuse, with nothing about alpha. <!-- TODO screenshot -->
 
 **Vector to Color**: x, y, z become r, g, b; alpha channel is assumed to be 100% (completely opaque).
 

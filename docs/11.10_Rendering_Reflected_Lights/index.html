@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=d6ccd0795269" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.10_Rendering_Reflected_Lights.md">
 <!--{"parent": "11_Rendering.md", "order": 10}--><h1 id="rendering-reflected-lights">Rendering Reflected Lights</h1>
 <p><strong>By default, Cheetah 3D’s lights are invisible objects</strong>. If you point a camera at them, you get nothing. Crucially: they don’t appear in reflections. (If you consider what a flashlight or a car’s headlight looks like in photographs or when you look at it, what you’re seeing is <em>reflections of a glowing object</em>.)</p>
@@ -59,6 +59,9 @@
 </blockquote>
 <figure><img src="/images/pastedGraphic-563.jpg" alt="Dark car body in steel with a dark reflective sphere showing two tiny light points"><figcaption>With the lights built out with reflectors and geometry switched on the lights now look much better in reflections, but they’re still really not bright enough.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-564.jpg" alt="Car body in pale plastic with a glossy red sphere and a dark round opening below"><figcaption>Here I’ve replaced the highly reflective steel with a slightly reflective “plastic” material. The headlight on the left has its geometry switched on, while the headlight on the right has its geometry switched off and replaced with a sphere of the same diameter with a highly emissive material (white with intensity 5.0 fed into emissive) and a render tag that prevents it from casting shadows. As you can see, the headlight on the left produces an anemic reflection, while the headlight on the right looks great.</figcaption></figure>
+<blockquote>
+<p><strong>Note:</strong> the caption describes two headlights, left with geometry on and right swapped for an emissive sphere, but the render shows no clear pair of headlights. <!-- TODO screenshot --></p>
+</blockquote>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">

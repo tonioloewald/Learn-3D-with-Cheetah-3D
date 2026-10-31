@@ -27,3 +27,5 @@ Area lights have a **Visible in camera** option (older versions called it “geo
 ![Car body in pale plastic with a glossy red sphere and a dark round opening below](/images/pastedGraphic-564.jpg)
 
 *Here I’ve replaced the highly reflective steel with a slightly reflective “plastic” material. The headlight on the left has its geometry switched on, while the headlight on the right has its geometry switched off and replaced with a sphere of the same diameter with a highly emissive material (white with intensity 5.0 fed into emissive) and a render tag that prevents it from casting shadows. As you can see, the headlight on the left produces an anemic reflection, while the headlight on the right looks great.*
+
+> **Note:** the caption describes two headlights, left with geometry on and right swapped for an emissive sphere, but the render shows no clear pair of headlights. <!-- TODO screenshot -->

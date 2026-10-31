@@ -76,6 +76,8 @@ In Cheetah 3D back faces of polygons are rendered as dark. This makes it pretty 
 
 ![Selected cube with the flipped polygons shown solid black](/images/pastedGraphic-649.jpg)
 
+> **Note:** the text below says the flipped polygons can’t be seen once the skylight is added, but this render shows them as solid black; the figure may be the wrong one, or swapped with the one before it. <!-- TODO editorial -->
+
 Here’s the same mesh after I added a skylight to the scene. Now it’s impossible to tell that some of the polygons are flipped.
 
 ![3D view Style menu open with Backface Culling highlighted above Wireframe, Light Both Sides, and Grid](/images/pastedGraphic-650.jpg)

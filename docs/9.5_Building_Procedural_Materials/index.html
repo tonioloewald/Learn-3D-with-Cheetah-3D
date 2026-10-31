@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=d6ccd0795269" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.5_Building_Procedural_Materials.md">
 <!--{"parent": "9_Materials.md", "order": 5}--><h1 id="building-procedural-materials">Building Procedural Materials</h1>
 <p>We’re going to build some materials from scratch in an effort to understand how all this stuff fits together. We’ll start simple and then build up to some pretty complex concepts.</p>
@@ -97,6 +97,9 @@
 <figure><img src="/images/pastedGraphic-347.jpg" alt="Terrain from above at an angle, green lowlands, orange slopes, and white-capped peaks"><figcaption>Here’s our simple test terrain (carefully scaled so the top of the highest mountains lie at y=1 in its local coordinate space) with this material applied. It doesn’t look too bad for such a simple material… until you see it side-on.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-348.jpg" alt="Terrain seen nearly side-on, color bands forming flat horizontal stripes across the mountains"><figcaption>Not quite side-on and it already looks way too regular. So what we want to do is make the way the terrain changes with altitude a little random, so we’re going to offset the y coordinate we’re using with a little noise.</figcaption></figure>
 <figure><img src="/images/pastedGraphic-349.jpg" alt="Turbulence through a Multiply node added to Vec2Float&#39;s Y output before the Gradient"><figcaption>So I simply add a turbulence texture node, multiply its output by 0.1, and then add that to the y value before filtering it through the gradient. Here’s the result.</figcaption></figure>
+<blockquote>
+<p><strong>Note:</strong> the caption ends “Here’s the result”, but this figure is the node graph; the render is the next figure. <!-- TODO editorial --></p>
+</blockquote>
 <p><img src="/images/pastedGraphic-350.jpg" alt="Side view of the terrain with noise added: green lowlands, orange slopes, and white peaks"></p>
 <figure><img src="/images/pastedGraphic-351.jpg" alt="Terrain from above with noise added, irregular edges between green, orange, and white"><figcaption>As you can see we now have nice fractal jiggles in the transitions between the different terrain colors.</figcaption></figure>
 <h3 id="terrain-shaders">Terrain Shaders</h3>

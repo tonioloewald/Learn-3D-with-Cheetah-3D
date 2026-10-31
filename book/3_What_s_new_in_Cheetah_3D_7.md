@@ -96,6 +96,8 @@ _If you’ve ever fiddled with material transparency or wireframe display modes 
 
 * **Vertex Soft Selection Support**
 
+> **Note:** these two figures show soft selection, so they belong with the “Vertex Soft Selection Support” bullet below, not under Create Polygon. <!-- TODO editorial -->
+
 * Works with all selection modes
 
 * Falloff is displayed graphically
