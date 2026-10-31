@@ -2,7 +2,7 @@
 
 ## Animation Overview
 
-![](/images/pastedGraphic-88.jpg)
+![Timeline with transport buttons, record button, time ruler from 0 to 4, and recording toggles](/images/pastedGraphic-88.jpg)
 
 *This is the Timeline interface, which appears at the bottom of Cheetah 3D’s document window. If it’s not there you can toggle it on using the toolbar item (it looks like a stopwatch)*
 
@@ -38,7 +38,7 @@ Once a property is keyframed its value at any given point on the timeline can be
 
 4. If there is only one keyframe value in total, then that’s the value used for all times.
 
-![](/images/pastedGraphic-482.jpg)
+![F-Curve editor: red rotation curve dipping below zero before rising to its next keyframe](/images/pastedGraphic-482.jpg)
 
 *The F-Curve editor both shows how values are being interpolated and allows you to directly manipulate this interpolation. Cheetah 3D’s default “smooth” interpolation can have unanticipated effects. Note how the red line (which is x axis rotation) is being pushed in the reverse direction by the change that takes place between the second and third keyframes.*
 

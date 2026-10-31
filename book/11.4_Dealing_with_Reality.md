@@ -50,7 +50,7 @@ Now lock your camera down and build out the scene.
 
 Here’s a photograph of a building I had lying around. 
 
-![](/images/pastedGraphic-567.jpg)
+![iPhoto info panel: Nikon D5000, AF-S DX Nikkor 35mm f/1.8G, ISO 200, f/9.5, 1/500, January 7, 2012 4:32:33 AM](/images/pastedGraphic-567.jpg)
 
 *Here’s some of the EXIF metadata for this image in iPhoto. The time of day is wrong (probably a timezone issue).*
 
@@ -64,7 +64,7 @@ Above, I’ve created a scene with a box, set the renderer’s **Resolution** to
 
 ![Test render: gray facade and flying saucer over the photo background, the saucer casting a shadow on the facade](/images/pastedGraphic-570.jpg)
 
-![](/images/pastedGraphic-571.jpg)
+![Final composite: the flying saucer over the brick building photo, its shadow falling on the facade](/images/pastedGraphic-571.jpg)
 
 ***Top**: I build out a bit more of the facade, add a flying saucer, roughly match the lighting with a skylight set to the right time of day (simply rotating the skylight until it looks roughly correct). **Middle**: a quick test render. **Bottom**: I put the default Shadowmat material on the facade and render again.*
 

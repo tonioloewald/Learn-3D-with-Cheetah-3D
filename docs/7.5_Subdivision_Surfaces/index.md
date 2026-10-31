@@ -20,18 +20,18 @@ The general principle for controlling the curvature of a subdivision surface is 
 
 ### Creasing Edges
 
-![](/images/pastedGraphic-187.jpg)
+![Subdivided ring-shaped slab inside its cage, the creased cage edges drawn in blue](/images/pastedGraphic-187.jpg)
 
 *In this mesh you can see the effect of marking edges as creased (the blue edges are creased).*
 
 You can crease/uncrease edges using **Selection \> Toggle Crease**. Creased edges will be sharply defined, but it’s a bit all-or-nothing. For finer control, adding extra detail to the cage mesh allows subtler definition.
 
-![](/images/pastedGraphic-188.jpg)
+![The same slab with creases removed and extra beveled edge loops along its rims](/images/pastedGraphic-188.jpg)
 
 *Here, I took the same mesh as before, used Selection \> Select All Creases and toggled the creases off, then beveled the previously creased edges.*
 
 ![Rendered close-up of the creased mesh, with a sharp edge along the slab's rim](/images/pastedGraphic-189.jpg)
 
-![](/images/pastedGraphic-190.jpg)
+![Rendered close-up of the beveled mesh, its rim edge softly rounded](/images/pastedGraphic-190.jpg)
 
 *Here are the two meshes rendered. As you can see, creasing (**top**) produces a sharp corner while beveling (**bottom**) allows a defined but still rounded corner. Each option has its uses.*

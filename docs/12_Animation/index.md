@@ -18,15 +18,15 @@ Let me repeat that in more concrete terms:
 
 If that’s *still* not clear let’s discuss a simple example.
 
-![](/images/pastedGraphic-477.jpg)
+![Gray model of an elevated station, platform empty and the train small at the top right](/images/pastedGraphic-477.jpg)
 
 _**First Key Frame**: a train (top-right) is approaching a station._
 
-![](/images/pastedGraphic-478.jpg)
+![The train stretched along the whole platform, its front car in the foreground](/images/pastedGraphic-478.jpg)
 
 _**Final Key Frame**: the train has come to rest at the platform._
 
-![](/images/pastedGraphic-479.jpg)
+![The train partway in, its front car halfway along the platform](/images/pastedGraphic-479.jpg)
 
 _**One of many intermediate (non-key) frames**: depending on which frame it is, the train’s position is calculated by interpolating between its start and finish positions._
 
@@ -34,11 +34,11 @@ Suppose we want to animate a train arriving at a station. At the end of the anim
 
 ### The Animation Timeline Controller Doohickey
 
-![](/images/pastedGraphic-480.jpg)
+![Cheetah 3D window with the Timeline toolbar item circled and an arrow to the controller at the bottom](/images/pastedGraphic-480.jpg)
 
 *The **Timeline** toolbar item toggles the Animation Timeline Controller.*
 
-![](/images/pastedGraphic-481.jpg)
+![Timeline controls with callouts: Record Keys for Selection, Key Hierarchy, Key Movement, Key Rotation, and Key Scale](/images/pastedGraphic-481.jpg)
 
 *The controls at the bottom right are used to control playback, record keys, and determine which keys are recorded. I’ve highlighted a few important items here. The settings you see are my preferred options for character animation.*
 

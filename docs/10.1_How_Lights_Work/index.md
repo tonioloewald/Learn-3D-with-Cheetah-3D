@@ -34,29 +34,29 @@ If you point a camera at a light you get nothing (area lights have a **Visible i
 
 > *End of AI draft.* <!-- /AI draft -->
 
-![](/images/pastedGraphic-432.jpg)
+![Field of colored pegs lit from a bright point in the center, with long hard-edged shadows radiating outward](/images/pastedGraphic-432.jpg)
 
 *Point Light.*
 
-![](/images/pastedGraphic-433.jpg)
+![The same pegs lit by the point light, shadows now soft and grainy toward their far ends](/images/pastedGraphic-433.jpg)
 
 *Point Light with 5 samples.*
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: the manual documents **Samples** for area lights only; soft shadows from point lights now come from **Shadow softness** (Falcon only). Does a point light still have Samples? <!-- TODO verify -->
 
-![](/images/pastedGraphic-434.jpg)
+![The pegs lit by a glowing white rectangle, casting soft, grainy shadows toward the viewer](/images/pastedGraphic-434.jpg)
 
 *Area Light with 5 samples (Visible in camera is switched on)*
 
-![](/images/pastedGraphic-435.jpg)
+![A single bright cone of light on a black ground, lighting a few pegs whose shadows stretch away](/images/pastedGraphic-435.jpg)
 
 *Spot Light.*
 
-![](/images/pastedGraphic-436.jpg)
+![The pegs on a gray ground, all casting parallel hard shadows in the same direction](/images/pastedGraphic-436.jpg)
 
 *Distant Light.*
 
-![](/images/pastedGraphic-437.jpg)
+![Flat-colored pegs on a plain light gray ground with no shading or shadows](/images/pastedGraphic-437.jpg)
 
 *Ambient Light.*
 

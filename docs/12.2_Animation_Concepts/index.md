@@ -14,7 +14,7 @@ This would produce a *terrible* animation. The train would move to the platform 
 
 In fact, a *real* train arriving at a station will be slowing down the entire time — until it stops, when it will lurch backwards slightly. (We’ve all stood on trains and buses as they’ve come to a stop.)
 
-![](/images/pastedGraphic-483.jpg)
+![F-Curve editor with Position Z selected, a blue curve easing up to a slight overshoot and settling](/images/pastedGraphic-483.jpg)
 
 *Cheetah 3D provides tools for visualizing and controlling the interpolation of keyed values. Here we’re looking at the way the train’s z position changes over time in Cheetah 3D’s F-Curve editor. I’ve added an extra keyframe before the final keyframe with a tiny bit of overshoot (so the train lurches backwards). I’ve tweaked the curve so that the train decelerates as it approaches the station.*
 
@@ -40,7 +40,7 @@ Again, returning to our train, the bit where it lurches back slightly after comi
 
 ![Ball stretched into an oval in midair along its path](/images/pastedGraphic-485.jpg)
 
-![](/images/pastedGraphic-486.jpg)
+![Ball squashed against the plane as it lands](/images/pastedGraphic-486.jpg)
 
 *Simple animation of a ball “jumping” from point A to point B. **Left**: anticipating the jump the ball is squashed. **Middle**: as it flies through the air it stretches along its axis of motion. **Right**: as it impacts its destination it squashes again.*
 

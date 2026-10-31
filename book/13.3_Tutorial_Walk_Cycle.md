@@ -8,7 +8,7 @@
 
 ![Wireframe character in the mirrored passing pose, the opposite knee raised](/images/pastedGraphic-516.jpg)
 
-![](/images/pastedGraphic-517.jpg)
+![Wireframe character in the mirrored landing pose, the other heel striking the ground](/images/pastedGraphic-517.jpg)
 
 *The simplest walk cycle comprises four keyframes, two of which are mirrors of the others.*
 
@@ -26,7 +26,7 @@ Oh, and **make sure the Animation Control Panel is active**.
 
 1. Right-click in the Takes pane and create a new Take. Name it “walk cycle” and set its duration to 0.8 (seconds).
 
-![](/images/pastedGraphic-518.jpg)
+![Animation controls: transport and record buttons above the position, rotation, scale, and hierarchy toggles](/images/pastedGraphic-518.jpg)
 
 *The animation controls with position, rotation, and hierarchy toggled on and the other recording options (notably scale) toggled off.*
 

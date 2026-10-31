@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="10.1_How_Lights_Work.md">
 <!--{"parent": "10_Lighting.md", "order": 1}--><h1 id="how-lights-work">How Lights Work</h1>
 <h2 id="falcon-vs-cheetah">Falcon vs. Cheetah</h2>
@@ -74,15 +74,15 @@
 <blockquote>
 <p><em>End of AI draft.</em> <!-- /AI draft --></p>
 </blockquote>
-<figure><img src="/images/pastedGraphic-432.jpg" alt=""><figcaption>Point Light.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-433.jpg" alt=""><figcaption>Point Light with 5 samples.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-432.jpg" alt="Field of colored pegs lit from a bright point in the center, with long hard-edged shadows radiating outward"><figcaption>Point Light.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-433.jpg" alt="The same pegs lit by the point light, shadows now soft and grainy toward their far ends"><figcaption>Point Light with 5 samples.</figcaption></figure>
 <blockquote>
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the manual documents <strong>Samples</strong> for area lights only; soft shadows from point lights now come from <strong>Shadow softness</strong> (Falcon only). Does a point light still have Samples? <!-- TODO verify --></p>
 </blockquote>
-<figure><img src="/images/pastedGraphic-434.jpg" alt=""><figcaption>Area Light with 5 samples (Visible in camera is switched on)</figcaption></figure>
-<figure><img src="/images/pastedGraphic-435.jpg" alt=""><figcaption>Spot Light.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-436.jpg" alt=""><figcaption>Distant Light.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-437.jpg" alt=""><figcaption>Ambient Light.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-434.jpg" alt="The pegs lit by a glowing white rectangle, casting soft, grainy shadows toward the viewer"><figcaption>Area Light with 5 samples (Visible in camera is switched on)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-435.jpg" alt="A single bright cone of light on a black ground, lighting a few pegs whose shadows stretch away"><figcaption>Spot Light.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-436.jpg" alt="The pegs on a gray ground, all casting parallel hard shadows in the same direction"><figcaption>Distant Light.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-437.jpg" alt="Flat-colored pegs on a plain light gray ground with no shading or shadows"><figcaption>Ambient Light.</figcaption></figure>
 <p>Next, all lights in Cheetah 3D are either effectively point sources or distant lights. A spot light is a point source whose brightness varies based on direction. An area light is simply a stochastically sampled collection of point lights lying on a rectangle. And so forth. This is important because lighting calculations all require the rendering engine to calculate the direction from some point in space to a light source.</p>
 <p>How much light the light source casts on an object is determined by:</p>
 <ul>

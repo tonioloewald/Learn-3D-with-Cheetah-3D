@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="8.1_Modifiers.md">
 <!--{"parent": "8_Creators_Modifiers_Tags.md", "order": 1}--><h1 id="modifiers">Modifiers</h1>
 <p>Cheetah 3D’s non-destructive modifiers are simply wonderful. Many high end 3D packages have similar functionality, but Cheetah 3D’s implementation is both simple and powerful.</p>
@@ -48,13 +48,13 @@
 <p>Modifiers fall into three broad categories: <strong>subdivision</strong> (a modifier that increases the detail in the parent mesh), <strong>replicators</strong> (modifiers that produce one or more transformed copies of the parent mesh’s geometry), <strong>deformations</strong> (modifiers that deform the parent mesh by warping or otherwise modifying their spatial coordinates).</p>
 <p>The easiest way to explain modifiers is simply to show what they do.</p>
 <h2 id="subdivision">Subdivision</h2>
-<figure><img src="/images/pastedGraphic-215.jpg" alt=""><figcaption>Subdivision, by default, turns pretty much anything into a rounded blob.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-215.jpg" alt="Box object with a Subdivision modifier, smoothed into a blobby red shape, with Iterations 2 and Catmull-Clark"><figcaption>Subdivision, by default, turns pretty much anything into a rounded blob.</figcaption></figure>
 <p>Subdivision is probably the single most important modifier in Cheetah 3D. First of all, it’s very useful. And secondly, it would be exceedingly difficult to replicate its functionality if it didn’t exist. In its default incarnation (“Catmull-Clark”) it increases a mesh’s resolution and smoothly interpolates its surfaces, turning hard edges into smooth curves.</p>
 <p><strong>Catmull-Clark</strong> — the default setting — produces smoothly interpolated meshes, particularly well-suited to modeling organic objects, such as characters. Catmull-Clark is named after Edwin Catmull and Jim Clark, the computer scientists who first described subdivision surfaces. (Ed Catmull is one of the founders of Pixar.)</p>
-<figure><img src="/images/pastedGraphic-216.jpg" alt=""><figcaption>Catmull-Clark can be controlled by selecting edges and marking them as <strong>creased</strong> (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-216.jpg" alt="Subdivided box shaped like a dome, its creased bottom edges in blue keeping a flat base and straight sides"><figcaption>Catmull-Clark can be controlled by selecting edges and marking them as <strong>creased</strong> (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)</figcaption></figure>
 <p><img src="/images/pastedGraphic-217.jpg" alt="Subdivided box whose cage mesh has three beveled edges, giving a rounded shape with crisper corners"></p>
 <p><em>Catmull-Clark subdivision can be controlled more subtly by fine-tuning the “cage mesh”. In this case three edges have been beveled to better define those edges (rather than simply make them hard).</em> <!-- TODO review --></p>
-<figure><img src="/images/pastedGraphic-218.jpg" alt=""><figcaption>On the left is an icosahedron with one level of Catmull-Clark subdivision; on the right is an identical icosahedron with one level of Stam-Loop subdivision. As you can see what started as a regular triangulated mesh becomes more irregular under Catmull-Clark subdivision than Stam-Loop.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-218.jpg" alt="Two subdivided icosahedra, the left with irregular facets and the right more regular"><figcaption>On the left is an icosahedron with one level of Catmull-Clark subdivision; on the right is an identical icosahedron with one level of Stam-Loop subdivision. As you can see what started as a regular triangulated mesh becomes more irregular under Catmull-Clark subdivision than Stam-Loop.</figcaption></figure>
 <p>(There are some refinements of Catmull-Clark subdivision which Cheetah 3D does not, as I write this, support. These in essence allow finer control of the interpolated curves and allow you to produce better results with fewer subdivision iterations.)</p>
 <p><strong>Stam-Loop</strong> (named after Jos Stam and Charles Loop) is an alternative subdivision surface algorithm that produces different results, especially with respect to triangles (Catmull-Clark is designed to handle quads and tends to produce nasty results around triangles; Stam Loop is intended to work well for triangles, especially entirely triangulated meshes, and produces nearly identical results to Catmull-Clark on pure quad meshes).</p>
 <p><strong>Linear</strong> subdivision subdivides the mesh without softening the geometry (in essence, using a linear rather than a quadratic interpolation to produce intermediate points). Linear subdivision is useful for creating smoothly deformable meshes (e.g. if you want to curve some extruded text around a sphere, you can linear subdivide it first to produce a cleaner result).</p>
@@ -65,7 +65,7 @@
 <p>The Array modifier turns your mesh into an evenly spaced line of copies of itself.</p>
 <h3 id="build">Build</h3>
 <p>Build isn’t, strictly speaking, a replicator, since it removes geometry rather than duplicating it, but it doesn’t deserve its own category so I’ll shove it in here!</p>
-<figure><img src="/images/pastedGraphic-220.jpg" alt=""><figcaption>The Build modifier is showing 50% of the polygons in the original mesh.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-220.jpg" alt="Box object with a Build modifier, Percent 0.5, about half its faces missing"><figcaption>The Build modifier is showing 50% of the polygons in the original mesh.</figcaption></figure>
 <p>The Build modifier randomly hides a proportion of the faces of a mesh. If its “percent” (which is actually a proportion and not a percentage — so 1.0 means “all”) is animated then the mesh will appear or disappear polygon by polygon. <!-- TODO review --></p>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1’s Build modifier also has a <strong>Type</strong> property that chooses the algorithm for picking polygons (manual: Build Modifier), not yet covered here. <!-- TODO missing --></p>
@@ -84,7 +84,7 @@
 <p><img src="/images/pastedGraphic-223.jpg" alt="Bulge modifier with strength -0.25 pinching the sides of a box object inward"></p>
 <p>Bulge produces inward or outward bulges in your mesh. (It’s very similar to, but less flexible than, the taper modifier. It’s essentially taper with the tapering switched off.)</p>
 <h3 id="displace">Displace</h3>
-<figure><img src="/images/pastedGraphic-224.jpg" alt=""><figcaption>Here you can see a plane being displaced by a bitmap. The whiter the bitmap, the greater the displacement.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-224.jpg" alt="Plane with a Displacement modifier, raised by a C3 logo texture into green relief"><figcaption>Here you can see a plane being displaced by a bitmap. The whiter the bitmap, the greater the displacement.</figcaption></figure>
 <p>The Displacement modifier distorts meshes by pushing vertices outward based on an input image, referred to as a “displacement map”. In the displacement map white means “move it a long way” and black means “leave it alone”. <!-- TODO review --></p>
 <p>Displacement pushes vertices in the direction normal to the surface they belong to (so “away” from the face they’re on). Which pixel(s) of the image are used to displace a given vertex is determined by UV mapping (as though the displacement map were a material).</p>
 <blockquote>
@@ -94,24 +94,24 @@
 <p><img src="/images/pastedGraphic-225.jpg" alt="Shear modifier skewing a box object sideways inside its cage"></p>
 <p>Shear skews a mesh in its XY plane.  </p>
 <h3 id="spherify">Spherify</h3>
-<figure><img src="/images/pastedGraphic-226.jpg" alt=""><figcaption>Spherify lets you convert a cube into a sphere. Unlike a regular “polar” sphere the cube is easy to UV map.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-226.jpg" alt="10 by 10 by 10 Box object with a Spherify modifier, now a gold sphere with a regular grid of faces"><figcaption>Spherify lets you convert a cube into a sphere. Unlike a regular “polar” sphere the cube is easy to UV map.</figcaption></figure>
 <p>Spherify projects the vertices of a mesh (within its radius of influence) onto the surface of a sphere. It’s very handy for producing spheres from boxes, because boxes are much easier to UV map than traditional “polar” spheres (which always have messed up UVs near the poles).</p>
-<figure><img src="/images/pastedGraphic-227.jpg" alt=""><figcaption>Spherify can also be used to produce “shockwave” effects.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-227.jpg" alt="Subdivided box object with a Spherify modifier whose spherical gizmo sits beside it, denting one side"><figcaption>Spherify can also be used to produce “shockwave” effects.</figcaption></figure>
 <h3 id="symmetry">Symmetry</h3>
-<figure><img src="/images/pastedGraphic-228.jpg" alt=""><figcaption>In order to create this result I had to drag and rotate the faces of this mesh away from its local origin (which you can see is still at the global origin).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-228.jpg" alt="Box object with a Symmetry modifier, its faces and their mirror copy standing apart on either side of the origin"><figcaption>In order to create this result I had to drag and rotate the faces of this mesh away from its local origin (which you can see is still at the global origin).</figcaption></figure>
 <p>Symmetry is a very useful modifier. Symmetry always reflects geometry through the designated plane in the object’s own coordinate system.</p>
 <p>The most common use of symmetry is to model objects with bilateral symmetry (such as people, animals, vehicles, and so forth — at least at first approximation). This lets you do half as much work, and also not have to worry about keeping things symmetrical manually.</p>
 <p>When it becomes time to rig or animate a mesh, you’ll need to “bake the symmetry in” by collapsing the symmetry modifier (this is because you need to control all the vertices of the mesh, not just half of them).</p>
 <h3 id="taper">Taper</h3>
-<figure><img src="/images/pastedGraphic-229.jpg" alt=""><figcaption>Taper produces a kind of organic stretching effect (if you set the curvature to zero it essentially deforms your mesh into a cone.)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-229.jpg" alt="Box object with a Taper modifier, Strength 0.5 and Curvature -0.1, flaring out toward the base"><figcaption>Taper produces a kind of organic stretching effect (if you set the curvature to zero it essentially deforms your mesh into a cone.)</figcaption></figure>
 <h3 id="transform">Transform</h3>
 <p>It’s hard to display the effects of the transform modifier since it simply applies its own transformation to its parent object (which makes it appear that object is now somewhere else).</p>
 <p>Why would you use such a thing? </p>
 <p>Well, it allows you to reposition (or rotate or scale) an object without actually repositioning (or rotating or scaling) it. You might want to experiment with a scene without potentially messing things up. Or you might use it for special animation effects (e.g. you could render one set of motions with the modifier switched on, and another with it switched off, and then composite.) <!-- TODO review --></p>
 <h3 id="twist">Twist</h3>
-<figure><img src="/images/pastedGraphic-230.jpg" alt=""><figcaption>The Twist modifier does pretty much what you’d expect it to do — twisting the parent mesh around its local y axis.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-230.jpg" alt="Box object with a Twist modifier at 45 degrees, its surface twisted inside the cage"><figcaption>The Twist modifier does pretty much what you’d expect it to do — twisting the parent mesh around its local y axis.</figcaption></figure>
 <h3 id="warp">Warp</h3>
-<figure><img src="/images/pastedGraphic-231.jpg" alt=""><figcaption>The Warp modifier is perhaps the most temperamental modifier around. The UI gadget kind of shows you what it’s going to do, but it’s often a matter of trial and error to get the desired result out of it.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-231.jpg" alt="Box object with a modifier named WrapMod, type Cylinder, curving the mesh into a partial cylinder"><figcaption>The Warp modifier is perhaps the most temperamental modifier around. The UI gadget kind of shows you what it’s going to do, but it’s often a matter of trial and error to get the desired result out of it.</figcaption></figure>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">

@@ -78,7 +78,7 @@ The headline feature of C3D7 is the new renderer, **Falcon**, but there are many
 
 ![Selected spaceship shown as an orange wireframe, with the mouse pilot visible through a ghosted canopy](/images/Screen%20Shot%202016-07-09%20at%204.38.51%20PM.jpg)
 
-![](/images/Screen%20Shot%202016-07-09%20at%204.40.45%20PM.jpg)
+![Display section of an object’s properties, with Display type Shaded and the Ghosted box checked](/images/Screen%20Shot%202016-07-09%20at%204.40.45%20PM.jpg)
 
 _If you’ve ever fiddled with material transparency or wireframe display modes so you could see one mesh while working on another, you will love the new “Ghosted” display option._
 

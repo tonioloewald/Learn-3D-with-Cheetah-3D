@@ -12,7 +12,7 @@ A Particle Mesh produces instances of its children on a specified mesh using one
 
 ![Rendered plane with a regular six-by-six grid of identical low-poly trees](/images/pastedGraphic-4-1.jpg)
 
-![](/images/pastedGraphic-5.jpg)
+![Rendered plane densely covered with randomly placed low-poly trees](/images/pastedGraphic-5.jpg)
 
 _**Top**: a Particle Mesh distributing tree (particles) one per **point** in a 5x5 plane. **Bottom**: 100 instances of the tree distributed randomly over the **surface** of the plane._
 
@@ -66,7 +66,7 @@ All you need to know is that you can resize panels by dragging on the boundaries
 
 You can save your layout by selecting Save Layout from the layout menu in the toolbar. **Warning**: you can’t choose which layout you’re saving, so by choosing Save Layout you are changing the layout you’re currently using.
 
-![](/images/pastedGraphic-9.jpg)
+![Author's custom layout: a single large 3D view of a biplane, Object browser, Properties, and Tool panels](/images/pastedGraphic-9.jpg)
 
 *You’ll notice from my screenshots that my window layout is probably not like yours (similar, but not the same). By right-clicking on the names of the panels you can add tabs to them and change the role the pane plays. Rather than use the different view layouts, I have modified my modeling view to serve all roles.*
 

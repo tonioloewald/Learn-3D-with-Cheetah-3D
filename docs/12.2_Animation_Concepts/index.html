@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="12.2_Animation_Concepts.md">
 <!--{"parent": "12_Animation.md", "order": 2}--><h1 id="animation-concepts">Animation Concepts</h1>
 <h2 id="keyframes-and-interpolation">Keyframes and Interpolation</h2>
@@ -49,7 +49,7 @@
 <p>If we were to naively interpolate between the two values (this is usually called linear interpolation) we might say that if the train starts at position 0 and time 0, and ends at position 10 and time 10, then at time 1 we’d interpolate its position to be position 1, at time 5 it would be at position 5, and so on.</p>
 <p>This would produce a <em>terrible</em> animation. The train would move to the platform at a constant speed and then immediately stop. Trains don’t do this.</p>
 <p>In fact, a <em>real</em> train arriving at a station will be slowing down the entire time — until it stops, when it will lurch backwards slightly. (We’ve all stood on trains and buses as they’ve come to a stop.)</p>
-<figure><img src="/images/pastedGraphic-483.jpg" alt=""><figcaption>Cheetah 3D provides tools for visualizing and controlling the interpolation of keyed values. Here we’re looking at the way the train’s z position changes over time in Cheetah 3D’s F-Curve editor. I’ve added an extra keyframe before the final keyframe with a tiny bit of overshoot (so the train lurches backwards). I’ve tweaked the curve so that the train decelerates as it approaches the station.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-483.jpg" alt="F-Curve editor with Position Z selected, a blue curve easing up to a slight overshoot and settling"><figcaption>Cheetah 3D provides tools for visualizing and controlling the interpolation of keyed values. Here we’re looking at the way the train’s z position changes over time in Cheetah 3D’s F-Curve editor. I’ve added an extra keyframe before the final keyframe with a tiny bit of overshoot (so the train lurches backwards). I’ve tweaked the curve so that the train decelerates as it approaches the station.</figcaption></figure>
 <h2 id="ease-in-ease-out-point-to-point">Ease-in, Ease-out, Point-to-Point</h2>
 <p>Easing into or out of an animation means smoothly accelerating or decelerating rather than starting or ending abruptly.</p>
 <p>Easing maps very well onto the core principle of point-to-point from <em>Disney Animation: The Illusion of Life</em>, the idea being that in animating a movement, most of the frames should be around the extreme poses (keyframes) and the transition should be rapid.</p>
@@ -61,7 +61,7 @@
 <h2 id="squash-and-stretch">Squash and Stretch</h2>
 <p><img src="/images/pastedGraphic-484.jpg" alt="Ball squashed flat on a plane before the jump"></p>
 <p><img src="/images/pastedGraphic-485.jpg" alt="Ball stretched into an oval in midair along its path"></p>
-<figure><img src="/images/pastedGraphic-486.jpg" alt=""><figcaption>Simple animation of a ball “jumping” from point A to point B. <strong>Left</strong>: anticipating the jump the ball is squashed. <strong>Middle</strong>: as it flies through the air it stretches along its axis of motion. <strong>Right</strong>: as it impacts its destination it squashes again.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-486.jpg" alt="Ball squashed against the plane as it lands"><figcaption>Simple animation of a ball “jumping” from point A to point B. <strong>Left</strong>: anticipating the jump the ball is squashed. <strong>Middle</strong>: as it flies through the air it stretches along its axis of motion. <strong>Right</strong>: as it impacts its destination it squashes again.</figcaption></figure>
 <p>Squash and stretch is another of the core principles of animation outlined in <em>Disney Animation: The Illusion of Life</em>: objects prepare for action and react to impact by squashing, and stretch along their line of motion as they move. <!-- TODO review --></p>
 
   </article>

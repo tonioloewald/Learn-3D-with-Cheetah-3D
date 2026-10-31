@@ -2,7 +2,7 @@
 
 ## Caustics
 
-![](/images/pastedGraphic-448.jpg)
+![Glass of yellow liquid on a gray plane, with a soft patch of focused light inside its shadow](/images/pastedGraphic-448.jpg)
 
 *Caustics simulate the reflection and refraction of light. Note that the light creating the caustics is set to have solid (“Raytrace”) shadows. Caustics shouldn’t be used in concert with “Raytrace+Transparency” for a given light — use one or the other.*
 
@@ -10,7 +10,7 @@ Caustics refer to reflected and refracted light, something which traditional ray
 
 ![Glass of yellow liquid on a gray plane, rendered without caustics, casting a solid dark shadow](/images/pastedGraphic-449.jpg)
 
-![](/images/pastedGraphic-450.jpg)
+![The same glass with a lighter, yellow-tinted shadow that shows no distortion](/images/pastedGraphic-450.jpg)
 
 *Without caustics, the glass either casts a solid shadow or a completely undistorted shadow (depending on whether the lights are set to “raytrace” or “raytrace+transparency”). Neither looks realistic.*
 
@@ -46,7 +46,7 @@ I should add that for this (simple) scene, the settings had almost no impact on 
 
 ![Caustics test render at 5000 photons and 100 samples, still sparse and speckled](/images/pastedGraphic-452.jpg)
 
-![](/images/pastedGraphic-453.jpg)
+![Caustics test render at 5000 photons and 1000 samples, with a few scattered bright spots](/images/pastedGraphic-453.jpg)
 
 *5000 Photons: 10, 100, 1000 Samples*
 
@@ -54,7 +54,7 @@ I should add that for this (simple) scene, the settings had almost no impact on 
 
 ![Caustics test render at 50,000 photons and 100 samples, with softer, blotchier light](/images/pastedGraphic-455.jpg)
 
-![](/images/pastedGraphic-456.jpg)
+![Caustics test render at 50,000 photons and 1000 samples, with sparse bright spots and a lit streak in the shadow](/images/pastedGraphic-456.jpg)
 
 *50,000 Photons: 10, 100, 1000 Samples*
 
@@ -62,7 +62,7 @@ I should add that for this (simple) scene, the settings had almost no impact on 
 
 ![Caustics test render at 500,000 photons and 100 samples, smoother transmitted light in the shadow](/images/pastedGraphic-458.jpg)
 
-![](/images/pastedGraphic-459.jpg)
+![Caustics test render at 500,000 photons and 1000 samples, with a smooth bright streak in the shadow](/images/pastedGraphic-459.jpg)
 
 *500,000 Photons: 10, 100, 1000 Samples*
 
@@ -70,7 +70,7 @@ I should add that for this (simple) scene, the settings had almost no impact on 
 
 ![Caustics test render at 5,000,000 photons and 100 samples, with a few bright reflected spots](/images/pastedGraphic-461.jpg)
 
-![](/images/pastedGraphic-462.jpg)
+![Caustics test render at 5,000,000 photons and 1000 samples, smooth light in the shadow and a few yellow spots](/images/pastedGraphic-462.jpg)
 
 *5,000,000 Photons: 10, 100, 1000 Samples*
 
@@ -78,7 +78,7 @@ One of the things this set of test renders demonstrates is that the more photons
 
 To really handle the reflected light well, you might be better off rendering the scene twice, once with a non-reflective glass, and once with a mirror-reflecting glass, and then carefully composite the two images.
 
-![](/images/pastedGraphic-463.jpg)
+![The glass with smooth, soft transmitted light in its shadow and no obvious speckles](/images/pastedGraphic-463.jpg)
 
 *Here’s the same test scene, rendered with 5M photons, 1000 samples, and the caustics settings set to a more reasonable strength (1.0) and blur (20.0). Because glass isn’t very reflective, there’s essentially nothing we can do to really get the reflected light right. (If you look closely, it’s very splotchy.)*
 
@@ -86,7 +86,7 @@ To really handle the reflected light well, you might be better off rendering the
 
 ![Second pass with mirrored glass, rendering only the reflected light](/images/pastedGraphic-465.jpg)
 
-![](/images/pastedGraphic-466.jpg)
+![Composite of both passes, with soft transmitted light in the shadow and faint reflected light beside the glass](/images/pastedGraphic-466.jpg)
 
 *Here I used only 500K photons, but rendered twice, the second time with a mirrored glass, then using a garbage matte in Photoshop I combined the two images. Note the very nice and subtle reflected light from the glass (it should probably be toned down a bit (since the glass can’t reflect and transmit 100% of the light falling on it) but it looks pretty nice).*
 

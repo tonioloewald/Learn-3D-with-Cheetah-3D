@@ -110,7 +110,7 @@ The instance node’s properties include:
 
 **Direction**: I would assume this represents the direction the particle is moving in, but I can’t get it to do anything.
 
-![](/images/pastedGraphic-325.jpg)
+![Cloud of cube particles, each a different random color](/images/pastedGraphic-325.jpg)
 
 *The random property of an instance can be treated as a random color*
 
@@ -118,7 +118,7 @@ The instance node’s properties include:
 
 **UVW**: an instance’s UV settings may be animated, and this lets you access the current state of the instance’s UV (at the point being rendered).
 
-![](/images/pastedGraphic-326.jpg)
+![Cube particles shading from black on the left to light gray on the right](/images/pastedGraphic-326.jpg)
 
 *Age changes from 0 to 1 over a particle’s lifespan. Here I’ve created a simple material that sends age to the diffuse channel of the Material shader. Older particles are rendered as lighter shades of gray.*
 

@@ -8,15 +8,15 @@ The Raytrace+Transparency shadow setting causes transparent objects to partially
 
 ### Soft Shadows
 
-![](/images/pastedGraphic-444.jpg)
+![Gray staircase with a white sphere light beside it, casting a hard-edged black shadow](/images/pastedGraphic-444.jpg)
 
 *Point Light with 1 sample.*
 
-![](/images/pastedGraphic-445.jpg)
+![The same staircase, its shadow now soft and blurred at the edges](/images/pastedGraphic-445.jpg)
 
 *Point Light with 5 samples.*
 
-![](/images/pastedGraphic-446.jpg)
+![The staircase lit by a white rectangle instead, its shadow soft and slightly grainy](/images/pastedGraphic-446.jpg)
 
 *Area light (5 samples)*
 

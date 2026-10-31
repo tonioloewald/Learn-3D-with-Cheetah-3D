@@ -6,7 +6,7 @@
 
 ![UV Editing layout with the quad shrunk around the 1,0 corner in the UV editor, so the plane shows an enlarged 1,0](/images/GGMmw.jpg)
 
-![](/images/X0trw.jpg)
+![UV Editing layout with the quad rotated into a squashed parallelogram over the ampersand, the 3D plane showing a skewed close-up](/images/X0trw.jpg)
 
 *UV mapping simply involves giving the vertices of polygons in a mesh coordinates in UV (i.e. texture) space. This affects the way the image is “mapped” onto the polygons. In the three examples above (all show Cheetah 3D’s UV Editing layout) I’ve clicked the “Edit” button of the image in question (so it shows up in the UV Editor) and you can see a simple quad (four sided polygon) displayed in UV space and the 3D view. At the **top** you see the default mapping of a texture to a plane. **Middle**, I’ve simply scaled the UV representation of the polygon down and moved it so that a feature is centered. In the **bottom** image, the rotated quad is “squashed” because the image isn’t square, and so it’s being rotated in non-uniformly scaled space.*
 
@@ -18,7 +18,7 @@ If you consider the default plane, it’s a quad with four 3D vertices: -0.5,0,-
 
 UV-mapping consists of editing the UV-representation of a mesh (in 2D) just as you edit the 3D representation of the mesh to alter its 3D geometry.
 
-![](/images/pastedGraphic-396.jpg)
+![UV Editing layout: a plane's quad rotated over a numbered checker texture in the UV editor, the 3D view showing it tilted](/images/pastedGraphic-396.jpg)
 
 *Cheetah 3D’s UV Editing view is designed to allow you to directly edit the UV layout of a mesh and see the results interactively — as you move things around in the UV editor, the displayed model changes live.*
 
@@ -42,27 +42,27 @@ If you consider a polygon with UV coordinates for each vertex then you can draw 
 
 You can see exactly how this works by selecting **UV Editing** from Cheetah 3D’s Layout menu (in the toolbar). Click on any object to see how its polygons appear in UV space.
 
-![](/images/pastedGraphic-310.jpg)
+![UV Editing layout: the plane's 10 by 10 grid covering the whole A, B, C, D test texture in the UV editor](/images/pastedGraphic-310.jpg)
 
 *Here’s a plane (with 10x10 sections) with my test material assigned to it in UV Editing layout. I’ve clicked Edit on the Image node so you can see the image in the UV editor pane. Here, the UV mapping of the plane exactly corresponds to the entire plane.*
 
-![](/images/pastedGraphic-311.jpg)
+![UV Editing layout: a sphere's UV grid over the A, B, C, D texture, triangular pole polygons along the top and bottom rows](/images/pastedGraphic-311.jpg)
 
 *Here I’ve done the exact same thing but with a sphere. Note how the triangles near the poles are mapped into UV space such that parts of the image aren’t covered. This can be a big problem with UV-mapped polar spheres.*
 
-![](/images/pastedGraphic-312.jpg)
+![UV Editing layout: a cube with the full A, B, C, D texture repeated on each face](/images/pastedGraphic-312.jpg)
 
 *Here’s how a cube is mapped by default. Each square face covers the texture in UV space, so each face of the cube has its own copy of the texture mapped to it.*
 
 Primitives have fixed UV maps. You can change how they’re interpreted (in essence you can scale and rotate them) but you can’t change them arbitrarily. Editable meshes can have their UV maps changed to anything you like.
 
-![](/images/pastedGraphic-313.jpg)
+![UV editor with the cube's top polygon shrunk over the A quarter; the cube's top face shows a large A](/images/pastedGraphic-313.jpg)
 
 *Here I made the cube editable, then selected the top polygon and then — in the UV editor — scaled it down and moved it roughly over the top-left quarter of the image in UV space. As you can see, the top face now has the A on it.*
 
 As an added wrinkle, by default UV coordinates “wrap around”. In other words, a UV coordinate need not be inside the square — it might be (57.3, -102.6) — but it wraps around to its fractional value — 57.3 wraps around to 0.3, and -102.6 wraps around to 0.4. (The “Tile U” and “Tile V” properties of an Image node — both checked on by default — determine whether the U and V coordinates, respectively, wrap around.)
 
-![](/images/pastedGraphic-314.jpg)
+![UV editor with the plane's red grid scaled up and rotated far beyond the texture; the plane shows small tilted repeats](/images/pastedGraphic-314.jpg)
 
 *Here I’ve made the plane editable by double-clicking on it and then selected all its polygons and — in the UV editor — scaled and rotated everything. As you can see, the image is now tiled and rotated across the plane.*
 
@@ -84,11 +84,11 @@ The UV Mapper tool applies a simple UV projection onto your mesh. This can work 
 
 ![Sphere with planar mapping, the ampersand projected across the front](/images/pastedGraphic-400.jpg)
 
-![](/images/pastedGraphic-401.jpg)
+![Sphere with cylindrical mapping, the texture wrapped in horizontal bands with 0,0 near the top](/images/pastedGraphic-401.jpg)
 
 *UV Mapper applied to a sphere using cubic, spherical, planar, and cylindrical mapping type (respectively).*
 
-![](/images/pastedGraphic-402.jpg)
+![Sphere with frontal mapping, the ampersand texture projected flat onto its front](/images/pastedGraphic-402.jpg)
 
 *The frontal mapping projects the material straight onto the object (imagine a projector whose beam stays a constant size).*
 
@@ -98,7 +98,7 @@ The Unwrap UV tool is the most powerful tool for UV mapping complex objects, suc
 
 ![Cube in edge mode with seams marked in green along the obvious edges](/images/pastedGraphic-403.jpg)
 
-![](/images/pastedGraphic-404.jpg)
+![Unwrapped cube in the UV editor: six squares in a cross shape, rotated 45 degrees, outlined by green seams](/images/pastedGraphic-404.jpg)
 
 *Placing seams in the “obvious places” on a cube mesh (left) and using Unwrap UV leads to the UV mapping on the right (actually the mapping was a little bit off, but very easily fixed by selecting all the polygons and moving and rescaling them slightly).*
 
@@ -108,19 +108,19 @@ The key to effectively using the Unwrap UV tool is placing seams on your mesh, a
 
 As stated above, the best way to think about texture seams is to place them as though you were sewing the mesh out of pieces of fabric. So, what better example to discuss than a shirt?
 
-![](/images/pastedGraphic-405.jpg)
+![Line drawing of a long-sleeved, collared shirt with button front and cuffs](/images/pastedGraphic-405.jpg)
 
 *Here’s a drawing of a shirt. It’s fairly obvious where the major seams are. (This image is from a free pattern found on the Etsy Blog — etsy.com.)*
 
 ![Shirt mesh in edge mode with green seams at the shoulders, side, and sleeves](/images/pastedGraphic-406.jpg)
 
-![](/images/pastedGraphic-407.jpg)
+![Shirt mesh viewed from below, green seams along the sides and the undersides of the sleeves](/images/pastedGraphic-407.jpg)
 
 *Here’s a simple shirt mesh. I’ve placed seams in it exactly where the major seams would go in a fabric shirt (by default, Cheetah 3D shows seams in green in edge mode).*
 
 ![Shirt pieces after Unwrap UV, some spilling outside the UV square](/images/pastedGraphic-408.jpg)
 
-![](/images/pastedGraphic-409.jpg)
+![Rearranged UV map: body front and back plus two pieces for each sleeve, all fitted inside the UV square](/images/pastedGraphic-409.jpg)
 
 *Simply selecting Unwrap UV results in the UV mapping on the left. Using Group select it’s easy enough to rearrange the pieces to fit inside the UV square.*
 
@@ -158,7 +158,7 @@ Our automatic seam unwrapping means we’ll have way more seams on the sleeve th
 
 ![UV Editing layout with a smiley face painted on a plane in the UV editor and 3D view, Paint tool settings open](/images/pastedGraphic-412.jpg)
 
-![](/images/pastedGraphic-413.jpg)
+![Material node graph: an Image node with the smiley texture feeding the Material node's diffuse input](/images/pastedGraphic-413.jpg)
 
 _**Top**: Cheetah 3D in the UV Editing layout with a simple material (**bottom**) assigned to a plane, the image texture node from that material is being edited, and the **Tools \> UV \> Paint tool** is active. This incredible texture map was created entirely using the Paint tool._
 
@@ -166,13 +166,13 @@ Cheetah 3D offers some basic texture painting functionality. If you use an Image
 
 If this image texture is driving the diffuse channel of a Material shader you can assign the texture to objects in your scene and paint the texture either in the UV editor or directly in the 3D view.
 
-![](/images/pastedGraphic-414.jpg)
+![UV Editing layout: the elephant's unwrapped pieces with rough gray painting, the elephant in the 3D view](/images/pastedGraphic-414.jpg)
 
 *Here the elephant mesh has been unwrapped using manually placed seams, and color has been roughly applied using the Paint tool. This can serve as a useful template in a dedicated image editor such as Photoshop, Acorn, Pixelmator, Photoline, or The GIMP.*
 
 ![Elephant's UV layout exported as black wireframe outlines on white](/images/pastedGraphic-415.jpg)
 
-![](/images/pastedGraphic-416.jpg)
+![Elephant UV layout marked up with gray around each piece, dark eye, orange tusk tip, and dark squares](/images/pastedGraphic-416.jpg)
 
 ***Top**: Cheetah 3D can also export a UV layout as a PDF (using **Tools \> UV \> Save UV’s to PDF**). You can then convert the PDF to a bitmap image, e.g. a PNG or TIFF, using Preview or some other app, and bring it back into Cheetah 3D and use the editor to mark it up with some indicative colors, or — **bottom** — add it as a guide layer in a dedicated image editor.*
 

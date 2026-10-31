@@ -2,7 +2,7 @@
 
 # Mastering Cheetah 3D’s Interface
 
-![](/images/pastedGraphic.jpg)
+![Cheetah 3D window with a rigged tentacle in four views, Object browser, Properties, and F-Curve editor](/images/pastedGraphic.jpg)
 
 *“When I use a word,” Humpty Dumpty said, in rather a scornful tone, “it means just what I choose it to mean — neither more nor less.”*
 

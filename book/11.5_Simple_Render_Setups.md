@@ -8,7 +8,7 @@ If you just want to show off a model (or even if you just want to render it for 
 
 ![Viewport with the elephant model inside a box-shaped room, three point lights near the top, and a small camera](/images/pastedGraphic-591.jpg)
 
-![](/images/pastedGraphic-592.jpg)
+![Render of the white matte elephant in the corner of a softly lit gray room](/images/pastedGraphic-592.jpg)
 
 *At **top**, the test scene showing the three-sided room set, three point lights, the model, and the camera. At **bottom**, the resulting rendered image.*
 
@@ -16,13 +16,13 @@ If you just want to show off a model (or even if you just want to render it for 
 
 Another popular option is to use a wireframe shader to show off its underlying geometry. A quick way to set up a wireframe shader is to use a wireframe texture node as an input to the emission channel of the material shader.
 
-![](/images/pastedGraphic-593.jpg)
+![Shader graph: Wireframe node’s Color output wired to the Material node’s emissive input](/images/pastedGraphic-593.jpg)
 
 *A simple wireframe shader. Note that I’ve dialed up the Wireframe texture node’s Line width property for emphasis, but generally you’ll want to make it quite a bit lower (0.003 seems to work well for objects a few units across).*
 
 ![Elephant rendered with a cyan wireframe shader in Edge mode, showing a dense polygon grid](/images/pastedGraphic-594.jpg)
 
-![](/images/pastedGraphic-595.jpg)
+![Elephant with the wireframe shader in Iso mode, showing only sparse cyan control-cage lines](/images/pastedGraphic-595.jpg)
 
 *Here’s the elephant rendered with a shader that uses the wireframe texture to send a dark cyan color to the emission channel. On **top**, the wireframe shader is set to Edge mode, on the **bottom** it’s set to Iso mode (which only generates lines for the edges of a subdivided surface’s control cage.)*
 
@@ -36,19 +36,19 @@ We’re going to build our own product shot setup, and render a couple of test p
 
 Let’s start with a bad example.
 
-![](/images/pastedGraphic-596.jpg)
+![Close-up render of a dark phone body with a large lens mount and a detached lens cap on a textured surface](/images/pastedGraphic-596.jpg)
 
 *This is a fake “iPhone 5” render I did for fun, based on the idea that Apple would release an iPhone with a Micro Four-Thirds sensor and lens mount. (I still think this is a kickass idea, although maybe a Nikon CX mount would be better.) The goal of this render was to look like a photo an amateur might have taken under crappy lighting conditions (I used the Entrance Hall Panorama HDR that comes with Cheetah 3D). No-one would do a real product shot with this kind of lighting (or on a textured surface).*
 
 Creating a nice “set” for product shots simply involves building a small room with neutrally colored walls (not all one shade of grey, and no pure blacks or whites — you need some variety) and lighting it with several large area lights with their **Visible in camera** property switched on (even better, you can build your own glowing material and build out your own “lightboxes”).
 
-![](/images/pastedGraphic-597.jpg)
+![Viewport of the box-shaped set: gray walls, glowing panels in recesses on each side, and a small object in the middle](/images/pastedGraphic-597.jpg)
 
 *Here’s my product shot set. The room has walls that are varying shades of grey (alternating light and dark). The recesses have a very strong emission, and there are area lights in them. The lights are very strong too, and I render shots with Radiosity and **Save G-Buffer** (HDR output) switched on. This produces renders with tons of light and plenty of scope for finessing the exposure.*
 
 You can either render objects in the set or render an HDR panorama by placing a camera in the middle of the set. Here’s the HDR panorama rendered from this setup.
 
-![](/images/pastedGraphic-598.jpg)
+![Grayscale 360° panorama of the set: dim walls with four bright rectangular light panels](/images/pastedGraphic-598.jpg)
 
 *To render this HDR, I hid the table (a plane) and placed a camera in the middle of the room with all coordinates and rotation set to zero, then rendered a 1024x512 panorama.*
 
@@ -86,25 +86,25 @@ Lighting interiors well is very tricky because interiors are largely lit by inte
 
 **Natural Light**
 
-![](/images/pastedGraphic-601.jpg)
+![Gray room lit by warm sunlight through a window, bright patches on the floor and back wall](/images/pastedGraphic-601.jpg)
 
 *The simplest approach to natural light is to use a skylight (in this case with intensity set to 5.0) along with radiosity. The color of the lighting reflects the latitude, longitude, and time of day — in this case latish afternoon. (The “sky” color visible through the window is simply the camera’s background color setting. You can also use an image background.)*
 
-![](/images/pastedGraphic-602.jpg)
+![The same room lit by a distant light, a whiter, sharper sun patch and darker shadows](/images/pastedGraphic-602.jpg)
 
 *One downside of using a sky light is that they’re a bit slow, especially when combined with radiosity. Here, I’ve used an intensity 2.0 distant light shining from roughly the same angle.*
 
-![](/images/pastedGraphic-603.jpg)
+![The same room with stronger radiosity, walls brighter but with faint blotchy patches](/images/pastedGraphic-603.jpg)
 
 *Here, I’ve increased the radiosity intensity to 3.0 to increase the degree to which reflected light illuminates the room. This reveals another common issue with lighting interiors — blotchy artifacts from radiosity. At this point, I had already increased samples from 400 to 1000, reduced the Error from 0.15 to 0.1, and toggled Detail detection on. Reducing error further had no visible effect, so the other obvious option was to increase samples dramatically.*
 
-![](/images/pastedGraphic-604.jpg)
+![The same room rendered with 10,000 samples, walls smoothly lit without blotches](/images/pastedGraphic-604.jpg)
 
 *Increasing samples to 10,000 dramatically improved the blotches, but also increased rendering time by a factor of 10. The lesson here is increasing samples works, but wait until you’ve finished adjusting other parameters because render times will be very long.*
 
 **Artificial Light**
 
-![](/images/pastedGraphic-605.jpg)
+![Three light cones on black: a broad downward spread, a narrow beam, and a wide bright wash](/images/pastedGraphic-605.jpg)
 
 *Visualizations of different lights generated from their IES files.*
 

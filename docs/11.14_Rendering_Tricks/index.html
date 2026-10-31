@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.14_Rendering_Tricks.md">
 <!--{"parent": "11_Rendering.md", "order": 14}--><h1 id="rendering-tricks">Rendering Tricks</h1>
 <h2 id="render-to-layers">Render-to-Layers</h2>
@@ -57,8 +57,8 @@
 <h2 id="render-depth-layer">Render depth layer</h2>
 <p>Suppose that you want to perform some kind of post-processing effect on a rendered image based on depth. You can create a “depth” render by using a combination of flat black (or white) textures and judiciously configured white (or black) fog.</p>
 <p><img src="/images/pastedGraphic-614.jpg" alt="Normal render of a row of five spheres receding on a plane"></p>
-<figure><img src="/images/pastedGraphic-615.jpg" alt=""><figcaption>A scene rendered normally, then rendered a second time with every object assigned a solid black shader, and a Fog object added to the scene (set to “linear” and with density and start chosen to make the closest object black and the furthest white).</figcaption></figure>
-<figure><img src="/images/pastedGraphic-616.jpg" alt=""><figcaption>Now, I can use the second image as a (disabled) layer mask in Photoshop and perform a <strong>Lens Blur</strong> on the image, adjusting the amount of blur and the focus point as I see fit. Cheetah 3D supports depth of field renders, but this produces high quality results very quickly, and I can change the degree of blur in real time.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-615.jpg" alt="Depth render: the same spheres on a gradient, black up close fading to white in the distance"><figcaption>A scene rendered normally, then rendered a second time with every object assigned a solid black shader, and a Fog object added to the scene (set to “linear” and with density and start chosen to make the closest object black and the furthest white).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-616.jpg" alt="The spheres after Lens Blur, nearest and farthest out of focus and the middle ones sharper"><figcaption>Now, I can use the second image as a (disabled) layer mask in Photoshop and perform a <strong>Lens Blur</strong> on the image, adjusting the amount of blur and the focus point as I see fit. Cheetah 3D supports depth of field renders, but this produces high quality results very quickly, and I can change the degree of blur in real time.</figcaption></figure>
 <p><strong>Note</strong>: “Lens Blur” is a Photoshop filter designed specifically for simulating Bokeh (the blurring of out-of-focus elements in Photographs). You can achieve similar results using a combination of masking and Gaussian Blur in programs without this feature, but Lens Blur is a much better option (and easier to use, too).</p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
@@ -83,10 +83,10 @@
 </li>
 </ul>
 <p>Of these, Cheetah 3D handles the first with aplomb using radiosity while glare can be simulated using post-processing effects (e.g. “bloom” filters). </p>
-<figure><img src="/images/pastedGraphic-618.jpg" alt=""><figcaption>The initial image with the Core Image <strong>Stylize &gt; Bloom</strong> filter from Acorn applied to it to simulate glare.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-618.jpg" alt="Red neon sign spelling NEON on a dark wall, with a soft red glow around the tubes"><figcaption>The initial image with the Core Image <strong>Stylize &gt; Bloom</strong> filter from Acorn applied to it to simulate glare.</figcaption></figure>
 <p>The second item is the most problematic, since it requires volumetrics or post-processing fakery.</p>
 <p><img src="/images/pastedGraphic-619.jpg" alt="Mask render: the NEON sign in solid white on a solid black background"></p>
-<figure><img src="/images/pastedGraphic-620.jpg" alt=""><figcaption>The key to post-processing fakery is to be able to isolate elements. <strong>Top</strong>: I’ve attached a solid white shader to the sign, and a solid black shader to the background and rendered this image. I can now use this as a selection mask in Photoshop to drive a fake volumetric glow. <strong>Bottom</strong>: I’ve used this as a selection mask and then picked up that portion of the initial image, turned it into a new layer, blurred it, and changed its blend mode to Lighten.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-620.jpg" alt="The NEON sign with a blurred glow layer added, the tubes haloed in bright red"><figcaption>The key to post-processing fakery is to be able to isolate elements. <strong>Top</strong>: I’ve attached a solid white shader to the sign, and a solid black shader to the background and rendered this image. I can now use this as a selection mask in Photoshop to drive a fake volumetric glow. <strong>Bottom</strong>: I’ve used this as a selection mask and then picked up that portion of the initial image, turned it into a new layer, blurred it, and changed its blend mode to Lighten.</figcaption></figure>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">

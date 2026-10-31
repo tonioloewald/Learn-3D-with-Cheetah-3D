@@ -40,12 +40,12 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="14.4_Building_Blocks.md">
 <!--{"parent": "14_Particles.md", "order": 4}--><h1 id="building-blocks">Building Blocks</h1>
 <h2 id="dynamics-tags">Dynamics Tags</h2>
 <p><img src="/images/pastedGraphic-532.jpg" alt="Ball hanging from a rope spline knocking over stacks of blocks on a green ground plane"></p>
-<figure><img src="/images/pastedGraphic-533.jpg" alt=""><figcaption>The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball). The blocks are a collapsed particle mesh system with a dynamic rigidbody tag. The ground plane has a static rigidbody tag. The ball has a dynamic rigidbody tag.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-533.jpg" alt="Object browser: Sweep with Circle and Spline, Ball, Sky Light, Particle Mesh with Box, Plane, and Plane.1"><figcaption>The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball). The blocks are a collapsed particle mesh system with a dynamic rigidbody tag. The ground plane has a static rigidbody tag. The ball has a dynamic rigidbody tag.</figcaption></figure>
 <p>Objects which have Dynamics tags assigned to them will take part in dynamic Simulations. Objects which don’t, won’t. Because dynamic simulations can be memory and processor intensive, it’s a good idea not to apply Dynamics tags to things that won’t be moving or struck by other objects.</p>
 <p>Once an object has a Dynamics tag assigned, running a dynamic simulation will affect its behavior.</p>
 <h2 id="rigid-body">Rigid Body</h2>

@@ -46,23 +46,23 @@ Now **add a Radiosity tag to the same camera**. You need both a radiosity tag an
 
 By default, radiosity tags are set to Ambient Occlusion. Ambient occlusion is a far less sophisticated algorithm than radiosity (ambient occlusion simply attempts to make "nooks and crannies" darker). You'll want to **set your Radiosity tag to radiosity mode**, and you almost always want to check the detail detection setting.
 
-![](/images/DraggedImage-55.jpg)
+![Gray biplane on a plane, lit from one side, with a hard black shadow](/images/DraggedImage-55.jpg)
 
 _Single directional light (no radiosity)_
 
-![](/images/DraggedImage-56.jpg)
+![The same biplane render, its shadow slightly lightened by bounced light](/images/DraggedImage-56.jpg)
 
 _Single directional light (with radiosity)_
 
-![](/images/DraggedImage-57.jpg)
+![The same biplane under an area light, with soft, graduated shadows](/images/DraggedImage-57.jpg)
 
 _Single Area light (with radiosity)_
 
-![](/images/DraggedImage-58.jpg)
+![The same biplane under a sky light: warm pinkish ground, bluish shadows](/images/DraggedImage-58.jpg)
 
 _Sky light (with radiosity)_
 
-![](/images/DraggedImage-59.jpg)
+![The same biplane on a pale blue ground, with soft, diffuse shadows beneath it](/images/DraggedImage-59.jpg)
 
 _Image-based lighting (with radiosity)_
 
@@ -74,15 +74,15 @@ _Image-based lighting (with radiosity)_
 
 Sampling “all the light” coming towards a point is, of course, easier said than done. The simplest option is to use a “light probe”. (This technique was pioneered by ILM and Pixar for Terminator 2 — the liquid metal robot.) You take a mirrored ball, place it at the position you’re going to be rendering the object at, and then photograph it (perhaps several times to capture a “high dynamic range” image, and quite possibly shooting a reverse shot so you’ll have material to “paint out” the camera). The resulting circular image samples light in (theoretically) 360°, albeit increasingly inaccurately as you get to the edges (which are sampling light coming from the far side of the ball).
 
-![](/images/DraggedImage-60.jpg)
+![Mirrored-ball light probe reflecting a snowy road, trees, and a sunny blue sky](/images/DraggedImage-60.jpg)
 
 _A royalty-free image probe offered by PolySquared. (Royalty free is not the same as free — it means if you buy the image you can use it without making further payments.)_
 
-![](/images/DraggedImage-61.jpg)
+![Wide equirectangular panorama of an underground parking garage with an arched ceiling](/images/DraggedImage-61.jpg)
 
 _A garage panorama from openfootage.net, released under the Creative Commons license. It’s provided (for free) at 10k x 4k resolution._
 
-![](/images/DraggedImage-62.jpg)
+![Cross-shaped cubemap unfolding six views of an arcaded courtyard and sky](/images/DraggedImage-62.jpg)
 
 _An HDRI cubemap (or skybox) provided as an example here http://gl.ict.usc.edu/HDRShop/tutorial/tutorial4.html_
 

@@ -158,17 +158,17 @@ Also note that the “zoom” operation in fact moves the camera in and out ("do
 
 And, finally, note that 3D animators often use the same terminology as real-world film makers when describing camera moves. “Dolly” means moving the camera around on a wheeled platform. When you use the scroll gesture you are in fact "dollying" the camera and not “zooming” which would involve changing the camera’s field of view (or “focal length”) while staying fixed in position (and it would change the scene’s perspective dramatically). You may have heard of a trick attributed to Hitchcock (used in Vertigo) called the “reverse zoom” where you dolly in, or out, and zoom in the opposite direction to keep the subject fixed in size while the world around them changes. It’s a neat trick and totally doable in a 3D package like Cheetah 3D.
 
-![](/images/DraggedImage-75.jpg)
+![3D view menu open on Camera, listing Perspective, Front, Back, Left, Right, Top, and Bottom, over a biplane with an orbit arrow](/images/DraggedImage-75.jpg)
 
 _The menu at the top-left of the 3D view allows you to select views. The camera and perspective views are (usually) freely navigable. The front, back, left, right, top, and bottom views are orthographic (no perspective) views that cannot be rotated, so orbit and pivot don’t work in those views._
 
-![](/images/DraggedImage-76.jpg)
+![Camera properties with a Lock Parameter pop-up menu open over the camera icon](/images/DraggedImage-76.jpg)
 
 _It’s important to remember that when you’re in a camera view, changing the view moves the camera around (and undo won’t move it back). This is a bit annoying, and you may want to try to remember to work in perspective views unless you want to move the camera. You can also lock the camera by right-clicking its icon in the Properties Panel and selecting “Lock Parameter” to avoid accidentally messing up a camera._
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: does a “Lock Parameter” command still exist? Neither the manual nor the app's strings mention one. <!-- TODO verify -->
 
-![](/images/DraggedImage-77.jpg)
+![Pose tag properties with two saved poses, 45° view and profile, plus Update Pose and New Pose buttons](/images/DraggedImage-77.jpg)
 
 _Another trick suggested on the forums is to add a Pose tag to a camera and save a pose whenever you want to be able to restore a specific camera view. Once you get into this habit you have the best of both worlds — you can quickly move the camera around and make test renders, but you don’t lose views you want to keep._
 
@@ -210,7 +210,7 @@ Cheetah 3D offers a select tool which allows you to select objects (and edges, p
 
 The most commonly used tool in Cheetah 3D is the transform tool. This tool allows you to select things, and move, rotate, and scale whatever you have selected.
 
-![](/images/DraggedImage-80.jpg)
+![Transform tool on a selected cube: colored axis arrows, small boxes, and rotation rings around a central sphere](/images/DraggedImage-80.jpg)
 
 _The transform tool allows you to move, rotate, and scale your selection. Clicking and dragging on the arrows allows you to move (or “translate”) the selection in the x, y, or z direction; the boxes allow scaling along an axis; and the colored circles rotate around the corresponding axis._
 
@@ -258,13 +258,13 @@ And in Polygon mode there are tools for hiding selections (and revealing everyth
 
 While being able to navigate a 3D view is very useful, sometimes you want a more schematic view of what’s going on in your scene. The object browser allows you to see (and select) everything in your scene, including invisible objects.
 
-![](/images/DraggedImage-81.jpg)
+![Object browser listing Camera, Table, Light, and a Bowl with Subdivision nested under Table](/images/DraggedImage-81.jpg)
 
 _The object browser lets you see and select everything in your scene, including abstract things like modifiers, and things that aren’t visible (or aren’t in view)._
 
 It also shows the scene hierarchy, i.e. which objects “are parented to” or “belong” to other objects. The concept of hierarchies is very powerful in 3D graphics. They’re a bit like “grouping” in a vector drawing program but far more useful and flexible.
 
-![](/images/DraggedImage-82.jpg)
+![Cheetah 3D window with a table and bowl in the 3D view, Bowl nested under Table in the object browser](/images/DraggedImage-82.jpg)
 
 _Consider a table with a bowl on top of it. If you want to move the table, you probably want the bowl to come along with it. But if you want to rotate the bowl you probably don’t want to rotate the table. If you make the bowl a child of the table, this is exactly how things work._
 
@@ -276,7 +276,7 @@ If you find something in the object browser and want to see it in the 3D view (o
 
 Sometimes Cheetah 3D expects you to drag one or more items from the Object Browser to a list or “socket” in the Properties Panel. E.g. if you create a Particle Mesh object you need to tell it which mesh to use as its basis.
 
-![](/images/DraggedImage-83.jpg)
+![Particle Mesh properties with the empty Mesh socket, labeled Drag & Drop object, circled in orange](/images/DraggedImage-83.jpg)
 
 _The Particle Mesh object’s Properties panel includes a “socket” which you need to drag a mesh object into._
 

@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="4.17_Camera_Objects.md">
 <!--{"parent": "4_Just_Enough_to_be_Dangerous.md", "order": 17}--><h1 id="camera-objects">Camera Objects</h1>
 <p><img src="/images/DraggedImage-69.jpg" alt="Object Browser listing Camera and Camera.1, the active Camera&#39;s icon on a dark background"></p>
@@ -50,15 +50,15 @@
 <p><em>Camera in Cheetah 3D 7 using <strong>Cheetah</strong> renderer</em> The changes here reflect a lot of camera “tags” being integrated into the camera itself.</p>
 <p><img src="/images/Screen%20Shot%202016-12-01%20at%2011.14.12%20AM.jpg" alt="Renderer (Falcon) properties: Resolution, Samples, Ray depth bounces, Depth of field, Motion blur, and G-Buffer"></p>
 <p><em>Camera in Cheetah 3D 7 using <strong>Falcon</strong> renderer</em> The Falcon camera is a much simpler beast than the Cheetah camera, in large part because a lot of the hacky features of the Cheetah renderer “just work” via the new unbiased rendering model.</p>
-<figure><img src="/images/DraggedImage-70.jpg" alt=""><figcaption>Camera in Cheetah 3D 6</figcaption></figure>
+<figure><img src="/images/DraggedImage-70.jpg" alt="Cheetah 3D 6 camera properties: Projection, Render, Output resolution 640 by 480, and Background"><figcaption>Camera in Cheetah 3D 6</figcaption></figure>
 <blockquote>
 <p><strong>Note:</strong> the Cheetah 3D 6 camera screenshot can probably go. <!-- TODO editorial --></p>
 </blockquote>
 <p>The most important <strong>camera properties</strong> are:</p>
 <p><strong>Projection</strong> property — you can set the camera to render orthographic projections or panoramas.</p>
-<figure><img src="/images/Screen%20Shot%202016-12-01%20at%2011.12.20%20AM.jpg" alt=""><figcaption>You can see that the camera’s field of view is represented as a subtle outline in the camera view, a frustum (truncated pyramid) in other views, and shown numerically in the camera’s properties.</figcaption></figure>
-<figure><img src="/images/Screen%20Shot%202016-12-01%20at%2011.12.31%20AM.jpg" alt=""><figcaption>Here the field of view has been increased, which is exactly like <strong>zooming</strong> with a camera lens (except that Cheetah 3D has perfect optics, whereas real lenses have distortion, falloff, field curvature, chromatic aberration, and so forth).</figcaption></figure>
-<figure><img src="/images/Screen%20Shot%202016-12-01%20at%2011.13.00%20AM.jpg" alt=""><figcaption>Finally, here we’ve moved the camera towards the biplane along its own z-axis (by using the transform tool in Object mode)</figcaption></figure>
+<figure><img src="/images/Screen%20Shot%202016-12-01%20at%2011.12.20%20AM.jpg" alt="Camera view of a biplane beside a perspective view of the camera and its frustum, Field of view 20.0"><figcaption>You can see that the camera’s field of view is represented as a subtle outline in the camera view, a frustum (truncated pyramid) in other views, and shown numerically in the camera’s properties.</figcaption></figure>
+<figure><img src="/images/Screen%20Shot%202016-12-01%20at%2011.12.31%20AM.jpg" alt="Field of view raised to 63.0: the biplane small in the camera view, the frustum wider"><figcaption>Here the field of view has been increased, which is exactly like <strong>zooming</strong> with a camera lens (except that Cheetah 3D has perfect optics, whereas real lenses have distortion, falloff, field curvature, chromatic aberration, and so forth).</figcaption></figure>
+<figure><img src="/images/Screen%20Shot%202016-12-01%20at%2011.13.00%20AM.jpg" alt="Camera moved closer, Field of view 20.0: the biplane fills the camera view"><figcaption>Finally, here we’ve moved the camera towards the biplane along its own z-axis (by using the transform tool in Object mode)</figcaption></figure>
 <p><strong>Field of view</strong> — which is in degrees (a narrow field of view equates to a telephoto lens, while a wide field of view equates to a wide angle lens; many renders will look better if you narrow the field of view slightly from the default (try 10-30°).</p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>

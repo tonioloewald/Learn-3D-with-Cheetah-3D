@@ -24,7 +24,7 @@ Right now, CUDA is more mature (and several very good CUDA-based renderers are a
 
 ### Unbiased Rendering, Physically-Based Rendering
 
-![](/images/Screen%20Shot%202013-12-09%20at%2012.15.03%20PM.jpg)
+![Blender window with a noisy, partly converged Cycles render of a mouse astronaut figure](/images/Screen%20Shot%202013-12-09%20at%2012.15.03%20PM.jpg)
 
 _Blender's Cycles renderer in action_
 

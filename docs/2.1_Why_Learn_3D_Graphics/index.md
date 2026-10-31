@@ -18,7 +18,7 @@ Just as 2D graphics allow you to print anything you imagine on a 2D surface, 3D 
 
 For less than a hundred dollars you can convert a 3D model into a physical object using an online bureau service. For a few thousand a 3D model can be converted into moulds for manufacturing. For a few hundred dollars you can buy a device that can carve your 3D models out of wood, or “print” them in any number of materials. All these prices will likely be obsolete by the time you read this.
 
-![](/images/DraggedImage.jpg)
+![Two 3D-printed prosthetic hands in red and black plastic, with cords running along the fingers](/images/DraggedImage.jpg)
 
 _Prosthetic hands used to be so expensive that children would have to wait until they stopped growing to be fitted for them. 3d printers allow parents to inexpensively customize and print prosthetic hands as their child grows. [http://www.thingiverse.com/thing:92937](http://www.thingiverse.com/thing:92937)_ 
 

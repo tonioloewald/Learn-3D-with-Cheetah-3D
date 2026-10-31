@@ -2,7 +2,7 @@
 
 ## What is a mesh?
 
-![](/images/pastedGraphic-130.jpg)
+![Cheetah 3D window with a Box selected, its Properties showing sections, width, height, and length](/images/pastedGraphic-130.jpg)
 
 *The box is a mesh, but it’s not an editable mesh. Double-clicking on the box (or on most other objects) will convert the thing you double-click on into an editable version of what you see. (**Careful**: child meshes will be destroyed!)*
 
@@ -18,11 +18,11 @@ Some things aren’t meshes: e.g. lights (aside from area lights with **Visible 
 
 An **editable mesh** (often, confusingly, referred to as a "raw polygon object" in the online help) is a specific kind of mesh that the user can directly manipulate — moving, adding, or deleting points, edges, and faces, and directly edit UV maps.
 
-![](/images/pastedGraphic-131.jpg)
+![Object Browser listing Box, Editable Box, and Editable Box with Modifiers, which has Subdivision and Ring children](/images/pastedGraphic-131.jpg)
 
 *In the Object Browser view above, **Box** is a box. It isn’t an editable mesh. **Editable Box** is an editable mesh (you can move its pieces and UVs around, add and delete stuff to it, and so on). **Editable Box with Modifiers** is also editable, but the end result is not (although editing the box causes the end result to change).*
 
-![](/images/pastedGraphic-132.jpg)
+![Selected editable box drawn as a wire cage, surrounded by the ring of spheres its modifiers produce](/images/pastedGraphic-132.jpg)
 
 *Here is the **Editable Box with Modifiers** in the 3D view. (You can recreate it very easily by creating a box, making it editable, and adding Subdivision and Ring modifiers.) As you can see the box itself is editable, but the final mesh (a ring of balls) cannot be directly edited (although modifying the box itself will affect the final mesh).*
 

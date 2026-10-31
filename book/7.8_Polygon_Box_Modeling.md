@@ -38,7 +38,7 @@ To finish a polygon you simply pick the point you started with (after picking at
 
 It’s important to know that you should pick the points in **anticlockwise** order (as seen from the front/visible surface of the polygon).
 
-![](/images/pastedGraphic-133.jpg)
+![Box in point mode, black dots marking the existing vertices of its right half](/images/pastedGraphic-133.jpg)
 
 _**Helpful hint**: switch to point mode before creating a polygon so you’ll be able to see existing points more easily._
 
@@ -52,7 +52,7 @@ Fill Hole will produce no result (it will beep) or a very bad result if there ar
 
 #### Soft Selection and the Brush Tool
 
-![](/images/pastedGraphic-134.jpg)
+![Subdivided plane with a tall, smooth spike pulled up from its middle](/images/pastedGraphic-134.jpg)
 
 *Manipulating a mesh with “falloff”.*
 
@@ -78,7 +78,7 @@ Cover is instant. Extrude is modal. This makes Cover much more pleasant to use t
 
 ![Same box after Cover and scaling the polygon down, leaving a gap at the symmetry plane](/images/pastedGraphic-136.jpg)
 
-![](/images/pastedGraphic-137.jpg)
+![Same box after a zero-distance Extrude and scaling, the new polygon inset with its boundary edges kept](/images/pastedGraphic-137.jpg)
 
 *Here I want to pull more geometry out of a polygon in a symmetric model (a mesh with a Symmetry modifier) and the polygon is on the edge of the mesh. In the **middle** image you see the result of Cover followed by scaling down the polygon. At the **bottom** I first Extrude the polygon exactly zero distance (once I had the Extrude tool selected, I set it to Quantize 0.1 and then dragged the extrude out and back to exactly zero), and then I scaled the new polygon.*
 
@@ -96,11 +96,11 @@ The Shell tool allows you to turn single-sided surfaces into two-sided solids (a
 
 Ring Cut, Jigsaw, and Scalpel are all tools for adding new edges to a mesh.
 
-![](/images/pastedGraphic-140.jpg)
+![5 by 5 plane with dashed orange and blue lines tracing its edge loops in both directions](/images/pastedGraphic-140.jpg)
 
 *A plane with one of its quads split into two triangles showing the **edge loops** as dashed lines.*
 
-![](/images/pastedGraphic-141.jpg)
+![The same plane with two orange dashed loops and the red ring edges that join them](/images/pastedGraphic-141.jpg)
 
 *The same plane showing one of its rings and the two loops that it is derived from.*
 
@@ -118,7 +118,7 @@ When you select the ring cut tool **clicking on an edge**:
 
 ![Plane with a winding path of selected polygons for the Jigsaw tool to follow](/images/pastedGraphic-142.jpg)
 
-![](/images/pastedGraphic-143.jpg)
+![Plane after Jigsaw, a new line of edges running down the middle of the selected path](/images/pastedGraphic-143.jpg)
 
 *The jigsaw tool cut the path shown through the selected polygons.*
 
@@ -134,7 +134,7 @@ The tools do the same thing as the Transform tool with Orientation set to Normal
 
 ![Plane with a block of faces selected, before rotating them around an edge](/images/pastedGraphic-144.jpg)
 
-![](/images/pastedGraphic-145.jpg)
+![The selected faces folded up from the plane around an edge highlighted in purple](/images/pastedGraphic-145.jpg)
 
 *The selected faces are rotated around the edge (highlighted in purple in the **bottom** image).*
 
@@ -174,7 +174,7 @@ I’m not sure what **Optimize polygons** does (and the online help is no use he
 
 ![Cube with its top face selected, before applying Array](/images/pastedGraphic-148.jpg)
 
-![](/images/pastedGraphic-149.jpg)
+![Cube with a stack of ten copies of its top face rising above it](/images/pastedGraphic-149.jpg)
 
 *I’ve created an array of 1 x 10 x 1 copies of the selected face with a total offset of x = 0, y = 1, z = 0.*
 
@@ -188,7 +188,7 @@ Clone is like Array but only produces a “single row” of copies.
 
 ![Selected cap moved up without Disconnect, stretching the polygons below into a capsule shape](/images/pastedGraphic-151.jpg)
 
-![](/images/pastedGraphic-152.jpg)
+![Sphere with its top cap disconnected and moved up, leaving a clean gap and no stretched polygons](/images/pastedGraphic-152.jpg)
 
 *Here I select the top of a sphere (converted into an editable mesh first, of course) then — **middle** — I move the selection which stretches polygons bordering the selection. Oops! Finally — **bottom** — I use the Disconnect tool first then move the selection.*
 
@@ -198,7 +198,7 @@ Note that Disconnect is a modal tool that needs to be Applied (click OK in the T
 
 #### Crumple
 
-![](/images/pastedGraphic-153.jpg)
+![Plane mesh crumpled into a random, bumpy surface](/images/pastedGraphic-153.jpg)
 
 *A 10x10 plane converted to an editable mesh and crumpled with the default tool settings.*
 
@@ -208,7 +208,7 @@ Crumple randomly displaces the points in your mesh (based on the tool settings).
 
 ![Cube with three faces deleted, the remaining inner faces dark because they face away](/images/pastedGraphic-154.jpg)
 
-![](/images/pastedGraphic-155.jpg)
+![Open corner of a cube, two walls and a floor, with the remaining faces now facing inward](/images/pastedGraphic-155.jpg)
 
 *If you take a cube, delete three faces, then flip the remaining polygons, you have a little set to place things on.*
 
@@ -216,7 +216,7 @@ Flip normal reverses the winding order and thus flips the facing of selected pol
 
 #### Ruler
 
-![](/images/pastedGraphic-156.jpg)
+![Ruler on a crumpled plane: a point at X 0.000, Y 0.062, Z 0.200, distances 0.633 and 0.412, angle 57.5](/images/pastedGraphic-156.jpg)
 
 *When in ruler mode, mousing over a point will show you its exact position (in the selected coordinate system) and clicking on multiple points will show you the precise distances between them.*
 
@@ -226,7 +226,7 @@ The ruler allows you to see the precise position of points in global or local sp
 
 ![Dodecahedron with pentagonal faces before triangulation](/images/pastedGraphic-157.jpg)
 
-![](/images/pastedGraphic-158.jpg)
+![The dodecahedron after triangulation, each pentagon split into triangles](/images/pastedGraphic-158.jpg)
 
 *A dodecahedron before and after triangulation. (Because no polygons were selected the entire mesh was triangulated.)*
 
@@ -238,7 +238,7 @@ Generally you do not want to triangulate meshes, but there may be cases (e.g. Sy
 
 ![Subdivided cube with one top face selected, before Catmull-Clark Subdivide](/images/pastedGraphic-159.jpg)
 
-![](/images/pastedGraphic-160.jpg)
+![Cube whose selected top face has been subdivided into a round patch of small faces](/images/pastedGraphic-160.jpg)
 
 *Here I have selected one face and applied the Catmull-Clark Subdivision tool to it twice. This technique is sometimes suggested as a good way to put round holes in square faces, but there are better and more precise methods. I would suggest that unless you know exactly what you’re doing, don’t use these tools.*
 
@@ -264,7 +264,7 @@ Split breaks off your current selection into a new (separate) mesh. If your orig
 
 ![The cube after a linear bevel, with flat chamfers along the three edges](/images/pastedGraphic-162.jpg)
 
-![](/images/pastedGraphic-163.jpg)
+![The cube after a concave bevel, with curved, finely segmented grooves along the three edges](/images/pastedGraphic-163.jpg)
 
 *Starting with the three edges selected on the left, I perform a linear bevel with Level 0 or a Concave bevel with Level 10.*
 
@@ -272,7 +272,7 @@ Bevel is used to refine corners where two polygons meet by introducing new geome
 
 ![Subdivided box shown as a sphere inside its cage, with one cage edge selected](/images/pastedGraphic-164.jpg)
 
-![](/images/pastedGraphic-165.jpg)
+![Subdivided box after beveling cage edges, its rounded surface showing crisper ridges along them](/images/pastedGraphic-165.jpg)
 
 *Here we have a simple box with subdivision applied. By beveling the selected edges the curvature of the subdivided surface can be given more definition in a highly controlled way.*
 

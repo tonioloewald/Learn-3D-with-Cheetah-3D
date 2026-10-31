@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="5.1_Making_a_Mug.md">
 <!--{"parent": "5_Tutorials.md", "order": 1}--><h1 id="making-a-mug">Making a Mug</h1>
 <p><strong>Note</strong>: supporting files for this book, including the tutorials, can be found at <a href="http://loewald.com/c3dbook">loewald.com/c3dbook</a> (under <strong>tutorials</strong>).</p>
@@ -127,7 +127,7 @@
 <ol start="8">
 <li>With the Cylinder’s properties visible (click on the Cylinder icon/tab in the Properties panel if necessary), change its Sections longitudinal to 24, and its Sections height to 8. You’ll see that the wireframe displayed in the 3D view will change to match these new settings.</li>
 </ol>
-<figure><img src="/images/pastedGraphic-15.jpg" alt=""><figcaption>The cylinder with 8 height sections and a taper modifier applied to it. (If the cylinder only had one section, the curve of the taper would not show on the cylinder.)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-15.jpg" alt="Cylinder flaring toward its base under a taper modifier, its bounding box shown in pink and blue"><figcaption>The cylinder with 8 height sections and a taper modifier applied to it. (If the cylinder only had one section, the curve of the taper would not show on the cylinder.)</figcaption></figure>
 <ol start="9">
 <li><p>Now, we’re going to use a modifier to deform the cylinder to match our mug — we want it to taper towards the bottom. With the Cylinder selected, select <strong>Taper</strong> from the <strong>Modifier</strong> toolbar item. You should see a new icon appear inside (i.e. “as a child of”) the cylinder in the Object Browser, and the cylinder should become tapered, with an inward curve.</p>
 </li>
@@ -147,7 +147,7 @@
 <ol start="14">
 <li>If you orbit to look at the top or bottom of our cylinder, you’ll see a whole bunch of triangles. This is horrible to work with so we’re going to delete the top and bottom of our cylinder. From the top-left of the 3D view, switch to the Front view by selecting Front from the popup menu.</li>
 </ol>
-<figure><img src="/images/pastedGraphic-17.jpg" alt=""><figcaption>If you orbit to a nearly edge-on view you can use Area Select to quickly select the cap of the cylinder.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-17.jpg" alt="Gridded cylinder viewed edge-on, an orange Area Select box drawn around its top cap"><figcaption>If you orbit to a nearly edge-on view you can use Area Select to quickly select the cap of the cylinder.</figcaption></figure>
 <ol start="15">
 <li><p>Now, we want to marquee select the top of the mesh. First we need to be in Polygon mode. Click the Polygon mode item in the toolbar. Pick <strong>Selection &gt; Area Select</strong>, and then drag out a rectangle around the top of your mesh (you want to enclose the top edge of the mesh, and nothing else). You can switch back to the Camera view and orbit to verify you got the right polygons. If you have, press the delete key. (If somehow you delete the entire mug, undo, click on the mesh in the Object Browser, and then repeat this step.)</p>
 </li>
@@ -155,12 +155,12 @@
 </li>
 </ol>
 <p><strong>Note</strong> that you could do steps 14 and 15 entirely in the camera view if you orbit until the top or bottom is edge on or close to it. An experienced modeler can pretty much “live” in Camera or Perspective views, quickly orbiting to double-check operations.</p>
-<figure><img src="/images/pastedGraphic-18.jpg" alt=""><figcaption>Viewed from below, the bottom cap has been replaced with a single polygon using the Fill Hole tool.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-18.jpg" alt="Gridded cylinder from below, its base closed by a single flat polygon"><figcaption>Viewed from below, the bottom cap has been replaced with a single polygon using the Fill Hole tool.</figcaption></figure>
 <ol start="17">
 <li>Now we want to replace the bottom of the mesh with a nice polygon. Orbit so you can see the bottom reasonably well, pick <strong>Tools &gt; Polygon &gt; Fill Hole</strong> and click on one of the points around the bottom edge. Done!</li>
 </ol>
 <p><img src="/images/pastedGraphic-19.jpg" alt="Before: the open-topped mug mesh with single-sided walls and no thickness"></p>
-<figure><img src="/images/pastedGraphic-20.jpg" alt=""><figcaption>Before and after applying a Shell modifier to the mesh. This shows the Shell modifier’s default settings, which are thicker than we want.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-20.jpg" alt="After: the Shell modifier gives the mug walls a thick rim"><figcaption>Before and after applying a Shell modifier to the mesh. This shows the Shell modifier’s default settings, which are thicker than we want.</figcaption></figure>
 <ol start="18">
 <li>Our mug is <em>infinitely thin</em> right now — and in a game it would look really weird (try selecting Backface Culling from the Style menu at the top-left of the 3D view and orbiting it). With the mesh selected, pick <strong>Shell</strong> from the Modifier toolbar item then set the Shell modifier’s <strong>Offset</strong> to 0.05 (the default of 0.1 is a bit too thick). <strong>Make the mesh editable</strong> by double-clicking on its icon in the Object Browser. You might want to double-click on the mesh’s name and change it to “mug” at this point.</li>
 </ol>
@@ -173,18 +173,18 @@
 <li><p>Click on the <strong>Mode</strong> tag of the mug mesh and set its <strong>Editor shading</strong> to <strong>Wireframe</strong>.</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-21.jpg" alt=""><figcaption>Here’s the finished spline which will control the shape of the handle. Note how the position of the end points relative to the rows of polygons in the cup.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-21.jpg" alt="Front view of the wireframe mug with a curved green handle spline and its control handles beside it"><figcaption>Here’s the finished spline which will control the shape of the handle. Note how the position of the end points relative to the rows of polygons in the cup.</figcaption></figure>
 <ol start="3">
 <li><p>Click in the background or pick Selection &gt; Clear Selection (command-D by default) to deselect the mug mesh. Select <strong>Tools &gt; Spline &gt; Create Spline</strong>. Now click once roughly where we want the handle to start, again at the extreme edge of the handle’s curve, and once more where we want the handle to end. You should now have a really crappy spline. Note that we’re starting in the middle of the second row of polygons in the mug mesh from the top, and ending in the middle of second row from the bottom.</p>
 </li>
 <li><p>Go into <strong>Point</strong> mode. Select the <strong>Transform</strong> tool. Select All. Pick <strong>Tools &gt; Spline &gt; Soft Interpolation</strong>. Your spline now looks slightly less horrible. Move the points and control handles around. <strong>Note</strong>: each control point acts like a 3D point and needs to be clicked once to select it and then moved using the transform tool — you can’t just click and drag as in dedicated 2D drawing programs. Move the control points until you’re happy with the curve of your handle.</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-22.jpg" alt=""><figcaption>Here’s the squashed hexagon that will be the cross-section of the handle.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-22.jpg" alt="Small orange hexagon spline at the transform tool’s center, next to the wireframe mug"><figcaption>Here’s the squashed hexagon that will be the cross-section of the handle.</figcaption></figure>
 <ol start="5">
 <li>Now pick <strong>n-Edge</strong> from the Spline toolbar item. By default this will create a hexagon, which is exactly what we want. Set its radius to 0.1. Double-click it to make it editable. Then set its <strong>Type</strong> to <strong>Linear</strong>.</li>
 </ol>
-<figure><img src="/images/pastedGraphic-23.jpg" alt=""><figcaption>The sweep tool creates a 3D mesh by moving the profile (the Sweep creator’s first child) along the control spline (the second child).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-23.jpg" alt="Curved hexagonal tube swept along the handle spline beside the wireframe mug"><figcaption>The sweep tool creates a 3D mesh by moving the profile (the Sweep creator’s first child) along the control spline (the second child).</figcaption></figure>
 <ol start="6">
 <li><p>Select <strong>Sweep</strong> from the Creator toolbar item. Drag the hexagon into it, then drag the spline you created into it, so that the n-Edge (hexagon) is the first child and the Spline is the second child. You should see some geometry appear.</p>
 </li>
@@ -195,11 +195,11 @@
 </ol>
 <h2 id="joining-the-handle-to-the-mug">Joining the Handle to the Mug</h2>
 <p>We’re going to use Merge to bring the handle into the mug mesh, then we’re going to use the Bridge tool to join the handle to the mug.</p>
-<figure><img src="/images/pastedGraphic-24.jpg" alt=""><figcaption>One of the two edges we need to stretch. The Transform tool is lined up with the edge because its orientation is set to Normal, which allows us to scale the line using the green (y-axis) scaling widget.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-24.jpg" alt="Close-up of a mug edge being scaled with the transform tool, near the end of the handle"><figcaption>One of the two edges we need to stretch. The Transform tool is lined up with the edge because its orientation is set to Normal, which allows us to scale the line using the green (y-axis) scaling widget.</figcaption></figure>
 <ol>
 <li><strong>Select the mug mesh</strong> and switch to <strong>Edge</strong> mode. Select the edge that the top of the handle is pointing at, and then select the Transform tool. Change the Transform tool’s orientation to normal (so its y-axis lines up perfectly with the edge you’ve selected). Drag the green box to scale the edge so it’s about one and a half times as big. Repeat this for the edge that the bottom of the handle is pointing to and stretch it as well.</li>
 </ol>
-<figure><img src="/images/pastedGraphic-25.jpg" alt=""><figcaption>These are the hexagons we created by stretching the two edges, and which we’re going to delete to make holes so we can join the handle to the cup.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-25.jpg" alt="Mug mesh with two hexagonal patches, highlighted in red, where the handle ends meet the wall"><figcaption>These are the hexagons we created by stretching the two edges, and which we’re going to delete to make holes so we can join the handle to the cup.</figcaption></figure>
 <ol start="2">
 <li>By stretching the two edges <strong>you’ve created hexagons</strong> on the side of the mug mesh which the handle will join to. We’re going to delete these hexagons to leave two hexagonal holes. Switch to <strong>Polygon mode</strong>, and select the four polygons (quads) that make up these two hexagons — click one then shift-click the others — and press delete.</li>
 </ol>
@@ -215,7 +215,7 @@
 </ol>
 <p><img src="/images/pastedGraphic-27.jpg" alt="Close-up of the handle end beside the hexagonal hole in the mug wall, not yet bridged"></p>
 <p><img src="/images/pastedGraphic-28.jpg" alt="The handle end bridged to the hexagonal hole, joined smoothly into the mug wall"></p>
-<figure><img src="/images/pastedGraphic-29.jpg" alt=""><figcaption>Before and after we join the two surfaces using the bridge tool — clicking on corresponding points on the closed edges we’re going to join.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-29.jpg" alt="The whole mug with both ends of the handle bridged into its wall"><figcaption>Before and after we join the two surfaces using the bridge tool — clicking on corresponding points on the closed edges we’re going to join.</figcaption></figure>
 <ol start="5">
 <li>Now select the mug mesh again and go into <strong>Point mode</strong>. Now pick <strong>Tools &gt; Polygon &gt; Bridge</strong>. Click on one of the points around the upper hole in the side of the mug, then click on the corresponding point on the handle — it should bridge the gap perfectly. (If not, undo and try again.) Repeat for the lower hole and the bottom of the handle.</li>
 </ol>
@@ -232,15 +232,15 @@
 <li><p>We also want the edges of the rim, so pick Selection &gt; Loop Select and then shift-click on one edge on the outside of the rim, and one edge on the inside of the rim. You should now have four edge loops selected.</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-30.jpg" alt=""><figcaption>These are the edges we want to bevel. We selected the edges of the circular base and bottom of the interior by selecting the polygons then converting the selection to edges, then using the loop selector to select the two edges of the rim.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-31.jpg" alt=""><figcaption>After the bevel.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-30.jpg" alt="Mug from above with four edge loops selected in red: rim outside and inside, base, and inner bottom"><figcaption>These are the edges we want to bevel. We selected the edges of the circular base and bottom of the interior by selecting the polygons then converting the selection to edges, then using the loop selector to select the two edges of the rim.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-31.jpg" alt="Mug from above after the bevel, extra narrow rows of faces along the rim and bottom edges"><figcaption>After the bevel.</figcaption></figure>
 <ol start="5">
 <li><strong>We want to bevel these edges</strong> so that they’ll look good in the base mesh, and also provide finer control when the mesh is used as a subdivision control cage. So pick <strong>Tools &gt; Polygon &gt; Bevel</strong>. In the Bevel tool’s settings change the type to Convex and leave the Level at 2 (if it isn’t 2, change it to 2). Now click and drag in the 3d view (make sure not to mis-click — undo if you do) and carefully drag until the degree of beveling looks right, then click on the Transform tool in the toolbar to get out of the Bevel tool and avoid any accidents.</li>
 </ol>
 <blockquote>
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does the Bevel tool still show Type (Convex) and Level? The manual (Tools › Polygon › Bevel) lists only Subdivs and Quantize, although the app&#39;s strings still include Type, Convex, and Level. <!-- TODO verify --></p>
 </blockquote>
-<figure><img src="/images/pastedGraphic-32.jpg" alt=""><figcaption>Subdivision toggled back on.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-32.jpg" alt="Smooth subdivided mug with a rounded handle and the transform tool on its side"><figcaption>Subdivision toggled back on.</figcaption></figure>
 <ol start="6">
 <li>Now in the mesh’s <strong>Mode tag</strong> properties, <strong>toggle Modifier back on</strong> and admire your handiwork.</li>
 </ol>
@@ -258,7 +258,7 @@
 <li><p>If you switched to the Node view, go back to the <strong>3D view</strong>. Make sure you’re in <strong>Object mode</strong> and <strong>drag the new material onto your mug</strong>. (The reason we do this in Object mode is that if we’re in Polygon mode we’ll only apply the material to any polygons that happen to be selected, and we want to apply the material to the entire mesh.)</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-33.jpg" alt=""><figcaption>Using the UV Mapper to place a grid of polygons over the logo. (The little grey square in the bottom-right corner is all the other polygons — so the rest of the mug is the background color.)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-33.jpg" alt="UV editor with a red polygon grid over a cheetah-head logo, beside the 3D view of the mug with the logo applied"><figcaption>Using the UV Mapper to place a grid of polygons over the logo. (The little grey square in the bottom-right corner is all the other polygons — so the rest of the mug is the background color.)</figcaption></figure>
 <ol start="4">
 <li>Your mug should look pretty terrible. We need to fix the UV mapping. Switch to polygon mode, select the Select tool. In front view, select the central 4x2 quads you’re looking at by clicking and dragging across them with the mouse (this is called “painting a selection”). Now pick <strong>Selection &gt; Expand Selection</strong> twice (command-shift-X by default). You should now have a “square” of polygons selected.</li>
 </ol>

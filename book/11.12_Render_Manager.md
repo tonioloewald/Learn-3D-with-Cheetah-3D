@@ -16,7 +16,7 @@ If you want to get at the Render History yourself, simply go to Finder and selec
 
 As of Mac OS X 10.7 (Lion) the Library is “invisible” under normal circumstances. (If you’re a power user you can get around this, but normally you won’t see it.) Even so, when you go to this path, Finder will cheerfully show you the Cheetah3D directory in Application Support which is where you’ll find the Render History folder and other useful things such as the Scripts folder.
 
-![](/images/pastedGraphic-590.jpg)
+![Finder window of the Cheetah3D folder: a hidden file plus Brushes, Materials, Render History, and Scripts folders](/images/pastedGraphic-590.jpg)
 
 *This is what the Cheetah3D folder in Application Support looks like. I’ve tweaked my system settings so that invisible files (such as .DS\_Store) are visible — you probably won’t see those.*
 

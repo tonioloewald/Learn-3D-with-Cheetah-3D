@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.15_Baking_Materials.md">
 <!--{"parent": "11_Rendering.md", "order": 15}--><h1 id="baking-materials">Baking Materials</h1>
 <p>Originally, baking was used to precalculate the lighting of settings for 3D action games (<em>Quake</em> pioneered this technique). Back in the late-90s, calculating shadows on-the-fly was simply impractical for inexpensive computer hardware, so id Software decided to “bake” lightmaps for their scenes. This allowed a game engine to render settings with elaborate lighting almost as quickly as a “flat” 3D scene.</p>
@@ -62,7 +62,7 @@
 <li><p>Now (with the mesh still selected) click the Bake toolbar icon again (the toolbar item adds a Bake Texture tag to a mesh if it doesn’t have one, and bakes the mesh if it does).</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-577.jpg" alt=""><figcaption>Baked materials generally look weird. This is the baked texture for the castle shown previously.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-577.jpg" alt="Baked texture map: a gray sheet packed with scattered red, black, and tan fragments"><figcaption>Baked materials generally look weird. This is the baked texture for the castle shown previously.</figcaption></figure>
 <ol start="6">
 <li>You should see a really funky image rendered. This is a new texture for your model, but it will only work with the newly baked UV2 UV map.</li>
 </ol>
@@ -73,21 +73,21 @@
 <li><p>Create a new material for your mesh, and drag it onto your mesh.</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-578.jpg" alt=""><figcaption>By default, your mesh will be using UV set 1 (a.k.a. UV1) and thus when you assign an image-based material to it that uses UV set 2 it will look horrible!</figcaption></figure>
+<figure><img src="/images/pastedGraphic-578.jpg" alt="Castle in the viewport covered in a jumbled patchwork of baked texture fragments"><figcaption>By default, your mesh will be using UV set 1 (a.k.a. UV1) and thus when you assign an image-based material to it that uses UV set 2 it will look horrible!</figcaption></figure>
 <ol start="3">
 <li>Add an image texture for the new material’s diffuse channel (ideally we’d use a Solid shader here, but Solid shaders do not preview correctly) and load the rendered image into it. Your mesh will probably look like crap right now!</li>
 </ol>
 <p><img src="/images/pastedGraphic-579.jpg" alt="Castle polygon object properties with UV set changed to UV2, circled"></p>
 <p><img src="/images/pastedGraphic-580.jpg" alt="Castle in the viewport with the baked texture applied via UV2, front view"></p>
 <p><img src="/images/pastedGraphic-581.jpg" alt="Castle in the viewport with the baked texture, seen from another angle with baked shadows"></p>
-<figure><img src="/images/pastedGraphic-582.jpg" alt=""><figcaption>Once you set the mesh to use UV2 it should look amazing, from any angle! This is how the model looks in the Cheetah 3D viewport.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-582.jpg" alt="Castle in the viewport with baked colors and shadows: red cone roofs and brown walls"><figcaption>Once you set the mesh to use UV2 it should look amazing, from any angle! This is how the model looks in the Cheetah 3D viewport.</figcaption></figure>
 <ol start="4">
 <li>Click on the mesh’s icon (either in the property panel or the Object Browser) so you can see its properties, and change its UV Set to 2. It should look amazing now (try orbiting around it). For an even better result, you can turn off all the lights in your scene, and add a single ambient light.</li>
 </ol>
 <p><strong>Baking Procedural Materials</strong></p>
 <p><img src="/images/pastedGraphic-583.jpg" alt="Render of the castle with procedural cobbles, terracotta walls, and shingled roofs"></p>
 <p><img src="/images/pastedGraphic-584.jpg" alt="Viewport preview of the castle using the baked 2048x2048 texture"></p>
-<figure><img src="/images/pastedGraphic-585.jpg" alt=""><figcaption><strong>Top</strong>: the same castle, but now it’s been textured with procedural materials, including procedural cobbles on the ground, procedural terracotta on the walls, and procedural shingles on the roofs. <strong>Middle</strong>: the same castle after baking a 2048x2048 texture and previewing it. <strong>Bottom</strong>: zoomed in showing how detailed the final texture is.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-585.jpg" alt="Close-up of the baked castle: yellow plaster walls and red roof tiles with shadows"><figcaption><strong>Top</strong>: the same castle, but now it’s been textured with procedural materials, including procedural cobbles on the ground, procedural terracotta on the walls, and procedural shingles on the roofs. <strong>Middle</strong>: the same castle after baking a 2048x2048 texture and previewing it. <strong>Bottom</strong>: zoomed in showing how detailed the final texture is.</figcaption></figure>
 <p><strong>Baking Tiling Textures from Procedural Textures</strong></p>
 <p>You can use the preceding technique to create a tiling image from a procedural texture using a torus. A torus has the wonderful property of having a perfectly tiling UV map. This allows a torus to create a perfect tiling pattern from any solid procedural texture.</p>
 <p>There is a downside to this — in order to prevent distortion of the resulting material you need to make the Radius Ring significantly larger than Radius tube, but this means the baked material will tile perfectly well but will be vertically stretched.</p>

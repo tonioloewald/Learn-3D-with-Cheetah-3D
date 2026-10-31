@@ -4,7 +4,7 @@
 
 ![Dusk render of a hexagonal sea platform with a smoking fire and a delta-wing aircraft overhead](/images/DraggedImage-63.jpg)
 
-![](/images/DraggedImage-64.jpg)
+![Overhead render of a city of skyscrapers with an orange flying saucer among the towers](/images/DraggedImage-64.jpg)
 
 _What do these two scenes have in common? Each is lit by a single Sky Light._
 
@@ -16,7 +16,7 @@ A quick and simple way of producing quite nice results is simply to add a Sky Li
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: does Background also make the sky appear in reflections, as the old Geometry property did? <!-- TODO verify -->
 
-![](/images/DraggedImage-65.jpg)
+![Shiny hemisphere on a pale plane, a black band reflected around its lower edge](/images/DraggedImage-65.jpg)
 
 _The Sky Light’s geometry assumes everything below the horizontal plane is pitch black, which is a bit of a shortcoming since the one thing the ground won’t be is pitch black._
 

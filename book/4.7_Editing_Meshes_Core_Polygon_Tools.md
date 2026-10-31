@@ -8,13 +8,13 @@
 
 ![Subdivided box with two faces selected in red, before using cover](/images/DraggedImage-10.jpg)
 
-![](/images/DraggedImage-11.jpg)
+![After cover: the selected faces pulled out from the box’s corner as a new block of geometry](/images/DraggedImage-11.jpg)
 
 _Using **cover**. I have the transform tool selected and select two faces, then select cover (Tools \> Polygon \> Cover), then simply move the selected faces — new geometry has been created “covering” the boundary of my selection. Note that you’ll find cover the single most useful tool for polygon modeling — I map it to the C key, so in fact I simply selected some polygons, pressed C, and dragged out the new geometry._
 
 ![Subdivided box with new faces covered out from a selection of edges](/images/DraggedImage-12.jpg)
 
-![](/images/DraggedImage-13.jpg)
+![After cover on edges: a new open strip of faces pulled out from the box’s edge selection](/images/DraggedImage-13.jpg)
 
 _Unlike extrude, cover works just fine for **edges**. When in edge mode you’re defining the boundary that gets “covered”._
 
@@ -32,7 +32,7 @@ Picking Extrude, in contrast, activates the Extrude Tool which is a bit weird �
 
 ![Three contiguous quads wrapping a corner, selected in red, before inner extrude](/images/Screen%20Shot%202014-07-06%20at%204.32.01%20PM.jpg)
 
-![](/images/Screen%20Shot%202014-07-06%20at%204.32.12%20PM.jpg)
+![After inner extrude: the three selected quads inset, each ringed by a border of new faces](/images/Screen%20Shot%202014-07-06%20at%204.32.12%20PM.jpg)
 
 _In this example I’ve selected three contiguous quads (that go around corners) and used inner-extrude to create an inset collection of faces. This can be really useful (e.g. if modeling windows), and you can’t do this kind of thing (easily) with any other tool._
 
@@ -40,7 +40,7 @@ Inner extrude also works on edges, essentially building out geometry from the se
 
 ![Series of edges selected in red on a box, before inner extrude](/images/Screen%20Shot%202014-07-06%20at%204.34.29%20PM.jpg)
 
-![](/images/Screen%20Shot%202014-07-06%20at%204.34.38%20PM.jpg)
+![After inner extrude: a ring of new faces built along both sides of the selected red edges](/images/Screen%20Shot%202014-07-06%20at%204.34.38%20PM.jpg)
 
 _Here I’ve selected a series of edges and then used inner extrude to create a “ring” of geometry around them. This technique can be used (much like beveling) to control the curvature of subdivision surfaces, and also to create new “edge loops” when modeling characters._
 
@@ -48,7 +48,7 @@ Finally, **inner extrude works on vertices**. This is particularly useful for pu
 
 ![Single corner vertex selected in red on a box, before inner extrude](/images/Screen%20Shot%202014-07-06%20at%204.43.44%20PM.jpg)
 
-![](/images/Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg)
+![After inner extrude: a diamond-shaped loop of new edges around the selected corner vertex](/images/Screen%20Shot%202014-07-06%20at%204.43.51%20PM.jpg)
 
 _Here I’ve picked a vertex on a corner (because I can!) and used inner extrude to create a loop of geometry around it, which I could easily turn into a hole by deleting the original vertex._
 
@@ -88,7 +88,7 @@ Fill hole is simple and useful. If you have a hole in a mesh surface you can use
 
 ![Subdivided box with an irregular hole cut into one face, before Fill Hole](/images/DraggedImage-18.jpg)
 
-![](/images/DraggedImage-19.jpg)
+![After Fill Hole: the box’s face closed again by one irregular, non-convex polygon](/images/DraggedImage-19.jpg)
 
 _Fill Hole before and after. I selected Tools \> Polygon \> Fill Hole and then clicked a point on the edge of the hole. Note that the hole gets filled by a single polygon (and that polygon is neither convex nor a quad in this case, which can definitely spell trouble if not corrected)._
 
@@ -126,7 +126,7 @@ Compare the bottom-right quad across these three (symmetric) meshes. The middle 
 
 ![Head base mesh with non-quads around the mouth edge loop selected in red](/images/DraggedImage-23.jpg)
 
-![](/images/DraggedImage-24.jpg)
+![Head base mesh after the scalpel cuts, new edges around the mouth loop turning its non-quads into quads](/images/DraggedImage-24.jpg)
 
 _Here I’m building out the base topology for a head, and I’ve created an edge-loop around what will be the character’s mouth. On the left, the non-quads I’ve created have been selected and are highlighted. On the right, using the scalpel tool I cut two new edges and then used point-slide to make the quads less distorted, resulting in all of the resulting faces becoming quads. This is a very common operation in character animation — creating edge loops and cleaning up the resulting non-quads using the scalpel._
 

@@ -20,7 +20,7 @@ Let’s take the example of irregular cobblestones.
 
 If you look at the various procedural textures, voronoi has some very promising looking options.
 
-![](/images/pastedGraphic-327.jpg)
+![Two Voronoi nodes: left previews grey cells with dark edges, right previews soft white blobs on grey](/images/pastedGraphic-327.jpg)
 
 *Two Voronoi texture nodes side-by-side. The one on the left has everything set to default values. It kind of looks like greyish cobbles with black mortar already. On the right is a Voronoi with type set to F1, which looks nice for creating some kind of blobby organic cellular thing.*
 
@@ -30,17 +30,17 @@ The first thing we want is to make the division between cobble and mortar sharpe
 
 I’ve tweaked the gradient node so that the cobbles tend to be solid white and the mortar tends to be solid black. Now I can use this as a “selector” to pick between two different inputs.
 
-![](/images/pastedGraphic-329.jpg)
+![Voronoi into Gradient into the Mix input of a Mix node choosing between brown and red Colors, feeding Material diffuse](/images/pastedGraphic-329.jpg)
 
 *The Mix node uses a value between 0 and 1 to select between two inputs. In this case we’re using flat colors and passing the result to the diffuse channel of our shader.*
 
-![](/images/pastedGraphic-330.jpg)
+![Same graph with a second Gradient from the Voronoi feeding the Material's bumpmap input](/images/pastedGraphic-330.jpg)
 
 *Now I use a slightly different gradient node to produce a nice bump map.*
 
 We can refine this material endlessly. The mix node could be selecting between two different textures instead of simple colors. Similarly the gradient node generating the bump map could itself drive a mix node selecting between two bump maps (one for the mortar and one for the stone)
 
-![](/images/pastedGraphic-331.jpg)
+![Rusted Steel graph: Turbulence and Gradient driving two Mix nodes and a Multiplyadd into diffuse, reflection, and bumpmap](/images/pastedGraphic-331.jpg)
 
 *The “Rusted Steel” material (which I believe comes bundled with Cheetah 3D) is a good example of this technique.*
 
@@ -58,7 +58,7 @@ Spatial orientation is great for doing things like terrain shaders (e.g. snow an
 
 An orientation is represented by a normal. You can measure how similar a surface’s orientation is to a given normal by calculating its dot product with the surface’s normal.
 
-![](/images/pastedGraphic-332.jpg)
+![State node's Normal and a green Vector node feeding a Dotprod node, whose preview is black with a lit top](/images/pastedGraphic-332.jpg)
 
 *Here we visualize the dot product of the surface normal (on the default sphere) and a normal pointing straight up (0,1,0) — which corresponds to green (hence the vector constant is displayed as a green ball).*
 
@@ -66,13 +66,13 @@ An orientation is represented by a normal. You can measure how similar a surface
 
 *But the real news is the dot product, which looks kind of like a bit of snow on a black ball. Neat huh?*
 
-![](/images/pastedGraphic-333.jpg)
+![Dotprod output through a Gradient into Material diffuse, previewing a black sphere with a white cap](/images/pastedGraphic-333.jpg)
 
 *So now we refine our dot product using a gradient to sharpen the cutoff from snow to no snow. A quick test render shows we need to change the cutoff a bit, but the real problem is that our shader puts “snow” in the valleys as well as on the peaks.*
 
 ![Terrain and hemisphere rendered with the snow material, almost entirely white](/images/pastedGraphic-334.jpg)
 
-![](/images/pastedGraphic-335.jpg)
+![Terrain and hemisphere rendered with snow on flatter areas and dark patches on steep slopes](/images/pastedGraphic-335.jpg)
 
 *Changing the gradient can determine how horizontal a surface needs to be to be covered in snow, and how sharp the cut-off is.*
 
@@ -86,47 +86,47 @@ The state node gives you an interesting output channel called I•N — the dot 
 
 If I feed I•N straight into the transparency input of my shader node, I get a pretty weird kind of material. (I’ve also set its refractive index to 1.0.)
 
-![](/images/pastedGraphic-337.jpg)
+![Cube, cylinder, sphere, and open box rendered see-through in the center and opaque grey at the edges on cyan](/images/pastedGraphic-337.jpg)
 
 *Here’s a rendering of some test objects with this weird material.*
 
 This may seem peculiar, but it’s actually exactly what the fresnel checkbox does to transparency. The difference is that it does a similar (but opposite) thing to reflection.
 
-![](/images/pastedGraphic-338.jpg)
+![State I-N into a Subtract node feeding reflection, and straight into transparency, giving a glassy Material preview](/images/pastedGraphic-338.jpg)
 
 *Here I’ve simply flipped I•N (by subtracting it from 1) and used that as the reflection channel, and the result is exactly like checking the “fresnel” box. It would look like glass if I hadn’t set the refractive index to 1.0.*
 
-![](/images/pastedGraphic-339.jpg)
+![State node's Normal and Eye outputs wired into a Dotprod node, previewing a sphere bright in the center](/images/pastedGraphic-339.jpg)
 
 *It’s worth noting that I•N is exactly the same as taking the dot product of the Eye and Normal output channels. If you want to drive a material based on the viewing angle itself, then you can simply use the Eye vector.*
 
 Now for a really interesting experiment, we’ll use the Eye vector to drive a shader that can produce a procedural background environment. (Ever wanted to be able to completely customize the reflected background the Skylight produces?)
 
-![](/images/pastedGraphic-340.jpg)
+![State node's Eye output and a black Vector node wired into a Dotprod node, previewing a mostly black sphere](/images/pastedGraphic-340.jpg)
 
 *We start by taking the Eye vector from the State node and dot multiplying it with the down vector (0,-1,0). (The eye vector points from the point being rendered to the camera, so you can see the bottom of the sphere gets slightly green because the direction from the bottom of the sphere to the camera is slightly upward.)*
 
 *This dot product will be 1 for things directly above the camera and –1 for things below the camera and 0 for things level with the camera (i.e. the horizon). Note that these calculations are made in global space so rotating the camera will not change them.*
 
-![](/images/pastedGraphic-341.jpg)
+![Dotprod output passing through a Multiply node then an Add node, whose preview is mid grey](/images/pastedGraphic-341.jpg)
 
 *To select from a gradient we want a value in [0,1] not [-1,1] so we multiply by 0.5 and then add 0.5. (Sorry, math.)*
 
-![](/images/pastedGraphic-342.jpg)
+![Add output into a Gradient feeding Material emissive, previewing blue sky above brown ground](/images/pastedGraphic-342.jpg)
 
 *This value then selects from a gradient which lets us control the color of the sky, the horizon, and the ground beneath our feet and the severity of the cutoffs between them. This then feeds into emission (diffuse and specular are set to black).*
 
-![](/images/pastedGraphic-343.jpg)
+![Gradient feeding the emissive input of a Solid node with the same blue sky and brown ground](/images/pastedGraphic-343.jpg)
 
 *Even simpler, I could use a Solid Shader node.*
 
-![](/images/pastedGraphic-344.jpg)
+![Larger graph: a second Vector and Dotprod drive Gradients and Mix nodes adding a sun color and intensity to the Solid node](/images/pastedGraphic-344.jpg)
 
 *Now this is getting complicated.*
 
 *I’ve made the material even more complicated in order to put a “sun” into the sky. I’ve used a second vector to represent the direction to the sun, then I dot product the Eye vector with that to get a “sunwardness” value which I tweak with two different gradients, one to select between background color and sun color, and one to select between background intensity and sun intensity (I want the sun to be super bright).*
 
-![](/images/pastedGraphic-345.jpg)
+![Reflective ball on a cyan background, blue sky reflected in its upper half and brown ground below](/images/pastedGraphic-345.jpg)
 
 *And here’s a steel ball rendered with the new procedural background. (The sphere has a render tag on it that prevents it from casting shadows or being visible in primary rays. If I wanted it to be rendered as the background, I’d switch visible in primary rays back on.)*
 
@@ -134,25 +134,25 @@ Now for a really interesting experiment, we’ll use the Eye vector to drive a s
 
 So let’s suppose we’re creating a simple-minded terrain shader based on altitude. High bits are white (covered in snow) and low bits are covered in grass with the bits in between being brown.
 
-![](/images/pastedGraphic-346.jpg)
+![State Position into Vec2Float, its Y output into a Gradient previewing green below and brown above](/images/pastedGraphic-346.jpg)
 
 *We pull the position and pull out the y coordinate. (This is position in local coordinate space, so we want our object’s geometry to sit between y=0 and y=1 or the y value will “blow out”.) I feed this into a gradient (you don’t see any white because the sphere only gets up to y=0.5).*
 
-![](/images/pastedGraphic-347.jpg)
+![Terrain from above at an angle, green lowlands, orange slopes, and white-capped peaks](/images/pastedGraphic-347.jpg)
 
 *Here’s our simple test terrain (carefully scaled so the top of the highest mountains lie at y=1 in its local coordinate space) with this material applied. It doesn’t look too bad for such a simple material… until you see it side-on.*
 
-![](/images/pastedGraphic-348.jpg)
+![Terrain seen nearly side-on, color bands forming flat horizontal stripes across the mountains](/images/pastedGraphic-348.jpg)
 
 *Not quite side-on and it already looks way too regular. So what we want to do is make the way the terrain changes with altitude a little random, so we’re going to offset the y coordinate we’re using with a little noise.*
 
-![](/images/pastedGraphic-349.jpg)
+![Turbulence through a Multiply node added to Vec2Float's Y output before the Gradient](/images/pastedGraphic-349.jpg)
 
 *So I simply add a turbulence texture node, multiply its output by 0.1, and then add that to the y value before filtering it through the gradient. Here’s the result.*
 
 ![Side view of the terrain with noise added: green lowlands, orange slopes, and white peaks](/images/pastedGraphic-350.jpg)
 
-![](/images/pastedGraphic-351.jpg)
+![Terrain from above with noise added, irregular edges between green, orange, and white](/images/pastedGraphic-351.jpg)
 
 *As you can see we now have nice fractal jiggles in the transitions between the different terrain colors.*
 

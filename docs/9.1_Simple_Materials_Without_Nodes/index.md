@@ -6,7 +6,7 @@
 
 ![Properties panel for a new material: diffuse, specular, reflection, transparency, emissive, and bump mapping settings](/images/pastedGraphic-239.jpg)
 
-![](/images/pastedGraphic-240.jpg)
+![Glossy white elephant in a plain grey room](/images/pastedGraphic-240.jpg)
 
 *When you create a new material and select it, its Properties panel will look something like this (**top**). On the **bottom** is a simple test model in a simple environment, both with the default material assigned.*
 
@@ -22,7 +22,7 @@ To create various simple materials, here’s a quick guide to how to adjust thes
 
 ![Material Properties panel with diffuse set to red and specular set to black](/images/pastedGraphic-241.jpg)
 
-![](/images/pastedGraphic-242.jpg)
+![Flat, intensely red elephant in a pastel checkered room](/images/pastedGraphic-242.jpg)
 
 *A flat red material. You don’t need to do anything with nodes to make this material. Simply create a new material and set its diffuse color to red and its specular color to black. If you’re wondering why this object looks so eerie in the test render, it’s because real world objects are never this intensely red. Generally, to make things look more realistic you need to make their colors a bit “murky” (darker and less saturated).*
 
@@ -154,7 +154,7 @@ The Fractal texture causes variation in the color of the material, while the Vor
 
 #### Simple, Image-Based Materials
 
-![](/images/pastedGraphic-252.jpg)
+![Elephant covered in a jumbled, distorted pastel test pattern](/images/pastedGraphic-252.jpg)
 
 *This material was created using a simple test pattern. It’s a total mess on the elephant because it isn’t properly UV-mapped. All of the other materials so far (including the procedural wood and marble) don’t use UV-maps, and thus don’t rely on the underlying mesh having proper UV-maps.*
 
@@ -172,7 +172,7 @@ The Fractal texture causes variation in the color of the material, while the Vor
 
 **The most versatile Shader in Cheetah 3D is the Material Shader**. All of the simple materials we’ve discussed in the previous section have been created with it. Most of the other shaders are simplified versions of the Material Shader that are specialized for handling one kind of material.
 
-![](/images/pastedGraphic-253.jpg)
+![Material node with a preview sphere and input sockets from diffuse to bumpmap](/images/pastedGraphic-253.jpg)
 
 *The material shader node is your friend.*
 
@@ -184,7 +184,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Elephant with a bright red diffuse color](/images/pastedGraphic-254.jpg)
 
-![](/images/pastedGraphic-255.jpg)
+![Glossy greenish-grey elephant](/images/pastedGraphic-255.jpg)
 
 *Diffuse set to bright red (**top**) and a greenish-grey (**bottom**).*
 
@@ -192,7 +192,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Grey elephant with the default white specular, showing a bright highlight](/images/pastedGraphic-256.jpg)
 
-![](/images/pastedGraphic-257.jpg)
+![Matte grey elephant with no specular highlight](/images/pastedGraphic-257.jpg)
 
 *On the **top** is the default material (which has specular set to white). On the **bottom**, specular has been set to black.*
 
@@ -202,7 +202,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Dark elephant with small, sharp specular highlights at size 80](/images/pastedGraphic-258.jpg)
 
-![](/images/pastedGraphic-259.jpg)
+![Dark elephant with broader, softer highlights at size 20](/images/pastedGraphic-259.jpg)
 
 *Specular size set to 80.0 (**top** — the default value) and 20 (**bottom**). Yes, the greater the specular size the smaller and sharper the highlight.*
 
@@ -210,7 +210,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Elephant with light grey reflection, mirroring the checkered room](/images/pastedGraphic-260.jpg)
 
-![](/images/pastedGraphic-261.jpg)
+![Pinkish elephant with dark red reflections of the room](/images/pastedGraphic-261.jpg)
 
 *At **top**, reflection set to light grey. At **bottom**, reflection set to dark red.*
 
@@ -218,7 +218,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Mirror-like elephant with sharp reflections at reflection blur 0.0](/images/pastedGraphic-262.jpg)
 
-![](/images/pastedGraphic-263.jpg)
+![Mirror-like elephant with softened, blurred reflections at 0.2](/images/pastedGraphic-263.jpg)
 
 *Reflection blur 0.0 (**top** — default value) and 0.2 (**bottom**).*
 
@@ -230,7 +230,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Glass elephant at index of refraction 1.1, with gentle distortion](/images/pastedGraphic-265.jpg)
 
-![](/images/pastedGraphic-266.jpg)
+![Glass elephant at index of refraction 1.5, strongly distorting the room behind](/images/pastedGraphic-266.jpg)
 
 *Glass material with index of refraction set to 1.0 (**top**), 1.1 (**middle**), and 1.5 (**bottom** — the default)*
 
@@ -238,7 +238,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Glass elephant with crisp, unblurred refraction at transparency blur 0.0](/images/pastedGraphic-267.jpg)
 
-![](/images/pastedGraphic-268.jpg)
+![Frosted glass elephant with blurred refraction at transparency blur 0.2](/images/pastedGraphic-268.jpg)
 
 *Glass material with transparency blur set to 0.0 (**top** — the default) and 0.2 (**bottom**).*
 
@@ -246,7 +246,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Elephant glowing a light pinkish red from its red emissive color](/images/pastedGraphic-269.jpg)
 
-![](/images/pastedGraphic-270.jpg)
+![Solid bright red elephant with a specular highlight, glowing evenly](/images/pastedGraphic-270.jpg)
 
 ***Top**: emissive is set to bright red; **bottom**: the diffuse color is set to bright red as well.*
 
@@ -254,7 +254,7 @@ To answer this question, the shader needs a bunch of additional information, som
 
 ![Voronoi node's Color output wired to the bumpmap input of a Material node](/images/pastedGraphic-271.jpg)
 
-![](/images/pastedGraphic-272.jpg)
+![Grey elephant with a fine, bumpy cellular texture on its surface](/images/pastedGraphic-272.jpg)
 
 *Default material with diffuse set to medium grey and Voronoi texture node’s color output applied to bumpmap.*
 

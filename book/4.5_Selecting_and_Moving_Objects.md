@@ -28,7 +28,7 @@ The transform tool has three kinds of widgets associated with it. For each axis 
 
 The sphere in the center is referred to in the documentation as the “gadget”, and it’s quite weird and wonderful.
 
-![](/images/Screen%20Shot%202014-07-06%20at%206.16.20%20PM.jpg)
+![Transform tool on a cube with all three rotation rings highlighted around the central gadget sphere](/images/Screen%20Shot%202014-07-06%20at%206.16.20%20PM.jpg)
 
 _The last tool used was a ring (see how the rings are highlighted) which means the gadget tool is in free rotate mode._
 
@@ -36,7 +36,7 @@ First of all, based on which other gadget was last used (cone, cube, or ring) it
 
 ### Gadget Mode
 
-![](/images/DraggedImage-7.jpg)
+![Cube with its top face selected, a cyan gadget at the center, and one top edge highlighted in cyan](/images/DraggedImage-7.jpg)
 
 _We’re in gadget mode (you can tell because the gadget is colored cyan). The mouse pointer (not captured in the screenshot) is hovering over an edge which is highlighted, ready to snap to it if clicked._
 

@@ -40,19 +40,19 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.1_Simple_Materials_Without_Nodes.md">
 <!--{"parent": "9_Materials.md", "order": 1}--><h1 id="simple-materials-without-nodes">Simple Materials Without Nodes</h1>
 <h2 id="material-shader-properties">Material Shader Properties</h2>
 <p><img src="/images/pastedGraphic-239.jpg" alt="Properties panel for a new material: diffuse, specular, reflection, transparency, emissive, and bump mapping settings"></p>
-<figure><img src="/images/pastedGraphic-240.jpg" alt=""><figcaption>When you create a new material and select it, its Properties panel will look something like this (<strong>top</strong>). On the <strong>bottom</strong> is a simple test model in a simple environment, both with the default material assigned.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-240.jpg" alt="Glossy white elephant in a plain grey room"><figcaption>When you create a new material and select it, its Properties panel will look something like this (<strong>top</strong>). On the <strong>bottom</strong> is a simple test model in a simple environment, both with the default material assigned.</figcaption></figure>
 <p>Before Cheetah 3D got its node-based material system materials were simply objects with properties like everything else. You click on a material and then edit its properties. This interface is still supported, but it doesn’t let you access most of the power of the new material system and it’s easy to get lost if you create more complex materials.</p>
 <p>Even so, it’s very useful for quickly creating simple materials such as a flat color shader, a shiny “plastic” material, a simple metal material, or a simple glass or water material, and even simple texture-based materials. Indeed, without even looking at the node display, the Properties panel allows you to make much more sophisticated materials than were possible before.</p>
 <p>(You <em>might</em> wonder why you’d need anything else at this point.)</p>
 <p>To create various simple materials, here’s a quick guide to how to adjust these settings.</p>
 <h3 id="flat-colors">Flat Colors</h3>
 <p><img src="/images/pastedGraphic-241.jpg" alt="Material Properties panel with diffuse set to red and specular set to black"></p>
-<figure><img src="/images/pastedGraphic-242.jpg" alt=""><figcaption>A flat red material. You don’t need to do anything with nodes to make this material. Simply create a new material and set its diffuse color to red and its specular color to black. If you’re wondering why this object looks so eerie in the test render, it’s because real world objects are never this intensely red. Generally, to make things look more realistic you need to make their colors a bit “murky” (darker and less saturated).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-242.jpg" alt="Flat, intensely red elephant in a pastel checkered room"><figcaption>A flat red material. You don’t need to do anything with nodes to make this material. Simply create a new material and set its diffuse color to red and its specular color to black. If you’re wondering why this object looks so eerie in the test render, it’s because real world objects are never this intensely red. Generally, to make things look more realistic you need to make their colors a bit “murky” (darker and less saturated).</figcaption></figure>
 <ul>
 <li><p>Set diffuse to the color you want the material to be</p>
 </li>
@@ -182,7 +182,7 @@
 </li>
 </ul>
 <h3 id="simple-image-based-materials">Simple, Image-Based Materials</h3>
-<figure><img src="/images/pastedGraphic-252.jpg" alt=""><figcaption>This material was created using a simple test pattern. It’s a total mess on the elephant because it isn’t properly UV-mapped. All of the other materials so far (including the procedural wood and marble) don’t use UV-maps, and thus don’t rely on the underlying mesh having proper UV-maps.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-252.jpg" alt="Elephant covered in a jumbled, distorted pastel test pattern"><figcaption>This material was created using a simple test pattern. It’s a total mess on the elephant because it isn’t properly UV-mapped. All of the other materials so far (including the procedural wood and marble) don’t use UV-maps, and thus don’t rely on the underlying mesh having proper UV-maps.</figcaption></figure>
 <ul>
 <li><p>Click on the box to the right of the diffuse color. A menu will appear — select <strong>Textures &gt; Image</strong> (it’s the first item in the menu).</p>
 </li>
@@ -197,17 +197,17 @@
 </ul>
 <h2 id="the-material-shader">The Material Shader</h2>
 <p><strong>The most versatile Shader in Cheetah 3D is the Material Shader</strong>. All of the simple materials we’ve discussed in the previous section have been created with it. Most of the other shaders are simplified versions of the Material Shader that are specialized for handling one kind of material.</p>
-<figure><img src="/images/pastedGraphic-253.jpg" alt=""><figcaption>The material shader node is your friend.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-253.jpg" alt="Material node with a preview sphere and input sockets from diffuse to bumpmap"><figcaption>The material shader node is your friend.</figcaption></figure>
 <p>The first thing you might notice about a shader is that it has <em>no output channels</em> (its output goes to the renderer — as far as your node system is concerned, the shader is the end of the line). The node system is simply there to give information to the shader to help it do its job.</p>
 <p>As you may recall, I have described a shader as a software gizmo that answers the question “what color is this specific point on this specific triangle” given a bunch of data about the scene that triangle resides in, and the direction we’re looking from.</p>
 <p>To answer this question, the shader needs a bunch of additional information, some of which is represented by the input nodes (the labeled sockets on the left of the shader node). If nothing comes into one of these channels, then the shader uses its own internal (constant) values for that channel.</p>
 <p><img src="/images/pastedGraphic-254.jpg" alt="Elephant with a bright red diffuse color"></p>
-<figure><img src="/images/pastedGraphic-255.jpg" alt=""><figcaption>Diffuse set to bright red (<strong>top</strong>) and a greenish-grey (<strong>bottom</strong>).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-255.jpg" alt="Glossy greenish-grey elephant"><figcaption>Diffuse set to bright red (<strong>top</strong>) and a greenish-grey (<strong>bottom</strong>).</figcaption></figure>
 <ul>
 <li><strong>Diffuse</strong> is what you’d normally think of as the color of the object.</li>
 </ul>
 <p><img src="/images/pastedGraphic-256.jpg" alt="Grey elephant with the default white specular, showing a bright highlight"></p>
-<figure><img src="/images/pastedGraphic-257.jpg" alt=""><figcaption>On the <strong>top</strong> is the default material (which has specular set to white). On the <strong>bottom</strong>, specular has been set to black.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-257.jpg" alt="Matte grey elephant with no specular highlight"><figcaption>On the <strong>top</strong> is the default material (which has specular set to white). On the <strong>bottom</strong>, specular has been set to black.</figcaption></figure>
 <ul>
 <li><strong>Specular</strong> controls the color of specular highlights (which are simulated reflections of light sources).</li>
 </ul>
@@ -215,17 +215,17 @@
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: the bundled default Material (Materials/Default/Material.c3dmat) has its specular color set to black, not white, so new materials may no longer have highlights by default (also affects the caption above and <a href="/9.8_How_Materials_Work/">How Materials Work</a>). <!-- TODO verify --></p>
 </blockquote>
 <p><img src="/images/pastedGraphic-258.jpg" alt="Dark elephant with small, sharp specular highlights at size 80"></p>
-<figure><img src="/images/pastedGraphic-259.jpg" alt=""><figcaption>Specular size set to 80.0 (<strong>top</strong> — the default value) and 20 (<strong>bottom</strong>). Yes, the greater the specular size the smaller and sharper the highlight.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-259.jpg" alt="Dark elephant with broader, softer highlights at size 20"><figcaption>Specular size set to 80.0 (<strong>top</strong> — the default value) and 20 (<strong>bottom</strong>). Yes, the greater the specular size the smaller and sharper the highlight.</figcaption></figure>
 <ul>
 <li><strong>Specular Size</strong> (number) is the smoothness of the object, but only for purposes of using specular. Higher specular size produces smaller, sharper specular highlights.</li>
 </ul>
 <p><img src="/images/pastedGraphic-260.jpg" alt="Elephant with light grey reflection, mirroring the checkered room"></p>
-<figure><img src="/images/pastedGraphic-261.jpg" alt=""><figcaption>At <strong>top</strong>, reflection set to light grey. At <strong>bottom</strong>, reflection set to dark red.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-261.jpg" alt="Pinkish elephant with dark red reflections of the room"><figcaption>At <strong>top</strong>, reflection set to light grey. At <strong>bottom</strong>, reflection set to dark red.</figcaption></figure>
 <ul>
 <li><strong>Reflection</strong> is the reflectiveness of the object, a better (but more CPU-intensive) method for handling reflections.</li>
 </ul>
 <p><img src="/images/pastedGraphic-262.jpg" alt="Mirror-like elephant with sharp reflections at reflection blur 0.0"></p>
-<figure><img src="/images/pastedGraphic-263.jpg" alt=""><figcaption>Reflection blur 0.0 (<strong>top</strong> — default value) and 0.2 (<strong>bottom</strong>).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-263.jpg" alt="Mirror-like elephant with softened, blurred reflections at 0.2"><figcaption>Reflection blur 0.0 (<strong>top</strong> — default value) and 0.2 (<strong>bottom</strong>).</figcaption></figure>
 <ul>
 <li><p><strong>Reflection Blur</strong> is the roughness of the object (the higher it is, the blurrier reflections will be)</p>
 </li>
@@ -234,22 +234,22 @@
 </ul>
 <p><img src="/images/pastedGraphic-264.jpg" alt="Glass elephant at index of refraction 1.0, almost invisible against the room"></p>
 <p><img src="/images/pastedGraphic-265.jpg" alt="Glass elephant at index of refraction 1.1, with gentle distortion"></p>
-<figure><img src="/images/pastedGraphic-266.jpg" alt=""><figcaption>Glass material with index of refraction set to 1.0 (<strong>top</strong>), 1.1 (<strong>middle</strong>), and 1.5 (<strong>bottom</strong> — the default)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-266.jpg" alt="Glass elephant at index of refraction 1.5, strongly distorting the room behind"><figcaption>Glass material with index of refraction set to 1.0 (<strong>top</strong>), 1.1 (<strong>middle</strong>), and 1.5 (<strong>bottom</strong> — the default)</figcaption></figure>
 <ul>
 <li><strong>Index of Refraction</strong> (number) is the degree to which light passing through the material is deflected. 1.0 is the value for a vacuum or air (unless you’re rendering planets, in which case it should be slightly higher), while 1.5 is typical for glass.</li>
 </ul>
 <p><img src="/images/pastedGraphic-267.jpg" alt="Glass elephant with crisp, unblurred refraction at transparency blur 0.0"></p>
-<figure><img src="/images/pastedGraphic-268.jpg" alt=""><figcaption>Glass material with transparency blur set to 0.0 (<strong>top</strong> — the default) and 0.2 (<strong>bottom</strong>).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-268.jpg" alt="Frosted glass elephant with blurred refraction at transparency blur 0.2"><figcaption>Glass material with transparency blur set to 0.0 (<strong>top</strong> — the default) and 0.2 (<strong>bottom</strong>).</figcaption></figure>
 <ul>
 <li><strong>Trans. Blur</strong> is the degree to which light passing through the material is blurred (think of frosted glass).</li>
 </ul>
 <p><img src="/images/pastedGraphic-269.jpg" alt="Elephant glowing a light pinkish red from its red emissive color"></p>
-<figure><img src="/images/pastedGraphic-270.jpg" alt=""><figcaption><strong>Top</strong>: emissive is set to bright red; <strong>bottom</strong>: the diffuse color is set to bright red as well.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-270.jpg" alt="Solid bright red elephant with a specular highlight, glowing evenly"><figcaption><strong>Top</strong>: emissive is set to bright red; <strong>bottom</strong>: the diffuse color is set to bright red as well.</figcaption></figure>
 <ul>
 <li><strong>Emissive</strong> (color with intensity) is the color of light with which the object “glows”. Emissive accepts color values beyond (1,1,1), allowing objects to glow very brightly (this impacts how bright the objects appear in reflections and how much illumination they provide when using radiosity).</li>
 </ul>
 <p><img src="/images/pastedGraphic-271.jpg" alt="Voronoi node&#39;s Color output wired to the bumpmap input of a Material node"></p>
-<figure><img src="/images/pastedGraphic-272.jpg" alt=""><figcaption>Default material with diffuse set to medium grey and Voronoi texture node’s color output applied to bumpmap.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-272.jpg" alt="Grey elephant with a fine, bumpy cellular texture on its surface"><figcaption>Default material with diffuse set to medium grey and Voronoi texture node’s color output applied to bumpmap.</figcaption></figure>
 <ul>
 <li><strong>Bumpmap</strong> (monochrome) is the distance the surface of the object is considered to be pushed out from its actual position in 3D space for purposes of determining its shading.</li>
 </ul>

@@ -2,7 +2,7 @@
 
 # Particles
 
-![](/images/pastedGraphic-417.jpg)
+![Render of a boxy gray starship hull covered in small panels, dishes, and antennas](/images/pastedGraphic-417.jpg)
 
 *A simple starship model decorated with random detail using a Particle Mesh.*
 

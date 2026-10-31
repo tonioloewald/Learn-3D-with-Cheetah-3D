@@ -34,7 +34,7 @@ To **join** separate pieces of a mesh you can build polygons to join them one-by
 
 To split meshes apart you need to be in polygon mode. Simply select the polygons you want to split off from the mesh and select **Tools \> Polygon \> Split**. The selected polygons will now be a separate mesh with the name of the original mesh with “.split” appended.
 
-![](/images/pastedGraphic-191.jpg)
+![Box with its top face detached and swung open along the back edge like a lid](/images/pastedGraphic-191.jpg)
 
 *This mesh was created by creating a default box, making it editable, selecting its top polygon, using Tools \> Polygon \> Disconnect (and clicking OK in the Disconnect tool’s panel) then using edge rotate to rotate the “lid” around its back edge.*
 
@@ -46,11 +46,11 @@ Primitives are very useful by themselves. They have the advantage of being contr
 
 In general, the most important properties of primitives are those which control the level of detail.
 
-![](/images/pastedGraphic-192.jpg)
+![Five bent cylinders from smooth to straight, with fewer sections from left to right](/images/pastedGraphic-192.jpg)
 
 *Five cylinder primitives with a 45° Bend modifier, with 20, 10, 5, 3, and 1 vertical sections respectively.*
 
-![](/images/pastedGraphic-193.jpg)
+![Ring, square frame, hexagon, triangle, pyramid, and pinched shapes, all made from torus primitives](/images/pastedGraphic-193.jpg)
 
 *Some of the primitives are surprisingly versatile. These are all **torus** primitives.*
 
@@ -64,7 +64,7 @@ A common problem in box modeling is trying to carve a precisely shaped opening o
 
 ![Box top rebuilt by bridging the hole edge to the star, leaving long thin triangles](/images/pastedGraphic-196.jpg)
 
-![](/images/pastedGraphic-197.jpg)
+![Square slab with a star-shaped recess, the top retriangulated around it](/images/pastedGraphic-197.jpg)
 
 *We’re carving a star-shaped hole in a square polygon. **Top**: we start by creating the star shaped mesh (star spline in a polyplane creator, collapsed) then merge it into our initial mesh and use snapping to snap it to our face; **Upper-middle**: we then delete the face we’re cutting a hole into and **lower-middle**: bridge the edge of the resulting hole to our star; **Bottom**: little cleanup to fix the non-convex polygons and we can make our precisely star-shaped recess.*
 
@@ -78,13 +78,13 @@ Cheetah 3D isn’t designed for solid modeling, but it does have some useful fea
 
 ![Box whose right face is shaded unusually dark, before Backface Culling is turned on](/images/pastedGraphic-198.jpg)
 
-![](/images/pastedGraphic-199.jpg)
+![The same box with Backface Culling on, its right side gone to show a hole](/images/pastedGraphic-199.jpg)
 
 *The right face of this box looks weirdly dark. Switching on Backface Culling reveals a hole in my box. Oops!*
 
 - Incorrectly flipped polygons will often look oddly shaded. If you see polygons in your mesh that just look wrong, try turning on backface culling to double-check.
 
-![](/images/pastedGraphic-200.jpg)
+![Box with a flickering pink striped patch on its front face where two polygons overlap](/images/pastedGraphic-200.jpg)
 
 *“z-chasing” occurs when coplanar polygons overlap, and is never a good thing (but especially bad if you’re trying to do solid modeling). It’s referred to as z-chasing because realtime 3D rendering uses a “z-buffer” to figure out when something is in front of something else — if two things have identical or near identical z-buffer values they will produce visual artifacts.*
 
@@ -92,7 +92,7 @@ Cheetah 3D isn’t designed for solid modeling, but it does have some useful fea
 
 - If you use the polygon **Optimize** tool (Tools \> Polygon \> Optimize) you can eliminate some redundant or pathological polygons.
 
-![](/images/pastedGraphic-201.jpg)
+![Flat slab with an irregular notched outline, its face one non-convex polygon](/images/pastedGraphic-201.jpg)
 
 *Here’s a (very) non-convex polygon that looks just fine in Cheetah 3D, but there’s no way to predict how another package might handle it. Triangulating it in Cheetah 3D and verifying it still looks right will prevent disappointment later.*
 
@@ -116,7 +116,7 @@ Some 3D programs offer the option of seeing normals but unfortunately Cheetah 3D
 
 ![The same polyhedron with many more green lines along the edges, showing edge normals](/images/pastedGraphic-203.jpg)
 
-![](/images/pastedGraphic-204.jpg)
+![The same polyhedron with green lines radiating from each vertex, showing point normals](/images/pastedGraphic-204.jpg)
 
 *Displaying the polygon, edge, and point normals of a Polyhedron using a Line Spline and a Particle Mesh.*
 

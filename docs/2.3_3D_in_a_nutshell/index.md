@@ -18,7 +18,7 @@ But don’t panic. You don’t need to understand the math.
 
 Or to put it another way, you kind of do need to *understand* the math, you just don’t need to do the calculations.
 
-![](/images/page10image8064.jpg)
+![Cheetah 3D window with an empty scene, only the red and blue axis lines crossing the 3D view](/images/page10image8064.jpg)
 
 *“A new life awaits you in the offworld colonies. A chance to begin again in a golden land of opportunity and adventure.” (I can only go so long without making a Bladerunner reference.)*
 

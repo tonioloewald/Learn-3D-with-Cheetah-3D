@@ -4,9 +4,9 @@
 
 ### Creating a Model Sheet & Preparing It For Use
 
-![](/images/pastedGraphic-171.jpg)
+![Color painting of a goggled swordswoman beside line drawings of her front, side, and back views, head, sword, and boot](/images/pastedGraphic-171.jpg)
 
-*This model sheet, by David Leroy, was created for the book Character Development in Blender 2.5 (which I recommend). It’s licensed under Creative Commons. Note how the artist has broken out extra drawings of details — such as the inner side of the boots — that are not apparent from side and elevation views.*
+*This model sheet, by David Revoy, was created for the book Character Development in Blender 2.5 (which I recommend). It’s licensed under Creative Commons. Note how the artist has broken out extra drawings of details — such as the inner side of the boots — that are not apparent from side and elevation views.*
 
 Model sheets are the way 2D concept artists communicate their character designs to 3D modelers. (Typically in professional productions the person who designs a model is a 2D “concept” artist and a different person creates the 3D model.) Model sheets are useful even if you’re a one-man-band because it’s easy to lose details and proportions if you just “model by eye”.
 
@@ -18,13 +18,13 @@ Another amazingly powerful trick is to try to draw something from life upside do
 
 ### Blueprints vs. Model Sheets
 
-![](/images/pastedGraphic-172.jpg)
+![Line drawings of a Sopwith Dolphin biplane from the front, side, and top](/images/pastedGraphic-172.jpg)
 
 *Sopwith Dolphin “blueprints” from the-blueprints.com (a fabulous resource).*
 
 Blueprints are, in essence, a specialized example of modeling sheets. If anything the main problem with using blueprints is that they tend not to include a perspective view that shows you what a given part of the object is _supposed_ to look like.
 
-![](/images/pastedGraphic-173.jpg)
+![Four-view layout of a cylinder: it looks like a rectangle from front and side, a circle from the top](/images/pastedGraphic-173.jpg)
 
 *Viewed from in front or from a side, a cylinder can only be distinguished from a cube by its shading. But blueprints don’t have any shading. When working with blueprints, other visual references (e.g. photographs) are invaluable.*
 
@@ -32,7 +32,7 @@ In the case of the Sopwith Dolphin I doubt you’d guess what the wheels on the 
 
 ![Archival photo of a Sopwith Dolphin biplane on the ground, showing its landing gear wheels](/images/pastedGraphic-174.jpg)
 
-![](/images/pastedGraphic-175.jpg)
+![Archival photo of a Sopwith Dolphin on the ground, side view, from the Australian War Memorial](/images/pastedGraphic-175.jpg)
 
 *I was able to find many useful visual references for the Sopwith Dolphin via Google Image Search but most of them are either copyright or unattributed. These images (from the Australian War Memorial) are specifically stated to be in the public domain.*
 
@@ -44,25 +44,25 @@ Once you have a model sheet, to use it in C3D’s blueprint object you need to s
 
 **Note**: "square" isn’t strictly necessary as long as you reproportion the blueprint object accordingly, but it’s easier to just make all the images square.
 
-![](/images/pastedGraphic-176.jpg)
+![Image editor window with the Sopwith Dolphin front, side, and top views on one 500 by 378 canvas](/images/pastedGraphic-176.jpg)
 
 *Here we’ve started with a “model sheet” (an image from the-blueprints.com) which has all the pieces we need, but they’re not lined up or separated.*
 
-![](/images/pastedGraphic-177.jpg)
+![Top view of the Sopwith Dolphin alone on a 420 by 420 square canvas, nose pointing down](/images/pastedGraphic-177.jpg)
 
 *Each piece needs to be placed in its own layer in a square document. The top view needs to point down for purposes of alignment (and then rotated to face left for purposes of importing into Cheetah 3D (yes, this is annoying)).*
 
-![](/images/pastedGraphic-178.jpg)
+![Front view layered over the top view on the square canvas, wingtips aligned to a guide](/images/pastedGraphic-178.jpg)
 
 *All of the images must be at the same scale (but this is usually not a problem). The top view needs to be lined up perfectly with the front view.*
 
 **Aside**: there's a common problem with some WWI and WWII aircraft “blueprints” where the side view is of the plane resting on the ground (i.e. with its tail wheel grounded). In such cases you may need to rotate the side view so that the fuselage is parallel to the "ground". This isn’t the case here.
 
-![](/images/pastedGraphic-179.jpg)
+![Side view layered over the faded front view, nose and tail aligned with the wingtip guides](/images/pastedGraphic-179.jpg)
 
 *And the side view needs to be lined up with the front view.*
 
-![](/images/pastedGraphic-180.jpg)
+![Cheetah 3D Blueprint cube showing the Sopwith Dolphin front, side, and top drawings on three faces](/images/pastedGraphic-180.jpg)
 
 *Having saved out the top, side, and front views as separate files, I’ve loaded them into the bottom, back, and left “sockets” of a **Blueprint** object in Cheetah 3D. (“Bottom” refers to which part of the blueprint “cube” you’re placing the image on rather than the view in which it’s useful, which is confusing).*
 

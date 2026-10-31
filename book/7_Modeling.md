@@ -30,7 +30,7 @@ E.g. I once tried to model a forklift from memory (hey, I knew what a forklift l
 
 ### Level of Detail
 
-![](/images/pastedGraphic-120.jpg)
+![Three hex nuts side by side: a plain hexagonal block, one with a hole, and one with a hole and beveled edges](/images/pastedGraphic-120.jpg)
 
 *A simple hex nut modeled at three different levels of detail (and note that we could go much further, e.g. there’s no screw thread even on the most detailed version.)*
 
@@ -42,7 +42,7 @@ When determining level of detail consider how much time you have and how importa
 
 Rand and Ryan Miller, the brothers who created *Myst* on 25MHz Macintosh computers, had a great one-liner: **under model and over texture**. There are circumstances where this isn’t the right approach, but it’s worth remembering: you can put a lot of polygons into a crate and not produce anything vaguely decent looking, or you can slap a few bitmap materials on a cube and get very good results in five minutes. 
 
-![](/images/DraggedImage-84.jpg)
+![Rendered wooden shipping crate with planks and diagonal braces, all painted on a plain cube](/images/DraggedImage-84.jpg)
 
 _A cube with a bitmap slapped on it._
 
@@ -96,7 +96,7 @@ If you’re interested in NURBS modeling, the best known NURBS modeler is Rhino 
 
 #### A Tale of Two Wineglasses — and a B-29 bomber: The Pros & Cons of Splines
 
-![](/images/pastedGraphic-121.jpg)
+![Photo of a tall stemmed wineglass partly filled with wine](/images/pastedGraphic-121.jpg)
 
 *A Riedel wineglass.*
 
@@ -118,7 +118,7 @@ Even though using box modeling and subdivision to get the same result might seem
 
 There is one significant disadvantage to this approach though — subdivision creates more polygons to produce a smoother result, but the way the polygons are added is indiscriminate — areas that do not need more detail gain polygons just as quickly as those that do. Subdivided meshes can be “heavier” than lathed meshes.
 
-![](/images/pastedGraphic-124.jpg)
+![Rendered clear glass wineglass on a gray floor, lit by a spotlight casting its shadow](/images/pastedGraphic-124.jpg)
 
 *The finished (box modeled) wineglass*
 
@@ -128,7 +128,7 @@ There is one significant disadvantage to this approach though — subdivision cr
 
 The real advantage of subdiv modeling over using splines and lathes and whatnot, at least in a polygon-centric 3D program like Cheetah 3D, is that upon examination, **very few objects turn out to be rotationally symmetric**. Wineglasses might be a nice example of a symmetric object, but you don’t need to look hard at most apparently suitable objects to discover serious problems.
 
-![](/images/pastedGraphic-125.jpg)
+![Engraving of Doric, Ionic, and Corinthian columns with capitals, fluted shafts, and German labels](/images/pastedGraphic-125.jpg)
 
 *In this diagram (from the Wikipedia entry on columns) you’ll see that none of the columns even have a circular cross-section. Even if you intended to handle that detail using, say, normal or bump maps, the top and bottom of most columns is not at all circular in cross-section.*
 
@@ -136,7 +136,7 @@ Often, what might appear to be a “nice round object” needs to merge seamless
 
 **Note**: I'm talking about Cheetah 3D here. This is often not the case in NURBS based modelers (e.g. Rhino or MoI) or CAD packages with strong support for 3D splines.
 
-![](/images/pastedGraphic-126.jpg)
+![Black and white photo of a silver B-29 bomber in flight over clouds, four propeller engines on its wings](/images/pastedGraphic-126.jpg)
 
 *The B29 (photo from Wikipedia) is the most lathe-friendly airplane you’ve ever seen, but if you were trying to model one you’d end up having to deal with the wing root, and you’ll notice that the wing doesn’t join the fuselage with a sharp angle, but merges into it seamlessly. If you lathed the fuselage, you might have to deal with some pretty ugly geometry.*
 
@@ -144,7 +144,7 @@ Whether you’re attaching handles to a goblet, a spout to a teapot, or wings to
 
 ##### Tutorial: Modeling a Wing Root
 
-![](/images/pastedGraphic-127.jpg)
+![Cheetah 3D window with a cylinder fuselage and a wing blending into its side, Symmetry and Subdivision applied](/images/pastedGraphic-127.jpg)
 
 *Here we’ve modeled a simple wing root where an aircraft’s wing melds seamlessly into a round fuselage.*
 
@@ -188,7 +188,7 @@ Ideally, you should create your splines in another program and import them. If y
 
 ![Zigzag bezier spline drawn over a wireframe plane grid, roughed out before snapping](/images/pastedGraphic-128.jpg)
 
-![](/images/pastedGraphic-129.jpg)
+![Green bezier curves snapped to the corners of a wireframe grid, a few handles slightly off](/images/pastedGraphic-129.jpg)
 
 *Having created a grid using a plane (which is set to wireframe — or ghosted — display) I rough out my bezier by clicking out the points, then I snap the points and control handles onto the grid (note that even this doesn’t work quite right).*
 

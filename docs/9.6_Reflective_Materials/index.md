@@ -2,7 +2,7 @@
 
 ## Reflective Materials
 
-![](/images/pastedGraphic-289.jpg)
+![Red cone on a checkered floor before a mirror broken into many cracked pieces, reflecting the cone](/images/pastedGraphic-289.jpg)
 
 *Reflection Map Example: Cracked Mirror.*
 
@@ -10,7 +10,7 @@
 
 ![Elephant with the Metal shader at roughness 0.0, sharply reflecting the checkered room](/images/pastedGraphic-290.jpg)
 
-![](/images/pastedGraphic-291.jpg)
+![Elephant with the copper Metal shader at roughness 0.1, anisotropy 0.9, reflections smeared into streaks](/images/pastedGraphic-291.jpg)
 
 *Metal shader with copperish reflection color. Top: roughness 0.0. Bottom: roughness 0.1, anisotropy: 0.9.*
 
@@ -22,7 +22,7 @@ The Metal shader offers one key feature that the Material Shader does not, and t
 
 ![Glossy orange elephant rendered with the Car Paint shader in a checkered room](/images/pastedGraphic-292.jpg)
 
-![](/images/pastedGraphic-293.jpg)
+![Glossy blue-violet elephant with the Car Paint shader, colored room reflected in its coating](/images/pastedGraphic-293.jpg)
 
 *The Car Paint shader produces a nice “coated gloss paint” look with very little effort.*
 

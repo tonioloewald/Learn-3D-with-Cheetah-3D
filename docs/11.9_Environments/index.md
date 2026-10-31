@@ -18,7 +18,7 @@ Apart from light sources (such as the sun) **every object owes its appearance to
 
 ![Parquet cube on black; the steel ball above it is visible only as the cube reflected in its underside](/images/pastedGraphic-556.jpg)
 
-![](/images/pastedGraphic-557.jpg)
+![Steel ball on the parquet block in a city street, reflecting the curved towers around it](/images/pastedGraphic-557.jpg)
 
 _**Top**: a steel ball rendered in Cheetah 3D. **Middle**: the same ball placed above a parquet cube. **Bottom**: exactly the same steel ball and parquet cube placed in the middle of a cityscape._
 
@@ -54,7 +54,7 @@ So, there are two more options:
 
 ![Steel ball reflecting the city on a parquet block, with the city hidden from the camera and a sky gradient behind](/images/pastedGraphic-558.jpg)
 
-![](/images/pastedGraphic-559.jpg)
+![Mask render: steel ball and block in solid white on solid black](/images/pastedGraphic-559.jpg)
 
 ***Top**: I’ve painstakingly applied render tags to everything in the scene and checked off “visible for primary rays”. This worked quite well except that the Sky light ignored it so it still appears in the background. (Note that the bottom of the cube is in shadows cast by objects that haven’t been rendered.) **Bottom**: I’ve pulled the standard trick of applying a solid white shader to the object I want, and solid black to everything else. This can be used to create a selection mask in any decent image editor and pull exactly what I want out of the scene. (Note that in this case it will pull out the lit part of the cube and trim the bit below ground, which is probably what I want.)*
 

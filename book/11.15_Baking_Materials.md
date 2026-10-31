@@ -26,7 +26,7 @@ In addition to baking lighting, baking is also useful for turning procedural mat
 
 5. Now (with the mesh still selected) click the Bake toolbar icon again (the toolbar item adds a Bake Texture tag to a mesh if it doesn’t have one, and bakes the mesh if it does).
 
-![](/images/pastedGraphic-577.jpg)
+![Baked texture map: a gray sheet packed with scattered red, black, and tan fragments](/images/pastedGraphic-577.jpg)
 
 *Baked materials generally look weird. This is the baked texture for the castle shown previously.*
 
@@ -38,7 +38,7 @@ To see the baked texture in action:
 
 2. Create a new material for your mesh, and drag it onto your mesh.
 
-![](/images/pastedGraphic-578.jpg)
+![Castle in the viewport covered in a jumbled patchwork of baked texture fragments](/images/pastedGraphic-578.jpg)
 
 *By default, your mesh will be using UV set 1 (a.k.a. UV1) and thus when you assign an image-based material to it that uses UV set 2 it will look horrible!*
 
@@ -50,7 +50,7 @@ To see the baked texture in action:
 
 ![Castle in the viewport with the baked texture, seen from another angle with baked shadows](/images/pastedGraphic-581.jpg)
 
-![](/images/pastedGraphic-582.jpg)
+![Castle in the viewport with baked colors and shadows: red cone roofs and brown walls](/images/pastedGraphic-582.jpg)
 
 *Once you set the mesh to use UV2 it should look amazing, from any angle! This is how the model looks in the Cheetah 3D viewport.*
 
@@ -62,7 +62,7 @@ To see the baked texture in action:
 
 ![Viewport preview of the castle using the baked 2048x2048 texture](/images/pastedGraphic-584.jpg)
 
-![](/images/pastedGraphic-585.jpg)
+![Close-up of the baked castle: yellow plaster walls and red roof tiles with shadows](/images/pastedGraphic-585.jpg)
 
 ***Top**: the same castle, but now it’s been textured with procedural materials, including procedural cobbles on the ground, procedural terracotta on the walls, and procedural shingles on the roofs. **Middle**: the same castle after baking a 2048x2048 texture and previewing it. **Bottom**: zoomed in showing how detailed the final texture is.*
 

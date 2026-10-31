@@ -8,7 +8,7 @@ A creator is an object that — given the correct number and type of children �
 
 ### Boolean
 
-![](/images/booleans-annotated.jpg)
+![Sphere A and cube B with five Boolean results, labeled A intersect B, A subtract B, A union B, A outside B, and A inside B](/images/booleans-annotated.jpg)
 
 *This shows the different boolean operations. The first three options perform a boolean operation on two “solid” meshes — union (add), difference (subtract), and intersection. The last two “inside” and “outside” options act on any surface in relation to a solid (e.g. if you want to cut a plane with a solid object.)*
 
@@ -22,7 +22,7 @@ The boolean is a very useful, very powerful, and potentially dangerous creator. 
 
 The union mesh from the previous example is a complete mess (i.e. it has "awful topology") and is completely triangulated. Doing polygon work on such a mesh is pretty much impossible, so if you must boolean meshes together, try to do it as late in your workflow as possible, and only commit (make the boolean editable) if you absolutely have to.
 
-![](/images/pastedGraphic-208.jpg)
+![Hexagonal nut with a beveled hole and rounded corners, with its nested Boolean objects in the Object Browser](/images/pastedGraphic-208.jpg)
 
 *This complex form was created using a series of booleans. First, a round cylinder was “subtracted” from a six-sided cylinder, then the corners were created by intersecting the result with a ball, and finally the beveling around the hole was achieved by subtracting a downward pointing cone. Note that the bottom of the hole has not been beveled.*
 
@@ -58,7 +58,7 @@ The lathe creator creates a 3D object from a spline by rotating it around an axi
 
 ### Sweep
 
-![](/images/pastedGraphic-212.jpg)
+![Sweep creator with Rect and Flower children, making a blue flower-shaped band in the 3D view](/images/pastedGraphic-212.jpg)
 
 *Here we’ve swept a small square (“Rect”) along a Flower spline. The Rect is the first argument and the Flower is the second.*
 
@@ -66,7 +66,7 @@ The sweep creator creates a 3D object from two splines by “sweeping” the fir
 
 ### Polyplane
 
-![](/images/pastedGraphic-213.jpg)
+![Polyplane creator with a Star child, making a flat blue star polygon in the 3D view](/images/pastedGraphic-213.jpg)
 
 *Here we’ve turned a star spline into a star-shaped polygon (that the renderer can see).*
 

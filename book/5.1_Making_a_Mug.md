@@ -92,7 +92,7 @@ E.g. the Cylinder has a blue **Mode** tag which lets you control things like whe
 
 8. With the Cylinder’s properties visible (click on the Cylinder icon/tab in the Properties panel if necessary), change its Sections longitudinal to 24, and its Sections height to 8. You’ll see that the wireframe displayed in the 3D view will change to match these new settings.
 
-![](/images/pastedGraphic-15.jpg)
+![Cylinder flaring toward its base under a taper modifier, its bounding box shown in pink and blue](/images/pastedGraphic-15.jpg)
 
 *The cylinder with 8 height sections and a taper modifier applied to it. (If the cylinder only had one section, the curve of the taper would not show on the cylinder.)*
 
@@ -112,7 +112,7 @@ E.g. the Cylinder has a blue **Mode** tag which lets you control things like whe
 
 14. If you orbit to look at the top or bottom of our cylinder, you’ll see a whole bunch of triangles. This is horrible to work with so we’re going to delete the top and bottom of our cylinder. From the top-left of the 3D view, switch to the Front view by selecting Front from the popup menu.
 
-![](/images/pastedGraphic-17.jpg)
+![Gridded cylinder viewed edge-on, an orange Area Select box drawn around its top cap](/images/pastedGraphic-17.jpg)
 
 *If you orbit to a nearly edge-on view you can use Area Select to quickly select the cap of the cylinder.*
 
@@ -122,7 +122,7 @@ E.g. the Cylinder has a blue **Mode** tag which lets you control things like whe
 
 **Note** that you could do steps 14 and 15 entirely in the camera view if you orbit until the top or bottom is edge on or close to it. An experienced modeler can pretty much “live” in Camera or Perspective views, quickly orbiting to double-check operations.
 
-![](/images/pastedGraphic-18.jpg)
+![Gridded cylinder from below, its base closed by a single flat polygon](/images/pastedGraphic-18.jpg)
 
 *Viewed from below, the bottom cap has been replaced with a single polygon using the Fill Hole tool.*
 
@@ -130,7 +130,7 @@ E.g. the Cylinder has a blue **Mode** tag which lets you control things like whe
 
 ![Before: the open-topped mug mesh with single-sided walls and no thickness](/images/pastedGraphic-19.jpg)
 
-![](/images/pastedGraphic-20.jpg)
+![After: the Shell modifier gives the mug walls a thick rim](/images/pastedGraphic-20.jpg)
 
 *Before and after applying a Shell modifier to the mesh. This shows the Shell modifier’s default settings, which are thicker than we want.*
 
@@ -146,7 +146,7 @@ We’re going to use a Sweep creator and two splines to create the precise handl
 
 2. Click on the **Mode** tag of the mug mesh and set its **Editor shading** to **Wireframe**.
 
-![](/images/pastedGraphic-21.jpg)
+![Front view of the wireframe mug with a curved green handle spline and its control handles beside it](/images/pastedGraphic-21.jpg)
 
 *Here’s the finished spline which will control the shape of the handle. Note how the position of the end points relative to the rows of polygons in the cup.*
 
@@ -154,13 +154,13 @@ We’re going to use a Sweep creator and two splines to create the precise handl
 
 4. Go into **Point** mode. Select the **Transform** tool. Select All. Pick **Tools \> Spline \> Soft Interpolation**. Your spline now looks slightly less horrible. Move the points and control handles around. **Note**: each control point acts like a 3D point and needs to be clicked once to select it and then moved using the transform tool — you can’t just click and drag as in dedicated 2D drawing programs. Move the control points until you’re happy with the curve of your handle.
 
-![](/images/pastedGraphic-22.jpg)
+![Small orange hexagon spline at the transform tool’s center, next to the wireframe mug](/images/pastedGraphic-22.jpg)
 
 *Here’s the squashed hexagon that will be the cross-section of the handle.*
 
 5. Now pick **n-Edge** from the Spline toolbar item. By default this will create a hexagon, which is exactly what we want. Set its radius to 0.1. Double-click it to make it editable. Then set its **Type** to **Linear**.
 
-![](/images/pastedGraphic-23.jpg)
+![Curved hexagonal tube swept along the handle spline beside the wireframe mug](/images/pastedGraphic-23.jpg)
 
 *The sweep tool creates a 3D mesh by moving the profile (the Sweep creator’s first child) along the control spline (the second child).*
 
@@ -174,13 +174,13 @@ We’re going to use a Sweep creator and two splines to create the precise handl
 
 We’re going to use Merge to bring the handle into the mug mesh, then we’re going to use the Bridge tool to join the handle to the mug.
 
-![](/images/pastedGraphic-24.jpg)
+![Close-up of a mug edge being scaled with the transform tool, near the end of the handle](/images/pastedGraphic-24.jpg)
 
 *One of the two edges we need to stretch. The Transform tool is lined up with the edge because its orientation is set to Normal, which allows us to scale the line using the green (y-axis) scaling widget.*
 
 1. **Select the mug mesh** and switch to **Edge** mode. Select the edge that the top of the handle is pointing at, and then select the Transform tool. Change the Transform tool’s orientation to normal (so its y-axis lines up perfectly with the edge you’ve selected). Drag the green box to scale the edge so it’s about one and a half times as big. Repeat this for the edge that the bottom of the handle is pointing to and stretch it as well.
 
-![](/images/pastedGraphic-25.jpg)
+![Mug mesh with two hexagonal patches, highlighted in red, where the handle ends meet the wall](/images/pastedGraphic-25.jpg)
 
 *These are the hexagons we created by stretching the two edges, and which we’re going to delete to make holes so we can join the handle to the cup.*
 
@@ -198,7 +198,7 @@ We’re going to use Merge to bring the handle into the mug mesh, then we’re g
 
 ![The handle end bridged to the hexagonal hole, joined smoothly into the mug wall](/images/pastedGraphic-28.jpg)
 
-![](/images/pastedGraphic-29.jpg)
+![The whole mug with both ends of the handle bridged into its wall](/images/pastedGraphic-29.jpg)
 
 *Before and after we join the two surfaces using the bridge tool — clicking on corresponding points on the closed edges we’re going to join.*
 
@@ -218,11 +218,11 @@ We’re going to use the bevel tool to adjust the curvature of our mesh when sub
 
 4. We also want the edges of the rim, so pick Selection \> Loop Select and then shift-click on one edge on the outside of the rim, and one edge on the inside of the rim. You should now have four edge loops selected.
 
-![](/images/pastedGraphic-30.jpg)
+![Mug from above with four edge loops selected in red: rim outside and inside, base, and inner bottom](/images/pastedGraphic-30.jpg)
 
 *These are the edges we want to bevel. We selected the edges of the circular base and bottom of the interior by selecting the polygons then converting the selection to edges, then using the loop selector to select the two edges of the rim.*
 
-![](/images/pastedGraphic-31.jpg)
+![Mug from above after the bevel, extra narrow rows of faces along the rim and bottom edges](/images/pastedGraphic-31.jpg)
 
 *After the bevel.*
 
@@ -230,7 +230,7 @@ We’re going to use the bevel tool to adjust the curvature of our mesh when sub
 
 > **Note:** needs checking in Cheetah 3D 8.1.1: does the Bevel tool still show Type (Convex) and Level? The manual (Tools › Polygon › Bevel) lists only Subdivs and Quantize, although the app's strings still include Type, Convex, and Level. <!-- TODO verify -->
 
-![](/images/pastedGraphic-32.jpg)
+![Smooth subdivided mug with a rounded handle and the transform tool on its side](/images/pastedGraphic-32.jpg)
 
 *Subdivision toggled back on.*
 
@@ -248,7 +248,7 @@ We’re going to create a simple image-based material and use some brute-force t
 
 3. If you switched to the Node view, go back to the **3D view**. Make sure you’re in **Object mode** and **drag the new material onto your mug**. (The reason we do this in Object mode is that if we’re in Polygon mode we’ll only apply the material to any polygons that happen to be selected, and we want to apply the material to the entire mesh.)
 
-![](/images/pastedGraphic-33.jpg)
+![UV editor with a red polygon grid over a cheetah-head logo, beside the 3D view of the mug with the logo applied](/images/pastedGraphic-33.jpg)
 
 *Using the UV Mapper to place a grid of polygons over the logo. (The little grey square in the bottom-right corner is all the other polygons — so the rest of the mug is the background color.)*
 

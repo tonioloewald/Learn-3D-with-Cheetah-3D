@@ -8,7 +8,7 @@
 
 ![Dark render with a lit floor and only faint reflections in the headlight reflector](/images/pastedGraphic-561.jpg)
 
-![](/images/pastedGraphic-562.jpg)
+![Render with the light visible as a bright sparkling disc in the reflector above a lit floor](/images/pastedGraphic-562.jpg)
 
 ***Top**: simple build of a car headlight — hemispherical silvered reflector with a point light inside it — smoothing mode set to flat. **Middle**: rendered with geometry off. Note that the reflector is showing reflections of the illuminated surface. **Bottom**: rendered with geometry on. (I’ve reduced the point light’s radius to 0.01.)*
 
@@ -20,10 +20,10 @@ Area lights have a **Visible in camera** option (older versions called it “geo
 
 > *End of AI draft.* <!-- /AI draft -->
 
-![](/images/pastedGraphic-563.jpg)
+![Dark car body in steel with a dark reflective sphere showing two tiny light points](/images/pastedGraphic-563.jpg)
 
 *With the lights built out with reflectors and geometry switched on the lights now look much better in reflections, but they’re still really not bright enough.*
 
-![](/images/pastedGraphic-564.jpg)
+![Car body in pale plastic with a glossy red sphere and a dark round opening below](/images/pastedGraphic-564.jpg)
 
 *Here I’ve replaced the highly reflective steel with a slightly reflective “plastic” material. The headlight on the left has its geometry switched on, while the headlight on the right has its geometry switched off and replaced with a sphere of the same diameter with a highly emissive material (white with intensity 5.0 fed into emissive) and a render tag that prevents it from casting shadows. As you can see, the headlight on the left produces an anemic reflection, while the headlight on the right looks great.*

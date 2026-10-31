@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="5.2_Modeling_a_Biplane.md">
 <!--{"parent": "5_Tutorials.md", "order": 2}--><h1 id="modeling-a-biplane">Modeling a Biplane</h1>
 <p><strong>Note</strong>: if you find this tutorial confusing, it may be helpful to go through <em>A Quick Tour of Cheetah 3D</em> (starting with <em>Just Enough to be Dangerous</em>), and possibly review the <em>Modeling</em> section. You definitely want to have gone through the <em>Making a Mug</em> tutorial.</p>
@@ -64,7 +64,7 @@
 </ol>
 <p><strong>Note</strong>: this is how a lot of box modeling projects start, so to save yourself time in future you might like to save a copy of your document now as “symmetric model stationery.jas” or something so you can reuse it later and skip these steps.</p>
 <h2 id="setting-up-a-blueprint">Setting up a blueprint</h2>
-<figure><img src="/images/pastedGraphic-35.jpg" alt=""><figcaption>Blueprint set up and a symmetric half cube in the middle. We’re ready to start modeling.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-35.jpg" alt="Blueprint cube with front, side, and top biplane drawings, a small half box selected at its center"><figcaption>Blueprint set up and a symmetric half cube in the middle. We’re ready to start modeling.</figcaption></figure>
 <ol>
 <li><p>From the Scene toolbar item, pick Blueprint.</p>
 </li>
@@ -87,14 +87,14 @@
 <li><p>Select all, copy, paste, and then transform the new half-box to match the top wing; duplicate the top wing and drag it to the position of the base of the bottom wing (note that from the front the bottom wing is tilted upwards towards the edge), and then repeat again for the horizontal and vertical stabilizers.</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-36.jpg" alt=""><figcaption>A motley collection of cubes of roughly the right size.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-36.jpg" alt="Flat gray boxes roughly placed as fuselage, wings, and tail over the biplane blueprints"><figcaption>A motley collection of cubes of roughly the right size.</figcaption></figure>
 <ol start="4">
 <li><p>From the Front view, use area select to select the side of each of the boxes (or jump to Right side, Camera, or Perspective view to select a side polygon then switch back to Front view to adjust its position) and move it (using the red arrow) to adjust the widths of each former half-cube to match that blueprint view. Finally, move the edge of the lower wing up to match the blueprint.</p>
 </li>
 <li><p>Select the side of the fuselage box, and scale it down so that the front of the fuselage becomes a regular hexagon roughly matching the front view of the fuselage.</p>
 </li>
 </ol>
-<figure><img src="/images/pastedGraphic-37.jpg" alt=""><figcaption>It’s starting to look like a biplane.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-37.jpg" alt="Box biplane close up, wings widened to the blueprint span and a hexagonal fuselage nose"><figcaption>It’s starting to look like a biplane.</figcaption></figure>
 <ol start="6">
 <li>Probably the biggest discrepancy in the rough mesh you’ve built is the tapering of the fuselage. Use the Ring Cut tool to add a loop where the fuselage starts to taper. Then scale down the rear polygon and move it to match the fuselage taper, then go into edge mode, select the back-right edge and, from the top, move it into position along the x-axis (using the red arrow widget).</li>
 </ol>
@@ -102,7 +102,7 @@
 <h2 id="refining-the-mesh">Refining the Mesh</h2>
 <p>The process of refining the mesh generally consists of getting the mesh you’ve got as close as possible to the reference <em>without adding geometry</em>, and then judiciously adding more geometry as needed to add more detail. In a sense you simply ask yourself, “What’s the most glaring thing that’s wrong with this model?” And then fix it. Keep repeating the process until you’re satisfied or you reach your polygon budget.</p>
 <p>Right now, I’d say that the most glaring issues are that the wings and especially tail look too boxy, and there’s no cockpit, propellor, or landing gear. We’ll address each of these issues and then call it quits.</p>
-<figure><img src="/images/pastedGraphic-38.jpg" alt=""><figcaption>This is what we’re aiming for with this round of improvements.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-38.jpg" alt="Refined biplane mesh with beveled wings, shaped tail, hexagonal wheels, and a two-blade propeller"><figcaption>This is what we’re aiming for with this round of improvements.</figcaption></figure>
 <h3 id="vertical-stabilizer">Vertical Stabilizer</h3>
 <ol>
 <li><p>Let’s start with the vertical stabilizer. Back to wireframe mode. We’ll create a new loop by using the <strong>Polygon &gt; Ring Cut</strong> tool and clicking on one of the vertical edges of the tail. Now we can select the top-front edge and move it along the z-axis to better match the shape of the blueprint. Similarly, select and move the other corners.</p>
@@ -166,7 +166,7 @@
 </ol>
 <p>There’s a lot more to do, of course, but this should give you a good idea of how to get it done. And between the first tutorial and this one you’ve now used most of the key polygon editing tools.</p>
 <p>If you wanted to create a more detailed model for rendering, there’s a huge amount of work left to do. If this were going to be a model for a mobile device, you might stop adding much more geometry here (although right now your biplane should be well under 300 polygons), use transparent materials for the struts and landing gear detail, and rely on textures to bring the model to life.</p>
-<figure><img src="/images/pastedGraphic-40.jpg" alt=""><figcaption>Here’s a version of the model with some extra details added. It’s up to 399 polygons. Adding a few more polygons for the machineguns and possibly a pilot would still leave it well under 500 polygons.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-40.jpg" alt="Rendered low-poly biplane with wing struts, landing gear, propeller, and tail"><figcaption>Here’s a version of the model with some extra details added. It’s up to 399 polygons. Adding a few more polygons for the machineguns and possibly a pilot would still leave it well under 500 polygons.</figcaption></figure>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">

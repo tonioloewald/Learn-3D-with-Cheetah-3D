@@ -2,11 +2,11 @@
 
 ## Rendering Panoramas
 
-![](/images/pastedGraphic-608.jpg)
+![Street-level view down a road between glass office towers](/images/pastedGraphic-608.jpg)
 
 *Render of a cityscape using camera with projection set to perspective (the default setting).*
 
-![](/images/pastedGraphic-609.jpg)
+![360° panorama of the same city, towers all around a curved horizon above black ground](/images/pastedGraphic-609.jpg)
 
 *Same scene rendered with the camera set to panorama projection.*
 

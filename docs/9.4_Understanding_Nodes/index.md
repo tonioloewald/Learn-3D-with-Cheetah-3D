@@ -40,13 +40,13 @@ Each node has possible **inputs** and **outputs**. Inputs are on the left of a n
 
 Perhaps the most intuitive node you can visualize is an Image node.
 
-![](/images/Screen%20Shot%202014-07-06%20at%205.25.48%20PM.jpg)
+![Two Image nodes side by side: Color output selected shows a colored grid sphere, Val output shows it in grey](/images/Screen%20Shot%202014-07-06%20at%205.25.48%20PM.jpg)
 
 _Here’s the same image node, but with the color vs. value outputs selected. The value output shows grayscale output (note that it isn’t just the red channel)._
 
 ![Close-up of the Image node with its Color output selected, previewing a colored test grid on a sphere](/images/pastedGraphic-315.jpg)
 
-![](/images/pastedGraphic-316.jpg)
+![Image node's Color output wired to the Material node's diffuse input, Properties panel showing test grid.jpg](/images/pastedGraphic-316.jpg)
 
 _Here’s a test material comprising a test grid image that feeds its color output into the Material shader node’s diffuse input. Currently you’re seeing the image itself being visualized as mapped onto the test sphere, and it produces a fairly straightforward result._
 
@@ -94,7 +94,7 @@ Note that support for the alpha component of a color is inconsistent. Some nodes
 
 **Number**: a number is a scalar floating point value. If used as a color, 0.0 or less becomes black and 1.0 becomes white. Numbers larger than 1.0 become _more intense_ white (see color, above).
 
-![](/images/DraggedImage-96.jpg)
+![Brushed metal sphere on a white floor, with bright streaked reflections across its upper half](/images/DraggedImage-96.jpg)
 
 _The brushed metal sphere is illuminated by two small squares, one “lit” with the number 1.0, and the other by the number 10.0._
 
@@ -118,7 +118,7 @@ But if you feed it into the emissive channel (and turn on **Radiosity** in the C
 
 ![Cube with 1.0 fed into the emission channel, glowing and softly lighting the plane](/images/pastedGraphic-323.jpg)
 
-![](/images/pastedGraphic-324.jpg)
+![Cube and plane so bright with 10.0 emission that they render as a flat white shape on black](/images/pastedGraphic-324.jpg)
 
 _**Top**: a cube with constant 1.0 or 10.0 fed into material’s diffuse channel looks the same. **Middle and bottom** are the same cube with 1.0 and 10.0 (respectively) fed into the material’s emission channel._
 
@@ -130,7 +130,7 @@ When you send information of one type to a property of another type it will auto
 
 There is a wrinkle though:
 
-![](/images/Screen%20Shot%202014-07-06%20at%205.32.45%20PM.jpg)
+![Color node set to red wired to the Material node's Diffuse input, giving a red sphere](/images/Screen%20Shot%202014-07-06%20at%205.32.45%20PM.jpg)
 
 _The alpha channel of a color is an “invisible fourth channel” that only seems to work with the diffuse input of a material shader when **Use Alpha Channel** is checked._
 
@@ -140,7 +140,7 @@ _The alpha channel of a color is an “invisible fourth channel” that only see
 
 There’s a special case to consider, which is **monochrome colors**, such as the Val channel of an Image texture node. When Cheetah 3D converts a color to a greyscale color, it appears to do so “as expected” (which, I believe, is to average r, g, and b) rather than simply using the r value.
 
-![](/images/Screen%20Shot%202014-07-06%20at%205.28.52%20PM.jpg)
+![Image node with Val selected beside a Multiply node fed by its Color output, both previewing grey spheres](/images/Screen%20Shot%202014-07-06%20at%205.28.52%20PM.jpg)
 
 _This shows the value output of an image material compared with the value output of a multiplication node that’s multiplying the color input by (1,1,1)._
 

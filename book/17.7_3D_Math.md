@@ -48,7 +48,7 @@ For 3D texture space, a texture is considered an infinite volume. 3D textures ar
 
 ### Local Space, Local Coordinates
 
-![](/images/pastedGraphic-647.jpg)
+![Rotated cube with the transform widget aligned to its faces, Tool panel Orientation set to Object](/images/pastedGraphic-647.jpg)
 
 *Here you can see the cube’s local coordinate system reflected by the position and orientation of the transform widget. (Note that the tool’s orientation is set to “Object”.)*
 

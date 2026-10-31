@@ -10,11 +10,11 @@ If you want to use a panoramic render for image-based lighting, the first thing 
 
 > *End of AI draft.* <!-- /AI draft -->
 
-![](/images/pastedGraphic-611.jpg)
+![Mirrored steel sphere on a stucco block in the middle of a city street](/images/pastedGraphic-611.jpg)
 
 *A steel sphere on a stucco cube rendered in the middle of the cityscape scene from [Rendering Panoramas](/11.6_Rendering_Panoramas/).*
 
-![](/images/pastedGraphic-612.jpg)
+![The sphere on a dark block lit by the HDRI, a blurred city behind it](/images/pastedGraphic-612.jpg)
 
 *The same simple model rendered using the rendered HDR image for image-based lighting. (Note that the panorama had to be rotated 180°.) Note that the backdrop doesn’t quite match because the test object has been rendered as though it was located where the camera was — to match the original scene I’d need to place the camera where the object is and then render a new HDR.*
 

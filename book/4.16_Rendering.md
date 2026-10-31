@@ -12,7 +12,7 @@ There are three toolbar items for rendering in Cheetah 3D. The Render item rende
 
 > *End of AI draft.* <!-- /AI draft -->
 
-![](/images/DraggedImage-67.jpg)
+![Animation control panel with the gray workspace bar below the timeline circled in red](/images/DraggedImage-67.jpg)
 
 _This grey bar allows you to determine which part of the current animation “take” you’re working on, and also what will be rendered when you click the Animation toolbar item._
 

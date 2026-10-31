@@ -64,7 +64,7 @@ The Scripts folder has a number of subfolders for different kinds of scripts (th
 
 ### .jas Files
 
-![](/images/pastedGraphic-632.jpg)
+![BBEdit window showing simple box.jas as XML plist, with Animation and Dynamics keys](/images/pastedGraphic-632.jpg)
 
 *A simple .jas file open in BBEdit 10.*
 

@@ -2,27 +2,27 @@
 
 ## Other Lighting Options
 
-![](/images/pastedGraphic-438.jpg)
+![Colored pegs on a bluish gray ground with long, soft shadows slanting across it](/images/pastedGraphic-438.jpg)
 
 *Sky Light (8:00am).*
 
-![](/images/pastedGraphic-439.jpg)
+![The pegs in brighter light with short, crisp shadows](/images/pastedGraphic-439.jpg)
 
 *Sky Light (noon).*
 
-![](/images/pastedGraphic-440.jpg)
+![The pegs in dim, dull light with faint shadows](/images/pastedGraphic-440.jpg)
 
 *Sky Light (5:30pm).*
 
-![](/images/pastedGraphic-441.jpg)
+![The pegs on a warm beige ground in soft, even light with almost no shadows](/images/pastedGraphic-441.jpg)
 
 *HDRI (Entrance Hall Pano) with Radiosity (default settings).*
 
-![](/images/pastedGraphic-442.jpg)
+![A glowing white torus lighting the surrounding pegs in a dark scene, shadows radiating from it](/images/pastedGraphic-442.jpg)
 
 *Glowing Torus with Radiosity (Rmin 0.001, Samples 5000, Detail Detection on) and Camera Light set to off (if auto, it will turn on and ruin image).*
 
-![](/images/pastedGraphic-443.jpg)
+![Pegs lit flatly from the viewpoint on a gray ground, with no visible shadows](/images/pastedGraphic-443.jpg)
 
 *Camera Light. (Just say “No!”)*
 

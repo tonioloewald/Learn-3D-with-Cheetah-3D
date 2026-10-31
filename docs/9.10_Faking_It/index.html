@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.10_Faking_It.md">
 <!--{"parent": "9_Materials.md", "order": 10}--><h1 id="faking-it">Faking It</h1>
 <h2 id="volumetrics">Volumetrics</h2>
@@ -50,7 +50,7 @@
 <p>Here’s the smoke material (which produces the column of smoke in the preceding render). The basic idea is that it gets more opaque as it gets more front-on, but this opacity is partially modulated by procedural turbulence.</p>
 <p><img src="/images/pastedGraphic-365.jpg" alt="Sphere with the flame material, a fuzzy orange ball glowing yellow at the center"></p>
 <p><img src="/images/pastedGraphic-366.jpg" alt="Sphere with the cloud material, a soft gray puff fading at the edges"></p>
-<figure><img src="/images/pastedGraphic-367.jpg" alt=""><figcaption>The faux volumetric flame, cloud, and smoke materials (top to bottom) used in this scene applied to a sphere.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-367.jpg" alt="Sphere with the smoke material, a dark smudgy ball with soft edges"><figcaption>The faux volumetric flame, cloud, and smoke materials (top to bottom) used in this scene applied to a sphere.</figcaption></figure>
 <p>The basic concept I use for faking volumetrics to produce puffs of smoke and cloud is to use the I•N output of the State node to control transparency or emission, and apply the materials to rounded objects.</p>
 <h2 id="sub-surface-scattering">Sub-Surface Scattering</h2>
 <blockquote>
@@ -60,19 +60,19 @@
 <p>Cheetah 3D does not currently support SSS — making this perhaps the only chapter of the book devoted to a <em>missing</em> feature — but I’ve made a number of varyingly successful attempts to simulate it using node-based shaders.</p>
 <p><img src="/images/pastedGraphic-368.jpg" alt="Gray elephant in the checkered room, an early faked SSS attempt with faint edge emission"></p>
 <p><img src="/images/pastedGraphic-369.jpg" alt="Gray elephant with a slightly different edge emission setting, nearly identical to the previous attempt"></p>
-<figure><img src="/images/pastedGraphic-370.jpg" alt=""><figcaption>Here is a series of attempts to “fake” SSS by using the I•N output of the State node to drive subtle emission around the edges of a model.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-370.jpg" alt="Glossy pale gray elephant, a further faked SSS attempt with softly glowing edges"><figcaption>Here is a series of attempts to “fake” SSS by using the I•N output of the State node to drive subtle emission around the edges of a model.</figcaption></figure>
 <p><img src="/images/pastedGraphic-371.jpg" alt="Elephant with procedural marble material, gray veins on white"></p>
 <p><img src="/images/pastedGraphic-372.jpg" alt="Marble elephant with edge lightening, slightly brighter around the outlines"></p>
-<figure><img src="/images/pastedGraphic-373.jpg" alt=""><figcaption>This approach was then toned down and combined with lightening the diffuse channel towards the edges to improve the simple procedural marble material.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-374.jpg" alt=""><figcaption>Here’s the final shader showing how the gradient node is set up.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-373.jpg" alt="Marble elephant with toned-down edge glow and edges lightened, veins softer"><figcaption>This approach was then toned down and combined with lightening the diffuse channel towards the edges to improve the simple procedural marble material.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-374.jpg" alt="Node graph: State I-N into Gradient, added to Marble, feeding Material diffuse and emissive, gradient settings in Properties"><figcaption>Here’s the final shader showing how the gradient node is set up.</figcaption></figure>
 <h3 id="a-completely-different-approach-using-blurred-transparency">A completely different approach using blurred transparency</h3>
 <p>And now for something completely different.</p>
 <p>Here is the best way of faking SSS that I’ve come up with. It’s considerably slower to render than the previous approach, but it can produce excellent results. Basically you make the object quite transparent (25-50% transparent), add a huge amount of transparency blur (0.5 or so), and reduce the transparency samples (because they don’t make much of a difference and it speeds up rendering).</p>
 <p>The best thing about this method is it should work fine for hard edges, which the “edge glow” method definitely won’t. It works particularly well if you put a solid object inside the “faux SSS” object that controls maximum light penetration.</p>
-<figure><img src="/images/pastedGraphic-375.jpg" alt=""><figcaption>Here’s the marble elephant rendered using the blurred transparency method.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-376.jpg" alt=""><figcaption>Here’s the shader. Rather than simply make it have a fixed transparency, I multiply the diffuse channel input by 0.5 and use that (this stops the dark parts of the marble from being transparent).</figcaption></figure>
-<figure><img src="/images/pastedGraphic-377.jpg" alt=""><figcaption>Here are three cubes — the last has a rounded cube inside it — rendered with standard marble, edge glowing faux SSS marble, and the blurred transparency option (which doesn’t look quite right.)</figcaption></figure>
-<figure><img src="/images/pastedGraphic-378.jpg" alt=""><figcaption>Here’s a much more successful application of this technique. The candle wax is about 50% transparent and very blurred. There’s an opaque object inside the candle preventing light from going too far. The only light source is an area light over the candle flame.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-375.jpg" alt="Marble elephant rendered with blurred transparency, soft and slightly translucent"><figcaption>Here’s the marble elephant rendered using the blurred transparency method.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-376.jpg" alt="Node graph: Marble plus Gradient into Material diffuse and emissive, with the sum through Multiply into transparency"><figcaption>Here’s the shader. Rather than simply make it have a fixed transparency, I multiply the diffuse channel input by 0.5 and use that (this stops the dark parts of the marble from being transparent).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-377.jpg" alt="Three marble cubes in a row in the checkered room"><figcaption>Here are three cubes — the last has a rounded cube inside it — rendered with standard marble, edge glowing faux SSS marble, and the blurred transparency option (which doesn’t look quite right.)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-378.jpg" alt="Candle with a blue-tipped flame on a saucer, the wax glowing near the top in a dark room"><figcaption>Here’s a much more successful application of this technique. The candle wax is about 50% transparent and very blurred. There’s an opaque object inside the candle preventing light from going too far. The only light source is an area light over the candle flame.</figcaption></figure>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">

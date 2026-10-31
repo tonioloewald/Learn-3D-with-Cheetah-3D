@@ -14,7 +14,7 @@ Refractive Indices of various materials (source: http://en.wikipedia.org/wiki/Li
 
 ![Glass elephant without fresnel, its body tinted flat blue with little reflection](/images/pastedGraphic-295.jpg)
 
-![](/images/pastedGraphic-296.jpg)
+![Same glass elephant with fresnel on, clearer body and strong reflections of the checkered room](/images/pastedGraphic-296.jpg)
 
 _**Top**: “glass” with transparency set to light grey and reflection set to black. **Bottom**: as above, but with the fresnel box checked._
 
@@ -24,7 +24,7 @@ The Fresnel effect simulates the behavior of real-world materials by adjusting t
 
 ![Glass elephant made with the Material shader, refracting the checkered room](/images/pastedGraphic-297.jpg)
 
-![](/images/pastedGraphic-298.jpg)
+![Glass elephant made with the Dielectric shader, refracting and reflecting the checkered room](/images/pastedGraphic-298.jpg)
 
 _**Top**: material shader “glass” (diffuse . **Bottom**: dielectric “glass”. Same transparency and refractive index. Very similar, but not quite identical._
 
@@ -50,7 +50,7 @@ The bubbles themselves are icosahedrons with a shell modifier (to give them a th
 
 ![Render of a shot glass of amber liquid on a grey surface](/images/DraggedImage-92.jpg)
 
-![](/images/DraggedImage-93.jpg)
+![Empty clear glass beside the separate amber liquid object, its rounded top bulging above the rim line](/images/DraggedImage-93.jpg)
 
 _**Above**: a render of a shot glass. **Below**: the glass and the liquid inside it rendered apart to show how the scene was assembled. The liquid is slightly larger than the interior of the glass to avoid rendering errors. (Note that C3D’s caustics are not correctly picking up the color of the liquid.)_
 

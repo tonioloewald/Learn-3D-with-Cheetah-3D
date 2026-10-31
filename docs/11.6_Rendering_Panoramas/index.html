@@ -40,11 +40,11 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.6_Rendering_Panoramas.md">
 <!--{"parent": "11_Rendering.md", "order": 6}--><h1 id="rendering-panoramas">Rendering Panoramas</h1>
-<figure><img src="/images/pastedGraphic-608.jpg" alt=""><figcaption>Render of a cityscape using camera with projection set to perspective (the default setting).</figcaption></figure>
-<figure><img src="/images/pastedGraphic-609.jpg" alt=""><figcaption>Same scene rendered with the camera set to panorama projection.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-608.jpg" alt="Street-level view down a road between glass office towers"><figcaption>Render of a cityscape using camera with projection set to perspective (the default setting).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-609.jpg" alt="360° panorama of the same city, towers all around a curved horizon above black ground"><figcaption>Same scene rendered with the camera set to panorama projection.</figcaption></figure>
 <p>Cheetah 3D allows you to quickly render 360° panoramas (perfect for use as reflection maps) simply by setting a camera’s projection property to panorama. The panorama will be rendered based on the camera’s orientation so, typically, you’ll want the camera’s rotation pitch and bank to be zero (i.e. the first rotation value — heading — can be anything, but for a horizontal panorama you want the other two values to be zero).</p>
 <p>The panorama will be stretched to fit whatever output resolution the renderer is set to produce. Typically you’ll want a panorama’s width to be at least double its height.</p>
 

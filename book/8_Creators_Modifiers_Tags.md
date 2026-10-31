@@ -2,7 +2,7 @@
 
 # Creators, Modifiers, & Tags
 
-![](/images/pastedGraphic-207.jpg)
+![Render of a field of tall, twisted, spiral spires stretching to the horizon](/images/pastedGraphic-207.jpg)
 
 *A cube. (With some modifiers.)*
 

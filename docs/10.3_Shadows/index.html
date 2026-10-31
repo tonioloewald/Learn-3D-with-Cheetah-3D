@@ -40,15 +40,15 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="10.3_Shadows.md">
 <!--{"parent": "10_Lighting.md", "order": 3}--><h1 id="shadows">Shadows</h1>
 <p>Shadows are rendered as a side effect of the ray-tracing algorithm. If shadows are enabled for a given light then it will not illuminate a point where the path between that point and the light is obstructed by another object.</p>
 <p>The Raytrace+Transparency shadow setting causes transparent objects to partially block light, but since it does not simulate the refraction of light the resulting shadows often look unconvincing.</p>
 <h2 id="soft-shadows">Soft Shadows</h2>
-<figure><img src="/images/pastedGraphic-444.jpg" alt=""><figcaption>Point Light with 1 sample.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-445.jpg" alt=""><figcaption>Point Light with 5 samples.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-446.jpg" alt=""><figcaption>Area light (5 samples)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-444.jpg" alt="Gray staircase with a white sphere light beside it, casting a hard-edged black shadow"><figcaption>Point Light with 1 sample.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-445.jpg" alt="The same staircase, its shadow now soft and blurred at the edges"><figcaption>Point Light with 5 samples.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-446.jpg" alt="The staircase lit by a white rectangle instead, its shadow soft and slightly grainy"><figcaption>Area light (5 samples)</figcaption></figure>
 <p>Cheetah 3D renders soft shadows when shadow-casting lights are area or point lights with multiple samples. Image-based lighting and emissive object lighting produce very soft shadows.</p>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Shadow softness</strong> property that gives point, spot and distant lights soft shadows in Falcon, a <strong>Shadow color</strong> property, IES light profiles, and area light <strong>Shape</strong> and <strong>Normalize</strong> settings (Objects/SceneObjects/Light), not yet covered here. <!-- TODO missing --></p>

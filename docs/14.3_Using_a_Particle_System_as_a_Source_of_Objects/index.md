@@ -12,7 +12,7 @@ For example:
 
 3. Now create a **Relief** object. Its default settings should be fine.
 
-![](/images/pastedGraphic-530.jpg)
+![Grid of small white balls floating above a gray relief surface](/images/pastedGraphic-530.jpg)
 
 *You should now have 100 small balls floating above a relief object.*
 
@@ -22,7 +22,7 @@ For example:
 
 6. Add a **Rigid Body** tag to the **Relief** object, set its Type to static and its Shape to concave (since it has dents in it, convex will screw it up).
 
-![](/images/pastedGraphic-531.jpg)
+![Object browser: Camera, Particle Mesh with a Ball child, and Relief, both with Rigid Body tags](/images/pastedGraphic-531.jpg)
 
 *Here’s the setup. The object labelled “Particle Mesh” was a Particle Mesh but has been collapsed. The Plane that it used has been deleted. The Particle Mesh has a Rigid Body tag assigned to it, everything is default. The Relief object has a Rigid Body set to be static and concave.*
 

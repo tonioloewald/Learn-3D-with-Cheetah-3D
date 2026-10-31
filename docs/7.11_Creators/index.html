@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="7.11_Creators.md">
 <!--{"parent": "7_Modeling.md", "order": 11}--><h1 id="creators">Creators</h1>
 <p>A creator is an object that — given the correct number and type of children — will generate a mesh derived from those children. The easiest way to explain creators is to show what they do. Note that while I explain creators in alphabetical order, the Boolean creator is a terrible one to start with — skip it and come back afterwards!</p>
@@ -48,7 +48,7 @@
 <p><strong>Note:</strong> the creators below aren’t actually in alphabetical order (Polyplane and Isosurfaces come after Sweep); reorder them or drop the claim. <!-- TODO editorial --></p>
 </blockquote>
 <h2 id="boolean">Boolean</h2>
-<figure><img src="/images/booleans-annotated.jpg" alt=""><figcaption>This shows the different boolean operations. The first three options perform a boolean operation on two “solid” meshes — union (add), difference (subtract), and intersection. The last two “inside” and “outside” options act on any surface in relation to a solid (e.g. if you want to cut a plane with a solid object.)</figcaption></figure>
+<figure><img src="/images/booleans-annotated.jpg" alt="Sphere A and cube B with five Boolean results, labeled A intersect B, A subtract B, A union B, A outside B, and A inside B"><figcaption>This shows the different boolean operations. The first three options perform a boolean operation on two “solid” meshes — union (add), difference (subtract), and intersection. The last two “inside” and “outside” options act on any surface in relation to a solid (e.g. if you want to cut a plane with a solid object.)</figcaption></figure>
 <blockquote>
 <p><strong>Note:</strong> requires updating for Cheetah 3D 8.1.1: the Boolean creator now offers only Addition, Subtract, and Intersect (no “inside”/“outside” options), triangulation is an option (<strong>Triangulate</strong>, which the manual says makes the algorithm more robust), and <strong>Multi-Knife</strong> lets it act on more than two children (Objects/CreatorObjects/BooleanObject). <!-- TODO update --></p>
 </blockquote>
@@ -58,7 +58,7 @@
 <p>The boolean is a very useful, very powerful, and potentially dangerous creator. You should use it sparingly and only when no reasonable alternative exists because it produces meshes that are difficult to work with.</p>
 <p><img src="/images/boolean-mesh.jpg" alt="Wireframe of a sphere and cube joined by a Boolean union, its mesh a mass of irregular triangles"></p>
 <p>The union mesh from the previous example is a complete mess (i.e. it has &quot;awful topology&quot;) and is completely triangulated. Doing polygon work on such a mesh is pretty much impossible, so if you must boolean meshes together, try to do it as late in your workflow as possible, and only commit (make the boolean editable) if you absolutely have to.</p>
-<figure><img src="/images/pastedGraphic-208.jpg" alt=""><figcaption>This complex form was created using a series of booleans. First, a round cylinder was “subtracted” from a six-sided cylinder, then the corners were created by intersecting the result with a ball, and finally the beveling around the hole was achieved by subtracting a downward pointing cone. Note that the bottom of the hole has not been beveled.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-208.jpg" alt="Hexagonal nut with a beveled hole and rounded corners, with its nested Boolean objects in the Object Browser"><figcaption>This complex form was created using a series of booleans. First, a round cylinder was “subtracted” from a six-sided cylinder, then the corners were created by intersecting the result with a ball, and finally the beveling around the hole was achieved by subtracting a downward pointing cone. Note that the bottom of the hole has not been beveled.</figcaption></figure>
 <p><em>In practice, this is a bad way to get this result (and, as already stated, the bottom of the hole still isn’t beveled and we haven’t even tried to model the screw-thread). Even if we were to use booleans, we’d be better off trying to reduce the number of booleans being used because each successive boolean creates a more degraded (“uglier”) mesh.</em></p>
 <p><strong>When <em>not</em> to use booleans</strong>: booleans should be used sparingly because they produce ugly meshes (i.e. triangulated meshes with no real topology). In general, if you can think of a way to do something without booleans, do so.</p>
 <p><strong>When to use booleans</strong>: use booleans if you simply can’t think of another option, such as when one or both of the objects concerned is complex and the difference or intersection cannot easily be modeled any other way. (The only reason to ever use a union is if you need a single, solid mesh. It never helps with rendering.)</p>
@@ -77,10 +77,10 @@
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>Loft</strong> creator, which builds a smooth surface through two or more spline profiles (Sections U/V, Loop, Linear, Cover; Objects/CreatorObjects/LoftObject), not yet covered here. <!-- TODO missing --></p>
 </blockquote>
 <h2 id="sweep">Sweep</h2>
-<figure><img src="/images/pastedGraphic-212.jpg" alt=""><figcaption>Here we’ve swept a small square (“Rect”) along a Flower spline. The Rect is the first argument and the Flower is the second.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-212.jpg" alt="Sweep creator with Rect and Flower children, making a blue flower-shaped band in the 3D view"><figcaption>Here we’ve swept a small square (“Rect”) along a Flower spline. The Rect is the first argument and the Flower is the second.</figcaption></figure>
 <p>The sweep creator creates a 3D object from two splines by “sweeping” the first along the path described by the second. E.g. if you sweep a circle along a curve you get a “pipe” running along the curve.</p>
 <h2 id="polyplane">Polyplane</h2>
-<figure><img src="/images/pastedGraphic-213.jpg" alt=""><figcaption>Here we’ve turned a star spline into a star-shaped polygon (that the renderer can see).</figcaption></figure>
+<figure><img src="/images/pastedGraphic-213.jpg" alt="Polyplane creator with a Star child, making a flat blue star polygon in the 3D view"><figcaption>Here we’ve turned a star spline into a star-shaped polygon (that the renderer can see).</figcaption></figure>
 <p>The polyplane creator creates a 2D mesh surface from a spline. (Splines aren’t rendered, so this essentially makes splines “visible” to the rendering engine.)</p>
 <h2 id="isosurfaces-metaballs">Isosurfaces (Metaballs)</h2>
 <p><img src="/images/pastedGraphic-214.jpg" alt="Render of two glassy isosurface blobs merging like drops of liquid"></p>

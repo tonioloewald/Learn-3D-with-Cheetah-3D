@@ -62,13 +62,13 @@ We’re mostly interested in unit vectors, so the product of the magnitudes will
 
 In intuitive terms dot product is a measure of how similar two unit vectors are in direction where 1.0 means “exactly the same direction”, 0.0 means “perpendicular”, and -1.0 means “exactly the opposite direction”.
 
-![](/images/pastedGraphic-384.jpg)
+![Node graph: green Vector node and State Normal feeding Dotprod, whose preview is bright on top and black below](/images/pastedGraphic-384.jpg)
 
 *Visualizing dot product. The unit vector pointing straight up is (0,1,0) which, considered as a color is green (red = 0, green = 1, blue = 0). The normal vectors of our sphere vary continuously over its surface — the parts pointing straight at us are close to (0,0,1) and look blue while those pointing right look red (1,0,0) and those pointing up look green. The dot product of these values gives you values close to 1 at the top of the sphere, and this goes to 0 (black) at the equator and -1 (still black) in the lower hemisphere.*
 
 ### Cross Product
 
-![](/images/pastedGraphic-385.jpg)
+![Diagram labeled Cross Product: two gray arrows at a narrow angle and a short black arrow perpendicular to them](/images/pastedGraphic-385.jpg)
 
 *Here the two vectors being cross multiplied aren’t very perpendicular so the sine of the angle between them will be considerably smaller than 1, thus the magnitude of the cross product is small.*
 
@@ -92,7 +92,7 @@ You don’t need to calculate diffuse illumination yourself but it’s interesti
 
 ![Glass elephant rendered without fresnel, strongly reflective all over, in a checkered room](/images/pastedGraphic-386.jpg)
 
-![](/images/pastedGraphic-387.jpg)
+![Glass elephant rendered with fresnel, more refracted detail through the body and stronger reflections at the edges](/images/pastedGraphic-387.jpg)
 
 *Simple glass material with fresnel checked off and on, respectively. (The non-fresnel version is much more reflective in general, but less reflective at the edges — the blue you see is a reflection of the background color.)*
 

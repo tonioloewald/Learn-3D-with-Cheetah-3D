@@ -34,7 +34,7 @@ Setting up a particle system requires a minimum of two steps.
 
 ![Selected Particle Emitter crowded with large overlapping default ball particles](/images/pastedGraphic-418.jpg)
 
-![](/images/pastedGraphic-419.jpg)
+![Particle Emitter with smaller orange ball particles spreading out from its rectangle](/images/pastedGraphic-419.jpg)
 
 ***Top**: a default Particle Emitter with a default Ball particle, a little way down the timeline. **Bottom**: you’ll probably want to make your particle object smaller or your particle emitter bigger. If you scale down your particle, you’ll see all the particles change size immediately. Neat, huh? This is the magic of instances.*
 
@@ -46,13 +46,13 @@ There are four fundamental ways to have particles that aren’t all identical.
 
 ![Blue box particles leaving the emitter small and growing larger with distance](/images/pastedGraphic-420.jpg)
 
-![](/images/pastedGraphic-421.jpg)
+![Particle Emitter properties with Size growth 4.0, Size growth variation 2.0, and Life time 10.0 circled](/images/pastedGraphic-421.jpg)
 
 *This Particle Emitter has been set to grow its particles over time (by setting its Size Growth value to a number greater than 1.0). To add randomness, variation is also quite large and the particle lifetime has been reduced so that the growth occurs more quickly.*
 
 **You can set properties in the Particle Emitter** to make the particles change certain properties over time (e.g. you can make them grow or shrink over time).
 
-![](/images/pastedGraphic-422.jpg)
+![Mix of red box and green plane particles streaming from an emitter](/images/pastedGraphic-422.jpg)
 
 *This particle emitter has two child objects, a red box and a green plane. About half of the particles are of each type.*
 
@@ -60,7 +60,7 @@ There are four fundamental ways to have particles that aren’t all identical.
 
 ![Cloud of green plane particles at many different headings around the emitter](/images/pastedGraphic-423.jpg)
 
-![](/images/pastedGraphic-424.jpg)
+![Particle tag properties with Rotation variation set to 0, 180, 0](/images/pastedGraphic-424.jpg)
 
 *This particle emitter has one child, a green plane, but it has a particle tag assigned to it that randomly varies its heading by up to 180°.*
 
@@ -76,7 +76,7 @@ The real fun with particles starts when you use **Force Effectors** and **Dynami
 
 In order to set up a nice test bed to play with Force Effectors, we’ll create a Particle System — everything is set to defaults — and give it a single child which is a box with size set to 0.1,0.1,0.1. With this setup you’ll essentially have a stream of particles flying in the negative Z direction.
 
-![](/images/pastedGraphic-425.jpg)
+![Stream of small blue boxes flying from the emitter along the z axis](/images/pastedGraphic-425.jpg)
 
 *This simple setup in action. A stream of small boxes is flying in the negative z direction.*
 
@@ -84,7 +84,7 @@ Now from the Effectors toolbar item select the **Wind** effector, and set its po
 
 Now hit rewind and play again. (Be careful that your Wind effector didn’t end up a child of the Particle Emitter — that doesn’t work well.)
 
-![](/images/pastedGraphic-426.jpg)
+![Blue box particles scattering sideways where they pass through the Wind effector sphere](/images/pastedGraphic-426.jpg)
 
 *Windblown particles.*
 
@@ -100,7 +100,7 @@ Particles on their own will do some things that are problematic — e.g. they wi
 
 ![Single thin pillar at the origin surrounded by a scattered grid of loose points](/images/pastedGraphic-427.jpg)
 
-![](/images/pastedGraphic-428.jpg)
+![Dozens of pillars standing in a scattered grid, one at each point of the point mesh](/images/pastedGraphic-428.jpg)
 
 ***Top**: a single pillar mesh and a weird mesh consisting only of points (no polygons). **Bottom**: a particle mesh with the pillar as child and the point mesh assigned to it.*
 

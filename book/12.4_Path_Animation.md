@@ -2,7 +2,7 @@
 
 ## Path Animation
 
-![](/images/pastedGraphic-490.jpg)
+![Blocky black model on a green spiral spline path in the 3D view, with its transform widget](/images/pastedGraphic-490.jpg)
 
 *Making a model move along a path couldn’t be simpler. Add a Spline Tracking tag to the object and then assign the path to it. You can add a second rail path for greater control.*
 

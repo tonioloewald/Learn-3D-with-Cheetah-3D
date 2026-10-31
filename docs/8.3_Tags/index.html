@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="8.3_Tags.md">
 <!--{"parent": "8_Creators_Modifiers_Tags.md", "order": 3}--><h1 id="tags">Tags</h1>
 <p>Tags don’t do anything by themselves, instead they <em>attach extra information to an object</em> that can be used by Cheetah 3D’s internal functions (or scripts). Most tags are only meaningful in specific contexts and can only be attached to certain objects.</p>
@@ -85,9 +85,9 @@
 <p><strong>Note:</strong> needs checking in Cheetah 3D 8.1.1: does the bake toolbar button still add a Bake Texture tag when the selected mesh has none? The manual only says it &quot;starts a baking rendering job&quot; (also <strong>Render &gt; Bake Texture</strong>). <!-- TODO verify --></p>
 </blockquote>
 <h3 id="caustics">Caustics</h3>
-<figure><img src="/images/DraggedImage-86.jpg" alt=""><figcaption>A glass cube with a spotlight (set to ray-traced shadows).</figcaption></figure>
-<figure><img src="/images/DraggedImage-87.jpg" alt=""><figcaption>Ray-tracing with transparency creates very implausible results.</figcaption></figure>
-<figure><img src="/images/DraggedImage-88.jpg" alt=""><figcaption>Adding caustics results in more realistic scattered light appearing in shadows, although tweaking the settings to get good results requires both judgment and effort. (1,000,000 photons, 0.1 strength, 1000 samples.)</figcaption></figure>
+<figure><img src="/images/DraggedImage-86.jpg" alt="Render of a spotlight pool on a black floor, the cube casting a solid black shadow"><figcaption>A glass cube with a spotlight (set to ray-traced shadows).</figcaption></figure>
+<figure><img src="/images/DraggedImage-87.jpg" alt="Translucent cube casting a grey shadow with a noisy band of light beneath it"><figcaption>Ray-tracing with transparency creates very implausible results.</figcaption></figure>
+<figure><img src="/images/DraggedImage-88.jpg" alt="Glass cube with bright streaks and patches of focused light scattered across its shadow"><figcaption>Adding caustics results in more realistic scattered light appearing in shadows, although tweaking the settings to get good results requires both judgment and effort. (1,000,000 photons, 0.1 strength, 1000 samples.)</figcaption></figure>
 <p>Caustics are visual effects caused by light being refracted or reflected, especially into the shadows of objects (where they are most noticeable). Objects tend to cast shadows, but if they&#39;re transparent the light <em>goes</em> somewhere, and that&#39;s what caustics simulate.</p>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
@@ -130,7 +130,7 @@
 <p>A real camera will only be perfectly focused on a plane (or sometimes a curved surface) in space. Everything that is closer to, or further from the camera than that surface will be out of focus to some extent. The distance away from the surface within which a subject remains acceptably sharp is referred to as the <strong>depth of field</strong>. The &quot;longer&quot; the camera&#39;s lens (i.e. the narrower its angle of view) and the &quot;wider&quot; its aperture (i.e. the larger the hole light passes through) the smaller the depth of field will be, and the blurrier objects outside the depth of field will become.</p>
 <p>The depth of field effect is achieved <em>stochastically</em> (i.e. by randomly sampling multiple rays) so it&#39;s computationally expensive and will tend to increase render times by a factor proportional to the number of samples.</p>
 <h3 id="fog">Fog</h3>
-<figure><img src="/images/DraggedImage-91.jpg" alt=""><figcaption>Cones in the fog</figcaption></figure>
+<figure><img src="/images/DraggedImage-91.jpg" alt="Render of tall cones on a sandy plane fading into blue fog toward the horizon"><figcaption>Cones in the fog</figcaption></figure>
 <blockquote>
 <p><strong>AI draft:</strong> generated from the Cheetah 3D 8.1.1 manual; not yet reviewed by the author. <!-- TODO review AI draft --></p>
 </blockquote>

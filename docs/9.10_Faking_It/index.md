@@ -16,7 +16,7 @@ Here’s the smoke material (which produces the column of smoke in the preceding
 
 ![Sphere with the cloud material, a soft gray puff fading at the edges](/images/pastedGraphic-366.jpg)
 
-![](/images/pastedGraphic-367.jpg)
+![Sphere with the smoke material, a dark smudgy ball with soft edges](/images/pastedGraphic-367.jpg)
 
 *The faux volumetric flame, cloud, and smoke materials (top to bottom) used in this scene applied to a sphere.*
 
@@ -34,7 +34,7 @@ Cheetah 3D does not currently support SSS — making this perhaps the only chapt
 
 ![Gray elephant with a slightly different edge emission setting, nearly identical to the previous attempt](/images/pastedGraphic-369.jpg)
 
-![](/images/pastedGraphic-370.jpg)
+![Glossy pale gray elephant, a further faked SSS attempt with softly glowing edges](/images/pastedGraphic-370.jpg)
 
 *Here is a series of attempts to “fake” SSS by using the I•N output of the State node to drive subtle emission around the edges of a model.*
 
@@ -42,11 +42,11 @@ Cheetah 3D does not currently support SSS — making this perhaps the only chapt
 
 ![Marble elephant with edge lightening, slightly brighter around the outlines](/images/pastedGraphic-372.jpg)
 
-![](/images/pastedGraphic-373.jpg)
+![Marble elephant with toned-down edge glow and edges lightened, veins softer](/images/pastedGraphic-373.jpg)
 
 *This approach was then toned down and combined with lightening the diffuse channel towards the edges to improve the simple procedural marble material.*
 
-![](/images/pastedGraphic-374.jpg)
+![Node graph: State I-N into Gradient, added to Marble, feeding Material diffuse and emissive, gradient settings in Properties](/images/pastedGraphic-374.jpg)
 
 *Here’s the final shader showing how the gradient node is set up.*
 
@@ -58,18 +58,18 @@ Here is the best way of faking SSS that I’ve come up with. It’s considerably
 
 The best thing about this method is it should work fine for hard edges, which the “edge glow” method definitely won’t. It works particularly well if you put a solid object inside the “faux SSS” object that controls maximum light penetration.
 
-![](/images/pastedGraphic-375.jpg)
+![Marble elephant rendered with blurred transparency, soft and slightly translucent](/images/pastedGraphic-375.jpg)
 
 *Here’s the marble elephant rendered using the blurred transparency method.*
 
-![](/images/pastedGraphic-376.jpg)
+![Node graph: Marble plus Gradient into Material diffuse and emissive, with the sum through Multiply into transparency](/images/pastedGraphic-376.jpg)
 
 *Here’s the shader. Rather than simply make it have a fixed transparency, I multiply the diffuse channel input by 0.5 and use that (this stops the dark parts of the marble from being transparent).*
 
-![](/images/pastedGraphic-377.jpg)
+![Three marble cubes in a row in the checkered room](/images/pastedGraphic-377.jpg)
 
 *Here are three cubes — the last has a rounded cube inside it — rendered with standard marble, edge glowing faux SSS marble, and the blurred transparency option (which doesn’t look quite right.)*
 
-![](/images/pastedGraphic-378.jpg)
+![Candle with a blue-tipped flame on a saucer, the wax glowing near the top in a dark room](/images/pastedGraphic-378.jpg)
 
 *Here’s a much more successful application of this technique. The candle wax is about 50% transparent and very blurred. There’s an opaque object inside the candle preventing light from going too far. The only light source is an area light over the candle flame.*

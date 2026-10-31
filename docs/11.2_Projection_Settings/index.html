@@ -40,17 +40,17 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="11.2_Projection_Settings.md">
 <!--{"parent": "11_Rendering.md", "order": 2}--><h1 id="projection-settings">Projection Settings</h1>
 <p>These settings all relate to how the camera looks out into the scene.</p>
 <h2 id="projection">Projection</h2>
 <p>By default, cameras render a perspective projection. There are two other options: orthographic (no perspective) and panorama.</p>
 <p><img src="/images/pastedGraphic-541.jpg" alt="Perspective render of a city of skyscrapers seen from above, the towers leaning away from the center"></p>
-<figure><img src="/images/pastedGraphic-542.jpg" alt=""><figcaption><strong>Top</strong>: cityscape rendered through a camera with perspective. <strong>Bottom</strong>: cityscape rendered through an orthographic camera.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-542.jpg" alt="Orthographic render of the same city blocks, towers upright and parallel with no perspective"><figcaption><strong>Top</strong>: cityscape rendered through a camera with perspective. <strong>Bottom</strong>: cityscape rendered through an orthographic camera.</figcaption></figure>
 <p><strong>Orthographic</strong> rendering is useful for engineering and architecture applications, and for rendering components for isometric “faux 3D” games.</p>
-<figure><img src="/images/pastedGraphic-543.jpg" alt=""><figcaption>Panorama rendered with a level camera — the ground plane is horizontal and runs through the center of the image.</figcaption></figure>
-<figure><img src="/images/pastedGraphic-544.jpg" alt=""><figcaption>This panorama was set up exactly as the previous one except that the camera was pitched up 10°.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-543.jpg" alt="Wide 360° panorama of city towers, horizon across the middle and black ground below"><figcaption>Panorama rendered with a level camera — the ground plane is horizontal and runs through the center of the image.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-544.jpg" alt="The same city panorama with the camera pitched up, towers bending and the horizon curving upward"><figcaption>This panorama was set up exactly as the previous one except that the camera was pitched up 10°.</figcaption></figure>
 <p><strong>Panorama</strong> rendering produces 360° panoramas suitable for use as HDRI reflection maps, or simply to produce really cool looking 360° views. The panorama that will be rendered from a camera is determined by its position and orientation — it will be the panorama you would get by pivoting on the camera’s y-axis.</p>
 <h2 id="field-of-view">Field of View</h2>
 <p>For perspective cameras, field of view determines the kind of “lens” your camera uses. Normally when you “zoom in” or “zoom out” using the camera controls you’re moving the active camera forward and backward (i.e. along its own z-axis). If you want to zoom in and out the way a camera lens does, you need to change the field of view — a wide field of view (e.g. 100°) would be equivalent to a very wide angle lens (approximately a 15mm lens on 35mm camera or 24x36mm “full frame” DSLR) while 5° is roughly the equivalent of a 400mm lens.</p>
@@ -59,7 +59,7 @@
 <h2 id="zoom">Zoom</h2>
 <p>For orthographic cameras, zoom determines how large the scene is rendered in the camera view (since field of view is meaningless in an orthographic view).</p>
 <h2 id="clip-near-clip-far">Clip Near, Clip Far</h2>
-<figure><img src="/images/pastedGraphic-546.jpg" alt=""><figcaption>Here I’ve set the Clip Near and Clip Far values of the active camera to be close to the distance the middle of the scene is from the camera, leading to a very strange result as these values “slice through” objects in the scene.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-546.jpg" alt="Viewport where the clipping planes slice through city towers, leaving floating fragments and missing ground"><figcaption>Here I’ve set the Clip Near and Clip Far values of the active camera to be close to the distance the middle of the scene is from the camera, leading to a very strange result as these values “slice through” objects in the scene.</figcaption></figure>
 <p>These values determine the closest and furthest objects that will be visible in the camera in the edit view (it has no effect on rendering). The main use of these values is to improve screen refresh in very large and complex scenes by hiding stuff that’s “far away”.</p>
 <h2 id="make-active-camera">Make Active Camera</h2>
 <p>This button explicitly makes the camera active (unless this camera or the active camera are <strong>locked</strong>). There’s a quicker way to make a camera active, which is to double-click it in the  <strong>Object Browser</strong>.</p>

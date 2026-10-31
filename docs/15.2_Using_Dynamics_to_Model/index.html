@@ -40,10 +40,10 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="15.2_Using_Dynamics_to_Model.md">
 <!--{"parent": "15_Dynamics.md", "order": 2}--><h1 id="using-dynamics-to-model">Using Dynamics to Model</h1>
-<figure><img src="/images/pastedGraphic-534.jpg" alt=""><figcaption>Imagine if you were going to model this bowl of jelly beans by hand. Placing each jelly bean would be difficult enough. With a simple dynamic simulation you can fill a bowl with jelly beans, or any other object, in a few seconds.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-534.jpg" alt="Render of a white bowl filled with red jelly beans"><figcaption>Imagine if you were going to model this bowl of jelly beans by hand. Placing each jelly bean would be difficult enough. With a simple dynamic simulation you can fill a bowl with jelly beans, or any other object, in a few seconds.</figcaption></figure>
 <p>Dynamics is useful for making natural-looking arrangements of objects that are hard to do by hand (just think how hard it is to do something like lay a model of a screw on a flat surface), and in particular for working with large numbers of objects (and particles).</p>
 <h2 id="tutorial-filling-a-bowl-with-jelly-beans">Tutorial: Filling a Bowl with Jelly Beans</h2>
 <p>You’ve already seen the principles of this tutorial. In essence we model a bowl, and make it a static, concave Rigid Body. We’ll also need to dial up the precision of the Dynamics system to avoid having jelly beans do weird things.</p>
@@ -56,7 +56,7 @@
 <p><strong>Note:</strong> this “tutorial” is a stub with no steps (the jelly-bean tutorial above is also prose only); relevant 8.1.1 Soft Body settings are Two sided, Self collision, Solver iterations, Margin, and Bending constraints (Tags/SoftBodyTag). <!-- TODO editorial --></p>
 </blockquote>
 <p><img src="/images/pastedGraphic-535.jpg" alt="Wireframe Soft Body cloth draped over a flat box, hanging in folds at the corners"></p>
-<figure><img src="/images/pastedGraphic-536.jpg" alt=""><figcaption>This screenshot shows a Soft Body cloth draped over a box. I’ve left the box visible to show that the simulation is hardly perfect, but it’s easy to see how you can finesse the size of the mesh used as the collider to produce a good result for a slightly smaller table.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-536.jpg" alt="Render of white cloth draped over a square shape, hanging in folds at the corners"><figcaption>This screenshot shows a Soft Body cloth draped over a box. I’ve left the box visible to show that the simulation is hardly perfect, but it’s easy to see how you can finesse the size of the mesh used as the collider to produce a good result for a slightly smaller table.</figcaption></figure>
 
   </article>
   <nav class="doc-nav" aria-label="Documentation">

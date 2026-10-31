@@ -6,7 +6,7 @@
 
 ![Wireframe character at keyframe 12, nearly the same idle pose with a subtle shift](/images/pastedGraphic-524.jpg)
 
-![](/images/pastedGraphic-525.jpg)
+![Wireframe character at keyframe 24, back in nearly the same relaxed idle pose](/images/pastedGraphic-525.jpg)
 
 *Keyframes 0, 12, and 24. Keyframe 36 is similar to 12 but with the character looking in the other direction. Keyframe 48 is the same as 0.*
 

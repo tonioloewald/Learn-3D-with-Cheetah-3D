@@ -10,17 +10,17 @@ By default, cameras render a perspective projection. There are two other options
 
 ![Perspective render of a city of skyscrapers seen from above, the towers leaning away from the center](/images/pastedGraphic-541.jpg)
 
-![](/images/pastedGraphic-542.jpg)
+![Orthographic render of the same city blocks, towers upright and parallel with no perspective](/images/pastedGraphic-542.jpg)
 
 ***Top**: cityscape rendered through a camera with perspective. **Bottom**: cityscape rendered through an orthographic camera.*
 
 **Orthographic** rendering is useful for engineering and architecture applications, and for rendering components for isometric “faux 3D” games.
 
-![](/images/pastedGraphic-543.jpg)
+![Wide 360° panorama of city towers, horizon across the middle and black ground below](/images/pastedGraphic-543.jpg)
 
 *Panorama rendered with a level camera — the ground plane is horizontal and runs through the center of the image.*
 
-![](/images/pastedGraphic-544.jpg)
+![The same city panorama with the camera pitched up, towers bending and the horizon curving upward](/images/pastedGraphic-544.jpg)
 
 *This panorama was set up exactly as the previous one except that the camera was pitched up 10°.*
 
@@ -40,7 +40,7 @@ For orthographic cameras, zoom determines how large the scene is rendered in the
 
 ### Clip Near, Clip Far
 
-![](/images/pastedGraphic-546.jpg)
+![Viewport where the clipping planes slice through city towers, leaving floating fragments and missing ground](/images/pastedGraphic-546.jpg)
 
 *Here I’ve set the Clip Near and Clip Far values of the active camera to be close to the distance the middle of the scene is from the camera, leading to a very strange result as these values “slice through” objects in the scene.*
 

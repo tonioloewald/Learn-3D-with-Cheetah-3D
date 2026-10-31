@@ -12,7 +12,7 @@ The easiest way to explain modifiers is simply to show what they do.
 
 ### Subdivision
 
-![](/images/pastedGraphic-215.jpg)
+![Box object with a Subdivision modifier, smoothed into a blobby red shape, with Iterations 2 and Catmull-Clark](/images/pastedGraphic-215.jpg)
 
 *Subdivision, by default, turns pretty much anything into a rounded blob.*
 
@@ -20,7 +20,7 @@ Subdivision is probably the single most important modifier in Cheetah 3D. First 
 
 **Catmull-Clark** — the default setting — produces smoothly interpolated meshes, particularly well-suited to modeling organic objects, such as characters. Catmull-Clark is named after Edwin Catmull and Jim Clark, the computer scientists who first described subdivision surfaces. (Ed Catmull is one of the founders of Pixar.)
 
-![](/images/pastedGraphic-216.jpg)
+![Subdivided box shaped like a dome, its creased bottom edges in blue keeping a flat base and straight sides](/images/pastedGraphic-216.jpg)
 
 *Catmull-Clark can be controlled by selecting edges and marking them as **creased** (so they won’t be smoothed away). (Creased edges are displayed in blue by default — but only when not selected.)*
 
@@ -28,7 +28,7 @@ Subdivision is probably the single most important modifier in Cheetah 3D. First 
 
 *Catmull-Clark subdivision can be controlled more subtly by fine-tuning the “cage mesh”. In this case three edges have been beveled to better define those edges (rather than simply make them hard).* <!-- TODO review -->
 
-![](/images/pastedGraphic-218.jpg)
+![Two subdivided icosahedra, the left with irregular facets and the right more regular](/images/pastedGraphic-218.jpg)
 
 *On the left is an icosahedron with one level of Catmull-Clark subdivision; on the right is an identical icosahedron with one level of Stam-Loop subdivision. As you can see what started as a regular triangulated mesh becomes more irregular under Catmull-Clark subdivision than Stam-Loop.*
 
@@ -52,7 +52,7 @@ The Array modifier turns your mesh into an evenly spaced line of copies of itsel
 
 Build isn’t, strictly speaking, a replicator, since it removes geometry rather than duplicating it, but it doesn’t deserve its own category so I’ll shove it in here!
 
-![](/images/pastedGraphic-220.jpg)
+![Box object with a Build modifier, Percent 0.5, about half its faces missing](/images/pastedGraphic-220.jpg)
 
 *The Build modifier is showing 50% of the polygons in the original mesh.*
 
@@ -84,7 +84,7 @@ Bulge produces inward or outward bulges in your mesh. (It’s very similar to, b
 
 #### Displace
 
-![](/images/pastedGraphic-224.jpg)
+![Plane with a Displacement modifier, raised by a C3 logo texture into green relief](/images/pastedGraphic-224.jpg)
 
 *Here you can see a plane being displaced by a bitmap. The whiter the bitmap, the greater the displacement.*
 
@@ -102,19 +102,19 @@ Shear skews a mesh in its XY plane.
 
 #### Spherify
 
-![](/images/pastedGraphic-226.jpg)
+![10 by 10 by 10 Box object with a Spherify modifier, now a gold sphere with a regular grid of faces](/images/pastedGraphic-226.jpg)
 
 *Spherify lets you convert a cube into a sphere. Unlike a regular “polar” sphere the cube is easy to UV map.*
 
 Spherify projects the vertices of a mesh (within its radius of influence) onto the surface of a sphere. It’s very handy for producing spheres from boxes, because boxes are much easier to UV map than traditional “polar” spheres (which always have messed up UVs near the poles).
 
-![](/images/pastedGraphic-227.jpg)
+![Subdivided box object with a Spherify modifier whose spherical gizmo sits beside it, denting one side](/images/pastedGraphic-227.jpg)
 
 *Spherify can also be used to produce “shockwave” effects.*
 
 #### Symmetry
 
-![](/images/pastedGraphic-228.jpg)
+![Box object with a Symmetry modifier, its faces and their mirror copy standing apart on either side of the origin](/images/pastedGraphic-228.jpg)
 
 *In order to create this result I had to drag and rotate the faces of this mesh away from its local origin (which you can see is still at the global origin).*
 
@@ -126,7 +126,7 @@ When it becomes time to rig or animate a mesh, you’ll need to “bake the symm
 
 #### Taper
 
-![](/images/pastedGraphic-229.jpg)
+![Box object with a Taper modifier, Strength 0.5 and Curvature -0.1, flaring out toward the base](/images/pastedGraphic-229.jpg)
 
 *Taper produces a kind of organic stretching effect (if you set the curvature to zero it essentially deforms your mesh into a cone.)*
 
@@ -140,12 +140,12 @@ Well, it allows you to reposition (or rotate or scale) an object without actuall
 
 #### Twist
 
-![](/images/pastedGraphic-230.jpg)
+![Box object with a Twist modifier at 45 degrees, its surface twisted inside the cage](/images/pastedGraphic-230.jpg)
 
 *The Twist modifier does pretty much what you’d expect it to do — twisting the parent mesh around its local y axis.*
 
 #### Warp
 
-![](/images/pastedGraphic-231.jpg)
+![Box object with a modifier named WrapMod, type Cylinder, curving the mesh into a partial cylinder](/images/pastedGraphic-231.jpg)
 
 *The Warp modifier is perhaps the most temperamental modifier around. The UI gadget kind of shows you what it’s going to do, but it’s often a matter of trial and error to get the desired result out of it.*

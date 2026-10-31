@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.4_Understanding_Nodes.md">
 <!--{"parent": "9_Materials.md", "order": 4}--><h1 id="understanding-nodes">Understanding Nodes</h1>
 <h2 id="node-types">Node Types</h2>
@@ -66,9 +66,9 @@
 <h3 id="visualizing-an-output-channel">Visualizing an Output Channel</h3>
 <p><strong>You can see any output channel of any node displayed visually by clicking on it.</strong> This shows you how that output channel varies across the surface of a sphere if that output channel were to determine its color.</p>
 <p>Perhaps the most intuitive node you can visualize is an Image node.</p>
-<figure><img src="/images/Screen%20Shot%202014-07-06%20at%205.25.48%20PM.jpg" alt=""><figcaption>Here’s the same image node, but with the color vs. value outputs selected. The value output shows grayscale output (note that it isn’t just the red channel).</figcaption></figure>
+<figure><img src="/images/Screen%20Shot%202014-07-06%20at%205.25.48%20PM.jpg" alt="Two Image nodes side by side: Color output selected shows a colored grid sphere, Val output shows it in grey"><figcaption>Here’s the same image node, but with the color vs. value outputs selected. The value output shows grayscale output (note that it isn’t just the red channel).</figcaption></figure>
 <p><img src="/images/pastedGraphic-315.jpg" alt="Close-up of the Image node with its Color output selected, previewing a colored test grid on a sphere"></p>
-<figure><img src="/images/pastedGraphic-316.jpg" alt=""><figcaption>Here’s a test material comprising a test grid image that feeds its color output into the Material shader node’s diffuse input. Currently you’re seeing the image itself being visualized as mapped onto the test sphere, and it produces a fairly straightforward result.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-316.jpg" alt="Image node&#39;s Color output wired to the Material node&#39;s diffuse input, Properties panel showing test grid.jpg"><figcaption>Here’s a test material comprising a test grid image that feeds its color output into the Material shader node’s diffuse input. Currently you’re seeing the image itself being visualized as mapped onto the test sphere, and it produces a fairly straightforward result.</figcaption></figure>
 <p><img src="/images/pastedGraphic-317.jpg" alt="State node with its Normal output selected, previewing a sphere shaded blue in the center, green at the top, and magenta at the right"></p>
 <p>Here is a <strong>State</strong> node (it’s not hooked up to anything else) with its <strong>Normal</strong> output channel visualized. If you can understand what you’re looking at here, you’re well on your way to grasping 3D vector math and the material system, so I’ll try to explain it.</p>
 <p>First of all, think of a Normal as a little arrow of length 1.0 pointing straight out from every point on the surface of an object. So, for a sphere, it’s like imagining the entire surface of the sphere covered in hairs sticking straight out.</p>
@@ -91,7 +91,7 @@
 <p>Mathematically speaking, a color is a vector with an alpha channel (the intensity handles colors with a magnitude of more than one).</p>
 <p>Note that support for the alpha component of a color is inconsistent. Some nodes will take a color input but ignore the alpha component. The key case where the alpha component is supported is the Material shader node.</p>
 <p><strong>Number</strong>: a number is a scalar floating point value. If used as a color, 0.0 or less becomes black and 1.0 becomes white. Numbers larger than 1.0 become <em>more intense</em> white (see color, above).</p>
-<figure><img src="/images/DraggedImage-96.jpg" alt=""><figcaption>The brushed metal sphere is illuminated by two small squares, one “lit” with the number 1.0, and the other by the number 10.0.</figcaption></figure>
+<figure><img src="/images/DraggedImage-96.jpg" alt="Brushed metal sphere on a white floor, with bright streaked reflections across its upper half"><figcaption>The brushed metal sphere is illuminated by two small squares, one “lit” with the number 1.0, and the other by the number 10.0.</figcaption></figure>
 <p><strong>Vector</strong>: a vector is simply a triple value (x,y,z) where each value is a floating point number.</p>
 <p>Vectors can represent positions in 3D space, directions, directions with magnitude (think &quot;velocity&quot;), and even colors and orientations (x, y, z rotation). In C3D they&#39;re usually used to represent positions or directions, but occasionally it&#39;s useful to think of colors as being vectors too.</p>
 <h2 id="converting-between-types">Converting Between Types</h2>
@@ -106,16 +106,16 @@
 </blockquote>
 <p><img src="/images/pastedGraphic-322.jpg" alt="White cube on a plane, constant fed into the diffuse channel, casting a dark shadow"></p>
 <p><img src="/images/pastedGraphic-323.jpg" alt="Cube with 1.0 fed into the emission channel, glowing and softly lighting the plane"></p>
-<figure><img src="/images/pastedGraphic-324.jpg" alt=""><figcaption><strong>Top</strong>: a cube with constant 1.0 or 10.0 fed into material’s diffuse channel looks the same. <strong>Middle and bottom</strong> are the same cube with 1.0 and 10.0 (respectively) fed into the material’s emission channel.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-324.jpg" alt="Cube and plane so bright with 10.0 emission that they render as a flat white shape on black"><figcaption><strong>Top</strong>: a cube with constant 1.0 or 10.0 fed into material’s diffuse channel looks the same. <strong>Middle and bottom</strong> are the same cube with 1.0 and 10.0 (respectively) fed into the material’s emission channel.</figcaption></figure>
 <p>When you send information of one type to a property of another type it will automatically be converted into the correct type. The way this works is usually pretty straightforward:</p>
 <p><strong>Color to Vector</strong>: alpha channel gets dropped.</p>
 <p><img src="/images/Screen%20Shot%202014-07-06%20at%205.31.46%20PM.jpg" alt="Vector node set to 0.0, 1.0, 0.0 in the Properties panel, wired to the Material&#39;s Diffuse input, giving a green sphere"></p>
 <p>There is a wrinkle though:</p>
-<figure><img src="/images/Screen%20Shot%202014-07-06%20at%205.32.45%20PM.jpg" alt=""><figcaption>The alpha channel of a color is an “invisible fourth channel” that only seems to work with the diffuse input of a material shader when <strong>Use Alpha Channel</strong> is checked.</figcaption></figure>
+<figure><img src="/images/Screen%20Shot%202014-07-06%20at%205.32.45%20PM.jpg" alt="Color node set to red wired to the Material node&#39;s Diffuse input, giving a red sphere"><figcaption>The alpha channel of a color is an “invisible fourth channel” that only seems to work with the diffuse input of a material shader when <strong>Use Alpha Channel</strong> is checked.</figcaption></figure>
 <p><strong>Vector to Color</strong>: x, y, z become r, g, b; alpha channel is assumed to be 100% (completely opaque).</p>
 <p><strong>Vector or Color to Number</strong>: the first value (x or r) is used.</p>
 <p>There’s a special case to consider, which is <strong>monochrome colors</strong>, such as the Val channel of an Image texture node. When Cheetah 3D converts a color to a greyscale color, it appears to do so “as expected” (which, I believe, is to average r, g, and b) rather than simply using the r value.</p>
-<figure><img src="/images/Screen%20Shot%202014-07-06%20at%205.28.52%20PM.jpg" alt=""><figcaption>This shows the value output of an image material compared with the value output of a multiplication node that’s multiplying the color input by (1,1,1).</figcaption></figure>
+<figure><img src="/images/Screen%20Shot%202014-07-06%20at%205.28.52%20PM.jpg" alt="Image node with Val selected beside a Multiply node fed by its Color output, both previewing grey spheres"><figcaption>This shows the value output of an image material compared with the value output of a multiplication node that’s multiplying the color input by (1,1,1).</figcaption></figure>
 <p><strong>Number to Vector</strong>: the number gets copied to all three values (so 0.5 becomes 0.5, 0.5, 0.5).</p>
 <p><strong>Number to Color</strong>: the number gets converted into a greyscale value (so the value goes to all three channels, but alpha is made 100% (completely opaque)).</p>
 

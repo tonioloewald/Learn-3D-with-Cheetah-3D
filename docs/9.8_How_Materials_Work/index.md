@@ -46,13 +46,13 @@ When ray-tracing came to the fore, it was seen as too expensive (in terms of com
 
 In general, the best way to produce nice looking “shiny stuff” is to make the shiny stuff reflective, and make the reflections blurry for stuff like hard rubber and plastic, but it involves taking more care to set up your scene. Specular highlights are “cheap” both in terms of rendering time and effort.
 
-![](/images/pastedGraphic-305.jpg)
+![Dark render of a brushed metal ball on a lit plane, the ball's top unlit and no light visible in it](/images/pastedGraphic-305.jpg)
 
 *Here’s a brushed metal ball illuminated by a point light source with geometry toggled off (the default setting). We can see the ball is being lit, but we can’t see the light.*
 
 > **Note:** requires updating for Cheetah 3D 8.1.1: the light “Geometry” option is now **Visible in camera**, and only area lights have it (Objects/SceneObjects/Light); these two captions describe a point light. <!-- TODO update -->
 
-![](/images/pastedGraphic-306.jpg)
+![Same render with a white disk of light at top right, its blurred reflection now on top of the ball](/images/pastedGraphic-306.jpg)
 
 *The same metal ball illuminated by a point light with geometry toggled on. Now you can see the light source reflected on the ball.*
 
@@ -68,11 +68,11 @@ On the other hand you can simply use specular settings to produce reasonably dec
 
 If you’re trying to render nice planets as seen from space (e.g. for a science fiction space scene) then it’s exactly like creating a terrain shader that’s driven by a texture instead of the y component of position (in essence the texture represents altitude).
 
-![](/images/pastedGraphic-352.jpg)
+![Node graph: Fractal Color output feeding a Gradient node's Position, the Gradient's Color going on to an Add node](/images/pastedGraphic-352.jpg)
 
 *Here I replace the state node’s y position with a filtered fractal. The gradient lets me pick the way the texture gets interpreted as altitude while the scale settings of the Fractal node let me determine the detail level of the planet (I set the UVW scales to 3.0).*
 
-![](/images/pastedGraphic-353.jpg)
+![Rendered planet with blue oceans and brown continents fringed in green and yellow](/images/pastedGraphic-353.jpg)
 
 *Here’s the resulting planet. For extra points I’ll feed the same filtered “altitude” as a bump map.*
 
@@ -84,39 +84,39 @@ One of the problems with the gradient filter is that it’s a pain to edit it pr
 
 I take a screen grab of my gradient node’s settings and open it in a good image editor (in this case Acorn).
 
-![](/images/pastedGraphic-356.jpg)
+![Acorn window showing the cropped gradient strip: dark blue, light blue, yellow, green, brown, gray, and white](/images/pastedGraphic-356.jpg)
 
 *Then I crop to just the gradient part of the image. Now I can create a similar gradient at arbitrary precision using my image editor of choice.*
 
-![](/images/pastedGraphic-357.jpg)
+![Acorn window showing the cropped gradient strip: dark blue, light blue, yellow, green, brown, gray, and white](/images/pastedGraphic-357.jpg)
 
 *Rather than try to create a gradient, I directly modify the gradient using blurs and scales to tweak it.*
 
-![](/images/pastedGraphic-358.jpg)
+![Node graph: Add node's Val feeding Float2Vec X, whose Vec drives the Image node's Position, beside the old Gradient node](/images/pastedGraphic-358.jpg)
 
 *Now I’ve loaded the gradient image into an image node, and I’m creating a UV coordinate by taking the “altitude” value and converting it into a vector (so that altitude becomes X (which is to say U) and picks a color from left-to-right from my image).*
 
 *Note that there’s a slight caveat to this trick. The position input isn’t used as the UV coordinate, but as a UV offset (I don’t know why), so I rescale the UVs to 0.001 so that they have virtually no effect (I actually type in 0, but C3D changes it to 0.001). In essence, I’m telling Cheetah 3D to take the UV coordinate, multiply it by 1/1000 (effectively zero it out) and then offset it by my fake UV coordinate.*
 
-![](/images/pastedGraphic-359.jpg)
+![Full planet shader graph: Fractal, Turbulence, Gradients, Add, Multiply, Float2Vec, and Image nodes feeding a Material](/images/pastedGraphic-359.jpg)
 
 *Here’s the new shader using an image as a gradient instead of an actual gradient. The image is 1000px wide so it can be very easily fine-tuned.*
 
-![](/images/pastedGraphic-360.jpg)
+![Close-up render of the planet's edge, smooth coastlines blending blue sea, green, brown, and gray land](/images/pastedGraphic-360.jpg)
 
 *The fact that the gradient image has finite resolution doesn’t hurt it, because interpolation smooths out any transitions between pixels, and everything else is procedural so the material holds up even under huge magnifications.*
 
-![](/images/pastedGraphic-361.jpg)
+![Close-up of the planet with patches of white bump-mapped cloud over the sea and land](/images/pastedGraphic-361.jpg)
 
 *Finally for extra realism I’ve added a slightly larger sphere with procedural clouds. Here I’ve multiplied two differently scaled procedural textures to create patches of cloud.*
 
-![](/images/pastedGraphic-362.jpg)
+![Cloud shader graph: Turbulence and Fractal multiplied, then two Gradients feeding the Material's transparency and bumpmap](/images/pastedGraphic-362.jpg)
 
 *The lower Fractal node (with low scale values) drives overall cloudiness and is multiplied by the upper Turbulence node (with high scale values) which produces the individual clouds. I then pass the result through two different gradients (actually the same gradient with black and white swapped) to drive transparency and bump.*
 
 ### Material Assignment Tags
 
-![](/images/pastedGraphic-388.jpg)
+![Properties panel for a Material tag: Matte Grey material, Shading space Offset, Rotation, Scale, and UV coords](/images/pastedGraphic-388.jpg)
 
 *When you assign a material to an object, Cheetah 3D represents this by adding a tag to the object.*
 
@@ -128,7 +128,7 @@ Material assignment tags control how a material is applied to an object. The tag
 
 ![Same checkerboard rotated into a diamond pattern](/images/pastedGraphic-391.jpg)
 
-![](/images/pastedGraphic-392.jpg)
+![Same checkerboard scaled down, with many more, smaller squares](/images/pastedGraphic-392.jpg)
 
 *Procedural, 3D spatially-mapped checkerboard. **Top**: default material tag settings. **Upper-middle**: offset by 0.1,0.1,0.1. **Lower-middle**: rotation by 45°,0,0. **Bottom**: scale by 0.25,0.25,0.25.*
 
@@ -136,7 +136,7 @@ Material assignment tags control how a material is applied to an object. The tag
 
 ![Same UV texture offset by a quarter, so the 4 tile sits in the center](/images/pastedGraphic-394.jpg)
 
-![](/images/pastedGraphic-395.jpg)
+![Same numbered UV texture rotated 45 degrees, its squares running diagonally across the plane](/images/pastedGraphic-395.jpg)
 
 _**Top**: UV scale set to 2,2,2; **Middle**: UV offset set to 0.25,0.25; **Bottom**: UV rotation set to 45°_
 

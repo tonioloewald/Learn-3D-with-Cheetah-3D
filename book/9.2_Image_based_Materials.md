@@ -28,7 +28,7 @@ A UV map is a method of deciding how a texture gets mapped (or “wrapped”) on
 
 ![Elephant with a grey checkerboard that follows its UV map, so squares stretch over its surface](/images/pastedGraphic-273.jpg)
 
-![](/images/pastedGraphic-274.jpg)
+![Same elephant with the checkerboard cut through it in 3D space, squares not following the surface](/images/pastedGraphic-274.jpg)
 
 _**Top**: procedural checkerboard using UV-mapping. **Bottom**: procedural checkerboard using 3D (spatial) mapping (the default setting for procedural textures)._
 
@@ -40,59 +40,59 @@ All Cheetah 3D’s primitives (except for the polyhedra) have a default UV mappi
 
 Here are examples of the default UV-mappings for all the primitives and examples of the sweep, extrude, and lathe creators.
 
-![](/images/pastedGraphic-275.jpg)
+![Box with a grey checkerboard and colored letters A, B, C, and D repeated on each face](/images/pastedGraphic-275.jpg)
 
 *Box*
 
-![](/images/pastedGraphic-276.jpg)
+![Ball with the A, B, C, D texture wrapped around it, a stretched blue A near the top](/images/pastedGraphic-276.jpg)
 
 *Ball*
 
-![](/images/pastedGraphic-277.jpg)
+![Capsule with the letter texture wrapped around its length, A and C partly visible](/images/pastedGraphic-277.jpg)
 
 *Capsule*
 
-![](/images/pastedGraphic-278.jpg)
+![Cone with the letter texture wrapped around it, letters narrowing toward the tip](/images/pastedGraphic-278.jpg)
 
 *Cone*
 
-![](/images/pastedGraphic-279.jpg)
+![Flat octagonal disk with the whole A, B, C, D texture laid across its top](/images/pastedGraphic-279.jpg)
 
 *Disk*
 
-![](/images/pastedGraphic-280.jpg)
+![Fractal cube full of square holes, the letter texture repeated on each face](/images/pastedGraphic-280.jpg)
 
 *Fractal*
 
-![](/images/pastedGraphic-281.jpg)
+![Flat plane with the A, B, C, D texture laid on it once](/images/pastedGraphic-281.jpg)
 
 *Plane*
 
-![](/images/pastedGraphic-282.jpg)
+![Relief plane with a central bump distorting the A, B, C, D texture](/images/pastedGraphic-282.jpg)
 
 *Relief*
 
-![](/images/pastedGraphic-283.jpg)
+![Staircase with the letter texture spread across its stepped front and side](/images/pastedGraphic-283.jpg)
 
 *Stair*
 
-![](/images/pastedGraphic-284.jpg)
+![Torus with the letter texture stretched around the ring](/images/pastedGraphic-284.jpg)
 
 *Torus*
 
-![](/images/pastedGraphic-285.jpg)
+![Thick tube with letters around its outside and the full texture on its top rim](/images/pastedGraphic-285.jpg)
 
 *Tube*
 
-![](/images/pastedGraphic-286.jpg)
+![Swept spiral tube with colored letter fragments stretched into stripes along it](/images/pastedGraphic-286.jpg)
 
 *Sweep*
 
-![](/images/pastedGraphic-287.jpg)
+![Extruded gear shape with the letter texture tiled many times across its face](/images/pastedGraphic-287.jpg)
 
 *Extrude*
 
-![](/images/pastedGraphic-288.jpg)
+![Lathed cup with a large red D on the outside and a blue A inside](/images/pastedGraphic-288.jpg)
 
 *Lathe*
 

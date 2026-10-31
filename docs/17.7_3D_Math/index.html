@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="17.7_3D_Math.md">
 <!--{"parent": "17_Appendices.md", "order": 7}--><h1 id="3d-math">3D Math</h1>
 <h2 id="axes-x-axis-y-axis-z-axis">Axes, X Axis, Y Axis, Z Axis</h2>
@@ -66,7 +66,7 @@
 <p>For 2D texture space, a texture is considered a rectangle with position determined by coordinates u and v ranging from 0 to 1. By default, image-based textures “wrap” so any value of u and v simply ignores the part before the decimal point (10.75 and -0.25 are the same effective coordinate).</p>
 <p>For 3D texture space, a texture is considered an infinite volume. 3D textures are procedural and do not need to wrap.</p>
 <h2 id="local-space-local-coordinates">Local Space, Local Coordinates</h2>
-<figure><img src="/images/pastedGraphic-647.jpg" alt=""><figcaption>Here you can see the cube’s local coordinate system reflected by the position and orientation of the transform widget. (Note that the tool’s orientation is set to “Object”.)</figcaption></figure>
+<figure><img src="/images/pastedGraphic-647.jpg" alt="Rotated cube with the transform widget aligned to its faces, Tool panel Orientation set to Object"><figcaption>Here you can see the cube’s local coordinate system reflected by the position and orientation of the transform widget. (Note that the tool’s orientation is set to “Object”.)</figcaption></figure>
 <p>Every object has its own “local” coordinate system. You can see it in the orientation of the transform widget when the transform tool’s orientation property is set to “object” (the default setting). <!-- TODO review --></p>
 <p>The vertices of an object (and consequently its faces) “live” in this local coordinate system as do any “child” objects (i.e. other objects contained by the object in the Object Browser).</p>
 <p>Working in local coordinates is often very useful. E.g. to bring one object close to another simply make it a child of that object and zero out its position coordinates. (Similarly you can often align two objects by doing the same thing with rotation coordinates.) Having repositioned or aligned objects, they can be returned to their proper positions in the scene hierarchy and their coordinates will be recalculated automatically.</p>

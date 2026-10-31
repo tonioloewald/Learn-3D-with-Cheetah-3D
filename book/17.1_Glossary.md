@@ -24,7 +24,7 @@ Forward kinematics (also referred to as hierarchical animation) is the 3D animat
 
 Inverse kinematics evolved from the difficulty 3D animators had in animating characters and other complex “rigs” using forward kinematics. 
 
-![](/images/pastedGraphic-637.jpg)
+![Character's arm bones in red with the hand beside a gray cylinder cup](/images/pastedGraphic-637.jpg)
 
 *A simple animation task such as moving a character’s hand to a cup can be enormously difficult using forward kinematics. Inverse kinematics addresses this problem by allowing the animator to pick the desired result and calculate the pose necessary to achieve it.*
 
@@ -54,7 +54,7 @@ In *Disney Animation: The Illusion of Life* the authors suggest that the best wa
 
 In 3D animation, a key frame is a point on the time line at which at least one animated parameter is “keyed” (i.e. has a set “key” value).
 
-![](/images/pastedGraphic-638.jpg)
+![Key editor: position, rotation, and scale tracks each with keys at two frames, above the timeline](/images/pastedGraphic-638.jpg)
 
 *This shows two keyframes (with position, rotation, and scale keys) on the timeline. This is taken from the bottom-left of the default Animation layout with the animation timeline controls visible.*
 
@@ -66,7 +66,7 @@ In traditional animation, a *key *frame was a drawing created by a lead animato
 
 ### Instrumenting Rigs
 
-![](/images/Screen%20Shot%202013-12-03%20at%203.32.59%20PM.jpg)
+![Blocky figure surrounded by green spline loops serving as rig controls](/images/Screen%20Shot%202013-12-03%20at%203.32.59%20PM.jpg)
 
 *Filip C [posted a simple "blockman" rig demonstrating](https://www.cheetah3d.com/forum/index.php?threads/8534/) how you can create quite sophisticated rigs in Cheetah 3D (using splines, which don't render or create polygon meshes on their own) as instrumentation. If you search the forums you will find quite a lot of rigs, some very sophisticated.*
 
@@ -124,7 +124,7 @@ A procedural texture is an algorithm — usually a chaotic function — that gen
 
 ### Convex Polygon
 
-![](/images/pastedGraphic-639.jpg)
+![Square polygon beside an arrowhead-shaped polygon crossed by a red line](/images/pastedGraphic-639.jpg)
 
 *A convex polygon (left) and a concave polygon (right). The red line shows how you can draw a line between two points in the concave polygon that passes outside it.*
 
@@ -142,7 +142,7 @@ Cheetah 3D has tools for selecting any polygons in a mesh that aren’t quads, w
 
 ### Triangulation, Tessellation
 
-![](/images/Screen%20Shot%202013-12-03%20at%203.40.42%20PM.jpg)
+![Two cubes side by side, the right one with each face split into triangles](/images/Screen%20Shot%202013-12-03%20at%203.40.42%20PM.jpg)
 
 *A cube (left) and a triangulated cube (right).*
 
@@ -154,7 +154,7 @@ Note that the word tessellation sounds fancier but is actually less accurate.
 
 ![Letter Q drawn as two bezier splines, an outer outline and an inner hole, with control handles](/images/pastedGraphic-640.jpg)
 
-![](/images/pastedGraphic-641.jpg)
+![Polyplane made from the Q spline: a solid letter Q with an open center](/images/pastedGraphic-641.jpg)
 
 _**Top**: this spline object (which happens to be a letter Q) is formed out of two separate splines. The inner spline is interpreted as a “hole” in the outer spline. **Bottom**: the same spline object dragged into a Polyplane creator showing how Cheetah 3D interprets the spline object._
 
@@ -162,11 +162,11 @@ A spline is a bezier curve. A single spline object can create multiple separate 
 
 ### Displacement Map
 
-![](/images/displacement.jpg)
+![Black ampersand on white, sharp on the left half and blurred on the right](/images/displacement.jpg)
 
 _Displacement Map_
 
-![](/images/displacement-render.jpg)
+![Gray plane raised into an ampersand shape, with steep walls on the left and smooth slopes on the right](/images/displacement-render.jpg)
 
 _100x100 Plane with displacement map applied (using Displacement modifier with -0.1 offset)_
 
@@ -200,7 +200,7 @@ You may find my **Surface Utilities** script useful for cleaning up the smoothin
 
 ![Orange tube swept along a helix spiral, shown in wireframe](/images/pastedGraphic-642.jpg)
 
-![](/images/pastedGraphic-643.jpg)
+![Object browser: Sweep containing Circle and Helix](/images/pastedGraphic-643.jpg)
 
 *An object produced by sweeping a circle **profile** along a helix **path**.*
 
@@ -208,7 +208,7 @@ A sweep is a solid formed by moving a 2D *profile* through space along a path. C
 
 ### Lathe
 
-![](/images/pastedGraphic-644.jpg)
+![Lathed wineglass beside its green spline profile](/images/pastedGraphic-644.jpg)
 
 *The wineglass on the left was created by lathing the profile on the right.*
 
@@ -216,7 +216,7 @@ A lathe is a solid formed by revolving a 2D profile around an axis. Cheetah 3D�
 
 ### Extrusion
 
-![](/images/pastedGraphic-645.jpg)
+![The word Text extruded into solid 3D letters](/images/pastedGraphic-645.jpg)
 
 *If you create a text object and drop it into an Extrude creator, this is what you get.*
 

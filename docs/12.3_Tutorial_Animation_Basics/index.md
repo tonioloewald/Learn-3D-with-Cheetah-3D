@@ -70,6 +70,6 @@ What we’re really doing here is fine-tuning the interpolation of the values be
 
 ![F-curve editor: scale curves held flat through the flight, with sharp changes at takeoff and impact](/images/pastedGraphic-488.jpg)
 
-![](/images/pastedGraphic-489.jpg)
+![F-curve editor: scale curves held level through the flight, with sharp bezier spikes at takeoff and impact](/images/pastedGraphic-489.jpg)
 
 *Here’s the f-curve editor showing the way the size values interpolated between keyframes. **Top**: before the last tweak. **Middle**: after the last tweak. **Bottom**: using f-curves instead.*

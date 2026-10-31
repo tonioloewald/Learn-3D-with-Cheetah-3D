@@ -2,11 +2,11 @@
 
 ## The Camera Object
 
-![](/images/pastedGraphic-539.jpg)
+![Selected camera in the 3D view: orange wireframe body with two reels, its rotation handles, and a blue field-of-view pyramid](/images/pastedGraphic-539.jpg)
 
 *When selected, a camera appears in the 3D view as a wireframe movie camera with a pyramid coming out of it indicating its field of view.*
 
-![](/images/pastedGraphic-540.jpg)
+![Camera Properties panel: Position, Rotation, Projection, Render, Output, and Background settings, with Camera light set to Auto](/images/pastedGraphic-540.jpg)
 
 *The camera object has many properties, and they’re all important.*
 

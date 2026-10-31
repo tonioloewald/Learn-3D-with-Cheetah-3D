@@ -10,7 +10,7 @@ Also referred to as HDRI and Image-Based Lighting.
 
 > **Note:** global illumination (indirect, bounced light) and image-based lighting (light from an HDRI) are different things; this heading and line conflate them. <!-- TODO editorial -->
 
-![](/images/pastedGraphic-447.jpg)
+![Brushed steel sphere on a wood parquet floor, softly reflecting its surroundings](/images/pastedGraphic-447.jpg)
 
 *Brushed steel sphere on parquet plane, with HDRI and Radiosity tags used for lighting. Fast, attractive renders with almost no effort.*
 

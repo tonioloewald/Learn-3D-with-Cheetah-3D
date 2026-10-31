@@ -46,15 +46,15 @@ You assign this tag to a mesh you’re planning to bake, and it controls and fac
 
 #### Caustics
 
-![](/images/DraggedImage-86.jpg)
+![Render of a spotlight pool on a black floor, the cube casting a solid black shadow](/images/DraggedImage-86.jpg)
 
 _A glass cube with a spotlight (set to ray-traced shadows)._
 
-![](/images/DraggedImage-87.jpg)
+![Translucent cube casting a grey shadow with a noisy band of light beneath it](/images/DraggedImage-87.jpg)
 
 _Ray-tracing with transparency creates very implausible results._
 
-![](/images/DraggedImage-88.jpg)
+![Glass cube with bright streaks and patches of focused light scattered across its shadow](/images/DraggedImage-88.jpg)
 
 _Adding caustics results in more realistic scattered light appearing in shadows, although tweaking the settings to get good results requires both judgment and effort. (1,000,000 photons, 0.1 strength, 1000 samples.)_
 
@@ -108,7 +108,7 @@ The depth of field effect is achieved _stochastically_ (i.e. by randomly samplin
 
 #### Fog
 
-![](/images/DraggedImage-91.jpg)
+![Render of tall cones on a sandy plane fading into blue fog toward the horizon](/images/DraggedImage-91.jpg)
 
 _Cones in the fog_
 

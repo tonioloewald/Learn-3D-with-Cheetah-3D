@@ -6,7 +6,7 @@
 
 ![Ball hanging from a rope spline knocking over stacks of blocks on a green ground plane](/images/pastedGraphic-532.jpg)
 
-![](/images/pastedGraphic-533.jpg)
+![Object browser: Sweep with Circle and Spline, Ball, Sky Light, Particle Mesh with Box, Plane, and Plane.1](/images/pastedGraphic-533.jpg)
 
 *The “rope” is a spline with a rope tag and two anchor tags (one simply anchors the top point, while the other attaches the bottom point to the ball). The blocks are a collapsed particle mesh system with a dynamic rigidbody tag. The ground plane has a static rigidbody tag. The ball has a dynamic rigidbody tag.*
 

@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.9_Node_Descriptions.md">
 <!--{"parent": "9_Materials.md", "order": 9}--><h1 id="node-descriptions">Node Descriptions</h1>
 <h2 id="shader-nodes">Shader Nodes</h2>
@@ -105,10 +105,10 @@
 <p>The instance node’s properties include:</p>
 <p><strong>Position</strong>: the location of a particle — in the emitter’s frame of reference. (It’s not clear how this will work once instances are supported for things other than particles.)</p>
 <p><strong>Direction</strong>: I would assume this represents the direction the particle is moving in, but I can’t get it to do anything.</p>
-<figure><img src="/images/pastedGraphic-325.jpg" alt=""><figcaption>The random property of an instance can be treated as a random color</figcaption></figure>
+<figure><img src="/images/pastedGraphic-325.jpg" alt="Cloud of cube particles, each a different random color"><figcaption>The random property of an instance can be treated as a random color</figcaption></figure>
 <p><strong>Rand</strong>: a random value uniquely generated for each instance (this lets you create, say, a “confetti” material that would make each particle randomly colored). I <em>believe</em> that Rand is actually a random vector with each value picked randomly from the interval [0,1] (recall that’s math shorthand for “a number between 0 and 1, inclusive”).</p>
 <p><strong>UVW</strong>: an instance’s UV settings may be animated, and this lets you access the current state of the instance’s UV (at the point being rendered).</p>
-<figure><img src="/images/pastedGraphic-326.jpg" alt=""><figcaption>Age changes from 0 to 1 over a particle’s lifespan. Here I’ve created a simple material that sends age to the diffuse channel of the Material shader. Older particles are rendered as lighter shades of gray.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-326.jpg" alt="Cube particles shading from black on the left to light gray on the right"><figcaption>Age changes from 0 to 1 over a particle’s lifespan. Here I’ve created a simple material that sends age to the diffuse channel of the Material shader. Older particles are rendered as lighter shades of gray.</figcaption></figure>
 <p><strong>Age</strong>: this number ranges from 0 (the particle was just born) to 1 (the particle is about to die).</p>
 <p><strong>Color</strong>: I’m not sure what this property is supposed to do. Random seems to do what you’d expect Color to do, and I can’t get it to do much of anything.</p>
 <h2 id="math-nodes">Math Nodes</h2>

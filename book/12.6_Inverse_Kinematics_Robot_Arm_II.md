@@ -22,7 +22,7 @@ Now you’ll see that the Robot Arm works perfectly.
 
 ![Robot arm with its tool end selected and a purple line running down to the base](/images/pastedGraphic-493.jpg)
 
-![](/images/pastedGraphic-494.jpg)
+![Rendered orange robot arm reaching down to touch its tool tip to a metal block](/images/pastedGraphic-494.jpg)
 
 _**Top**: the robot arm rigged for IK with a 3D solver and constraints (the purple line indicates the base of the hierarchy that it will solve for). **Bottom**: looks good!_
 

@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.3_Transparent_Materials.md">
 <!--{"parent": "9_Materials.md", "order": 3}--><h1 id="transparent-materials">Transparent Materials</h1>
 <p>In simplistic terms, a transparent material is any material whose transparent color is something other than black in some places. Note: as soon as a material’s transparent color becomes non-black, rendering it becomes significantly slower.</p>
@@ -49,11 +49,11 @@
 <p><img src="/images/pastedGraphic-294.jpg" alt="Table of refractive indices, from vacuum 1 and air 1.000293 to water 1.333, crown glass 1.50–1.54, and diamond 2.419"></p>
 <h2 id="fresnel-effect">Fresnel Effect</h2>
 <p><img src="/images/pastedGraphic-295.jpg" alt="Glass elephant without fresnel, its body tinted flat blue with little reflection"></p>
-<figure><img src="/images/pastedGraphic-296.jpg" alt=""><figcaption><strong>Top</strong>: “glass” with transparency set to light grey and reflection set to black. <strong>Bottom</strong>: as above, but with the fresnel box checked.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-296.jpg" alt="Same glass elephant with fresnel on, clearer body and strong reflections of the checkered room"><figcaption><strong>Top</strong>: “glass” with transparency set to light grey and reflection set to black. <strong>Bottom</strong>: as above, but with the fresnel box checked.</figcaption></figure>
 <p>The Fresnel effect simulates the behavior of real-world materials by adjusting the transmission and reflection characteristics of a material based on the viewing angle. In general, the simplest way to produce a realistic transparent material is to check the fresnel box and set its refractive index correctly.</p>
 <h2 id="the-dielectric-shader">The Dielectric Shader</h2>
 <p><img src="/images/pastedGraphic-297.jpg" alt="Glass elephant made with the Material shader, refracting the checkered room"></p>
-<figure><img src="/images/pastedGraphic-298.jpg" alt=""><figcaption><strong>Top</strong>: material shader “glass” (diffuse . <strong>Bottom</strong>: dielectric “glass”. Same transparency and refractive index. Very similar, but not quite identical.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-298.jpg" alt="Glass elephant made with the Dielectric shader, refracting and reflecting the checkered room"><figcaption><strong>Top</strong>: material shader “glass” (diffuse . <strong>Bottom</strong>: dielectric “glass”. Same transparency and refractive index. Very similar, but not quite identical.</figcaption></figure>
 <blockquote>
 <p><strong>Note:</strong> the caption above is truncated mid-sentence (“(diffuse .”); the missing text needs restoring. <!-- TODO editorial --></p>
 </blockquote>
@@ -69,7 +69,7 @@
 <p>The bubbles themselves are icosahedrons with a shell modifier (to give them a thickness of 0.02) and 4 levels of Stam-Loop subdivision. (Stam-Loop is optimized for triangulated meshes, and an icosahedron is a triangulated mesh.)</p>
 <h3 id="liquid-in-a-glass">Liquid in a Glass</h3>
 <p><img src="/images/DraggedImage-92.jpg" alt="Render of a shot glass of amber liquid on a grey surface"></p>
-<figure><img src="/images/DraggedImage-93.jpg" alt=""><figcaption><strong>Above</strong>: a render of a shot glass. <strong>Below</strong>: the glass and the liquid inside it rendered apart to show how the scene was assembled. The liquid is slightly larger than the interior of the glass to avoid rendering errors. (Note that C3D’s caustics are not correctly picking up the color of the liquid.)</figcaption></figure>
+<figure><img src="/images/DraggedImage-93.jpg" alt="Empty clear glass beside the separate amber liquid object, its rounded top bulging above the rim line"><figcaption><strong>Above</strong>: a render of a shot glass. <strong>Below</strong>: the glass and the liquid inside it rendered apart to show how the scene was assembled. The liquid is slightly larger than the interior of the glass to avoid rendering errors. (Note that C3D’s caustics are not correctly picking up the color of the liquid.)</figcaption></figure>
 <p>To render liquid in a glass the best option turns out to be to model the liquid as an object that is slightly larger than the glass containing it. It’s as simple as that. </p>
 <p><strong>Note</strong>: in earlier editions of this book I incorrectly stated that the liquid should be slightly <em>smaller</em> than the container. It turns out that the most realistic-looking results are obtained by making the liquid slightly larger than the container.</p>
 <blockquote>

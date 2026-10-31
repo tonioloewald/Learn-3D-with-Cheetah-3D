@@ -40,20 +40,20 @@
 <link rel="stylesheet" href="/book.css"><link rel="stylesheet" href="/headings.css"><script>globalThis.__TJS_LOCAL_BASE="/tjs/"</script><script>globalThis.__TOSI_EXAMPLE_POLICY="opt-in"</script>
 </head>
 <body>
-  <tosi-doc-system docs="../docs.json?v=17b1d74020b1" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
+  <tosi-doc-system docs="../docs.json?v=eaf5e5d6c6a2" config="{&quot;projectName&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;projectLinks&quot;:{&quot;github&quot;:&quot;https://github.com/tonioloewald/Learn-3D-with-Cheetah-3D&quot;},&quot;logo&quot;:&quot;/logo.png&quot;,&quot;bookVolumes&quot;:&quot;/epub-volumes.json&quot;,&quot;ebooks&quot;:[{&quot;title&quot;:&quot;Learn 3D with Cheetah 3D&quot;,&quot;url&quot;:&quot;/learn-3d-with-cheetah-3d.epub&quot;}],&quot;accessibility&quot;:&quot;wcag22-aa&quot;}">
   <article class="doc-content" data-doc="9.6_Reflective_Materials.md">
 <!--{"parent": "9_Materials.md", "order": 6}--><h1 id="reflective-materials">Reflective Materials</h1>
-<figure><img src="/images/pastedGraphic-289.jpg" alt=""><figcaption>Reflection Map Example: Cracked Mirror.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-289.jpg" alt="Red cone on a checkered floor before a mirror broken into many cracked pieces, reflecting the cone"><figcaption>Reflection Map Example: Cracked Mirror.</figcaption></figure>
 <h2 id="the-metal-shader">The Metal Shader</h2>
 <p><img src="/images/pastedGraphic-290.jpg" alt="Elephant with the Metal shader at roughness 0.0, sharply reflecting the checkered room"></p>
-<figure><img src="/images/pastedGraphic-291.jpg" alt=""><figcaption>Metal shader with copperish reflection color. Top: roughness 0.0. Bottom: roughness 0.1, anisotropy: 0.9.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-291.jpg" alt="Elephant with the copper Metal shader at roughness 0.1, anisotropy 0.9, reflections smeared into streaks"><figcaption>Metal shader with copperish reflection color. Top: roughness 0.0. Bottom: roughness 0.1, anisotropy: 0.9.</figcaption></figure>
 <p>The Metal shader offers one key feature that the Material Shader does not, and that is anisotropic reflection, which essentially means that it lets you <em>bias</em> the way reflections are blurred (to produce the effect of brushed metal). Aside from that, anything the Metal shader can do, the Material shader can do with more work (and control).</p>
 <blockquote>
 <p><strong>Note:</strong> Cheetah 3D 8.1.1 also has a <strong>PBR</strong> shader (<strong>Material (PBR)</strong> in the Add Material menu) with Metalness, Roughness, Anisotropy, and Clearcoat inputs, which covers much of what this section says needs the Metal or Car Paint shader; see <a href="/9.9_Node_Descriptions/">Node Descriptions</a>, not yet covered here. <!-- TODO missing --></p>
 </blockquote>
 <h2 id="the-car-paint-shader">The Car Paint Shader</h2>
 <p><img src="/images/pastedGraphic-292.jpg" alt="Glossy orange elephant rendered with the Car Paint shader in a checkered room"></p>
-<figure><img src="/images/pastedGraphic-293.jpg" alt=""><figcaption>The Car Paint shader produces a nice “coated gloss paint” look with very little effort.</figcaption></figure>
+<figure><img src="/images/pastedGraphic-293.jpg" alt="Glossy blue-violet elephant with the Car Paint shader, colored room reflected in its coating"><figcaption>The Car Paint shader produces a nice “coated gloss paint” look with very little effort.</figcaption></figure>
 <p>The Car Paint shader simulates the behavior of car paint, which is something you can’t do with the Material Shader (at least, not easily). Car Paint is characterized by having a thin transparent coating and metallic properties.</p>
 
   </article>

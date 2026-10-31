@@ -26,7 +26,7 @@ The simplest material would consist of just a single node — its shader, and th
 
 (Why would you want to use the Solid Color shader? We will see!)
 
-![](/images/DraggedImage-34.jpg)
+![Node editor: an Image node’s Color output wired to the Material node’s diffuse input and its Val output to bumpmap](/images/DraggedImage-34.jpg)
 
 _A simple, and fairly typical, material (which is using the quick and dirty (but often effective) method of treating a single image as both diffuse and bumpmap)._
 
@@ -34,7 +34,7 @@ A more useful example of a material comprises a single Image texture node and a 
 
 From here, you can probably figure out that you could use a different image for the bump map by adding a second image node and piping its color into the bump channel of the shader. Similarly you could use a different image and pipe its color into the transparency channel.
 
-![](/images/DraggedImage-35.jpg)
+![Node editor: a chain-link Image node wired to transparency and a dark, inverted chain-link Image node wired to bumpmap](/images/DraggedImage-35.jpg)
 
 _Here I’ve built a chain-link material by using two variations of the same bitmap, one for transparency (white is transparent) and an inverted, somewhat blurred version for bump (white sticks out)._
 
@@ -66,13 +66,13 @@ The simplest way to make reflective things look reflective is to put stuff in th
 
 Note that making the reflection color of a material anything other than black immediately makes that material more expensive (in computational terms) to render, but what really makes a material expensive is blurred reflections with lots of samples.
 
-![](/images/DraggedImage-37.jpg)
+![Three gray spheres on a lettered checkerboard: dull, mirror-like, and softly blurred reflections](/images/DraggedImage-37.jpg)
 
 _Here are three balls with a medium gray material. From left to right: reflection is dark grey, reflection is off-white, reflection is light grey and reflection blur is 0.4._
 
 ### Hint: Make Shiny Objects Look Fabulous
 
-![](/images/DraggedImage-38.jpg)
+![Material properties with a dark gray reflection, reflection blur 0.4, and 16 reflection samples](/images/DraggedImage-38.jpg)
 
 _To make shiny objects that look fabulous, make their material slightly reflective (i.e. set the reflection to a dark color), and make the reflection blur value non-zero. (It may help to use HDRI lighting if you’re in a hurry.) To improve the quality of the final render, increase the “reflection samples” (but it will slow down rendering). That’s all there is to it._
 
@@ -86,7 +86,7 @@ When I say “kind of”, the problem is that transparent objects are usually re
 
 ![Render of the chain-link fence over a lettered floor, the floor seen through it bent by refraction](/images/DraggedImage-39.jpg)
 
-![](/images/DraggedImage-40.jpg)
+![Render of the chain-link fence over the lettered floor, the letters behind it seen undistorted](/images/DraggedImage-40.jpg)
 
 _Two versions of the chainlink material. The one on the left has a refractive index of 1.5 (the default) — note how the “ground” appears to be bent, and there’s something weird going on at the right edge of the “fence”. On the right I’ve set the refractive index to 1.0. This is actually a pretty subtle example of unwanted refraction — real world examples will often be much worse._
 
